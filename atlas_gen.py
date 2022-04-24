@@ -1,6 +1,7 @@
 from scripts.gen_header import *
 from scripts.gen_lh import *
 from scripts.gen_uh import *
+from scripts.gen_hook import *
 
 class AtlasGenerator:
     def __init__(self) -> None:
@@ -52,6 +53,9 @@ class AtlasGenerator:
     def gen_upper_half(self):
         gen_upper_half(self.functions)
 
+    def gen_hook_lib(self):
+        gen_hook_lib(self.functions)
+
 if __name__ == '__main__':
     # Parse all of the functions.
     ag = AtlasGenerator()
@@ -63,4 +67,5 @@ if __name__ == '__main__':
     # Create upper half/client side
     ag.gen_upper_half()
     # Create hook library
+    ag.gen_hook_lib()
 

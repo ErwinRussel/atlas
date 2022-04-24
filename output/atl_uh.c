@@ -58,7 +58,8 @@ void init(){{
     ShmPTR = (struct MsgBlock *) shmat(ShmID, NULL, 0);
 }}
 
-Display xopendisplay_uh(argp_XOPENDISPLAY argp)
+// -- XOpenDisplay
+Display xopendisplay_uh(argp_XOpenDisplay argp)
 {
     // Memcopy in Buffer
     int arg_size = sizeof(argp_XOpenDisplay)
@@ -107,7 +108,8 @@ Display xopendisplay_uh(argp_XOPENDISPLAY argp)
     return result;
 }
 
-Window xcreatesimplewindow_uh(argp_XCREATESIMPLEWINDOW argp)
+// -- XCreateSimpleWindow
+Window xcreatesimplewindow_uh(argp_XCreateSimpleWindow argp)
 {
     // Memcopy in Buffer
     int arg_size = sizeof(argp_XCreateSimpleWindow)
@@ -156,7 +158,8 @@ Window xcreatesimplewindow_uh(argp_XCREATESIMPLEWINDOW argp)
     return result;
 }
 
-int xmapwindow_uh(argp_XMAPWINDOW argp)
+// -- XMapWindow
+int xmapwindow_uh(argp_XMapWindow argp)
 {
     // Memcopy in Buffer
     int arg_size = sizeof(argp_XMapWindow)
@@ -205,7 +208,8 @@ int xmapwindow_uh(argp_XMAPWINDOW argp)
     return result;
 }
 
-int xselectinput_uh(argp_XSELECTINPUT argp)
+// -- XSelectInput
+int xselectinput_uh(argp_XSelectInput argp)
 {
     // Memcopy in Buffer
     int arg_size = sizeof(argp_XSelectInput)
@@ -254,7 +258,8 @@ int xselectinput_uh(argp_XSELECTINPUT argp)
     return result;
 }
 
-int xnextevent_uh(argp_XNEXTEVENT argp)
+// -- XNextEvent
+int xnextevent_uh(argp_XNextEvent argp)
 {
     // Memcopy in Buffer
     int arg_size = sizeof(argp_XNextEvent)
@@ -303,7 +308,8 @@ int xnextevent_uh(argp_XNEXTEVENT argp)
     return result;
 }
 
-Window xdefaultrootwindow_uh(argp_XDEFAULTROOTWINDOW argp)
+// -- XDefaultRootWindow
+Window xdefaultrootwindow_uh(argp_XDefaultRootWindow argp)
 {
     // Memcopy in Buffer
     int arg_size = sizeof(argp_XDefaultRootWindow)

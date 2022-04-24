@@ -59,7 +59,8 @@ void init(){{
 }}
 '''
 func_uh = '''
-{ret_type} {name_lower}_uh(argp_{name_upper} argp)
+// -- {name}
+{ret_type} {name_lower}_uh(argp_{name} argp)
 {{
     // Memcopy in Buffer
     int arg_size = sizeof(argp_{name})
