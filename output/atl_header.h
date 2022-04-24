@@ -20,7 +20,7 @@ typedef enum {
 
 typedef enum {
     XOPENDISPLAY,
-	DISPLAY,
+	DISPLAYP,
 	XCREATESIMPLEWINDOW,
 	WINDOW,
 	XMAPWINDOW,
@@ -44,60 +44,60 @@ struct MsgBlock {
 
 // -- XOpenDisplay
 struct args_XOpenDisplay{
-    _Xconst char *display_name
-}
+    _Xconst char *display_name;
+};
 
 typedef struct args_XOpenDisplay args_XOpenDisplay;
 
 
 // -- XCreateSimpleWindow
 struct args_XCreateSimpleWindow{
-    Display *display,
-	 Window parent,
-	 int x,
-	 int y,
-	 unsigned int width,
-	 unsigned int height,
-	 unsigned int border_width,
-	 unsigned long border,
-	 unsigned long background
-}
+    Display *display;
+	 Window parent;
+	 int x;
+	 int y;
+	 unsigned int width;
+	 unsigned int height;
+	 unsigned int border_width;
+	 unsigned long border;
+	 unsigned long background;
+};
 
 typedef struct args_XCreateSimpleWindow args_XCreateSimpleWindow;
 
 
 // -- XMapWindow
 struct args_XMapWindow{
-    Display *display,
-	 Window w
-}
+    Display *display;
+	 Window w;
+};
 
 typedef struct args_XMapWindow args_XMapWindow;
 
 
 // -- XSelectInput
 struct args_XSelectInput{
-    Display *display,
-	 Window w,
-	 long event_mask
-}
+    Display *display;
+	 Window w;
+	 long event_mask;
+};
 
 typedef struct args_XSelectInput args_XSelectInput;
 
 
 // -- XNextEvent
 struct args_XNextEvent{
-    Display *display,
-	 XEvent *event_return
-}
+    Display *display;
+	 XEvent *event_return;
+};
 
 typedef struct args_XNextEvent args_XNextEvent;
 
 
 // -- XDefaultRootWindow
 struct args_XDefaultRootWindow{
-    Display *display
-}
+    Display *display;
+};
 
 typedef struct args_XDefaultRootWindow args_XDefaultRootWindow;
 

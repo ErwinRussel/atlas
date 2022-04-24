@@ -13,13 +13,17 @@ class AtlasGenerator:
     def parse_function(self, line):
         func_name = line[:line.find('(')].split()[-1]
         # todo: is this a good idea or nah?
+        ptr_type = False
         if func_name[0] == '*':
             func_name = func_name[1:]
+            ptr_type = True
         func_args = line[line.find('(') + 1:line.find(')')].split(",")
         return_type_list = line[:line.find('(')].split()[:-1]
         if "extern" in return_type_list:
             return_type_list.remove("extern")
         func_return_type = " ".join(return_type_list)
+        if ptr_type:
+            func_return_type = func_return_type + "*"
         # Add function to list of functions.
         function = {}
         function['hook'] = line

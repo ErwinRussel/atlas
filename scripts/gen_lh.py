@@ -33,13 +33,13 @@ void init(){
 '''
 func_lh = '''
 // -- {name}
-{ret_type} *{name_lower}_lh(arg_{name} *argp)
+{ret_type} *{name_lower}_lh(args_{name} *argp)
 {{
     // Get function specific args
     {argp_set}
 
     // Call actual function
-    {ret_type} result = {name}({arg_vars})
+    {ret_type} result = {name}({arg_vars});
 
     // Memcopy in Buffer
     int ret_size = sizeof({ret_type});
@@ -104,7 +104,7 @@ case = '''
                 memcpy(&argp_{name_lower}, ShmPTR->buffer, sizeof(args_{name}));
 
                 // Execute function call
-                {name_lower}_lh(argp_{name_lower});
+                {name_lower}_lh(&argp_{name_lower});
 
                 // Print
                 printf("RESPONSE: Data type: %d\\n\\n", ShmPTR->data_type);
@@ -124,7 +124,7 @@ def get_argp_set(function_args):
         var_name = arg.split()[-1]
         if var_name[0] == '*':
             var_name = var_name[1:]
-        set_line = "{arg} = argp.{var_name}".format(arg=arg, var_name=var_name)
+        set_line = "{arg} = argp->{var_name};".format(arg=arg, var_name=var_name)
         argp_set.append(set_line)
 
     return ";\n\t".join(argp_set)
@@ -151,6 +151,9 @@ def gen_lower_half(functions):
             name_lower = name.lower()
             ret_type = function['ret_type']
             ret_type_upper = ret_type.upper()
+            # If we have a pointer type, replace asterisk with 'P'
+            if ret_type_upper[-1] == "*":
+                ret_type_upper = ret_type_upper[:-1] + 'P'
             argp_set = get_argp_set(function['args'])
             arg_vars = get_arg_vars(function['args'])
             f.write(func_lh.format(name=name, name_lower=name_lower,

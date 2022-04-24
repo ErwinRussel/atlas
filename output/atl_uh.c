@@ -59,7 +59,7 @@ void init(){{
 }}
 
 // -- XOpenDisplay
-Display xopendisplay_uh(argp_XOpenDisplay argp)
+Display* xopendisplay_uh(argp_XOpenDisplay argp)
 {
     // Memcopy in Buffer
     int arg_size = sizeof(argp_XOpenDisplay)
@@ -85,12 +85,12 @@ Display xopendisplay_uh(argp_XOpenDisplay argp)
     }
 
     // assert if the datatype is correct
-    if(ShmPTR->data_type != DISPLAY){
+    if(ShmPTR->data_type != DISPLAYP){
         printf("Payload data type incorrect\n");
     }
     
     // assert if correct payload size
-    int ret_size = sizeof(Display);
+    int ret_size = sizeof(Display*);
 
     // assert if correct payload size
     if(ShmPTR->payload_size != ret_size){
@@ -98,7 +98,7 @@ Display xopendisplay_uh(argp_XOpenDisplay argp)
     }
 
     // memcopy into result
-    Display result;
+    Display* result;
     memcpy(&result, ShmPTR->buffer, ret_size));
 
     // Set status to LISTEN

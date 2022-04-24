@@ -122,4 +122,6 @@ def gen_upper_half(functions):
             name_lower = name.lower()
             ret_type = function['ret_type']
             ret_type_upper = ret_type.upper()
+            if ret_type_upper[-1] == "*":
+                ret_type_upper = ret_type_upper[:-1] + 'P'
             f.write(func_uh.format(name=name, name_upper=name_upper, name_lower=name_lower, ret_type=ret_type, ret_type_upper=ret_type_upper))

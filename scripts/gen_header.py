@@ -40,8 +40,8 @@ struct MsgBlock {
 struct_block = '''
 // -- {name}
 struct args_{name}{{
-    {args}
-}}
+    {args};
+}};
 
 typedef struct args_{name} args_{name};
 
@@ -60,6 +60,9 @@ def gen_shared_header(functions):
         for function in functions:
             data_types_l.append(function['name'].upper())
             ret_type = function['ret_type'].upper()
+            # If we have a pointer type, replace asterisk with 'P'
+            if ret_type[-1] == "*":
+                ret_type = ret_type[:-1] + "P"
             # Make sure we are not adding data types double
             if ret_type not in data_types_l:
                 data_types_l.append(ret_type)
@@ -71,7 +74,7 @@ def gen_shared_header(functions):
 
         # Add all the function structs
         for function in functions:
-            args_str = ",\n\t".join(function['args'])
+            args_str = ";\n\t".join(function['args'])
             f.write(struct_block.format(name=function['name'], args=args_str))
 
 

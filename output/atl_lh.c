@@ -31,21 +31,21 @@ void init(){
 }
 
 // -- XOpenDisplay
-Display *xopendisplay_lh(arg_XOpenDisplay *argp)
+Display* *xopendisplay_lh(args_XOpenDisplay *argp)
 {
     // Get function specific args
-    _Xconst char *display_name = argp.display_name
+    _Xconst char *display_name = argp->display_name;
 
     // Call actual function
-    Display result = XOpenDisplay(display_name)
+    Display* result = XOpenDisplay(display_name);
 
     // Memcopy in Buffer
-    int ret_size = sizeof(Display);
+    int ret_size = sizeof(Display*);
     memcpy(ShmPTR->buffer, &result, ret_size);
 
     // Set function specific headers
     ShmPTR->message_type = FUNC_RETURN;
-    ShmPTR->data_type = DISPLAY;
+    ShmPTR->data_type = DISPLAYP;
     ShmPTR->payload_size = ret_size;
 
     // Set status
@@ -54,21 +54,21 @@ Display *xopendisplay_lh(arg_XOpenDisplay *argp)
 
 
 // -- XCreateSimpleWindow
-Window *xcreatesimplewindow_lh(arg_XCreateSimpleWindow *argp)
+Window *xcreatesimplewindow_lh(args_XCreateSimpleWindow *argp)
 {
     // Get function specific args
-    Display *display = argp.display;
-	 Window parent = argp.parent;
-	 int x = argp.x;
-	 int y = argp.y;
-	 unsigned int width = argp.width;
-	 unsigned int height = argp.height;
-	 unsigned int border_width = argp.border_width;
-	 unsigned long border = argp.border;
-	 unsigned long background = argp.background
+    Display *display = argp->display;;
+	 Window parent = argp->parent;;
+	 int x = argp->x;;
+	 int y = argp->y;;
+	 unsigned int width = argp->width;;
+	 unsigned int height = argp->height;;
+	 unsigned int border_width = argp->border_width;;
+	 unsigned long border = argp->border;;
+	 unsigned long background = argp->background;
 
     // Call actual function
-    Window result = XCreateSimpleWindow(display, parent, x, y, width, height, border_width, border, background)
+    Window result = XCreateSimpleWindow(display, parent, x, y, width, height, border_width, border, background);
 
     // Memcopy in Buffer
     int ret_size = sizeof(Window);
@@ -85,14 +85,14 @@ Window *xcreatesimplewindow_lh(arg_XCreateSimpleWindow *argp)
 
 
 // -- XMapWindow
-int *xmapwindow_lh(arg_XMapWindow *argp)
+int *xmapwindow_lh(args_XMapWindow *argp)
 {
     // Get function specific args
-    Display *display = argp.display;
-	 Window w = argp.w
+    Display *display = argp->display;;
+	 Window w = argp->w;
 
     // Call actual function
-    int result = XMapWindow(display, w)
+    int result = XMapWindow(display, w);
 
     // Memcopy in Buffer
     int ret_size = sizeof(int);
@@ -109,15 +109,15 @@ int *xmapwindow_lh(arg_XMapWindow *argp)
 
 
 // -- XSelectInput
-int *xselectinput_lh(arg_XSelectInput *argp)
+int *xselectinput_lh(args_XSelectInput *argp)
 {
     // Get function specific args
-    Display *display = argp.display;
-	 Window w = argp.w;
-	 long event_mask = argp.event_mask
+    Display *display = argp->display;;
+	 Window w = argp->w;;
+	 long event_mask = argp->event_mask;
 
     // Call actual function
-    int result = XSelectInput(display, w, event_mask)
+    int result = XSelectInput(display, w, event_mask);
 
     // Memcopy in Buffer
     int ret_size = sizeof(int);
@@ -134,14 +134,14 @@ int *xselectinput_lh(arg_XSelectInput *argp)
 
 
 // -- XNextEvent
-int *xnextevent_lh(arg_XNextEvent *argp)
+int *xnextevent_lh(args_XNextEvent *argp)
 {
     // Get function specific args
-    Display *display = argp.display;
-	 XEvent *event_return = argp.event_return
+    Display *display = argp->display;;
+	 XEvent *event_return = argp->event_return;
 
     // Call actual function
-    int result = XNextEvent(display, event_return)
+    int result = XNextEvent(display, event_return);
 
     // Memcopy in Buffer
     int ret_size = sizeof(int);
@@ -158,13 +158,13 @@ int *xnextevent_lh(arg_XNextEvent *argp)
 
 
 // -- XDefaultRootWindow
-Window *xdefaultrootwindow_lh(arg_XDefaultRootWindow *argp)
+Window *xdefaultrootwindow_lh(args_XDefaultRootWindow *argp)
 {
     // Get function specific args
-    Display *display = argp.display
+    Display *display = argp->display;
 
     // Call actual function
-    Window result = XDefaultRootWindow(display)
+    Window result = XDefaultRootWindow(display);
 
     // Memcopy in Buffer
     int ret_size = sizeof(Window);
@@ -217,7 +217,7 @@ void service_listener() {
                 memcpy(&argp_xopendisplay, ShmPTR->buffer, sizeof(args_XOpenDisplay));
 
                 // Execute function call
-                xopendisplay_lh(argp_xopendisplay);
+                xopendisplay_lh(&argp_xopendisplay);
 
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
@@ -237,7 +237,7 @@ void service_listener() {
                 memcpy(&argp_xcreatesimplewindow, ShmPTR->buffer, sizeof(args_XCreateSimpleWindow));
 
                 // Execute function call
-                xcreatesimplewindow_lh(argp_xcreatesimplewindow);
+                xcreatesimplewindow_lh(&argp_xcreatesimplewindow);
 
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
@@ -257,7 +257,7 @@ void service_listener() {
                 memcpy(&argp_xmapwindow, ShmPTR->buffer, sizeof(args_XMapWindow));
 
                 // Execute function call
-                xmapwindow_lh(argp_xmapwindow);
+                xmapwindow_lh(&argp_xmapwindow);
 
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
@@ -277,7 +277,7 @@ void service_listener() {
                 memcpy(&argp_xselectinput, ShmPTR->buffer, sizeof(args_XSelectInput));
 
                 // Execute function call
-                xselectinput_lh(argp_xselectinput);
+                xselectinput_lh(&argp_xselectinput);
 
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
@@ -297,7 +297,7 @@ void service_listener() {
                 memcpy(&argp_xnextevent, ShmPTR->buffer, sizeof(args_XNextEvent));
 
                 // Execute function call
-                xnextevent_lh(argp_xnextevent);
+                xnextevent_lh(&argp_xnextevent);
 
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
@@ -317,7 +317,7 @@ void service_listener() {
                 memcpy(&argp_xdefaultrootwindow, ShmPTR->buffer, sizeof(args_XDefaultRootWindow));
 
                 // Execute function call
-                xdefaultrootwindow_lh(argp_xdefaultrootwindow);
+                xdefaultrootwindow_lh(&argp_xdefaultrootwindow);
 
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
