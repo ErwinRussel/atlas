@@ -1,0 +1,13 @@
+// Xlib functions
+#HEADER <X11/Xlib.h>
+extern Display *XOpenDisplay(_Xconst char *display_name)
+Window XCreateSimpleWindow(Display *display, Window parent, int x, int y, unsigned int width, unsigned int height, unsigned int border_width, unsigned long border, unsigned long background)
+int XMapWindow(Display *display, Window w)
+int XSelectInput(Display *display, Window w, long event_mask)
+// TODO: How to tag this as having a different return function while still hooking the original function.
+int XNextEvent(Display *display, XEvent *event_return) || XEvent
+Window XDefaultRootWindow(Display *display)
+
+// OpenGL functions
+
+// Glx functions
