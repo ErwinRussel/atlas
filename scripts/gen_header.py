@@ -5,6 +5,8 @@ h1 = '''#ifndef ATLAS_STUB_HEADER_H
 #endif //ATLAS_STUB_HEADER_H
 
 #include <X11/Xlib.h>
+#include <GL/gl.h>
+#include <GL/glx.h>
 
 // Dynamic mem buffer, buffer size in ints
 #define SHMEM_BUFF 1024
