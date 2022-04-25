@@ -4,6 +4,7 @@
 
 #endif //ATLAS_ATL_UH_H
 Display* xopendisplay_uh(args_XOpenDisplay argp);
+int xpending_uh(args_XPending argp);
 int xmapwindow_uh(args_XMapWindow argp);
 Colormap xcreatecolormap_uh(args_XCreateColormap argp);
 Window xcreatewindow_uh(args_XCreateWindow argp);
@@ -458,6 +459,10 @@ void glmultitexcoord4iarb_uh(args_glMultiTexCoord4iARB argp);
 void glmultitexcoord4ivarb_uh(args_glMultiTexCoord4ivARB argp);
 void glmultitexcoord4sarb_uh(args_glMultiTexCoord4sARB argp);
 void glmultitexcoord4svarb_uh(args_glMultiTexCoord4svARB argp);
+XVisualInfo* glxchoosevisual_uh(args_glXChooseVisual argp);
+int glxquerydrawable_uh(args_glXQueryDrawable argp);
+GLXContext glxcreatecontext_uh(args_glXCreateContext argp);
+GLXContext glxcreatecontext_uh(args_glXCreateContext argp);
 void glxdestroycontext_uh(args_glXDestroyContext argp);
 void glxswapbuffers_uh(args_glXSwapBuffers argp);
 void glxdestroyglxpixmap_uh(args_glXDestroyGLXPixmap argp);
@@ -469,6 +474,7 @@ GLXDrawable glxgetcurrentdrawable_uh();
 void glxwaitgl_uh();
 void glxwaitx_uh();
 void glxusexfont_uh(args_glXUseXFont argp);
+char* glxqueryextensionsstring_uh(args_glXQueryExtensionsString argp);
 Display* glxgetcurrentdisplay_uh();
 void glxdestroywindow_uh(args_glXDestroyWindow argp);
 void glxdestroypixmap_uh(args_glXDestroyPixmap argp);

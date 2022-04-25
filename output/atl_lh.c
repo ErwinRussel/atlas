@@ -53,6 +53,29 @@ Display* *xopendisplay_lh(args_XOpenDisplay *argp)
 }
 
 
+// -- XPending
+int *xpending_lh(args_XPending *argp)
+{
+    // Get function specific args
+    Display *display = argp->display;;
+
+    // Call actual function
+    int result = XPending(display);
+
+    // Memcopy in Buffer
+    int ret_size = sizeof(int);
+    memcpy(ShmPTR->buffer, &result, ret_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_RETURN;
+    ShmPTR->data_type = INT;
+    ShmPTR->payload_size = ret_size;
+
+    // Set status
+    ShmPTR->status = RESPONSE;
+}
+
+
 // -- XMapWindow
 int *xmapwindow_lh(args_XMapWindow *argp)
 {
@@ -10377,6 +10400,109 @@ void *glmultitexcoord4svarb_lh(args_glMultiTexCoord4svARB *argp)
 }
 
 
+// -- glXChooseVisual
+XVisualInfo* *glxchoosevisual_lh(args_glXChooseVisual *argp)
+{
+    // Get function specific args
+    Display *dpy = argp->dpy;;
+	 int screen = argp->screen;;
+	 int *attribList = argp->attribList;;
+
+    // Call actual function
+    XVisualInfo* result = glXChooseVisual(dpy, screen, attribList);
+
+    // Memcopy in Buffer
+    int ret_size = sizeof(XVisualInfo*);
+    memcpy(ShmPTR->buffer, &result, ret_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_RETURN;
+    ShmPTR->data_type = XVISUALINFOP;
+    ShmPTR->payload_size = ret_size;
+
+    // Set status
+    ShmPTR->status = RESPONSE;
+}
+
+
+// -- glXQueryDrawable
+int *glxquerydrawable_lh(args_glXQueryDrawable *argp)
+{
+    // Get function specific args
+    Display *dpy = argp->dpy;;
+	 GLXDrawable draw = argp->draw;;
+	 int attribute = argp->attribute;;
+	 unsigned int *value = argp->value;;
+
+    // Call actual function
+    int result = glXQueryDrawable(dpy, draw, attribute, value);
+
+    // Memcopy in Buffer
+    int ret_size = sizeof(int);
+    memcpy(ShmPTR->buffer, &result, ret_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_RETURN;
+    ShmPTR->data_type = INT;
+    ShmPTR->payload_size = ret_size;
+
+    // Set status
+    ShmPTR->status = RESPONSE;
+}
+
+
+// -- glXCreateContext
+GLXContext *glxcreatecontext_lh(args_glXCreateContext *argp)
+{
+    // Get function specific args
+    Display *dpy = argp->dpy;;
+	 XVisualInfo * vis = argp->vis;;
+	 GLXContext shareList = argp->shareList;;
+	 Bool direct = argp->direct;;
+
+    // Call actual function
+    GLXContext result = glXCreateContext(dpy, vis, shareList, direct);
+
+    // Memcopy in Buffer
+    int ret_size = sizeof(GLXContext);
+    memcpy(ShmPTR->buffer, &result, ret_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_RETURN;
+    ShmPTR->data_type = GLXCONTEXT;
+    ShmPTR->payload_size = ret_size;
+
+    // Set status
+    ShmPTR->status = RESPONSE;
+}
+
+
+// -- glXCreateContext
+GLXContext *glxcreatecontext_lh(args_glXCreateContext *argp)
+{
+    // Get function specific args
+    Display *dpy = argp->dpy;;
+	 XVisualInfo *vis = argp->vis;;
+	 GLXContext shareList = argp->shareList;;
+	 Bool direct = argp->direct;;
+
+    // Call actual function
+    GLXContext result = glXCreateContext(dpy, vis, shareList, direct);
+
+    // Memcopy in Buffer
+    int ret_size = sizeof(GLXContext);
+    memcpy(ShmPTR->buffer, &result, ret_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_RETURN;
+    ShmPTR->data_type = GLXCONTEXT;
+    ShmPTR->payload_size = ret_size;
+
+    // Set status
+    ShmPTR->status = RESPONSE;
+}
+
+
 // -- glXDestroyContext
 void *glxdestroycontext_lh(args_glXDestroyContext *argp)
 {
@@ -10625,6 +10751,30 @@ void *glxusexfont_lh(args_glXUseXFont *argp)
 }
 
 
+// -- glXQueryExtensionsString
+char* *glxqueryextensionsstring_lh(args_glXQueryExtensionsString *argp)
+{
+    // Get function specific args
+     Display *dpy = argp->dpy;;
+	 int screen  = argp->screen;;
+
+    // Call actual function
+    char* result = glXQueryExtensionsString(dpy, screen);
+
+    // Memcopy in Buffer
+    int ret_size = sizeof(char*);
+    memcpy(ShmPTR->buffer, &result, ret_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_RETURN;
+    ShmPTR->data_type = CHARP;
+    ShmPTR->payload_size = ret_size;
+
+    // Set status
+    ShmPTR->status = RESPONSE;
+}
+
+
 // -- glXGetCurrentDisplay
 Display* *glxgetcurrentdisplay_lh()
 {
@@ -10866,6 +11016,26 @@ void service_listener() {
 
                 // Execute function call
                 xopendisplay_lh(&argp_xopendisplay);
+
+                // Print
+                printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
+                break;
+
+            case XPENDING: ;
+                args_XPending argp_xpending;
+
+                // assert payload size
+                if(ShmPTR->payload_size != sizeof(args_XPending)){
+                    printf("Wrong payload size\n\n");
+                    ShmPTR->status = LISTEN;
+                    break;
+                }
+
+                // Memcopy from Buffer
+                memcpy(&argp_xpending, ShmPTR->buffer, sizeof(args_XPending));
+
+                // Execute function call
+                xpending_lh(&argp_xpending);
 
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
@@ -19918,6 +20088,86 @@ void service_listener() {
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
                 break;
 
+            case GLXCHOOSEVISUAL: ;
+                args_glXChooseVisual argp_glxchoosevisual;
+
+                // assert payload size
+                if(ShmPTR->payload_size != sizeof(args_glXChooseVisual)){
+                    printf("Wrong payload size\n\n");
+                    ShmPTR->status = LISTEN;
+                    break;
+                }
+
+                // Memcopy from Buffer
+                memcpy(&argp_glxchoosevisual, ShmPTR->buffer, sizeof(args_glXChooseVisual));
+
+                // Execute function call
+                glxchoosevisual_lh(&argp_glxchoosevisual);
+
+                // Print
+                printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
+                break;
+
+            case GLXQUERYDRAWABLE: ;
+                args_glXQueryDrawable argp_glxquerydrawable;
+
+                // assert payload size
+                if(ShmPTR->payload_size != sizeof(args_glXQueryDrawable)){
+                    printf("Wrong payload size\n\n");
+                    ShmPTR->status = LISTEN;
+                    break;
+                }
+
+                // Memcopy from Buffer
+                memcpy(&argp_glxquerydrawable, ShmPTR->buffer, sizeof(args_glXQueryDrawable));
+
+                // Execute function call
+                glxquerydrawable_lh(&argp_glxquerydrawable);
+
+                // Print
+                printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
+                break;
+
+            case GLXCREATECONTEXT: ;
+                args_glXCreateContext argp_glxcreatecontext;
+
+                // assert payload size
+                if(ShmPTR->payload_size != sizeof(args_glXCreateContext)){
+                    printf("Wrong payload size\n\n");
+                    ShmPTR->status = LISTEN;
+                    break;
+                }
+
+                // Memcopy from Buffer
+                memcpy(&argp_glxcreatecontext, ShmPTR->buffer, sizeof(args_glXCreateContext));
+
+                // Execute function call
+                glxcreatecontext_lh(&argp_glxcreatecontext);
+
+                // Print
+                printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
+                break;
+
+            case GLXCREATECONTEXT: ;
+                args_glXCreateContext argp_glxcreatecontext;
+
+                // assert payload size
+                if(ShmPTR->payload_size != sizeof(args_glXCreateContext)){
+                    printf("Wrong payload size\n\n");
+                    ShmPTR->status = LISTEN;
+                    break;
+                }
+
+                // Memcopy from Buffer
+                memcpy(&argp_glxcreatecontext, ShmPTR->buffer, sizeof(args_glXCreateContext));
+
+                // Execute function call
+                glxcreatecontext_lh(&argp_glxcreatecontext);
+
+                // Print
+                printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
+                break;
+
             case GLXDESTROYCONTEXT: ;
                 args_glXDestroyContext argp_glxdestroycontext;
 
@@ -20121,6 +20371,26 @@ void service_listener() {
 
                 // Execute function call
                 glxusexfont_lh(&argp_glxusexfont);
+
+                // Print
+                printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
+                break;
+
+            case GLXQUERYEXTENSIONSSTRING: ;
+                args_glXQueryExtensionsString argp_glxqueryextensionsstring;
+
+                // assert payload size
+                if(ShmPTR->payload_size != sizeof(args_glXQueryExtensionsString)){
+                    printf("Wrong payload size\n\n");
+                    ShmPTR->status = LISTEN;
+                    break;
+                }
+
+                // Memcopy from Buffer
+                memcpy(&argp_glxqueryextensionsstring, ShmPTR->buffer, sizeof(args_glXQueryExtensionsString));
+
+                // Execute function call
+                glxqueryextensionsstring_lh(&argp_glxqueryextensionsstring);
 
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);

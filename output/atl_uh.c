@@ -108,6 +108,56 @@ Display* xopendisplay_uh(args_XOpenDisplay argp)
     return result;
 }
 
+// -- XPending
+int xpending_uh(args_XPending argp)
+{
+    // Memcopy in Buffer
+    int arg_size = sizeof(args_XPending);
+    memcpy(ShmPTR->buffer, &argp, arg_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_CALL;
+    ShmPTR->data_type = XPENDING;
+    ShmPTR->payload_size = arg_size;
+
+    // Set status to REQUEST
+    ShmPTR->status = REQUEST;
+
+    // ------ Waiting for Server -----
+
+    // Wait for response
+    while (ShmPTR->status != RESPONSE)
+        ;
+
+    // assert if the message is a function return
+    if(ShmPTR->message_type != FUNC_RETURN){
+        printf("Message type is not a function return\n");
+    }
+
+    // assert if the datatype is correct
+    if(ShmPTR->data_type != INT){
+        printf("Payload data type incorrect\n");
+    }
+    
+    // assert if correct payload size
+    int ret_size = sizeof(int);
+
+    // assert if correct payload size
+    if(ShmPTR->payload_size != ret_size){
+        printf("Incorrect payload size\n");
+    }
+
+    // memcopy into result
+    int result;
+    memcpy(&result, ShmPTR->buffer, ret_size);
+
+    // Set status to LISTEN
+    ShmPTR->status = LISTEN;
+
+    // return
+    return result;
+}
+
 // -- XMapWindow
 int xmapwindow_uh(args_XMapWindow argp)
 {
@@ -21460,6 +21510,206 @@ void glmultitexcoord4svarb_uh(args_glMultiTexCoord4svARB argp)
     // Nothing to return
 }
 
+// -- glXChooseVisual
+XVisualInfo* glxchoosevisual_uh(args_glXChooseVisual argp)
+{
+    // Memcopy in Buffer
+    int arg_size = sizeof(args_glXChooseVisual);
+    memcpy(ShmPTR->buffer, &argp, arg_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_CALL;
+    ShmPTR->data_type = GLXCHOOSEVISUAL;
+    ShmPTR->payload_size = arg_size;
+
+    // Set status to REQUEST
+    ShmPTR->status = REQUEST;
+
+    // ------ Waiting for Server -----
+
+    // Wait for response
+    while (ShmPTR->status != RESPONSE)
+        ;
+
+    // assert if the message is a function return
+    if(ShmPTR->message_type != FUNC_RETURN){
+        printf("Message type is not a function return\n");
+    }
+
+    // assert if the datatype is correct
+    if(ShmPTR->data_type != XVISUALINFOP){
+        printf("Payload data type incorrect\n");
+    }
+    
+    // assert if correct payload size
+    int ret_size = sizeof(XVisualInfo*);
+
+    // assert if correct payload size
+    if(ShmPTR->payload_size != ret_size){
+        printf("Incorrect payload size\n");
+    }
+
+    // memcopy into result
+    XVisualInfo* result;
+    memcpy(&result, ShmPTR->buffer, ret_size);
+
+    // Set status to LISTEN
+    ShmPTR->status = LISTEN;
+
+    // return
+    return result;
+}
+
+// -- glXQueryDrawable
+int glxquerydrawable_uh(args_glXQueryDrawable argp)
+{
+    // Memcopy in Buffer
+    int arg_size = sizeof(args_glXQueryDrawable);
+    memcpy(ShmPTR->buffer, &argp, arg_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_CALL;
+    ShmPTR->data_type = GLXQUERYDRAWABLE;
+    ShmPTR->payload_size = arg_size;
+
+    // Set status to REQUEST
+    ShmPTR->status = REQUEST;
+
+    // ------ Waiting for Server -----
+
+    // Wait for response
+    while (ShmPTR->status != RESPONSE)
+        ;
+
+    // assert if the message is a function return
+    if(ShmPTR->message_type != FUNC_RETURN){
+        printf("Message type is not a function return\n");
+    }
+
+    // assert if the datatype is correct
+    if(ShmPTR->data_type != INT){
+        printf("Payload data type incorrect\n");
+    }
+    
+    // assert if correct payload size
+    int ret_size = sizeof(int);
+
+    // assert if correct payload size
+    if(ShmPTR->payload_size != ret_size){
+        printf("Incorrect payload size\n");
+    }
+
+    // memcopy into result
+    int result;
+    memcpy(&result, ShmPTR->buffer, ret_size);
+
+    // Set status to LISTEN
+    ShmPTR->status = LISTEN;
+
+    // return
+    return result;
+}
+
+// -- glXCreateContext
+GLXContext glxcreatecontext_uh(args_glXCreateContext argp)
+{
+    // Memcopy in Buffer
+    int arg_size = sizeof(args_glXCreateContext);
+    memcpy(ShmPTR->buffer, &argp, arg_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_CALL;
+    ShmPTR->data_type = GLXCREATECONTEXT;
+    ShmPTR->payload_size = arg_size;
+
+    // Set status to REQUEST
+    ShmPTR->status = REQUEST;
+
+    // ------ Waiting for Server -----
+
+    // Wait for response
+    while (ShmPTR->status != RESPONSE)
+        ;
+
+    // assert if the message is a function return
+    if(ShmPTR->message_type != FUNC_RETURN){
+        printf("Message type is not a function return\n");
+    }
+
+    // assert if the datatype is correct
+    if(ShmPTR->data_type != GLXCONTEXT){
+        printf("Payload data type incorrect\n");
+    }
+    
+    // assert if correct payload size
+    int ret_size = sizeof(GLXContext);
+
+    // assert if correct payload size
+    if(ShmPTR->payload_size != ret_size){
+        printf("Incorrect payload size\n");
+    }
+
+    // memcopy into result
+    GLXContext result;
+    memcpy(&result, ShmPTR->buffer, ret_size);
+
+    // Set status to LISTEN
+    ShmPTR->status = LISTEN;
+
+    // return
+    return result;
+}
+
+// -- glXCreateContext
+GLXContext glxcreatecontext_uh(args_glXCreateContext argp)
+{
+    // Memcopy in Buffer
+    int arg_size = sizeof(args_glXCreateContext);
+    memcpy(ShmPTR->buffer, &argp, arg_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_CALL;
+    ShmPTR->data_type = GLXCREATECONTEXT;
+    ShmPTR->payload_size = arg_size;
+
+    // Set status to REQUEST
+    ShmPTR->status = REQUEST;
+
+    // ------ Waiting for Server -----
+
+    // Wait for response
+    while (ShmPTR->status != RESPONSE)
+        ;
+
+    // assert if the message is a function return
+    if(ShmPTR->message_type != FUNC_RETURN){
+        printf("Message type is not a function return\n");
+    }
+
+    // assert if the datatype is correct
+    if(ShmPTR->data_type != GLXCONTEXT){
+        printf("Payload data type incorrect\n");
+    }
+    
+    // assert if correct payload size
+    int ret_size = sizeof(GLXContext);
+
+    // assert if correct payload size
+    if(ShmPTR->payload_size != ret_size){
+        printf("Incorrect payload size\n");
+    }
+
+    // memcopy into result
+    GLXContext result;
+    memcpy(&result, ShmPTR->buffer, ret_size);
+
+    // Set status to LISTEN
+    ShmPTR->status = LISTEN;
+
+    // return
+    return result;
+}
+
 // -- glXDestroyContext
 void glxdestroycontext_uh(args_glXDestroyContext argp)
 {
@@ -21982,6 +22232,56 @@ void glxusexfont_uh(args_glXUseXFont argp)
     ShmPTR->status = LISTEN;
 
     // Nothing to return
+}
+
+// -- glXQueryExtensionsString
+char* glxqueryextensionsstring_uh(args_glXQueryExtensionsString argp)
+{
+    // Memcopy in Buffer
+    int arg_size = sizeof(args_glXQueryExtensionsString);
+    memcpy(ShmPTR->buffer, &argp, arg_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_CALL;
+    ShmPTR->data_type = GLXQUERYEXTENSIONSSTRING;
+    ShmPTR->payload_size = arg_size;
+
+    // Set status to REQUEST
+    ShmPTR->status = REQUEST;
+
+    // ------ Waiting for Server -----
+
+    // Wait for response
+    while (ShmPTR->status != RESPONSE)
+        ;
+
+    // assert if the message is a function return
+    if(ShmPTR->message_type != FUNC_RETURN){
+        printf("Message type is not a function return\n");
+    }
+
+    // assert if the datatype is correct
+    if(ShmPTR->data_type != CHARP){
+        printf("Payload data type incorrect\n");
+    }
+    
+    // assert if correct payload size
+    int ret_size = sizeof(char*);
+
+    // assert if correct payload size
+    if(ShmPTR->payload_size != ret_size){
+        printf("Incorrect payload size\n");
+    }
+
+    // memcopy into result
+    char* result;
+    memcpy(&result, ShmPTR->buffer, ret_size);
+
+    // Set status to LISTEN
+    ShmPTR->status = LISTEN;
+
+    // return
+    return result;
 }
 
 // -- glXGetCurrentDisplay

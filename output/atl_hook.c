@@ -12,6 +12,17 @@ extern Display *XOpenDisplay(_Xconst char *display_name)
     return xopendisplay_uh(argp);
 }
 
+// -- XPending
+int XPending(Display *display)
+{
+    args_XPending argp;
+    
+    // Set function specific args
+    argp.display = display;
+    
+    return xpending_uh(argp);
+}
+
 // -- XMapWindow
 int XMapWindow(Display *display, Window w)
 {
@@ -5728,6 +5739,61 @@ void glMultiTexCoord4svARB(GLenum target, const GLshort *v)
     glmultitexcoord4svarb_uh(argp);
 }
 
+// -- glXChooseVisual
+XVisualInfo* glXChooseVisual(Display *dpy, int screen, int *attribList)
+{
+    args_glXChooseVisual argp;
+    
+    // Set function specific args
+    argp.dpy = dpy;
+	argp.screen = screen;
+	argp.attribList = attribList;
+    
+    return glxchoosevisual_uh(argp);
+}
+
+// -- glXQueryDrawable
+int glXQueryDrawable(Display *dpy, GLXDrawable draw, int attribute, unsigned int *value)
+{
+    args_glXQueryDrawable argp;
+    
+    // Set function specific args
+    argp.dpy = dpy;
+	argp.draw = draw;
+	argp.attribute = attribute;
+	argp.value = value;
+    
+    return glxquerydrawable_uh(argp);
+}
+
+// -- glXCreateContext
+GLXContext glXCreateContext(Display *dpy, XVisualInfo * vis, GLXContext shareList, Bool direct)
+{
+    args_glXCreateContext argp;
+    
+    // Set function specific args
+    argp.dpy = dpy;
+	argp.vis = vis;
+	argp.shareList = shareList;
+	argp.direct = direct;
+    
+    return glxcreatecontext_uh(argp);
+}
+
+// -- glXCreateContext
+GLXContext glXCreateContext(Display *dpy, XVisualInfo *vis, GLXContext shareList, Bool direct)
+{
+    args_glXCreateContext argp;
+    
+    // Set function specific args
+    argp.dpy = dpy;
+	argp.vis = vis;
+	argp.shareList = shareList;
+	argp.direct = direct;
+    
+    return glxcreatecontext_uh(argp);
+}
+
 // -- glXDestroyContext
 void glXDestroyContext( Display *dpy, GLXContext ctx )
 {
@@ -5838,6 +5904,18 @@ void glXUseXFont( Font font, int first, int count, int list )
 	argp.list = list;
 
     glxusexfont_uh(argp);
+}
+
+// -- glXQueryExtensionsString
+const char *glXQueryExtensionsString( Display *dpy, int screen )
+{
+    args_glXQueryExtensionsString argp;
+    
+    // Set function specific args
+    argp.dpy = dpy;
+	argp.screen = screen;
+    
+    return glxqueryextensionsstring_uh(argp);
 }
 
 // -- glXGetCurrentDisplay

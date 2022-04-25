@@ -23,8 +23,9 @@ typedef enum {
 typedef enum {
     XOPENDISPLAY,
 	DISPLAYP,
-	XMAPWINDOW,
+	XPENDING,
 	INT,
+	XMAPWINDOW,
 	XCREATECOLORMAP,
 	COLORMAP,
 	XCREATEWINDOW,
@@ -484,6 +485,12 @@ typedef enum {
 	GLMULTITEXCOORD4IVARB,
 	GLMULTITEXCOORD4SARB,
 	GLMULTITEXCOORD4SVARB,
+	GLXCHOOSEVISUAL,
+	XVISUALINFOP,
+	GLXQUERYDRAWABLE,
+	GLXCREATECONTEXT,
+	GLXCONTEXT,
+	GLXCREATECONTEXT,
 	GLXDESTROYCONTEXT,
 	GLXSWAPBUFFERS,
 	GLXDESTROYGLXPIXMAP,
@@ -492,12 +499,13 @@ typedef enum {
 	GLXQUERYVERSION,
 	GLXISDIRECT,
 	GLXGETCURRENTCONTEXT,
-	GLXCONTEXT,
 	GLXGETCURRENTDRAWABLE,
 	GLXDRAWABLE,
 	GLXWAITGL,
 	GLXWAITX,
 	GLXUSEXFONT,
+	GLXQUERYEXTENSIONSSTRING,
+	CHARP,
 	GLXGETCURRENTDISPLAY,
 	GLXDESTROYWINDOW,
 	GLXDESTROYPIXMAP,
@@ -529,6 +537,14 @@ struct args_XOpenDisplay{
 };
 
 typedef struct args_XOpenDisplay args_XOpenDisplay;
+
+
+// -- XPending
+struct args_XPending{
+    Display *display;
+};
+
+typedef struct args_XPending args_XPending;
 
 
 // -- XMapWindow
@@ -4852,6 +4868,49 @@ struct args_glMultiTexCoord4svARB{
 typedef struct args_glMultiTexCoord4svARB args_glMultiTexCoord4svARB;
 
 
+// -- glXChooseVisual
+struct args_glXChooseVisual{
+    Display *dpy;
+	 int screen;
+	 int *attribList;
+};
+
+typedef struct args_glXChooseVisual args_glXChooseVisual;
+
+
+// -- glXQueryDrawable
+struct args_glXQueryDrawable{
+    Display *dpy;
+	 GLXDrawable draw;
+	 int attribute;
+	 unsigned int *value;
+};
+
+typedef struct args_glXQueryDrawable args_glXQueryDrawable;
+
+
+// -- glXCreateContext
+struct args_glXCreateContext{
+    Display *dpy;
+	 XVisualInfo * vis;
+	 GLXContext shareList;
+	 Bool direct;
+};
+
+typedef struct args_glXCreateContext args_glXCreateContext;
+
+
+// -- glXCreateContext
+struct args_glXCreateContext{
+    Display *dpy;
+	 XVisualInfo *vis;
+	 GLXContext shareList;
+	 Bool direct;
+};
+
+typedef struct args_glXCreateContext args_glXCreateContext;
+
+
 // -- glXDestroyContext
 struct args_glXDestroyContext{
      Display *dpy;
@@ -4917,6 +4976,15 @@ struct args_glXUseXFont{
 };
 
 typedef struct args_glXUseXFont args_glXUseXFont;
+
+
+// -- glXQueryExtensionsString
+struct args_glXQueryExtensionsString{
+     Display *dpy;
+	 int screen ;
+};
+
+typedef struct args_glXQueryExtensionsString args_glXQueryExtensionsString;
 
 
 // -- glXDestroyWindow
