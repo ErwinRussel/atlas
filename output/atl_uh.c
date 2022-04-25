@@ -309,7 +309,7 @@ int xfree_uh(args_XFree argp)
 }
 
 // -- XSetNormalHints
-void xsetnormalhints_uh(args_XSetNormalHints argp)
+int xsetnormalhints_uh(args_XSetNormalHints argp)
 {
     // Memcopy in Buffer
     int arg_size = sizeof(args_XSetNormalHints);
@@ -335,28 +335,31 @@ void xsetnormalhints_uh(args_XSetNormalHints argp)
     }
 
     // assert if the datatype is correct
-    if(ShmPTR->data_type != VOID){
+    if(ShmPTR->data_type != INT){
         printf("Payload data type incorrect\n");
     }
     
     // assert if correct payload size
-    int ret_size = 0;
+    int ret_size = sizeof(int);
 
     // assert if correct payload size
     if(ShmPTR->payload_size != ret_size){
         printf("Incorrect payload size\n");
     }
 
-    // Nothing to memcopy for void
+    // memcopy into result
+    int result;
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
 
-    // Nothing to return
+    // return
+    return result;
 }
 
 // -- XSetStandardProperties
-void xsetstandardproperties_uh(args_XSetStandardProperties argp)
+int xsetstandardproperties_uh(args_XSetStandardProperties argp)
 {
     // Memcopy in Buffer
     int arg_size = sizeof(args_XSetStandardProperties);
@@ -382,24 +385,27 @@ void xsetstandardproperties_uh(args_XSetStandardProperties argp)
     }
 
     // assert if the datatype is correct
-    if(ShmPTR->data_type != VOID){
+    if(ShmPTR->data_type != INT){
         printf("Payload data type incorrect\n");
     }
     
     // assert if correct payload size
-    int ret_size = 0;
+    int ret_size = sizeof(int);
 
     // assert if correct payload size
     if(ShmPTR->payload_size != ret_size){
         printf("Incorrect payload size\n");
     }
 
-    // Nothing to memcopy for void
+    // memcopy into result
+    int result;
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
 
-    // Nothing to return
+    // return
+    return result;
 }
 
 // -- glClearIndex

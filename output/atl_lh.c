@@ -161,7 +161,7 @@ int *xfree_lh(args_XFree *argp)
 
 
 // -- XSetNormalHints
-void *xsetnormalhints_lh(args_XSetNormalHints *argp)
+int *xsetnormalhints_lh(args_XSetNormalHints *argp)
 {
     // Get function specific args
     Display *display = argp->display;;
@@ -169,14 +169,16 @@ void *xsetnormalhints_lh(args_XSetNormalHints *argp)
 	 XSizeHints *hints = argp->hints;;
 
     // Call actual function
-    XSetNormalHints(display, w, hints);
+    int result = XSetNormalHints(display, w, hints);
 
-    // Nothing to memcopy in Buffer
+    // Memcopy in Buffer
+    int ret_size = sizeof(int);
+    memcpy(ShmPTR->buffer, &result, ret_size);
 
     // Set function specific headers
     ShmPTR->message_type = FUNC_RETURN;
-    ShmPTR->data_type = VOID;
-    ShmPTR->payload_size = 0;
+    ShmPTR->data_type = INT;
+    ShmPTR->payload_size = ret_size;
 
     // Set status
     ShmPTR->status = RESPONSE;
@@ -184,7 +186,7 @@ void *xsetnormalhints_lh(args_XSetNormalHints *argp)
 
 
 // -- XSetStandardProperties
-void *xsetstandardproperties_lh(args_XSetStandardProperties *argp)
+int *xsetstandardproperties_lh(args_XSetStandardProperties *argp)
 {
     // Get function specific args
     Display *display = argp->display;;
@@ -197,14 +199,16 @@ void *xsetstandardproperties_lh(args_XSetStandardProperties *argp)
 	 XSizeHints *hints = argp->hints;;
 
     // Call actual function
-    XSetStandardProperties(display, w, window_name, icon_name, icon_pixmap, *argv, argc, hints);
+    int result = XSetStandardProperties(display, w, window_name, icon_name, icon_pixmap, *argv, argc, hints);
 
-    // Nothing to memcopy in Buffer
+    // Memcopy in Buffer
+    int ret_size = sizeof(int);
+    memcpy(ShmPTR->buffer, &result, ret_size);
 
     // Set function specific headers
     ShmPTR->message_type = FUNC_RETURN;
-    ShmPTR->data_type = VOID;
-    ShmPTR->payload_size = 0;
+    ShmPTR->data_type = INT;
+    ShmPTR->payload_size = ret_size;
 
     // Set status
     ShmPTR->status = RESPONSE;

@@ -25,7 +25,7 @@ int XMapWindow(Display *display, Window w)
 }
 
 // -- XCreateColormap
-extern Colormap XCreateColormap(Display* display, Window w, Visual*	visual, int	alloc );
+extern Colormap XCreateColormap(Display* display, Window w, Visual*	visual, int	alloc )
 {
     args_XCreateColormap argp;
     
@@ -72,23 +72,23 @@ extern int XFree(void* data)
 }
 
 // -- XSetNormalHints
-void XSetNormalHints(Display *display, Window w, XSizeHints *hints)
+extern int XSetNormalHints(Display *display, Window w, XSizeHints *hints)
 {
     args_XSetNormalHints argp;
-
+    
     // Set function specific args
     argp.display = display;
 	argp.w = w;
 	argp.hints = hints;
-
-    xsetnormalhints_uh(argp);
+    
+    return xsetnormalhints_uh(argp);
 }
 
 // -- XSetStandardProperties
-void XSetStandardProperties(Display *display, Window w, char *window_name, char *icon_name, Pixmap icon_pixmap, char **argv, int argc, XSizeHints *hints)
+extern int XSetStandardProperties(Display *display, Window w, char *window_name, char *icon_name, Pixmap icon_pixmap, char **argv, int argc, XSizeHints *hints)
 {
     args_XSetStandardProperties argp;
-
+    
     // Set function specific args
     argp.display = display;
 	argp.w = w;
@@ -98,8 +98,8 @@ void XSetStandardProperties(Display *display, Window w, char *window_name, char 
 	argp.*argv = *argv;
 	argp.argc = argc;
 	argp.hints = hints;
-
-    xsetstandardproperties_uh(argp);
+    
+    return xsetstandardproperties_uh(argp);
 }
 
 // -- glClearIndex
