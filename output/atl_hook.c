@@ -85,7 +85,7 @@ extern int XSetNormalHints(Display *display, Window w, XSizeHints *hints)
 }
 
 // -- XSetStandardProperties
-extern int XSetStandardProperties(Display *display, Window w, char *window_name, char *icon_name, Pixmap icon_pixmap, char **argv, int argc, XSizeHints *hints)
+extern int XSetStandardProperties(Display *display, Window w, _Xconst char* *window_name, _Xconst char* *icon_name, Pixmap icon_pixmap, char **argv, int argc, XSizeHints *hints)
 {
     args_XSetStandardProperties argp;
     
