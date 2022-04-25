@@ -8,13 +8,13 @@ hook_func = '''
     // Set function specific args
     {argp_set}
     
-    return {name_lower}_uh(&argp)
+    return {name_lower}_uh(&argp);
 }}
 '''
 hook_func_ni = '''
 // -- {name}
 {hook}{{
-    return {name_lower}_uh()
+    return {name_lower}_uh();
 }}
 '''
 hook_func_void = '''
@@ -25,13 +25,13 @@ hook_func_void = '''
     // Set function specific args
     {argp_set}
 
-    {name_lower}_uh(&argp)
+    {name_lower}_uh(&argp);
 }}
 '''
 hook_func_ni_void = '''
 // -- {name}
 {hook}{{
-    {name_lower}_uh()
+    {name_lower}_uh();
 }}
 '''
 

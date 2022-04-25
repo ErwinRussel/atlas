@@ -100,7 +100,7 @@ func_uh = '''
 
     // memcopy into result
     {ret_type} result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -149,7 +149,7 @@ func_uh_ni = '''
 
     // memcopy into result
     {ret_type} result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
