@@ -6,7 +6,7 @@ extern Colormap XCreateColormap(Display* display, Window w, Visual*	visual, int	
 extern Window XCreateWindow(Display* display, Window parent, int x, int y, unsigned int width, unsigned int height, unsigned int border_width, int	depth, unsigned int class, Visual* visual, unsigned long valuemask, XSetWindowAttributes* attributes)
 extern int XFree(void* data)
 extern int XSetNormalHints(Display *display, Window w, XSizeHints *hints)
-extern int XSetStandardProperties(Display *display, Window w, _Xconst char* *window_name, _Xconst char* *icon_name, Pixmap icon_pixmap, char **argv, int argc, XSizeHints *hints)
+extern int XSetStandardProperties(Display *display, Window w, _Xconst char *window_name, _Xconst char *icon_name, Pixmap icon_pixmap, char **argv, int argc, XSizeHints *hints)
 // OpenGL functions
 #HEADER <GL/gl.h>
 void glClearIndex( GLfloat c )

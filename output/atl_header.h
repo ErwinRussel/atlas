@@ -606,8 +606,8 @@ typedef struct args_XSetNormalHints args_XSetNormalHints;
 struct args_XSetStandardProperties{
     Display *display;
 	 Window w;
-	 _Xconst char* *window_name;
-	 _Xconst char* *icon_name;
+	 _Xconst char *window_name;
+	 _Xconst char *icon_name;
 	 Pixmap icon_pixmap;
 	 char **argv;
 	 int argc;

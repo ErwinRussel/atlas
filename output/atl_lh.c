@@ -191,8 +191,8 @@ int *xsetstandardproperties_lh(args_XSetStandardProperties *argp)
     // Get function specific args
     Display *display = argp->display;;
 	 Window w = argp->w;;
-	 _Xconst char* *window_name = argp->window_name;;
-	 _Xconst char* *icon_name = argp->icon_name;;
+	 _Xconst char *window_name = argp->window_name;;
+	 _Xconst char *icon_name = argp->icon_name;;
 	 Pixmap icon_pixmap = argp->icon_pixmap;;
 	 char **argv = argp->*argv;;
 	 int argc = argp->argc;;
