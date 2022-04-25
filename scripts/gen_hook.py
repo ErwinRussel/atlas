@@ -1,4 +1,5 @@
 h1 = '''#include "atl_header.h"
+#include "atl_uh.h"
 '''
 hook_func = '''
 // -- {name}
@@ -8,7 +9,7 @@ hook_func = '''
     // Set function specific args
     {argp_set};
     
-    return {name_lower}_uh(&argp);
+    return {name_lower}_uh(argp);
 }}
 '''
 hook_func_ni = '''
@@ -25,7 +26,7 @@ hook_func_void = '''
     // Set function specific args
     {argp_set};
 
-    {name_lower}_uh(&argp);
+    {name_lower}_uh(argp);
 }}
 '''
 hook_func_ni_void = '''
