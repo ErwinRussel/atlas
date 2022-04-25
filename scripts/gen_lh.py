@@ -36,7 +36,7 @@ func_lh = '''
 {ret_type} *{name_lower}_lh(args_{name} *argp)
 {{
     // Get function specific args
-    {argp_set}
+    {argp_set};
 
     // Call actual function
     {ret_type} result = {name}({arg_vars});
@@ -83,7 +83,7 @@ func_lh_void = '''
 void *{name_lower}_lh(args_{name} *argp)
 {{
     // Get function specific args
-    {argp_set}
+    {argp_set};
 
     // Call actual function
     {name}({arg_vars});

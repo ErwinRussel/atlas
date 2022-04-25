@@ -6,7 +6,7 @@ hook_func = '''
     args_{name} argp;
     
     // Set function specific args
-    {argp_set}
+    {argp_set};
     
     return {name_lower}_uh(&argp);
 }}
@@ -23,7 +23,7 @@ hook_func_void = '''
     args_{name} argp;
 
     // Set function specific args
-    {argp_set}
+    {argp_set};
 
     {name_lower}_uh(&argp);
 }}

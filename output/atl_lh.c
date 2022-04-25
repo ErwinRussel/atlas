@@ -34,7 +34,7 @@ void init(){
 Display* *xopendisplay_lh(args_XOpenDisplay *argp)
 {
     // Get function specific args
-    _Xconst char *display_name = argp->display_name;
+    _Xconst char *display_name = argp->display_name;;
 
     // Call actual function
     Display* result = XOpenDisplay(display_name);
@@ -58,7 +58,7 @@ int *xmapwindow_lh(args_XMapWindow *argp)
 {
     // Get function specific args
     Display *display = argp->display;;
-	 Window w = argp->w;
+	 Window w = argp->w;;
 
     // Call actual function
     int result = XMapWindow(display, w);
@@ -81,7 +81,7 @@ int *xmapwindow_lh(args_XMapWindow *argp)
 void *glclearindex_lh(args_glClearIndex *argp)
 {
     // Get function specific args
-     GLfloat c  = argp->c;
+     GLfloat c  = argp->c;;
 
     // Call actual function
     glClearIndex(c);
@@ -105,7 +105,7 @@ void *glclearcolor_lh(args_glClearColor *argp)
      GLclampf red = argp->red;;
 	 GLclampf green = argp->green;;
 	 GLclampf blue = argp->blue;;
-	 GLclampf alpha  = argp->alpha;
+	 GLclampf alpha  = argp->alpha;;
 
     // Call actual function
     glClearColor(red, green, blue, alpha);
@@ -126,7 +126,7 @@ void *glclearcolor_lh(args_glClearColor *argp)
 void *glclear_lh(args_glClear *argp)
 {
     // Get function specific args
-     GLbitfield mask  = argp->mask;
+     GLbitfield mask  = argp->mask;;
 
     // Call actual function
     glClear(mask);
@@ -147,7 +147,7 @@ void *glclear_lh(args_glClear *argp)
 void *glindexmask_lh(args_glIndexMask *argp)
 {
     // Get function specific args
-     GLuint mask  = argp->mask;
+     GLuint mask  = argp->mask;;
 
     // Call actual function
     glIndexMask(mask);
@@ -171,7 +171,7 @@ void *glcolormask_lh(args_glColorMask *argp)
      GLboolean red = argp->red;;
 	 GLboolean green = argp->green;;
 	 GLboolean blue = argp->blue;;
-	 GLboolean alpha  = argp->alpha;
+	 GLboolean alpha  = argp->alpha;;
 
     // Call actual function
     glColorMask(red, green, blue, alpha);
@@ -193,7 +193,7 @@ void *glalphafunc_lh(args_glAlphaFunc *argp)
 {
     // Get function specific args
      GLenum func = argp->func;;
-	 GLclampf ref  = argp->ref;
+	 GLclampf ref  = argp->ref;;
 
     // Call actual function
     glAlphaFunc(func, ref);
@@ -215,7 +215,7 @@ void *glblendfunc_lh(args_glBlendFunc *argp)
 {
     // Get function specific args
      GLenum sfactor = argp->sfactor;;
-	 GLenum dfactor  = argp->dfactor;
+	 GLenum dfactor  = argp->dfactor;;
 
     // Call actual function
     glBlendFunc(sfactor, dfactor);
@@ -236,7 +236,7 @@ void *glblendfunc_lh(args_glBlendFunc *argp)
 void *gllogicop_lh(args_glLogicOp *argp)
 {
     // Get function specific args
-     GLenum opcode  = argp->opcode;
+     GLenum opcode  = argp->opcode;;
 
     // Call actual function
     glLogicOp(opcode);
@@ -257,7 +257,7 @@ void *gllogicop_lh(args_glLogicOp *argp)
 void *glcullface_lh(args_glCullFace *argp)
 {
     // Get function specific args
-     GLenum mode  = argp->mode;
+     GLenum mode  = argp->mode;;
 
     // Call actual function
     glCullFace(mode);
@@ -278,7 +278,7 @@ void *glcullface_lh(args_glCullFace *argp)
 void *glfrontface_lh(args_glFrontFace *argp)
 {
     // Get function specific args
-     GLenum mode  = argp->mode;
+     GLenum mode  = argp->mode;;
 
     // Call actual function
     glFrontFace(mode);
@@ -299,7 +299,7 @@ void *glfrontface_lh(args_glFrontFace *argp)
 void *glpointsize_lh(args_glPointSize *argp)
 {
     // Get function specific args
-     GLfloat size  = argp->size;
+     GLfloat size  = argp->size;;
 
     // Call actual function
     glPointSize(size);
@@ -320,7 +320,7 @@ void *glpointsize_lh(args_glPointSize *argp)
 void *gllinewidth_lh(args_glLineWidth *argp)
 {
     // Get function specific args
-     GLfloat width  = argp->width;
+     GLfloat width  = argp->width;;
 
     // Call actual function
     glLineWidth(width);
@@ -342,7 +342,7 @@ void *gllinestipple_lh(args_glLineStipple *argp)
 {
     // Get function specific args
      GLint factor = argp->factor;;
-	 GLushort pattern  = argp->pattern;
+	 GLushort pattern  = argp->pattern;;
 
     // Call actual function
     glLineStipple(factor, pattern);
@@ -364,7 +364,7 @@ void *glpolygonmode_lh(args_glPolygonMode *argp)
 {
     // Get function specific args
      GLenum face = argp->face;;
-	 GLenum mode  = argp->mode;
+	 GLenum mode  = argp->mode;;
 
     // Call actual function
     glPolygonMode(face, mode);
@@ -386,7 +386,7 @@ void *glpolygonoffset_lh(args_glPolygonOffset *argp)
 {
     // Get function specific args
      GLfloat factor = argp->factor;;
-	 GLfloat units  = argp->units;
+	 GLfloat units  = argp->units;;
 
     // Call actual function
     glPolygonOffset(factor, units);
@@ -407,7 +407,7 @@ void *glpolygonoffset_lh(args_glPolygonOffset *argp)
 void *glpolygonstipple_lh(args_glPolygonStipple *argp)
 {
     // Get function specific args
-     const GLubyte *mask  = argp->mask;
+     const GLubyte *mask  = argp->mask;;
 
     // Call actual function
     glPolygonStipple(mask);
@@ -428,7 +428,7 @@ void *glpolygonstipple_lh(args_glPolygonStipple *argp)
 void *glgetpolygonstipple_lh(args_glGetPolygonStipple *argp)
 {
     // Get function specific args
-     GLubyte *mask  = argp->mask;
+     GLubyte *mask  = argp->mask;;
 
     // Call actual function
     glGetPolygonStipple(mask);
@@ -449,7 +449,7 @@ void *glgetpolygonstipple_lh(args_glGetPolygonStipple *argp)
 void *gledgeflag_lh(args_glEdgeFlag *argp)
 {
     // Get function specific args
-     GLboolean flag  = argp->flag;
+     GLboolean flag  = argp->flag;;
 
     // Call actual function
     glEdgeFlag(flag);
@@ -470,7 +470,7 @@ void *gledgeflag_lh(args_glEdgeFlag *argp)
 void *gledgeflagv_lh(args_glEdgeFlagv *argp)
 {
     // Get function specific args
-     const GLboolean *flag  = argp->flag;
+     const GLboolean *flag  = argp->flag;;
 
     // Call actual function
     glEdgeFlagv(flag);
@@ -494,7 +494,7 @@ void *glscissor_lh(args_glScissor *argp)
      GLint x = argp->x;;
 	 GLint y = argp->y;;
 	 GLsizei width = argp->width;;
-	 GLsizei height = argp->height;
+	 GLsizei height = argp->height;;
 
     // Call actual function
     glScissor(x, y, width, height);
@@ -516,7 +516,7 @@ void *glclipplane_lh(args_glClipPlane *argp)
 {
     // Get function specific args
      GLenum plane = argp->plane;;
-	 const GLdouble *equation  = argp->equation;
+	 const GLdouble *equation  = argp->equation;;
 
     // Call actual function
     glClipPlane(plane, equation);
@@ -538,7 +538,7 @@ void *glgetclipplane_lh(args_glGetClipPlane *argp)
 {
     // Get function specific args
      GLenum plane = argp->plane;;
-	 GLdouble *equation  = argp->equation;
+	 GLdouble *equation  = argp->equation;;
 
     // Call actual function
     glGetClipPlane(plane, equation);
@@ -559,7 +559,7 @@ void *glgetclipplane_lh(args_glGetClipPlane *argp)
 void *gldrawbuffer_lh(args_glDrawBuffer *argp)
 {
     // Get function specific args
-     GLenum mode  = argp->mode;
+     GLenum mode  = argp->mode;;
 
     // Call actual function
     glDrawBuffer(mode);
@@ -580,7 +580,7 @@ void *gldrawbuffer_lh(args_glDrawBuffer *argp)
 void *glreadbuffer_lh(args_glReadBuffer *argp)
 {
     // Get function specific args
-     GLenum mode  = argp->mode;
+     GLenum mode  = argp->mode;;
 
     // Call actual function
     glReadBuffer(mode);
@@ -601,7 +601,7 @@ void *glreadbuffer_lh(args_glReadBuffer *argp)
 void *glenable_lh(args_glEnable *argp)
 {
     // Get function specific args
-     GLenum cap  = argp->cap;
+     GLenum cap  = argp->cap;;
 
     // Call actual function
     glEnable(cap);
@@ -622,7 +622,7 @@ void *glenable_lh(args_glEnable *argp)
 void *gldisable_lh(args_glDisable *argp)
 {
     // Get function specific args
-     GLenum cap  = argp->cap;
+     GLenum cap  = argp->cap;;
 
     // Call actual function
     glDisable(cap);
@@ -643,7 +643,7 @@ void *gldisable_lh(args_glDisable *argp)
 GLboolean *glisenabled_lh(args_glIsEnabled *argp)
 {
     // Get function specific args
-     GLenum cap  = argp->cap;
+     GLenum cap  = argp->cap;;
 
     // Call actual function
     GLboolean result = glIsEnabled(cap);
@@ -666,7 +666,7 @@ GLboolean *glisenabled_lh(args_glIsEnabled *argp)
 void *glenableclientstate_lh(args_glEnableClientState *argp)
 {
     // Get function specific args
-     GLenum cap  = argp->cap;
+     GLenum cap  = argp->cap;;
 
     // Call actual function
     glEnableClientState(cap);
@@ -687,7 +687,7 @@ void *glenableclientstate_lh(args_glEnableClientState *argp)
 void *gldisableclientstate_lh(args_glDisableClientState *argp)
 {
     // Get function specific args
-     GLenum cap  = argp->cap;
+     GLenum cap  = argp->cap;;
 
     // Call actual function
     glDisableClientState(cap);
@@ -709,7 +709,7 @@ void *glgetbooleanv_lh(args_glGetBooleanv *argp)
 {
     // Get function specific args
      GLenum pname = argp->pname;;
-	 GLboolean *params  = argp->params;
+	 GLboolean *params  = argp->params;;
 
     // Call actual function
     glGetBooleanv(pname, params);
@@ -731,7 +731,7 @@ void *glgetdoublev_lh(args_glGetDoublev *argp)
 {
     // Get function specific args
      GLenum pname = argp->pname;;
-	 GLdouble *params  = argp->params;
+	 GLdouble *params  = argp->params;;
 
     // Call actual function
     glGetDoublev(pname, params);
@@ -753,7 +753,7 @@ void *glgetfloatv_lh(args_glGetFloatv *argp)
 {
     // Get function specific args
      GLenum pname = argp->pname;;
-	 GLfloat *params  = argp->params;
+	 GLfloat *params  = argp->params;;
 
     // Call actual function
     glGetFloatv(pname, params);
@@ -775,7 +775,7 @@ void *glgetintegerv_lh(args_glGetIntegerv *argp)
 {
     // Get function specific args
      GLenum pname = argp->pname;;
-	 GLint *params  = argp->params;
+	 GLint *params  = argp->params;;
 
     // Call actual function
     glGetIntegerv(pname, params);
@@ -796,7 +796,7 @@ void *glgetintegerv_lh(args_glGetIntegerv *argp)
 void *glpushattrib_lh(args_glPushAttrib *argp)
 {
     // Get function specific args
-     GLbitfield mask  = argp->mask;
+     GLbitfield mask  = argp->mask;;
 
     // Call actual function
     glPushAttrib(mask);
@@ -837,7 +837,7 @@ void *glpopattrib_lh()
 void *glpushclientattrib_lh(args_glPushClientAttrib *argp)
 {
     // Get function specific args
-     GLbitfield mask  = argp->mask;
+     GLbitfield mask  = argp->mask;;
 
     // Call actual function
     glPushClientAttrib(mask);
@@ -878,7 +878,7 @@ void *glpopclientattrib_lh()
 GLint *glrendermode_lh(args_glRenderMode *argp)
 {
     // Get function specific args
-     GLenum mode  = argp->mode;
+     GLenum mode  = argp->mode;;
 
     // Call actual function
     GLint result = glRenderMode(mode);
@@ -942,7 +942,7 @@ void *glhint_lh(args_glHint *argp)
 {
     // Get function specific args
      GLenum target = argp->target;;
-	 GLenum mode  = argp->mode;
+	 GLenum mode  = argp->mode;;
 
     // Call actual function
     glHint(target, mode);
@@ -963,7 +963,7 @@ void *glhint_lh(args_glHint *argp)
 void *glcleardepth_lh(args_glClearDepth *argp)
 {
     // Get function specific args
-     GLclampd depth  = argp->depth;
+     GLclampd depth  = argp->depth;;
 
     // Call actual function
     glClearDepth(depth);
@@ -984,7 +984,7 @@ void *glcleardepth_lh(args_glClearDepth *argp)
 void *gldepthfunc_lh(args_glDepthFunc *argp)
 {
     // Get function specific args
-     GLenum func  = argp->func;
+     GLenum func  = argp->func;;
 
     // Call actual function
     glDepthFunc(func);
@@ -1005,7 +1005,7 @@ void *gldepthfunc_lh(args_glDepthFunc *argp)
 void *gldepthmask_lh(args_glDepthMask *argp)
 {
     // Get function specific args
-     GLboolean flag  = argp->flag;
+     GLboolean flag  = argp->flag;;
 
     // Call actual function
     glDepthMask(flag);
@@ -1027,7 +1027,7 @@ void *gldepthrange_lh(args_glDepthRange *argp)
 {
     // Get function specific args
      GLclampd near_val = argp->near_val;;
-	 GLclampd far_val  = argp->far_val;
+	 GLclampd far_val  = argp->far_val;;
 
     // Call actual function
     glDepthRange(near_val, far_val);
@@ -1051,7 +1051,7 @@ void *glclearaccum_lh(args_glClearAccum *argp)
      GLfloat red = argp->red;;
 	 GLfloat green = argp->green;;
 	 GLfloat blue = argp->blue;;
-	 GLfloat alpha  = argp->alpha;
+	 GLfloat alpha  = argp->alpha;;
 
     // Call actual function
     glClearAccum(red, green, blue, alpha);
@@ -1073,7 +1073,7 @@ void *glaccum_lh(args_glAccum *argp)
 {
     // Get function specific args
      GLenum op = argp->op;;
-	 GLfloat value  = argp->value;
+	 GLfloat value  = argp->value;;
 
     // Call actual function
     glAccum(op, value);
@@ -1094,7 +1094,7 @@ void *glaccum_lh(args_glAccum *argp)
 void *glmatrixmode_lh(args_glMatrixMode *argp)
 {
     // Get function specific args
-     GLenum mode  = argp->mode;
+     GLenum mode  = argp->mode;;
 
     // Call actual function
     glMatrixMode(mode);
@@ -1120,7 +1120,7 @@ void *glortho_lh(args_glOrtho *argp)
 	 GLdouble bottom = argp->bottom;;
 	 GLdouble top = argp->top;;
 	 GLdouble near_val = argp->near_val;;
-	 GLdouble far_val  = argp->far_val;
+	 GLdouble far_val  = argp->far_val;;
 
     // Call actual function
     glOrtho(left, right, bottom, top, near_val, far_val);
@@ -1146,7 +1146,7 @@ void *glfrustum_lh(args_glFrustum *argp)
 	 GLdouble bottom = argp->bottom;;
 	 GLdouble top = argp->top;;
 	 GLdouble near_val = argp->near_val;;
-	 GLdouble far_val  = argp->far_val;
+	 GLdouble far_val  = argp->far_val;;
 
     // Call actual function
     glFrustum(left, right, bottom, top, near_val, far_val);
@@ -1170,7 +1170,7 @@ void *glviewport_lh(args_glViewport *argp)
      GLint x = argp->x;;
 	 GLint y = argp->y;;
 	 GLsizei width = argp->width;;
-	 GLsizei height  = argp->height;
+	 GLsizei height  = argp->height;;
 
     // Call actual function
     glViewport(x, y, width, height);
@@ -1251,7 +1251,7 @@ void *glloadidentity_lh()
 void *glloadmatrixd_lh(args_glLoadMatrixd *argp)
 {
     // Get function specific args
-     const GLdouble *m  = argp->m;
+     const GLdouble *m  = argp->m;;
 
     // Call actual function
     glLoadMatrixd(m);
@@ -1272,7 +1272,7 @@ void *glloadmatrixd_lh(args_glLoadMatrixd *argp)
 void *glloadmatrixf_lh(args_glLoadMatrixf *argp)
 {
     // Get function specific args
-     const GLfloat *m  = argp->m;
+     const GLfloat *m  = argp->m;;
 
     // Call actual function
     glLoadMatrixf(m);
@@ -1293,7 +1293,7 @@ void *glloadmatrixf_lh(args_glLoadMatrixf *argp)
 void *glmultmatrixd_lh(args_glMultMatrixd *argp)
 {
     // Get function specific args
-     const GLdouble *m  = argp->m;
+     const GLdouble *m  = argp->m;;
 
     // Call actual function
     glMultMatrixd(m);
@@ -1314,7 +1314,7 @@ void *glmultmatrixd_lh(args_glMultMatrixd *argp)
 void *glmultmatrixf_lh(args_glMultMatrixf *argp)
 {
     // Get function specific args
-     const GLfloat *m  = argp->m;
+     const GLfloat *m  = argp->m;;
 
     // Call actual function
     glMultMatrixf(m);
@@ -1338,7 +1338,7 @@ void *glrotated_lh(args_glRotated *argp)
      GLdouble angle = argp->angle;;
 	 GLdouble x = argp->x;;
 	 GLdouble y = argp->y;;
-	 GLdouble z  = argp->z;
+	 GLdouble z  = argp->z;;
 
     // Call actual function
     glRotated(angle, x, y, z);
@@ -1362,7 +1362,7 @@ void *glrotatef_lh(args_glRotatef *argp)
      GLfloat angle = argp->angle;;
 	 GLfloat x = argp->x;;
 	 GLfloat y = argp->y;;
-	 GLfloat z  = argp->z;
+	 GLfloat z  = argp->z;;
 
     // Call actual function
     glRotatef(angle, x, y, z);
@@ -1385,7 +1385,7 @@ void *glscaled_lh(args_glScaled *argp)
     // Get function specific args
      GLdouble x = argp->x;;
 	 GLdouble y = argp->y;;
-	 GLdouble z  = argp->z;
+	 GLdouble z  = argp->z;;
 
     // Call actual function
     glScaled(x, y, z);
@@ -1408,7 +1408,7 @@ void *glscalef_lh(args_glScalef *argp)
     // Get function specific args
      GLfloat x = argp->x;;
 	 GLfloat y = argp->y;;
-	 GLfloat z  = argp->z;
+	 GLfloat z  = argp->z;;
 
     // Call actual function
     glScalef(x, y, z);
@@ -1431,7 +1431,7 @@ void *gltranslated_lh(args_glTranslated *argp)
     // Get function specific args
      GLdouble x = argp->x;;
 	 GLdouble y = argp->y;;
-	 GLdouble z  = argp->z;
+	 GLdouble z  = argp->z;;
 
     // Call actual function
     glTranslated(x, y, z);
@@ -1454,7 +1454,7 @@ void *gltranslatef_lh(args_glTranslatef *argp)
     // Get function specific args
      GLfloat x = argp->x;;
 	 GLfloat y = argp->y;;
-	 GLfloat z  = argp->z;
+	 GLfloat z  = argp->z;;
 
     // Call actual function
     glTranslatef(x, y, z);
@@ -1475,7 +1475,7 @@ void *gltranslatef_lh(args_glTranslatef *argp)
 GLboolean *glislist_lh(args_glIsList *argp)
 {
     // Get function specific args
-     GLuint list  = argp->list;
+     GLuint list  = argp->list;;
 
     // Call actual function
     GLboolean result = glIsList(list);
@@ -1499,7 +1499,7 @@ void *gldeletelists_lh(args_glDeleteLists *argp)
 {
     // Get function specific args
      GLuint list = argp->list;;
-	 GLsizei range  = argp->range;
+	 GLsizei range  = argp->range;;
 
     // Call actual function
     glDeleteLists(list, range);
@@ -1520,7 +1520,7 @@ void *gldeletelists_lh(args_glDeleteLists *argp)
 GLuint *glgenlists_lh(args_glGenLists *argp)
 {
     // Get function specific args
-     GLsizei range  = argp->range;
+     GLsizei range  = argp->range;;
 
     // Call actual function
     GLuint result = glGenLists(range);
@@ -1544,7 +1544,7 @@ void *glnewlist_lh(args_glNewList *argp)
 {
     // Get function specific args
      GLuint list = argp->list;;
-	 GLenum mode  = argp->mode;
+	 GLenum mode  = argp->mode;;
 
     // Call actual function
     glNewList(list, mode);
@@ -1585,7 +1585,7 @@ void *glendlist_lh()
 void *glcalllist_lh(args_glCallList *argp)
 {
     // Get function specific args
-     GLuint list  = argp->list;
+     GLuint list  = argp->list;;
 
     // Call actual function
     glCallList(list);
@@ -1608,7 +1608,7 @@ void *glcalllists_lh(args_glCallLists *argp)
     // Get function specific args
      GLsizei n = argp->n;;
 	 GLenum type = argp->type;;
-	 const GLvoid *lists  = argp->lists;
+	 const GLvoid *lists  = argp->lists;;
 
     // Call actual function
     glCallLists(n, type, lists);
@@ -1629,7 +1629,7 @@ void *glcalllists_lh(args_glCallLists *argp)
 void *gllistbase_lh(args_glListBase *argp)
 {
     // Get function specific args
-     GLuint base  = argp->base;
+     GLuint base  = argp->base;;
 
     // Call actual function
     glListBase(base);
@@ -1650,7 +1650,7 @@ void *gllistbase_lh(args_glListBase *argp)
 void *glbegin_lh(args_glBegin *argp)
 {
     // Get function specific args
-     GLenum mode  = argp->mode;
+     GLenum mode  = argp->mode;;
 
     // Call actual function
     glBegin(mode);
@@ -1692,7 +1692,7 @@ void *glvertex2d_lh(args_glVertex2d *argp)
 {
     // Get function specific args
      GLdouble x = argp->x;;
-	 GLdouble y  = argp->y;
+	 GLdouble y  = argp->y;;
 
     // Call actual function
     glVertex2d(x, y);
@@ -1714,7 +1714,7 @@ void *glvertex2f_lh(args_glVertex2f *argp)
 {
     // Get function specific args
      GLfloat x = argp->x;;
-	 GLfloat y  = argp->y;
+	 GLfloat y  = argp->y;;
 
     // Call actual function
     glVertex2f(x, y);
@@ -1736,7 +1736,7 @@ void *glvertex2i_lh(args_glVertex2i *argp)
 {
     // Get function specific args
      GLint x = argp->x;;
-	 GLint y  = argp->y;
+	 GLint y  = argp->y;;
 
     // Call actual function
     glVertex2i(x, y);
@@ -1758,7 +1758,7 @@ void *glvertex2s_lh(args_glVertex2s *argp)
 {
     // Get function specific args
      GLshort x = argp->x;;
-	 GLshort y  = argp->y;
+	 GLshort y  = argp->y;;
 
     // Call actual function
     glVertex2s(x, y);
@@ -1781,7 +1781,7 @@ void *glvertex3d_lh(args_glVertex3d *argp)
     // Get function specific args
      GLdouble x = argp->x;;
 	 GLdouble y = argp->y;;
-	 GLdouble z  = argp->z;
+	 GLdouble z  = argp->z;;
 
     // Call actual function
     glVertex3d(x, y, z);
@@ -1804,7 +1804,7 @@ void *glvertex3f_lh(args_glVertex3f *argp)
     // Get function specific args
      GLfloat x = argp->x;;
 	 GLfloat y = argp->y;;
-	 GLfloat z  = argp->z;
+	 GLfloat z  = argp->z;;
 
     // Call actual function
     glVertex3f(x, y, z);
@@ -1827,7 +1827,7 @@ void *glvertex3i_lh(args_glVertex3i *argp)
     // Get function specific args
      GLint x = argp->x;;
 	 GLint y = argp->y;;
-	 GLint z  = argp->z;
+	 GLint z  = argp->z;;
 
     // Call actual function
     glVertex3i(x, y, z);
@@ -1850,7 +1850,7 @@ void *glvertex3s_lh(args_glVertex3s *argp)
     // Get function specific args
      GLshort x = argp->x;;
 	 GLshort y = argp->y;;
-	 GLshort z  = argp->z;
+	 GLshort z  = argp->z;;
 
     // Call actual function
     glVertex3s(x, y, z);
@@ -1874,7 +1874,7 @@ void *glvertex4d_lh(args_glVertex4d *argp)
      GLdouble x = argp->x;;
 	 GLdouble y = argp->y;;
 	 GLdouble z = argp->z;;
-	 GLdouble w  = argp->w;
+	 GLdouble w  = argp->w;;
 
     // Call actual function
     glVertex4d(x, y, z, w);
@@ -1898,7 +1898,7 @@ void *glvertex4f_lh(args_glVertex4f *argp)
      GLfloat x = argp->x;;
 	 GLfloat y = argp->y;;
 	 GLfloat z = argp->z;;
-	 GLfloat w  = argp->w;
+	 GLfloat w  = argp->w;;
 
     // Call actual function
     glVertex4f(x, y, z, w);
@@ -1922,7 +1922,7 @@ void *glvertex4i_lh(args_glVertex4i *argp)
      GLint x = argp->x;;
 	 GLint y = argp->y;;
 	 GLint z = argp->z;;
-	 GLint w  = argp->w;
+	 GLint w  = argp->w;;
 
     // Call actual function
     glVertex4i(x, y, z, w);
@@ -1946,7 +1946,7 @@ void *glvertex4s_lh(args_glVertex4s *argp)
      GLshort x = argp->x;;
 	 GLshort y = argp->y;;
 	 GLshort z = argp->z;;
-	 GLshort w  = argp->w;
+	 GLshort w  = argp->w;;
 
     // Call actual function
     glVertex4s(x, y, z, w);
@@ -1967,7 +1967,7 @@ void *glvertex4s_lh(args_glVertex4s *argp)
 void *glvertex2dv_lh(args_glVertex2dv *argp)
 {
     // Get function specific args
-     const GLdouble *v  = argp->v;
+     const GLdouble *v  = argp->v;;
 
     // Call actual function
     glVertex2dv(v);
@@ -1988,7 +1988,7 @@ void *glvertex2dv_lh(args_glVertex2dv *argp)
 void *glvertex2fv_lh(args_glVertex2fv *argp)
 {
     // Get function specific args
-     const GLfloat *v  = argp->v;
+     const GLfloat *v  = argp->v;;
 
     // Call actual function
     glVertex2fv(v);
@@ -2009,7 +2009,7 @@ void *glvertex2fv_lh(args_glVertex2fv *argp)
 void *glvertex2iv_lh(args_glVertex2iv *argp)
 {
     // Get function specific args
-     const GLint *v  = argp->v;
+     const GLint *v  = argp->v;;
 
     // Call actual function
     glVertex2iv(v);
@@ -2030,7 +2030,7 @@ void *glvertex2iv_lh(args_glVertex2iv *argp)
 void *glvertex2sv_lh(args_glVertex2sv *argp)
 {
     // Get function specific args
-     const GLshort *v  = argp->v;
+     const GLshort *v  = argp->v;;
 
     // Call actual function
     glVertex2sv(v);
@@ -2051,7 +2051,7 @@ void *glvertex2sv_lh(args_glVertex2sv *argp)
 void *glvertex3dv_lh(args_glVertex3dv *argp)
 {
     // Get function specific args
-     const GLdouble *v  = argp->v;
+     const GLdouble *v  = argp->v;;
 
     // Call actual function
     glVertex3dv(v);
@@ -2072,7 +2072,7 @@ void *glvertex3dv_lh(args_glVertex3dv *argp)
 void *glvertex3fv_lh(args_glVertex3fv *argp)
 {
     // Get function specific args
-     const GLfloat *v  = argp->v;
+     const GLfloat *v  = argp->v;;
 
     // Call actual function
     glVertex3fv(v);
@@ -2093,7 +2093,7 @@ void *glvertex3fv_lh(args_glVertex3fv *argp)
 void *glvertex3iv_lh(args_glVertex3iv *argp)
 {
     // Get function specific args
-     const GLint *v  = argp->v;
+     const GLint *v  = argp->v;;
 
     // Call actual function
     glVertex3iv(v);
@@ -2114,7 +2114,7 @@ void *glvertex3iv_lh(args_glVertex3iv *argp)
 void *glvertex3sv_lh(args_glVertex3sv *argp)
 {
     // Get function specific args
-     const GLshort *v  = argp->v;
+     const GLshort *v  = argp->v;;
 
     // Call actual function
     glVertex3sv(v);
@@ -2135,7 +2135,7 @@ void *glvertex3sv_lh(args_glVertex3sv *argp)
 void *glvertex4dv_lh(args_glVertex4dv *argp)
 {
     // Get function specific args
-     const GLdouble *v  = argp->v;
+     const GLdouble *v  = argp->v;;
 
     // Call actual function
     glVertex4dv(v);
@@ -2156,7 +2156,7 @@ void *glvertex4dv_lh(args_glVertex4dv *argp)
 void *glvertex4fv_lh(args_glVertex4fv *argp)
 {
     // Get function specific args
-     const GLfloat *v  = argp->v;
+     const GLfloat *v  = argp->v;;
 
     // Call actual function
     glVertex4fv(v);
@@ -2177,7 +2177,7 @@ void *glvertex4fv_lh(args_glVertex4fv *argp)
 void *glvertex4iv_lh(args_glVertex4iv *argp)
 {
     // Get function specific args
-     const GLint *v  = argp->v;
+     const GLint *v  = argp->v;;
 
     // Call actual function
     glVertex4iv(v);
@@ -2198,7 +2198,7 @@ void *glvertex4iv_lh(args_glVertex4iv *argp)
 void *glvertex4sv_lh(args_glVertex4sv *argp)
 {
     // Get function specific args
-     const GLshort *v  = argp->v;
+     const GLshort *v  = argp->v;;
 
     // Call actual function
     glVertex4sv(v);
@@ -2221,7 +2221,7 @@ void *glnormal3b_lh(args_glNormal3b *argp)
     // Get function specific args
      GLbyte nx = argp->nx;;
 	 GLbyte ny = argp->ny;;
-	 GLbyte nz  = argp->nz;
+	 GLbyte nz  = argp->nz;;
 
     // Call actual function
     glNormal3b(nx, ny, nz);
@@ -2244,7 +2244,7 @@ void *glnormal3d_lh(args_glNormal3d *argp)
     // Get function specific args
      GLdouble nx = argp->nx;;
 	 GLdouble ny = argp->ny;;
-	 GLdouble nz  = argp->nz;
+	 GLdouble nz  = argp->nz;;
 
     // Call actual function
     glNormal3d(nx, ny, nz);
@@ -2267,7 +2267,7 @@ void *glnormal3f_lh(args_glNormal3f *argp)
     // Get function specific args
      GLfloat nx = argp->nx;;
 	 GLfloat ny = argp->ny;;
-	 GLfloat nz  = argp->nz;
+	 GLfloat nz  = argp->nz;;
 
     // Call actual function
     glNormal3f(nx, ny, nz);
@@ -2290,7 +2290,7 @@ void *glnormal3i_lh(args_glNormal3i *argp)
     // Get function specific args
      GLint nx = argp->nx;;
 	 GLint ny = argp->ny;;
-	 GLint nz  = argp->nz;
+	 GLint nz  = argp->nz;;
 
     // Call actual function
     glNormal3i(nx, ny, nz);
@@ -2313,7 +2313,7 @@ void *glnormal3s_lh(args_glNormal3s *argp)
     // Get function specific args
      GLshort nx = argp->nx;;
 	 GLshort ny = argp->ny;;
-	 GLshort nz  = argp->nz;
+	 GLshort nz  = argp->nz;;
 
     // Call actual function
     glNormal3s(nx, ny, nz);
@@ -2334,7 +2334,7 @@ void *glnormal3s_lh(args_glNormal3s *argp)
 void *glnormal3bv_lh(args_glNormal3bv *argp)
 {
     // Get function specific args
-     const GLbyte *v  = argp->v;
+     const GLbyte *v  = argp->v;;
 
     // Call actual function
     glNormal3bv(v);
@@ -2355,7 +2355,7 @@ void *glnormal3bv_lh(args_glNormal3bv *argp)
 void *glnormal3dv_lh(args_glNormal3dv *argp)
 {
     // Get function specific args
-     const GLdouble *v  = argp->v;
+     const GLdouble *v  = argp->v;;
 
     // Call actual function
     glNormal3dv(v);
@@ -2376,7 +2376,7 @@ void *glnormal3dv_lh(args_glNormal3dv *argp)
 void *glnormal3fv_lh(args_glNormal3fv *argp)
 {
     // Get function specific args
-     const GLfloat *v  = argp->v;
+     const GLfloat *v  = argp->v;;
 
     // Call actual function
     glNormal3fv(v);
@@ -2397,7 +2397,7 @@ void *glnormal3fv_lh(args_glNormal3fv *argp)
 void *glnormal3iv_lh(args_glNormal3iv *argp)
 {
     // Get function specific args
-     const GLint *v  = argp->v;
+     const GLint *v  = argp->v;;
 
     // Call actual function
     glNormal3iv(v);
@@ -2418,7 +2418,7 @@ void *glnormal3iv_lh(args_glNormal3iv *argp)
 void *glnormal3sv_lh(args_glNormal3sv *argp)
 {
     // Get function specific args
-     const GLshort *v  = argp->v;
+     const GLshort *v  = argp->v;;
 
     // Call actual function
     glNormal3sv(v);
@@ -2439,7 +2439,7 @@ void *glnormal3sv_lh(args_glNormal3sv *argp)
 void *glindexd_lh(args_glIndexd *argp)
 {
     // Get function specific args
-     GLdouble c  = argp->c;
+     GLdouble c  = argp->c;;
 
     // Call actual function
     glIndexd(c);
@@ -2460,7 +2460,7 @@ void *glindexd_lh(args_glIndexd *argp)
 void *glindexf_lh(args_glIndexf *argp)
 {
     // Get function specific args
-     GLfloat c  = argp->c;
+     GLfloat c  = argp->c;;
 
     // Call actual function
     glIndexf(c);
@@ -2481,7 +2481,7 @@ void *glindexf_lh(args_glIndexf *argp)
 void *glindexi_lh(args_glIndexi *argp)
 {
     // Get function specific args
-     GLint c  = argp->c;
+     GLint c  = argp->c;;
 
     // Call actual function
     glIndexi(c);
@@ -2502,7 +2502,7 @@ void *glindexi_lh(args_glIndexi *argp)
 void *glindexs_lh(args_glIndexs *argp)
 {
     // Get function specific args
-     GLshort c  = argp->c;
+     GLshort c  = argp->c;;
 
     // Call actual function
     glIndexs(c);
@@ -2523,7 +2523,7 @@ void *glindexs_lh(args_glIndexs *argp)
 void *glindexub_lh(args_glIndexub *argp)
 {
     // Get function specific args
-     GLubyte c  = argp->c;
+     GLubyte c  = argp->c;;
 
     // Call actual function
     glIndexub(c);
@@ -2544,7 +2544,7 @@ void *glindexub_lh(args_glIndexub *argp)
 void *glindexdv_lh(args_glIndexdv *argp)
 {
     // Get function specific args
-     const GLdouble *c  = argp->c;
+     const GLdouble *c  = argp->c;;
 
     // Call actual function
     glIndexdv(c);
@@ -2565,7 +2565,7 @@ void *glindexdv_lh(args_glIndexdv *argp)
 void *glindexfv_lh(args_glIndexfv *argp)
 {
     // Get function specific args
-     const GLfloat *c  = argp->c;
+     const GLfloat *c  = argp->c;;
 
     // Call actual function
     glIndexfv(c);
@@ -2586,7 +2586,7 @@ void *glindexfv_lh(args_glIndexfv *argp)
 void *glindexiv_lh(args_glIndexiv *argp)
 {
     // Get function specific args
-     const GLint *c  = argp->c;
+     const GLint *c  = argp->c;;
 
     // Call actual function
     glIndexiv(c);
@@ -2607,7 +2607,7 @@ void *glindexiv_lh(args_glIndexiv *argp)
 void *glindexsv_lh(args_glIndexsv *argp)
 {
     // Get function specific args
-     const GLshort *c  = argp->c;
+     const GLshort *c  = argp->c;;
 
     // Call actual function
     glIndexsv(c);
@@ -2628,7 +2628,7 @@ void *glindexsv_lh(args_glIndexsv *argp)
 void *glindexubv_lh(args_glIndexubv *argp)
 {
     // Get function specific args
-     const GLubyte *c  = argp->c;
+     const GLubyte *c  = argp->c;;
 
     // Call actual function
     glIndexubv(c);
@@ -2651,7 +2651,7 @@ void *glcolor3b_lh(args_glColor3b *argp)
     // Get function specific args
      GLbyte red = argp->red;;
 	 GLbyte green = argp->green;;
-	 GLbyte blue  = argp->blue;
+	 GLbyte blue  = argp->blue;;
 
     // Call actual function
     glColor3b(red, green, blue);
@@ -2674,7 +2674,7 @@ void *glcolor3d_lh(args_glColor3d *argp)
     // Get function specific args
      GLdouble red = argp->red;;
 	 GLdouble green = argp->green;;
-	 GLdouble blue  = argp->blue;
+	 GLdouble blue  = argp->blue;;
 
     // Call actual function
     glColor3d(red, green, blue);
@@ -2697,7 +2697,7 @@ void *glcolor3f_lh(args_glColor3f *argp)
     // Get function specific args
      GLfloat red = argp->red;;
 	 GLfloat green = argp->green;;
-	 GLfloat blue  = argp->blue;
+	 GLfloat blue  = argp->blue;;
 
     // Call actual function
     glColor3f(red, green, blue);
@@ -2720,7 +2720,7 @@ void *glcolor3i_lh(args_glColor3i *argp)
     // Get function specific args
      GLint red = argp->red;;
 	 GLint green = argp->green;;
-	 GLint blue  = argp->blue;
+	 GLint blue  = argp->blue;;
 
     // Call actual function
     glColor3i(red, green, blue);
@@ -2743,7 +2743,7 @@ void *glcolor3s_lh(args_glColor3s *argp)
     // Get function specific args
      GLshort red = argp->red;;
 	 GLshort green = argp->green;;
-	 GLshort blue  = argp->blue;
+	 GLshort blue  = argp->blue;;
 
     // Call actual function
     glColor3s(red, green, blue);
@@ -2766,7 +2766,7 @@ void *glcolor3ub_lh(args_glColor3ub *argp)
     // Get function specific args
      GLubyte red = argp->red;;
 	 GLubyte green = argp->green;;
-	 GLubyte blue  = argp->blue;
+	 GLubyte blue  = argp->blue;;
 
     // Call actual function
     glColor3ub(red, green, blue);
@@ -2789,7 +2789,7 @@ void *glcolor3ui_lh(args_glColor3ui *argp)
     // Get function specific args
      GLuint red = argp->red;;
 	 GLuint green = argp->green;;
-	 GLuint blue  = argp->blue;
+	 GLuint blue  = argp->blue;;
 
     // Call actual function
     glColor3ui(red, green, blue);
@@ -2812,7 +2812,7 @@ void *glcolor3us_lh(args_glColor3us *argp)
     // Get function specific args
      GLushort red = argp->red;;
 	 GLushort green = argp->green;;
-	 GLushort blue  = argp->blue;
+	 GLushort blue  = argp->blue;;
 
     // Call actual function
     glColor3us(red, green, blue);
@@ -2836,7 +2836,7 @@ void *glcolor4b_lh(args_glColor4b *argp)
      GLbyte red = argp->red;;
 	 GLbyte green = argp->green;;
 	 GLbyte blue = argp->blue;;
-	 GLbyte alpha  = argp->alpha;
+	 GLbyte alpha  = argp->alpha;;
 
     // Call actual function
     glColor4b(red, green, blue, alpha);
@@ -2860,7 +2860,7 @@ void *glcolor4d_lh(args_glColor4d *argp)
      GLdouble red = argp->red;;
 	 GLdouble green = argp->green;;
 	 GLdouble blue = argp->blue;;
-	 GLdouble alpha  = argp->alpha;
+	 GLdouble alpha  = argp->alpha;;
 
     // Call actual function
     glColor4d(red, green, blue, alpha);
@@ -2884,7 +2884,7 @@ void *glcolor4f_lh(args_glColor4f *argp)
      GLfloat red = argp->red;;
 	 GLfloat green = argp->green;;
 	 GLfloat blue = argp->blue;;
-	 GLfloat alpha  = argp->alpha;
+	 GLfloat alpha  = argp->alpha;;
 
     // Call actual function
     glColor4f(red, green, blue, alpha);
@@ -2908,7 +2908,7 @@ void *glcolor4i_lh(args_glColor4i *argp)
      GLint red = argp->red;;
 	 GLint green = argp->green;;
 	 GLint blue = argp->blue;;
-	 GLint alpha  = argp->alpha;
+	 GLint alpha  = argp->alpha;;
 
     // Call actual function
     glColor4i(red, green, blue, alpha);
@@ -2932,7 +2932,7 @@ void *glcolor4s_lh(args_glColor4s *argp)
      GLshort red = argp->red;;
 	 GLshort green = argp->green;;
 	 GLshort blue = argp->blue;;
-	 GLshort alpha  = argp->alpha;
+	 GLshort alpha  = argp->alpha;;
 
     // Call actual function
     glColor4s(red, green, blue, alpha);
@@ -2956,7 +2956,7 @@ void *glcolor4ub_lh(args_glColor4ub *argp)
      GLubyte red = argp->red;;
 	 GLubyte green = argp->green;;
 	 GLubyte blue = argp->blue;;
-	 GLubyte alpha  = argp->alpha;
+	 GLubyte alpha  = argp->alpha;;
 
     // Call actual function
     glColor4ub(red, green, blue, alpha);
@@ -2980,7 +2980,7 @@ void *glcolor4ui_lh(args_glColor4ui *argp)
      GLuint red = argp->red;;
 	 GLuint green = argp->green;;
 	 GLuint blue = argp->blue;;
-	 GLuint alpha  = argp->alpha;
+	 GLuint alpha  = argp->alpha;;
 
     // Call actual function
     glColor4ui(red, green, blue, alpha);
@@ -3004,7 +3004,7 @@ void *glcolor4us_lh(args_glColor4us *argp)
      GLushort red = argp->red;;
 	 GLushort green = argp->green;;
 	 GLushort blue = argp->blue;;
-	 GLushort alpha  = argp->alpha;
+	 GLushort alpha  = argp->alpha;;
 
     // Call actual function
     glColor4us(red, green, blue, alpha);
@@ -3025,7 +3025,7 @@ void *glcolor4us_lh(args_glColor4us *argp)
 void *glcolor3bv_lh(args_glColor3bv *argp)
 {
     // Get function specific args
-     const GLbyte *v  = argp->v;
+     const GLbyte *v  = argp->v;;
 
     // Call actual function
     glColor3bv(v);
@@ -3046,7 +3046,7 @@ void *glcolor3bv_lh(args_glColor3bv *argp)
 void *glcolor3dv_lh(args_glColor3dv *argp)
 {
     // Get function specific args
-     const GLdouble *v  = argp->v;
+     const GLdouble *v  = argp->v;;
 
     // Call actual function
     glColor3dv(v);
@@ -3067,7 +3067,7 @@ void *glcolor3dv_lh(args_glColor3dv *argp)
 void *glcolor3fv_lh(args_glColor3fv *argp)
 {
     // Get function specific args
-     const GLfloat *v  = argp->v;
+     const GLfloat *v  = argp->v;;
 
     // Call actual function
     glColor3fv(v);
@@ -3088,7 +3088,7 @@ void *glcolor3fv_lh(args_glColor3fv *argp)
 void *glcolor3iv_lh(args_glColor3iv *argp)
 {
     // Get function specific args
-     const GLint *v  = argp->v;
+     const GLint *v  = argp->v;;
 
     // Call actual function
     glColor3iv(v);
@@ -3109,7 +3109,7 @@ void *glcolor3iv_lh(args_glColor3iv *argp)
 void *glcolor3sv_lh(args_glColor3sv *argp)
 {
     // Get function specific args
-     const GLshort *v  = argp->v;
+     const GLshort *v  = argp->v;;
 
     // Call actual function
     glColor3sv(v);
@@ -3130,7 +3130,7 @@ void *glcolor3sv_lh(args_glColor3sv *argp)
 void *glcolor3ubv_lh(args_glColor3ubv *argp)
 {
     // Get function specific args
-     const GLubyte *v  = argp->v;
+     const GLubyte *v  = argp->v;;
 
     // Call actual function
     glColor3ubv(v);
@@ -3151,7 +3151,7 @@ void *glcolor3ubv_lh(args_glColor3ubv *argp)
 void *glcolor3uiv_lh(args_glColor3uiv *argp)
 {
     // Get function specific args
-     const GLuint *v  = argp->v;
+     const GLuint *v  = argp->v;;
 
     // Call actual function
     glColor3uiv(v);
@@ -3172,7 +3172,7 @@ void *glcolor3uiv_lh(args_glColor3uiv *argp)
 void *glcolor3usv_lh(args_glColor3usv *argp)
 {
     // Get function specific args
-     const GLushort *v  = argp->v;
+     const GLushort *v  = argp->v;;
 
     // Call actual function
     glColor3usv(v);
@@ -3193,7 +3193,7 @@ void *glcolor3usv_lh(args_glColor3usv *argp)
 void *glcolor4bv_lh(args_glColor4bv *argp)
 {
     // Get function specific args
-     const GLbyte *v  = argp->v;
+     const GLbyte *v  = argp->v;;
 
     // Call actual function
     glColor4bv(v);
@@ -3214,7 +3214,7 @@ void *glcolor4bv_lh(args_glColor4bv *argp)
 void *glcolor4dv_lh(args_glColor4dv *argp)
 {
     // Get function specific args
-     const GLdouble *v  = argp->v;
+     const GLdouble *v  = argp->v;;
 
     // Call actual function
     glColor4dv(v);
@@ -3235,7 +3235,7 @@ void *glcolor4dv_lh(args_glColor4dv *argp)
 void *glcolor4fv_lh(args_glColor4fv *argp)
 {
     // Get function specific args
-     const GLfloat *v  = argp->v;
+     const GLfloat *v  = argp->v;;
 
     // Call actual function
     glColor4fv(v);
@@ -3256,7 +3256,7 @@ void *glcolor4fv_lh(args_glColor4fv *argp)
 void *glcolor4iv_lh(args_glColor4iv *argp)
 {
     // Get function specific args
-     const GLint *v  = argp->v;
+     const GLint *v  = argp->v;;
 
     // Call actual function
     glColor4iv(v);
@@ -3277,7 +3277,7 @@ void *glcolor4iv_lh(args_glColor4iv *argp)
 void *glcolor4sv_lh(args_glColor4sv *argp)
 {
     // Get function specific args
-     const GLshort *v  = argp->v;
+     const GLshort *v  = argp->v;;
 
     // Call actual function
     glColor4sv(v);
@@ -3298,7 +3298,7 @@ void *glcolor4sv_lh(args_glColor4sv *argp)
 void *glcolor4ubv_lh(args_glColor4ubv *argp)
 {
     // Get function specific args
-     const GLubyte *v  = argp->v;
+     const GLubyte *v  = argp->v;;
 
     // Call actual function
     glColor4ubv(v);
@@ -3319,7 +3319,7 @@ void *glcolor4ubv_lh(args_glColor4ubv *argp)
 void *glcolor4uiv_lh(args_glColor4uiv *argp)
 {
     // Get function specific args
-     const GLuint *v  = argp->v;
+     const GLuint *v  = argp->v;;
 
     // Call actual function
     glColor4uiv(v);
@@ -3340,7 +3340,7 @@ void *glcolor4uiv_lh(args_glColor4uiv *argp)
 void *glcolor4usv_lh(args_glColor4usv *argp)
 {
     // Get function specific args
-     const GLushort *v  = argp->v;
+     const GLushort *v  = argp->v;;
 
     // Call actual function
     glColor4usv(v);
@@ -3361,7 +3361,7 @@ void *glcolor4usv_lh(args_glColor4usv *argp)
 void *gltexcoord1d_lh(args_glTexCoord1d *argp)
 {
     // Get function specific args
-     GLdouble s  = argp->s;
+     GLdouble s  = argp->s;;
 
     // Call actual function
     glTexCoord1d(s);
@@ -3382,7 +3382,7 @@ void *gltexcoord1d_lh(args_glTexCoord1d *argp)
 void *gltexcoord1f_lh(args_glTexCoord1f *argp)
 {
     // Get function specific args
-     GLfloat s  = argp->s;
+     GLfloat s  = argp->s;;
 
     // Call actual function
     glTexCoord1f(s);
@@ -3403,7 +3403,7 @@ void *gltexcoord1f_lh(args_glTexCoord1f *argp)
 void *gltexcoord1i_lh(args_glTexCoord1i *argp)
 {
     // Get function specific args
-     GLint s  = argp->s;
+     GLint s  = argp->s;;
 
     // Call actual function
     glTexCoord1i(s);
@@ -3424,7 +3424,7 @@ void *gltexcoord1i_lh(args_glTexCoord1i *argp)
 void *gltexcoord1s_lh(args_glTexCoord1s *argp)
 {
     // Get function specific args
-     GLshort s  = argp->s;
+     GLshort s  = argp->s;;
 
     // Call actual function
     glTexCoord1s(s);
@@ -3446,7 +3446,7 @@ void *gltexcoord2d_lh(args_glTexCoord2d *argp)
 {
     // Get function specific args
      GLdouble s = argp->s;;
-	 GLdouble t  = argp->t;
+	 GLdouble t  = argp->t;;
 
     // Call actual function
     glTexCoord2d(s, t);
@@ -3468,7 +3468,7 @@ void *gltexcoord2f_lh(args_glTexCoord2f *argp)
 {
     // Get function specific args
      GLfloat s = argp->s;;
-	 GLfloat t  = argp->t;
+	 GLfloat t  = argp->t;;
 
     // Call actual function
     glTexCoord2f(s, t);
@@ -3490,7 +3490,7 @@ void *gltexcoord2i_lh(args_glTexCoord2i *argp)
 {
     // Get function specific args
      GLint s = argp->s;;
-	 GLint t  = argp->t;
+	 GLint t  = argp->t;;
 
     // Call actual function
     glTexCoord2i(s, t);
@@ -3512,7 +3512,7 @@ void *gltexcoord2s_lh(args_glTexCoord2s *argp)
 {
     // Get function specific args
      GLshort s = argp->s;;
-	 GLshort t  = argp->t;
+	 GLshort t  = argp->t;;
 
     // Call actual function
     glTexCoord2s(s, t);
@@ -3535,7 +3535,7 @@ void *gltexcoord3d_lh(args_glTexCoord3d *argp)
     // Get function specific args
      GLdouble s = argp->s;;
 	 GLdouble t = argp->t;;
-	 GLdouble r  = argp->r;
+	 GLdouble r  = argp->r;;
 
     // Call actual function
     glTexCoord3d(s, t, r);
@@ -3558,7 +3558,7 @@ void *gltexcoord3f_lh(args_glTexCoord3f *argp)
     // Get function specific args
      GLfloat s = argp->s;;
 	 GLfloat t = argp->t;;
-	 GLfloat r  = argp->r;
+	 GLfloat r  = argp->r;;
 
     // Call actual function
     glTexCoord3f(s, t, r);
@@ -3581,7 +3581,7 @@ void *gltexcoord3i_lh(args_glTexCoord3i *argp)
     // Get function specific args
      GLint s = argp->s;;
 	 GLint t = argp->t;;
-	 GLint r  = argp->r;
+	 GLint r  = argp->r;;
 
     // Call actual function
     glTexCoord3i(s, t, r);
@@ -3604,7 +3604,7 @@ void *gltexcoord3s_lh(args_glTexCoord3s *argp)
     // Get function specific args
      GLshort s = argp->s;;
 	 GLshort t = argp->t;;
-	 GLshort r  = argp->r;
+	 GLshort r  = argp->r;;
 
     // Call actual function
     glTexCoord3s(s, t, r);
@@ -3628,7 +3628,7 @@ void *gltexcoord4d_lh(args_glTexCoord4d *argp)
      GLdouble s = argp->s;;
 	 GLdouble t = argp->t;;
 	 GLdouble r = argp->r;;
-	 GLdouble q  = argp->q;
+	 GLdouble q  = argp->q;;
 
     // Call actual function
     glTexCoord4d(s, t, r, q);
@@ -3652,7 +3652,7 @@ void *gltexcoord4f_lh(args_glTexCoord4f *argp)
      GLfloat s = argp->s;;
 	 GLfloat t = argp->t;;
 	 GLfloat r = argp->r;;
-	 GLfloat q  = argp->q;
+	 GLfloat q  = argp->q;;
 
     // Call actual function
     glTexCoord4f(s, t, r, q);
@@ -3676,7 +3676,7 @@ void *gltexcoord4i_lh(args_glTexCoord4i *argp)
      GLint s = argp->s;;
 	 GLint t = argp->t;;
 	 GLint r = argp->r;;
-	 GLint q  = argp->q;
+	 GLint q  = argp->q;;
 
     // Call actual function
     glTexCoord4i(s, t, r, q);
@@ -3700,7 +3700,7 @@ void *gltexcoord4s_lh(args_glTexCoord4s *argp)
      GLshort s = argp->s;;
 	 GLshort t = argp->t;;
 	 GLshort r = argp->r;;
-	 GLshort q  = argp->q;
+	 GLshort q  = argp->q;;
 
     // Call actual function
     glTexCoord4s(s, t, r, q);
@@ -3721,7 +3721,7 @@ void *gltexcoord4s_lh(args_glTexCoord4s *argp)
 void *gltexcoord1dv_lh(args_glTexCoord1dv *argp)
 {
     // Get function specific args
-     const GLdouble *v  = argp->v;
+     const GLdouble *v  = argp->v;;
 
     // Call actual function
     glTexCoord1dv(v);
@@ -3742,7 +3742,7 @@ void *gltexcoord1dv_lh(args_glTexCoord1dv *argp)
 void *gltexcoord1fv_lh(args_glTexCoord1fv *argp)
 {
     // Get function specific args
-     const GLfloat *v  = argp->v;
+     const GLfloat *v  = argp->v;;
 
     // Call actual function
     glTexCoord1fv(v);
@@ -3763,7 +3763,7 @@ void *gltexcoord1fv_lh(args_glTexCoord1fv *argp)
 void *gltexcoord1iv_lh(args_glTexCoord1iv *argp)
 {
     // Get function specific args
-     const GLint *v  = argp->v;
+     const GLint *v  = argp->v;;
 
     // Call actual function
     glTexCoord1iv(v);
@@ -3784,7 +3784,7 @@ void *gltexcoord1iv_lh(args_glTexCoord1iv *argp)
 void *gltexcoord1sv_lh(args_glTexCoord1sv *argp)
 {
     // Get function specific args
-     const GLshort *v  = argp->v;
+     const GLshort *v  = argp->v;;
 
     // Call actual function
     glTexCoord1sv(v);
@@ -3805,7 +3805,7 @@ void *gltexcoord1sv_lh(args_glTexCoord1sv *argp)
 void *gltexcoord2dv_lh(args_glTexCoord2dv *argp)
 {
     // Get function specific args
-     const GLdouble *v  = argp->v;
+     const GLdouble *v  = argp->v;;
 
     // Call actual function
     glTexCoord2dv(v);
@@ -3826,7 +3826,7 @@ void *gltexcoord2dv_lh(args_glTexCoord2dv *argp)
 void *gltexcoord2fv_lh(args_glTexCoord2fv *argp)
 {
     // Get function specific args
-     const GLfloat *v  = argp->v;
+     const GLfloat *v  = argp->v;;
 
     // Call actual function
     glTexCoord2fv(v);
@@ -3847,7 +3847,7 @@ void *gltexcoord2fv_lh(args_glTexCoord2fv *argp)
 void *gltexcoord2iv_lh(args_glTexCoord2iv *argp)
 {
     // Get function specific args
-     const GLint *v  = argp->v;
+     const GLint *v  = argp->v;;
 
     // Call actual function
     glTexCoord2iv(v);
@@ -3868,7 +3868,7 @@ void *gltexcoord2iv_lh(args_glTexCoord2iv *argp)
 void *gltexcoord2sv_lh(args_glTexCoord2sv *argp)
 {
     // Get function specific args
-     const GLshort *v  = argp->v;
+     const GLshort *v  = argp->v;;
 
     // Call actual function
     glTexCoord2sv(v);
@@ -3889,7 +3889,7 @@ void *gltexcoord2sv_lh(args_glTexCoord2sv *argp)
 void *gltexcoord3dv_lh(args_glTexCoord3dv *argp)
 {
     // Get function specific args
-     const GLdouble *v  = argp->v;
+     const GLdouble *v  = argp->v;;
 
     // Call actual function
     glTexCoord3dv(v);
@@ -3910,7 +3910,7 @@ void *gltexcoord3dv_lh(args_glTexCoord3dv *argp)
 void *gltexcoord3fv_lh(args_glTexCoord3fv *argp)
 {
     // Get function specific args
-     const GLfloat *v  = argp->v;
+     const GLfloat *v  = argp->v;;
 
     // Call actual function
     glTexCoord3fv(v);
@@ -3931,7 +3931,7 @@ void *gltexcoord3fv_lh(args_glTexCoord3fv *argp)
 void *gltexcoord3iv_lh(args_glTexCoord3iv *argp)
 {
     // Get function specific args
-     const GLint *v  = argp->v;
+     const GLint *v  = argp->v;;
 
     // Call actual function
     glTexCoord3iv(v);
@@ -3952,7 +3952,7 @@ void *gltexcoord3iv_lh(args_glTexCoord3iv *argp)
 void *gltexcoord3sv_lh(args_glTexCoord3sv *argp)
 {
     // Get function specific args
-     const GLshort *v  = argp->v;
+     const GLshort *v  = argp->v;;
 
     // Call actual function
     glTexCoord3sv(v);
@@ -3973,7 +3973,7 @@ void *gltexcoord3sv_lh(args_glTexCoord3sv *argp)
 void *gltexcoord4dv_lh(args_glTexCoord4dv *argp)
 {
     // Get function specific args
-     const GLdouble *v  = argp->v;
+     const GLdouble *v  = argp->v;;
 
     // Call actual function
     glTexCoord4dv(v);
@@ -3994,7 +3994,7 @@ void *gltexcoord4dv_lh(args_glTexCoord4dv *argp)
 void *gltexcoord4fv_lh(args_glTexCoord4fv *argp)
 {
     // Get function specific args
-     const GLfloat *v  = argp->v;
+     const GLfloat *v  = argp->v;;
 
     // Call actual function
     glTexCoord4fv(v);
@@ -4015,7 +4015,7 @@ void *gltexcoord4fv_lh(args_glTexCoord4fv *argp)
 void *gltexcoord4iv_lh(args_glTexCoord4iv *argp)
 {
     // Get function specific args
-     const GLint *v  = argp->v;
+     const GLint *v  = argp->v;;
 
     // Call actual function
     glTexCoord4iv(v);
@@ -4036,7 +4036,7 @@ void *gltexcoord4iv_lh(args_glTexCoord4iv *argp)
 void *gltexcoord4sv_lh(args_glTexCoord4sv *argp)
 {
     // Get function specific args
-     const GLshort *v  = argp->v;
+     const GLshort *v  = argp->v;;
 
     // Call actual function
     glTexCoord4sv(v);
@@ -4058,7 +4058,7 @@ void *glrasterpos2d_lh(args_glRasterPos2d *argp)
 {
     // Get function specific args
      GLdouble x = argp->x;;
-	 GLdouble y  = argp->y;
+	 GLdouble y  = argp->y;;
 
     // Call actual function
     glRasterPos2d(x, y);
@@ -4080,7 +4080,7 @@ void *glrasterpos2f_lh(args_glRasterPos2f *argp)
 {
     // Get function specific args
      GLfloat x = argp->x;;
-	 GLfloat y  = argp->y;
+	 GLfloat y  = argp->y;;
 
     // Call actual function
     glRasterPos2f(x, y);
@@ -4102,7 +4102,7 @@ void *glrasterpos2i_lh(args_glRasterPos2i *argp)
 {
     // Get function specific args
      GLint x = argp->x;;
-	 GLint y  = argp->y;
+	 GLint y  = argp->y;;
 
     // Call actual function
     glRasterPos2i(x, y);
@@ -4124,7 +4124,7 @@ void *glrasterpos2s_lh(args_glRasterPos2s *argp)
 {
     // Get function specific args
      GLshort x = argp->x;;
-	 GLshort y  = argp->y;
+	 GLshort y  = argp->y;;
 
     // Call actual function
     glRasterPos2s(x, y);
@@ -4147,7 +4147,7 @@ void *glrasterpos3d_lh(args_glRasterPos3d *argp)
     // Get function specific args
      GLdouble x = argp->x;;
 	 GLdouble y = argp->y;;
-	 GLdouble z  = argp->z;
+	 GLdouble z  = argp->z;;
 
     // Call actual function
     glRasterPos3d(x, y, z);
@@ -4170,7 +4170,7 @@ void *glrasterpos3f_lh(args_glRasterPos3f *argp)
     // Get function specific args
      GLfloat x = argp->x;;
 	 GLfloat y = argp->y;;
-	 GLfloat z  = argp->z;
+	 GLfloat z  = argp->z;;
 
     // Call actual function
     glRasterPos3f(x, y, z);
@@ -4193,7 +4193,7 @@ void *glrasterpos3i_lh(args_glRasterPos3i *argp)
     // Get function specific args
      GLint x = argp->x;;
 	 GLint y = argp->y;;
-	 GLint z  = argp->z;
+	 GLint z  = argp->z;;
 
     // Call actual function
     glRasterPos3i(x, y, z);
@@ -4216,7 +4216,7 @@ void *glrasterpos3s_lh(args_glRasterPos3s *argp)
     // Get function specific args
      GLshort x = argp->x;;
 	 GLshort y = argp->y;;
-	 GLshort z  = argp->z;
+	 GLshort z  = argp->z;;
 
     // Call actual function
     glRasterPos3s(x, y, z);
@@ -4240,7 +4240,7 @@ void *glrasterpos4d_lh(args_glRasterPos4d *argp)
      GLdouble x = argp->x;;
 	 GLdouble y = argp->y;;
 	 GLdouble z = argp->z;;
-	 GLdouble w  = argp->w;
+	 GLdouble w  = argp->w;;
 
     // Call actual function
     glRasterPos4d(x, y, z, w);
@@ -4264,7 +4264,7 @@ void *glrasterpos4f_lh(args_glRasterPos4f *argp)
      GLfloat x = argp->x;;
 	 GLfloat y = argp->y;;
 	 GLfloat z = argp->z;;
-	 GLfloat w  = argp->w;
+	 GLfloat w  = argp->w;;
 
     // Call actual function
     glRasterPos4f(x, y, z, w);
@@ -4288,7 +4288,7 @@ void *glrasterpos4i_lh(args_glRasterPos4i *argp)
      GLint x = argp->x;;
 	 GLint y = argp->y;;
 	 GLint z = argp->z;;
-	 GLint w  = argp->w;
+	 GLint w  = argp->w;;
 
     // Call actual function
     glRasterPos4i(x, y, z, w);
@@ -4312,7 +4312,7 @@ void *glrasterpos4s_lh(args_glRasterPos4s *argp)
      GLshort x = argp->x;;
 	 GLshort y = argp->y;;
 	 GLshort z = argp->z;;
-	 GLshort w  = argp->w;
+	 GLshort w  = argp->w;;
 
     // Call actual function
     glRasterPos4s(x, y, z, w);
@@ -4333,7 +4333,7 @@ void *glrasterpos4s_lh(args_glRasterPos4s *argp)
 void *glrasterpos2dv_lh(args_glRasterPos2dv *argp)
 {
     // Get function specific args
-     const GLdouble *v  = argp->v;
+     const GLdouble *v  = argp->v;;
 
     // Call actual function
     glRasterPos2dv(v);
@@ -4354,7 +4354,7 @@ void *glrasterpos2dv_lh(args_glRasterPos2dv *argp)
 void *glrasterpos2fv_lh(args_glRasterPos2fv *argp)
 {
     // Get function specific args
-     const GLfloat *v  = argp->v;
+     const GLfloat *v  = argp->v;;
 
     // Call actual function
     glRasterPos2fv(v);
@@ -4375,7 +4375,7 @@ void *glrasterpos2fv_lh(args_glRasterPos2fv *argp)
 void *glrasterpos2iv_lh(args_glRasterPos2iv *argp)
 {
     // Get function specific args
-     const GLint *v  = argp->v;
+     const GLint *v  = argp->v;;
 
     // Call actual function
     glRasterPos2iv(v);
@@ -4396,7 +4396,7 @@ void *glrasterpos2iv_lh(args_glRasterPos2iv *argp)
 void *glrasterpos2sv_lh(args_glRasterPos2sv *argp)
 {
     // Get function specific args
-     const GLshort *v  = argp->v;
+     const GLshort *v  = argp->v;;
 
     // Call actual function
     glRasterPos2sv(v);
@@ -4417,7 +4417,7 @@ void *glrasterpos2sv_lh(args_glRasterPos2sv *argp)
 void *glrasterpos3dv_lh(args_glRasterPos3dv *argp)
 {
     // Get function specific args
-     const GLdouble *v  = argp->v;
+     const GLdouble *v  = argp->v;;
 
     // Call actual function
     glRasterPos3dv(v);
@@ -4438,7 +4438,7 @@ void *glrasterpos3dv_lh(args_glRasterPos3dv *argp)
 void *glrasterpos3fv_lh(args_glRasterPos3fv *argp)
 {
     // Get function specific args
-     const GLfloat *v  = argp->v;
+     const GLfloat *v  = argp->v;;
 
     // Call actual function
     glRasterPos3fv(v);
@@ -4459,7 +4459,7 @@ void *glrasterpos3fv_lh(args_glRasterPos3fv *argp)
 void *glrasterpos3iv_lh(args_glRasterPos3iv *argp)
 {
     // Get function specific args
-     const GLint *v  = argp->v;
+     const GLint *v  = argp->v;;
 
     // Call actual function
     glRasterPos3iv(v);
@@ -4480,7 +4480,7 @@ void *glrasterpos3iv_lh(args_glRasterPos3iv *argp)
 void *glrasterpos3sv_lh(args_glRasterPos3sv *argp)
 {
     // Get function specific args
-     const GLshort *v  = argp->v;
+     const GLshort *v  = argp->v;;
 
     // Call actual function
     glRasterPos3sv(v);
@@ -4501,7 +4501,7 @@ void *glrasterpos3sv_lh(args_glRasterPos3sv *argp)
 void *glrasterpos4dv_lh(args_glRasterPos4dv *argp)
 {
     // Get function specific args
-     const GLdouble *v  = argp->v;
+     const GLdouble *v  = argp->v;;
 
     // Call actual function
     glRasterPos4dv(v);
@@ -4522,7 +4522,7 @@ void *glrasterpos4dv_lh(args_glRasterPos4dv *argp)
 void *glrasterpos4fv_lh(args_glRasterPos4fv *argp)
 {
     // Get function specific args
-     const GLfloat *v  = argp->v;
+     const GLfloat *v  = argp->v;;
 
     // Call actual function
     glRasterPos4fv(v);
@@ -4543,7 +4543,7 @@ void *glrasterpos4fv_lh(args_glRasterPos4fv *argp)
 void *glrasterpos4iv_lh(args_glRasterPos4iv *argp)
 {
     // Get function specific args
-     const GLint *v  = argp->v;
+     const GLint *v  = argp->v;;
 
     // Call actual function
     glRasterPos4iv(v);
@@ -4564,7 +4564,7 @@ void *glrasterpos4iv_lh(args_glRasterPos4iv *argp)
 void *glrasterpos4sv_lh(args_glRasterPos4sv *argp)
 {
     // Get function specific args
-     const GLshort *v  = argp->v;
+     const GLshort *v  = argp->v;;
 
     // Call actual function
     glRasterPos4sv(v);
@@ -4588,7 +4588,7 @@ void *glrectd_lh(args_glRectd *argp)
      GLdouble x1 = argp->x1;;
 	 GLdouble y1 = argp->y1;;
 	 GLdouble x2 = argp->x2;;
-	 GLdouble y2  = argp->y2;
+	 GLdouble y2  = argp->y2;;
 
     // Call actual function
     glRectd(x1, y1, x2, y2);
@@ -4612,7 +4612,7 @@ void *glrectf_lh(args_glRectf *argp)
      GLfloat x1 = argp->x1;;
 	 GLfloat y1 = argp->y1;;
 	 GLfloat x2 = argp->x2;;
-	 GLfloat y2  = argp->y2;
+	 GLfloat y2  = argp->y2;;
 
     // Call actual function
     glRectf(x1, y1, x2, y2);
@@ -4636,7 +4636,7 @@ void *glrecti_lh(args_glRecti *argp)
      GLint x1 = argp->x1;;
 	 GLint y1 = argp->y1;;
 	 GLint x2 = argp->x2;;
-	 GLint y2  = argp->y2;
+	 GLint y2  = argp->y2;;
 
     // Call actual function
     glRecti(x1, y1, x2, y2);
@@ -4660,7 +4660,7 @@ void *glrects_lh(args_glRects *argp)
      GLshort x1 = argp->x1;;
 	 GLshort y1 = argp->y1;;
 	 GLshort x2 = argp->x2;;
-	 GLshort y2  = argp->y2;
+	 GLshort y2  = argp->y2;;
 
     // Call actual function
     glRects(x1, y1, x2, y2);
@@ -4682,7 +4682,7 @@ void *glrectdv_lh(args_glRectdv *argp)
 {
     // Get function specific args
      const GLdouble *v1 = argp->v1;;
-	 const GLdouble *v2  = argp->v2;
+	 const GLdouble *v2  = argp->v2;;
 
     // Call actual function
     glRectdv(v1, v2);
@@ -4704,7 +4704,7 @@ void *glrectfv_lh(args_glRectfv *argp)
 {
     // Get function specific args
      const GLfloat *v1 = argp->v1;;
-	 const GLfloat *v2  = argp->v2;
+	 const GLfloat *v2  = argp->v2;;
 
     // Call actual function
     glRectfv(v1, v2);
@@ -4726,7 +4726,7 @@ void *glrectiv_lh(args_glRectiv *argp)
 {
     // Get function specific args
      const GLint *v1 = argp->v1;;
-	 const GLint *v2  = argp->v2;
+	 const GLint *v2  = argp->v2;;
 
     // Call actual function
     glRectiv(v1, v2);
@@ -4748,7 +4748,7 @@ void *glrectsv_lh(args_glRectsv *argp)
 {
     // Get function specific args
      const GLshort *v1 = argp->v1;;
-	 const GLshort *v2  = argp->v2;
+	 const GLshort *v2  = argp->v2;;
 
     // Call actual function
     glRectsv(v1, v2);
@@ -4772,7 +4772,7 @@ void *glvertexpointer_lh(args_glVertexPointer *argp)
      GLint size = argp->size;;
 	 GLenum type = argp->type;;
 	 GLsizei stride = argp->stride;;
-	 const GLvoid *ptr  = argp->ptr;
+	 const GLvoid *ptr  = argp->ptr;;
 
     // Call actual function
     glVertexPointer(size, type, stride, ptr);
@@ -4795,7 +4795,7 @@ void *glnormalpointer_lh(args_glNormalPointer *argp)
     // Get function specific args
      GLenum type = argp->type;;
 	 GLsizei stride = argp->stride;;
-	 const GLvoid *ptr  = argp->ptr;
+	 const GLvoid *ptr  = argp->ptr;;
 
     // Call actual function
     glNormalPointer(type, stride, ptr);
@@ -4819,7 +4819,7 @@ void *glcolorpointer_lh(args_glColorPointer *argp)
      GLint size = argp->size;;
 	 GLenum type = argp->type;;
 	 GLsizei stride = argp->stride;;
-	 const GLvoid *ptr  = argp->ptr;
+	 const GLvoid *ptr  = argp->ptr;;
 
     // Call actual function
     glColorPointer(size, type, stride, ptr);
@@ -4842,7 +4842,7 @@ void *glindexpointer_lh(args_glIndexPointer *argp)
     // Get function specific args
      GLenum type = argp->type;;
 	 GLsizei stride = argp->stride;;
-	 const GLvoid *ptr  = argp->ptr;
+	 const GLvoid *ptr  = argp->ptr;;
 
     // Call actual function
     glIndexPointer(type, stride, ptr);
@@ -4866,7 +4866,7 @@ void *gltexcoordpointer_lh(args_glTexCoordPointer *argp)
      GLint size = argp->size;;
 	 GLenum type = argp->type;;
 	 GLsizei stride = argp->stride;;
-	 const GLvoid *ptr  = argp->ptr;
+	 const GLvoid *ptr  = argp->ptr;;
 
     // Call actual function
     glTexCoordPointer(size, type, stride, ptr);
@@ -4888,7 +4888,7 @@ void *gledgeflagpointer_lh(args_glEdgeFlagPointer *argp)
 {
     // Get function specific args
      GLsizei stride = argp->stride;;
-	 const GLvoid *ptr  = argp->ptr;
+	 const GLvoid *ptr  = argp->ptr;;
 
     // Call actual function
     glEdgeFlagPointer(stride, ptr);
@@ -4910,7 +4910,7 @@ void *glgetpointerv_lh(args_glGetPointerv *argp)
 {
     // Get function specific args
      GLenum pname = argp->pname;;
-	 GLvoid **params  = argp->*params;
+	 GLvoid **params  = argp->*params;;
 
     // Call actual function
     glGetPointerv(pname, *params);
@@ -4931,7 +4931,7 @@ void *glgetpointerv_lh(args_glGetPointerv *argp)
 void *glarrayelement_lh(args_glArrayElement *argp)
 {
     // Get function specific args
-     GLint i  = argp->i;
+     GLint i  = argp->i;;
 
     // Call actual function
     glArrayElement(i);
@@ -4954,7 +4954,7 @@ void *gldrawarrays_lh(args_glDrawArrays *argp)
     // Get function specific args
      GLenum mode = argp->mode;;
 	 GLint first = argp->first;;
-	 GLsizei count  = argp->count;
+	 GLsizei count  = argp->count;;
 
     // Call actual function
     glDrawArrays(mode, first, count);
@@ -4978,7 +4978,7 @@ void *gldrawelements_lh(args_glDrawElements *argp)
      GLenum mode = argp->mode;;
 	 GLsizei count = argp->count;;
 	 GLenum type = argp->type;;
-	 const GLvoid *indices  = argp->indices;
+	 const GLvoid *indices  = argp->indices;;
 
     // Call actual function
     glDrawElements(mode, count, type, indices);
@@ -5001,7 +5001,7 @@ void *glinterleavedarrays_lh(args_glInterleavedArrays *argp)
     // Get function specific args
      GLenum format = argp->format;;
 	 GLsizei stride = argp->stride;;
-	 const GLvoid *pointer  = argp->pointer;
+	 const GLvoid *pointer  = argp->pointer;;
 
     // Call actual function
     glInterleavedArrays(format, stride, pointer);
@@ -5022,7 +5022,7 @@ void *glinterleavedarrays_lh(args_glInterleavedArrays *argp)
 void *glshademodel_lh(args_glShadeModel *argp)
 {
     // Get function specific args
-     GLenum mode  = argp->mode;
+     GLenum mode  = argp->mode;;
 
     // Call actual function
     glShadeModel(mode);
@@ -5045,7 +5045,7 @@ void *gllightf_lh(args_glLightf *argp)
     // Get function specific args
      GLenum light = argp->light;;
 	 GLenum pname = argp->pname;;
-	 GLfloat param  = argp->param;
+	 GLfloat param  = argp->param;;
 
     // Call actual function
     glLightf(light, pname, param);
@@ -5068,7 +5068,7 @@ void *gllighti_lh(args_glLighti *argp)
     // Get function specific args
      GLenum light = argp->light;;
 	 GLenum pname = argp->pname;;
-	 GLint param  = argp->param;
+	 GLint param  = argp->param;;
 
     // Call actual function
     glLighti(light, pname, param);
@@ -5091,7 +5091,7 @@ void *gllightfv_lh(args_glLightfv *argp)
     // Get function specific args
      GLenum light = argp->light;;
 	 GLenum pname = argp->pname;;
-	 const GLfloat *params  = argp->params;
+	 const GLfloat *params  = argp->params;;
 
     // Call actual function
     glLightfv(light, pname, params);
@@ -5114,7 +5114,7 @@ void *gllightiv_lh(args_glLightiv *argp)
     // Get function specific args
      GLenum light = argp->light;;
 	 GLenum pname = argp->pname;;
-	 const GLint *params  = argp->params;
+	 const GLint *params  = argp->params;;
 
     // Call actual function
     glLightiv(light, pname, params);
@@ -5137,7 +5137,7 @@ void *glgetlightfv_lh(args_glGetLightfv *argp)
     // Get function specific args
      GLenum light = argp->light;;
 	 GLenum pname = argp->pname;;
-	 GLfloat *params  = argp->params;
+	 GLfloat *params  = argp->params;;
 
     // Call actual function
     glGetLightfv(light, pname, params);
@@ -5160,7 +5160,7 @@ void *glgetlightiv_lh(args_glGetLightiv *argp)
     // Get function specific args
      GLenum light = argp->light;;
 	 GLenum pname = argp->pname;;
-	 GLint *params  = argp->params;
+	 GLint *params  = argp->params;;
 
     // Call actual function
     glGetLightiv(light, pname, params);
@@ -5182,7 +5182,7 @@ void *gllightmodelf_lh(args_glLightModelf *argp)
 {
     // Get function specific args
      GLenum pname = argp->pname;;
-	 GLfloat param  = argp->param;
+	 GLfloat param  = argp->param;;
 
     // Call actual function
     glLightModelf(pname, param);
@@ -5204,7 +5204,7 @@ void *gllightmodeli_lh(args_glLightModeli *argp)
 {
     // Get function specific args
      GLenum pname = argp->pname;;
-	 GLint param  = argp->param;
+	 GLint param  = argp->param;;
 
     // Call actual function
     glLightModeli(pname, param);
@@ -5226,7 +5226,7 @@ void *gllightmodelfv_lh(args_glLightModelfv *argp)
 {
     // Get function specific args
      GLenum pname = argp->pname;;
-	 const GLfloat *params  = argp->params;
+	 const GLfloat *params  = argp->params;;
 
     // Call actual function
     glLightModelfv(pname, params);
@@ -5248,7 +5248,7 @@ void *gllightmodeliv_lh(args_glLightModeliv *argp)
 {
     // Get function specific args
      GLenum pname = argp->pname;;
-	 const GLint *params  = argp->params;
+	 const GLint *params  = argp->params;;
 
     // Call actual function
     glLightModeliv(pname, params);
@@ -5271,7 +5271,7 @@ void *glmaterialf_lh(args_glMaterialf *argp)
     // Get function specific args
      GLenum face = argp->face;;
 	 GLenum pname = argp->pname;;
-	 GLfloat param  = argp->param;
+	 GLfloat param  = argp->param;;
 
     // Call actual function
     glMaterialf(face, pname, param);
@@ -5294,7 +5294,7 @@ void *glmateriali_lh(args_glMateriali *argp)
     // Get function specific args
      GLenum face = argp->face;;
 	 GLenum pname = argp->pname;;
-	 GLint param  = argp->param;
+	 GLint param  = argp->param;;
 
     // Call actual function
     glMateriali(face, pname, param);
@@ -5317,7 +5317,7 @@ void *glmaterialfv_lh(args_glMaterialfv *argp)
     // Get function specific args
      GLenum face = argp->face;;
 	 GLenum pname = argp->pname;;
-	 const GLfloat *params  = argp->params;
+	 const GLfloat *params  = argp->params;;
 
     // Call actual function
     glMaterialfv(face, pname, params);
@@ -5340,7 +5340,7 @@ void *glmaterialiv_lh(args_glMaterialiv *argp)
     // Get function specific args
      GLenum face = argp->face;;
 	 GLenum pname = argp->pname;;
-	 const GLint *params  = argp->params;
+	 const GLint *params  = argp->params;;
 
     // Call actual function
     glMaterialiv(face, pname, params);
@@ -5363,7 +5363,7 @@ void *glgetmaterialfv_lh(args_glGetMaterialfv *argp)
     // Get function specific args
      GLenum face = argp->face;;
 	 GLenum pname = argp->pname;;
-	 GLfloat *params  = argp->params;
+	 GLfloat *params  = argp->params;;
 
     // Call actual function
     glGetMaterialfv(face, pname, params);
@@ -5386,7 +5386,7 @@ void *glgetmaterialiv_lh(args_glGetMaterialiv *argp)
     // Get function specific args
      GLenum face = argp->face;;
 	 GLenum pname = argp->pname;;
-	 GLint *params  = argp->params;
+	 GLint *params  = argp->params;;
 
     // Call actual function
     glGetMaterialiv(face, pname, params);
@@ -5408,7 +5408,7 @@ void *glcolormaterial_lh(args_glColorMaterial *argp)
 {
     // Get function specific args
      GLenum face = argp->face;;
-	 GLenum mode  = argp->mode;
+	 GLenum mode  = argp->mode;;
 
     // Call actual function
     glColorMaterial(face, mode);
@@ -5430,7 +5430,7 @@ void *glpixelzoom_lh(args_glPixelZoom *argp)
 {
     // Get function specific args
      GLfloat xfactor = argp->xfactor;;
-	 GLfloat yfactor  = argp->yfactor;
+	 GLfloat yfactor  = argp->yfactor;;
 
     // Call actual function
     glPixelZoom(xfactor, yfactor);
@@ -5452,7 +5452,7 @@ void *glpixelstoref_lh(args_glPixelStoref *argp)
 {
     // Get function specific args
      GLenum pname = argp->pname;;
-	 GLfloat param  = argp->param;
+	 GLfloat param  = argp->param;;
 
     // Call actual function
     glPixelStoref(pname, param);
@@ -5474,7 +5474,7 @@ void *glpixelstorei_lh(args_glPixelStorei *argp)
 {
     // Get function specific args
      GLenum pname = argp->pname;;
-	 GLint param  = argp->param;
+	 GLint param  = argp->param;;
 
     // Call actual function
     glPixelStorei(pname, param);
@@ -5496,7 +5496,7 @@ void *glpixeltransferf_lh(args_glPixelTransferf *argp)
 {
     // Get function specific args
      GLenum pname = argp->pname;;
-	 GLfloat param  = argp->param;
+	 GLfloat param  = argp->param;;
 
     // Call actual function
     glPixelTransferf(pname, param);
@@ -5518,7 +5518,7 @@ void *glpixeltransferi_lh(args_glPixelTransferi *argp)
 {
     // Get function specific args
      GLenum pname = argp->pname;;
-	 GLint param  = argp->param;
+	 GLint param  = argp->param;;
 
     // Call actual function
     glPixelTransferi(pname, param);
@@ -5541,7 +5541,7 @@ void *glpixelmapfv_lh(args_glPixelMapfv *argp)
     // Get function specific args
      GLenum map = argp->map;;
 	 GLsizei mapsize = argp->mapsize;;
-	 const GLfloat *values  = argp->values;
+	 const GLfloat *values  = argp->values;;
 
     // Call actual function
     glPixelMapfv(map, mapsize, values);
@@ -5564,7 +5564,7 @@ void *glpixelmapuiv_lh(args_glPixelMapuiv *argp)
     // Get function specific args
      GLenum map = argp->map;;
 	 GLsizei mapsize = argp->mapsize;;
-	 const GLuint *values  = argp->values;
+	 const GLuint *values  = argp->values;;
 
     // Call actual function
     glPixelMapuiv(map, mapsize, values);
@@ -5587,7 +5587,7 @@ void *glpixelmapusv_lh(args_glPixelMapusv *argp)
     // Get function specific args
      GLenum map = argp->map;;
 	 GLsizei mapsize = argp->mapsize;;
-	 const GLushort *values  = argp->values;
+	 const GLushort *values  = argp->values;;
 
     // Call actual function
     glPixelMapusv(map, mapsize, values);
@@ -5609,7 +5609,7 @@ void *glgetpixelmapfv_lh(args_glGetPixelMapfv *argp)
 {
     // Get function specific args
      GLenum map = argp->map;;
-	 GLfloat *values  = argp->values;
+	 GLfloat *values  = argp->values;;
 
     // Call actual function
     glGetPixelMapfv(map, values);
@@ -5631,7 +5631,7 @@ void *glgetpixelmapuiv_lh(args_glGetPixelMapuiv *argp)
 {
     // Get function specific args
      GLenum map = argp->map;;
-	 GLuint *values  = argp->values;
+	 GLuint *values  = argp->values;;
 
     // Call actual function
     glGetPixelMapuiv(map, values);
@@ -5653,7 +5653,7 @@ void *glgetpixelmapusv_lh(args_glGetPixelMapusv *argp)
 {
     // Get function specific args
      GLenum map = argp->map;;
-	 GLushort *values  = argp->values;
+	 GLushort *values  = argp->values;;
 
     // Call actual function
     glGetPixelMapusv(map, values);
@@ -5680,7 +5680,7 @@ void *glbitmap_lh(args_glBitmap *argp)
 	 GLfloat yorig = argp->yorig;;
 	 GLfloat xmove = argp->xmove;;
 	 GLfloat ymove = argp->ymove;;
-	 const GLubyte *bitmap  = argp->bitmap;
+	 const GLubyte *bitmap  = argp->bitmap;;
 
     // Call actual function
     glBitmap(width, height, xorig, yorig, xmove, ymove, bitmap);
@@ -5707,7 +5707,7 @@ void *glreadpixels_lh(args_glReadPixels *argp)
 	 GLsizei height = argp->height;;
 	 GLenum format = argp->format;;
 	 GLenum type = argp->type;;
-	 GLvoid *pixels  = argp->pixels;
+	 GLvoid *pixels  = argp->pixels;;
 
     // Call actual function
     glReadPixels(x, y, width, height, format, type, pixels);
@@ -5732,7 +5732,7 @@ void *gldrawpixels_lh(args_glDrawPixels *argp)
 	 GLsizei height = argp->height;;
 	 GLenum format = argp->format;;
 	 GLenum type = argp->type;;
-	 const GLvoid *pixels  = argp->pixels;
+	 const GLvoid *pixels  = argp->pixels;;
 
     // Call actual function
     glDrawPixels(width, height, format, type, pixels);
@@ -5757,7 +5757,7 @@ void *glcopypixels_lh(args_glCopyPixels *argp)
 	 GLint y = argp->y;;
 	 GLsizei width = argp->width;;
 	 GLsizei height = argp->height;;
-	 GLenum type  = argp->type;
+	 GLenum type  = argp->type;;
 
     // Call actual function
     glCopyPixels(x, y, width, height, type);
@@ -5780,7 +5780,7 @@ void *glstencilfunc_lh(args_glStencilFunc *argp)
     // Get function specific args
      GLenum func = argp->func;;
 	 GLint ref = argp->ref;;
-	 GLuint mask  = argp->mask;
+	 GLuint mask  = argp->mask;;
 
     // Call actual function
     glStencilFunc(func, ref, mask);
@@ -5801,7 +5801,7 @@ void *glstencilfunc_lh(args_glStencilFunc *argp)
 void *glstencilmask_lh(args_glStencilMask *argp)
 {
     // Get function specific args
-     GLuint mask  = argp->mask;
+     GLuint mask  = argp->mask;;
 
     // Call actual function
     glStencilMask(mask);
@@ -5824,7 +5824,7 @@ void *glstencilop_lh(args_glStencilOp *argp)
     // Get function specific args
      GLenum fail = argp->fail;;
 	 GLenum zfail = argp->zfail;;
-	 GLenum zpass  = argp->zpass;
+	 GLenum zpass  = argp->zpass;;
 
     // Call actual function
     glStencilOp(fail, zfail, zpass);
@@ -5845,7 +5845,7 @@ void *glstencilop_lh(args_glStencilOp *argp)
 void *glclearstencil_lh(args_glClearStencil *argp)
 {
     // Get function specific args
-     GLint s  = argp->s;
+     GLint s  = argp->s;;
 
     // Call actual function
     glClearStencil(s);
@@ -5868,7 +5868,7 @@ void *gltexgend_lh(args_glTexGend *argp)
     // Get function specific args
      GLenum coord = argp->coord;;
 	 GLenum pname = argp->pname;;
-	 GLdouble param  = argp->param;
+	 GLdouble param  = argp->param;;
 
     // Call actual function
     glTexGend(coord, pname, param);
@@ -5891,7 +5891,7 @@ void *gltexgenf_lh(args_glTexGenf *argp)
     // Get function specific args
      GLenum coord = argp->coord;;
 	 GLenum pname = argp->pname;;
-	 GLfloat param  = argp->param;
+	 GLfloat param  = argp->param;;
 
     // Call actual function
     glTexGenf(coord, pname, param);
@@ -5914,7 +5914,7 @@ void *gltexgeni_lh(args_glTexGeni *argp)
     // Get function specific args
      GLenum coord = argp->coord;;
 	 GLenum pname = argp->pname;;
-	 GLint param  = argp->param;
+	 GLint param  = argp->param;;
 
     // Call actual function
     glTexGeni(coord, pname, param);
@@ -5937,7 +5937,7 @@ void *gltexgendv_lh(args_glTexGendv *argp)
     // Get function specific args
      GLenum coord = argp->coord;;
 	 GLenum pname = argp->pname;;
-	 const GLdouble *params  = argp->params;
+	 const GLdouble *params  = argp->params;;
 
     // Call actual function
     glTexGendv(coord, pname, params);
@@ -5960,7 +5960,7 @@ void *gltexgenfv_lh(args_glTexGenfv *argp)
     // Get function specific args
      GLenum coord = argp->coord;;
 	 GLenum pname = argp->pname;;
-	 const GLfloat *params  = argp->params;
+	 const GLfloat *params  = argp->params;;
 
     // Call actual function
     glTexGenfv(coord, pname, params);
@@ -5983,7 +5983,7 @@ void *gltexgeniv_lh(args_glTexGeniv *argp)
     // Get function specific args
      GLenum coord = argp->coord;;
 	 GLenum pname = argp->pname;;
-	 const GLint *params  = argp->params;
+	 const GLint *params  = argp->params;;
 
     // Call actual function
     glTexGeniv(coord, pname, params);
@@ -6006,7 +6006,7 @@ void *glgettexgendv_lh(args_glGetTexGendv *argp)
     // Get function specific args
      GLenum coord = argp->coord;;
 	 GLenum pname = argp->pname;;
-	 GLdouble *params  = argp->params;
+	 GLdouble *params  = argp->params;;
 
     // Call actual function
     glGetTexGendv(coord, pname, params);
@@ -6029,7 +6029,7 @@ void *glgettexgenfv_lh(args_glGetTexGenfv *argp)
     // Get function specific args
      GLenum coord = argp->coord;;
 	 GLenum pname = argp->pname;;
-	 GLfloat *params  = argp->params;
+	 GLfloat *params  = argp->params;;
 
     // Call actual function
     glGetTexGenfv(coord, pname, params);
@@ -6052,7 +6052,7 @@ void *glgettexgeniv_lh(args_glGetTexGeniv *argp)
     // Get function specific args
      GLenum coord = argp->coord;;
 	 GLenum pname = argp->pname;;
-	 GLint *params  = argp->params;
+	 GLint *params  = argp->params;;
 
     // Call actual function
     glGetTexGeniv(coord, pname, params);
@@ -6075,7 +6075,7 @@ void *gltexenvf_lh(args_glTexEnvf *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 GLfloat param  = argp->param;
+	 GLfloat param  = argp->param;;
 
     // Call actual function
     glTexEnvf(target, pname, param);
@@ -6098,7 +6098,7 @@ void *gltexenvi_lh(args_glTexEnvi *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 GLint param  = argp->param;
+	 GLint param  = argp->param;;
 
     // Call actual function
     glTexEnvi(target, pname, param);
@@ -6121,7 +6121,7 @@ void *gltexenvfv_lh(args_glTexEnvfv *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 const GLfloat *params  = argp->params;
+	 const GLfloat *params  = argp->params;;
 
     // Call actual function
     glTexEnvfv(target, pname, params);
@@ -6144,7 +6144,7 @@ void *gltexenviv_lh(args_glTexEnviv *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 const GLint *params  = argp->params;
+	 const GLint *params  = argp->params;;
 
     // Call actual function
     glTexEnviv(target, pname, params);
@@ -6167,7 +6167,7 @@ void *glgettexenvfv_lh(args_glGetTexEnvfv *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 GLfloat *params  = argp->params;
+	 GLfloat *params  = argp->params;;
 
     // Call actual function
     glGetTexEnvfv(target, pname, params);
@@ -6190,7 +6190,7 @@ void *glgettexenviv_lh(args_glGetTexEnviv *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 GLint *params  = argp->params;
+	 GLint *params  = argp->params;;
 
     // Call actual function
     glGetTexEnviv(target, pname, params);
@@ -6213,7 +6213,7 @@ void *gltexparameterf_lh(args_glTexParameterf *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 GLfloat param  = argp->param;
+	 GLfloat param  = argp->param;;
 
     // Call actual function
     glTexParameterf(target, pname, param);
@@ -6236,7 +6236,7 @@ void *gltexparameteri_lh(args_glTexParameteri *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 GLint param  = argp->param;
+	 GLint param  = argp->param;;
 
     // Call actual function
     glTexParameteri(target, pname, param);
@@ -6259,7 +6259,7 @@ void *gltexparameterfv_lh(args_glTexParameterfv *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 const GLfloat *params  = argp->params;
+	 const GLfloat *params  = argp->params;;
 
     // Call actual function
     glTexParameterfv(target, pname, params);
@@ -6282,7 +6282,7 @@ void *gltexparameteriv_lh(args_glTexParameteriv *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 const GLint *params  = argp->params;
+	 const GLint *params  = argp->params;;
 
     // Call actual function
     glTexParameteriv(target, pname, params);
@@ -6305,7 +6305,7 @@ void *glgettexparameterfv_lh(args_glGetTexParameterfv *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 GLfloat *params = argp->params;
+	 GLfloat *params = argp->params;;
 
     // Call actual function
     glGetTexParameterfv(target, pname, params);
@@ -6328,7 +6328,7 @@ void *glgettexparameteriv_lh(args_glGetTexParameteriv *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 GLint *params  = argp->params;
+	 GLint *params  = argp->params;;
 
     // Call actual function
     glGetTexParameteriv(target, pname, params);
@@ -6352,7 +6352,7 @@ void *glgettexlevelparameterfv_lh(args_glGetTexLevelParameterfv *argp)
      GLenum target = argp->target;;
 	 GLint level = argp->level;;
 	 GLenum pname = argp->pname;;
-	 GLfloat *params  = argp->params;
+	 GLfloat *params  = argp->params;;
 
     // Call actual function
     glGetTexLevelParameterfv(target, level, pname, params);
@@ -6376,7 +6376,7 @@ void *glgettexlevelparameteriv_lh(args_glGetTexLevelParameteriv *argp)
      GLenum target = argp->target;;
 	 GLint level = argp->level;;
 	 GLenum pname = argp->pname;;
-	 GLint *params  = argp->params;
+	 GLint *params  = argp->params;;
 
     // Call actual function
     glGetTexLevelParameteriv(target, level, pname, params);
@@ -6404,7 +6404,7 @@ void *glteximage1d_lh(args_glTexImage1D *argp)
 	 GLint border = argp->border;;
 	 GLenum format = argp->format;;
 	 GLenum type = argp->type;;
-	 const GLvoid *pixels  = argp->pixels;
+	 const GLvoid *pixels  = argp->pixels;;
 
     // Call actual function
     glTexImage1D(target, level, internalFormat, width, border, format, type, pixels);
@@ -6433,7 +6433,7 @@ void *glteximage2d_lh(args_glTexImage2D *argp)
 	 GLint border = argp->border;;
 	 GLenum format = argp->format;;
 	 GLenum type = argp->type;;
-	 const GLvoid *pixels  = argp->pixels;
+	 const GLvoid *pixels  = argp->pixels;;
 
     // Call actual function
     glTexImage2D(target, level, internalFormat, width, height, border, format, type, pixels);
@@ -6458,7 +6458,7 @@ void *glgetteximage_lh(args_glGetTexImage *argp)
 	 GLint level = argp->level;;
 	  GLenum format = argp->format;;
 	 GLenum type = argp->type;;
-	  GLvoid *pixels  = argp->pixels;
+	  GLvoid *pixels  = argp->pixels;;
 
     // Call actual function
     glGetTexImage(target, level, format, type, pixels);
@@ -6480,7 +6480,7 @@ void *glgentextures_lh(args_glGenTextures *argp)
 {
     // Get function specific args
      GLsizei n = argp->n;;
-	 GLuint *textures  = argp->textures;
+	 GLuint *textures  = argp->textures;;
 
     // Call actual function
     glGenTextures(n, textures);
@@ -6502,7 +6502,7 @@ void *gldeletetextures_lh(args_glDeleteTextures *argp)
 {
     // Get function specific args
      GLsizei n = argp->n;;
-	 const GLuint *textures = argp->textures;
+	 const GLuint *textures = argp->textures;;
 
     // Call actual function
     glDeleteTextures(n, textures);
@@ -6524,7 +6524,7 @@ void *glbindtexture_lh(args_glBindTexture *argp)
 {
     // Get function specific args
      GLenum target = argp->target;;
-	 GLuint texture  = argp->texture;
+	 GLuint texture  = argp->texture;;
 
     // Call actual function
     glBindTexture(target, texture);
@@ -6547,7 +6547,7 @@ void *glprioritizetextures_lh(args_glPrioritizeTextures *argp)
     // Get function specific args
      GLsizei n = argp->n;;
 	 const GLuint *textures = argp->textures;;
-	 const GLclampf *priorities  = argp->priorities;
+	 const GLclampf *priorities  = argp->priorities;;
 
     // Call actual function
     glPrioritizeTextures(n, textures, priorities);
@@ -6570,7 +6570,7 @@ GLboolean *glaretexturesresident_lh(args_glAreTexturesResident *argp)
     // Get function specific args
      GLsizei n = argp->n;;
 	 const GLuint *textures = argp->textures;;
-	 GLboolean *residences  = argp->residences;
+	 GLboolean *residences  = argp->residences;;
 
     // Call actual function
     GLboolean result = glAreTexturesResident(n, textures, residences);
@@ -6593,7 +6593,7 @@ GLboolean *glaretexturesresident_lh(args_glAreTexturesResident *argp)
 GLboolean *glistexture_lh(args_glIsTexture *argp)
 {
     // Get function specific args
-     GLuint texture  = argp->texture;
+     GLuint texture  = argp->texture;;
 
     // Call actual function
     GLboolean result = glIsTexture(texture);
@@ -6622,7 +6622,7 @@ void *gltexsubimage1d_lh(args_glTexSubImage1D *argp)
 	 GLsizei width = argp->width;;
 	 GLenum format = argp->format;;
 	 GLenum type = argp->type;;
-	 const GLvoid *pixels  = argp->pixels;
+	 const GLvoid *pixels  = argp->pixels;;
 
     // Call actual function
     glTexSubImage1D(target, level, xoffset, width, format, type, pixels);
@@ -6651,7 +6651,7 @@ void *gltexsubimage2d_lh(args_glTexSubImage2D *argp)
 	 GLsizei height = argp->height;;
 	 GLenum format = argp->format;;
 	 GLenum type = argp->type;;
-	 const GLvoid *pixels  = argp->pixels;
+	 const GLvoid *pixels  = argp->pixels;;
 
     // Call actual function
     glTexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, pixels);
@@ -6678,7 +6678,7 @@ void *glcopyteximage1d_lh(args_glCopyTexImage1D *argp)
 	 GLint x = argp->x;;
 	 GLint y = argp->y;;
 	 GLsizei width = argp->width;;
-	 GLint border  = argp->border;
+	 GLint border  = argp->border;;
 
     // Call actual function
     glCopyTexImage1D(target, level, internalformat, x, y, width, border);
@@ -6706,7 +6706,7 @@ void *glcopyteximage2d_lh(args_glCopyTexImage2D *argp)
 	 GLint y = argp->y;;
 	 GLsizei width = argp->width;;
 	 GLsizei height = argp->height;;
-	 GLint border  = argp->border;
+	 GLint border  = argp->border;;
 
     // Call actual function
     glCopyTexImage2D(target, level, internalformat, x, y, width, height, border);
@@ -6732,7 +6732,7 @@ void *glcopytexsubimage1d_lh(args_glCopyTexSubImage1D *argp)
 	GLint xoffset = argp->xoffset;;
 	 GLint x = argp->x;;
 	 GLint y = argp->y;;
-	GLsizei width  = argp->width;
+	GLsizei width  = argp->width;;
 
     // Call actual function
     glCopyTexSubImage1D(target, level, xoffset, x, y, width);
@@ -6760,7 +6760,7 @@ void *glcopytexsubimage2d_lh(args_glCopyTexSubImage2D *argp)
 	GLint x = argp->x;;
 	 GLint y = argp->y;;
 	 GLsizei width = argp->width;;
-	 GLsizei height  = argp->height;
+	 GLsizei height  = argp->height;;
 
     // Call actual function
     glCopyTexSubImage2D(target, level, xoffset, yoffset, x, y, width, height);
@@ -6786,7 +6786,7 @@ void *glmap1d_lh(args_glMap1d *argp)
 	 GLdouble u2 = argp->u2;;
 	 GLint stride = argp->stride;;
 	 GLint order = argp->order;;
-	 const GLdouble *points  = argp->points;
+	 const GLdouble *points  = argp->points;;
 
     // Call actual function
     glMap1d(target, u1, u2, stride, order, points);
@@ -6812,7 +6812,7 @@ void *glmap1f_lh(args_glMap1f *argp)
 	 GLfloat u2 = argp->u2;;
 	 GLint stride = argp->stride;;
 	 GLint order = argp->order;;
-	 const GLfloat *points  = argp->points;
+	 const GLfloat *points  = argp->points;;
 
     // Call actual function
     glMap1f(target, u1, u2, stride, order, points);
@@ -6842,7 +6842,7 @@ void *glmap2d_lh(args_glMap2d *argp)
 	 GLdouble v2 = argp->v2;;
 	 GLint vstride = argp->vstride;;
 	 GLint vorder = argp->vorder;;
-	 const GLdouble *points  = argp->points;
+	 const GLdouble *points  = argp->points;;
 
     // Call actual function
     glMap2d(target, u1, u2, ustride, uorder, v1, v2, vstride, vorder, points);
@@ -6872,7 +6872,7 @@ void *glmap2f_lh(args_glMap2f *argp)
 	 GLfloat v2 = argp->v2;;
 	 GLint vstride = argp->vstride;;
 	 GLint vorder = argp->vorder;;
-	 const GLfloat *points  = argp->points;
+	 const GLfloat *points  = argp->points;;
 
     // Call actual function
     glMap2f(target, u1, u2, ustride, uorder, v1, v2, vstride, vorder, points);
@@ -6895,7 +6895,7 @@ void *glgetmapdv_lh(args_glGetMapdv *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum query = argp->query;;
-	 GLdouble *v  = argp->v;
+	 GLdouble *v  = argp->v;;
 
     // Call actual function
     glGetMapdv(target, query, v);
@@ -6918,7 +6918,7 @@ void *glgetmapfv_lh(args_glGetMapfv *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum query = argp->query;;
-	 GLfloat *v  = argp->v;
+	 GLfloat *v  = argp->v;;
 
     // Call actual function
     glGetMapfv(target, query, v);
@@ -6941,7 +6941,7 @@ void *glgetmapiv_lh(args_glGetMapiv *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum query = argp->query;;
-	 GLint *v  = argp->v;
+	 GLint *v  = argp->v;;
 
     // Call actual function
     glGetMapiv(target, query, v);
@@ -6962,7 +6962,7 @@ void *glgetmapiv_lh(args_glGetMapiv *argp)
 void *glevalcoord1d_lh(args_glEvalCoord1d *argp)
 {
     // Get function specific args
-     GLdouble u  = argp->u;
+     GLdouble u  = argp->u;;
 
     // Call actual function
     glEvalCoord1d(u);
@@ -6983,7 +6983,7 @@ void *glevalcoord1d_lh(args_glEvalCoord1d *argp)
 void *glevalcoord1f_lh(args_glEvalCoord1f *argp)
 {
     // Get function specific args
-     GLfloat u  = argp->u;
+     GLfloat u  = argp->u;;
 
     // Call actual function
     glEvalCoord1f(u);
@@ -7004,7 +7004,7 @@ void *glevalcoord1f_lh(args_glEvalCoord1f *argp)
 void *glevalcoord1dv_lh(args_glEvalCoord1dv *argp)
 {
     // Get function specific args
-     const GLdouble *u  = argp->u;
+     const GLdouble *u  = argp->u;;
 
     // Call actual function
     glEvalCoord1dv(u);
@@ -7025,7 +7025,7 @@ void *glevalcoord1dv_lh(args_glEvalCoord1dv *argp)
 void *glevalcoord1fv_lh(args_glEvalCoord1fv *argp)
 {
     // Get function specific args
-     const GLfloat *u  = argp->u;
+     const GLfloat *u  = argp->u;;
 
     // Call actual function
     glEvalCoord1fv(u);
@@ -7047,7 +7047,7 @@ void *glevalcoord2d_lh(args_glEvalCoord2d *argp)
 {
     // Get function specific args
      GLdouble u = argp->u;;
-	 GLdouble v  = argp->v;
+	 GLdouble v  = argp->v;;
 
     // Call actual function
     glEvalCoord2d(u, v);
@@ -7069,7 +7069,7 @@ void *glevalcoord2f_lh(args_glEvalCoord2f *argp)
 {
     // Get function specific args
      GLfloat u = argp->u;;
-	 GLfloat v  = argp->v;
+	 GLfloat v  = argp->v;;
 
     // Call actual function
     glEvalCoord2f(u, v);
@@ -7090,7 +7090,7 @@ void *glevalcoord2f_lh(args_glEvalCoord2f *argp)
 void *glevalcoord2dv_lh(args_glEvalCoord2dv *argp)
 {
     // Get function specific args
-     const GLdouble *u  = argp->u;
+     const GLdouble *u  = argp->u;;
 
     // Call actual function
     glEvalCoord2dv(u);
@@ -7111,7 +7111,7 @@ void *glevalcoord2dv_lh(args_glEvalCoord2dv *argp)
 void *glevalcoord2fv_lh(args_glEvalCoord2fv *argp)
 {
     // Get function specific args
-     const GLfloat *u  = argp->u;
+     const GLfloat *u  = argp->u;;
 
     // Call actual function
     glEvalCoord2fv(u);
@@ -7134,7 +7134,7 @@ void *glmapgrid1d_lh(args_glMapGrid1d *argp)
     // Get function specific args
      GLint un = argp->un;;
 	 GLdouble u1 = argp->u1;;
-	 GLdouble u2  = argp->u2;
+	 GLdouble u2  = argp->u2;;
 
     // Call actual function
     glMapGrid1d(un, u1, u2);
@@ -7157,7 +7157,7 @@ void *glmapgrid1f_lh(args_glMapGrid1f *argp)
     // Get function specific args
      GLint un = argp->un;;
 	 GLfloat u1 = argp->u1;;
-	 GLfloat u2  = argp->u2;
+	 GLfloat u2  = argp->u2;;
 
     // Call actual function
     glMapGrid1f(un, u1, u2);
@@ -7183,7 +7183,7 @@ void *glmapgrid2d_lh(args_glMapGrid2d *argp)
 	 GLdouble u2 = argp->u2;;
 	 GLint vn = argp->vn;;
 	 GLdouble v1 = argp->v1;;
-	 GLdouble v2  = argp->v2;
+	 GLdouble v2  = argp->v2;;
 
     // Call actual function
     glMapGrid2d(un, u1, u2, vn, v1, v2);
@@ -7209,7 +7209,7 @@ void *glmapgrid2f_lh(args_glMapGrid2f *argp)
 	 GLfloat u2 = argp->u2;;
 	 GLint vn = argp->vn;;
 	 GLfloat v1 = argp->v1;;
-	 GLfloat v2  = argp->v2;
+	 GLfloat v2  = argp->v2;;
 
     // Call actual function
     glMapGrid2f(un, u1, u2, vn, v1, v2);
@@ -7230,7 +7230,7 @@ void *glmapgrid2f_lh(args_glMapGrid2f *argp)
 void *glevalpoint1_lh(args_glEvalPoint1 *argp)
 {
     // Get function specific args
-     GLint i  = argp->i;
+     GLint i  = argp->i;;
 
     // Call actual function
     glEvalPoint1(i);
@@ -7252,7 +7252,7 @@ void *glevalpoint2_lh(args_glEvalPoint2 *argp)
 {
     // Get function specific args
      GLint i = argp->i;;
-	 GLint j  = argp->j;
+	 GLint j  = argp->j;;
 
     // Call actual function
     glEvalPoint2(i, j);
@@ -7275,7 +7275,7 @@ void *glevalmesh1_lh(args_glEvalMesh1 *argp)
     // Get function specific args
      GLenum mode = argp->mode;;
 	 GLint i1 = argp->i1;;
-	 GLint i2  = argp->i2;
+	 GLint i2  = argp->i2;;
 
     // Call actual function
     glEvalMesh1(mode, i1, i2);
@@ -7300,7 +7300,7 @@ void *glevalmesh2_lh(args_glEvalMesh2 *argp)
 	 GLint i1 = argp->i1;;
 	 GLint i2 = argp->i2;;
 	 GLint j1 = argp->j1;;
-	 GLint j2  = argp->j2;
+	 GLint j2  = argp->j2;;
 
     // Call actual function
     glEvalMesh2(mode, i1, i2, j1, j2);
@@ -7322,7 +7322,7 @@ void *glfogf_lh(args_glFogf *argp)
 {
     // Get function specific args
      GLenum pname = argp->pname;;
-	 GLfloat param  = argp->param;
+	 GLfloat param  = argp->param;;
 
     // Call actual function
     glFogf(pname, param);
@@ -7344,7 +7344,7 @@ void *glfogi_lh(args_glFogi *argp)
 {
     // Get function specific args
      GLenum pname = argp->pname;;
-	 GLint param  = argp->param;
+	 GLint param  = argp->param;;
 
     // Call actual function
     glFogi(pname, param);
@@ -7366,7 +7366,7 @@ void *glfogfv_lh(args_glFogfv *argp)
 {
     // Get function specific args
      GLenum pname = argp->pname;;
-	 const GLfloat *params  = argp->params;
+	 const GLfloat *params  = argp->params;;
 
     // Call actual function
     glFogfv(pname, params);
@@ -7388,7 +7388,7 @@ void *glfogiv_lh(args_glFogiv *argp)
 {
     // Get function specific args
      GLenum pname = argp->pname;;
-	 const GLint *params  = argp->params;
+	 const GLint *params  = argp->params;;
 
     // Call actual function
     glFogiv(pname, params);
@@ -7411,7 +7411,7 @@ void *glfeedbackbuffer_lh(args_glFeedbackBuffer *argp)
     // Get function specific args
      GLsizei size = argp->size;;
 	 GLenum type = argp->type;;
-	 GLfloat *buffer  = argp->buffer;
+	 GLfloat *buffer  = argp->buffer;;
 
     // Call actual function
     glFeedbackBuffer(size, type, buffer);
@@ -7432,7 +7432,7 @@ void *glfeedbackbuffer_lh(args_glFeedbackBuffer *argp)
 void *glpassthrough_lh(args_glPassThrough *argp)
 {
     // Get function specific args
-     GLfloat token  = argp->token;
+     GLfloat token  = argp->token;;
 
     // Call actual function
     glPassThrough(token);
@@ -7454,7 +7454,7 @@ void *glselectbuffer_lh(args_glSelectBuffer *argp)
 {
     // Get function specific args
      GLsizei size = argp->size;;
-	 GLuint *buffer  = argp->buffer;
+	 GLuint *buffer  = argp->buffer;;
 
     // Call actual function
     glSelectBuffer(size, buffer);
@@ -7495,7 +7495,7 @@ void *glinitnames_lh()
 void *glloadname_lh(args_glLoadName *argp)
 {
     // Get function specific args
-     GLuint name  = argp->name;
+     GLuint name  = argp->name;;
 
     // Call actual function
     glLoadName(name);
@@ -7516,7 +7516,7 @@ void *glloadname_lh(args_glLoadName *argp)
 void *glpushname_lh(args_glPushName *argp)
 {
     // Get function specific args
-     GLuint name  = argp->name;
+     GLuint name  = argp->name;;
 
     // Call actual function
     glPushName(name);
@@ -7562,7 +7562,7 @@ void *gldrawrangeelements_lh(args_glDrawRangeElements *argp)
 	 GLuint end = argp->end;;
 	 GLsizei count = argp->count;;
 	 GLenum type = argp->type;;
-	 const GLvoid *indices  = argp->indices;
+	 const GLvoid *indices  = argp->indices;;
 
     // Call actual function
     glDrawRangeElements(mode, start, end, count, type, indices);
@@ -7592,7 +7592,7 @@ void *glteximage3d_lh(args_glTexImage3D *argp)
 	 GLint border = argp->border;;
 	 GLenum format = argp->format;;
 	 GLenum type = argp->type;;
-	 const GLvoid *pixels  = argp->pixels;
+	 const GLvoid *pixels  = argp->pixels;;
 
     // Call actual function
     glTexImage3D(target, level, internalFormat, width, height, depth, border, format, type, pixels);
@@ -7623,7 +7623,7 @@ void *gltexsubimage3d_lh(args_glTexSubImage3D *argp)
 	 GLsizei depth = argp->depth;;
 	 GLenum format = argp->format;;
 	 GLenum type = argp->type;;
-	 const GLvoid *pixels = argp->pixels;
+	 const GLvoid *pixels = argp->pixels;;
 
     // Call actual function
     glTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
@@ -7652,7 +7652,7 @@ void *glcopytexsubimage3d_lh(args_glCopyTexSubImage3D *argp)
 	 GLint x = argp->x;;
 	 GLint y = argp->y;;
 	 GLsizei width = argp->width;;
-	 GLsizei height  = argp->height;
+	 GLsizei height  = argp->height;;
 
     // Call actual function
     glCopyTexSubImage3D(target, level, xoffset, yoffset, zoffset, x, y, width, height);
@@ -7678,7 +7678,7 @@ void *glcolortable_lh(args_glColorTable *argp)
 	 GLsizei width = argp->width;;
 	 GLenum format = argp->format;;
 	 GLenum type = argp->type;;
-	 const GLvoid *table  = argp->table;
+	 const GLvoid *table  = argp->table;;
 
     // Call actual function
     glColorTable(target, internalformat, width, format, type, table);
@@ -7704,7 +7704,7 @@ void *glcolorsubtable_lh(args_glColorSubTable *argp)
 	 GLsizei count = argp->count;;
 	 GLenum format = argp->format;;
 	 GLenum type = argp->type;;
-	 const GLvoid *data  = argp->data;
+	 const GLvoid *data  = argp->data;;
 
     // Call actual function
     glColorSubTable(target, start, count, format, type, data);
@@ -7727,7 +7727,7 @@ void *glcolortableparameteriv_lh(args_glColorTableParameteriv *argp)
     // Get function specific args
     GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 const GLint *params = argp->params;
+	 const GLint *params = argp->params;;
 
     // Call actual function
     glColorTableParameteriv(target, pname, params);
@@ -7750,7 +7750,7 @@ void *glcolortableparameterfv_lh(args_glColorTableParameterfv *argp)
     // Get function specific args
     GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 const GLfloat *params = argp->params;
+	 const GLfloat *params = argp->params;;
 
     // Call actual function
     glColorTableParameterfv(target, pname, params);
@@ -7775,7 +7775,7 @@ void *glcopycolorsubtable_lh(args_glCopyColorSubTable *argp)
 	 GLsizei start = argp->start;;
 	GLint x = argp->x;;
 	 GLint y = argp->y;;
-	 GLsizei width  = argp->width;
+	 GLsizei width  = argp->width;;
 
     // Call actual function
     glCopyColorSubTable(target, start, x, y, width);
@@ -7800,7 +7800,7 @@ void *glcopycolortable_lh(args_glCopyColorTable *argp)
 	 GLenum internalformat = argp->internalformat;;
 	 GLint x = argp->x;;
 	 GLint y = argp->y;;
-	 GLsizei width  = argp->width;
+	 GLsizei width  = argp->width;;
 
     // Call actual function
     glCopyColorTable(target, internalformat, x, y, width);
@@ -7824,7 +7824,7 @@ void *glgetcolortable_lh(args_glGetColorTable *argp)
      GLenum target = argp->target;;
 	 GLenum format = argp->format;;
 	 GLenum type = argp->type;;
-	 GLvoid *table  = argp->table;
+	 GLvoid *table  = argp->table;;
 
     // Call actual function
     glGetColorTable(target, format, type, table);
@@ -7847,7 +7847,7 @@ void *glgetcolortableparameterfv_lh(args_glGetColorTableParameterfv *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 GLfloat *params  = argp->params;
+	 GLfloat *params  = argp->params;;
 
     // Call actual function
     glGetColorTableParameterfv(target, pname, params);
@@ -7870,7 +7870,7 @@ void *glgetcolortableparameteriv_lh(args_glGetColorTableParameteriv *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 GLint *params  = argp->params;
+	 GLint *params  = argp->params;;
 
     // Call actual function
     glGetColorTableParameteriv(target, pname, params);
@@ -7891,7 +7891,7 @@ void *glgetcolortableparameteriv_lh(args_glGetColorTableParameteriv *argp)
 void *glblendequation_lh(args_glBlendEquation *argp)
 {
     // Get function specific args
-     GLenum mode  = argp->mode;
+     GLenum mode  = argp->mode;;
 
     // Call actual function
     glBlendEquation(mode);
@@ -7915,7 +7915,7 @@ void *glblendcolor_lh(args_glBlendColor *argp)
      GLclampf red = argp->red;;
 	 GLclampf green = argp->green;;
 	 GLclampf blue = argp->blue;;
-	 GLclampf alpha  = argp->alpha;
+	 GLclampf alpha  = argp->alpha;;
 
     // Call actual function
     glBlendColor(red, green, blue, alpha);
@@ -7939,7 +7939,7 @@ void *glhistogram_lh(args_glHistogram *argp)
      GLenum target = argp->target;;
 	 GLsizei width = argp->width;;
 	 GLenum internalformat = argp->internalformat;;
-	 GLboolean sink  = argp->sink;
+	 GLboolean sink  = argp->sink;;
 
     // Call actual function
     glHistogram(target, width, internalformat, sink);
@@ -7960,7 +7960,7 @@ void *glhistogram_lh(args_glHistogram *argp)
 void *glresethistogram_lh(args_glResetHistogram *argp)
 {
     // Get function specific args
-     GLenum target  = argp->target;
+     GLenum target  = argp->target;;
 
     // Call actual function
     glResetHistogram(target);
@@ -7985,7 +7985,7 @@ void *glgethistogram_lh(args_glGetHistogram *argp)
 	 GLboolean reset = argp->reset;;
 	 GLenum format = argp->format;;
 	 GLenum type = argp->type;;
-	 GLvoid *values  = argp->values;
+	 GLvoid *values  = argp->values;;
 
     // Call actual function
     glGetHistogram(target, reset, format, type, values);
@@ -8008,7 +8008,7 @@ void *glgethistogramparameterfv_lh(args_glGetHistogramParameterfv *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 GLfloat *params  = argp->params;
+	 GLfloat *params  = argp->params;;
 
     // Call actual function
     glGetHistogramParameterfv(target, pname, params);
@@ -8031,7 +8031,7 @@ void *glgethistogramparameteriv_lh(args_glGetHistogramParameteriv *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 GLint *params  = argp->params;
+	 GLint *params  = argp->params;;
 
     // Call actual function
     glGetHistogramParameteriv(target, pname, params);
@@ -8054,7 +8054,7 @@ void *glminmax_lh(args_glMinmax *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum internalformat = argp->internalformat;;
-	 GLboolean sink  = argp->sink;
+	 GLboolean sink  = argp->sink;;
 
     // Call actual function
     glMinmax(target, internalformat, sink);
@@ -8075,7 +8075,7 @@ void *glminmax_lh(args_glMinmax *argp)
 void *glresetminmax_lh(args_glResetMinmax *argp)
 {
     // Get function specific args
-     GLenum target  = argp->target;
+     GLenum target  = argp->target;;
 
     // Call actual function
     glResetMinmax(target);
@@ -8100,7 +8100,7 @@ void *glgetminmax_lh(args_glGetMinmax *argp)
 	 GLboolean reset = argp->reset;;
 	 GLenum format = argp->format;;
 	 GLenum types = argp->types;;
-	 GLvoid *values  = argp->values;
+	 GLvoid *values  = argp->values;;
 
     // Call actual function
     glGetMinmax(target, reset, format, types, values);
@@ -8123,7 +8123,7 @@ void *glgetminmaxparameterfv_lh(args_glGetMinmaxParameterfv *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 GLfloat *params  = argp->params;
+	 GLfloat *params  = argp->params;;
 
     // Call actual function
     glGetMinmaxParameterfv(target, pname, params);
@@ -8146,7 +8146,7 @@ void *glgetminmaxparameteriv_lh(args_glGetMinmaxParameteriv *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 GLint *params  = argp->params;
+	 GLint *params  = argp->params;;
 
     // Call actual function
     glGetMinmaxParameteriv(target, pname, params);
@@ -8172,7 +8172,7 @@ void *glconvolutionfilter1d_lh(args_glConvolutionFilter1D *argp)
 	 GLsizei width = argp->width;;
 	 GLenum format = argp->format;;
 	 GLenum type = argp->type;;
-	 const GLvoid *image  = argp->image;
+	 const GLvoid *image  = argp->image;;
 
     // Call actual function
     glConvolutionFilter1D(target, internalformat, width, format, type, image);
@@ -8199,7 +8199,7 @@ void *glconvolutionfilter2d_lh(args_glConvolutionFilter2D *argp)
 	 GLsizei height = argp->height;;
 	 GLenum format = argp->format;;
 	 GLenum type = argp->type;;
-	 const GLvoid *image  = argp->image;
+	 const GLvoid *image  = argp->image;;
 
     // Call actual function
     glConvolutionFilter2D(target, internalformat, width, height, format, type, image);
@@ -8222,7 +8222,7 @@ void *glconvolutionparameterf_lh(args_glConvolutionParameterf *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 GLfloat params  = argp->params;
+	 GLfloat params  = argp->params;;
 
     // Call actual function
     glConvolutionParameterf(target, pname, params);
@@ -8245,7 +8245,7 @@ void *glconvolutionparameterfv_lh(args_glConvolutionParameterfv *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 const GLfloat *params  = argp->params;
+	 const GLfloat *params  = argp->params;;
 
     // Call actual function
     glConvolutionParameterfv(target, pname, params);
@@ -8268,7 +8268,7 @@ void *glconvolutionparameteri_lh(args_glConvolutionParameteri *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 GLint params  = argp->params;
+	 GLint params  = argp->params;;
 
     // Call actual function
     glConvolutionParameteri(target, pname, params);
@@ -8291,7 +8291,7 @@ void *glconvolutionparameteriv_lh(args_glConvolutionParameteriv *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 const GLint *params  = argp->params;
+	 const GLint *params  = argp->params;;
 
     // Call actual function
     glConvolutionParameteriv(target, pname, params);
@@ -8316,7 +8316,7 @@ void *glcopyconvolutionfilter1d_lh(args_glCopyConvolutionFilter1D *argp)
 	 GLenum internalformat = argp->internalformat;;
 	 GLint x = argp->x;;
 	 GLint y = argp->y;;
-	 GLsizei width  = argp->width;
+	 GLsizei width  = argp->width;;
 
     // Call actual function
     glCopyConvolutionFilter1D(target, internalformat, x, y, width);
@@ -8342,7 +8342,7 @@ void *glcopyconvolutionfilter2d_lh(args_glCopyConvolutionFilter2D *argp)
 	 GLint x = argp->x;;
 	 GLint y = argp->y;;
 	 GLsizei width = argp->width;;
-	 GLsizei height = argp->height;
+	 GLsizei height = argp->height;;
 
     // Call actual function
     glCopyConvolutionFilter2D(target, internalformat, x, y, width, height);
@@ -8366,7 +8366,7 @@ void *glgetconvolutionfilter_lh(args_glGetConvolutionFilter *argp)
      GLenum target = argp->target;;
 	 GLenum format = argp->format;;
 	 GLenum type = argp->type;;
-	 GLvoid *image  = argp->image;
+	 GLvoid *image  = argp->image;;
 
     // Call actual function
     glGetConvolutionFilter(target, format, type, image);
@@ -8389,7 +8389,7 @@ void *glgetconvolutionparameterfv_lh(args_glGetConvolutionParameterfv *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 GLfloat *params  = argp->params;
+	 GLfloat *params  = argp->params;;
 
     // Call actual function
     glGetConvolutionParameterfv(target, pname, params);
@@ -8412,7 +8412,7 @@ void *glgetconvolutionparameteriv_lh(args_glGetConvolutionParameteriv *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLenum pname = argp->pname;;
-	 GLint *params  = argp->params;
+	 GLint *params  = argp->params;;
 
     // Call actual function
     glGetConvolutionParameteriv(target, pname, params);
@@ -8440,7 +8440,7 @@ void *glseparablefilter2d_lh(args_glSeparableFilter2D *argp)
 	 GLenum format = argp->format;;
 	 GLenum type = argp->type;;
 	 const GLvoid *row = argp->row;;
-	 const GLvoid *column  = argp->column;
+	 const GLvoid *column  = argp->column;;
 
     // Call actual function
     glSeparableFilter2D(target, internalformat, width, height, format, type, row, column);
@@ -8466,7 +8466,7 @@ void *glgetseparablefilter_lh(args_glGetSeparableFilter *argp)
 	 GLenum type = argp->type;;
 	 GLvoid *row = argp->row;;
 	 GLvoid *column = argp->column;;
-	 GLvoid *span  = argp->span;
+	 GLvoid *span  = argp->span;;
 
     // Call actual function
     glGetSeparableFilter(target, format, type, row, column, span);
@@ -8487,7 +8487,7 @@ void *glgetseparablefilter_lh(args_glGetSeparableFilter *argp)
 void *glactivetexture_lh(args_glActiveTexture *argp)
 {
     // Get function specific args
-     GLenum texture  = argp->texture;
+     GLenum texture  = argp->texture;;
 
     // Call actual function
     glActiveTexture(texture);
@@ -8508,7 +8508,7 @@ void *glactivetexture_lh(args_glActiveTexture *argp)
 void *glclientactivetexture_lh(args_glClientActiveTexture *argp)
 {
     // Get function specific args
-     GLenum texture  = argp->texture;
+     GLenum texture  = argp->texture;;
 
     // Call actual function
     glClientActiveTexture(texture);
@@ -8535,7 +8535,7 @@ void *glcompressedteximage1d_lh(args_glCompressedTexImage1D *argp)
 	 GLsizei width = argp->width;;
 	 GLint border = argp->border;;
 	 GLsizei imageSize = argp->imageSize;;
-	 const GLvoid *data  = argp->data;
+	 const GLvoid *data  = argp->data;;
 
     // Call actual function
     glCompressedTexImage1D(target, level, internalformat, width, border, imageSize, data);
@@ -8563,7 +8563,7 @@ void *glcompressedteximage2d_lh(args_glCompressedTexImage2D *argp)
 	 GLsizei height = argp->height;;
 	 GLint border = argp->border;;
 	 GLsizei imageSize = argp->imageSize;;
-	 const GLvoid *data  = argp->data;
+	 const GLvoid *data  = argp->data;;
 
     // Call actual function
     glCompressedTexImage2D(target, level, internalformat, width, height, border, imageSize, data);
@@ -8592,7 +8592,7 @@ void *glcompressedteximage3d_lh(args_glCompressedTexImage3D *argp)
 	 GLsizei depth = argp->depth;;
 	 GLint border = argp->border;;
 	 GLsizei imageSize = argp->imageSize;;
-	 const GLvoid *data  = argp->data;
+	 const GLvoid *data  = argp->data;;
 
     // Call actual function
     glCompressedTexImage3D(target, level, internalformat, width, height, depth, border, imageSize, data);
@@ -8619,7 +8619,7 @@ void *glcompressedtexsubimage1d_lh(args_glCompressedTexSubImage1D *argp)
 	 GLsizei width = argp->width;;
 	 GLenum format = argp->format;;
 	 GLsizei imageSize = argp->imageSize;;
-	 const GLvoid *data  = argp->data;
+	 const GLvoid *data  = argp->data;;
 
     // Call actual function
     glCompressedTexSubImage1D(target, level, xoffset, width, format, imageSize, data);
@@ -8648,7 +8648,7 @@ void *glcompressedtexsubimage2d_lh(args_glCompressedTexSubImage2D *argp)
 	 GLsizei height = argp->height;;
 	 GLenum format = argp->format;;
 	 GLsizei imageSize = argp->imageSize;;
-	 const GLvoid *data  = argp->data;
+	 const GLvoid *data  = argp->data;;
 
     // Call actual function
     glCompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, imageSize, data);
@@ -8679,7 +8679,7 @@ void *glcompressedtexsubimage3d_lh(args_glCompressedTexSubImage3D *argp)
 	 GLsizei depth = argp->depth;;
 	 GLenum format = argp->format;;
 	 GLsizei imageSize = argp->imageSize;;
-	 const GLvoid *data  = argp->data;
+	 const GLvoid *data  = argp->data;;
 
     // Call actual function
     glCompressedTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, data);
@@ -8702,7 +8702,7 @@ void *glgetcompressedteximage_lh(args_glGetCompressedTexImage *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLint lod = argp->lod;;
-	 GLvoid *img  = argp->img;
+	 GLvoid *img  = argp->img;;
 
     // Call actual function
     glGetCompressedTexImage(target, lod, img);
@@ -8724,7 +8724,7 @@ void *glmultitexcoord1d_lh(args_glMultiTexCoord1d *argp)
 {
     // Get function specific args
      GLenum target = argp->target;;
-	 GLdouble s  = argp->s;
+	 GLdouble s  = argp->s;;
 
     // Call actual function
     glMultiTexCoord1d(target, s);
@@ -8746,7 +8746,7 @@ void *glmultitexcoord1dv_lh(args_glMultiTexCoord1dv *argp)
 {
     // Get function specific args
      GLenum target = argp->target;;
-	 const GLdouble *v  = argp->v;
+	 const GLdouble *v  = argp->v;;
 
     // Call actual function
     glMultiTexCoord1dv(target, v);
@@ -8768,7 +8768,7 @@ void *glmultitexcoord1f_lh(args_glMultiTexCoord1f *argp)
 {
     // Get function specific args
      GLenum target = argp->target;;
-	 GLfloat s  = argp->s;
+	 GLfloat s  = argp->s;;
 
     // Call actual function
     glMultiTexCoord1f(target, s);
@@ -8790,7 +8790,7 @@ void *glmultitexcoord1fv_lh(args_glMultiTexCoord1fv *argp)
 {
     // Get function specific args
      GLenum target = argp->target;;
-	 const GLfloat *v  = argp->v;
+	 const GLfloat *v  = argp->v;;
 
     // Call actual function
     glMultiTexCoord1fv(target, v);
@@ -8812,7 +8812,7 @@ void *glmultitexcoord1i_lh(args_glMultiTexCoord1i *argp)
 {
     // Get function specific args
      GLenum target = argp->target;;
-	 GLint s  = argp->s;
+	 GLint s  = argp->s;;
 
     // Call actual function
     glMultiTexCoord1i(target, s);
@@ -8834,7 +8834,7 @@ void *glmultitexcoord1iv_lh(args_glMultiTexCoord1iv *argp)
 {
     // Get function specific args
      GLenum target = argp->target;;
-	 const GLint *v  = argp->v;
+	 const GLint *v  = argp->v;;
 
     // Call actual function
     glMultiTexCoord1iv(target, v);
@@ -8856,7 +8856,7 @@ void *glmultitexcoord1s_lh(args_glMultiTexCoord1s *argp)
 {
     // Get function specific args
      GLenum target = argp->target;;
-	 GLshort s  = argp->s;
+	 GLshort s  = argp->s;;
 
     // Call actual function
     glMultiTexCoord1s(target, s);
@@ -8878,7 +8878,7 @@ void *glmultitexcoord1sv_lh(args_glMultiTexCoord1sv *argp)
 {
     // Get function specific args
      GLenum target = argp->target;;
-	 const GLshort *v  = argp->v;
+	 const GLshort *v  = argp->v;;
 
     // Call actual function
     glMultiTexCoord1sv(target, v);
@@ -8901,7 +8901,7 @@ void *glmultitexcoord2d_lh(args_glMultiTexCoord2d *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLdouble s = argp->s;;
-	 GLdouble t  = argp->t;
+	 GLdouble t  = argp->t;;
 
     // Call actual function
     glMultiTexCoord2d(target, s, t);
@@ -8923,7 +8923,7 @@ void *glmultitexcoord2dv_lh(args_glMultiTexCoord2dv *argp)
 {
     // Get function specific args
      GLenum target = argp->target;;
-	 const GLdouble *v  = argp->v;
+	 const GLdouble *v  = argp->v;;
 
     // Call actual function
     glMultiTexCoord2dv(target, v);
@@ -8946,7 +8946,7 @@ void *glmultitexcoord2f_lh(args_glMultiTexCoord2f *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLfloat s = argp->s;;
-	 GLfloat t  = argp->t;
+	 GLfloat t  = argp->t;;
 
     // Call actual function
     glMultiTexCoord2f(target, s, t);
@@ -8968,7 +8968,7 @@ void *glmultitexcoord2fv_lh(args_glMultiTexCoord2fv *argp)
 {
     // Get function specific args
      GLenum target = argp->target;;
-	 const GLfloat *v  = argp->v;
+	 const GLfloat *v  = argp->v;;
 
     // Call actual function
     glMultiTexCoord2fv(target, v);
@@ -8991,7 +8991,7 @@ void *glmultitexcoord2i_lh(args_glMultiTexCoord2i *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLint s = argp->s;;
-	 GLint t  = argp->t;
+	 GLint t  = argp->t;;
 
     // Call actual function
     glMultiTexCoord2i(target, s, t);
@@ -9013,7 +9013,7 @@ void *glmultitexcoord2iv_lh(args_glMultiTexCoord2iv *argp)
 {
     // Get function specific args
      GLenum target = argp->target;;
-	 const GLint *v  = argp->v;
+	 const GLint *v  = argp->v;;
 
     // Call actual function
     glMultiTexCoord2iv(target, v);
@@ -9036,7 +9036,7 @@ void *glmultitexcoord2s_lh(args_glMultiTexCoord2s *argp)
     // Get function specific args
      GLenum target = argp->target;;
 	 GLshort s = argp->s;;
-	 GLshort t  = argp->t;
+	 GLshort t  = argp->t;;
 
     // Call actual function
     glMultiTexCoord2s(target, s, t);
@@ -9058,7 +9058,7 @@ void *glmultitexcoord2sv_lh(args_glMultiTexCoord2sv *argp)
 {
     // Get function specific args
      GLenum target = argp->target;;
-	 const GLshort *v  = argp->v;
+	 const GLshort *v  = argp->v;;
 
     // Call actual function
     glMultiTexCoord2sv(target, v);
@@ -9082,7 +9082,7 @@ void *glmultitexcoord3d_lh(args_glMultiTexCoord3d *argp)
      GLenum target = argp->target;;
 	 GLdouble s = argp->s;;
 	 GLdouble t = argp->t;;
-	 GLdouble r  = argp->r;
+	 GLdouble r  = argp->r;;
 
     // Call actual function
     glMultiTexCoord3d(target, s, t, r);
@@ -9104,7 +9104,7 @@ void *glmultitexcoord3dv_lh(args_glMultiTexCoord3dv *argp)
 {
     // Get function specific args
      GLenum target = argp->target;;
-	 const GLdouble *v  = argp->v;
+	 const GLdouble *v  = argp->v;;
 
     // Call actual function
     glMultiTexCoord3dv(target, v);
@@ -9128,7 +9128,7 @@ void *glmultitexcoord3f_lh(args_glMultiTexCoord3f *argp)
      GLenum target = argp->target;;
 	 GLfloat s = argp->s;;
 	 GLfloat t = argp->t;;
-	 GLfloat r  = argp->r;
+	 GLfloat r  = argp->r;;
 
     // Call actual function
     glMultiTexCoord3f(target, s, t, r);
@@ -9150,7 +9150,7 @@ void *glmultitexcoord3fv_lh(args_glMultiTexCoord3fv *argp)
 {
     // Get function specific args
      GLenum target = argp->target;;
-	 const GLfloat *v  = argp->v;
+	 const GLfloat *v  = argp->v;;
 
     // Call actual function
     glMultiTexCoord3fv(target, v);
@@ -9174,7 +9174,7 @@ void *glmultitexcoord3i_lh(args_glMultiTexCoord3i *argp)
      GLenum target = argp->target;;
 	 GLint s = argp->s;;
 	 GLint t = argp->t;;
-	 GLint r  = argp->r;
+	 GLint r  = argp->r;;
 
     // Call actual function
     glMultiTexCoord3i(target, s, t, r);
@@ -9196,7 +9196,7 @@ void *glmultitexcoord3iv_lh(args_glMultiTexCoord3iv *argp)
 {
     // Get function specific args
      GLenum target = argp->target;;
-	 const GLint *v  = argp->v;
+	 const GLint *v  = argp->v;;
 
     // Call actual function
     glMultiTexCoord3iv(target, v);
@@ -9220,7 +9220,7 @@ void *glmultitexcoord3s_lh(args_glMultiTexCoord3s *argp)
      GLenum target = argp->target;;
 	 GLshort s = argp->s;;
 	 GLshort t = argp->t;;
-	 GLshort r  = argp->r;
+	 GLshort r  = argp->r;;
 
     // Call actual function
     glMultiTexCoord3s(target, s, t, r);
@@ -9242,7 +9242,7 @@ void *glmultitexcoord3sv_lh(args_glMultiTexCoord3sv *argp)
 {
     // Get function specific args
      GLenum target = argp->target;;
-	 const GLshort *v  = argp->v;
+	 const GLshort *v  = argp->v;;
 
     // Call actual function
     glMultiTexCoord3sv(target, v);
@@ -9267,7 +9267,7 @@ void *glmultitexcoord4d_lh(args_glMultiTexCoord4d *argp)
 	 GLdouble s = argp->s;;
 	 GLdouble t = argp->t;;
 	 GLdouble r = argp->r;;
-	 GLdouble q  = argp->q;
+	 GLdouble q  = argp->q;;
 
     // Call actual function
     glMultiTexCoord4d(target, s, t, r, q);
@@ -9289,7 +9289,7 @@ void *glmultitexcoord4dv_lh(args_glMultiTexCoord4dv *argp)
 {
     // Get function specific args
      GLenum target = argp->target;;
-	 const GLdouble *v  = argp->v;
+	 const GLdouble *v  = argp->v;;
 
     // Call actual function
     glMultiTexCoord4dv(target, v);
@@ -9314,7 +9314,7 @@ void *glmultitexcoord4f_lh(args_glMultiTexCoord4f *argp)
 	 GLfloat s = argp->s;;
 	 GLfloat t = argp->t;;
 	 GLfloat r = argp->r;;
-	 GLfloat q  = argp->q;
+	 GLfloat q  = argp->q;;
 
     // Call actual function
     glMultiTexCoord4f(target, s, t, r, q);
@@ -9336,7 +9336,7 @@ void *glmultitexcoord4fv_lh(args_glMultiTexCoord4fv *argp)
 {
     // Get function specific args
      GLenum target = argp->target;;
-	 const GLfloat *v  = argp->v;
+	 const GLfloat *v  = argp->v;;
 
     // Call actual function
     glMultiTexCoord4fv(target, v);
@@ -9361,7 +9361,7 @@ void *glmultitexcoord4i_lh(args_glMultiTexCoord4i *argp)
 	 GLint s = argp->s;;
 	 GLint t = argp->t;;
 	 GLint r = argp->r;;
-	 GLint q  = argp->q;
+	 GLint q  = argp->q;;
 
     // Call actual function
     glMultiTexCoord4i(target, s, t, r, q);
@@ -9383,7 +9383,7 @@ void *glmultitexcoord4iv_lh(args_glMultiTexCoord4iv *argp)
 {
     // Get function specific args
      GLenum target = argp->target;;
-	 const GLint *v  = argp->v;
+	 const GLint *v  = argp->v;;
 
     // Call actual function
     glMultiTexCoord4iv(target, v);
@@ -9408,7 +9408,7 @@ void *glmultitexcoord4s_lh(args_glMultiTexCoord4s *argp)
 	 GLshort s = argp->s;;
 	 GLshort t = argp->t;;
 	 GLshort r = argp->r;;
-	 GLshort q  = argp->q;
+	 GLshort q  = argp->q;;
 
     // Call actual function
     glMultiTexCoord4s(target, s, t, r, q);
@@ -9430,7 +9430,7 @@ void *glmultitexcoord4sv_lh(args_glMultiTexCoord4sv *argp)
 {
     // Get function specific args
      GLenum target = argp->target;;
-	 const GLshort *v  = argp->v;
+	 const GLshort *v  = argp->v;;
 
     // Call actual function
     glMultiTexCoord4sv(target, v);
@@ -9451,7 +9451,7 @@ void *glmultitexcoord4sv_lh(args_glMultiTexCoord4sv *argp)
 void *glloadtransposematrixd_lh(args_glLoadTransposeMatrixd *argp)
 {
     // Get function specific args
-     const GLdouble m[16]  = argp->m[16];
+     const GLdouble m[16]  = argp->m[16];;
 
     // Call actual function
     glLoadTransposeMatrixd(m[16]);
@@ -9472,7 +9472,7 @@ void *glloadtransposematrixd_lh(args_glLoadTransposeMatrixd *argp)
 void *glloadtransposematrixf_lh(args_glLoadTransposeMatrixf *argp)
 {
     // Get function specific args
-     const GLfloat m[16]  = argp->m[16];
+     const GLfloat m[16]  = argp->m[16];;
 
     // Call actual function
     glLoadTransposeMatrixf(m[16]);
@@ -9493,7 +9493,7 @@ void *glloadtransposematrixf_lh(args_glLoadTransposeMatrixf *argp)
 void *glmulttransposematrixd_lh(args_glMultTransposeMatrixd *argp)
 {
     // Get function specific args
-     const GLdouble m[16]  = argp->m[16];
+     const GLdouble m[16]  = argp->m[16];;
 
     // Call actual function
     glMultTransposeMatrixd(m[16]);
@@ -9514,7 +9514,7 @@ void *glmulttransposematrixd_lh(args_glMultTransposeMatrixd *argp)
 void *glmulttransposematrixf_lh(args_glMultTransposeMatrixf *argp)
 {
     // Get function specific args
-     const GLfloat m[16]  = argp->m[16];
+     const GLfloat m[16]  = argp->m[16];;
 
     // Call actual function
     glMultTransposeMatrixf(m[16]);
@@ -9536,7 +9536,7 @@ void *glsamplecoverage_lh(args_glSampleCoverage *argp)
 {
     // Get function specific args
      GLclampf value = argp->value;;
-	 GLboolean invert  = argp->invert;
+	 GLboolean invert  = argp->invert;;
 
     // Call actual function
     glSampleCoverage(value, invert);
@@ -9557,7 +9557,7 @@ void *glsamplecoverage_lh(args_glSampleCoverage *argp)
 void *glactivetexturearb_lh(args_glActiveTextureARB *argp)
 {
     // Get function specific args
-    GLenum texture = argp->texture;
+    GLenum texture = argp->texture;;
 
     // Call actual function
     glActiveTextureARB(texture);
@@ -9578,7 +9578,7 @@ void *glactivetexturearb_lh(args_glActiveTextureARB *argp)
 void *glclientactivetexturearb_lh(args_glClientActiveTextureARB *argp)
 {
     // Get function specific args
-    GLenum texture = argp->texture;
+    GLenum texture = argp->texture;;
 
     // Call actual function
     glClientActiveTextureARB(texture);
@@ -9600,7 +9600,7 @@ void *glmultitexcoord1darb_lh(args_glMultiTexCoord1dARB *argp)
 {
     // Get function specific args
     GLenum target = argp->target;;
-	 GLdouble s = argp->s;
+	 GLdouble s = argp->s;;
 
     // Call actual function
     glMultiTexCoord1dARB(target, s);
@@ -9622,7 +9622,7 @@ void *glmultitexcoord1dvarb_lh(args_glMultiTexCoord1dvARB *argp)
 {
     // Get function specific args
     GLenum target = argp->target;;
-	 const GLdouble *v = argp->v;
+	 const GLdouble *v = argp->v;;
 
     // Call actual function
     glMultiTexCoord1dvARB(target, v);
@@ -9644,7 +9644,7 @@ void *glmultitexcoord1farb_lh(args_glMultiTexCoord1fARB *argp)
 {
     // Get function specific args
     GLenum target = argp->target;;
-	 GLfloat s = argp->s;
+	 GLfloat s = argp->s;;
 
     // Call actual function
     glMultiTexCoord1fARB(target, s);
@@ -9666,7 +9666,7 @@ void *glmultitexcoord1fvarb_lh(args_glMultiTexCoord1fvARB *argp)
 {
     // Get function specific args
     GLenum target = argp->target;;
-	 const GLfloat *v = argp->v;
+	 const GLfloat *v = argp->v;;
 
     // Call actual function
     glMultiTexCoord1fvARB(target, v);
@@ -9688,7 +9688,7 @@ void *glmultitexcoord1iarb_lh(args_glMultiTexCoord1iARB *argp)
 {
     // Get function specific args
     GLenum target = argp->target;;
-	 GLint s = argp->s;
+	 GLint s = argp->s;;
 
     // Call actual function
     glMultiTexCoord1iARB(target, s);
@@ -9710,7 +9710,7 @@ void *glmultitexcoord1ivarb_lh(args_glMultiTexCoord1ivARB *argp)
 {
     // Get function specific args
     GLenum target = argp->target;;
-	 const GLint *v = argp->v;
+	 const GLint *v = argp->v;;
 
     // Call actual function
     glMultiTexCoord1ivARB(target, v);
@@ -9732,7 +9732,7 @@ void *glmultitexcoord1sarb_lh(args_glMultiTexCoord1sARB *argp)
 {
     // Get function specific args
     GLenum target = argp->target;;
-	 GLshort s = argp->s;
+	 GLshort s = argp->s;;
 
     // Call actual function
     glMultiTexCoord1sARB(target, s);
@@ -9754,7 +9754,7 @@ void *glmultitexcoord1svarb_lh(args_glMultiTexCoord1svARB *argp)
 {
     // Get function specific args
     GLenum target = argp->target;;
-	 const GLshort *v = argp->v;
+	 const GLshort *v = argp->v;;
 
     // Call actual function
     glMultiTexCoord1svARB(target, v);
@@ -9777,7 +9777,7 @@ void *glmultitexcoord2darb_lh(args_glMultiTexCoord2dARB *argp)
     // Get function specific args
     GLenum target = argp->target;;
 	 GLdouble s = argp->s;;
-	 GLdouble t = argp->t;
+	 GLdouble t = argp->t;;
 
     // Call actual function
     glMultiTexCoord2dARB(target, s, t);
@@ -9799,7 +9799,7 @@ void *glmultitexcoord2dvarb_lh(args_glMultiTexCoord2dvARB *argp)
 {
     // Get function specific args
     GLenum target = argp->target;;
-	 const GLdouble *v = argp->v;
+	 const GLdouble *v = argp->v;;
 
     // Call actual function
     glMultiTexCoord2dvARB(target, v);
@@ -9822,7 +9822,7 @@ void *glmultitexcoord2farb_lh(args_glMultiTexCoord2fARB *argp)
     // Get function specific args
     GLenum target = argp->target;;
 	 GLfloat s = argp->s;;
-	 GLfloat t = argp->t;
+	 GLfloat t = argp->t;;
 
     // Call actual function
     glMultiTexCoord2fARB(target, s, t);
@@ -9844,7 +9844,7 @@ void *glmultitexcoord2fvarb_lh(args_glMultiTexCoord2fvARB *argp)
 {
     // Get function specific args
     GLenum target = argp->target;;
-	 const GLfloat *v = argp->v;
+	 const GLfloat *v = argp->v;;
 
     // Call actual function
     glMultiTexCoord2fvARB(target, v);
@@ -9867,7 +9867,7 @@ void *glmultitexcoord2iarb_lh(args_glMultiTexCoord2iARB *argp)
     // Get function specific args
     GLenum target = argp->target;;
 	 GLint s = argp->s;;
-	 GLint t = argp->t;
+	 GLint t = argp->t;;
 
     // Call actual function
     glMultiTexCoord2iARB(target, s, t);
@@ -9889,7 +9889,7 @@ void *glmultitexcoord2ivarb_lh(args_glMultiTexCoord2ivARB *argp)
 {
     // Get function specific args
     GLenum target = argp->target;;
-	 const GLint *v = argp->v;
+	 const GLint *v = argp->v;;
 
     // Call actual function
     glMultiTexCoord2ivARB(target, v);
@@ -9912,7 +9912,7 @@ void *glmultitexcoord2sarb_lh(args_glMultiTexCoord2sARB *argp)
     // Get function specific args
     GLenum target = argp->target;;
 	 GLshort s = argp->s;;
-	 GLshort t = argp->t;
+	 GLshort t = argp->t;;
 
     // Call actual function
     glMultiTexCoord2sARB(target, s, t);
@@ -9934,7 +9934,7 @@ void *glmultitexcoord2svarb_lh(args_glMultiTexCoord2svARB *argp)
 {
     // Get function specific args
     GLenum target = argp->target;;
-	 const GLshort *v = argp->v;
+	 const GLshort *v = argp->v;;
 
     // Call actual function
     glMultiTexCoord2svARB(target, v);
@@ -9958,7 +9958,7 @@ void *glmultitexcoord3darb_lh(args_glMultiTexCoord3dARB *argp)
     GLenum target = argp->target;;
 	 GLdouble s = argp->s;;
 	 GLdouble t = argp->t;;
-	 GLdouble r = argp->r;
+	 GLdouble r = argp->r;;
 
     // Call actual function
     glMultiTexCoord3dARB(target, s, t, r);
@@ -9980,7 +9980,7 @@ void *glmultitexcoord3dvarb_lh(args_glMultiTexCoord3dvARB *argp)
 {
     // Get function specific args
     GLenum target = argp->target;;
-	 const GLdouble *v = argp->v;
+	 const GLdouble *v = argp->v;;
 
     // Call actual function
     glMultiTexCoord3dvARB(target, v);
@@ -10004,7 +10004,7 @@ void *glmultitexcoord3farb_lh(args_glMultiTexCoord3fARB *argp)
     GLenum target = argp->target;;
 	 GLfloat s = argp->s;;
 	 GLfloat t = argp->t;;
-	 GLfloat r = argp->r;
+	 GLfloat r = argp->r;;
 
     // Call actual function
     glMultiTexCoord3fARB(target, s, t, r);
@@ -10026,7 +10026,7 @@ void *glmultitexcoord3fvarb_lh(args_glMultiTexCoord3fvARB *argp)
 {
     // Get function specific args
     GLenum target = argp->target;;
-	 const GLfloat *v = argp->v;
+	 const GLfloat *v = argp->v;;
 
     // Call actual function
     glMultiTexCoord3fvARB(target, v);
@@ -10050,7 +10050,7 @@ void *glmultitexcoord3iarb_lh(args_glMultiTexCoord3iARB *argp)
     GLenum target = argp->target;;
 	 GLint s = argp->s;;
 	 GLint t = argp->t;;
-	 GLint r = argp->r;
+	 GLint r = argp->r;;
 
     // Call actual function
     glMultiTexCoord3iARB(target, s, t, r);
@@ -10072,7 +10072,7 @@ void *glmultitexcoord3ivarb_lh(args_glMultiTexCoord3ivARB *argp)
 {
     // Get function specific args
     GLenum target = argp->target;;
-	 const GLint *v = argp->v;
+	 const GLint *v = argp->v;;
 
     // Call actual function
     glMultiTexCoord3ivARB(target, v);
@@ -10096,7 +10096,7 @@ void *glmultitexcoord3sarb_lh(args_glMultiTexCoord3sARB *argp)
     GLenum target = argp->target;;
 	 GLshort s = argp->s;;
 	 GLshort t = argp->t;;
-	 GLshort r = argp->r;
+	 GLshort r = argp->r;;
 
     // Call actual function
     glMultiTexCoord3sARB(target, s, t, r);
@@ -10118,7 +10118,7 @@ void *glmultitexcoord3svarb_lh(args_glMultiTexCoord3svARB *argp)
 {
     // Get function specific args
     GLenum target = argp->target;;
-	 const GLshort *v = argp->v;
+	 const GLshort *v = argp->v;;
 
     // Call actual function
     glMultiTexCoord3svARB(target, v);
@@ -10143,7 +10143,7 @@ void *glmultitexcoord4darb_lh(args_glMultiTexCoord4dARB *argp)
 	 GLdouble s = argp->s;;
 	 GLdouble t = argp->t;;
 	 GLdouble r = argp->r;;
-	 GLdouble q = argp->q;
+	 GLdouble q = argp->q;;
 
     // Call actual function
     glMultiTexCoord4dARB(target, s, t, r, q);
@@ -10165,7 +10165,7 @@ void *glmultitexcoord4dvarb_lh(args_glMultiTexCoord4dvARB *argp)
 {
     // Get function specific args
     GLenum target = argp->target;;
-	 const GLdouble *v = argp->v;
+	 const GLdouble *v = argp->v;;
 
     // Call actual function
     glMultiTexCoord4dvARB(target, v);
@@ -10190,7 +10190,7 @@ void *glmultitexcoord4farb_lh(args_glMultiTexCoord4fARB *argp)
 	 GLfloat s = argp->s;;
 	 GLfloat t = argp->t;;
 	 GLfloat r = argp->r;;
-	 GLfloat q = argp->q;
+	 GLfloat q = argp->q;;
 
     // Call actual function
     glMultiTexCoord4fARB(target, s, t, r, q);
@@ -10212,7 +10212,7 @@ void *glmultitexcoord4fvarb_lh(args_glMultiTexCoord4fvARB *argp)
 {
     // Get function specific args
     GLenum target = argp->target;;
-	 const GLfloat *v = argp->v;
+	 const GLfloat *v = argp->v;;
 
     // Call actual function
     glMultiTexCoord4fvARB(target, v);
@@ -10237,7 +10237,7 @@ void *glmultitexcoord4iarb_lh(args_glMultiTexCoord4iARB *argp)
 	 GLint s = argp->s;;
 	 GLint t = argp->t;;
 	 GLint r = argp->r;;
-	 GLint q = argp->q;
+	 GLint q = argp->q;;
 
     // Call actual function
     glMultiTexCoord4iARB(target, s, t, r, q);
@@ -10259,7 +10259,7 @@ void *glmultitexcoord4ivarb_lh(args_glMultiTexCoord4ivARB *argp)
 {
     // Get function specific args
     GLenum target = argp->target;;
-	 const GLint *v = argp->v;
+	 const GLint *v = argp->v;;
 
     // Call actual function
     glMultiTexCoord4ivARB(target, v);
@@ -10284,7 +10284,7 @@ void *glmultitexcoord4sarb_lh(args_glMultiTexCoord4sARB *argp)
 	 GLshort s = argp->s;;
 	 GLshort t = argp->t;;
 	 GLshort r = argp->r;;
-	 GLshort q = argp->q;
+	 GLshort q = argp->q;;
 
     // Call actual function
     glMultiTexCoord4sARB(target, s, t, r, q);
@@ -10306,7 +10306,7 @@ void *glmultitexcoord4svarb_lh(args_glMultiTexCoord4svARB *argp)
 {
     // Get function specific args
     GLenum target = argp->target;;
-	 const GLshort *v = argp->v;
+	 const GLshort *v = argp->v;;
 
     // Call actual function
     glMultiTexCoord4svARB(target, v);
@@ -10328,7 +10328,7 @@ void *glblendequationseparateati_lh(args_glBlendEquationSeparateATI *argp)
 {
     // Get function specific args
      GLenum modeRGB = argp->modeRGB;;
-	 GLenum modeA  = argp->modeA;
+	 GLenum modeA  = argp->modeA;;
 
     // Call actual function
     glBlendEquationSeparateATI(modeRGB, modeA);
@@ -10350,7 +10350,7 @@ void *glxdestroycontext_lh(args_glXDestroyContext *argp)
 {
     // Get function specific args
      Display *dpy = argp->dpy;;
-	 GLXContext ctx  = argp->ctx;
+	 GLXContext ctx  = argp->ctx;;
 
     // Call actual function
     glXDestroyContext(dpy, ctx);
@@ -10372,7 +10372,7 @@ void *glxswapbuffers_lh(args_glXSwapBuffers *argp)
 {
     // Get function specific args
      Display *dpy = argp->dpy;;
-	 GLXDrawable drawable  = argp->drawable;
+	 GLXDrawable drawable  = argp->drawable;;
 
     // Call actual function
     glXSwapBuffers(dpy, drawable);
@@ -10394,7 +10394,7 @@ void *glxdestroyglxpixmap_lh(args_glXDestroyGLXPixmap *argp)
 {
     // Get function specific args
      Display *dpy = argp->dpy;;
-	 GLXPixmap pixmap  = argp->pixmap;
+	 GLXPixmap pixmap  = argp->pixmap;;
 
     // Call actual function
     glXDestroyGLXPixmap(dpy, pixmap);
@@ -10417,7 +10417,7 @@ Bool *glxqueryextension_lh(args_glXQueryExtension *argp)
     // Get function specific args
      Display *dpy = argp->dpy;;
 	 int *errorb = argp->errorb;;
-	 int *event  = argp->event;
+	 int *event  = argp->event;;
 
     // Call actual function
     Bool result = glXQueryExtension(dpy, errorb, event);
@@ -10442,7 +10442,7 @@ Bool *glxqueryversion_lh(args_glXQueryVersion *argp)
     // Get function specific args
      Display *dpy = argp->dpy;;
 	 int *maj = argp->maj;;
-	 int *min  = argp->min;
+	 int *min  = argp->min;;
 
     // Call actual function
     Bool result = glXQueryVersion(dpy, maj, min);
@@ -10466,7 +10466,7 @@ Bool *glxisdirect_lh(args_glXIsDirect *argp)
 {
     // Get function specific args
      Display *dpy = argp->dpy;;
-	 GLXContext ctx  = argp->ctx;
+	 GLXContext ctx  = argp->ctx;;
 
     // Call actual function
     Bool result = glXIsDirect(dpy, ctx);
@@ -10576,7 +10576,7 @@ void *glxusexfont_lh(args_glXUseXFont *argp)
      Font font = argp->font;;
 	 int first = argp->first;;
 	 int count = argp->count;;
-	 int list  = argp->list;
+	 int list  = argp->list;;
 
     // Call actual function
     glXUseXFont(font, first, count, list);
@@ -10598,7 +10598,7 @@ char* *glxqueryextensionsstring_lh(args_glXQueryExtensionsString *argp)
 {
     // Get function specific args
      Display *dpy = argp->dpy;;
-	 int screen  = argp->screen;
+	 int screen  = argp->screen;;
 
     // Call actual function
     char* result = glXQueryExtensionsString(dpy, screen);
@@ -10623,7 +10623,7 @@ char* *glxqueryserverstring_lh(args_glXQueryServerString *argp)
     // Get function specific args
      Display *dpy = argp->dpy;;
 	 int screen = argp->screen;;
-	 int name  = argp->name;
+	 int name  = argp->name;;
 
     // Call actual function
     char* result = glXQueryServerString(dpy, screen, name);
@@ -10647,7 +10647,7 @@ char* *glxgetclientstring_lh(args_glXGetClientString *argp)
 {
     // Get function specific args
      Display *dpy = argp->dpy;;
-	 int name  = argp->name;
+	 int name  = argp->name;;
 
     // Call actual function
     char* result = glXGetClientString(dpy, name);
@@ -10693,7 +10693,7 @@ void *glxdestroywindow_lh(args_glXDestroyWindow *argp)
 {
     // Get function specific args
      Display *dpy = argp->dpy;;
-	 GLXWindow window  = argp->window;
+	 GLXWindow window  = argp->window;;
 
     // Call actual function
     glXDestroyWindow(dpy, window);
@@ -10715,7 +10715,7 @@ void *glxdestroypixmap_lh(args_glXDestroyPixmap *argp)
 {
     // Get function specific args
      Display *dpy = argp->dpy;;
-	 GLXPixmap pixmap  = argp->pixmap;
+	 GLXPixmap pixmap  = argp->pixmap;;
 
     // Call actual function
     glXDestroyPixmap(dpy, pixmap);
@@ -10737,7 +10737,7 @@ void *glxdestroypbuffer_lh(args_glXDestroyPbuffer *argp)
 {
     // Get function specific args
      Display *dpy = argp->dpy;;
-	 GLXPbuffer pbuf  = argp->pbuf;
+	 GLXPbuffer pbuf  = argp->pbuf;;
 
     // Call actual function
     glXDestroyPbuffer(dpy, pbuf);
@@ -10780,7 +10780,7 @@ GLXDrawable *glxgetcurrentreaddrawable_lh()
 __GLXextFuncPtr *glxgetprocaddressarb_lh(args_glXGetProcAddressARB *argp)
 {
     // Get function specific args
-    const GLubyte *procname = argp->procname;
+    const GLubyte *procname = argp->procname;;
 
     // Call actual function
     __GLXextFuncPtr result = glXGetProcAddressARB(procname);
@@ -10803,7 +10803,7 @@ __GLXextFuncPtr *glxgetprocaddressarb_lh(args_glXGetProcAddressARB *argp)
 void* *glxgetprocaddress_lh(args_glXGetProcAddress *argp)
 {
     // Get function specific args
-    const GLubyte *procname = argp->procname;
+    const GLubyte *procname = argp->procname;;
 
     // Call actual function
     void* result = glXGetProcAddress(procname);
@@ -10829,7 +10829,7 @@ void* *glxallocatememorynv_lh(args_glXAllocateMemoryNV *argp)
     GLsizei size = argp->size;;
 	 GLfloat readfreq = argp->readfreq;;
 	 GLfloat writefreq = argp->writefreq;;
-	 GLfloat priority = argp->priority;
+	 GLfloat priority = argp->priority;;
 
     // Call actual function
     void* result = glXAllocateMemoryNV(size, readfreq, writefreq, priority);
@@ -10852,7 +10852,7 @@ void* *glxallocatememorynv_lh(args_glXAllocateMemoryNV *argp)
 void *glxfreememorynv_lh(args_glXFreeMemoryNV *argp)
 {
     // Get function specific args
-    GLvoid *pointer = argp->pointer;
+    GLvoid *pointer = argp->pointer;;
 
     // Call actual function
     glXFreeMemoryNV(pointer);
@@ -10875,7 +10875,7 @@ Bool *glxbindteximagearb_lh(args_glXBindTexImageARB *argp)
     // Get function specific args
     Display *dpy = argp->dpy;;
 	 GLXPbuffer pbuffer = argp->pbuffer;;
-	 int buffer = argp->buffer;
+	 int buffer = argp->buffer;;
 
     // Call actual function
     Bool result = glXBindTexImageARB(dpy, pbuffer, buffer);
@@ -10900,7 +10900,7 @@ Bool *glxreleaseteximagearb_lh(args_glXReleaseTexImageARB *argp)
     // Get function specific args
     Display *dpy = argp->dpy;;
 	 GLXPbuffer pbuffer = argp->pbuffer;;
-	 int buffer = argp->buffer;
+	 int buffer = argp->buffer;;
 
     // Call actual function
     Bool result = glXReleaseTexImageARB(dpy, pbuffer, buffer);
@@ -10925,7 +10925,7 @@ Bool *glxdrawableattribarb_lh(args_glXDrawableAttribARB *argp)
     // Get function specific args
     Display *dpy = argp->dpy;;
 	 GLXDrawable draw = argp->draw;;
-	 const int *attribList = argp->attribList;
+	 const int *attribList = argp->attribList;;
 
     // Call actual function
     Bool result = glXDrawableAttribARB(dpy, draw, attribList);
@@ -10950,7 +10950,7 @@ int *glxgetframeusagemesa_lh(args_glXGetFrameUsageMESA *argp)
     // Get function specific args
     Display *dpy = argp->dpy;;
 	 GLXDrawable drawable = argp->drawable;;
-	 float *usage = argp->usage;
+	 float *usage = argp->usage;;
 
     // Call actual function
     int result = glXGetFrameUsageMESA(dpy, drawable, usage);
@@ -10974,7 +10974,7 @@ int *glxbeginframetrackingmesa_lh(args_glXBeginFrameTrackingMESA *argp)
 {
     // Get function specific args
     Display *dpy = argp->dpy;;
-	 GLXDrawable drawable = argp->drawable;
+	 GLXDrawable drawable = argp->drawable;;
 
     // Call actual function
     int result = glXBeginFrameTrackingMESA(dpy, drawable);
@@ -10998,7 +10998,7 @@ int *glxendframetrackingmesa_lh(args_glXEndFrameTrackingMESA *argp)
 {
     // Get function specific args
     Display *dpy = argp->dpy;;
-	 GLXDrawable drawable = argp->drawable;
+	 GLXDrawable drawable = argp->drawable;;
 
     // Call actual function
     int result = glXEndFrameTrackingMESA(dpy, drawable);
@@ -11025,7 +11025,7 @@ int *glxqueryframetrackingmesa_lh(args_glXQueryFrameTrackingMESA *argp)
 	 GLXDrawable drawable = argp->drawable;;
 	 int64_t *swapCount = argp->swapCount;;
 	 int64_t *missedFrames = argp->missedFrames;;
-	 float *lastMissedUsage = argp->lastMissedUsage;
+	 float *lastMissedUsage = argp->lastMissedUsage;;
 
     // Call actual function
     int result = glXQueryFrameTrackingMESA(dpy, drawable, swapCount, missedFrames, lastMissedUsage);
@@ -11048,7 +11048,7 @@ int *glxqueryframetrackingmesa_lh(args_glXQueryFrameTrackingMESA *argp)
 int *glxswapintervalmesa_lh(args_glXSwapIntervalMESA *argp)
 {
     // Get function specific args
-    unsigned int interval = argp->interval;
+    unsigned int interval = argp->interval;;
 
     // Call actual function
     int result = glXSwapIntervalMESA(interval);
