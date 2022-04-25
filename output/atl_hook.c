@@ -72,23 +72,23 @@ extern int XFree(void* data)
 }
 
 // -- XSetNormalHints
-XSetNormalHints(Display *display, Window w, XSizeHints *hints)
+void XSetNormalHints(Display *display, Window w, XSizeHints *hints)
 {
     args_XSetNormalHints argp;
-    
+
     // Set function specific args
     argp.display = display;
 	argp.w = w;
 	argp.hints = hints;
-    
-    return xsetnormalhints_uh(argp);
+
+    xsetnormalhints_uh(argp);
 }
 
 // -- XSetStandardProperties
-XSetStandardProperties(Display *display, Window w, char *window_name, char *icon_name, Pixmap icon_pixmap, char **argv, int argc, XSizeHints *hints)
+void XSetStandardProperties(Display *display, Window w, char *window_name, char *icon_name, Pixmap icon_pixmap, char **argv, int argc, XSizeHints *hints)
 {
     args_XSetStandardProperties argp;
-    
+
     // Set function specific args
     argp.display = display;
 	argp.w = w;
@@ -98,8 +98,8 @@ XSetStandardProperties(Display *display, Window w, char *window_name, char *icon
 	argp.*argv = *argv;
 	argp.argc = argc;
 	argp.hints = hints;
-    
-    return xsetstandardproperties_uh(argp);
+
+    xsetstandardproperties_uh(argp);
 }
 
 // -- glClearIndex
