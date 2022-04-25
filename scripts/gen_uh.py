@@ -252,42 +252,55 @@ func_uh_ni_void = '''
     // Nothing to return
 }}
 '''
+h_h1 = '''
+#ifndef ATLAS_ATL_UH_H
+#define ATLAS_ATL_UH_H
+
+#endif //ATLAS_ATL_UH_H
+'''
 
 def gen_upper_half(functions):
-    with open('output/atl_uh.c', 'w') as f:
-        # write header
-        f.write(h1)
+    with open('output/atl_uh.h', 'w') as fh:
+        fh.write(h_h1)
 
-        # write functions
-        for function in functions:
-            name = function['name']
-            name_upper = name.upper()
-            name_lower = name.lower()
-            ret_type = function['ret_type']
-            ret_type_upper = ret_type.upper()
-            args = function['args']
-            # If void function, no return type
-            if ret_type == "void":
-                # Make sure we use no input func if there are no inputs
-                if len(args) == 1 and args[0] == '':
-                    f.write(
-                        func_uh_ni_void.format(name=name, name_upper=name_upper, name_lower=name_lower, ret_type=ret_type,
-                                          ret_type_upper=ret_type_upper))
-                    continue
+        with open('output/atl_uh.c', 'w') as f:
+            # write header
+            f.write(h1)
 
-                f.write(func_uh_void.format(name=name, name_upper=name_upper, name_lower=name_lower, ret_type=ret_type,
-                                       ret_type_upper=ret_type_upper))
-            else:
-                # Todo: what to do about this
-                if len(ret_type) > 0:
-                    # Replace asterisk with 'P'
-                    if ret_type_upper[-1] == "*":
-                        ret_type_upper = ret_type_upper[:-1] + 'P'
+            # write functions
+            for function in functions:
+                name = function['name']
+                name_upper = name.upper()
+                name_lower = name.lower()
+                ret_type = function['ret_type']
+                ret_type_upper = ret_type.upper()
+                args = function['args']
+                # If void function, no return type
+                if ret_type == "void":
+                    # Make sure we use no input func if there are no inputs
+                    if len(args) == 1 and args[0] == '':
+                        f.write(
+                            func_uh_ni_void.format(name=name, name_upper=name_upper, name_lower=name_lower, ret_type=ret_type,
+                                              ret_type_upper=ret_type_upper))
+                        fh.write("void {name_lower}_uh();\n".format(name_lower=name_lower))
+                        continue
 
-                # Make sure we use no input func if there are no inputs
-                if len(args) == 1 and args[0] == '':
-                    f.write(func_uh_ni.format(name=name, name_upper=name_upper, name_lower=name_lower, ret_type=ret_type,
+                    f.write(func_uh_void.format(name=name, name_upper=name_upper, name_lower=name_lower, ret_type=ret_type,
                                            ret_type_upper=ret_type_upper))
-                    continue
+                    fh.write("void {name_lower}_uh(args_{name} argp);\n".format(name=name, name_lower=name_lower))
+                else:
+                    # Todo: what to do about this
+                    if len(ret_type) > 0:
+                        # Replace asterisk with 'P'
+                        if ret_type_upper[-1] == "*":
+                            ret_type_upper = ret_type_upper[:-1] + 'P'
 
-                f.write(func_uh.format(name=name, name_upper=name_upper, name_lower=name_lower, ret_type=ret_type, ret_type_upper=ret_type_upper))
+                    # Make sure we use no input func if there are no inputs
+                    if len(args) == 1 and args[0] == '':
+                        f.write(func_uh_ni.format(name=name, name_upper=name_upper, name_lower=name_lower, ret_type=ret_type,
+                                               ret_type_upper=ret_type_upper))
+                        fh.write("{ret_type} {name_lower}_uh();\n".format(ret_type=ret_type, name_lower=name_lower))
+                        continue
+
+                    f.write(func_uh.format(name=name, name_upper=name_upper, name_lower=name_lower, ret_type=ret_type, ret_type_upper=ret_type_upper))
+                    fh.write("{ret_type} {name_lower}_uh(args_{name} argp);\n".format(ret_type=ret_type, name=name, name_lower=name_lower))

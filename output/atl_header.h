@@ -442,10 +442,6 @@ typedef enum {
 	GLMULTITEXCOORD4IV,
 	GLMULTITEXCOORD4S,
 	GLMULTITEXCOORD4SV,
-	GLLOADTRANSPOSEMATRIXD,
-	GLLOADTRANSPOSEMATRIXF,
-	GLMULTTRANSPOSEMATRIXD,
-	GLMULTTRANSPOSEMATRIXF,
 	GLSAMPLECOVERAGE,
 	GLACTIVETEXTUREARB,
 	GLCLIENTACTIVETEXTUREARB,
@@ -4461,38 +4457,6 @@ struct args_glMultiTexCoord4sv{
 };
 
 typedef struct args_glMultiTexCoord4sv args_glMultiTexCoord4sv;
-
-
-// -- glLoadTransposeMatrixd
-struct args_glLoadTransposeMatrixd{
-     const GLdouble m[16] ;
-};
-
-typedef struct args_glLoadTransposeMatrixd args_glLoadTransposeMatrixd;
-
-
-// -- glLoadTransposeMatrixf
-struct args_glLoadTransposeMatrixf{
-     const GLfloat m[16] ;
-};
-
-typedef struct args_glLoadTransposeMatrixf args_glLoadTransposeMatrixf;
-
-
-// -- glMultTransposeMatrixd
-struct args_glMultTransposeMatrixd{
-     const GLdouble m[16] ;
-};
-
-typedef struct args_glMultTransposeMatrixd args_glMultTransposeMatrixd;
-
-
-// -- glMultTransposeMatrixf
-struct args_glMultTransposeMatrixf{
-     const GLfloat m[16] ;
-};
-
-typedef struct args_glMultTransposeMatrixf args_glMultTransposeMatrixf;
 
 
 // -- glSampleCoverage

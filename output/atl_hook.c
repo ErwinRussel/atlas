@@ -5207,50 +5207,6 @@ void glMultiTexCoord4sv( GLenum target, const GLshort *v )
     glmultitexcoord4sv_uh(&argp);
 }
 
-// -- glLoadTransposeMatrixd
-void glLoadTransposeMatrixd( const GLdouble m[16] )
-{
-    args_glLoadTransposeMatrixd argp;
-
-    // Set function specific args
-    argp.m[16] = m[16];
-
-    glloadtransposematrixd_uh(&argp);
-}
-
-// -- glLoadTransposeMatrixf
-void glLoadTransposeMatrixf( const GLfloat m[16] )
-{
-    args_glLoadTransposeMatrixf argp;
-
-    // Set function specific args
-    argp.m[16] = m[16];
-
-    glloadtransposematrixf_uh(&argp);
-}
-
-// -- glMultTransposeMatrixd
-void glMultTransposeMatrixd( const GLdouble m[16] )
-{
-    args_glMultTransposeMatrixd argp;
-
-    // Set function specific args
-    argp.m[16] = m[16];
-
-    glmulttransposematrixd_uh(&argp);
-}
-
-// -- glMultTransposeMatrixf
-void glMultTransposeMatrixf( const GLfloat m[16] )
-{
-    args_glMultTransposeMatrixf argp;
-
-    // Set function specific args
-    argp.m[16] = m[16];
-
-    glmulttransposematrixf_uh(&argp);
-}
-
 // -- glSampleCoverage
 void glSampleCoverage( GLclampf value, GLboolean invert )
 {
