@@ -99,7 +99,7 @@ Display* xopendisplay_uh(args_XOpenDisplay argp)
 
     // memcopy into result
     Display* result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -149,7 +149,7 @@ int xmapwindow_uh(args_XMapWindow argp)
 
     // memcopy into result
     int result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -1421,7 +1421,7 @@ GLboolean glisenabled_uh(args_glIsEnabled argp)
 
     // memcopy into result
     GLboolean result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -1937,7 +1937,7 @@ GLint glrendermode_uh(args_glRenderMode argp)
 
     // memcopy into result
     GLint result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -3199,7 +3199,7 @@ GLboolean glislist_uh(args_glIsList argp)
 
     // memcopy into result
     GLboolean result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -3296,7 +3296,7 @@ GLuint glgenlists_uh(args_glGenLists argp)
 
     // memcopy into result
     GLuint result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -13917,7 +13917,7 @@ GLboolean glaretexturesresident_uh(args_glAreTexturesResident argp)
 
     // memcopy into result
     GLboolean result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -13967,7 +13967,7 @@ GLboolean glistexture_uh(args_glIsTexture argp)
 
     // memcopy into result
     GLboolean result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -21627,7 +21627,7 @@ Bool glxqueryextension_uh(args_glXQueryExtension argp)
 
     // memcopy into result
     Bool result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -21677,7 +21677,7 @@ Bool glxqueryversion_uh(args_glXQueryVersion argp)
 
     // memcopy into result
     Bool result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -21727,7 +21727,7 @@ Bool glxisdirect_uh(args_glXIsDirect argp)
 
     // memcopy into result
     Bool result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -21775,7 +21775,7 @@ GLXContext glxgetcurrentcontext_uh()
 
     // memcopy into result
     GLXContext result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -21823,7 +21823,7 @@ GLXDrawable glxgetcurrentdrawable_uh()
 
     // memcopy into result
     GLXDrawable result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -22010,7 +22010,7 @@ char* glxqueryextensionsstring_uh(args_glXQueryExtensionsString argp)
 
     // memcopy into result
     char* result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -22060,7 +22060,7 @@ char* glxqueryserverstring_uh(args_glXQueryServerString argp)
 
     // memcopy into result
     char* result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -22110,7 +22110,7 @@ char* glxgetclientstring_uh(args_glXGetClientString argp)
 
     // memcopy into result
     char* result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -22158,7 +22158,7 @@ Display* glxgetcurrentdisplay_uh()
 
     // memcopy into result
     Display* result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -22347,7 +22347,7 @@ GLXDrawable glxgetcurrentreaddrawable_uh()
 
     // memcopy into result
     GLXDrawable result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -22397,7 +22397,7 @@ __GLXextFuncPtr glxgetprocaddressarb_uh(args_glXGetProcAddressARB argp)
 
     // memcopy into result
     __GLXextFuncPtr result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -22447,7 +22447,7 @@ void* glxgetprocaddress_uh(args_glXGetProcAddress argp)
 
     // memcopy into result
     void* result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -22497,7 +22497,7 @@ void* glxallocatememorynv_uh(args_glXAllocateMemoryNV argp)
 
     // memcopy into result
     void* result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -22594,7 +22594,7 @@ Bool glxbindteximagearb_uh(args_glXBindTexImageARB argp)
 
     // memcopy into result
     Bool result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -22644,7 +22644,7 @@ Bool glxreleaseteximagearb_uh(args_glXReleaseTexImageARB argp)
 
     // memcopy into result
     Bool result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -22694,7 +22694,7 @@ Bool glxdrawableattribarb_uh(args_glXDrawableAttribARB argp)
 
     // memcopy into result
     Bool result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -22744,7 +22744,7 @@ int glxgetframeusagemesa_uh(args_glXGetFrameUsageMESA argp)
 
     // memcopy into result
     int result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -22794,7 +22794,7 @@ int glxbeginframetrackingmesa_uh(args_glXBeginFrameTrackingMESA argp)
 
     // memcopy into result
     int result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -22844,7 +22844,7 @@ int glxendframetrackingmesa_uh(args_glXEndFrameTrackingMESA argp)
 
     // memcopy into result
     int result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -22894,7 +22894,7 @@ int glxqueryframetrackingmesa_uh(args_glXQueryFrameTrackingMESA argp)
 
     // memcopy into result
     int result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -22944,7 +22944,7 @@ int glxswapintervalmesa_uh(args_glXSwapIntervalMESA argp)
 
     // memcopy into result
     int result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
@@ -22992,7 +22992,7 @@ int glxgetswapintervalmesa_uh()
 
     // memcopy into result
     int result;
-    memcpy(&result, ShmPTR->buffer, ret_size));
+    memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;

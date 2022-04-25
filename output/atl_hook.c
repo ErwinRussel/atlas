@@ -8,7 +8,7 @@ extern Display *XOpenDisplay(_Xconst char *display_name)
     // Set function specific args
     argp.display_name = display_name
     
-    return xopendisplay_uh(&argp)
+    return xopendisplay_uh(&argp);
 }
 
 // -- XMapWindow
@@ -20,7 +20,7 @@ int XMapWindow(Display *display, Window w)
     argp.display = display;
 	argp.w = w
     
-    return xmapwindow_uh(&argp)
+    return xmapwindow_uh(&argp);
 }
 
 // -- glClearIndex
@@ -31,7 +31,7 @@ void glClearIndex( GLfloat c )
     // Set function specific args
     argp.c = c
 
-    glclearindex_uh(&argp)
+    glclearindex_uh(&argp);
 }
 
 // -- glClearColor
@@ -45,7 +45,7 @@ void glClearColor( GLclampf red, GLclampf green, GLclampf blue, GLclampf alpha )
 	argp.blue = blue;
 	argp.alpha = alpha
 
-    glclearcolor_uh(&argp)
+    glclearcolor_uh(&argp);
 }
 
 // -- glClear
@@ -56,7 +56,7 @@ void glClear( GLbitfield mask )
     // Set function specific args
     argp.mask = mask
 
-    glclear_uh(&argp)
+    glclear_uh(&argp);
 }
 
 // -- glIndexMask
@@ -67,7 +67,7 @@ void glIndexMask( GLuint mask )
     // Set function specific args
     argp.mask = mask
 
-    glindexmask_uh(&argp)
+    glindexmask_uh(&argp);
 }
 
 // -- glColorMask
@@ -81,7 +81,7 @@ void glColorMask( GLboolean red, GLboolean green, GLboolean blue, GLboolean alph
 	argp.blue = blue;
 	argp.alpha = alpha
 
-    glcolormask_uh(&argp)
+    glcolormask_uh(&argp);
 }
 
 // -- glAlphaFunc
@@ -93,7 +93,7 @@ void glAlphaFunc( GLenum func, GLclampf ref )
     argp.func = func;
 	argp.ref = ref
 
-    glalphafunc_uh(&argp)
+    glalphafunc_uh(&argp);
 }
 
 // -- glBlendFunc
@@ -105,7 +105,7 @@ void glBlendFunc( GLenum sfactor, GLenum dfactor )
     argp.sfactor = sfactor;
 	argp.dfactor = dfactor
 
-    glblendfunc_uh(&argp)
+    glblendfunc_uh(&argp);
 }
 
 // -- glLogicOp
@@ -116,7 +116,7 @@ void glLogicOp( GLenum opcode )
     // Set function specific args
     argp.opcode = opcode
 
-    gllogicop_uh(&argp)
+    gllogicop_uh(&argp);
 }
 
 // -- glCullFace
@@ -127,7 +127,7 @@ void glCullFace( GLenum mode )
     // Set function specific args
     argp.mode = mode
 
-    glcullface_uh(&argp)
+    glcullface_uh(&argp);
 }
 
 // -- glFrontFace
@@ -138,7 +138,7 @@ void glFrontFace( GLenum mode )
     // Set function specific args
     argp.mode = mode
 
-    glfrontface_uh(&argp)
+    glfrontface_uh(&argp);
 }
 
 // -- glPointSize
@@ -149,7 +149,7 @@ void glPointSize( GLfloat size )
     // Set function specific args
     argp.size = size
 
-    glpointsize_uh(&argp)
+    glpointsize_uh(&argp);
 }
 
 // -- glLineWidth
@@ -160,7 +160,7 @@ void glLineWidth( GLfloat width )
     // Set function specific args
     argp.width = width
 
-    gllinewidth_uh(&argp)
+    gllinewidth_uh(&argp);
 }
 
 // -- glLineStipple
@@ -172,7 +172,7 @@ void glLineStipple( GLint factor, GLushort pattern )
     argp.factor = factor;
 	argp.pattern = pattern
 
-    gllinestipple_uh(&argp)
+    gllinestipple_uh(&argp);
 }
 
 // -- glPolygonMode
@@ -184,7 +184,7 @@ void glPolygonMode( GLenum face, GLenum mode )
     argp.face = face;
 	argp.mode = mode
 
-    glpolygonmode_uh(&argp)
+    glpolygonmode_uh(&argp);
 }
 
 // -- glPolygonOffset
@@ -196,7 +196,7 @@ void glPolygonOffset( GLfloat factor, GLfloat units )
     argp.factor = factor;
 	argp.units = units
 
-    glpolygonoffset_uh(&argp)
+    glpolygonoffset_uh(&argp);
 }
 
 // -- glPolygonStipple
@@ -207,7 +207,7 @@ void glPolygonStipple( const GLubyte *mask )
     // Set function specific args
     argp.mask = mask
 
-    glpolygonstipple_uh(&argp)
+    glpolygonstipple_uh(&argp);
 }
 
 // -- glGetPolygonStipple
@@ -218,7 +218,7 @@ void glGetPolygonStipple( GLubyte *mask )
     // Set function specific args
     argp.mask = mask
 
-    glgetpolygonstipple_uh(&argp)
+    glgetpolygonstipple_uh(&argp);
 }
 
 // -- glEdgeFlag
@@ -229,7 +229,7 @@ void glEdgeFlag( GLboolean flag )
     // Set function specific args
     argp.flag = flag
 
-    gledgeflag_uh(&argp)
+    gledgeflag_uh(&argp);
 }
 
 // -- glEdgeFlagv
@@ -240,7 +240,7 @@ void glEdgeFlagv( const GLboolean *flag )
     // Set function specific args
     argp.flag = flag
 
-    gledgeflagv_uh(&argp)
+    gledgeflagv_uh(&argp);
 }
 
 // -- glScissor
@@ -254,7 +254,7 @@ void glScissor( GLint x, GLint y, GLsizei width, GLsizei height)
 	argp.width = width;
 	argp.height = height
 
-    glscissor_uh(&argp)
+    glscissor_uh(&argp);
 }
 
 // -- glClipPlane
@@ -266,7 +266,7 @@ void glClipPlane( GLenum plane, const GLdouble *equation )
     argp.plane = plane;
 	argp.equation = equation
 
-    glclipplane_uh(&argp)
+    glclipplane_uh(&argp);
 }
 
 // -- glGetClipPlane
@@ -278,7 +278,7 @@ void glGetClipPlane( GLenum plane, GLdouble *equation )
     argp.plane = plane;
 	argp.equation = equation
 
-    glgetclipplane_uh(&argp)
+    glgetclipplane_uh(&argp);
 }
 
 // -- glDrawBuffer
@@ -289,7 +289,7 @@ void glDrawBuffer( GLenum mode )
     // Set function specific args
     argp.mode = mode
 
-    gldrawbuffer_uh(&argp)
+    gldrawbuffer_uh(&argp);
 }
 
 // -- glReadBuffer
@@ -300,7 +300,7 @@ void glReadBuffer( GLenum mode )
     // Set function specific args
     argp.mode = mode
 
-    glreadbuffer_uh(&argp)
+    glreadbuffer_uh(&argp);
 }
 
 // -- glEnable
@@ -311,7 +311,7 @@ void glEnable( GLenum cap )
     // Set function specific args
     argp.cap = cap
 
-    glenable_uh(&argp)
+    glenable_uh(&argp);
 }
 
 // -- glDisable
@@ -322,7 +322,7 @@ void glDisable( GLenum cap )
     // Set function specific args
     argp.cap = cap
 
-    gldisable_uh(&argp)
+    gldisable_uh(&argp);
 }
 
 // -- glIsEnabled
@@ -333,7 +333,7 @@ GLboolean glIsEnabled( GLenum cap )
     // Set function specific args
     argp.cap = cap
     
-    return glisenabled_uh(&argp)
+    return glisenabled_uh(&argp);
 }
 
 // -- glEnableClientState
@@ -344,7 +344,7 @@ void glEnableClientState( GLenum cap )
     // Set function specific args
     argp.cap = cap
 
-    glenableclientstate_uh(&argp)
+    glenableclientstate_uh(&argp);
 }
 
 // -- glDisableClientState
@@ -355,7 +355,7 @@ void glDisableClientState( GLenum cap )
     // Set function specific args
     argp.cap = cap
 
-    gldisableclientstate_uh(&argp)
+    gldisableclientstate_uh(&argp);
 }
 
 // -- glGetBooleanv
@@ -367,7 +367,7 @@ void glGetBooleanv( GLenum pname, GLboolean *params )
     argp.pname = pname;
 	argp.params = params
 
-    glgetbooleanv_uh(&argp)
+    glgetbooleanv_uh(&argp);
 }
 
 // -- glGetDoublev
@@ -379,7 +379,7 @@ void glGetDoublev( GLenum pname, GLdouble *params )
     argp.pname = pname;
 	argp.params = params
 
-    glgetdoublev_uh(&argp)
+    glgetdoublev_uh(&argp);
 }
 
 // -- glGetFloatv
@@ -391,7 +391,7 @@ void glGetFloatv( GLenum pname, GLfloat *params )
     argp.pname = pname;
 	argp.params = params
 
-    glgetfloatv_uh(&argp)
+    glgetfloatv_uh(&argp);
 }
 
 // -- glGetIntegerv
@@ -403,7 +403,7 @@ void glGetIntegerv( GLenum pname, GLint *params )
     argp.pname = pname;
 	argp.params = params
 
-    glgetintegerv_uh(&argp)
+    glgetintegerv_uh(&argp);
 }
 
 // -- glPushAttrib
@@ -414,13 +414,13 @@ void glPushAttrib( GLbitfield mask )
     // Set function specific args
     argp.mask = mask
 
-    glpushattrib_uh(&argp)
+    glpushattrib_uh(&argp);
 }
 
 // -- glPopAttrib
 void glPopAttrib()
 {
-    glpopattrib_uh()
+    glpopattrib_uh();
 }
 
 // -- glPushClientAttrib
@@ -431,13 +431,13 @@ void glPushClientAttrib( GLbitfield mask )
     // Set function specific args
     argp.mask = mask
 
-    glpushclientattrib_uh(&argp)
+    glpushclientattrib_uh(&argp);
 }
 
 // -- glPopClientAttrib
 void glPopClientAttrib()
 {
-    glpopclientattrib_uh()
+    glpopclientattrib_uh();
 }
 
 // -- glRenderMode
@@ -448,19 +448,19 @@ GLint glRenderMode( GLenum mode )
     // Set function specific args
     argp.mode = mode
     
-    return glrendermode_uh(&argp)
+    return glrendermode_uh(&argp);
 }
 
 // -- glFinish
 void glFinish()
 {
-    glfinish_uh()
+    glfinish_uh();
 }
 
 // -- glFlush
 void glFlush()
 {
-    glflush_uh()
+    glflush_uh();
 }
 
 // -- glHint
@@ -472,7 +472,7 @@ void glHint( GLenum target, GLenum mode )
     argp.target = target;
 	argp.mode = mode
 
-    glhint_uh(&argp)
+    glhint_uh(&argp);
 }
 
 // -- glClearDepth
@@ -483,7 +483,7 @@ void glClearDepth( GLclampd depth )
     // Set function specific args
     argp.depth = depth
 
-    glcleardepth_uh(&argp)
+    glcleardepth_uh(&argp);
 }
 
 // -- glDepthFunc
@@ -494,7 +494,7 @@ void glDepthFunc( GLenum func )
     // Set function specific args
     argp.func = func
 
-    gldepthfunc_uh(&argp)
+    gldepthfunc_uh(&argp);
 }
 
 // -- glDepthMask
@@ -505,7 +505,7 @@ void glDepthMask( GLboolean flag )
     // Set function specific args
     argp.flag = flag
 
-    gldepthmask_uh(&argp)
+    gldepthmask_uh(&argp);
 }
 
 // -- glDepthRange
@@ -517,7 +517,7 @@ void glDepthRange( GLclampd near_val, GLclampd far_val )
     argp.near_val = near_val;
 	argp.far_val = far_val
 
-    gldepthrange_uh(&argp)
+    gldepthrange_uh(&argp);
 }
 
 // -- glClearAccum
@@ -531,7 +531,7 @@ void glClearAccum( GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha )
 	argp.blue = blue;
 	argp.alpha = alpha
 
-    glclearaccum_uh(&argp)
+    glclearaccum_uh(&argp);
 }
 
 // -- glAccum
@@ -543,7 +543,7 @@ void glAccum( GLenum op, GLfloat value )
     argp.op = op;
 	argp.value = value
 
-    glaccum_uh(&argp)
+    glaccum_uh(&argp);
 }
 
 // -- glMatrixMode
@@ -554,7 +554,7 @@ void glMatrixMode( GLenum mode )
     // Set function specific args
     argp.mode = mode
 
-    glmatrixmode_uh(&argp)
+    glmatrixmode_uh(&argp);
 }
 
 // -- glOrtho
@@ -570,7 +570,7 @@ void glOrtho( GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GLdo
 	argp.near_val = near_val;
 	argp.far_val = far_val
 
-    glortho_uh(&argp)
+    glortho_uh(&argp);
 }
 
 // -- glFrustum
@@ -586,7 +586,7 @@ void glFrustum( GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GL
 	argp.near_val = near_val;
 	argp.far_val = far_val
 
-    glfrustum_uh(&argp)
+    glfrustum_uh(&argp);
 }
 
 // -- glViewport
@@ -600,25 +600,25 @@ void glViewport( GLint x, GLint y, GLsizei width, GLsizei height )
 	argp.width = width;
 	argp.height = height
 
-    glviewport_uh(&argp)
+    glviewport_uh(&argp);
 }
 
 // -- glPushMatrix
 void glPushMatrix()
 {
-    glpushmatrix_uh()
+    glpushmatrix_uh();
 }
 
 // -- glPopMatrix
 void glPopMatrix()
 {
-    glpopmatrix_uh()
+    glpopmatrix_uh();
 }
 
 // -- glLoadIdentity
 void glLoadIdentity()
 {
-    glloadidentity_uh()
+    glloadidentity_uh();
 }
 
 // -- glLoadMatrixd
@@ -629,7 +629,7 @@ void glLoadMatrixd( const GLdouble *m )
     // Set function specific args
     argp.m = m
 
-    glloadmatrixd_uh(&argp)
+    glloadmatrixd_uh(&argp);
 }
 
 // -- glLoadMatrixf
@@ -640,7 +640,7 @@ void glLoadMatrixf( const GLfloat *m )
     // Set function specific args
     argp.m = m
 
-    glloadmatrixf_uh(&argp)
+    glloadmatrixf_uh(&argp);
 }
 
 // -- glMultMatrixd
@@ -651,7 +651,7 @@ void glMultMatrixd( const GLdouble *m )
     // Set function specific args
     argp.m = m
 
-    glmultmatrixd_uh(&argp)
+    glmultmatrixd_uh(&argp);
 }
 
 // -- glMultMatrixf
@@ -662,7 +662,7 @@ void glMultMatrixf( const GLfloat *m )
     // Set function specific args
     argp.m = m
 
-    glmultmatrixf_uh(&argp)
+    glmultmatrixf_uh(&argp);
 }
 
 // -- glRotated
@@ -676,7 +676,7 @@ void glRotated( GLdouble angle, GLdouble x, GLdouble y, GLdouble z )
 	argp.y = y;
 	argp.z = z
 
-    glrotated_uh(&argp)
+    glrotated_uh(&argp);
 }
 
 // -- glRotatef
@@ -690,7 +690,7 @@ void glRotatef( GLfloat angle, GLfloat x, GLfloat y, GLfloat z )
 	argp.y = y;
 	argp.z = z
 
-    glrotatef_uh(&argp)
+    glrotatef_uh(&argp);
 }
 
 // -- glScaled
@@ -703,7 +703,7 @@ void glScaled( GLdouble x, GLdouble y, GLdouble z )
 	argp.y = y;
 	argp.z = z
 
-    glscaled_uh(&argp)
+    glscaled_uh(&argp);
 }
 
 // -- glScalef
@@ -716,7 +716,7 @@ void glScalef( GLfloat x, GLfloat y, GLfloat z )
 	argp.y = y;
 	argp.z = z
 
-    glscalef_uh(&argp)
+    glscalef_uh(&argp);
 }
 
 // -- glTranslated
@@ -729,7 +729,7 @@ void glTranslated( GLdouble x, GLdouble y, GLdouble z )
 	argp.y = y;
 	argp.z = z
 
-    gltranslated_uh(&argp)
+    gltranslated_uh(&argp);
 }
 
 // -- glTranslatef
@@ -742,7 +742,7 @@ void glTranslatef( GLfloat x, GLfloat y, GLfloat z )
 	argp.y = y;
 	argp.z = z
 
-    gltranslatef_uh(&argp)
+    gltranslatef_uh(&argp);
 }
 
 // -- glIsList
@@ -753,7 +753,7 @@ GLboolean glIsList( GLuint list )
     // Set function specific args
     argp.list = list
     
-    return glislist_uh(&argp)
+    return glislist_uh(&argp);
 }
 
 // -- glDeleteLists
@@ -765,7 +765,7 @@ void glDeleteLists( GLuint list, GLsizei range )
     argp.list = list;
 	argp.range = range
 
-    gldeletelists_uh(&argp)
+    gldeletelists_uh(&argp);
 }
 
 // -- glGenLists
@@ -776,7 +776,7 @@ GLuint glGenLists( GLsizei range )
     // Set function specific args
     argp.range = range
     
-    return glgenlists_uh(&argp)
+    return glgenlists_uh(&argp);
 }
 
 // -- glNewList
@@ -788,13 +788,13 @@ void glNewList( GLuint list, GLenum mode )
     argp.list = list;
 	argp.mode = mode
 
-    glnewlist_uh(&argp)
+    glnewlist_uh(&argp);
 }
 
 // -- glEndList
 void glEndList()
 {
-    glendlist_uh()
+    glendlist_uh();
 }
 
 // -- glCallList
@@ -805,7 +805,7 @@ void glCallList( GLuint list )
     // Set function specific args
     argp.list = list
 
-    glcalllist_uh(&argp)
+    glcalllist_uh(&argp);
 }
 
 // -- glCallLists
@@ -818,7 +818,7 @@ void glCallLists( GLsizei n, GLenum type, const GLvoid *lists )
 	argp.type = type;
 	argp.lists = lists
 
-    glcalllists_uh(&argp)
+    glcalllists_uh(&argp);
 }
 
 // -- glListBase
@@ -829,7 +829,7 @@ void glListBase( GLuint base )
     // Set function specific args
     argp.base = base
 
-    gllistbase_uh(&argp)
+    gllistbase_uh(&argp);
 }
 
 // -- glBegin
@@ -840,13 +840,13 @@ void glBegin( GLenum mode )
     // Set function specific args
     argp.mode = mode
 
-    glbegin_uh(&argp)
+    glbegin_uh(&argp);
 }
 
 // -- glEnd
 void glEnd()
 {
-    glend_uh()
+    glend_uh();
 }
 
 // -- glVertex2d
@@ -858,7 +858,7 @@ void glVertex2d( GLdouble x, GLdouble y )
     argp.x = x;
 	argp.y = y
 
-    glvertex2d_uh(&argp)
+    glvertex2d_uh(&argp);
 }
 
 // -- glVertex2f
@@ -870,7 +870,7 @@ void glVertex2f( GLfloat x, GLfloat y )
     argp.x = x;
 	argp.y = y
 
-    glvertex2f_uh(&argp)
+    glvertex2f_uh(&argp);
 }
 
 // -- glVertex2i
@@ -882,7 +882,7 @@ void glVertex2i( GLint x, GLint y )
     argp.x = x;
 	argp.y = y
 
-    glvertex2i_uh(&argp)
+    glvertex2i_uh(&argp);
 }
 
 // -- glVertex2s
@@ -894,7 +894,7 @@ void glVertex2s( GLshort x, GLshort y )
     argp.x = x;
 	argp.y = y
 
-    glvertex2s_uh(&argp)
+    glvertex2s_uh(&argp);
 }
 
 // -- glVertex3d
@@ -907,7 +907,7 @@ void glVertex3d( GLdouble x, GLdouble y, GLdouble z )
 	argp.y = y;
 	argp.z = z
 
-    glvertex3d_uh(&argp)
+    glvertex3d_uh(&argp);
 }
 
 // -- glVertex3f
@@ -920,7 +920,7 @@ void glVertex3f( GLfloat x, GLfloat y, GLfloat z )
 	argp.y = y;
 	argp.z = z
 
-    glvertex3f_uh(&argp)
+    glvertex3f_uh(&argp);
 }
 
 // -- glVertex3i
@@ -933,7 +933,7 @@ void glVertex3i( GLint x, GLint y, GLint z )
 	argp.y = y;
 	argp.z = z
 
-    glvertex3i_uh(&argp)
+    glvertex3i_uh(&argp);
 }
 
 // -- glVertex3s
@@ -946,7 +946,7 @@ void glVertex3s( GLshort x, GLshort y, GLshort z )
 	argp.y = y;
 	argp.z = z
 
-    glvertex3s_uh(&argp)
+    glvertex3s_uh(&argp);
 }
 
 // -- glVertex4d
@@ -960,7 +960,7 @@ void glVertex4d( GLdouble x, GLdouble y, GLdouble z, GLdouble w )
 	argp.z = z;
 	argp.w = w
 
-    glvertex4d_uh(&argp)
+    glvertex4d_uh(&argp);
 }
 
 // -- glVertex4f
@@ -974,7 +974,7 @@ void glVertex4f( GLfloat x, GLfloat y, GLfloat z, GLfloat w )
 	argp.z = z;
 	argp.w = w
 
-    glvertex4f_uh(&argp)
+    glvertex4f_uh(&argp);
 }
 
 // -- glVertex4i
@@ -988,7 +988,7 @@ void glVertex4i( GLint x, GLint y, GLint z, GLint w )
 	argp.z = z;
 	argp.w = w
 
-    glvertex4i_uh(&argp)
+    glvertex4i_uh(&argp);
 }
 
 // -- glVertex4s
@@ -1002,7 +1002,7 @@ void glVertex4s( GLshort x, GLshort y, GLshort z, GLshort w )
 	argp.z = z;
 	argp.w = w
 
-    glvertex4s_uh(&argp)
+    glvertex4s_uh(&argp);
 }
 
 // -- glVertex2dv
@@ -1013,7 +1013,7 @@ void glVertex2dv( const GLdouble *v )
     // Set function specific args
     argp.v = v
 
-    glvertex2dv_uh(&argp)
+    glvertex2dv_uh(&argp);
 }
 
 // -- glVertex2fv
@@ -1024,7 +1024,7 @@ void glVertex2fv( const GLfloat *v )
     // Set function specific args
     argp.v = v
 
-    glvertex2fv_uh(&argp)
+    glvertex2fv_uh(&argp);
 }
 
 // -- glVertex2iv
@@ -1035,7 +1035,7 @@ void glVertex2iv( const GLint *v )
     // Set function specific args
     argp.v = v
 
-    glvertex2iv_uh(&argp)
+    glvertex2iv_uh(&argp);
 }
 
 // -- glVertex2sv
@@ -1046,7 +1046,7 @@ void glVertex2sv( const GLshort *v )
     // Set function specific args
     argp.v = v
 
-    glvertex2sv_uh(&argp)
+    glvertex2sv_uh(&argp);
 }
 
 // -- glVertex3dv
@@ -1057,7 +1057,7 @@ void glVertex3dv( const GLdouble *v )
     // Set function specific args
     argp.v = v
 
-    glvertex3dv_uh(&argp)
+    glvertex3dv_uh(&argp);
 }
 
 // -- glVertex3fv
@@ -1068,7 +1068,7 @@ void glVertex3fv( const GLfloat *v )
     // Set function specific args
     argp.v = v
 
-    glvertex3fv_uh(&argp)
+    glvertex3fv_uh(&argp);
 }
 
 // -- glVertex3iv
@@ -1079,7 +1079,7 @@ void glVertex3iv( const GLint *v )
     // Set function specific args
     argp.v = v
 
-    glvertex3iv_uh(&argp)
+    glvertex3iv_uh(&argp);
 }
 
 // -- glVertex3sv
@@ -1090,7 +1090,7 @@ void glVertex3sv( const GLshort *v )
     // Set function specific args
     argp.v = v
 
-    glvertex3sv_uh(&argp)
+    glvertex3sv_uh(&argp);
 }
 
 // -- glVertex4dv
@@ -1101,7 +1101,7 @@ void glVertex4dv( const GLdouble *v )
     // Set function specific args
     argp.v = v
 
-    glvertex4dv_uh(&argp)
+    glvertex4dv_uh(&argp);
 }
 
 // -- glVertex4fv
@@ -1112,7 +1112,7 @@ void glVertex4fv( const GLfloat *v )
     // Set function specific args
     argp.v = v
 
-    glvertex4fv_uh(&argp)
+    glvertex4fv_uh(&argp);
 }
 
 // -- glVertex4iv
@@ -1123,7 +1123,7 @@ void glVertex4iv( const GLint *v )
     // Set function specific args
     argp.v = v
 
-    glvertex4iv_uh(&argp)
+    glvertex4iv_uh(&argp);
 }
 
 // -- glVertex4sv
@@ -1134,7 +1134,7 @@ void glVertex4sv( const GLshort *v )
     // Set function specific args
     argp.v = v
 
-    glvertex4sv_uh(&argp)
+    glvertex4sv_uh(&argp);
 }
 
 // -- glNormal3b
@@ -1147,7 +1147,7 @@ void glNormal3b( GLbyte nx, GLbyte ny, GLbyte nz )
 	argp.ny = ny;
 	argp.nz = nz
 
-    glnormal3b_uh(&argp)
+    glnormal3b_uh(&argp);
 }
 
 // -- glNormal3d
@@ -1160,7 +1160,7 @@ void glNormal3d( GLdouble nx, GLdouble ny, GLdouble nz )
 	argp.ny = ny;
 	argp.nz = nz
 
-    glnormal3d_uh(&argp)
+    glnormal3d_uh(&argp);
 }
 
 // -- glNormal3f
@@ -1173,7 +1173,7 @@ void glNormal3f( GLfloat nx, GLfloat ny, GLfloat nz )
 	argp.ny = ny;
 	argp.nz = nz
 
-    glnormal3f_uh(&argp)
+    glnormal3f_uh(&argp);
 }
 
 // -- glNormal3i
@@ -1186,7 +1186,7 @@ void glNormal3i( GLint nx, GLint ny, GLint nz )
 	argp.ny = ny;
 	argp.nz = nz
 
-    glnormal3i_uh(&argp)
+    glnormal3i_uh(&argp);
 }
 
 // -- glNormal3s
@@ -1199,7 +1199,7 @@ void glNormal3s( GLshort nx, GLshort ny, GLshort nz )
 	argp.ny = ny;
 	argp.nz = nz
 
-    glnormal3s_uh(&argp)
+    glnormal3s_uh(&argp);
 }
 
 // -- glNormal3bv
@@ -1210,7 +1210,7 @@ void glNormal3bv( const GLbyte *v )
     // Set function specific args
     argp.v = v
 
-    glnormal3bv_uh(&argp)
+    glnormal3bv_uh(&argp);
 }
 
 // -- glNormal3dv
@@ -1221,7 +1221,7 @@ void glNormal3dv( const GLdouble *v )
     // Set function specific args
     argp.v = v
 
-    glnormal3dv_uh(&argp)
+    glnormal3dv_uh(&argp);
 }
 
 // -- glNormal3fv
@@ -1232,7 +1232,7 @@ void glNormal3fv( const GLfloat *v )
     // Set function specific args
     argp.v = v
 
-    glnormal3fv_uh(&argp)
+    glnormal3fv_uh(&argp);
 }
 
 // -- glNormal3iv
@@ -1243,7 +1243,7 @@ void glNormal3iv( const GLint *v )
     // Set function specific args
     argp.v = v
 
-    glnormal3iv_uh(&argp)
+    glnormal3iv_uh(&argp);
 }
 
 // -- glNormal3sv
@@ -1254,7 +1254,7 @@ void glNormal3sv( const GLshort *v )
     // Set function specific args
     argp.v = v
 
-    glnormal3sv_uh(&argp)
+    glnormal3sv_uh(&argp);
 }
 
 // -- glIndexd
@@ -1265,7 +1265,7 @@ void glIndexd( GLdouble c )
     // Set function specific args
     argp.c = c
 
-    glindexd_uh(&argp)
+    glindexd_uh(&argp);
 }
 
 // -- glIndexf
@@ -1276,7 +1276,7 @@ void glIndexf( GLfloat c )
     // Set function specific args
     argp.c = c
 
-    glindexf_uh(&argp)
+    glindexf_uh(&argp);
 }
 
 // -- glIndexi
@@ -1287,7 +1287,7 @@ void glIndexi( GLint c )
     // Set function specific args
     argp.c = c
 
-    glindexi_uh(&argp)
+    glindexi_uh(&argp);
 }
 
 // -- glIndexs
@@ -1298,7 +1298,7 @@ void glIndexs( GLshort c )
     // Set function specific args
     argp.c = c
 
-    glindexs_uh(&argp)
+    glindexs_uh(&argp);
 }
 
 // -- glIndexub
@@ -1309,7 +1309,7 @@ void glIndexub( GLubyte c )
     // Set function specific args
     argp.c = c
 
-    glindexub_uh(&argp)
+    glindexub_uh(&argp);
 }
 
 // -- glIndexdv
@@ -1320,7 +1320,7 @@ void glIndexdv( const GLdouble *c )
     // Set function specific args
     argp.c = c
 
-    glindexdv_uh(&argp)
+    glindexdv_uh(&argp);
 }
 
 // -- glIndexfv
@@ -1331,7 +1331,7 @@ void glIndexfv( const GLfloat *c )
     // Set function specific args
     argp.c = c
 
-    glindexfv_uh(&argp)
+    glindexfv_uh(&argp);
 }
 
 // -- glIndexiv
@@ -1342,7 +1342,7 @@ void glIndexiv( const GLint *c )
     // Set function specific args
     argp.c = c
 
-    glindexiv_uh(&argp)
+    glindexiv_uh(&argp);
 }
 
 // -- glIndexsv
@@ -1353,7 +1353,7 @@ void glIndexsv( const GLshort *c )
     // Set function specific args
     argp.c = c
 
-    glindexsv_uh(&argp)
+    glindexsv_uh(&argp);
 }
 
 // -- glIndexubv
@@ -1364,7 +1364,7 @@ void glIndexubv( const GLubyte *c )
     // Set function specific args
     argp.c = c
 
-    glindexubv_uh(&argp)
+    glindexubv_uh(&argp);
 }
 
 // -- glColor3b
@@ -1377,7 +1377,7 @@ void glColor3b( GLbyte red, GLbyte green, GLbyte blue )
 	argp.green = green;
 	argp.blue = blue
 
-    glcolor3b_uh(&argp)
+    glcolor3b_uh(&argp);
 }
 
 // -- glColor3d
@@ -1390,7 +1390,7 @@ void glColor3d( GLdouble red, GLdouble green, GLdouble blue )
 	argp.green = green;
 	argp.blue = blue
 
-    glcolor3d_uh(&argp)
+    glcolor3d_uh(&argp);
 }
 
 // -- glColor3f
@@ -1403,7 +1403,7 @@ void glColor3f( GLfloat red, GLfloat green, GLfloat blue )
 	argp.green = green;
 	argp.blue = blue
 
-    glcolor3f_uh(&argp)
+    glcolor3f_uh(&argp);
 }
 
 // -- glColor3i
@@ -1416,7 +1416,7 @@ void glColor3i( GLint red, GLint green, GLint blue )
 	argp.green = green;
 	argp.blue = blue
 
-    glcolor3i_uh(&argp)
+    glcolor3i_uh(&argp);
 }
 
 // -- glColor3s
@@ -1429,7 +1429,7 @@ void glColor3s( GLshort red, GLshort green, GLshort blue )
 	argp.green = green;
 	argp.blue = blue
 
-    glcolor3s_uh(&argp)
+    glcolor3s_uh(&argp);
 }
 
 // -- glColor3ub
@@ -1442,7 +1442,7 @@ void glColor3ub( GLubyte red, GLubyte green, GLubyte blue )
 	argp.green = green;
 	argp.blue = blue
 
-    glcolor3ub_uh(&argp)
+    glcolor3ub_uh(&argp);
 }
 
 // -- glColor3ui
@@ -1455,7 +1455,7 @@ void glColor3ui( GLuint red, GLuint green, GLuint blue )
 	argp.green = green;
 	argp.blue = blue
 
-    glcolor3ui_uh(&argp)
+    glcolor3ui_uh(&argp);
 }
 
 // -- glColor3us
@@ -1468,7 +1468,7 @@ void glColor3us( GLushort red, GLushort green, GLushort blue )
 	argp.green = green;
 	argp.blue = blue
 
-    glcolor3us_uh(&argp)
+    glcolor3us_uh(&argp);
 }
 
 // -- glColor4b
@@ -1482,7 +1482,7 @@ void glColor4b( GLbyte red, GLbyte green, GLbyte blue, GLbyte alpha )
 	argp.blue = blue;
 	argp.alpha = alpha
 
-    glcolor4b_uh(&argp)
+    glcolor4b_uh(&argp);
 }
 
 // -- glColor4d
@@ -1496,7 +1496,7 @@ void glColor4d( GLdouble red, GLdouble green, GLdouble blue, GLdouble alpha )
 	argp.blue = blue;
 	argp.alpha = alpha
 
-    glcolor4d_uh(&argp)
+    glcolor4d_uh(&argp);
 }
 
 // -- glColor4f
@@ -1510,7 +1510,7 @@ void glColor4f( GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha )
 	argp.blue = blue;
 	argp.alpha = alpha
 
-    glcolor4f_uh(&argp)
+    glcolor4f_uh(&argp);
 }
 
 // -- glColor4i
@@ -1524,7 +1524,7 @@ void glColor4i( GLint red, GLint green, GLint blue, GLint alpha )
 	argp.blue = blue;
 	argp.alpha = alpha
 
-    glcolor4i_uh(&argp)
+    glcolor4i_uh(&argp);
 }
 
 // -- glColor4s
@@ -1538,7 +1538,7 @@ void glColor4s( GLshort red, GLshort green, GLshort blue, GLshort alpha )
 	argp.blue = blue;
 	argp.alpha = alpha
 
-    glcolor4s_uh(&argp)
+    glcolor4s_uh(&argp);
 }
 
 // -- glColor4ub
@@ -1552,7 +1552,7 @@ void glColor4ub( GLubyte red, GLubyte green, GLubyte blue, GLubyte alpha )
 	argp.blue = blue;
 	argp.alpha = alpha
 
-    glcolor4ub_uh(&argp)
+    glcolor4ub_uh(&argp);
 }
 
 // -- glColor4ui
@@ -1566,7 +1566,7 @@ void glColor4ui( GLuint red, GLuint green, GLuint blue, GLuint alpha )
 	argp.blue = blue;
 	argp.alpha = alpha
 
-    glcolor4ui_uh(&argp)
+    glcolor4ui_uh(&argp);
 }
 
 // -- glColor4us
@@ -1580,7 +1580,7 @@ void glColor4us( GLushort red, GLushort green, GLushort blue, GLushort alpha )
 	argp.blue = blue;
 	argp.alpha = alpha
 
-    glcolor4us_uh(&argp)
+    glcolor4us_uh(&argp);
 }
 
 // -- glColor3bv
@@ -1591,7 +1591,7 @@ void glColor3bv( const GLbyte *v )
     // Set function specific args
     argp.v = v
 
-    glcolor3bv_uh(&argp)
+    glcolor3bv_uh(&argp);
 }
 
 // -- glColor3dv
@@ -1602,7 +1602,7 @@ void glColor3dv( const GLdouble *v )
     // Set function specific args
     argp.v = v
 
-    glcolor3dv_uh(&argp)
+    glcolor3dv_uh(&argp);
 }
 
 // -- glColor3fv
@@ -1613,7 +1613,7 @@ void glColor3fv( const GLfloat *v )
     // Set function specific args
     argp.v = v
 
-    glcolor3fv_uh(&argp)
+    glcolor3fv_uh(&argp);
 }
 
 // -- glColor3iv
@@ -1624,7 +1624,7 @@ void glColor3iv( const GLint *v )
     // Set function specific args
     argp.v = v
 
-    glcolor3iv_uh(&argp)
+    glcolor3iv_uh(&argp);
 }
 
 // -- glColor3sv
@@ -1635,7 +1635,7 @@ void glColor3sv( const GLshort *v )
     // Set function specific args
     argp.v = v
 
-    glcolor3sv_uh(&argp)
+    glcolor3sv_uh(&argp);
 }
 
 // -- glColor3ubv
@@ -1646,7 +1646,7 @@ void glColor3ubv( const GLubyte *v )
     // Set function specific args
     argp.v = v
 
-    glcolor3ubv_uh(&argp)
+    glcolor3ubv_uh(&argp);
 }
 
 // -- glColor3uiv
@@ -1657,7 +1657,7 @@ void glColor3uiv( const GLuint *v )
     // Set function specific args
     argp.v = v
 
-    glcolor3uiv_uh(&argp)
+    glcolor3uiv_uh(&argp);
 }
 
 // -- glColor3usv
@@ -1668,7 +1668,7 @@ void glColor3usv( const GLushort *v )
     // Set function specific args
     argp.v = v
 
-    glcolor3usv_uh(&argp)
+    glcolor3usv_uh(&argp);
 }
 
 // -- glColor4bv
@@ -1679,7 +1679,7 @@ void glColor4bv( const GLbyte *v )
     // Set function specific args
     argp.v = v
 
-    glcolor4bv_uh(&argp)
+    glcolor4bv_uh(&argp);
 }
 
 // -- glColor4dv
@@ -1690,7 +1690,7 @@ void glColor4dv( const GLdouble *v )
     // Set function specific args
     argp.v = v
 
-    glcolor4dv_uh(&argp)
+    glcolor4dv_uh(&argp);
 }
 
 // -- glColor4fv
@@ -1701,7 +1701,7 @@ void glColor4fv( const GLfloat *v )
     // Set function specific args
     argp.v = v
 
-    glcolor4fv_uh(&argp)
+    glcolor4fv_uh(&argp);
 }
 
 // -- glColor4iv
@@ -1712,7 +1712,7 @@ void glColor4iv( const GLint *v )
     // Set function specific args
     argp.v = v
 
-    glcolor4iv_uh(&argp)
+    glcolor4iv_uh(&argp);
 }
 
 // -- glColor4sv
@@ -1723,7 +1723,7 @@ void glColor4sv( const GLshort *v )
     // Set function specific args
     argp.v = v
 
-    glcolor4sv_uh(&argp)
+    glcolor4sv_uh(&argp);
 }
 
 // -- glColor4ubv
@@ -1734,7 +1734,7 @@ void glColor4ubv( const GLubyte *v )
     // Set function specific args
     argp.v = v
 
-    glcolor4ubv_uh(&argp)
+    glcolor4ubv_uh(&argp);
 }
 
 // -- glColor4uiv
@@ -1745,7 +1745,7 @@ void glColor4uiv( const GLuint *v )
     // Set function specific args
     argp.v = v
 
-    glcolor4uiv_uh(&argp)
+    glcolor4uiv_uh(&argp);
 }
 
 // -- glColor4usv
@@ -1756,7 +1756,7 @@ void glColor4usv( const GLushort *v )
     // Set function specific args
     argp.v = v
 
-    glcolor4usv_uh(&argp)
+    glcolor4usv_uh(&argp);
 }
 
 // -- glTexCoord1d
@@ -1767,7 +1767,7 @@ void glTexCoord1d( GLdouble s )
     // Set function specific args
     argp.s = s
 
-    gltexcoord1d_uh(&argp)
+    gltexcoord1d_uh(&argp);
 }
 
 // -- glTexCoord1f
@@ -1778,7 +1778,7 @@ void glTexCoord1f( GLfloat s )
     // Set function specific args
     argp.s = s
 
-    gltexcoord1f_uh(&argp)
+    gltexcoord1f_uh(&argp);
 }
 
 // -- glTexCoord1i
@@ -1789,7 +1789,7 @@ void glTexCoord1i( GLint s )
     // Set function specific args
     argp.s = s
 
-    gltexcoord1i_uh(&argp)
+    gltexcoord1i_uh(&argp);
 }
 
 // -- glTexCoord1s
@@ -1800,7 +1800,7 @@ void glTexCoord1s( GLshort s )
     // Set function specific args
     argp.s = s
 
-    gltexcoord1s_uh(&argp)
+    gltexcoord1s_uh(&argp);
 }
 
 // -- glTexCoord2d
@@ -1812,7 +1812,7 @@ void glTexCoord2d( GLdouble s, GLdouble t )
     argp.s = s;
 	argp.t = t
 
-    gltexcoord2d_uh(&argp)
+    gltexcoord2d_uh(&argp);
 }
 
 // -- glTexCoord2f
@@ -1824,7 +1824,7 @@ void glTexCoord2f( GLfloat s, GLfloat t )
     argp.s = s;
 	argp.t = t
 
-    gltexcoord2f_uh(&argp)
+    gltexcoord2f_uh(&argp);
 }
 
 // -- glTexCoord2i
@@ -1836,7 +1836,7 @@ void glTexCoord2i( GLint s, GLint t )
     argp.s = s;
 	argp.t = t
 
-    gltexcoord2i_uh(&argp)
+    gltexcoord2i_uh(&argp);
 }
 
 // -- glTexCoord2s
@@ -1848,7 +1848,7 @@ void glTexCoord2s( GLshort s, GLshort t )
     argp.s = s;
 	argp.t = t
 
-    gltexcoord2s_uh(&argp)
+    gltexcoord2s_uh(&argp);
 }
 
 // -- glTexCoord3d
@@ -1861,7 +1861,7 @@ void glTexCoord3d( GLdouble s, GLdouble t, GLdouble r )
 	argp.t = t;
 	argp.r = r
 
-    gltexcoord3d_uh(&argp)
+    gltexcoord3d_uh(&argp);
 }
 
 // -- glTexCoord3f
@@ -1874,7 +1874,7 @@ void glTexCoord3f( GLfloat s, GLfloat t, GLfloat r )
 	argp.t = t;
 	argp.r = r
 
-    gltexcoord3f_uh(&argp)
+    gltexcoord3f_uh(&argp);
 }
 
 // -- glTexCoord3i
@@ -1887,7 +1887,7 @@ void glTexCoord3i( GLint s, GLint t, GLint r )
 	argp.t = t;
 	argp.r = r
 
-    gltexcoord3i_uh(&argp)
+    gltexcoord3i_uh(&argp);
 }
 
 // -- glTexCoord3s
@@ -1900,7 +1900,7 @@ void glTexCoord3s( GLshort s, GLshort t, GLshort r )
 	argp.t = t;
 	argp.r = r
 
-    gltexcoord3s_uh(&argp)
+    gltexcoord3s_uh(&argp);
 }
 
 // -- glTexCoord4d
@@ -1914,7 +1914,7 @@ void glTexCoord4d( GLdouble s, GLdouble t, GLdouble r, GLdouble q )
 	argp.r = r;
 	argp.q = q
 
-    gltexcoord4d_uh(&argp)
+    gltexcoord4d_uh(&argp);
 }
 
 // -- glTexCoord4f
@@ -1928,7 +1928,7 @@ void glTexCoord4f( GLfloat s, GLfloat t, GLfloat r, GLfloat q )
 	argp.r = r;
 	argp.q = q
 
-    gltexcoord4f_uh(&argp)
+    gltexcoord4f_uh(&argp);
 }
 
 // -- glTexCoord4i
@@ -1942,7 +1942,7 @@ void glTexCoord4i( GLint s, GLint t, GLint r, GLint q )
 	argp.r = r;
 	argp.q = q
 
-    gltexcoord4i_uh(&argp)
+    gltexcoord4i_uh(&argp);
 }
 
 // -- glTexCoord4s
@@ -1956,7 +1956,7 @@ void glTexCoord4s( GLshort s, GLshort t, GLshort r, GLshort q )
 	argp.r = r;
 	argp.q = q
 
-    gltexcoord4s_uh(&argp)
+    gltexcoord4s_uh(&argp);
 }
 
 // -- glTexCoord1dv
@@ -1967,7 +1967,7 @@ void glTexCoord1dv( const GLdouble *v )
     // Set function specific args
     argp.v = v
 
-    gltexcoord1dv_uh(&argp)
+    gltexcoord1dv_uh(&argp);
 }
 
 // -- glTexCoord1fv
@@ -1978,7 +1978,7 @@ void glTexCoord1fv( const GLfloat *v )
     // Set function specific args
     argp.v = v
 
-    gltexcoord1fv_uh(&argp)
+    gltexcoord1fv_uh(&argp);
 }
 
 // -- glTexCoord1iv
@@ -1989,7 +1989,7 @@ void glTexCoord1iv( const GLint *v )
     // Set function specific args
     argp.v = v
 
-    gltexcoord1iv_uh(&argp)
+    gltexcoord1iv_uh(&argp);
 }
 
 // -- glTexCoord1sv
@@ -2000,7 +2000,7 @@ void glTexCoord1sv( const GLshort *v )
     // Set function specific args
     argp.v = v
 
-    gltexcoord1sv_uh(&argp)
+    gltexcoord1sv_uh(&argp);
 }
 
 // -- glTexCoord2dv
@@ -2011,7 +2011,7 @@ void glTexCoord2dv( const GLdouble *v )
     // Set function specific args
     argp.v = v
 
-    gltexcoord2dv_uh(&argp)
+    gltexcoord2dv_uh(&argp);
 }
 
 // -- glTexCoord2fv
@@ -2022,7 +2022,7 @@ void glTexCoord2fv( const GLfloat *v )
     // Set function specific args
     argp.v = v
 
-    gltexcoord2fv_uh(&argp)
+    gltexcoord2fv_uh(&argp);
 }
 
 // -- glTexCoord2iv
@@ -2033,7 +2033,7 @@ void glTexCoord2iv( const GLint *v )
     // Set function specific args
     argp.v = v
 
-    gltexcoord2iv_uh(&argp)
+    gltexcoord2iv_uh(&argp);
 }
 
 // -- glTexCoord2sv
@@ -2044,7 +2044,7 @@ void glTexCoord2sv( const GLshort *v )
     // Set function specific args
     argp.v = v
 
-    gltexcoord2sv_uh(&argp)
+    gltexcoord2sv_uh(&argp);
 }
 
 // -- glTexCoord3dv
@@ -2055,7 +2055,7 @@ void glTexCoord3dv( const GLdouble *v )
     // Set function specific args
     argp.v = v
 
-    gltexcoord3dv_uh(&argp)
+    gltexcoord3dv_uh(&argp);
 }
 
 // -- glTexCoord3fv
@@ -2066,7 +2066,7 @@ void glTexCoord3fv( const GLfloat *v )
     // Set function specific args
     argp.v = v
 
-    gltexcoord3fv_uh(&argp)
+    gltexcoord3fv_uh(&argp);
 }
 
 // -- glTexCoord3iv
@@ -2077,7 +2077,7 @@ void glTexCoord3iv( const GLint *v )
     // Set function specific args
     argp.v = v
 
-    gltexcoord3iv_uh(&argp)
+    gltexcoord3iv_uh(&argp);
 }
 
 // -- glTexCoord3sv
@@ -2088,7 +2088,7 @@ void glTexCoord3sv( const GLshort *v )
     // Set function specific args
     argp.v = v
 
-    gltexcoord3sv_uh(&argp)
+    gltexcoord3sv_uh(&argp);
 }
 
 // -- glTexCoord4dv
@@ -2099,7 +2099,7 @@ void glTexCoord4dv( const GLdouble *v )
     // Set function specific args
     argp.v = v
 
-    gltexcoord4dv_uh(&argp)
+    gltexcoord4dv_uh(&argp);
 }
 
 // -- glTexCoord4fv
@@ -2110,7 +2110,7 @@ void glTexCoord4fv( const GLfloat *v )
     // Set function specific args
     argp.v = v
 
-    gltexcoord4fv_uh(&argp)
+    gltexcoord4fv_uh(&argp);
 }
 
 // -- glTexCoord4iv
@@ -2121,7 +2121,7 @@ void glTexCoord4iv( const GLint *v )
     // Set function specific args
     argp.v = v
 
-    gltexcoord4iv_uh(&argp)
+    gltexcoord4iv_uh(&argp);
 }
 
 // -- glTexCoord4sv
@@ -2132,7 +2132,7 @@ void glTexCoord4sv( const GLshort *v )
     // Set function specific args
     argp.v = v
 
-    gltexcoord4sv_uh(&argp)
+    gltexcoord4sv_uh(&argp);
 }
 
 // -- glRasterPos2d
@@ -2144,7 +2144,7 @@ void glRasterPos2d( GLdouble x, GLdouble y )
     argp.x = x;
 	argp.y = y
 
-    glrasterpos2d_uh(&argp)
+    glrasterpos2d_uh(&argp);
 }
 
 // -- glRasterPos2f
@@ -2156,7 +2156,7 @@ void glRasterPos2f( GLfloat x, GLfloat y )
     argp.x = x;
 	argp.y = y
 
-    glrasterpos2f_uh(&argp)
+    glrasterpos2f_uh(&argp);
 }
 
 // -- glRasterPos2i
@@ -2168,7 +2168,7 @@ void glRasterPos2i( GLint x, GLint y )
     argp.x = x;
 	argp.y = y
 
-    glrasterpos2i_uh(&argp)
+    glrasterpos2i_uh(&argp);
 }
 
 // -- glRasterPos2s
@@ -2180,7 +2180,7 @@ void glRasterPos2s( GLshort x, GLshort y )
     argp.x = x;
 	argp.y = y
 
-    glrasterpos2s_uh(&argp)
+    glrasterpos2s_uh(&argp);
 }
 
 // -- glRasterPos3d
@@ -2193,7 +2193,7 @@ void glRasterPos3d( GLdouble x, GLdouble y, GLdouble z )
 	argp.y = y;
 	argp.z = z
 
-    glrasterpos3d_uh(&argp)
+    glrasterpos3d_uh(&argp);
 }
 
 // -- glRasterPos3f
@@ -2206,7 +2206,7 @@ void glRasterPos3f( GLfloat x, GLfloat y, GLfloat z )
 	argp.y = y;
 	argp.z = z
 
-    glrasterpos3f_uh(&argp)
+    glrasterpos3f_uh(&argp);
 }
 
 // -- glRasterPos3i
@@ -2219,7 +2219,7 @@ void glRasterPos3i( GLint x, GLint y, GLint z )
 	argp.y = y;
 	argp.z = z
 
-    glrasterpos3i_uh(&argp)
+    glrasterpos3i_uh(&argp);
 }
 
 // -- glRasterPos3s
@@ -2232,7 +2232,7 @@ void glRasterPos3s( GLshort x, GLshort y, GLshort z )
 	argp.y = y;
 	argp.z = z
 
-    glrasterpos3s_uh(&argp)
+    glrasterpos3s_uh(&argp);
 }
 
 // -- glRasterPos4d
@@ -2246,7 +2246,7 @@ void glRasterPos4d( GLdouble x, GLdouble y, GLdouble z, GLdouble w )
 	argp.z = z;
 	argp.w = w
 
-    glrasterpos4d_uh(&argp)
+    glrasterpos4d_uh(&argp);
 }
 
 // -- glRasterPos4f
@@ -2260,7 +2260,7 @@ void glRasterPos4f( GLfloat x, GLfloat y, GLfloat z, GLfloat w )
 	argp.z = z;
 	argp.w = w
 
-    glrasterpos4f_uh(&argp)
+    glrasterpos4f_uh(&argp);
 }
 
 // -- glRasterPos4i
@@ -2274,7 +2274,7 @@ void glRasterPos4i( GLint x, GLint y, GLint z, GLint w )
 	argp.z = z;
 	argp.w = w
 
-    glrasterpos4i_uh(&argp)
+    glrasterpos4i_uh(&argp);
 }
 
 // -- glRasterPos4s
@@ -2288,7 +2288,7 @@ void glRasterPos4s( GLshort x, GLshort y, GLshort z, GLshort w )
 	argp.z = z;
 	argp.w = w
 
-    glrasterpos4s_uh(&argp)
+    glrasterpos4s_uh(&argp);
 }
 
 // -- glRasterPos2dv
@@ -2299,7 +2299,7 @@ void glRasterPos2dv( const GLdouble *v )
     // Set function specific args
     argp.v = v
 
-    glrasterpos2dv_uh(&argp)
+    glrasterpos2dv_uh(&argp);
 }
 
 // -- glRasterPos2fv
@@ -2310,7 +2310,7 @@ void glRasterPos2fv( const GLfloat *v )
     // Set function specific args
     argp.v = v
 
-    glrasterpos2fv_uh(&argp)
+    glrasterpos2fv_uh(&argp);
 }
 
 // -- glRasterPos2iv
@@ -2321,7 +2321,7 @@ void glRasterPos2iv( const GLint *v )
     // Set function specific args
     argp.v = v
 
-    glrasterpos2iv_uh(&argp)
+    glrasterpos2iv_uh(&argp);
 }
 
 // -- glRasterPos2sv
@@ -2332,7 +2332,7 @@ void glRasterPos2sv( const GLshort *v )
     // Set function specific args
     argp.v = v
 
-    glrasterpos2sv_uh(&argp)
+    glrasterpos2sv_uh(&argp);
 }
 
 // -- glRasterPos3dv
@@ -2343,7 +2343,7 @@ void glRasterPos3dv( const GLdouble *v )
     // Set function specific args
     argp.v = v
 
-    glrasterpos3dv_uh(&argp)
+    glrasterpos3dv_uh(&argp);
 }
 
 // -- glRasterPos3fv
@@ -2354,7 +2354,7 @@ void glRasterPos3fv( const GLfloat *v )
     // Set function specific args
     argp.v = v
 
-    glrasterpos3fv_uh(&argp)
+    glrasterpos3fv_uh(&argp);
 }
 
 // -- glRasterPos3iv
@@ -2365,7 +2365,7 @@ void glRasterPos3iv( const GLint *v )
     // Set function specific args
     argp.v = v
 
-    glrasterpos3iv_uh(&argp)
+    glrasterpos3iv_uh(&argp);
 }
 
 // -- glRasterPos3sv
@@ -2376,7 +2376,7 @@ void glRasterPos3sv( const GLshort *v )
     // Set function specific args
     argp.v = v
 
-    glrasterpos3sv_uh(&argp)
+    glrasterpos3sv_uh(&argp);
 }
 
 // -- glRasterPos4dv
@@ -2387,7 +2387,7 @@ void glRasterPos4dv( const GLdouble *v )
     // Set function specific args
     argp.v = v
 
-    glrasterpos4dv_uh(&argp)
+    glrasterpos4dv_uh(&argp);
 }
 
 // -- glRasterPos4fv
@@ -2398,7 +2398,7 @@ void glRasterPos4fv( const GLfloat *v )
     // Set function specific args
     argp.v = v
 
-    glrasterpos4fv_uh(&argp)
+    glrasterpos4fv_uh(&argp);
 }
 
 // -- glRasterPos4iv
@@ -2409,7 +2409,7 @@ void glRasterPos4iv( const GLint *v )
     // Set function specific args
     argp.v = v
 
-    glrasterpos4iv_uh(&argp)
+    glrasterpos4iv_uh(&argp);
 }
 
 // -- glRasterPos4sv
@@ -2420,7 +2420,7 @@ void glRasterPos4sv( const GLshort *v )
     // Set function specific args
     argp.v = v
 
-    glrasterpos4sv_uh(&argp)
+    glrasterpos4sv_uh(&argp);
 }
 
 // -- glRectd
@@ -2434,7 +2434,7 @@ void glRectd( GLdouble x1, GLdouble y1, GLdouble x2, GLdouble y2 )
 	argp.x2 = x2;
 	argp.y2 = y2
 
-    glrectd_uh(&argp)
+    glrectd_uh(&argp);
 }
 
 // -- glRectf
@@ -2448,7 +2448,7 @@ void glRectf( GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2 )
 	argp.x2 = x2;
 	argp.y2 = y2
 
-    glrectf_uh(&argp)
+    glrectf_uh(&argp);
 }
 
 // -- glRecti
@@ -2462,7 +2462,7 @@ void glRecti( GLint x1, GLint y1, GLint x2, GLint y2 )
 	argp.x2 = x2;
 	argp.y2 = y2
 
-    glrecti_uh(&argp)
+    glrecti_uh(&argp);
 }
 
 // -- glRects
@@ -2476,7 +2476,7 @@ void glRects( GLshort x1, GLshort y1, GLshort x2, GLshort y2 )
 	argp.x2 = x2;
 	argp.y2 = y2
 
-    glrects_uh(&argp)
+    glrects_uh(&argp);
 }
 
 // -- glRectdv
@@ -2488,7 +2488,7 @@ void glRectdv( const GLdouble *v1, const GLdouble *v2 )
     argp.v1 = v1;
 	argp.v2 = v2
 
-    glrectdv_uh(&argp)
+    glrectdv_uh(&argp);
 }
 
 // -- glRectfv
@@ -2500,7 +2500,7 @@ void glRectfv( const GLfloat *v1, const GLfloat *v2 )
     argp.v1 = v1;
 	argp.v2 = v2
 
-    glrectfv_uh(&argp)
+    glrectfv_uh(&argp);
 }
 
 // -- glRectiv
@@ -2512,7 +2512,7 @@ void glRectiv( const GLint *v1, const GLint *v2 )
     argp.v1 = v1;
 	argp.v2 = v2
 
-    glrectiv_uh(&argp)
+    glrectiv_uh(&argp);
 }
 
 // -- glRectsv
@@ -2524,7 +2524,7 @@ void glRectsv( const GLshort *v1, const GLshort *v2 )
     argp.v1 = v1;
 	argp.v2 = v2
 
-    glrectsv_uh(&argp)
+    glrectsv_uh(&argp);
 }
 
 // -- glVertexPointer
@@ -2538,7 +2538,7 @@ void glVertexPointer( GLint size, GLenum type, GLsizei stride, const GLvoid *ptr
 	argp.stride = stride;
 	argp.ptr = ptr
 
-    glvertexpointer_uh(&argp)
+    glvertexpointer_uh(&argp);
 }
 
 // -- glNormalPointer
@@ -2551,7 +2551,7 @@ void glNormalPointer( GLenum type, GLsizei stride, const GLvoid *ptr )
 	argp.stride = stride;
 	argp.ptr = ptr
 
-    glnormalpointer_uh(&argp)
+    glnormalpointer_uh(&argp);
 }
 
 // -- glColorPointer
@@ -2565,7 +2565,7 @@ void glColorPointer( GLint size, GLenum type, GLsizei stride, const GLvoid *ptr 
 	argp.stride = stride;
 	argp.ptr = ptr
 
-    glcolorpointer_uh(&argp)
+    glcolorpointer_uh(&argp);
 }
 
 // -- glIndexPointer
@@ -2578,7 +2578,7 @@ void glIndexPointer( GLenum type, GLsizei stride, const GLvoid *ptr )
 	argp.stride = stride;
 	argp.ptr = ptr
 
-    glindexpointer_uh(&argp)
+    glindexpointer_uh(&argp);
 }
 
 // -- glTexCoordPointer
@@ -2592,7 +2592,7 @@ void glTexCoordPointer( GLint size, GLenum type, GLsizei stride, const GLvoid *p
 	argp.stride = stride;
 	argp.ptr = ptr
 
-    gltexcoordpointer_uh(&argp)
+    gltexcoordpointer_uh(&argp);
 }
 
 // -- glEdgeFlagPointer
@@ -2604,7 +2604,7 @@ void glEdgeFlagPointer( GLsizei stride, const GLvoid *ptr )
     argp.stride = stride;
 	argp.ptr = ptr
 
-    gledgeflagpointer_uh(&argp)
+    gledgeflagpointer_uh(&argp);
 }
 
 // -- glGetPointerv
@@ -2616,7 +2616,7 @@ void glGetPointerv( GLenum pname, GLvoid **params )
     argp.pname = pname;
 	argp.*params = *params
 
-    glgetpointerv_uh(&argp)
+    glgetpointerv_uh(&argp);
 }
 
 // -- glArrayElement
@@ -2627,7 +2627,7 @@ void glArrayElement( GLint i )
     // Set function specific args
     argp.i = i
 
-    glarrayelement_uh(&argp)
+    glarrayelement_uh(&argp);
 }
 
 // -- glDrawArrays
@@ -2640,7 +2640,7 @@ void glDrawArrays( GLenum mode, GLint first, GLsizei count )
 	argp.first = first;
 	argp.count = count
 
-    gldrawarrays_uh(&argp)
+    gldrawarrays_uh(&argp);
 }
 
 // -- glDrawElements
@@ -2654,7 +2654,7 @@ void glDrawElements( GLenum mode, GLsizei count, GLenum type, const GLvoid *indi
 	argp.type = type;
 	argp.indices = indices
 
-    gldrawelements_uh(&argp)
+    gldrawelements_uh(&argp);
 }
 
 // -- glInterleavedArrays
@@ -2667,7 +2667,7 @@ void glInterleavedArrays( GLenum format, GLsizei stride, const GLvoid *pointer )
 	argp.stride = stride;
 	argp.pointer = pointer
 
-    glinterleavedarrays_uh(&argp)
+    glinterleavedarrays_uh(&argp);
 }
 
 // -- glShadeModel
@@ -2678,7 +2678,7 @@ void glShadeModel( GLenum mode )
     // Set function specific args
     argp.mode = mode
 
-    glshademodel_uh(&argp)
+    glshademodel_uh(&argp);
 }
 
 // -- glLightf
@@ -2691,7 +2691,7 @@ void glLightf( GLenum light, GLenum pname, GLfloat param )
 	argp.pname = pname;
 	argp.param = param
 
-    gllightf_uh(&argp)
+    gllightf_uh(&argp);
 }
 
 // -- glLighti
@@ -2704,7 +2704,7 @@ void glLighti( GLenum light, GLenum pname, GLint param )
 	argp.pname = pname;
 	argp.param = param
 
-    gllighti_uh(&argp)
+    gllighti_uh(&argp);
 }
 
 // -- glLightfv
@@ -2717,7 +2717,7 @@ void glLightfv( GLenum light, GLenum pname, const GLfloat *params )
 	argp.pname = pname;
 	argp.params = params
 
-    gllightfv_uh(&argp)
+    gllightfv_uh(&argp);
 }
 
 // -- glLightiv
@@ -2730,7 +2730,7 @@ void glLightiv( GLenum light, GLenum pname, const GLint *params )
 	argp.pname = pname;
 	argp.params = params
 
-    gllightiv_uh(&argp)
+    gllightiv_uh(&argp);
 }
 
 // -- glGetLightfv
@@ -2743,7 +2743,7 @@ void glGetLightfv( GLenum light, GLenum pname, GLfloat *params )
 	argp.pname = pname;
 	argp.params = params
 
-    glgetlightfv_uh(&argp)
+    glgetlightfv_uh(&argp);
 }
 
 // -- glGetLightiv
@@ -2756,7 +2756,7 @@ void glGetLightiv( GLenum light, GLenum pname, GLint *params )
 	argp.pname = pname;
 	argp.params = params
 
-    glgetlightiv_uh(&argp)
+    glgetlightiv_uh(&argp);
 }
 
 // -- glLightModelf
@@ -2768,7 +2768,7 @@ void glLightModelf( GLenum pname, GLfloat param )
     argp.pname = pname;
 	argp.param = param
 
-    gllightmodelf_uh(&argp)
+    gllightmodelf_uh(&argp);
 }
 
 // -- glLightModeli
@@ -2780,7 +2780,7 @@ void glLightModeli( GLenum pname, GLint param )
     argp.pname = pname;
 	argp.param = param
 
-    gllightmodeli_uh(&argp)
+    gllightmodeli_uh(&argp);
 }
 
 // -- glLightModelfv
@@ -2792,7 +2792,7 @@ void glLightModelfv( GLenum pname, const GLfloat *params )
     argp.pname = pname;
 	argp.params = params
 
-    gllightmodelfv_uh(&argp)
+    gllightmodelfv_uh(&argp);
 }
 
 // -- glLightModeliv
@@ -2804,7 +2804,7 @@ void glLightModeliv( GLenum pname, const GLint *params )
     argp.pname = pname;
 	argp.params = params
 
-    gllightmodeliv_uh(&argp)
+    gllightmodeliv_uh(&argp);
 }
 
 // -- glMaterialf
@@ -2817,7 +2817,7 @@ void glMaterialf( GLenum face, GLenum pname, GLfloat param )
 	argp.pname = pname;
 	argp.param = param
 
-    glmaterialf_uh(&argp)
+    glmaterialf_uh(&argp);
 }
 
 // -- glMateriali
@@ -2830,7 +2830,7 @@ void glMateriali( GLenum face, GLenum pname, GLint param )
 	argp.pname = pname;
 	argp.param = param
 
-    glmateriali_uh(&argp)
+    glmateriali_uh(&argp);
 }
 
 // -- glMaterialfv
@@ -2843,7 +2843,7 @@ void glMaterialfv( GLenum face, GLenum pname, const GLfloat *params )
 	argp.pname = pname;
 	argp.params = params
 
-    glmaterialfv_uh(&argp)
+    glmaterialfv_uh(&argp);
 }
 
 // -- glMaterialiv
@@ -2856,7 +2856,7 @@ void glMaterialiv( GLenum face, GLenum pname, const GLint *params )
 	argp.pname = pname;
 	argp.params = params
 
-    glmaterialiv_uh(&argp)
+    glmaterialiv_uh(&argp);
 }
 
 // -- glGetMaterialfv
@@ -2869,7 +2869,7 @@ void glGetMaterialfv( GLenum face, GLenum pname, GLfloat *params )
 	argp.pname = pname;
 	argp.params = params
 
-    glgetmaterialfv_uh(&argp)
+    glgetmaterialfv_uh(&argp);
 }
 
 // -- glGetMaterialiv
@@ -2882,7 +2882,7 @@ void glGetMaterialiv( GLenum face, GLenum pname, GLint *params )
 	argp.pname = pname;
 	argp.params = params
 
-    glgetmaterialiv_uh(&argp)
+    glgetmaterialiv_uh(&argp);
 }
 
 // -- glColorMaterial
@@ -2894,7 +2894,7 @@ void glColorMaterial( GLenum face, GLenum mode )
     argp.face = face;
 	argp.mode = mode
 
-    glcolormaterial_uh(&argp)
+    glcolormaterial_uh(&argp);
 }
 
 // -- glPixelZoom
@@ -2906,7 +2906,7 @@ void glPixelZoom( GLfloat xfactor, GLfloat yfactor )
     argp.xfactor = xfactor;
 	argp.yfactor = yfactor
 
-    glpixelzoom_uh(&argp)
+    glpixelzoom_uh(&argp);
 }
 
 // -- glPixelStoref
@@ -2918,7 +2918,7 @@ void glPixelStoref( GLenum pname, GLfloat param )
     argp.pname = pname;
 	argp.param = param
 
-    glpixelstoref_uh(&argp)
+    glpixelstoref_uh(&argp);
 }
 
 // -- glPixelStorei
@@ -2930,7 +2930,7 @@ void glPixelStorei( GLenum pname, GLint param )
     argp.pname = pname;
 	argp.param = param
 
-    glpixelstorei_uh(&argp)
+    glpixelstorei_uh(&argp);
 }
 
 // -- glPixelTransferf
@@ -2942,7 +2942,7 @@ void glPixelTransferf( GLenum pname, GLfloat param )
     argp.pname = pname;
 	argp.param = param
 
-    glpixeltransferf_uh(&argp)
+    glpixeltransferf_uh(&argp);
 }
 
 // -- glPixelTransferi
@@ -2954,7 +2954,7 @@ void glPixelTransferi( GLenum pname, GLint param )
     argp.pname = pname;
 	argp.param = param
 
-    glpixeltransferi_uh(&argp)
+    glpixeltransferi_uh(&argp);
 }
 
 // -- glPixelMapfv
@@ -2967,7 +2967,7 @@ void glPixelMapfv( GLenum map, GLsizei mapsize, const GLfloat *values )
 	argp.mapsize = mapsize;
 	argp.values = values
 
-    glpixelmapfv_uh(&argp)
+    glpixelmapfv_uh(&argp);
 }
 
 // -- glPixelMapuiv
@@ -2980,7 +2980,7 @@ void glPixelMapuiv( GLenum map, GLsizei mapsize, const GLuint *values )
 	argp.mapsize = mapsize;
 	argp.values = values
 
-    glpixelmapuiv_uh(&argp)
+    glpixelmapuiv_uh(&argp);
 }
 
 // -- glPixelMapusv
@@ -2993,7 +2993,7 @@ void glPixelMapusv( GLenum map, GLsizei mapsize, const GLushort *values )
 	argp.mapsize = mapsize;
 	argp.values = values
 
-    glpixelmapusv_uh(&argp)
+    glpixelmapusv_uh(&argp);
 }
 
 // -- glGetPixelMapfv
@@ -3005,7 +3005,7 @@ void glGetPixelMapfv( GLenum map, GLfloat *values )
     argp.map = map;
 	argp.values = values
 
-    glgetpixelmapfv_uh(&argp)
+    glgetpixelmapfv_uh(&argp);
 }
 
 // -- glGetPixelMapuiv
@@ -3017,7 +3017,7 @@ void glGetPixelMapuiv( GLenum map, GLuint *values )
     argp.map = map;
 	argp.values = values
 
-    glgetpixelmapuiv_uh(&argp)
+    glgetpixelmapuiv_uh(&argp);
 }
 
 // -- glGetPixelMapusv
@@ -3029,7 +3029,7 @@ void glGetPixelMapusv( GLenum map, GLushort *values )
     argp.map = map;
 	argp.values = values
 
-    glgetpixelmapusv_uh(&argp)
+    glgetpixelmapusv_uh(&argp);
 }
 
 // -- glBitmap
@@ -3046,7 +3046,7 @@ void glBitmap( GLsizei width, GLsizei height, GLfloat xorig, GLfloat yorig, GLfl
 	argp.ymove = ymove;
 	argp.bitmap = bitmap
 
-    glbitmap_uh(&argp)
+    glbitmap_uh(&argp);
 }
 
 // -- glReadPixels
@@ -3063,7 +3063,7 @@ void glReadPixels( GLint x, GLint y, GLsizei width, GLsizei height, GLenum forma
 	argp.type = type;
 	argp.pixels = pixels
 
-    glreadpixels_uh(&argp)
+    glreadpixels_uh(&argp);
 }
 
 // -- glDrawPixels
@@ -3078,7 +3078,7 @@ void glDrawPixels( GLsizei width, GLsizei height, GLenum format, GLenum type, co
 	argp.type = type;
 	argp.pixels = pixels
 
-    gldrawpixels_uh(&argp)
+    gldrawpixels_uh(&argp);
 }
 
 // -- glCopyPixels
@@ -3093,7 +3093,7 @@ void glCopyPixels( GLint x, GLint y, GLsizei width, GLsizei height, GLenum type 
 	argp.height = height;
 	argp.type = type
 
-    glcopypixels_uh(&argp)
+    glcopypixels_uh(&argp);
 }
 
 // -- glStencilFunc
@@ -3106,7 +3106,7 @@ void glStencilFunc( GLenum func, GLint ref, GLuint mask )
 	argp.ref = ref;
 	argp.mask = mask
 
-    glstencilfunc_uh(&argp)
+    glstencilfunc_uh(&argp);
 }
 
 // -- glStencilMask
@@ -3117,7 +3117,7 @@ void glStencilMask( GLuint mask )
     // Set function specific args
     argp.mask = mask
 
-    glstencilmask_uh(&argp)
+    glstencilmask_uh(&argp);
 }
 
 // -- glStencilOp
@@ -3130,7 +3130,7 @@ void glStencilOp( GLenum fail, GLenum zfail, GLenum zpass )
 	argp.zfail = zfail;
 	argp.zpass = zpass
 
-    glstencilop_uh(&argp)
+    glstencilop_uh(&argp);
 }
 
 // -- glClearStencil
@@ -3141,7 +3141,7 @@ void glClearStencil( GLint s )
     // Set function specific args
     argp.s = s
 
-    glclearstencil_uh(&argp)
+    glclearstencil_uh(&argp);
 }
 
 // -- glTexGend
@@ -3154,7 +3154,7 @@ void glTexGend( GLenum coord, GLenum pname, GLdouble param )
 	argp.pname = pname;
 	argp.param = param
 
-    gltexgend_uh(&argp)
+    gltexgend_uh(&argp);
 }
 
 // -- glTexGenf
@@ -3167,7 +3167,7 @@ void glTexGenf( GLenum coord, GLenum pname, GLfloat param )
 	argp.pname = pname;
 	argp.param = param
 
-    gltexgenf_uh(&argp)
+    gltexgenf_uh(&argp);
 }
 
 // -- glTexGeni
@@ -3180,7 +3180,7 @@ void glTexGeni( GLenum coord, GLenum pname, GLint param )
 	argp.pname = pname;
 	argp.param = param
 
-    gltexgeni_uh(&argp)
+    gltexgeni_uh(&argp);
 }
 
 // -- glTexGendv
@@ -3193,7 +3193,7 @@ void glTexGendv( GLenum coord, GLenum pname, const GLdouble *params )
 	argp.pname = pname;
 	argp.params = params
 
-    gltexgendv_uh(&argp)
+    gltexgendv_uh(&argp);
 }
 
 // -- glTexGenfv
@@ -3206,7 +3206,7 @@ void glTexGenfv( GLenum coord, GLenum pname, const GLfloat *params )
 	argp.pname = pname;
 	argp.params = params
 
-    gltexgenfv_uh(&argp)
+    gltexgenfv_uh(&argp);
 }
 
 // -- glTexGeniv
@@ -3219,7 +3219,7 @@ void glTexGeniv( GLenum coord, GLenum pname, const GLint *params )
 	argp.pname = pname;
 	argp.params = params
 
-    gltexgeniv_uh(&argp)
+    gltexgeniv_uh(&argp);
 }
 
 // -- glGetTexGendv
@@ -3232,7 +3232,7 @@ void glGetTexGendv( GLenum coord, GLenum pname, GLdouble *params )
 	argp.pname = pname;
 	argp.params = params
 
-    glgettexgendv_uh(&argp)
+    glgettexgendv_uh(&argp);
 }
 
 // -- glGetTexGenfv
@@ -3245,7 +3245,7 @@ void glGetTexGenfv( GLenum coord, GLenum pname, GLfloat *params )
 	argp.pname = pname;
 	argp.params = params
 
-    glgettexgenfv_uh(&argp)
+    glgettexgenfv_uh(&argp);
 }
 
 // -- glGetTexGeniv
@@ -3258,7 +3258,7 @@ void glGetTexGeniv( GLenum coord, GLenum pname, GLint *params )
 	argp.pname = pname;
 	argp.params = params
 
-    glgettexgeniv_uh(&argp)
+    glgettexgeniv_uh(&argp);
 }
 
 // -- glTexEnvf
@@ -3271,7 +3271,7 @@ void glTexEnvf( GLenum target, GLenum pname, GLfloat param )
 	argp.pname = pname;
 	argp.param = param
 
-    gltexenvf_uh(&argp)
+    gltexenvf_uh(&argp);
 }
 
 // -- glTexEnvi
@@ -3284,7 +3284,7 @@ void glTexEnvi( GLenum target, GLenum pname, GLint param )
 	argp.pname = pname;
 	argp.param = param
 
-    gltexenvi_uh(&argp)
+    gltexenvi_uh(&argp);
 }
 
 // -- glTexEnvfv
@@ -3297,7 +3297,7 @@ void glTexEnvfv( GLenum target, GLenum pname, const GLfloat *params )
 	argp.pname = pname;
 	argp.params = params
 
-    gltexenvfv_uh(&argp)
+    gltexenvfv_uh(&argp);
 }
 
 // -- glTexEnviv
@@ -3310,7 +3310,7 @@ void glTexEnviv( GLenum target, GLenum pname, const GLint *params )
 	argp.pname = pname;
 	argp.params = params
 
-    gltexenviv_uh(&argp)
+    gltexenviv_uh(&argp);
 }
 
 // -- glGetTexEnvfv
@@ -3323,7 +3323,7 @@ void glGetTexEnvfv( GLenum target, GLenum pname, GLfloat *params )
 	argp.pname = pname;
 	argp.params = params
 
-    glgettexenvfv_uh(&argp)
+    glgettexenvfv_uh(&argp);
 }
 
 // -- glGetTexEnviv
@@ -3336,7 +3336,7 @@ void glGetTexEnviv( GLenum target, GLenum pname, GLint *params )
 	argp.pname = pname;
 	argp.params = params
 
-    glgettexenviv_uh(&argp)
+    glgettexenviv_uh(&argp);
 }
 
 // -- glTexParameterf
@@ -3349,7 +3349,7 @@ void glTexParameterf( GLenum target, GLenum pname, GLfloat param )
 	argp.pname = pname;
 	argp.param = param
 
-    gltexparameterf_uh(&argp)
+    gltexparameterf_uh(&argp);
 }
 
 // -- glTexParameteri
@@ -3362,7 +3362,7 @@ void glTexParameteri( GLenum target, GLenum pname, GLint param )
 	argp.pname = pname;
 	argp.param = param
 
-    gltexparameteri_uh(&argp)
+    gltexparameteri_uh(&argp);
 }
 
 // -- glTexParameterfv
@@ -3375,7 +3375,7 @@ void glTexParameterfv( GLenum target, GLenum pname, const GLfloat *params )
 	argp.pname = pname;
 	argp.params = params
 
-    gltexparameterfv_uh(&argp)
+    gltexparameterfv_uh(&argp);
 }
 
 // -- glTexParameteriv
@@ -3388,7 +3388,7 @@ void glTexParameteriv( GLenum target, GLenum pname, const GLint *params )
 	argp.pname = pname;
 	argp.params = params
 
-    gltexparameteriv_uh(&argp)
+    gltexparameteriv_uh(&argp);
 }
 
 // -- glGetTexParameterfv
@@ -3401,7 +3401,7 @@ void glGetTexParameterfv( GLenum target, GLenum pname, GLfloat *params)
 	argp.pname = pname;
 	argp.params = params
 
-    glgettexparameterfv_uh(&argp)
+    glgettexparameterfv_uh(&argp);
 }
 
 // -- glGetTexParameteriv
@@ -3414,7 +3414,7 @@ void glGetTexParameteriv( GLenum target, GLenum pname, GLint *params )
 	argp.pname = pname;
 	argp.params = params
 
-    glgettexparameteriv_uh(&argp)
+    glgettexparameteriv_uh(&argp);
 }
 
 // -- glGetTexLevelParameterfv
@@ -3428,7 +3428,7 @@ void glGetTexLevelParameterfv( GLenum target, GLint level, GLenum pname, GLfloat
 	argp.pname = pname;
 	argp.params = params
 
-    glgettexlevelparameterfv_uh(&argp)
+    glgettexlevelparameterfv_uh(&argp);
 }
 
 // -- glGetTexLevelParameteriv
@@ -3442,7 +3442,7 @@ void glGetTexLevelParameteriv( GLenum target, GLint level, GLenum pname, GLint *
 	argp.pname = pname;
 	argp.params = params
 
-    glgettexlevelparameteriv_uh(&argp)
+    glgettexlevelparameteriv_uh(&argp);
 }
 
 // -- glTexImage1D
@@ -3460,7 +3460,7 @@ void glTexImage1D( GLenum target, GLint level, GLint internalFormat, GLsizei wid
 	argp.type = type;
 	argp.pixels = pixels
 
-    glteximage1d_uh(&argp)
+    glteximage1d_uh(&argp);
 }
 
 // -- glTexImage2D
@@ -3479,7 +3479,7 @@ void glTexImage2D( GLenum target, GLint level, GLint internalFormat, GLsizei wid
 	argp.type = type;
 	argp.pixels = pixels
 
-    glteximage2d_uh(&argp)
+    glteximage2d_uh(&argp);
 }
 
 // -- glGetTexImage
@@ -3494,7 +3494,7 @@ void glGetTexImage( GLenum target, GLint level,  GLenum format, GLenum type,  GL
 	argp.type = type;
 	argp.pixels = pixels
 
-    glgetteximage_uh(&argp)
+    glgetteximage_uh(&argp);
 }
 
 // -- glGenTextures
@@ -3506,7 +3506,7 @@ void glGenTextures( GLsizei n, GLuint *textures )
     argp.n = n;
 	argp.textures = textures
 
-    glgentextures_uh(&argp)
+    glgentextures_uh(&argp);
 }
 
 // -- glDeleteTextures
@@ -3518,7 +3518,7 @@ void glDeleteTextures( GLsizei n, const GLuint *textures)
     argp.n = n;
 	argp.textures = textures
 
-    gldeletetextures_uh(&argp)
+    gldeletetextures_uh(&argp);
 }
 
 // -- glBindTexture
@@ -3530,7 +3530,7 @@ void glBindTexture( GLenum target, GLuint texture )
     argp.target = target;
 	argp.texture = texture
 
-    glbindtexture_uh(&argp)
+    glbindtexture_uh(&argp);
 }
 
 // -- glPrioritizeTextures
@@ -3543,7 +3543,7 @@ void glPrioritizeTextures( GLsizei n, const GLuint *textures, const GLclampf *pr
 	argp.textures = textures;
 	argp.priorities = priorities
 
-    glprioritizetextures_uh(&argp)
+    glprioritizetextures_uh(&argp);
 }
 
 // -- glAreTexturesResident
@@ -3556,7 +3556,7 @@ GLboolean glAreTexturesResident( GLsizei n, const GLuint *textures, GLboolean *r
 	argp.textures = textures;
 	argp.residences = residences
     
-    return glaretexturesresident_uh(&argp)
+    return glaretexturesresident_uh(&argp);
 }
 
 // -- glIsTexture
@@ -3567,7 +3567,7 @@ GLboolean glIsTexture( GLuint texture )
     // Set function specific args
     argp.texture = texture
     
-    return glistexture_uh(&argp)
+    return glistexture_uh(&argp);
 }
 
 // -- glTexSubImage1D
@@ -3584,7 +3584,7 @@ void glTexSubImage1D( GLenum target, GLint level, GLint xoffset, GLsizei width, 
 	argp.type = type;
 	argp.pixels = pixels
 
-    gltexsubimage1d_uh(&argp)
+    gltexsubimage1d_uh(&argp);
 }
 
 // -- glTexSubImage2D
@@ -3603,7 +3603,7 @@ void glTexSubImage2D( GLenum target, GLint level, GLint xoffset, GLint yoffset, 
 	argp.type = type;
 	argp.pixels = pixels
 
-    gltexsubimage2d_uh(&argp)
+    gltexsubimage2d_uh(&argp);
 }
 
 // -- glCopyTexImage1D
@@ -3620,7 +3620,7 @@ void glCopyTexImage1D( GLenum target, GLint level, GLenum internalformat, GLint 
 	argp.width = width;
 	argp.border = border
 
-    glcopyteximage1d_uh(&argp)
+    glcopyteximage1d_uh(&argp);
 }
 
 // -- glCopyTexImage2D
@@ -3638,7 +3638,7 @@ void glCopyTexImage2D( GLenum target, GLint level, GLenum internalformat, GLint 
 	argp.height = height;
 	argp.border = border
 
-    glcopyteximage2d_uh(&argp)
+    glcopyteximage2d_uh(&argp);
 }
 
 // -- glCopyTexSubImage1D
@@ -3654,7 +3654,7 @@ void glCopyTexSubImage1D( GLenum target, GLint level,GLint xoffset, GLint x, GLi
 	argp.y = y;
 	argp.width = width
 
-    glcopytexsubimage1d_uh(&argp)
+    glcopytexsubimage1d_uh(&argp);
 }
 
 // -- glCopyTexSubImage2D
@@ -3672,7 +3672,7 @@ void glCopyTexSubImage2D( GLenum target, GLint level,GLint xoffset, GLint yoffse
 	argp.width = width;
 	argp.height = height
 
-    glcopytexsubimage2d_uh(&argp)
+    glcopytexsubimage2d_uh(&argp);
 }
 
 // -- glMap1d
@@ -3688,7 +3688,7 @@ void glMap1d( GLenum target, GLdouble u1, GLdouble u2, GLint stride, GLint order
 	argp.order = order;
 	argp.points = points
 
-    glmap1d_uh(&argp)
+    glmap1d_uh(&argp);
 }
 
 // -- glMap1f
@@ -3704,7 +3704,7 @@ void glMap1f( GLenum target, GLfloat u1, GLfloat u2, GLint stride, GLint order, 
 	argp.order = order;
 	argp.points = points
 
-    glmap1f_uh(&argp)
+    glmap1f_uh(&argp);
 }
 
 // -- glMap2d
@@ -3724,7 +3724,7 @@ void glMap2d( GLenum target, GLdouble u1, GLdouble u2, GLint ustride, GLint uord
 	argp.vorder = vorder;
 	argp.points = points
 
-    glmap2d_uh(&argp)
+    glmap2d_uh(&argp);
 }
 
 // -- glMap2f
@@ -3744,7 +3744,7 @@ void glMap2f( GLenum target, GLfloat u1, GLfloat u2, GLint ustride, GLint uorder
 	argp.vorder = vorder;
 	argp.points = points
 
-    glmap2f_uh(&argp)
+    glmap2f_uh(&argp);
 }
 
 // -- glGetMapdv
@@ -3757,7 +3757,7 @@ void glGetMapdv( GLenum target, GLenum query, GLdouble *v )
 	argp.query = query;
 	argp.v = v
 
-    glgetmapdv_uh(&argp)
+    glgetmapdv_uh(&argp);
 }
 
 // -- glGetMapfv
@@ -3770,7 +3770,7 @@ void glGetMapfv( GLenum target, GLenum query, GLfloat *v )
 	argp.query = query;
 	argp.v = v
 
-    glgetmapfv_uh(&argp)
+    glgetmapfv_uh(&argp);
 }
 
 // -- glGetMapiv
@@ -3783,7 +3783,7 @@ void glGetMapiv( GLenum target, GLenum query, GLint *v )
 	argp.query = query;
 	argp.v = v
 
-    glgetmapiv_uh(&argp)
+    glgetmapiv_uh(&argp);
 }
 
 // -- glEvalCoord1d
@@ -3794,7 +3794,7 @@ void glEvalCoord1d( GLdouble u )
     // Set function specific args
     argp.u = u
 
-    glevalcoord1d_uh(&argp)
+    glevalcoord1d_uh(&argp);
 }
 
 // -- glEvalCoord1f
@@ -3805,7 +3805,7 @@ void glEvalCoord1f( GLfloat u )
     // Set function specific args
     argp.u = u
 
-    glevalcoord1f_uh(&argp)
+    glevalcoord1f_uh(&argp);
 }
 
 // -- glEvalCoord1dv
@@ -3816,7 +3816,7 @@ void glEvalCoord1dv( const GLdouble *u )
     // Set function specific args
     argp.u = u
 
-    glevalcoord1dv_uh(&argp)
+    glevalcoord1dv_uh(&argp);
 }
 
 // -- glEvalCoord1fv
@@ -3827,7 +3827,7 @@ void glEvalCoord1fv( const GLfloat *u )
     // Set function specific args
     argp.u = u
 
-    glevalcoord1fv_uh(&argp)
+    glevalcoord1fv_uh(&argp);
 }
 
 // -- glEvalCoord2d
@@ -3839,7 +3839,7 @@ void glEvalCoord2d( GLdouble u, GLdouble v )
     argp.u = u;
 	argp.v = v
 
-    glevalcoord2d_uh(&argp)
+    glevalcoord2d_uh(&argp);
 }
 
 // -- glEvalCoord2f
@@ -3851,7 +3851,7 @@ void glEvalCoord2f( GLfloat u, GLfloat v )
     argp.u = u;
 	argp.v = v
 
-    glevalcoord2f_uh(&argp)
+    glevalcoord2f_uh(&argp);
 }
 
 // -- glEvalCoord2dv
@@ -3862,7 +3862,7 @@ void glEvalCoord2dv( const GLdouble *u )
     // Set function specific args
     argp.u = u
 
-    glevalcoord2dv_uh(&argp)
+    glevalcoord2dv_uh(&argp);
 }
 
 // -- glEvalCoord2fv
@@ -3873,7 +3873,7 @@ void glEvalCoord2fv( const GLfloat *u )
     // Set function specific args
     argp.u = u
 
-    glevalcoord2fv_uh(&argp)
+    glevalcoord2fv_uh(&argp);
 }
 
 // -- glMapGrid1d
@@ -3886,7 +3886,7 @@ void glMapGrid1d( GLint un, GLdouble u1, GLdouble u2 )
 	argp.u1 = u1;
 	argp.u2 = u2
 
-    glmapgrid1d_uh(&argp)
+    glmapgrid1d_uh(&argp);
 }
 
 // -- glMapGrid1f
@@ -3899,7 +3899,7 @@ void glMapGrid1f( GLint un, GLfloat u1, GLfloat u2 )
 	argp.u1 = u1;
 	argp.u2 = u2
 
-    glmapgrid1f_uh(&argp)
+    glmapgrid1f_uh(&argp);
 }
 
 // -- glMapGrid2d
@@ -3915,7 +3915,7 @@ void glMapGrid2d( GLint un, GLdouble u1, GLdouble u2, GLint vn, GLdouble v1, GLd
 	argp.v1 = v1;
 	argp.v2 = v2
 
-    glmapgrid2d_uh(&argp)
+    glmapgrid2d_uh(&argp);
 }
 
 // -- glMapGrid2f
@@ -3931,7 +3931,7 @@ void glMapGrid2f( GLint un, GLfloat u1, GLfloat u2, GLint vn, GLfloat v1, GLfloa
 	argp.v1 = v1;
 	argp.v2 = v2
 
-    glmapgrid2f_uh(&argp)
+    glmapgrid2f_uh(&argp);
 }
 
 // -- glEvalPoint1
@@ -3942,7 +3942,7 @@ void glEvalPoint1( GLint i )
     // Set function specific args
     argp.i = i
 
-    glevalpoint1_uh(&argp)
+    glevalpoint1_uh(&argp);
 }
 
 // -- glEvalPoint2
@@ -3954,7 +3954,7 @@ void glEvalPoint2( GLint i, GLint j )
     argp.i = i;
 	argp.j = j
 
-    glevalpoint2_uh(&argp)
+    glevalpoint2_uh(&argp);
 }
 
 // -- glEvalMesh1
@@ -3967,7 +3967,7 @@ void glEvalMesh1( GLenum mode, GLint i1, GLint i2 )
 	argp.i1 = i1;
 	argp.i2 = i2
 
-    glevalmesh1_uh(&argp)
+    glevalmesh1_uh(&argp);
 }
 
 // -- glEvalMesh2
@@ -3982,7 +3982,7 @@ void glEvalMesh2( GLenum mode, GLint i1, GLint i2, GLint j1, GLint j2 )
 	argp.j1 = j1;
 	argp.j2 = j2
 
-    glevalmesh2_uh(&argp)
+    glevalmesh2_uh(&argp);
 }
 
 // -- glFogf
@@ -3994,7 +3994,7 @@ void glFogf( GLenum pname, GLfloat param )
     argp.pname = pname;
 	argp.param = param
 
-    glfogf_uh(&argp)
+    glfogf_uh(&argp);
 }
 
 // -- glFogi
@@ -4006,7 +4006,7 @@ void glFogi( GLenum pname, GLint param )
     argp.pname = pname;
 	argp.param = param
 
-    glfogi_uh(&argp)
+    glfogi_uh(&argp);
 }
 
 // -- glFogfv
@@ -4018,7 +4018,7 @@ void glFogfv( GLenum pname, const GLfloat *params )
     argp.pname = pname;
 	argp.params = params
 
-    glfogfv_uh(&argp)
+    glfogfv_uh(&argp);
 }
 
 // -- glFogiv
@@ -4030,7 +4030,7 @@ void glFogiv( GLenum pname, const GLint *params )
     argp.pname = pname;
 	argp.params = params
 
-    glfogiv_uh(&argp)
+    glfogiv_uh(&argp);
 }
 
 // -- glFeedbackBuffer
@@ -4043,7 +4043,7 @@ void glFeedbackBuffer( GLsizei size, GLenum type, GLfloat *buffer )
 	argp.type = type;
 	argp.buffer = buffer
 
-    glfeedbackbuffer_uh(&argp)
+    glfeedbackbuffer_uh(&argp);
 }
 
 // -- glPassThrough
@@ -4054,7 +4054,7 @@ void glPassThrough( GLfloat token )
     // Set function specific args
     argp.token = token
 
-    glpassthrough_uh(&argp)
+    glpassthrough_uh(&argp);
 }
 
 // -- glSelectBuffer
@@ -4066,13 +4066,13 @@ void glSelectBuffer( GLsizei size, GLuint *buffer )
     argp.size = size;
 	argp.buffer = buffer
 
-    glselectbuffer_uh(&argp)
+    glselectbuffer_uh(&argp);
 }
 
 // -- glInitNames
 void glInitNames()
 {
-    glinitnames_uh()
+    glinitnames_uh();
 }
 
 // -- glLoadName
@@ -4083,7 +4083,7 @@ void glLoadName( GLuint name )
     // Set function specific args
     argp.name = name
 
-    glloadname_uh(&argp)
+    glloadname_uh(&argp);
 }
 
 // -- glPushName
@@ -4094,13 +4094,13 @@ void glPushName( GLuint name )
     // Set function specific args
     argp.name = name
 
-    glpushname_uh(&argp)
+    glpushname_uh(&argp);
 }
 
 // -- glPopName
 void glPopName()
 {
-    glpopname_uh()
+    glpopname_uh();
 }
 
 // -- glDrawRangeElements
@@ -4116,7 +4116,7 @@ void glDrawRangeElements( GLenum mode, GLuint start, GLuint end, GLsizei count, 
 	argp.type = type;
 	argp.indices = indices
 
-    gldrawrangeelements_uh(&argp)
+    gldrawrangeelements_uh(&argp);
 }
 
 // -- glTexImage3D
@@ -4136,7 +4136,7 @@ void glTexImage3D( GLenum target, GLint level, GLint internalFormat, GLsizei wid
 	argp.type = type;
 	argp.pixels = pixels
 
-    glteximage3d_uh(&argp)
+    glteximage3d_uh(&argp);
 }
 
 // -- glTexSubImage3D
@@ -4157,7 +4157,7 @@ void glTexSubImage3D( GLenum target, GLint level, GLint xoffset, GLint yoffset, 
 	argp.type = type;
 	argp.pixels = pixels
 
-    gltexsubimage3d_uh(&argp)
+    gltexsubimage3d_uh(&argp);
 }
 
 // -- glCopyTexSubImage3D
@@ -4176,7 +4176,7 @@ void glCopyTexSubImage3D( GLenum target, GLint level, GLint xoffset, GLint yoffs
 	argp.width = width;
 	argp.height = height
 
-    glcopytexsubimage3d_uh(&argp)
+    glcopytexsubimage3d_uh(&argp);
 }
 
 // -- glColorTable
@@ -4192,7 +4192,7 @@ void glColorTable( GLenum target, GLenum internalformat, GLsizei width, GLenum f
 	argp.type = type;
 	argp.table = table
 
-    glcolortable_uh(&argp)
+    glcolortable_uh(&argp);
 }
 
 // -- glColorSubTable
@@ -4208,7 +4208,7 @@ void glColorSubTable( GLenum target, GLsizei start, GLsizei count, GLenum format
 	argp.type = type;
 	argp.data = data
 
-    glcolorsubtable_uh(&argp)
+    glcolorsubtable_uh(&argp);
 }
 
 // -- glColorTableParameteriv
@@ -4221,7 +4221,7 @@ void glColorTableParameteriv(GLenum target, GLenum pname, const GLint *params)
 	argp.pname = pname;
 	argp.params = params
 
-    glcolortableparameteriv_uh(&argp)
+    glcolortableparameteriv_uh(&argp);
 }
 
 // -- glColorTableParameterfv
@@ -4234,7 +4234,7 @@ void glColorTableParameterfv(GLenum target, GLenum pname, const GLfloat *params)
 	argp.pname = pname;
 	argp.params = params
 
-    glcolortableparameterfv_uh(&argp)
+    glcolortableparameterfv_uh(&argp);
 }
 
 // -- glCopyColorSubTable
@@ -4249,7 +4249,7 @@ void glCopyColorSubTable( GLenum target, GLsizei start,GLint x, GLint y, GLsizei
 	argp.y = y;
 	argp.width = width
 
-    glcopycolorsubtable_uh(&argp)
+    glcopycolorsubtable_uh(&argp);
 }
 
 // -- glCopyColorTable
@@ -4264,7 +4264,7 @@ void glCopyColorTable( GLenum target, GLenum internalformat, GLint x, GLint y, G
 	argp.y = y;
 	argp.width = width
 
-    glcopycolortable_uh(&argp)
+    glcopycolortable_uh(&argp);
 }
 
 // -- glGetColorTable
@@ -4278,7 +4278,7 @@ void glGetColorTable( GLenum target, GLenum format, GLenum type, GLvoid *table )
 	argp.type = type;
 	argp.table = table
 
-    glgetcolortable_uh(&argp)
+    glgetcolortable_uh(&argp);
 }
 
 // -- glGetColorTableParameterfv
@@ -4291,7 +4291,7 @@ void glGetColorTableParameterfv( GLenum target, GLenum pname, GLfloat *params )
 	argp.pname = pname;
 	argp.params = params
 
-    glgetcolortableparameterfv_uh(&argp)
+    glgetcolortableparameterfv_uh(&argp);
 }
 
 // -- glGetColorTableParameteriv
@@ -4304,7 +4304,7 @@ void glGetColorTableParameteriv( GLenum target, GLenum pname, GLint *params )
 	argp.pname = pname;
 	argp.params = params
 
-    glgetcolortableparameteriv_uh(&argp)
+    glgetcolortableparameteriv_uh(&argp);
 }
 
 // -- glBlendEquation
@@ -4315,7 +4315,7 @@ void glBlendEquation( GLenum mode )
     // Set function specific args
     argp.mode = mode
 
-    glblendequation_uh(&argp)
+    glblendequation_uh(&argp);
 }
 
 // -- glBlendColor
@@ -4329,7 +4329,7 @@ void glBlendColor( GLclampf red, GLclampf green, GLclampf blue, GLclampf alpha )
 	argp.blue = blue;
 	argp.alpha = alpha
 
-    glblendcolor_uh(&argp)
+    glblendcolor_uh(&argp);
 }
 
 // -- glHistogram
@@ -4343,7 +4343,7 @@ void glHistogram( GLenum target, GLsizei width, GLenum internalformat, GLboolean
 	argp.internalformat = internalformat;
 	argp.sink = sink
 
-    glhistogram_uh(&argp)
+    glhistogram_uh(&argp);
 }
 
 // -- glResetHistogram
@@ -4354,7 +4354,7 @@ void glResetHistogram( GLenum target )
     // Set function specific args
     argp.target = target
 
-    glresethistogram_uh(&argp)
+    glresethistogram_uh(&argp);
 }
 
 // -- glGetHistogram
@@ -4369,7 +4369,7 @@ void glGetHistogram( GLenum target, GLboolean reset, GLenum format, GLenum type,
 	argp.type = type;
 	argp.values = values
 
-    glgethistogram_uh(&argp)
+    glgethistogram_uh(&argp);
 }
 
 // -- glGetHistogramParameterfv
@@ -4382,7 +4382,7 @@ void glGetHistogramParameterfv( GLenum target, GLenum pname, GLfloat *params )
 	argp.pname = pname;
 	argp.params = params
 
-    glgethistogramparameterfv_uh(&argp)
+    glgethistogramparameterfv_uh(&argp);
 }
 
 // -- glGetHistogramParameteriv
@@ -4395,7 +4395,7 @@ void glGetHistogramParameteriv( GLenum target, GLenum pname, GLint *params )
 	argp.pname = pname;
 	argp.params = params
 
-    glgethistogramparameteriv_uh(&argp)
+    glgethistogramparameteriv_uh(&argp);
 }
 
 // -- glMinmax
@@ -4408,7 +4408,7 @@ void glMinmax( GLenum target, GLenum internalformat, GLboolean sink )
 	argp.internalformat = internalformat;
 	argp.sink = sink
 
-    glminmax_uh(&argp)
+    glminmax_uh(&argp);
 }
 
 // -- glResetMinmax
@@ -4419,7 +4419,7 @@ void glResetMinmax( GLenum target )
     // Set function specific args
     argp.target = target
 
-    glresetminmax_uh(&argp)
+    glresetminmax_uh(&argp);
 }
 
 // -- glGetMinmax
@@ -4434,7 +4434,7 @@ void glGetMinmax( GLenum target, GLboolean reset, GLenum format, GLenum types, G
 	argp.types = types;
 	argp.values = values
 
-    glgetminmax_uh(&argp)
+    glgetminmax_uh(&argp);
 }
 
 // -- glGetMinmaxParameterfv
@@ -4447,7 +4447,7 @@ void glGetMinmaxParameterfv( GLenum target, GLenum pname, GLfloat *params )
 	argp.pname = pname;
 	argp.params = params
 
-    glgetminmaxparameterfv_uh(&argp)
+    glgetminmaxparameterfv_uh(&argp);
 }
 
 // -- glGetMinmaxParameteriv
@@ -4460,7 +4460,7 @@ void glGetMinmaxParameteriv( GLenum target, GLenum pname, GLint *params )
 	argp.pname = pname;
 	argp.params = params
 
-    glgetminmaxparameteriv_uh(&argp)
+    glgetminmaxparameteriv_uh(&argp);
 }
 
 // -- glConvolutionFilter1D
@@ -4476,7 +4476,7 @@ void glConvolutionFilter1D( GLenum target, GLenum internalformat, GLsizei width,
 	argp.type = type;
 	argp.image = image
 
-    glconvolutionfilter1d_uh(&argp)
+    glconvolutionfilter1d_uh(&argp);
 }
 
 // -- glConvolutionFilter2D
@@ -4493,7 +4493,7 @@ void glConvolutionFilter2D( GLenum target, GLenum internalformat, GLsizei width,
 	argp.type = type;
 	argp.image = image
 
-    glconvolutionfilter2d_uh(&argp)
+    glconvolutionfilter2d_uh(&argp);
 }
 
 // -- glConvolutionParameterf
@@ -4506,7 +4506,7 @@ void glConvolutionParameterf( GLenum target, GLenum pname, GLfloat params )
 	argp.pname = pname;
 	argp.params = params
 
-    glconvolutionparameterf_uh(&argp)
+    glconvolutionparameterf_uh(&argp);
 }
 
 // -- glConvolutionParameterfv
@@ -4519,7 +4519,7 @@ void glConvolutionParameterfv( GLenum target, GLenum pname, const GLfloat *param
 	argp.pname = pname;
 	argp.params = params
 
-    glconvolutionparameterfv_uh(&argp)
+    glconvolutionparameterfv_uh(&argp);
 }
 
 // -- glConvolutionParameteri
@@ -4532,7 +4532,7 @@ void glConvolutionParameteri( GLenum target, GLenum pname, GLint params )
 	argp.pname = pname;
 	argp.params = params
 
-    glconvolutionparameteri_uh(&argp)
+    glconvolutionparameteri_uh(&argp);
 }
 
 // -- glConvolutionParameteriv
@@ -4545,7 +4545,7 @@ void glConvolutionParameteriv( GLenum target, GLenum pname, const GLint *params 
 	argp.pname = pname;
 	argp.params = params
 
-    glconvolutionparameteriv_uh(&argp)
+    glconvolutionparameteriv_uh(&argp);
 }
 
 // -- glCopyConvolutionFilter1D
@@ -4560,7 +4560,7 @@ void glCopyConvolutionFilter1D( GLenum target, GLenum internalformat, GLint x, G
 	argp.y = y;
 	argp.width = width
 
-    glcopyconvolutionfilter1d_uh(&argp)
+    glcopyconvolutionfilter1d_uh(&argp);
 }
 
 // -- glCopyConvolutionFilter2D
@@ -4576,7 +4576,7 @@ void glCopyConvolutionFilter2D( GLenum target, GLenum internalformat, GLint x, G
 	argp.width = width;
 	argp.height = height
 
-    glcopyconvolutionfilter2d_uh(&argp)
+    glcopyconvolutionfilter2d_uh(&argp);
 }
 
 // -- glGetConvolutionFilter
@@ -4590,7 +4590,7 @@ void glGetConvolutionFilter( GLenum target, GLenum format, GLenum type, GLvoid *
 	argp.type = type;
 	argp.image = image
 
-    glgetconvolutionfilter_uh(&argp)
+    glgetconvolutionfilter_uh(&argp);
 }
 
 // -- glGetConvolutionParameterfv
@@ -4603,7 +4603,7 @@ void glGetConvolutionParameterfv( GLenum target, GLenum pname, GLfloat *params )
 	argp.pname = pname;
 	argp.params = params
 
-    glgetconvolutionparameterfv_uh(&argp)
+    glgetconvolutionparameterfv_uh(&argp);
 }
 
 // -- glGetConvolutionParameteriv
@@ -4616,7 +4616,7 @@ void glGetConvolutionParameteriv( GLenum target, GLenum pname, GLint *params )
 	argp.pname = pname;
 	argp.params = params
 
-    glgetconvolutionparameteriv_uh(&argp)
+    glgetconvolutionparameteriv_uh(&argp);
 }
 
 // -- glSeparableFilter2D
@@ -4634,7 +4634,7 @@ void glSeparableFilter2D( GLenum target, GLenum internalformat, GLsizei width, G
 	argp.row = row;
 	argp.column = column
 
-    glseparablefilter2d_uh(&argp)
+    glseparablefilter2d_uh(&argp);
 }
 
 // -- glGetSeparableFilter
@@ -4650,7 +4650,7 @@ void glGetSeparableFilter( GLenum target, GLenum format, GLenum type, GLvoid *ro
 	argp.column = column;
 	argp.span = span
 
-    glgetseparablefilter_uh(&argp)
+    glgetseparablefilter_uh(&argp);
 }
 
 // -- glActiveTexture
@@ -4661,7 +4661,7 @@ void glActiveTexture( GLenum texture )
     // Set function specific args
     argp.texture = texture
 
-    glactivetexture_uh(&argp)
+    glactivetexture_uh(&argp);
 }
 
 // -- glClientActiveTexture
@@ -4672,7 +4672,7 @@ void glClientActiveTexture( GLenum texture )
     // Set function specific args
     argp.texture = texture
 
-    glclientactivetexture_uh(&argp)
+    glclientactivetexture_uh(&argp);
 }
 
 // -- glCompressedTexImage1D
@@ -4689,7 +4689,7 @@ void glCompressedTexImage1D( GLenum target, GLint level, GLenum internalformat, 
 	argp.imageSize = imageSize;
 	argp.data = data
 
-    glcompressedteximage1d_uh(&argp)
+    glcompressedteximage1d_uh(&argp);
 }
 
 // -- glCompressedTexImage2D
@@ -4707,7 +4707,7 @@ void glCompressedTexImage2D( GLenum target, GLint level, GLenum internalformat, 
 	argp.imageSize = imageSize;
 	argp.data = data
 
-    glcompressedteximage2d_uh(&argp)
+    glcompressedteximage2d_uh(&argp);
 }
 
 // -- glCompressedTexImage3D
@@ -4726,7 +4726,7 @@ void glCompressedTexImage3D( GLenum target, GLint level, GLenum internalformat, 
 	argp.imageSize = imageSize;
 	argp.data = data
 
-    glcompressedteximage3d_uh(&argp)
+    glcompressedteximage3d_uh(&argp);
 }
 
 // -- glCompressedTexSubImage1D
@@ -4743,7 +4743,7 @@ void glCompressedTexSubImage1D( GLenum target, GLint level, GLint xoffset, GLsiz
 	argp.imageSize = imageSize;
 	argp.data = data
 
-    glcompressedtexsubimage1d_uh(&argp)
+    glcompressedtexsubimage1d_uh(&argp);
 }
 
 // -- glCompressedTexSubImage2D
@@ -4762,7 +4762,7 @@ void glCompressedTexSubImage2D( GLenum target, GLint level, GLint xoffset, GLint
 	argp.imageSize = imageSize;
 	argp.data = data
 
-    glcompressedtexsubimage2d_uh(&argp)
+    glcompressedtexsubimage2d_uh(&argp);
 }
 
 // -- glCompressedTexSubImage3D
@@ -4783,7 +4783,7 @@ void glCompressedTexSubImage3D( GLenum target, GLint level, GLint xoffset, GLint
 	argp.imageSize = imageSize;
 	argp.data = data
 
-    glcompressedtexsubimage3d_uh(&argp)
+    glcompressedtexsubimage3d_uh(&argp);
 }
 
 // -- glGetCompressedTexImage
@@ -4796,7 +4796,7 @@ void glGetCompressedTexImage( GLenum target, GLint lod, GLvoid *img )
 	argp.lod = lod;
 	argp.img = img
 
-    glgetcompressedteximage_uh(&argp)
+    glgetcompressedteximage_uh(&argp);
 }
 
 // -- glMultiTexCoord1d
@@ -4808,7 +4808,7 @@ void glMultiTexCoord1d( GLenum target, GLdouble s )
     argp.target = target;
 	argp.s = s
 
-    glmultitexcoord1d_uh(&argp)
+    glmultitexcoord1d_uh(&argp);
 }
 
 // -- glMultiTexCoord1dv
@@ -4820,7 +4820,7 @@ void glMultiTexCoord1dv( GLenum target, const GLdouble *v )
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord1dv_uh(&argp)
+    glmultitexcoord1dv_uh(&argp);
 }
 
 // -- glMultiTexCoord1f
@@ -4832,7 +4832,7 @@ void glMultiTexCoord1f( GLenum target, GLfloat s )
     argp.target = target;
 	argp.s = s
 
-    glmultitexcoord1f_uh(&argp)
+    glmultitexcoord1f_uh(&argp);
 }
 
 // -- glMultiTexCoord1fv
@@ -4844,7 +4844,7 @@ void glMultiTexCoord1fv( GLenum target, const GLfloat *v )
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord1fv_uh(&argp)
+    glmultitexcoord1fv_uh(&argp);
 }
 
 // -- glMultiTexCoord1i
@@ -4856,7 +4856,7 @@ void glMultiTexCoord1i( GLenum target, GLint s )
     argp.target = target;
 	argp.s = s
 
-    glmultitexcoord1i_uh(&argp)
+    glmultitexcoord1i_uh(&argp);
 }
 
 // -- glMultiTexCoord1iv
@@ -4868,7 +4868,7 @@ void glMultiTexCoord1iv( GLenum target, const GLint *v )
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord1iv_uh(&argp)
+    glmultitexcoord1iv_uh(&argp);
 }
 
 // -- glMultiTexCoord1s
@@ -4880,7 +4880,7 @@ void glMultiTexCoord1s( GLenum target, GLshort s )
     argp.target = target;
 	argp.s = s
 
-    glmultitexcoord1s_uh(&argp)
+    glmultitexcoord1s_uh(&argp);
 }
 
 // -- glMultiTexCoord1sv
@@ -4892,7 +4892,7 @@ void glMultiTexCoord1sv( GLenum target, const GLshort *v )
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord1sv_uh(&argp)
+    glmultitexcoord1sv_uh(&argp);
 }
 
 // -- glMultiTexCoord2d
@@ -4905,7 +4905,7 @@ void glMultiTexCoord2d( GLenum target, GLdouble s, GLdouble t )
 	argp.s = s;
 	argp.t = t
 
-    glmultitexcoord2d_uh(&argp)
+    glmultitexcoord2d_uh(&argp);
 }
 
 // -- glMultiTexCoord2dv
@@ -4917,7 +4917,7 @@ void glMultiTexCoord2dv( GLenum target, const GLdouble *v )
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord2dv_uh(&argp)
+    glmultitexcoord2dv_uh(&argp);
 }
 
 // -- glMultiTexCoord2f
@@ -4930,7 +4930,7 @@ void glMultiTexCoord2f( GLenum target, GLfloat s, GLfloat t )
 	argp.s = s;
 	argp.t = t
 
-    glmultitexcoord2f_uh(&argp)
+    glmultitexcoord2f_uh(&argp);
 }
 
 // -- glMultiTexCoord2fv
@@ -4942,7 +4942,7 @@ void glMultiTexCoord2fv( GLenum target, const GLfloat *v )
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord2fv_uh(&argp)
+    glmultitexcoord2fv_uh(&argp);
 }
 
 // -- glMultiTexCoord2i
@@ -4955,7 +4955,7 @@ void glMultiTexCoord2i( GLenum target, GLint s, GLint t )
 	argp.s = s;
 	argp.t = t
 
-    glmultitexcoord2i_uh(&argp)
+    glmultitexcoord2i_uh(&argp);
 }
 
 // -- glMultiTexCoord2iv
@@ -4967,7 +4967,7 @@ void glMultiTexCoord2iv( GLenum target, const GLint *v )
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord2iv_uh(&argp)
+    glmultitexcoord2iv_uh(&argp);
 }
 
 // -- glMultiTexCoord2s
@@ -4980,7 +4980,7 @@ void glMultiTexCoord2s( GLenum target, GLshort s, GLshort t )
 	argp.s = s;
 	argp.t = t
 
-    glmultitexcoord2s_uh(&argp)
+    glmultitexcoord2s_uh(&argp);
 }
 
 // -- glMultiTexCoord2sv
@@ -4992,7 +4992,7 @@ void glMultiTexCoord2sv( GLenum target, const GLshort *v )
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord2sv_uh(&argp)
+    glmultitexcoord2sv_uh(&argp);
 }
 
 // -- glMultiTexCoord3d
@@ -5006,7 +5006,7 @@ void glMultiTexCoord3d( GLenum target, GLdouble s, GLdouble t, GLdouble r )
 	argp.t = t;
 	argp.r = r
 
-    glmultitexcoord3d_uh(&argp)
+    glmultitexcoord3d_uh(&argp);
 }
 
 // -- glMultiTexCoord3dv
@@ -5018,7 +5018,7 @@ void glMultiTexCoord3dv( GLenum target, const GLdouble *v )
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord3dv_uh(&argp)
+    glmultitexcoord3dv_uh(&argp);
 }
 
 // -- glMultiTexCoord3f
@@ -5032,7 +5032,7 @@ void glMultiTexCoord3f( GLenum target, GLfloat s, GLfloat t, GLfloat r )
 	argp.t = t;
 	argp.r = r
 
-    glmultitexcoord3f_uh(&argp)
+    glmultitexcoord3f_uh(&argp);
 }
 
 // -- glMultiTexCoord3fv
@@ -5044,7 +5044,7 @@ void glMultiTexCoord3fv( GLenum target, const GLfloat *v )
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord3fv_uh(&argp)
+    glmultitexcoord3fv_uh(&argp);
 }
 
 // -- glMultiTexCoord3i
@@ -5058,7 +5058,7 @@ void glMultiTexCoord3i( GLenum target, GLint s, GLint t, GLint r )
 	argp.t = t;
 	argp.r = r
 
-    glmultitexcoord3i_uh(&argp)
+    glmultitexcoord3i_uh(&argp);
 }
 
 // -- glMultiTexCoord3iv
@@ -5070,7 +5070,7 @@ void glMultiTexCoord3iv( GLenum target, const GLint *v )
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord3iv_uh(&argp)
+    glmultitexcoord3iv_uh(&argp);
 }
 
 // -- glMultiTexCoord3s
@@ -5084,7 +5084,7 @@ void glMultiTexCoord3s( GLenum target, GLshort s, GLshort t, GLshort r )
 	argp.t = t;
 	argp.r = r
 
-    glmultitexcoord3s_uh(&argp)
+    glmultitexcoord3s_uh(&argp);
 }
 
 // -- glMultiTexCoord3sv
@@ -5096,7 +5096,7 @@ void glMultiTexCoord3sv( GLenum target, const GLshort *v )
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord3sv_uh(&argp)
+    glmultitexcoord3sv_uh(&argp);
 }
 
 // -- glMultiTexCoord4d
@@ -5111,7 +5111,7 @@ void glMultiTexCoord4d( GLenum target, GLdouble s, GLdouble t, GLdouble r, GLdou
 	argp.r = r;
 	argp.q = q
 
-    glmultitexcoord4d_uh(&argp)
+    glmultitexcoord4d_uh(&argp);
 }
 
 // -- glMultiTexCoord4dv
@@ -5123,7 +5123,7 @@ void glMultiTexCoord4dv( GLenum target, const GLdouble *v )
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord4dv_uh(&argp)
+    glmultitexcoord4dv_uh(&argp);
 }
 
 // -- glMultiTexCoord4f
@@ -5138,7 +5138,7 @@ void glMultiTexCoord4f( GLenum target, GLfloat s, GLfloat t, GLfloat r, GLfloat 
 	argp.r = r;
 	argp.q = q
 
-    glmultitexcoord4f_uh(&argp)
+    glmultitexcoord4f_uh(&argp);
 }
 
 // -- glMultiTexCoord4fv
@@ -5150,7 +5150,7 @@ void glMultiTexCoord4fv( GLenum target, const GLfloat *v )
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord4fv_uh(&argp)
+    glmultitexcoord4fv_uh(&argp);
 }
 
 // -- glMultiTexCoord4i
@@ -5165,7 +5165,7 @@ void glMultiTexCoord4i( GLenum target, GLint s, GLint t, GLint r, GLint q )
 	argp.r = r;
 	argp.q = q
 
-    glmultitexcoord4i_uh(&argp)
+    glmultitexcoord4i_uh(&argp);
 }
 
 // -- glMultiTexCoord4iv
@@ -5177,7 +5177,7 @@ void glMultiTexCoord4iv( GLenum target, const GLint *v )
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord4iv_uh(&argp)
+    glmultitexcoord4iv_uh(&argp);
 }
 
 // -- glMultiTexCoord4s
@@ -5192,7 +5192,7 @@ void glMultiTexCoord4s( GLenum target, GLshort s, GLshort t, GLshort r, GLshort 
 	argp.r = r;
 	argp.q = q
 
-    glmultitexcoord4s_uh(&argp)
+    glmultitexcoord4s_uh(&argp);
 }
 
 // -- glMultiTexCoord4sv
@@ -5204,7 +5204,7 @@ void glMultiTexCoord4sv( GLenum target, const GLshort *v )
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord4sv_uh(&argp)
+    glmultitexcoord4sv_uh(&argp);
 }
 
 // -- glLoadTransposeMatrixd
@@ -5215,7 +5215,7 @@ void glLoadTransposeMatrixd( const GLdouble m[16] )
     // Set function specific args
     argp.m[16] = m[16]
 
-    glloadtransposematrixd_uh(&argp)
+    glloadtransposematrixd_uh(&argp);
 }
 
 // -- glLoadTransposeMatrixf
@@ -5226,7 +5226,7 @@ void glLoadTransposeMatrixf( const GLfloat m[16] )
     // Set function specific args
     argp.m[16] = m[16]
 
-    glloadtransposematrixf_uh(&argp)
+    glloadtransposematrixf_uh(&argp);
 }
 
 // -- glMultTransposeMatrixd
@@ -5237,7 +5237,7 @@ void glMultTransposeMatrixd( const GLdouble m[16] )
     // Set function specific args
     argp.m[16] = m[16]
 
-    glmulttransposematrixd_uh(&argp)
+    glmulttransposematrixd_uh(&argp);
 }
 
 // -- glMultTransposeMatrixf
@@ -5248,7 +5248,7 @@ void glMultTransposeMatrixf( const GLfloat m[16] )
     // Set function specific args
     argp.m[16] = m[16]
 
-    glmulttransposematrixf_uh(&argp)
+    glmulttransposematrixf_uh(&argp);
 }
 
 // -- glSampleCoverage
@@ -5260,7 +5260,7 @@ void glSampleCoverage( GLclampf value, GLboolean invert )
     argp.value = value;
 	argp.invert = invert
 
-    glsamplecoverage_uh(&argp)
+    glsamplecoverage_uh(&argp);
 }
 
 // -- glActiveTextureARB
@@ -5271,7 +5271,7 @@ void glActiveTextureARB(GLenum texture)
     // Set function specific args
     argp.texture = texture
 
-    glactivetexturearb_uh(&argp)
+    glactivetexturearb_uh(&argp);
 }
 
 // -- glClientActiveTextureARB
@@ -5282,7 +5282,7 @@ void glClientActiveTextureARB(GLenum texture)
     // Set function specific args
     argp.texture = texture
 
-    glclientactivetexturearb_uh(&argp)
+    glclientactivetexturearb_uh(&argp);
 }
 
 // -- glMultiTexCoord1dARB
@@ -5294,7 +5294,7 @@ void glMultiTexCoord1dARB(GLenum target, GLdouble s)
     argp.target = target;
 	argp.s = s
 
-    glmultitexcoord1darb_uh(&argp)
+    glmultitexcoord1darb_uh(&argp);
 }
 
 // -- glMultiTexCoord1dvARB
@@ -5306,7 +5306,7 @@ void glMultiTexCoord1dvARB(GLenum target, const GLdouble *v)
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord1dvarb_uh(&argp)
+    glmultitexcoord1dvarb_uh(&argp);
 }
 
 // -- glMultiTexCoord1fARB
@@ -5318,7 +5318,7 @@ void glMultiTexCoord1fARB(GLenum target, GLfloat s)
     argp.target = target;
 	argp.s = s
 
-    glmultitexcoord1farb_uh(&argp)
+    glmultitexcoord1farb_uh(&argp);
 }
 
 // -- glMultiTexCoord1fvARB
@@ -5330,7 +5330,7 @@ void glMultiTexCoord1fvARB(GLenum target, const GLfloat *v)
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord1fvarb_uh(&argp)
+    glmultitexcoord1fvarb_uh(&argp);
 }
 
 // -- glMultiTexCoord1iARB
@@ -5342,7 +5342,7 @@ void glMultiTexCoord1iARB(GLenum target, GLint s)
     argp.target = target;
 	argp.s = s
 
-    glmultitexcoord1iarb_uh(&argp)
+    glmultitexcoord1iarb_uh(&argp);
 }
 
 // -- glMultiTexCoord1ivARB
@@ -5354,7 +5354,7 @@ void glMultiTexCoord1ivARB(GLenum target, const GLint *v)
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord1ivarb_uh(&argp)
+    glmultitexcoord1ivarb_uh(&argp);
 }
 
 // -- glMultiTexCoord1sARB
@@ -5366,7 +5366,7 @@ void glMultiTexCoord1sARB(GLenum target, GLshort s)
     argp.target = target;
 	argp.s = s
 
-    glmultitexcoord1sarb_uh(&argp)
+    glmultitexcoord1sarb_uh(&argp);
 }
 
 // -- glMultiTexCoord1svARB
@@ -5378,7 +5378,7 @@ void glMultiTexCoord1svARB(GLenum target, const GLshort *v)
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord1svarb_uh(&argp)
+    glmultitexcoord1svarb_uh(&argp);
 }
 
 // -- glMultiTexCoord2dARB
@@ -5391,7 +5391,7 @@ void glMultiTexCoord2dARB(GLenum target, GLdouble s, GLdouble t)
 	argp.s = s;
 	argp.t = t
 
-    glmultitexcoord2darb_uh(&argp)
+    glmultitexcoord2darb_uh(&argp);
 }
 
 // -- glMultiTexCoord2dvARB
@@ -5403,7 +5403,7 @@ void glMultiTexCoord2dvARB(GLenum target, const GLdouble *v)
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord2dvarb_uh(&argp)
+    glmultitexcoord2dvarb_uh(&argp);
 }
 
 // -- glMultiTexCoord2fARB
@@ -5416,7 +5416,7 @@ void glMultiTexCoord2fARB(GLenum target, GLfloat s, GLfloat t)
 	argp.s = s;
 	argp.t = t
 
-    glmultitexcoord2farb_uh(&argp)
+    glmultitexcoord2farb_uh(&argp);
 }
 
 // -- glMultiTexCoord2fvARB
@@ -5428,7 +5428,7 @@ void glMultiTexCoord2fvARB(GLenum target, const GLfloat *v)
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord2fvarb_uh(&argp)
+    glmultitexcoord2fvarb_uh(&argp);
 }
 
 // -- glMultiTexCoord2iARB
@@ -5441,7 +5441,7 @@ void glMultiTexCoord2iARB(GLenum target, GLint s, GLint t)
 	argp.s = s;
 	argp.t = t
 
-    glmultitexcoord2iarb_uh(&argp)
+    glmultitexcoord2iarb_uh(&argp);
 }
 
 // -- glMultiTexCoord2ivARB
@@ -5453,7 +5453,7 @@ void glMultiTexCoord2ivARB(GLenum target, const GLint *v)
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord2ivarb_uh(&argp)
+    glmultitexcoord2ivarb_uh(&argp);
 }
 
 // -- glMultiTexCoord2sARB
@@ -5466,7 +5466,7 @@ void glMultiTexCoord2sARB(GLenum target, GLshort s, GLshort t)
 	argp.s = s;
 	argp.t = t
 
-    glmultitexcoord2sarb_uh(&argp)
+    glmultitexcoord2sarb_uh(&argp);
 }
 
 // -- glMultiTexCoord2svARB
@@ -5478,7 +5478,7 @@ void glMultiTexCoord2svARB(GLenum target, const GLshort *v)
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord2svarb_uh(&argp)
+    glmultitexcoord2svarb_uh(&argp);
 }
 
 // -- glMultiTexCoord3dARB
@@ -5492,7 +5492,7 @@ void glMultiTexCoord3dARB(GLenum target, GLdouble s, GLdouble t, GLdouble r)
 	argp.t = t;
 	argp.r = r
 
-    glmultitexcoord3darb_uh(&argp)
+    glmultitexcoord3darb_uh(&argp);
 }
 
 // -- glMultiTexCoord3dvARB
@@ -5504,7 +5504,7 @@ void glMultiTexCoord3dvARB(GLenum target, const GLdouble *v)
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord3dvarb_uh(&argp)
+    glmultitexcoord3dvarb_uh(&argp);
 }
 
 // -- glMultiTexCoord3fARB
@@ -5518,7 +5518,7 @@ void glMultiTexCoord3fARB(GLenum target, GLfloat s, GLfloat t, GLfloat r)
 	argp.t = t;
 	argp.r = r
 
-    glmultitexcoord3farb_uh(&argp)
+    glmultitexcoord3farb_uh(&argp);
 }
 
 // -- glMultiTexCoord3fvARB
@@ -5530,7 +5530,7 @@ void glMultiTexCoord3fvARB(GLenum target, const GLfloat *v)
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord3fvarb_uh(&argp)
+    glmultitexcoord3fvarb_uh(&argp);
 }
 
 // -- glMultiTexCoord3iARB
@@ -5544,7 +5544,7 @@ void glMultiTexCoord3iARB(GLenum target, GLint s, GLint t, GLint r)
 	argp.t = t;
 	argp.r = r
 
-    glmultitexcoord3iarb_uh(&argp)
+    glmultitexcoord3iarb_uh(&argp);
 }
 
 // -- glMultiTexCoord3ivARB
@@ -5556,7 +5556,7 @@ void glMultiTexCoord3ivARB(GLenum target, const GLint *v)
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord3ivarb_uh(&argp)
+    glmultitexcoord3ivarb_uh(&argp);
 }
 
 // -- glMultiTexCoord3sARB
@@ -5570,7 +5570,7 @@ void glMultiTexCoord3sARB(GLenum target, GLshort s, GLshort t, GLshort r)
 	argp.t = t;
 	argp.r = r
 
-    glmultitexcoord3sarb_uh(&argp)
+    glmultitexcoord3sarb_uh(&argp);
 }
 
 // -- glMultiTexCoord3svARB
@@ -5582,7 +5582,7 @@ void glMultiTexCoord3svARB(GLenum target, const GLshort *v)
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord3svarb_uh(&argp)
+    glmultitexcoord3svarb_uh(&argp);
 }
 
 // -- glMultiTexCoord4dARB
@@ -5597,7 +5597,7 @@ void glMultiTexCoord4dARB(GLenum target, GLdouble s, GLdouble t, GLdouble r, GLd
 	argp.r = r;
 	argp.q = q
 
-    glmultitexcoord4darb_uh(&argp)
+    glmultitexcoord4darb_uh(&argp);
 }
 
 // -- glMultiTexCoord4dvARB
@@ -5609,7 +5609,7 @@ void glMultiTexCoord4dvARB(GLenum target, const GLdouble *v)
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord4dvarb_uh(&argp)
+    glmultitexcoord4dvarb_uh(&argp);
 }
 
 // -- glMultiTexCoord4fARB
@@ -5624,7 +5624,7 @@ void glMultiTexCoord4fARB(GLenum target, GLfloat s, GLfloat t, GLfloat r, GLfloa
 	argp.r = r;
 	argp.q = q
 
-    glmultitexcoord4farb_uh(&argp)
+    glmultitexcoord4farb_uh(&argp);
 }
 
 // -- glMultiTexCoord4fvARB
@@ -5636,7 +5636,7 @@ void glMultiTexCoord4fvARB(GLenum target, const GLfloat *v)
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord4fvarb_uh(&argp)
+    glmultitexcoord4fvarb_uh(&argp);
 }
 
 // -- glMultiTexCoord4iARB
@@ -5651,7 +5651,7 @@ void glMultiTexCoord4iARB(GLenum target, GLint s, GLint t, GLint r, GLint q)
 	argp.r = r;
 	argp.q = q
 
-    glmultitexcoord4iarb_uh(&argp)
+    glmultitexcoord4iarb_uh(&argp);
 }
 
 // -- glMultiTexCoord4ivARB
@@ -5663,7 +5663,7 @@ void glMultiTexCoord4ivARB(GLenum target, const GLint *v)
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord4ivarb_uh(&argp)
+    glmultitexcoord4ivarb_uh(&argp);
 }
 
 // -- glMultiTexCoord4sARB
@@ -5678,7 +5678,7 @@ void glMultiTexCoord4sARB(GLenum target, GLshort s, GLshort t, GLshort r, GLshor
 	argp.r = r;
 	argp.q = q
 
-    glmultitexcoord4sarb_uh(&argp)
+    glmultitexcoord4sarb_uh(&argp);
 }
 
 // -- glMultiTexCoord4svARB
@@ -5690,7 +5690,7 @@ void glMultiTexCoord4svARB(GLenum target, const GLshort *v)
     argp.target = target;
 	argp.v = v
 
-    glmultitexcoord4svarb_uh(&argp)
+    glmultitexcoord4svarb_uh(&argp);
 }
 
 // -- glBlendEquationSeparateATI
@@ -5702,7 +5702,7 @@ void glBlendEquationSeparateATI( GLenum modeRGB, GLenum modeA )
     argp.modeRGB = modeRGB;
 	argp.modeA = modeA
 
-    glblendequationseparateati_uh(&argp)
+    glblendequationseparateati_uh(&argp);
 }
 
 // -- glXDestroyContext
@@ -5714,7 +5714,7 @@ void glXDestroyContext( Display *dpy, GLXContext ctx )
     argp.dpy = dpy;
 	argp.ctx = ctx
 
-    glxdestroycontext_uh(&argp)
+    glxdestroycontext_uh(&argp);
 }
 
 // -- glXSwapBuffers
@@ -5726,7 +5726,7 @@ void glXSwapBuffers( Display *dpy, GLXDrawable drawable )
     argp.dpy = dpy;
 	argp.drawable = drawable
 
-    glxswapbuffers_uh(&argp)
+    glxswapbuffers_uh(&argp);
 }
 
 // -- glXDestroyGLXPixmap
@@ -5738,7 +5738,7 @@ void glXDestroyGLXPixmap( Display *dpy, GLXPixmap pixmap )
     argp.dpy = dpy;
 	argp.pixmap = pixmap
 
-    glxdestroyglxpixmap_uh(&argp)
+    glxdestroyglxpixmap_uh(&argp);
 }
 
 // -- glXQueryExtension
@@ -5751,7 +5751,7 @@ Bool glXQueryExtension( Display *dpy, int *errorb, int *event )
 	argp.errorb = errorb;
 	argp.event = event
     
-    return glxqueryextension_uh(&argp)
+    return glxqueryextension_uh(&argp);
 }
 
 // -- glXQueryVersion
@@ -5764,7 +5764,7 @@ Bool glXQueryVersion( Display *dpy, int *maj, int *min )
 	argp.maj = maj;
 	argp.min = min
     
-    return glxqueryversion_uh(&argp)
+    return glxqueryversion_uh(&argp);
 }
 
 // -- glXIsDirect
@@ -5776,31 +5776,31 @@ Bool glXIsDirect( Display *dpy, GLXContext ctx )
     argp.dpy = dpy;
 	argp.ctx = ctx
     
-    return glxisdirect_uh(&argp)
+    return glxisdirect_uh(&argp);
 }
 
 // -- glXGetCurrentContext
 GLXContext glXGetCurrentContext()
 {
-    return glxgetcurrentcontext_uh()
+    return glxgetcurrentcontext_uh();
 }
 
 // -- glXGetCurrentDrawable
 GLXDrawable glXGetCurrentDrawable()
 {
-    return glxgetcurrentdrawable_uh()
+    return glxgetcurrentdrawable_uh();
 }
 
 // -- glXWaitGL
 void glXWaitGL()
 {
-    glxwaitgl_uh()
+    glxwaitgl_uh();
 }
 
 // -- glXWaitX
 void glXWaitX()
 {
-    glxwaitx_uh()
+    glxwaitx_uh();
 }
 
 // -- glXUseXFont
@@ -5814,7 +5814,7 @@ void glXUseXFont( Font font, int first, int count, int list )
 	argp.count = count;
 	argp.list = list
 
-    glxusexfont_uh(&argp)
+    glxusexfont_uh(&argp);
 }
 
 // -- glXQueryExtensionsString
@@ -5826,7 +5826,7 @@ const char *glXQueryExtensionsString( Display *dpy, int screen )
     argp.dpy = dpy;
 	argp.screen = screen
     
-    return glxqueryextensionsstring_uh(&argp)
+    return glxqueryextensionsstring_uh(&argp);
 }
 
 // -- glXQueryServerString
@@ -5839,7 +5839,7 @@ const char *glXQueryServerString( Display *dpy, int screen, int name )
 	argp.screen = screen;
 	argp.name = name
     
-    return glxqueryserverstring_uh(&argp)
+    return glxqueryserverstring_uh(&argp);
 }
 
 // -- glXGetClientString
@@ -5851,13 +5851,13 @@ const char *glXGetClientString( Display *dpy, int name )
     argp.dpy = dpy;
 	argp.name = name
     
-    return glxgetclientstring_uh(&argp)
+    return glxgetclientstring_uh(&argp);
 }
 
 // -- glXGetCurrentDisplay
 Display *glXGetCurrentDisplay()
 {
-    return glxgetcurrentdisplay_uh()
+    return glxgetcurrentdisplay_uh();
 }
 
 // -- glXDestroyWindow
@@ -5869,7 +5869,7 @@ void glXDestroyWindow( Display *dpy, GLXWindow window )
     argp.dpy = dpy;
 	argp.window = window
 
-    glxdestroywindow_uh(&argp)
+    glxdestroywindow_uh(&argp);
 }
 
 // -- glXDestroyPixmap
@@ -5881,7 +5881,7 @@ void glXDestroyPixmap( Display *dpy, GLXPixmap pixmap )
     argp.dpy = dpy;
 	argp.pixmap = pixmap
 
-    glxdestroypixmap_uh(&argp)
+    glxdestroypixmap_uh(&argp);
 }
 
 // -- glXDestroyPbuffer
@@ -5893,13 +5893,13 @@ void glXDestroyPbuffer( Display *dpy, GLXPbuffer pbuf )
     argp.dpy = dpy;
 	argp.pbuf = pbuf
 
-    glxdestroypbuffer_uh(&argp)
+    glxdestroypbuffer_uh(&argp);
 }
 
 // -- glXGetCurrentReadDrawable
 GLXDrawable glXGetCurrentReadDrawable()
 {
-    return glxgetcurrentreaddrawable_uh()
+    return glxgetcurrentreaddrawable_uh();
 }
 
 // -- glXGetProcAddressARB
@@ -5910,7 +5910,7 @@ extern __GLXextFuncPtr glXGetProcAddressARB (const GLubyte *procname)
     // Set function specific args
     argp.procname = procname
     
-    return glxgetprocaddressarb_uh(&argp)
+    return glxgetprocaddressarb_uh(&argp);
 }
 
 // -- glXGetProcAddress
@@ -5921,7 +5921,7 @@ extern void *glXGetProcAddress(const GLubyte *procname)
     // Set function specific args
     argp.procname = procname
     
-    return glxgetprocaddress_uh(&argp)
+    return glxgetprocaddress_uh(&argp);
 }
 
 // -- glXAllocateMemoryNV
@@ -5935,7 +5935,7 @@ void *glXAllocateMemoryNV(GLsizei size, GLfloat readfreq, GLfloat writefreq, GLf
 	argp.writefreq = writefreq;
 	argp.priority = priority
     
-    return glxallocatememorynv_uh(&argp)
+    return glxallocatememorynv_uh(&argp);
 }
 
 // -- glXFreeMemoryNV
@@ -5946,7 +5946,7 @@ void glXFreeMemoryNV(GLvoid *pointer)
     // Set function specific args
     argp.pointer = pointer
 
-    glxfreememorynv_uh(&argp)
+    glxfreememorynv_uh(&argp);
 }
 
 // -- glXBindTexImageARB
@@ -5959,7 +5959,7 @@ Bool glXBindTexImageARB(Display *dpy, GLXPbuffer pbuffer, int buffer)
 	argp.pbuffer = pbuffer;
 	argp.buffer = buffer
     
-    return glxbindteximagearb_uh(&argp)
+    return glxbindteximagearb_uh(&argp);
 }
 
 // -- glXReleaseTexImageARB
@@ -5972,7 +5972,7 @@ Bool glXReleaseTexImageARB(Display *dpy, GLXPbuffer pbuffer, int buffer)
 	argp.pbuffer = pbuffer;
 	argp.buffer = buffer
     
-    return glxreleaseteximagearb_uh(&argp)
+    return glxreleaseteximagearb_uh(&argp);
 }
 
 // -- glXDrawableAttribARB
@@ -5985,7 +5985,7 @@ Bool glXDrawableAttribARB(Display *dpy, GLXDrawable draw, const int *attribList)
 	argp.draw = draw;
 	argp.attribList = attribList
     
-    return glxdrawableattribarb_uh(&argp)
+    return glxdrawableattribarb_uh(&argp);
 }
 
 // -- glXGetFrameUsageMESA
@@ -5998,7 +5998,7 @@ int glXGetFrameUsageMESA(Display *dpy, GLXDrawable drawable, float *usage)
 	argp.drawable = drawable;
 	argp.usage = usage
     
-    return glxgetframeusagemesa_uh(&argp)
+    return glxgetframeusagemesa_uh(&argp);
 }
 
 // -- glXBeginFrameTrackingMESA
@@ -6010,7 +6010,7 @@ int glXBeginFrameTrackingMESA(Display *dpy, GLXDrawable drawable)
     argp.dpy = dpy;
 	argp.drawable = drawable
     
-    return glxbeginframetrackingmesa_uh(&argp)
+    return glxbeginframetrackingmesa_uh(&argp);
 }
 
 // -- glXEndFrameTrackingMESA
@@ -6022,7 +6022,7 @@ int glXEndFrameTrackingMESA(Display *dpy, GLXDrawable drawable)
     argp.dpy = dpy;
 	argp.drawable = drawable
     
-    return glxendframetrackingmesa_uh(&argp)
+    return glxendframetrackingmesa_uh(&argp);
 }
 
 // -- glXQueryFrameTrackingMESA
@@ -6037,7 +6037,7 @@ int glXQueryFrameTrackingMESA(Display *dpy, GLXDrawable drawable, int64_t *swapC
 	argp.missedFrames = missedFrames;
 	argp.lastMissedUsage = lastMissedUsage
     
-    return glxqueryframetrackingmesa_uh(&argp)
+    return glxqueryframetrackingmesa_uh(&argp);
 }
 
 // -- glXSwapIntervalMESA
@@ -6048,10 +6048,10 @@ int glXSwapIntervalMESA(unsigned int interval)
     // Set function specific args
     argp.interval = interval
     
-    return glxswapintervalmesa_uh(&argp)
+    return glxswapintervalmesa_uh(&argp);
 }
 
 // -- glXGetSwapIntervalMESA
 int glXGetSwapIntervalMESA(){
-    return glxgetswapintervalmesa_uh()
+    return glxgetswapintervalmesa_uh();
 }
