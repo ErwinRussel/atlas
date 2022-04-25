@@ -55,6 +55,72 @@ func_lh = '''
 }}
 
 '''
+func_lh_ni = '''
+// -- {name}
+{ret_type} *{name_lower}_lh()
+{{
+    // No function specific args
+
+    // Call actual function
+    {ret_type} result = {name}();
+
+    // Memcopy in Buffer
+    int ret_size = sizeof({ret_type});
+    memcpy(ShmPTR->buffer, &result, ret_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_RETURN;
+    ShmPTR->data_type = {ret_type_upper};
+    ShmPTR->payload_size = ret_size;
+
+    // Set status
+    ShmPTR->status = RESPONSE;
+}}
+
+'''
+func_lh_void = '''
+// -- {name}
+void *{name_lower}_lh(args_{name} *argp)
+{{
+    // Get function specific args
+    {argp_set}
+
+    // Call actual function
+    {name}({arg_vars});
+
+    // Nothing to memcopy in Buffer
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_RETURN;
+    ShmPTR->data_type = {ret_type_upper};
+    ShmPTR->payload_size = 0;
+
+    // Set status
+    ShmPTR->status = RESPONSE;
+}}
+
+'''
+func_lh_ni_void = '''
+// -- {name}
+void *{name_lower}_lh()
+{{
+    // No function specific args
+
+    // Call actual function
+    {name}();
+
+    // Nothing to memcopy in Buffer
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_RETURN;
+    ShmPTR->data_type = {ret_type_upper};
+    ShmPTR->payload_size = 0;
+
+    // Set status
+    ShmPTR->status = RESPONSE;
+}}
+
+'''
 listener = '''
 void service_listener() {{
     // Server loop
@@ -110,6 +176,24 @@ case = '''
                 printf("RESPONSE: Data type: %d\\n\\n", ShmPTR->data_type);
                 break;
 '''
+case_ni = '''
+            case {name_upper}: ;
+                // assert payload size
+                if(ShmPTR->payload_size != 0){{
+                    printf("Wrong payload size\\n\\n");
+                    ShmPTR->status = LISTEN;
+                    break;
+                }}
+
+                // Nothing to copy from Buffer
+
+                // Execute function call
+                {name_lower}_lh();
+
+                // Print
+                printf("RESPONSE: Data type: %d\\n\\n", ShmPTR->data_type);
+                break;
+'''
 main = '''
 int main(int  argc, char *argv[]){
     init();
@@ -152,16 +236,45 @@ def gen_lower_half(functions):
             ret_type = function['ret_type']
             ret_type_upper = ret_type.upper()
             # If we have a pointer type, replace asterisk with 'P'
-            if ret_type_upper[-1] == "*":
-                ret_type_upper = ret_type_upper[:-1] + 'P'
-            argp_set = get_argp_set(function['args'])
-            arg_vars = get_arg_vars(function['args'])
-            f.write(func_lh.format(name=name, name_lower=name_lower,
-                                   ret_type=ret_type, ret_type_upper=ret_type_upper,
-                                   arg_vars=arg_vars, argp_set=argp_set))
-            # create case
+            if len(ret_type) > 0:
+                if ret_type_upper[-1] == "*":
+                    ret_type_upper = ret_type_upper[:-1] + 'P'
+
             name_upper = name.upper()
-            cases.append(case.format(name=name, name_lower=name_lower, name_upper=name_upper))
+            # If no function inputs
+            args = function['args']
+
+            # If void function, no return type
+            if ret_type == "void":
+                if len(args) == 1 and args[0] == '':
+                    f.write(func_lh_ni_void.format(name=name, name_lower=name_lower,
+                                              ret_type=ret_type, ret_type_upper=ret_type_upper))
+                    # create case
+                    cases.append(case_ni.format(name=name, name_lower=name_lower, name_upper=name_upper))
+                else:
+                    argp_set = get_argp_set(function['args'])
+                    arg_vars = get_arg_vars(function['args'])
+
+                    f.write(func_lh_void.format(name=name, name_lower=name_lower,
+                                           ret_type=ret_type, ret_type_upper=ret_type_upper,
+                                           arg_vars=arg_vars, argp_set=argp_set))
+                    # create case
+                    cases.append(case.format(name=name, name_lower=name_lower, name_upper=name_upper))
+            else:
+                if len(args) == 1 and args[0] == '':
+                    f.write(func_lh_ni.format(name=name, name_lower=name_lower,
+                                           ret_type=ret_type, ret_type_upper=ret_type_upper))
+                    # create case
+                    cases.append(case_ni.format(name=name, name_lower=name_lower, name_upper=name_upper))
+                else:
+                    argp_set = get_argp_set(function['args'])
+                    arg_vars = get_arg_vars(function['args'])
+
+                    f.write(func_lh.format(name=name, name_lower=name_lower,
+                                           ret_type=ret_type, ret_type_upper=ret_type_upper,
+                                           arg_vars=arg_vars, argp_set=argp_set))
+                    # create case
+                    cases.append(case.format(name=name, name_lower=name_lower, name_upper=name_upper))
 
         # add listener
         f.write(listener.format(cases="".join(cases)))

@@ -21,6 +21,8 @@ class AtlasGenerator:
         return_type_list = line[:line.find('(')].split()[:-1]
         if "extern" in return_type_list:
             return_type_list.remove("extern")
+        if "const" in return_type_list:
+            return_type_list.remove("const")
         func_return_type = " ".join(return_type_list)
         if ptr_type:
             func_return_type = func_return_type + "*"
@@ -63,7 +65,7 @@ class AtlasGenerator:
 if __name__ == '__main__':
     # Parse all of the functions.
     ag = AtlasGenerator()
-    ag.read_functions("glxgears_func_list.txt")
+    ag.read_functions("test/glxgears_func_list.txt")
     # Create header file from parsed functions.
     ag.gen_lower_half()
     # Create lower half/server side

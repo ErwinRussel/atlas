@@ -1,0 +1,6 @@
+extern void (*glXGetProcAddress(const GLubyte *procname))( void )
+void (*glXGetProcAddress2(const GLubyte *procname))( void )
+
+// glXGetProcAddress returns the address of the function specified in procName.
+// This is necessary in environments where the OpenGL link library exports a different set of functions than the runtime library.
+

@@ -59,13 +59,14 @@ def gen_shared_header(functions):
         data_types_l = []
         for function in functions:
             data_types_l.append(function['name'].upper())
-            ret_type = function['ret_type'].upper()
-            # If we have a pointer type, replace asterisk with 'P'
-            if ret_type[-1] == "*":
-                ret_type = ret_type[:-1] + "P"
-            # Make sure we are not adding data types double
-            if ret_type not in data_types_l:
-                data_types_l.append(ret_type)
+            ret_type_upper = function['ret_type'].upper()
+            # Todo: see what happens if we make it 0
+            if len(ret_type_upper) > 0:
+                # If we have a pointer type, replace asterisk with 'P'
+                if ret_type_upper[-1] == "*":
+                    ret_type_upper = ret_type_upper[:-1] + "P"
+                if ret_type_upper not in data_types_l:
+                    data_types_l.append(ret_type_upper)
         data_types = ",\n\t".join(data_types_l)
         f.write(enum.format(data_types=data_types))
 
@@ -74,6 +75,12 @@ def gen_shared_header(functions):
 
         # Add all the function structs
         for function in functions:
+            args = function['args']
+
+            # Make sure we do not have a struct when there are no input args
+            if len(args) == 1 and args[0] == '':
+                continue
+
             args_str = ";\n\t".join(function['args'])
             f.write(struct_block.format(name=function['name'], args=args_str))
 

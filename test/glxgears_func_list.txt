@@ -2,7 +2,6 @@
 #HEADER <X11/Xlib.h>
 extern Display *XOpenDisplay(_Xconst char *display_name)
 int XMapWindow(Display *display, Window w)
-
 // OpenGL functions
 #HEADER <GL/gl.h>
 void glClearIndex( GLfloat c )
@@ -481,7 +480,8 @@ void glXDestroyPixmap( Display *dpy, GLXPixmap pixmap )
 void glXDestroyPbuffer( Display *dpy, GLXPbuffer pbuf )
 GLXDrawable glXGetCurrentReadDrawable()
 extern __GLXextFuncPtr glXGetProcAddressARB (const GLubyte *procname)
-extern void (*glXGetProcAddress(const GLubyte *procname))( void )
+// extern void (*glXGetProcAddress(const GLubyte *procname))( void )
+extern void *glXGetProcAddress(const GLubyte *procname)
 void *glXAllocateMemoryNV(GLsizei size, GLfloat readfreq, GLfloat writefreq, GLfloat priority)
 void glXFreeMemoryNV(GLvoid *pointer)
 Bool glXBindTexImageARB(Display *dpy, GLXPbuffer pbuffer, int buffer)
