@@ -5852,43 +5852,6 @@ void glXUseXFont( Font font, int first, int count, int list )
     glxusexfont_uh(argp);
 }
 
-// -- glXQueryExtensionsString
-const char *glXQueryExtensionsString( Display *dpy, int screen )
-{
-    args_glXQueryExtensionsString argp;
-    
-    // Set function specific args
-    argp.dpy = dpy;
-	argp.screen = screen;
-    
-    return glxqueryextensionsstring_uh(argp);
-}
-
-// -- glXQueryServerString
-const char *glXQueryServerString( Display *dpy, int screen, int name )
-{
-    args_glXQueryServerString argp;
-    
-    // Set function specific args
-    argp.dpy = dpy;
-	argp.screen = screen;
-	argp.name = name;
-    
-    return glxqueryserverstring_uh(argp);
-}
-
-// -- glXGetClientString
-const char *glXGetClientString( Display *dpy, int name )
-{
-    args_glXGetClientString argp;
-    
-    // Set function specific args
-    argp.dpy = dpy;
-	argp.name = name;
-    
-    return glxgetclientstring_uh(argp);
-}
-
 // -- glXGetCurrentDisplay
 Display *glXGetCurrentDisplay()
 {
@@ -6073,20 +6036,4 @@ int glXQueryFrameTrackingMESA(Display *dpy, GLXDrawable drawable, int64_t *swapC
 	argp.lastMissedUsage = lastMissedUsage;
     
     return glxqueryframetrackingmesa_uh(argp);
-}
-
-// -- glXSwapIntervalMESA
-int glXSwapIntervalMESA(unsigned int interval)
-{
-    args_glXSwapIntervalMESA argp;
-    
-    // Set function specific args
-    argp.interval = interval;
-    
-    return glxswapintervalmesa_uh(argp);
-}
-
-// -- glXGetSwapIntervalMESA
-int glXGetSwapIntervalMESA(){
-    return glxgetswapintervalmesa_uh();
 }

@@ -10647,79 +10647,6 @@ void *glxusexfont_lh(args_glXUseXFont *argp)
 }
 
 
-// -- glXQueryExtensionsString
-char* *glxqueryextensionsstring_lh(args_glXQueryExtensionsString *argp)
-{
-    // Get function specific args
-     Display *dpy = argp->dpy;;
-	 int screen  = argp->screen;;
-
-    // Call actual function
-    char* result = glXQueryExtensionsString(dpy, screen);
-
-    // Memcopy in Buffer
-    int ret_size = sizeof(char*);
-    memcpy(ShmPTR->buffer, &result, ret_size);
-
-    // Set function specific headers
-    ShmPTR->message_type = FUNC_RETURN;
-    ShmPTR->data_type = CHARP;
-    ShmPTR->payload_size = ret_size;
-
-    // Set status
-    ShmPTR->status = RESPONSE;
-}
-
-
-// -- glXQueryServerString
-char* *glxqueryserverstring_lh(args_glXQueryServerString *argp)
-{
-    // Get function specific args
-     Display *dpy = argp->dpy;;
-	 int screen = argp->screen;;
-	 int name  = argp->name;;
-
-    // Call actual function
-    char* result = glXQueryServerString(dpy, screen, name);
-
-    // Memcopy in Buffer
-    int ret_size = sizeof(char*);
-    memcpy(ShmPTR->buffer, &result, ret_size);
-
-    // Set function specific headers
-    ShmPTR->message_type = FUNC_RETURN;
-    ShmPTR->data_type = CHARP;
-    ShmPTR->payload_size = ret_size;
-
-    // Set status
-    ShmPTR->status = RESPONSE;
-}
-
-
-// -- glXGetClientString
-char* *glxgetclientstring_lh(args_glXGetClientString *argp)
-{
-    // Get function specific args
-     Display *dpy = argp->dpy;;
-	 int name  = argp->name;;
-
-    // Call actual function
-    char* result = glXGetClientString(dpy, name);
-
-    // Memcopy in Buffer
-    int ret_size = sizeof(char*);
-    memcpy(ShmPTR->buffer, &result, ret_size);
-
-    // Set function specific headers
-    ShmPTR->message_type = FUNC_RETURN;
-    ShmPTR->data_type = CHARP;
-    ShmPTR->payload_size = ret_size;
-
-    // Set status
-    ShmPTR->status = RESPONSE;
-}
-
-
 // -- glXGetCurrentDisplay
 Display* *glxgetcurrentdisplay_lh()
 {
@@ -11083,51 +11010,6 @@ int *glxqueryframetrackingmesa_lh(args_glXQueryFrameTrackingMESA *argp)
 
     // Call actual function
     int result = glXQueryFrameTrackingMESA(dpy, drawable, swapCount, missedFrames, lastMissedUsage);
-
-    // Memcopy in Buffer
-    int ret_size = sizeof(int);
-    memcpy(ShmPTR->buffer, &result, ret_size);
-
-    // Set function specific headers
-    ShmPTR->message_type = FUNC_RETURN;
-    ShmPTR->data_type = INT;
-    ShmPTR->payload_size = ret_size;
-
-    // Set status
-    ShmPTR->status = RESPONSE;
-}
-
-
-// -- glXSwapIntervalMESA
-int *glxswapintervalmesa_lh(args_glXSwapIntervalMESA *argp)
-{
-    // Get function specific args
-    unsigned int interval = argp->interval;;
-
-    // Call actual function
-    int result = glXSwapIntervalMESA(interval);
-
-    // Memcopy in Buffer
-    int ret_size = sizeof(int);
-    memcpy(ShmPTR->buffer, &result, ret_size);
-
-    // Set function specific headers
-    ShmPTR->message_type = FUNC_RETURN;
-    ShmPTR->data_type = INT;
-    ShmPTR->payload_size = ret_size;
-
-    // Set status
-    ShmPTR->status = RESPONSE;
-}
-
-
-// -- glXGetSwapIntervalMESA
-int *glxgetswapintervalmesa_lh()
-{
-    // No function specific args
-
-    // Call actual function
-    int result = glXGetSwapIntervalMESA();
 
     // Memcopy in Buffer
     int ret_size = sizeof(int);
@@ -20461,66 +20343,6 @@ void service_listener() {
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
                 break;
 
-            case GLXQUERYEXTENSIONSSTRING: ;
-                args_glXQueryExtensionsString argp_glxqueryextensionsstring;
-
-                // assert payload size
-                if(ShmPTR->payload_size != sizeof(args_glXQueryExtensionsString)){
-                    printf("Wrong payload size\n\n");
-                    ShmPTR->status = LISTEN;
-                    break;
-                }
-
-                // Memcopy from Buffer
-                memcpy(&argp_glxqueryextensionsstring, ShmPTR->buffer, sizeof(args_glXQueryExtensionsString));
-
-                // Execute function call
-                glxqueryextensionsstring_lh(&argp_glxqueryextensionsstring);
-
-                // Print
-                printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
-                break;
-
-            case GLXQUERYSERVERSTRING: ;
-                args_glXQueryServerString argp_glxqueryserverstring;
-
-                // assert payload size
-                if(ShmPTR->payload_size != sizeof(args_glXQueryServerString)){
-                    printf("Wrong payload size\n\n");
-                    ShmPTR->status = LISTEN;
-                    break;
-                }
-
-                // Memcopy from Buffer
-                memcpy(&argp_glxqueryserverstring, ShmPTR->buffer, sizeof(args_glXQueryServerString));
-
-                // Execute function call
-                glxqueryserverstring_lh(&argp_glxqueryserverstring);
-
-                // Print
-                printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
-                break;
-
-            case GLXGETCLIENTSTRING: ;
-                args_glXGetClientString argp_glxgetclientstring;
-
-                // assert payload size
-                if(ShmPTR->payload_size != sizeof(args_glXGetClientString)){
-                    printf("Wrong payload size\n\n");
-                    ShmPTR->status = LISTEN;
-                    break;
-                }
-
-                // Memcopy from Buffer
-                memcpy(&argp_glxgetclientstring, ShmPTR->buffer, sizeof(args_glXGetClientString));
-
-                // Execute function call
-                glxgetclientstring_lh(&argp_glxgetclientstring);
-
-                // Print
-                printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
-                break;
-
             case GLXGETCURRENTDISPLAY: ;
                 // assert payload size
                 if(ShmPTR->payload_size != 0){
@@ -20830,43 +20652,6 @@ void service_listener() {
 
                 // Execute function call
                 glxqueryframetrackingmesa_lh(&argp_glxqueryframetrackingmesa);
-
-                // Print
-                printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
-                break;
-
-            case GLXSWAPINTERVALMESA: ;
-                args_glXSwapIntervalMESA argp_glxswapintervalmesa;
-
-                // assert payload size
-                if(ShmPTR->payload_size != sizeof(args_glXSwapIntervalMESA)){
-                    printf("Wrong payload size\n\n");
-                    ShmPTR->status = LISTEN;
-                    break;
-                }
-
-                // Memcopy from Buffer
-                memcpy(&argp_glxswapintervalmesa, ShmPTR->buffer, sizeof(args_glXSwapIntervalMESA));
-
-                // Execute function call
-                glxswapintervalmesa_lh(&argp_glxswapintervalmesa);
-
-                // Print
-                printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
-                break;
-
-            case GLXGETSWAPINTERVALMESA: ;
-                // assert payload size
-                if(ShmPTR->payload_size != 0){
-                    printf("Wrong payload size\n\n");
-                    ShmPTR->status = LISTEN;
-                    break;
-                }
-
-                // Nothing to copy from Buffer
-
-                // Execute function call
-                glxgetswapintervalmesa_lh();
 
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);

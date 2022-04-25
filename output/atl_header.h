@@ -499,10 +499,6 @@ typedef enum {
 	GLXWAITGL,
 	GLXWAITX,
 	GLXUSEXFONT,
-	GLXQUERYEXTENSIONSSTRING,
-	CHARP,
-	GLXQUERYSERVERSTRING,
-	GLXGETCLIENTSTRING,
 	GLXGETCURRENTDISPLAY,
 	GLXDESTROYWINDOW,
 	GLXDESTROYPIXMAP,
@@ -520,9 +516,7 @@ typedef enum {
 	GLXGETFRAMEUSAGEMESA,
 	GLXBEGINFRAMETRACKINGMESA,
 	GLXENDFRAMETRACKINGMESA,
-	GLXQUERYFRAMETRACKINGMESA,
-	GLXSWAPINTERVALMESA,
-	GLXGETSWAPINTERVALMESA
+	GLXQUERYFRAMETRACKINGMESA
 } data_types;
 
 // Create messageblock after declaration of data_types
@@ -4942,34 +4936,6 @@ struct args_glXUseXFont{
 typedef struct args_glXUseXFont args_glXUseXFont;
 
 
-// -- glXQueryExtensionsString
-struct args_glXQueryExtensionsString{
-     Display *dpy;
-	 int screen ;
-};
-
-typedef struct args_glXQueryExtensionsString args_glXQueryExtensionsString;
-
-
-// -- glXQueryServerString
-struct args_glXQueryServerString{
-     Display *dpy;
-	 int screen;
-	 int name ;
-};
-
-typedef struct args_glXQueryServerString args_glXQueryServerString;
-
-
-// -- glXGetClientString
-struct args_glXGetClientString{
-     Display *dpy;
-	 int name ;
-};
-
-typedef struct args_glXGetClientString args_glXGetClientString;
-
-
 // -- glXDestroyWindow
 struct args_glXDestroyWindow{
      Display *dpy;
@@ -5100,12 +5066,4 @@ struct args_glXQueryFrameTrackingMESA{
 };
 
 typedef struct args_glXQueryFrameTrackingMESA args_glXQueryFrameTrackingMESA;
-
-
-// -- glXSwapIntervalMESA
-struct args_glXSwapIntervalMESA{
-    unsigned int interval;
-};
-
-typedef struct args_glXSwapIntervalMESA args_glXSwapIntervalMESA;
 
