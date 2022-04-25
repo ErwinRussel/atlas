@@ -59,10 +59,10 @@ void init(){{
 }}
 
 // -- XOpenDisplay
-Display* xopendisplay_uh(argp_XOpenDisplay argp)
+Display* xopendisplay_uh(args_XOpenDisplay argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_XOpenDisplay)
+    int arg_size = sizeof(args_XOpenDisplay)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -109,10 +109,10 @@ Display* xopendisplay_uh(argp_XOpenDisplay argp)
 }
 
 // -- XMapWindow
-int xmapwindow_uh(argp_XMapWindow argp)
+int xmapwindow_uh(args_XMapWindow argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_XMapWindow)
+    int arg_size = sizeof(args_XMapWindow)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -159,10 +159,10 @@ int xmapwindow_uh(argp_XMapWindow argp)
 }
 
 // -- glClearIndex
-void glclearindex_uh(argp_glClearIndex argp)
+void glclearindex_uh(args_glClearIndex argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glClearIndex)
+    int arg_size = sizeof(args_glClearIndex)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -206,10 +206,10 @@ void glclearindex_uh(argp_glClearIndex argp)
 }
 
 // -- glClearColor
-void glclearcolor_uh(argp_glClearColor argp)
+void glclearcolor_uh(args_glClearColor argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glClearColor)
+    int arg_size = sizeof(args_glClearColor)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -253,10 +253,10 @@ void glclearcolor_uh(argp_glClearColor argp)
 }
 
 // -- glClear
-void glclear_uh(argp_glClear argp)
+void glclear_uh(args_glClear argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glClear)
+    int arg_size = sizeof(args_glClear)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -300,10 +300,10 @@ void glclear_uh(argp_glClear argp)
 }
 
 // -- glIndexMask
-void glindexmask_uh(argp_glIndexMask argp)
+void glindexmask_uh(args_glIndexMask argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glIndexMask)
+    int arg_size = sizeof(args_glIndexMask)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -347,10 +347,10 @@ void glindexmask_uh(argp_glIndexMask argp)
 }
 
 // -- glColorMask
-void glcolormask_uh(argp_glColorMask argp)
+void glcolormask_uh(args_glColorMask argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColorMask)
+    int arg_size = sizeof(args_glColorMask)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -394,10 +394,10 @@ void glcolormask_uh(argp_glColorMask argp)
 }
 
 // -- glAlphaFunc
-void glalphafunc_uh(argp_glAlphaFunc argp)
+void glalphafunc_uh(args_glAlphaFunc argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glAlphaFunc)
+    int arg_size = sizeof(args_glAlphaFunc)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -441,10 +441,10 @@ void glalphafunc_uh(argp_glAlphaFunc argp)
 }
 
 // -- glBlendFunc
-void glblendfunc_uh(argp_glBlendFunc argp)
+void glblendfunc_uh(args_glBlendFunc argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glBlendFunc)
+    int arg_size = sizeof(args_glBlendFunc)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -488,10 +488,10 @@ void glblendfunc_uh(argp_glBlendFunc argp)
 }
 
 // -- glLogicOp
-void gllogicop_uh(argp_glLogicOp argp)
+void gllogicop_uh(args_glLogicOp argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glLogicOp)
+    int arg_size = sizeof(args_glLogicOp)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -535,10 +535,10 @@ void gllogicop_uh(argp_glLogicOp argp)
 }
 
 // -- glCullFace
-void glcullface_uh(argp_glCullFace argp)
+void glcullface_uh(args_glCullFace argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glCullFace)
+    int arg_size = sizeof(args_glCullFace)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -582,10 +582,10 @@ void glcullface_uh(argp_glCullFace argp)
 }
 
 // -- glFrontFace
-void glfrontface_uh(argp_glFrontFace argp)
+void glfrontface_uh(args_glFrontFace argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glFrontFace)
+    int arg_size = sizeof(args_glFrontFace)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -629,10 +629,10 @@ void glfrontface_uh(argp_glFrontFace argp)
 }
 
 // -- glPointSize
-void glpointsize_uh(argp_glPointSize argp)
+void glpointsize_uh(args_glPointSize argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glPointSize)
+    int arg_size = sizeof(args_glPointSize)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -676,10 +676,10 @@ void glpointsize_uh(argp_glPointSize argp)
 }
 
 // -- glLineWidth
-void gllinewidth_uh(argp_glLineWidth argp)
+void gllinewidth_uh(args_glLineWidth argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glLineWidth)
+    int arg_size = sizeof(args_glLineWidth)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -723,10 +723,10 @@ void gllinewidth_uh(argp_glLineWidth argp)
 }
 
 // -- glLineStipple
-void gllinestipple_uh(argp_glLineStipple argp)
+void gllinestipple_uh(args_glLineStipple argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glLineStipple)
+    int arg_size = sizeof(args_glLineStipple)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -770,10 +770,10 @@ void gllinestipple_uh(argp_glLineStipple argp)
 }
 
 // -- glPolygonMode
-void glpolygonmode_uh(argp_glPolygonMode argp)
+void glpolygonmode_uh(args_glPolygonMode argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glPolygonMode)
+    int arg_size = sizeof(args_glPolygonMode)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -817,10 +817,10 @@ void glpolygonmode_uh(argp_glPolygonMode argp)
 }
 
 // -- glPolygonOffset
-void glpolygonoffset_uh(argp_glPolygonOffset argp)
+void glpolygonoffset_uh(args_glPolygonOffset argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glPolygonOffset)
+    int arg_size = sizeof(args_glPolygonOffset)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -864,10 +864,10 @@ void glpolygonoffset_uh(argp_glPolygonOffset argp)
 }
 
 // -- glPolygonStipple
-void glpolygonstipple_uh(argp_glPolygonStipple argp)
+void glpolygonstipple_uh(args_glPolygonStipple argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glPolygonStipple)
+    int arg_size = sizeof(args_glPolygonStipple)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -911,10 +911,10 @@ void glpolygonstipple_uh(argp_glPolygonStipple argp)
 }
 
 // -- glGetPolygonStipple
-void glgetpolygonstipple_uh(argp_glGetPolygonStipple argp)
+void glgetpolygonstipple_uh(args_glGetPolygonStipple argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetPolygonStipple)
+    int arg_size = sizeof(args_glGetPolygonStipple)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -958,10 +958,10 @@ void glgetpolygonstipple_uh(argp_glGetPolygonStipple argp)
 }
 
 // -- glEdgeFlag
-void gledgeflag_uh(argp_glEdgeFlag argp)
+void gledgeflag_uh(args_glEdgeFlag argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glEdgeFlag)
+    int arg_size = sizeof(args_glEdgeFlag)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -1005,10 +1005,10 @@ void gledgeflag_uh(argp_glEdgeFlag argp)
 }
 
 // -- glEdgeFlagv
-void gledgeflagv_uh(argp_glEdgeFlagv argp)
+void gledgeflagv_uh(args_glEdgeFlagv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glEdgeFlagv)
+    int arg_size = sizeof(args_glEdgeFlagv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -1052,10 +1052,10 @@ void gledgeflagv_uh(argp_glEdgeFlagv argp)
 }
 
 // -- glScissor
-void glscissor_uh(argp_glScissor argp)
+void glscissor_uh(args_glScissor argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glScissor)
+    int arg_size = sizeof(args_glScissor)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -1099,10 +1099,10 @@ void glscissor_uh(argp_glScissor argp)
 }
 
 // -- glClipPlane
-void glclipplane_uh(argp_glClipPlane argp)
+void glclipplane_uh(args_glClipPlane argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glClipPlane)
+    int arg_size = sizeof(args_glClipPlane)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -1146,10 +1146,10 @@ void glclipplane_uh(argp_glClipPlane argp)
 }
 
 // -- glGetClipPlane
-void glgetclipplane_uh(argp_glGetClipPlane argp)
+void glgetclipplane_uh(args_glGetClipPlane argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetClipPlane)
+    int arg_size = sizeof(args_glGetClipPlane)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -1193,10 +1193,10 @@ void glgetclipplane_uh(argp_glGetClipPlane argp)
 }
 
 // -- glDrawBuffer
-void gldrawbuffer_uh(argp_glDrawBuffer argp)
+void gldrawbuffer_uh(args_glDrawBuffer argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glDrawBuffer)
+    int arg_size = sizeof(args_glDrawBuffer)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -1240,10 +1240,10 @@ void gldrawbuffer_uh(argp_glDrawBuffer argp)
 }
 
 // -- glReadBuffer
-void glreadbuffer_uh(argp_glReadBuffer argp)
+void glreadbuffer_uh(args_glReadBuffer argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glReadBuffer)
+    int arg_size = sizeof(args_glReadBuffer)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -1287,10 +1287,10 @@ void glreadbuffer_uh(argp_glReadBuffer argp)
 }
 
 // -- glEnable
-void glenable_uh(argp_glEnable argp)
+void glenable_uh(args_glEnable argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glEnable)
+    int arg_size = sizeof(args_glEnable)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -1334,10 +1334,10 @@ void glenable_uh(argp_glEnable argp)
 }
 
 // -- glDisable
-void gldisable_uh(argp_glDisable argp)
+void gldisable_uh(args_glDisable argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glDisable)
+    int arg_size = sizeof(args_glDisable)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -1381,10 +1381,10 @@ void gldisable_uh(argp_glDisable argp)
 }
 
 // -- glIsEnabled
-GLboolean glisenabled_uh(argp_glIsEnabled argp)
+GLboolean glisenabled_uh(args_glIsEnabled argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glIsEnabled)
+    int arg_size = sizeof(args_glIsEnabled)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -1431,10 +1431,10 @@ GLboolean glisenabled_uh(argp_glIsEnabled argp)
 }
 
 // -- glEnableClientState
-void glenableclientstate_uh(argp_glEnableClientState argp)
+void glenableclientstate_uh(args_glEnableClientState argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glEnableClientState)
+    int arg_size = sizeof(args_glEnableClientState)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -1478,10 +1478,10 @@ void glenableclientstate_uh(argp_glEnableClientState argp)
 }
 
 // -- glDisableClientState
-void gldisableclientstate_uh(argp_glDisableClientState argp)
+void gldisableclientstate_uh(args_glDisableClientState argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glDisableClientState)
+    int arg_size = sizeof(args_glDisableClientState)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -1525,10 +1525,10 @@ void gldisableclientstate_uh(argp_glDisableClientState argp)
 }
 
 // -- glGetBooleanv
-void glgetbooleanv_uh(argp_glGetBooleanv argp)
+void glgetbooleanv_uh(args_glGetBooleanv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetBooleanv)
+    int arg_size = sizeof(args_glGetBooleanv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -1572,10 +1572,10 @@ void glgetbooleanv_uh(argp_glGetBooleanv argp)
 }
 
 // -- glGetDoublev
-void glgetdoublev_uh(argp_glGetDoublev argp)
+void glgetdoublev_uh(args_glGetDoublev argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetDoublev)
+    int arg_size = sizeof(args_glGetDoublev)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -1619,10 +1619,10 @@ void glgetdoublev_uh(argp_glGetDoublev argp)
 }
 
 // -- glGetFloatv
-void glgetfloatv_uh(argp_glGetFloatv argp)
+void glgetfloatv_uh(args_glGetFloatv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetFloatv)
+    int arg_size = sizeof(args_glGetFloatv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -1666,10 +1666,10 @@ void glgetfloatv_uh(argp_glGetFloatv argp)
 }
 
 // -- glGetIntegerv
-void glgetintegerv_uh(argp_glGetIntegerv argp)
+void glgetintegerv_uh(args_glGetIntegerv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetIntegerv)
+    int arg_size = sizeof(args_glGetIntegerv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -1713,10 +1713,10 @@ void glgetintegerv_uh(argp_glGetIntegerv argp)
 }
 
 // -- glPushAttrib
-void glpushattrib_uh(argp_glPushAttrib argp)
+void glpushattrib_uh(args_glPushAttrib argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glPushAttrib)
+    int arg_size = sizeof(args_glPushAttrib)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -1805,10 +1805,10 @@ void glpopattrib_uh()
 }
 
 // -- glPushClientAttrib
-void glpushclientattrib_uh(argp_glPushClientAttrib argp)
+void glpushclientattrib_uh(args_glPushClientAttrib argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glPushClientAttrib)
+    int arg_size = sizeof(args_glPushClientAttrib)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -1897,10 +1897,10 @@ void glpopclientattrib_uh()
 }
 
 // -- glRenderMode
-GLint glrendermode_uh(argp_glRenderMode argp)
+GLint glrendermode_uh(args_glRenderMode argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRenderMode)
+    int arg_size = sizeof(args_glRenderMode)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -2037,10 +2037,10 @@ void glflush_uh()
 }
 
 // -- glHint
-void glhint_uh(argp_glHint argp)
+void glhint_uh(args_glHint argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glHint)
+    int arg_size = sizeof(args_glHint)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -2084,10 +2084,10 @@ void glhint_uh(argp_glHint argp)
 }
 
 // -- glClearDepth
-void glcleardepth_uh(argp_glClearDepth argp)
+void glcleardepth_uh(args_glClearDepth argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glClearDepth)
+    int arg_size = sizeof(args_glClearDepth)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -2131,10 +2131,10 @@ void glcleardepth_uh(argp_glClearDepth argp)
 }
 
 // -- glDepthFunc
-void gldepthfunc_uh(argp_glDepthFunc argp)
+void gldepthfunc_uh(args_glDepthFunc argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glDepthFunc)
+    int arg_size = sizeof(args_glDepthFunc)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -2178,10 +2178,10 @@ void gldepthfunc_uh(argp_glDepthFunc argp)
 }
 
 // -- glDepthMask
-void gldepthmask_uh(argp_glDepthMask argp)
+void gldepthmask_uh(args_glDepthMask argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glDepthMask)
+    int arg_size = sizeof(args_glDepthMask)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -2225,10 +2225,10 @@ void gldepthmask_uh(argp_glDepthMask argp)
 }
 
 // -- glDepthRange
-void gldepthrange_uh(argp_glDepthRange argp)
+void gldepthrange_uh(args_glDepthRange argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glDepthRange)
+    int arg_size = sizeof(args_glDepthRange)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -2272,10 +2272,10 @@ void gldepthrange_uh(argp_glDepthRange argp)
 }
 
 // -- glClearAccum
-void glclearaccum_uh(argp_glClearAccum argp)
+void glclearaccum_uh(args_glClearAccum argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glClearAccum)
+    int arg_size = sizeof(args_glClearAccum)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -2319,10 +2319,10 @@ void glclearaccum_uh(argp_glClearAccum argp)
 }
 
 // -- glAccum
-void glaccum_uh(argp_glAccum argp)
+void glaccum_uh(args_glAccum argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glAccum)
+    int arg_size = sizeof(args_glAccum)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -2366,10 +2366,10 @@ void glaccum_uh(argp_glAccum argp)
 }
 
 // -- glMatrixMode
-void glmatrixmode_uh(argp_glMatrixMode argp)
+void glmatrixmode_uh(args_glMatrixMode argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMatrixMode)
+    int arg_size = sizeof(args_glMatrixMode)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -2413,10 +2413,10 @@ void glmatrixmode_uh(argp_glMatrixMode argp)
 }
 
 // -- glOrtho
-void glortho_uh(argp_glOrtho argp)
+void glortho_uh(args_glOrtho argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glOrtho)
+    int arg_size = sizeof(args_glOrtho)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -2460,10 +2460,10 @@ void glortho_uh(argp_glOrtho argp)
 }
 
 // -- glFrustum
-void glfrustum_uh(argp_glFrustum argp)
+void glfrustum_uh(args_glFrustum argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glFrustum)
+    int arg_size = sizeof(args_glFrustum)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -2507,10 +2507,10 @@ void glfrustum_uh(argp_glFrustum argp)
 }
 
 // -- glViewport
-void glviewport_uh(argp_glViewport argp)
+void glviewport_uh(args_glViewport argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glViewport)
+    int arg_size = sizeof(args_glViewport)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -2689,10 +2689,10 @@ void glloadidentity_uh()
 }
 
 // -- glLoadMatrixd
-void glloadmatrixd_uh(argp_glLoadMatrixd argp)
+void glloadmatrixd_uh(args_glLoadMatrixd argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glLoadMatrixd)
+    int arg_size = sizeof(args_glLoadMatrixd)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -2736,10 +2736,10 @@ void glloadmatrixd_uh(argp_glLoadMatrixd argp)
 }
 
 // -- glLoadMatrixf
-void glloadmatrixf_uh(argp_glLoadMatrixf argp)
+void glloadmatrixf_uh(args_glLoadMatrixf argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glLoadMatrixf)
+    int arg_size = sizeof(args_glLoadMatrixf)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -2783,10 +2783,10 @@ void glloadmatrixf_uh(argp_glLoadMatrixf argp)
 }
 
 // -- glMultMatrixd
-void glmultmatrixd_uh(argp_glMultMatrixd argp)
+void glmultmatrixd_uh(args_glMultMatrixd argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultMatrixd)
+    int arg_size = sizeof(args_glMultMatrixd)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -2830,10 +2830,10 @@ void glmultmatrixd_uh(argp_glMultMatrixd argp)
 }
 
 // -- glMultMatrixf
-void glmultmatrixf_uh(argp_glMultMatrixf argp)
+void glmultmatrixf_uh(args_glMultMatrixf argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultMatrixf)
+    int arg_size = sizeof(args_glMultMatrixf)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -2877,10 +2877,10 @@ void glmultmatrixf_uh(argp_glMultMatrixf argp)
 }
 
 // -- glRotated
-void glrotated_uh(argp_glRotated argp)
+void glrotated_uh(args_glRotated argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRotated)
+    int arg_size = sizeof(args_glRotated)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -2924,10 +2924,10 @@ void glrotated_uh(argp_glRotated argp)
 }
 
 // -- glRotatef
-void glrotatef_uh(argp_glRotatef argp)
+void glrotatef_uh(args_glRotatef argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRotatef)
+    int arg_size = sizeof(args_glRotatef)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -2971,10 +2971,10 @@ void glrotatef_uh(argp_glRotatef argp)
 }
 
 // -- glScaled
-void glscaled_uh(argp_glScaled argp)
+void glscaled_uh(args_glScaled argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glScaled)
+    int arg_size = sizeof(args_glScaled)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -3018,10 +3018,10 @@ void glscaled_uh(argp_glScaled argp)
 }
 
 // -- glScalef
-void glscalef_uh(argp_glScalef argp)
+void glscalef_uh(args_glScalef argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glScalef)
+    int arg_size = sizeof(args_glScalef)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -3065,10 +3065,10 @@ void glscalef_uh(argp_glScalef argp)
 }
 
 // -- glTranslated
-void gltranslated_uh(argp_glTranslated argp)
+void gltranslated_uh(args_glTranslated argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTranslated)
+    int arg_size = sizeof(args_glTranslated)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -3112,10 +3112,10 @@ void gltranslated_uh(argp_glTranslated argp)
 }
 
 // -- glTranslatef
-void gltranslatef_uh(argp_glTranslatef argp)
+void gltranslatef_uh(args_glTranslatef argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTranslatef)
+    int arg_size = sizeof(args_glTranslatef)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -3159,10 +3159,10 @@ void gltranslatef_uh(argp_glTranslatef argp)
 }
 
 // -- glIsList
-GLboolean glislist_uh(argp_glIsList argp)
+GLboolean glislist_uh(args_glIsList argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glIsList)
+    int arg_size = sizeof(args_glIsList)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -3209,10 +3209,10 @@ GLboolean glislist_uh(argp_glIsList argp)
 }
 
 // -- glDeleteLists
-void gldeletelists_uh(argp_glDeleteLists argp)
+void gldeletelists_uh(args_glDeleteLists argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glDeleteLists)
+    int arg_size = sizeof(args_glDeleteLists)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -3256,10 +3256,10 @@ void gldeletelists_uh(argp_glDeleteLists argp)
 }
 
 // -- glGenLists
-GLuint glgenlists_uh(argp_glGenLists argp)
+GLuint glgenlists_uh(args_glGenLists argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGenLists)
+    int arg_size = sizeof(args_glGenLists)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -3306,10 +3306,10 @@ GLuint glgenlists_uh(argp_glGenLists argp)
 }
 
 // -- glNewList
-void glnewlist_uh(argp_glNewList argp)
+void glnewlist_uh(args_glNewList argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glNewList)
+    int arg_size = sizeof(args_glNewList)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -3398,10 +3398,10 @@ void glendlist_uh()
 }
 
 // -- glCallList
-void glcalllist_uh(argp_glCallList argp)
+void glcalllist_uh(args_glCallList argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glCallList)
+    int arg_size = sizeof(args_glCallList)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -3445,10 +3445,10 @@ void glcalllist_uh(argp_glCallList argp)
 }
 
 // -- glCallLists
-void glcalllists_uh(argp_glCallLists argp)
+void glcalllists_uh(args_glCallLists argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glCallLists)
+    int arg_size = sizeof(args_glCallLists)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -3492,10 +3492,10 @@ void glcalllists_uh(argp_glCallLists argp)
 }
 
 // -- glListBase
-void gllistbase_uh(argp_glListBase argp)
+void gllistbase_uh(args_glListBase argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glListBase)
+    int arg_size = sizeof(args_glListBase)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -3539,10 +3539,10 @@ void gllistbase_uh(argp_glListBase argp)
 }
 
 // -- glBegin
-void glbegin_uh(argp_glBegin argp)
+void glbegin_uh(args_glBegin argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glBegin)
+    int arg_size = sizeof(args_glBegin)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -3631,10 +3631,10 @@ void glend_uh()
 }
 
 // -- glVertex2d
-void glvertex2d_uh(argp_glVertex2d argp)
+void glvertex2d_uh(args_glVertex2d argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glVertex2d)
+    int arg_size = sizeof(args_glVertex2d)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -3678,10 +3678,10 @@ void glvertex2d_uh(argp_glVertex2d argp)
 }
 
 // -- glVertex2f
-void glvertex2f_uh(argp_glVertex2f argp)
+void glvertex2f_uh(args_glVertex2f argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glVertex2f)
+    int arg_size = sizeof(args_glVertex2f)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -3725,10 +3725,10 @@ void glvertex2f_uh(argp_glVertex2f argp)
 }
 
 // -- glVertex2i
-void glvertex2i_uh(argp_glVertex2i argp)
+void glvertex2i_uh(args_glVertex2i argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glVertex2i)
+    int arg_size = sizeof(args_glVertex2i)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -3772,10 +3772,10 @@ void glvertex2i_uh(argp_glVertex2i argp)
 }
 
 // -- glVertex2s
-void glvertex2s_uh(argp_glVertex2s argp)
+void glvertex2s_uh(args_glVertex2s argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glVertex2s)
+    int arg_size = sizeof(args_glVertex2s)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -3819,10 +3819,10 @@ void glvertex2s_uh(argp_glVertex2s argp)
 }
 
 // -- glVertex3d
-void glvertex3d_uh(argp_glVertex3d argp)
+void glvertex3d_uh(args_glVertex3d argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glVertex3d)
+    int arg_size = sizeof(args_glVertex3d)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -3866,10 +3866,10 @@ void glvertex3d_uh(argp_glVertex3d argp)
 }
 
 // -- glVertex3f
-void glvertex3f_uh(argp_glVertex3f argp)
+void glvertex3f_uh(args_glVertex3f argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glVertex3f)
+    int arg_size = sizeof(args_glVertex3f)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -3913,10 +3913,10 @@ void glvertex3f_uh(argp_glVertex3f argp)
 }
 
 // -- glVertex3i
-void glvertex3i_uh(argp_glVertex3i argp)
+void glvertex3i_uh(args_glVertex3i argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glVertex3i)
+    int arg_size = sizeof(args_glVertex3i)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -3960,10 +3960,10 @@ void glvertex3i_uh(argp_glVertex3i argp)
 }
 
 // -- glVertex3s
-void glvertex3s_uh(argp_glVertex3s argp)
+void glvertex3s_uh(args_glVertex3s argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glVertex3s)
+    int arg_size = sizeof(args_glVertex3s)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -4007,10 +4007,10 @@ void glvertex3s_uh(argp_glVertex3s argp)
 }
 
 // -- glVertex4d
-void glvertex4d_uh(argp_glVertex4d argp)
+void glvertex4d_uh(args_glVertex4d argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glVertex4d)
+    int arg_size = sizeof(args_glVertex4d)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -4054,10 +4054,10 @@ void glvertex4d_uh(argp_glVertex4d argp)
 }
 
 // -- glVertex4f
-void glvertex4f_uh(argp_glVertex4f argp)
+void glvertex4f_uh(args_glVertex4f argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glVertex4f)
+    int arg_size = sizeof(args_glVertex4f)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -4101,10 +4101,10 @@ void glvertex4f_uh(argp_glVertex4f argp)
 }
 
 // -- glVertex4i
-void glvertex4i_uh(argp_glVertex4i argp)
+void glvertex4i_uh(args_glVertex4i argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glVertex4i)
+    int arg_size = sizeof(args_glVertex4i)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -4148,10 +4148,10 @@ void glvertex4i_uh(argp_glVertex4i argp)
 }
 
 // -- glVertex4s
-void glvertex4s_uh(argp_glVertex4s argp)
+void glvertex4s_uh(args_glVertex4s argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glVertex4s)
+    int arg_size = sizeof(args_glVertex4s)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -4195,10 +4195,10 @@ void glvertex4s_uh(argp_glVertex4s argp)
 }
 
 // -- glVertex2dv
-void glvertex2dv_uh(argp_glVertex2dv argp)
+void glvertex2dv_uh(args_glVertex2dv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glVertex2dv)
+    int arg_size = sizeof(args_glVertex2dv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -4242,10 +4242,10 @@ void glvertex2dv_uh(argp_glVertex2dv argp)
 }
 
 // -- glVertex2fv
-void glvertex2fv_uh(argp_glVertex2fv argp)
+void glvertex2fv_uh(args_glVertex2fv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glVertex2fv)
+    int arg_size = sizeof(args_glVertex2fv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -4289,10 +4289,10 @@ void glvertex2fv_uh(argp_glVertex2fv argp)
 }
 
 // -- glVertex2iv
-void glvertex2iv_uh(argp_glVertex2iv argp)
+void glvertex2iv_uh(args_glVertex2iv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glVertex2iv)
+    int arg_size = sizeof(args_glVertex2iv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -4336,10 +4336,10 @@ void glvertex2iv_uh(argp_glVertex2iv argp)
 }
 
 // -- glVertex2sv
-void glvertex2sv_uh(argp_glVertex2sv argp)
+void glvertex2sv_uh(args_glVertex2sv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glVertex2sv)
+    int arg_size = sizeof(args_glVertex2sv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -4383,10 +4383,10 @@ void glvertex2sv_uh(argp_glVertex2sv argp)
 }
 
 // -- glVertex3dv
-void glvertex3dv_uh(argp_glVertex3dv argp)
+void glvertex3dv_uh(args_glVertex3dv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glVertex3dv)
+    int arg_size = sizeof(args_glVertex3dv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -4430,10 +4430,10 @@ void glvertex3dv_uh(argp_glVertex3dv argp)
 }
 
 // -- glVertex3fv
-void glvertex3fv_uh(argp_glVertex3fv argp)
+void glvertex3fv_uh(args_glVertex3fv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glVertex3fv)
+    int arg_size = sizeof(args_glVertex3fv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -4477,10 +4477,10 @@ void glvertex3fv_uh(argp_glVertex3fv argp)
 }
 
 // -- glVertex3iv
-void glvertex3iv_uh(argp_glVertex3iv argp)
+void glvertex3iv_uh(args_glVertex3iv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glVertex3iv)
+    int arg_size = sizeof(args_glVertex3iv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -4524,10 +4524,10 @@ void glvertex3iv_uh(argp_glVertex3iv argp)
 }
 
 // -- glVertex3sv
-void glvertex3sv_uh(argp_glVertex3sv argp)
+void glvertex3sv_uh(args_glVertex3sv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glVertex3sv)
+    int arg_size = sizeof(args_glVertex3sv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -4571,10 +4571,10 @@ void glvertex3sv_uh(argp_glVertex3sv argp)
 }
 
 // -- glVertex4dv
-void glvertex4dv_uh(argp_glVertex4dv argp)
+void glvertex4dv_uh(args_glVertex4dv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glVertex4dv)
+    int arg_size = sizeof(args_glVertex4dv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -4618,10 +4618,10 @@ void glvertex4dv_uh(argp_glVertex4dv argp)
 }
 
 // -- glVertex4fv
-void glvertex4fv_uh(argp_glVertex4fv argp)
+void glvertex4fv_uh(args_glVertex4fv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glVertex4fv)
+    int arg_size = sizeof(args_glVertex4fv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -4665,10 +4665,10 @@ void glvertex4fv_uh(argp_glVertex4fv argp)
 }
 
 // -- glVertex4iv
-void glvertex4iv_uh(argp_glVertex4iv argp)
+void glvertex4iv_uh(args_glVertex4iv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glVertex4iv)
+    int arg_size = sizeof(args_glVertex4iv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -4712,10 +4712,10 @@ void glvertex4iv_uh(argp_glVertex4iv argp)
 }
 
 // -- glVertex4sv
-void glvertex4sv_uh(argp_glVertex4sv argp)
+void glvertex4sv_uh(args_glVertex4sv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glVertex4sv)
+    int arg_size = sizeof(args_glVertex4sv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -4759,10 +4759,10 @@ void glvertex4sv_uh(argp_glVertex4sv argp)
 }
 
 // -- glNormal3b
-void glnormal3b_uh(argp_glNormal3b argp)
+void glnormal3b_uh(args_glNormal3b argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glNormal3b)
+    int arg_size = sizeof(args_glNormal3b)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -4806,10 +4806,10 @@ void glnormal3b_uh(argp_glNormal3b argp)
 }
 
 // -- glNormal3d
-void glnormal3d_uh(argp_glNormal3d argp)
+void glnormal3d_uh(args_glNormal3d argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glNormal3d)
+    int arg_size = sizeof(args_glNormal3d)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -4853,10 +4853,10 @@ void glnormal3d_uh(argp_glNormal3d argp)
 }
 
 // -- glNormal3f
-void glnormal3f_uh(argp_glNormal3f argp)
+void glnormal3f_uh(args_glNormal3f argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glNormal3f)
+    int arg_size = sizeof(args_glNormal3f)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -4900,10 +4900,10 @@ void glnormal3f_uh(argp_glNormal3f argp)
 }
 
 // -- glNormal3i
-void glnormal3i_uh(argp_glNormal3i argp)
+void glnormal3i_uh(args_glNormal3i argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glNormal3i)
+    int arg_size = sizeof(args_glNormal3i)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -4947,10 +4947,10 @@ void glnormal3i_uh(argp_glNormal3i argp)
 }
 
 // -- glNormal3s
-void glnormal3s_uh(argp_glNormal3s argp)
+void glnormal3s_uh(args_glNormal3s argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glNormal3s)
+    int arg_size = sizeof(args_glNormal3s)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -4994,10 +4994,10 @@ void glnormal3s_uh(argp_glNormal3s argp)
 }
 
 // -- glNormal3bv
-void glnormal3bv_uh(argp_glNormal3bv argp)
+void glnormal3bv_uh(args_glNormal3bv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glNormal3bv)
+    int arg_size = sizeof(args_glNormal3bv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -5041,10 +5041,10 @@ void glnormal3bv_uh(argp_glNormal3bv argp)
 }
 
 // -- glNormal3dv
-void glnormal3dv_uh(argp_glNormal3dv argp)
+void glnormal3dv_uh(args_glNormal3dv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glNormal3dv)
+    int arg_size = sizeof(args_glNormal3dv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -5088,10 +5088,10 @@ void glnormal3dv_uh(argp_glNormal3dv argp)
 }
 
 // -- glNormal3fv
-void glnormal3fv_uh(argp_glNormal3fv argp)
+void glnormal3fv_uh(args_glNormal3fv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glNormal3fv)
+    int arg_size = sizeof(args_glNormal3fv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -5135,10 +5135,10 @@ void glnormal3fv_uh(argp_glNormal3fv argp)
 }
 
 // -- glNormal3iv
-void glnormal3iv_uh(argp_glNormal3iv argp)
+void glnormal3iv_uh(args_glNormal3iv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glNormal3iv)
+    int arg_size = sizeof(args_glNormal3iv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -5182,10 +5182,10 @@ void glnormal3iv_uh(argp_glNormal3iv argp)
 }
 
 // -- glNormal3sv
-void glnormal3sv_uh(argp_glNormal3sv argp)
+void glnormal3sv_uh(args_glNormal3sv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glNormal3sv)
+    int arg_size = sizeof(args_glNormal3sv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -5229,10 +5229,10 @@ void glnormal3sv_uh(argp_glNormal3sv argp)
 }
 
 // -- glIndexd
-void glindexd_uh(argp_glIndexd argp)
+void glindexd_uh(args_glIndexd argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glIndexd)
+    int arg_size = sizeof(args_glIndexd)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -5276,10 +5276,10 @@ void glindexd_uh(argp_glIndexd argp)
 }
 
 // -- glIndexf
-void glindexf_uh(argp_glIndexf argp)
+void glindexf_uh(args_glIndexf argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glIndexf)
+    int arg_size = sizeof(args_glIndexf)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -5323,10 +5323,10 @@ void glindexf_uh(argp_glIndexf argp)
 }
 
 // -- glIndexi
-void glindexi_uh(argp_glIndexi argp)
+void glindexi_uh(args_glIndexi argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glIndexi)
+    int arg_size = sizeof(args_glIndexi)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -5370,10 +5370,10 @@ void glindexi_uh(argp_glIndexi argp)
 }
 
 // -- glIndexs
-void glindexs_uh(argp_glIndexs argp)
+void glindexs_uh(args_glIndexs argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glIndexs)
+    int arg_size = sizeof(args_glIndexs)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -5417,10 +5417,10 @@ void glindexs_uh(argp_glIndexs argp)
 }
 
 // -- glIndexub
-void glindexub_uh(argp_glIndexub argp)
+void glindexub_uh(args_glIndexub argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glIndexub)
+    int arg_size = sizeof(args_glIndexub)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -5464,10 +5464,10 @@ void glindexub_uh(argp_glIndexub argp)
 }
 
 // -- glIndexdv
-void glindexdv_uh(argp_glIndexdv argp)
+void glindexdv_uh(args_glIndexdv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glIndexdv)
+    int arg_size = sizeof(args_glIndexdv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -5511,10 +5511,10 @@ void glindexdv_uh(argp_glIndexdv argp)
 }
 
 // -- glIndexfv
-void glindexfv_uh(argp_glIndexfv argp)
+void glindexfv_uh(args_glIndexfv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glIndexfv)
+    int arg_size = sizeof(args_glIndexfv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -5558,10 +5558,10 @@ void glindexfv_uh(argp_glIndexfv argp)
 }
 
 // -- glIndexiv
-void glindexiv_uh(argp_glIndexiv argp)
+void glindexiv_uh(args_glIndexiv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glIndexiv)
+    int arg_size = sizeof(args_glIndexiv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -5605,10 +5605,10 @@ void glindexiv_uh(argp_glIndexiv argp)
 }
 
 // -- glIndexsv
-void glindexsv_uh(argp_glIndexsv argp)
+void glindexsv_uh(args_glIndexsv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glIndexsv)
+    int arg_size = sizeof(args_glIndexsv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -5652,10 +5652,10 @@ void glindexsv_uh(argp_glIndexsv argp)
 }
 
 // -- glIndexubv
-void glindexubv_uh(argp_glIndexubv argp)
+void glindexubv_uh(args_glIndexubv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glIndexubv)
+    int arg_size = sizeof(args_glIndexubv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -5699,10 +5699,10 @@ void glindexubv_uh(argp_glIndexubv argp)
 }
 
 // -- glColor3b
-void glcolor3b_uh(argp_glColor3b argp)
+void glcolor3b_uh(args_glColor3b argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor3b)
+    int arg_size = sizeof(args_glColor3b)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -5746,10 +5746,10 @@ void glcolor3b_uh(argp_glColor3b argp)
 }
 
 // -- glColor3d
-void glcolor3d_uh(argp_glColor3d argp)
+void glcolor3d_uh(args_glColor3d argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor3d)
+    int arg_size = sizeof(args_glColor3d)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -5793,10 +5793,10 @@ void glcolor3d_uh(argp_glColor3d argp)
 }
 
 // -- glColor3f
-void glcolor3f_uh(argp_glColor3f argp)
+void glcolor3f_uh(args_glColor3f argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor3f)
+    int arg_size = sizeof(args_glColor3f)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -5840,10 +5840,10 @@ void glcolor3f_uh(argp_glColor3f argp)
 }
 
 // -- glColor3i
-void glcolor3i_uh(argp_glColor3i argp)
+void glcolor3i_uh(args_glColor3i argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor3i)
+    int arg_size = sizeof(args_glColor3i)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -5887,10 +5887,10 @@ void glcolor3i_uh(argp_glColor3i argp)
 }
 
 // -- glColor3s
-void glcolor3s_uh(argp_glColor3s argp)
+void glcolor3s_uh(args_glColor3s argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor3s)
+    int arg_size = sizeof(args_glColor3s)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -5934,10 +5934,10 @@ void glcolor3s_uh(argp_glColor3s argp)
 }
 
 // -- glColor3ub
-void glcolor3ub_uh(argp_glColor3ub argp)
+void glcolor3ub_uh(args_glColor3ub argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor3ub)
+    int arg_size = sizeof(args_glColor3ub)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -5981,10 +5981,10 @@ void glcolor3ub_uh(argp_glColor3ub argp)
 }
 
 // -- glColor3ui
-void glcolor3ui_uh(argp_glColor3ui argp)
+void glcolor3ui_uh(args_glColor3ui argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor3ui)
+    int arg_size = sizeof(args_glColor3ui)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -6028,10 +6028,10 @@ void glcolor3ui_uh(argp_glColor3ui argp)
 }
 
 // -- glColor3us
-void glcolor3us_uh(argp_glColor3us argp)
+void glcolor3us_uh(args_glColor3us argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor3us)
+    int arg_size = sizeof(args_glColor3us)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -6075,10 +6075,10 @@ void glcolor3us_uh(argp_glColor3us argp)
 }
 
 // -- glColor4b
-void glcolor4b_uh(argp_glColor4b argp)
+void glcolor4b_uh(args_glColor4b argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor4b)
+    int arg_size = sizeof(args_glColor4b)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -6122,10 +6122,10 @@ void glcolor4b_uh(argp_glColor4b argp)
 }
 
 // -- glColor4d
-void glcolor4d_uh(argp_glColor4d argp)
+void glcolor4d_uh(args_glColor4d argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor4d)
+    int arg_size = sizeof(args_glColor4d)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -6169,10 +6169,10 @@ void glcolor4d_uh(argp_glColor4d argp)
 }
 
 // -- glColor4f
-void glcolor4f_uh(argp_glColor4f argp)
+void glcolor4f_uh(args_glColor4f argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor4f)
+    int arg_size = sizeof(args_glColor4f)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -6216,10 +6216,10 @@ void glcolor4f_uh(argp_glColor4f argp)
 }
 
 // -- glColor4i
-void glcolor4i_uh(argp_glColor4i argp)
+void glcolor4i_uh(args_glColor4i argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor4i)
+    int arg_size = sizeof(args_glColor4i)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -6263,10 +6263,10 @@ void glcolor4i_uh(argp_glColor4i argp)
 }
 
 // -- glColor4s
-void glcolor4s_uh(argp_glColor4s argp)
+void glcolor4s_uh(args_glColor4s argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor4s)
+    int arg_size = sizeof(args_glColor4s)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -6310,10 +6310,10 @@ void glcolor4s_uh(argp_glColor4s argp)
 }
 
 // -- glColor4ub
-void glcolor4ub_uh(argp_glColor4ub argp)
+void glcolor4ub_uh(args_glColor4ub argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor4ub)
+    int arg_size = sizeof(args_glColor4ub)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -6357,10 +6357,10 @@ void glcolor4ub_uh(argp_glColor4ub argp)
 }
 
 // -- glColor4ui
-void glcolor4ui_uh(argp_glColor4ui argp)
+void glcolor4ui_uh(args_glColor4ui argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor4ui)
+    int arg_size = sizeof(args_glColor4ui)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -6404,10 +6404,10 @@ void glcolor4ui_uh(argp_glColor4ui argp)
 }
 
 // -- glColor4us
-void glcolor4us_uh(argp_glColor4us argp)
+void glcolor4us_uh(args_glColor4us argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor4us)
+    int arg_size = sizeof(args_glColor4us)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -6451,10 +6451,10 @@ void glcolor4us_uh(argp_glColor4us argp)
 }
 
 // -- glColor3bv
-void glcolor3bv_uh(argp_glColor3bv argp)
+void glcolor3bv_uh(args_glColor3bv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor3bv)
+    int arg_size = sizeof(args_glColor3bv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -6498,10 +6498,10 @@ void glcolor3bv_uh(argp_glColor3bv argp)
 }
 
 // -- glColor3dv
-void glcolor3dv_uh(argp_glColor3dv argp)
+void glcolor3dv_uh(args_glColor3dv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor3dv)
+    int arg_size = sizeof(args_glColor3dv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -6545,10 +6545,10 @@ void glcolor3dv_uh(argp_glColor3dv argp)
 }
 
 // -- glColor3fv
-void glcolor3fv_uh(argp_glColor3fv argp)
+void glcolor3fv_uh(args_glColor3fv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor3fv)
+    int arg_size = sizeof(args_glColor3fv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -6592,10 +6592,10 @@ void glcolor3fv_uh(argp_glColor3fv argp)
 }
 
 // -- glColor3iv
-void glcolor3iv_uh(argp_glColor3iv argp)
+void glcolor3iv_uh(args_glColor3iv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor3iv)
+    int arg_size = sizeof(args_glColor3iv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -6639,10 +6639,10 @@ void glcolor3iv_uh(argp_glColor3iv argp)
 }
 
 // -- glColor3sv
-void glcolor3sv_uh(argp_glColor3sv argp)
+void glcolor3sv_uh(args_glColor3sv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor3sv)
+    int arg_size = sizeof(args_glColor3sv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -6686,10 +6686,10 @@ void glcolor3sv_uh(argp_glColor3sv argp)
 }
 
 // -- glColor3ubv
-void glcolor3ubv_uh(argp_glColor3ubv argp)
+void glcolor3ubv_uh(args_glColor3ubv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor3ubv)
+    int arg_size = sizeof(args_glColor3ubv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -6733,10 +6733,10 @@ void glcolor3ubv_uh(argp_glColor3ubv argp)
 }
 
 // -- glColor3uiv
-void glcolor3uiv_uh(argp_glColor3uiv argp)
+void glcolor3uiv_uh(args_glColor3uiv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor3uiv)
+    int arg_size = sizeof(args_glColor3uiv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -6780,10 +6780,10 @@ void glcolor3uiv_uh(argp_glColor3uiv argp)
 }
 
 // -- glColor3usv
-void glcolor3usv_uh(argp_glColor3usv argp)
+void glcolor3usv_uh(args_glColor3usv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor3usv)
+    int arg_size = sizeof(args_glColor3usv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -6827,10 +6827,10 @@ void glcolor3usv_uh(argp_glColor3usv argp)
 }
 
 // -- glColor4bv
-void glcolor4bv_uh(argp_glColor4bv argp)
+void glcolor4bv_uh(args_glColor4bv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor4bv)
+    int arg_size = sizeof(args_glColor4bv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -6874,10 +6874,10 @@ void glcolor4bv_uh(argp_glColor4bv argp)
 }
 
 // -- glColor4dv
-void glcolor4dv_uh(argp_glColor4dv argp)
+void glcolor4dv_uh(args_glColor4dv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor4dv)
+    int arg_size = sizeof(args_glColor4dv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -6921,10 +6921,10 @@ void glcolor4dv_uh(argp_glColor4dv argp)
 }
 
 // -- glColor4fv
-void glcolor4fv_uh(argp_glColor4fv argp)
+void glcolor4fv_uh(args_glColor4fv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor4fv)
+    int arg_size = sizeof(args_glColor4fv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -6968,10 +6968,10 @@ void glcolor4fv_uh(argp_glColor4fv argp)
 }
 
 // -- glColor4iv
-void glcolor4iv_uh(argp_glColor4iv argp)
+void glcolor4iv_uh(args_glColor4iv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor4iv)
+    int arg_size = sizeof(args_glColor4iv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -7015,10 +7015,10 @@ void glcolor4iv_uh(argp_glColor4iv argp)
 }
 
 // -- glColor4sv
-void glcolor4sv_uh(argp_glColor4sv argp)
+void glcolor4sv_uh(args_glColor4sv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor4sv)
+    int arg_size = sizeof(args_glColor4sv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -7062,10 +7062,10 @@ void glcolor4sv_uh(argp_glColor4sv argp)
 }
 
 // -- glColor4ubv
-void glcolor4ubv_uh(argp_glColor4ubv argp)
+void glcolor4ubv_uh(args_glColor4ubv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor4ubv)
+    int arg_size = sizeof(args_glColor4ubv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -7109,10 +7109,10 @@ void glcolor4ubv_uh(argp_glColor4ubv argp)
 }
 
 // -- glColor4uiv
-void glcolor4uiv_uh(argp_glColor4uiv argp)
+void glcolor4uiv_uh(args_glColor4uiv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor4uiv)
+    int arg_size = sizeof(args_glColor4uiv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -7156,10 +7156,10 @@ void glcolor4uiv_uh(argp_glColor4uiv argp)
 }
 
 // -- glColor4usv
-void glcolor4usv_uh(argp_glColor4usv argp)
+void glcolor4usv_uh(args_glColor4usv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColor4usv)
+    int arg_size = sizeof(args_glColor4usv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -7203,10 +7203,10 @@ void glcolor4usv_uh(argp_glColor4usv argp)
 }
 
 // -- glTexCoord1d
-void gltexcoord1d_uh(argp_glTexCoord1d argp)
+void gltexcoord1d_uh(args_glTexCoord1d argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord1d)
+    int arg_size = sizeof(args_glTexCoord1d)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -7250,10 +7250,10 @@ void gltexcoord1d_uh(argp_glTexCoord1d argp)
 }
 
 // -- glTexCoord1f
-void gltexcoord1f_uh(argp_glTexCoord1f argp)
+void gltexcoord1f_uh(args_glTexCoord1f argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord1f)
+    int arg_size = sizeof(args_glTexCoord1f)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -7297,10 +7297,10 @@ void gltexcoord1f_uh(argp_glTexCoord1f argp)
 }
 
 // -- glTexCoord1i
-void gltexcoord1i_uh(argp_glTexCoord1i argp)
+void gltexcoord1i_uh(args_glTexCoord1i argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord1i)
+    int arg_size = sizeof(args_glTexCoord1i)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -7344,10 +7344,10 @@ void gltexcoord1i_uh(argp_glTexCoord1i argp)
 }
 
 // -- glTexCoord1s
-void gltexcoord1s_uh(argp_glTexCoord1s argp)
+void gltexcoord1s_uh(args_glTexCoord1s argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord1s)
+    int arg_size = sizeof(args_glTexCoord1s)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -7391,10 +7391,10 @@ void gltexcoord1s_uh(argp_glTexCoord1s argp)
 }
 
 // -- glTexCoord2d
-void gltexcoord2d_uh(argp_glTexCoord2d argp)
+void gltexcoord2d_uh(args_glTexCoord2d argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord2d)
+    int arg_size = sizeof(args_glTexCoord2d)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -7438,10 +7438,10 @@ void gltexcoord2d_uh(argp_glTexCoord2d argp)
 }
 
 // -- glTexCoord2f
-void gltexcoord2f_uh(argp_glTexCoord2f argp)
+void gltexcoord2f_uh(args_glTexCoord2f argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord2f)
+    int arg_size = sizeof(args_glTexCoord2f)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -7485,10 +7485,10 @@ void gltexcoord2f_uh(argp_glTexCoord2f argp)
 }
 
 // -- glTexCoord2i
-void gltexcoord2i_uh(argp_glTexCoord2i argp)
+void gltexcoord2i_uh(args_glTexCoord2i argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord2i)
+    int arg_size = sizeof(args_glTexCoord2i)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -7532,10 +7532,10 @@ void gltexcoord2i_uh(argp_glTexCoord2i argp)
 }
 
 // -- glTexCoord2s
-void gltexcoord2s_uh(argp_glTexCoord2s argp)
+void gltexcoord2s_uh(args_glTexCoord2s argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord2s)
+    int arg_size = sizeof(args_glTexCoord2s)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -7579,10 +7579,10 @@ void gltexcoord2s_uh(argp_glTexCoord2s argp)
 }
 
 // -- glTexCoord3d
-void gltexcoord3d_uh(argp_glTexCoord3d argp)
+void gltexcoord3d_uh(args_glTexCoord3d argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord3d)
+    int arg_size = sizeof(args_glTexCoord3d)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -7626,10 +7626,10 @@ void gltexcoord3d_uh(argp_glTexCoord3d argp)
 }
 
 // -- glTexCoord3f
-void gltexcoord3f_uh(argp_glTexCoord3f argp)
+void gltexcoord3f_uh(args_glTexCoord3f argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord3f)
+    int arg_size = sizeof(args_glTexCoord3f)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -7673,10 +7673,10 @@ void gltexcoord3f_uh(argp_glTexCoord3f argp)
 }
 
 // -- glTexCoord3i
-void gltexcoord3i_uh(argp_glTexCoord3i argp)
+void gltexcoord3i_uh(args_glTexCoord3i argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord3i)
+    int arg_size = sizeof(args_glTexCoord3i)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -7720,10 +7720,10 @@ void gltexcoord3i_uh(argp_glTexCoord3i argp)
 }
 
 // -- glTexCoord3s
-void gltexcoord3s_uh(argp_glTexCoord3s argp)
+void gltexcoord3s_uh(args_glTexCoord3s argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord3s)
+    int arg_size = sizeof(args_glTexCoord3s)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -7767,10 +7767,10 @@ void gltexcoord3s_uh(argp_glTexCoord3s argp)
 }
 
 // -- glTexCoord4d
-void gltexcoord4d_uh(argp_glTexCoord4d argp)
+void gltexcoord4d_uh(args_glTexCoord4d argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord4d)
+    int arg_size = sizeof(args_glTexCoord4d)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -7814,10 +7814,10 @@ void gltexcoord4d_uh(argp_glTexCoord4d argp)
 }
 
 // -- glTexCoord4f
-void gltexcoord4f_uh(argp_glTexCoord4f argp)
+void gltexcoord4f_uh(args_glTexCoord4f argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord4f)
+    int arg_size = sizeof(args_glTexCoord4f)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -7861,10 +7861,10 @@ void gltexcoord4f_uh(argp_glTexCoord4f argp)
 }
 
 // -- glTexCoord4i
-void gltexcoord4i_uh(argp_glTexCoord4i argp)
+void gltexcoord4i_uh(args_glTexCoord4i argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord4i)
+    int arg_size = sizeof(args_glTexCoord4i)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -7908,10 +7908,10 @@ void gltexcoord4i_uh(argp_glTexCoord4i argp)
 }
 
 // -- glTexCoord4s
-void gltexcoord4s_uh(argp_glTexCoord4s argp)
+void gltexcoord4s_uh(args_glTexCoord4s argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord4s)
+    int arg_size = sizeof(args_glTexCoord4s)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -7955,10 +7955,10 @@ void gltexcoord4s_uh(argp_glTexCoord4s argp)
 }
 
 // -- glTexCoord1dv
-void gltexcoord1dv_uh(argp_glTexCoord1dv argp)
+void gltexcoord1dv_uh(args_glTexCoord1dv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord1dv)
+    int arg_size = sizeof(args_glTexCoord1dv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -8002,10 +8002,10 @@ void gltexcoord1dv_uh(argp_glTexCoord1dv argp)
 }
 
 // -- glTexCoord1fv
-void gltexcoord1fv_uh(argp_glTexCoord1fv argp)
+void gltexcoord1fv_uh(args_glTexCoord1fv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord1fv)
+    int arg_size = sizeof(args_glTexCoord1fv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -8049,10 +8049,10 @@ void gltexcoord1fv_uh(argp_glTexCoord1fv argp)
 }
 
 // -- glTexCoord1iv
-void gltexcoord1iv_uh(argp_glTexCoord1iv argp)
+void gltexcoord1iv_uh(args_glTexCoord1iv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord1iv)
+    int arg_size = sizeof(args_glTexCoord1iv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -8096,10 +8096,10 @@ void gltexcoord1iv_uh(argp_glTexCoord1iv argp)
 }
 
 // -- glTexCoord1sv
-void gltexcoord1sv_uh(argp_glTexCoord1sv argp)
+void gltexcoord1sv_uh(args_glTexCoord1sv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord1sv)
+    int arg_size = sizeof(args_glTexCoord1sv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -8143,10 +8143,10 @@ void gltexcoord1sv_uh(argp_glTexCoord1sv argp)
 }
 
 // -- glTexCoord2dv
-void gltexcoord2dv_uh(argp_glTexCoord2dv argp)
+void gltexcoord2dv_uh(args_glTexCoord2dv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord2dv)
+    int arg_size = sizeof(args_glTexCoord2dv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -8190,10 +8190,10 @@ void gltexcoord2dv_uh(argp_glTexCoord2dv argp)
 }
 
 // -- glTexCoord2fv
-void gltexcoord2fv_uh(argp_glTexCoord2fv argp)
+void gltexcoord2fv_uh(args_glTexCoord2fv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord2fv)
+    int arg_size = sizeof(args_glTexCoord2fv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -8237,10 +8237,10 @@ void gltexcoord2fv_uh(argp_glTexCoord2fv argp)
 }
 
 // -- glTexCoord2iv
-void gltexcoord2iv_uh(argp_glTexCoord2iv argp)
+void gltexcoord2iv_uh(args_glTexCoord2iv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord2iv)
+    int arg_size = sizeof(args_glTexCoord2iv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -8284,10 +8284,10 @@ void gltexcoord2iv_uh(argp_glTexCoord2iv argp)
 }
 
 // -- glTexCoord2sv
-void gltexcoord2sv_uh(argp_glTexCoord2sv argp)
+void gltexcoord2sv_uh(args_glTexCoord2sv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord2sv)
+    int arg_size = sizeof(args_glTexCoord2sv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -8331,10 +8331,10 @@ void gltexcoord2sv_uh(argp_glTexCoord2sv argp)
 }
 
 // -- glTexCoord3dv
-void gltexcoord3dv_uh(argp_glTexCoord3dv argp)
+void gltexcoord3dv_uh(args_glTexCoord3dv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord3dv)
+    int arg_size = sizeof(args_glTexCoord3dv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -8378,10 +8378,10 @@ void gltexcoord3dv_uh(argp_glTexCoord3dv argp)
 }
 
 // -- glTexCoord3fv
-void gltexcoord3fv_uh(argp_glTexCoord3fv argp)
+void gltexcoord3fv_uh(args_glTexCoord3fv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord3fv)
+    int arg_size = sizeof(args_glTexCoord3fv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -8425,10 +8425,10 @@ void gltexcoord3fv_uh(argp_glTexCoord3fv argp)
 }
 
 // -- glTexCoord3iv
-void gltexcoord3iv_uh(argp_glTexCoord3iv argp)
+void gltexcoord3iv_uh(args_glTexCoord3iv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord3iv)
+    int arg_size = sizeof(args_glTexCoord3iv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -8472,10 +8472,10 @@ void gltexcoord3iv_uh(argp_glTexCoord3iv argp)
 }
 
 // -- glTexCoord3sv
-void gltexcoord3sv_uh(argp_glTexCoord3sv argp)
+void gltexcoord3sv_uh(args_glTexCoord3sv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord3sv)
+    int arg_size = sizeof(args_glTexCoord3sv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -8519,10 +8519,10 @@ void gltexcoord3sv_uh(argp_glTexCoord3sv argp)
 }
 
 // -- glTexCoord4dv
-void gltexcoord4dv_uh(argp_glTexCoord4dv argp)
+void gltexcoord4dv_uh(args_glTexCoord4dv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord4dv)
+    int arg_size = sizeof(args_glTexCoord4dv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -8566,10 +8566,10 @@ void gltexcoord4dv_uh(argp_glTexCoord4dv argp)
 }
 
 // -- glTexCoord4fv
-void gltexcoord4fv_uh(argp_glTexCoord4fv argp)
+void gltexcoord4fv_uh(args_glTexCoord4fv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord4fv)
+    int arg_size = sizeof(args_glTexCoord4fv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -8613,10 +8613,10 @@ void gltexcoord4fv_uh(argp_glTexCoord4fv argp)
 }
 
 // -- glTexCoord4iv
-void gltexcoord4iv_uh(argp_glTexCoord4iv argp)
+void gltexcoord4iv_uh(args_glTexCoord4iv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord4iv)
+    int arg_size = sizeof(args_glTexCoord4iv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -8660,10 +8660,10 @@ void gltexcoord4iv_uh(argp_glTexCoord4iv argp)
 }
 
 // -- glTexCoord4sv
-void gltexcoord4sv_uh(argp_glTexCoord4sv argp)
+void gltexcoord4sv_uh(args_glTexCoord4sv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoord4sv)
+    int arg_size = sizeof(args_glTexCoord4sv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -8707,10 +8707,10 @@ void gltexcoord4sv_uh(argp_glTexCoord4sv argp)
 }
 
 // -- glRasterPos2d
-void glrasterpos2d_uh(argp_glRasterPos2d argp)
+void glrasterpos2d_uh(args_glRasterPos2d argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRasterPos2d)
+    int arg_size = sizeof(args_glRasterPos2d)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -8754,10 +8754,10 @@ void glrasterpos2d_uh(argp_glRasterPos2d argp)
 }
 
 // -- glRasterPos2f
-void glrasterpos2f_uh(argp_glRasterPos2f argp)
+void glrasterpos2f_uh(args_glRasterPos2f argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRasterPos2f)
+    int arg_size = sizeof(args_glRasterPos2f)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -8801,10 +8801,10 @@ void glrasterpos2f_uh(argp_glRasterPos2f argp)
 }
 
 // -- glRasterPos2i
-void glrasterpos2i_uh(argp_glRasterPos2i argp)
+void glrasterpos2i_uh(args_glRasterPos2i argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRasterPos2i)
+    int arg_size = sizeof(args_glRasterPos2i)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -8848,10 +8848,10 @@ void glrasterpos2i_uh(argp_glRasterPos2i argp)
 }
 
 // -- glRasterPos2s
-void glrasterpos2s_uh(argp_glRasterPos2s argp)
+void glrasterpos2s_uh(args_glRasterPos2s argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRasterPos2s)
+    int arg_size = sizeof(args_glRasterPos2s)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -8895,10 +8895,10 @@ void glrasterpos2s_uh(argp_glRasterPos2s argp)
 }
 
 // -- glRasterPos3d
-void glrasterpos3d_uh(argp_glRasterPos3d argp)
+void glrasterpos3d_uh(args_glRasterPos3d argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRasterPos3d)
+    int arg_size = sizeof(args_glRasterPos3d)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -8942,10 +8942,10 @@ void glrasterpos3d_uh(argp_glRasterPos3d argp)
 }
 
 // -- glRasterPos3f
-void glrasterpos3f_uh(argp_glRasterPos3f argp)
+void glrasterpos3f_uh(args_glRasterPos3f argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRasterPos3f)
+    int arg_size = sizeof(args_glRasterPos3f)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -8989,10 +8989,10 @@ void glrasterpos3f_uh(argp_glRasterPos3f argp)
 }
 
 // -- glRasterPos3i
-void glrasterpos3i_uh(argp_glRasterPos3i argp)
+void glrasterpos3i_uh(args_glRasterPos3i argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRasterPos3i)
+    int arg_size = sizeof(args_glRasterPos3i)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -9036,10 +9036,10 @@ void glrasterpos3i_uh(argp_glRasterPos3i argp)
 }
 
 // -- glRasterPos3s
-void glrasterpos3s_uh(argp_glRasterPos3s argp)
+void glrasterpos3s_uh(args_glRasterPos3s argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRasterPos3s)
+    int arg_size = sizeof(args_glRasterPos3s)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -9083,10 +9083,10 @@ void glrasterpos3s_uh(argp_glRasterPos3s argp)
 }
 
 // -- glRasterPos4d
-void glrasterpos4d_uh(argp_glRasterPos4d argp)
+void glrasterpos4d_uh(args_glRasterPos4d argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRasterPos4d)
+    int arg_size = sizeof(args_glRasterPos4d)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -9130,10 +9130,10 @@ void glrasterpos4d_uh(argp_glRasterPos4d argp)
 }
 
 // -- glRasterPos4f
-void glrasterpos4f_uh(argp_glRasterPos4f argp)
+void glrasterpos4f_uh(args_glRasterPos4f argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRasterPos4f)
+    int arg_size = sizeof(args_glRasterPos4f)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -9177,10 +9177,10 @@ void glrasterpos4f_uh(argp_glRasterPos4f argp)
 }
 
 // -- glRasterPos4i
-void glrasterpos4i_uh(argp_glRasterPos4i argp)
+void glrasterpos4i_uh(args_glRasterPos4i argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRasterPos4i)
+    int arg_size = sizeof(args_glRasterPos4i)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -9224,10 +9224,10 @@ void glrasterpos4i_uh(argp_glRasterPos4i argp)
 }
 
 // -- glRasterPos4s
-void glrasterpos4s_uh(argp_glRasterPos4s argp)
+void glrasterpos4s_uh(args_glRasterPos4s argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRasterPos4s)
+    int arg_size = sizeof(args_glRasterPos4s)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -9271,10 +9271,10 @@ void glrasterpos4s_uh(argp_glRasterPos4s argp)
 }
 
 // -- glRasterPos2dv
-void glrasterpos2dv_uh(argp_glRasterPos2dv argp)
+void glrasterpos2dv_uh(args_glRasterPos2dv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRasterPos2dv)
+    int arg_size = sizeof(args_glRasterPos2dv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -9318,10 +9318,10 @@ void glrasterpos2dv_uh(argp_glRasterPos2dv argp)
 }
 
 // -- glRasterPos2fv
-void glrasterpos2fv_uh(argp_glRasterPos2fv argp)
+void glrasterpos2fv_uh(args_glRasterPos2fv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRasterPos2fv)
+    int arg_size = sizeof(args_glRasterPos2fv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -9365,10 +9365,10 @@ void glrasterpos2fv_uh(argp_glRasterPos2fv argp)
 }
 
 // -- glRasterPos2iv
-void glrasterpos2iv_uh(argp_glRasterPos2iv argp)
+void glrasterpos2iv_uh(args_glRasterPos2iv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRasterPos2iv)
+    int arg_size = sizeof(args_glRasterPos2iv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -9412,10 +9412,10 @@ void glrasterpos2iv_uh(argp_glRasterPos2iv argp)
 }
 
 // -- glRasterPos2sv
-void glrasterpos2sv_uh(argp_glRasterPos2sv argp)
+void glrasterpos2sv_uh(args_glRasterPos2sv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRasterPos2sv)
+    int arg_size = sizeof(args_glRasterPos2sv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -9459,10 +9459,10 @@ void glrasterpos2sv_uh(argp_glRasterPos2sv argp)
 }
 
 // -- glRasterPos3dv
-void glrasterpos3dv_uh(argp_glRasterPos3dv argp)
+void glrasterpos3dv_uh(args_glRasterPos3dv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRasterPos3dv)
+    int arg_size = sizeof(args_glRasterPos3dv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -9506,10 +9506,10 @@ void glrasterpos3dv_uh(argp_glRasterPos3dv argp)
 }
 
 // -- glRasterPos3fv
-void glrasterpos3fv_uh(argp_glRasterPos3fv argp)
+void glrasterpos3fv_uh(args_glRasterPos3fv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRasterPos3fv)
+    int arg_size = sizeof(args_glRasterPos3fv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -9553,10 +9553,10 @@ void glrasterpos3fv_uh(argp_glRasterPos3fv argp)
 }
 
 // -- glRasterPos3iv
-void glrasterpos3iv_uh(argp_glRasterPos3iv argp)
+void glrasterpos3iv_uh(args_glRasterPos3iv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRasterPos3iv)
+    int arg_size = sizeof(args_glRasterPos3iv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -9600,10 +9600,10 @@ void glrasterpos3iv_uh(argp_glRasterPos3iv argp)
 }
 
 // -- glRasterPos3sv
-void glrasterpos3sv_uh(argp_glRasterPos3sv argp)
+void glrasterpos3sv_uh(args_glRasterPos3sv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRasterPos3sv)
+    int arg_size = sizeof(args_glRasterPos3sv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -9647,10 +9647,10 @@ void glrasterpos3sv_uh(argp_glRasterPos3sv argp)
 }
 
 // -- glRasterPos4dv
-void glrasterpos4dv_uh(argp_glRasterPos4dv argp)
+void glrasterpos4dv_uh(args_glRasterPos4dv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRasterPos4dv)
+    int arg_size = sizeof(args_glRasterPos4dv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -9694,10 +9694,10 @@ void glrasterpos4dv_uh(argp_glRasterPos4dv argp)
 }
 
 // -- glRasterPos4fv
-void glrasterpos4fv_uh(argp_glRasterPos4fv argp)
+void glrasterpos4fv_uh(args_glRasterPos4fv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRasterPos4fv)
+    int arg_size = sizeof(args_glRasterPos4fv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -9741,10 +9741,10 @@ void glrasterpos4fv_uh(argp_glRasterPos4fv argp)
 }
 
 // -- glRasterPos4iv
-void glrasterpos4iv_uh(argp_glRasterPos4iv argp)
+void glrasterpos4iv_uh(args_glRasterPos4iv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRasterPos4iv)
+    int arg_size = sizeof(args_glRasterPos4iv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -9788,10 +9788,10 @@ void glrasterpos4iv_uh(argp_glRasterPos4iv argp)
 }
 
 // -- glRasterPos4sv
-void glrasterpos4sv_uh(argp_glRasterPos4sv argp)
+void glrasterpos4sv_uh(args_glRasterPos4sv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRasterPos4sv)
+    int arg_size = sizeof(args_glRasterPos4sv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -9835,10 +9835,10 @@ void glrasterpos4sv_uh(argp_glRasterPos4sv argp)
 }
 
 // -- glRectd
-void glrectd_uh(argp_glRectd argp)
+void glrectd_uh(args_glRectd argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRectd)
+    int arg_size = sizeof(args_glRectd)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -9882,10 +9882,10 @@ void glrectd_uh(argp_glRectd argp)
 }
 
 // -- glRectf
-void glrectf_uh(argp_glRectf argp)
+void glrectf_uh(args_glRectf argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRectf)
+    int arg_size = sizeof(args_glRectf)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -9929,10 +9929,10 @@ void glrectf_uh(argp_glRectf argp)
 }
 
 // -- glRecti
-void glrecti_uh(argp_glRecti argp)
+void glrecti_uh(args_glRecti argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRecti)
+    int arg_size = sizeof(args_glRecti)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -9976,10 +9976,10 @@ void glrecti_uh(argp_glRecti argp)
 }
 
 // -- glRects
-void glrects_uh(argp_glRects argp)
+void glrects_uh(args_glRects argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRects)
+    int arg_size = sizeof(args_glRects)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -10023,10 +10023,10 @@ void glrects_uh(argp_glRects argp)
 }
 
 // -- glRectdv
-void glrectdv_uh(argp_glRectdv argp)
+void glrectdv_uh(args_glRectdv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRectdv)
+    int arg_size = sizeof(args_glRectdv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -10070,10 +10070,10 @@ void glrectdv_uh(argp_glRectdv argp)
 }
 
 // -- glRectfv
-void glrectfv_uh(argp_glRectfv argp)
+void glrectfv_uh(args_glRectfv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRectfv)
+    int arg_size = sizeof(args_glRectfv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -10117,10 +10117,10 @@ void glrectfv_uh(argp_glRectfv argp)
 }
 
 // -- glRectiv
-void glrectiv_uh(argp_glRectiv argp)
+void glrectiv_uh(args_glRectiv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRectiv)
+    int arg_size = sizeof(args_glRectiv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -10164,10 +10164,10 @@ void glrectiv_uh(argp_glRectiv argp)
 }
 
 // -- glRectsv
-void glrectsv_uh(argp_glRectsv argp)
+void glrectsv_uh(args_glRectsv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glRectsv)
+    int arg_size = sizeof(args_glRectsv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -10211,10 +10211,10 @@ void glrectsv_uh(argp_glRectsv argp)
 }
 
 // -- glVertexPointer
-void glvertexpointer_uh(argp_glVertexPointer argp)
+void glvertexpointer_uh(args_glVertexPointer argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glVertexPointer)
+    int arg_size = sizeof(args_glVertexPointer)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -10258,10 +10258,10 @@ void glvertexpointer_uh(argp_glVertexPointer argp)
 }
 
 // -- glNormalPointer
-void glnormalpointer_uh(argp_glNormalPointer argp)
+void glnormalpointer_uh(args_glNormalPointer argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glNormalPointer)
+    int arg_size = sizeof(args_glNormalPointer)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -10305,10 +10305,10 @@ void glnormalpointer_uh(argp_glNormalPointer argp)
 }
 
 // -- glColorPointer
-void glcolorpointer_uh(argp_glColorPointer argp)
+void glcolorpointer_uh(args_glColorPointer argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColorPointer)
+    int arg_size = sizeof(args_glColorPointer)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -10352,10 +10352,10 @@ void glcolorpointer_uh(argp_glColorPointer argp)
 }
 
 // -- glIndexPointer
-void glindexpointer_uh(argp_glIndexPointer argp)
+void glindexpointer_uh(args_glIndexPointer argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glIndexPointer)
+    int arg_size = sizeof(args_glIndexPointer)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -10399,10 +10399,10 @@ void glindexpointer_uh(argp_glIndexPointer argp)
 }
 
 // -- glTexCoordPointer
-void gltexcoordpointer_uh(argp_glTexCoordPointer argp)
+void gltexcoordpointer_uh(args_glTexCoordPointer argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexCoordPointer)
+    int arg_size = sizeof(args_glTexCoordPointer)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -10446,10 +10446,10 @@ void gltexcoordpointer_uh(argp_glTexCoordPointer argp)
 }
 
 // -- glEdgeFlagPointer
-void gledgeflagpointer_uh(argp_glEdgeFlagPointer argp)
+void gledgeflagpointer_uh(args_glEdgeFlagPointer argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glEdgeFlagPointer)
+    int arg_size = sizeof(args_glEdgeFlagPointer)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -10493,10 +10493,10 @@ void gledgeflagpointer_uh(argp_glEdgeFlagPointer argp)
 }
 
 // -- glGetPointerv
-void glgetpointerv_uh(argp_glGetPointerv argp)
+void glgetpointerv_uh(args_glGetPointerv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetPointerv)
+    int arg_size = sizeof(args_glGetPointerv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -10540,10 +10540,10 @@ void glgetpointerv_uh(argp_glGetPointerv argp)
 }
 
 // -- glArrayElement
-void glarrayelement_uh(argp_glArrayElement argp)
+void glarrayelement_uh(args_glArrayElement argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glArrayElement)
+    int arg_size = sizeof(args_glArrayElement)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -10587,10 +10587,10 @@ void glarrayelement_uh(argp_glArrayElement argp)
 }
 
 // -- glDrawArrays
-void gldrawarrays_uh(argp_glDrawArrays argp)
+void gldrawarrays_uh(args_glDrawArrays argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glDrawArrays)
+    int arg_size = sizeof(args_glDrawArrays)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -10634,10 +10634,10 @@ void gldrawarrays_uh(argp_glDrawArrays argp)
 }
 
 // -- glDrawElements
-void gldrawelements_uh(argp_glDrawElements argp)
+void gldrawelements_uh(args_glDrawElements argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glDrawElements)
+    int arg_size = sizeof(args_glDrawElements)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -10681,10 +10681,10 @@ void gldrawelements_uh(argp_glDrawElements argp)
 }
 
 // -- glInterleavedArrays
-void glinterleavedarrays_uh(argp_glInterleavedArrays argp)
+void glinterleavedarrays_uh(args_glInterleavedArrays argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glInterleavedArrays)
+    int arg_size = sizeof(args_glInterleavedArrays)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -10728,10 +10728,10 @@ void glinterleavedarrays_uh(argp_glInterleavedArrays argp)
 }
 
 // -- glShadeModel
-void glshademodel_uh(argp_glShadeModel argp)
+void glshademodel_uh(args_glShadeModel argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glShadeModel)
+    int arg_size = sizeof(args_glShadeModel)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -10775,10 +10775,10 @@ void glshademodel_uh(argp_glShadeModel argp)
 }
 
 // -- glLightf
-void gllightf_uh(argp_glLightf argp)
+void gllightf_uh(args_glLightf argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glLightf)
+    int arg_size = sizeof(args_glLightf)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -10822,10 +10822,10 @@ void gllightf_uh(argp_glLightf argp)
 }
 
 // -- glLighti
-void gllighti_uh(argp_glLighti argp)
+void gllighti_uh(args_glLighti argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glLighti)
+    int arg_size = sizeof(args_glLighti)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -10869,10 +10869,10 @@ void gllighti_uh(argp_glLighti argp)
 }
 
 // -- glLightfv
-void gllightfv_uh(argp_glLightfv argp)
+void gllightfv_uh(args_glLightfv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glLightfv)
+    int arg_size = sizeof(args_glLightfv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -10916,10 +10916,10 @@ void gllightfv_uh(argp_glLightfv argp)
 }
 
 // -- glLightiv
-void gllightiv_uh(argp_glLightiv argp)
+void gllightiv_uh(args_glLightiv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glLightiv)
+    int arg_size = sizeof(args_glLightiv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -10963,10 +10963,10 @@ void gllightiv_uh(argp_glLightiv argp)
 }
 
 // -- glGetLightfv
-void glgetlightfv_uh(argp_glGetLightfv argp)
+void glgetlightfv_uh(args_glGetLightfv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetLightfv)
+    int arg_size = sizeof(args_glGetLightfv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -11010,10 +11010,10 @@ void glgetlightfv_uh(argp_glGetLightfv argp)
 }
 
 // -- glGetLightiv
-void glgetlightiv_uh(argp_glGetLightiv argp)
+void glgetlightiv_uh(args_glGetLightiv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetLightiv)
+    int arg_size = sizeof(args_glGetLightiv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -11057,10 +11057,10 @@ void glgetlightiv_uh(argp_glGetLightiv argp)
 }
 
 // -- glLightModelf
-void gllightmodelf_uh(argp_glLightModelf argp)
+void gllightmodelf_uh(args_glLightModelf argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glLightModelf)
+    int arg_size = sizeof(args_glLightModelf)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -11104,10 +11104,10 @@ void gllightmodelf_uh(argp_glLightModelf argp)
 }
 
 // -- glLightModeli
-void gllightmodeli_uh(argp_glLightModeli argp)
+void gllightmodeli_uh(args_glLightModeli argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glLightModeli)
+    int arg_size = sizeof(args_glLightModeli)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -11151,10 +11151,10 @@ void gllightmodeli_uh(argp_glLightModeli argp)
 }
 
 // -- glLightModelfv
-void gllightmodelfv_uh(argp_glLightModelfv argp)
+void gllightmodelfv_uh(args_glLightModelfv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glLightModelfv)
+    int arg_size = sizeof(args_glLightModelfv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -11198,10 +11198,10 @@ void gllightmodelfv_uh(argp_glLightModelfv argp)
 }
 
 // -- glLightModeliv
-void gllightmodeliv_uh(argp_glLightModeliv argp)
+void gllightmodeliv_uh(args_glLightModeliv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glLightModeliv)
+    int arg_size = sizeof(args_glLightModeliv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -11245,10 +11245,10 @@ void gllightmodeliv_uh(argp_glLightModeliv argp)
 }
 
 // -- glMaterialf
-void glmaterialf_uh(argp_glMaterialf argp)
+void glmaterialf_uh(args_glMaterialf argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMaterialf)
+    int arg_size = sizeof(args_glMaterialf)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -11292,10 +11292,10 @@ void glmaterialf_uh(argp_glMaterialf argp)
 }
 
 // -- glMateriali
-void glmateriali_uh(argp_glMateriali argp)
+void glmateriali_uh(args_glMateriali argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMateriali)
+    int arg_size = sizeof(args_glMateriali)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -11339,10 +11339,10 @@ void glmateriali_uh(argp_glMateriali argp)
 }
 
 // -- glMaterialfv
-void glmaterialfv_uh(argp_glMaterialfv argp)
+void glmaterialfv_uh(args_glMaterialfv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMaterialfv)
+    int arg_size = sizeof(args_glMaterialfv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -11386,10 +11386,10 @@ void glmaterialfv_uh(argp_glMaterialfv argp)
 }
 
 // -- glMaterialiv
-void glmaterialiv_uh(argp_glMaterialiv argp)
+void glmaterialiv_uh(args_glMaterialiv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMaterialiv)
+    int arg_size = sizeof(args_glMaterialiv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -11433,10 +11433,10 @@ void glmaterialiv_uh(argp_glMaterialiv argp)
 }
 
 // -- glGetMaterialfv
-void glgetmaterialfv_uh(argp_glGetMaterialfv argp)
+void glgetmaterialfv_uh(args_glGetMaterialfv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetMaterialfv)
+    int arg_size = sizeof(args_glGetMaterialfv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -11480,10 +11480,10 @@ void glgetmaterialfv_uh(argp_glGetMaterialfv argp)
 }
 
 // -- glGetMaterialiv
-void glgetmaterialiv_uh(argp_glGetMaterialiv argp)
+void glgetmaterialiv_uh(args_glGetMaterialiv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetMaterialiv)
+    int arg_size = sizeof(args_glGetMaterialiv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -11527,10 +11527,10 @@ void glgetmaterialiv_uh(argp_glGetMaterialiv argp)
 }
 
 // -- glColorMaterial
-void glcolormaterial_uh(argp_glColorMaterial argp)
+void glcolormaterial_uh(args_glColorMaterial argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColorMaterial)
+    int arg_size = sizeof(args_glColorMaterial)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -11574,10 +11574,10 @@ void glcolormaterial_uh(argp_glColorMaterial argp)
 }
 
 // -- glPixelZoom
-void glpixelzoom_uh(argp_glPixelZoom argp)
+void glpixelzoom_uh(args_glPixelZoom argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glPixelZoom)
+    int arg_size = sizeof(args_glPixelZoom)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -11621,10 +11621,10 @@ void glpixelzoom_uh(argp_glPixelZoom argp)
 }
 
 // -- glPixelStoref
-void glpixelstoref_uh(argp_glPixelStoref argp)
+void glpixelstoref_uh(args_glPixelStoref argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glPixelStoref)
+    int arg_size = sizeof(args_glPixelStoref)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -11668,10 +11668,10 @@ void glpixelstoref_uh(argp_glPixelStoref argp)
 }
 
 // -- glPixelStorei
-void glpixelstorei_uh(argp_glPixelStorei argp)
+void glpixelstorei_uh(args_glPixelStorei argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glPixelStorei)
+    int arg_size = sizeof(args_glPixelStorei)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -11715,10 +11715,10 @@ void glpixelstorei_uh(argp_glPixelStorei argp)
 }
 
 // -- glPixelTransferf
-void glpixeltransferf_uh(argp_glPixelTransferf argp)
+void glpixeltransferf_uh(args_glPixelTransferf argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glPixelTransferf)
+    int arg_size = sizeof(args_glPixelTransferf)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -11762,10 +11762,10 @@ void glpixeltransferf_uh(argp_glPixelTransferf argp)
 }
 
 // -- glPixelTransferi
-void glpixeltransferi_uh(argp_glPixelTransferi argp)
+void glpixeltransferi_uh(args_glPixelTransferi argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glPixelTransferi)
+    int arg_size = sizeof(args_glPixelTransferi)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -11809,10 +11809,10 @@ void glpixeltransferi_uh(argp_glPixelTransferi argp)
 }
 
 // -- glPixelMapfv
-void glpixelmapfv_uh(argp_glPixelMapfv argp)
+void glpixelmapfv_uh(args_glPixelMapfv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glPixelMapfv)
+    int arg_size = sizeof(args_glPixelMapfv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -11856,10 +11856,10 @@ void glpixelmapfv_uh(argp_glPixelMapfv argp)
 }
 
 // -- glPixelMapuiv
-void glpixelmapuiv_uh(argp_glPixelMapuiv argp)
+void glpixelmapuiv_uh(args_glPixelMapuiv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glPixelMapuiv)
+    int arg_size = sizeof(args_glPixelMapuiv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -11903,10 +11903,10 @@ void glpixelmapuiv_uh(argp_glPixelMapuiv argp)
 }
 
 // -- glPixelMapusv
-void glpixelmapusv_uh(argp_glPixelMapusv argp)
+void glpixelmapusv_uh(args_glPixelMapusv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glPixelMapusv)
+    int arg_size = sizeof(args_glPixelMapusv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -11950,10 +11950,10 @@ void glpixelmapusv_uh(argp_glPixelMapusv argp)
 }
 
 // -- glGetPixelMapfv
-void glgetpixelmapfv_uh(argp_glGetPixelMapfv argp)
+void glgetpixelmapfv_uh(args_glGetPixelMapfv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetPixelMapfv)
+    int arg_size = sizeof(args_glGetPixelMapfv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -11997,10 +11997,10 @@ void glgetpixelmapfv_uh(argp_glGetPixelMapfv argp)
 }
 
 // -- glGetPixelMapuiv
-void glgetpixelmapuiv_uh(argp_glGetPixelMapuiv argp)
+void glgetpixelmapuiv_uh(args_glGetPixelMapuiv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetPixelMapuiv)
+    int arg_size = sizeof(args_glGetPixelMapuiv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -12044,10 +12044,10 @@ void glgetpixelmapuiv_uh(argp_glGetPixelMapuiv argp)
 }
 
 // -- glGetPixelMapusv
-void glgetpixelmapusv_uh(argp_glGetPixelMapusv argp)
+void glgetpixelmapusv_uh(args_glGetPixelMapusv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetPixelMapusv)
+    int arg_size = sizeof(args_glGetPixelMapusv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -12091,10 +12091,10 @@ void glgetpixelmapusv_uh(argp_glGetPixelMapusv argp)
 }
 
 // -- glBitmap
-void glbitmap_uh(argp_glBitmap argp)
+void glbitmap_uh(args_glBitmap argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glBitmap)
+    int arg_size = sizeof(args_glBitmap)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -12138,10 +12138,10 @@ void glbitmap_uh(argp_glBitmap argp)
 }
 
 // -- glReadPixels
-void glreadpixels_uh(argp_glReadPixels argp)
+void glreadpixels_uh(args_glReadPixels argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glReadPixels)
+    int arg_size = sizeof(args_glReadPixels)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -12185,10 +12185,10 @@ void glreadpixels_uh(argp_glReadPixels argp)
 }
 
 // -- glDrawPixels
-void gldrawpixels_uh(argp_glDrawPixels argp)
+void gldrawpixels_uh(args_glDrawPixels argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glDrawPixels)
+    int arg_size = sizeof(args_glDrawPixels)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -12232,10 +12232,10 @@ void gldrawpixels_uh(argp_glDrawPixels argp)
 }
 
 // -- glCopyPixels
-void glcopypixels_uh(argp_glCopyPixels argp)
+void glcopypixels_uh(args_glCopyPixels argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glCopyPixels)
+    int arg_size = sizeof(args_glCopyPixels)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -12279,10 +12279,10 @@ void glcopypixels_uh(argp_glCopyPixels argp)
 }
 
 // -- glStencilFunc
-void glstencilfunc_uh(argp_glStencilFunc argp)
+void glstencilfunc_uh(args_glStencilFunc argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glStencilFunc)
+    int arg_size = sizeof(args_glStencilFunc)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -12326,10 +12326,10 @@ void glstencilfunc_uh(argp_glStencilFunc argp)
 }
 
 // -- glStencilMask
-void glstencilmask_uh(argp_glStencilMask argp)
+void glstencilmask_uh(args_glStencilMask argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glStencilMask)
+    int arg_size = sizeof(args_glStencilMask)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -12373,10 +12373,10 @@ void glstencilmask_uh(argp_glStencilMask argp)
 }
 
 // -- glStencilOp
-void glstencilop_uh(argp_glStencilOp argp)
+void glstencilop_uh(args_glStencilOp argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glStencilOp)
+    int arg_size = sizeof(args_glStencilOp)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -12420,10 +12420,10 @@ void glstencilop_uh(argp_glStencilOp argp)
 }
 
 // -- glClearStencil
-void glclearstencil_uh(argp_glClearStencil argp)
+void glclearstencil_uh(args_glClearStencil argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glClearStencil)
+    int arg_size = sizeof(args_glClearStencil)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -12467,10 +12467,10 @@ void glclearstencil_uh(argp_glClearStencil argp)
 }
 
 // -- glTexGend
-void gltexgend_uh(argp_glTexGend argp)
+void gltexgend_uh(args_glTexGend argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexGend)
+    int arg_size = sizeof(args_glTexGend)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -12514,10 +12514,10 @@ void gltexgend_uh(argp_glTexGend argp)
 }
 
 // -- glTexGenf
-void gltexgenf_uh(argp_glTexGenf argp)
+void gltexgenf_uh(args_glTexGenf argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexGenf)
+    int arg_size = sizeof(args_glTexGenf)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -12561,10 +12561,10 @@ void gltexgenf_uh(argp_glTexGenf argp)
 }
 
 // -- glTexGeni
-void gltexgeni_uh(argp_glTexGeni argp)
+void gltexgeni_uh(args_glTexGeni argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexGeni)
+    int arg_size = sizeof(args_glTexGeni)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -12608,10 +12608,10 @@ void gltexgeni_uh(argp_glTexGeni argp)
 }
 
 // -- glTexGendv
-void gltexgendv_uh(argp_glTexGendv argp)
+void gltexgendv_uh(args_glTexGendv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexGendv)
+    int arg_size = sizeof(args_glTexGendv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -12655,10 +12655,10 @@ void gltexgendv_uh(argp_glTexGendv argp)
 }
 
 // -- glTexGenfv
-void gltexgenfv_uh(argp_glTexGenfv argp)
+void gltexgenfv_uh(args_glTexGenfv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexGenfv)
+    int arg_size = sizeof(args_glTexGenfv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -12702,10 +12702,10 @@ void gltexgenfv_uh(argp_glTexGenfv argp)
 }
 
 // -- glTexGeniv
-void gltexgeniv_uh(argp_glTexGeniv argp)
+void gltexgeniv_uh(args_glTexGeniv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexGeniv)
+    int arg_size = sizeof(args_glTexGeniv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -12749,10 +12749,10 @@ void gltexgeniv_uh(argp_glTexGeniv argp)
 }
 
 // -- glGetTexGendv
-void glgettexgendv_uh(argp_glGetTexGendv argp)
+void glgettexgendv_uh(args_glGetTexGendv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetTexGendv)
+    int arg_size = sizeof(args_glGetTexGendv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -12796,10 +12796,10 @@ void glgettexgendv_uh(argp_glGetTexGendv argp)
 }
 
 // -- glGetTexGenfv
-void glgettexgenfv_uh(argp_glGetTexGenfv argp)
+void glgettexgenfv_uh(args_glGetTexGenfv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetTexGenfv)
+    int arg_size = sizeof(args_glGetTexGenfv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -12843,10 +12843,10 @@ void glgettexgenfv_uh(argp_glGetTexGenfv argp)
 }
 
 // -- glGetTexGeniv
-void glgettexgeniv_uh(argp_glGetTexGeniv argp)
+void glgettexgeniv_uh(args_glGetTexGeniv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetTexGeniv)
+    int arg_size = sizeof(args_glGetTexGeniv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -12890,10 +12890,10 @@ void glgettexgeniv_uh(argp_glGetTexGeniv argp)
 }
 
 // -- glTexEnvf
-void gltexenvf_uh(argp_glTexEnvf argp)
+void gltexenvf_uh(args_glTexEnvf argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexEnvf)
+    int arg_size = sizeof(args_glTexEnvf)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -12937,10 +12937,10 @@ void gltexenvf_uh(argp_glTexEnvf argp)
 }
 
 // -- glTexEnvi
-void gltexenvi_uh(argp_glTexEnvi argp)
+void gltexenvi_uh(args_glTexEnvi argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexEnvi)
+    int arg_size = sizeof(args_glTexEnvi)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -12984,10 +12984,10 @@ void gltexenvi_uh(argp_glTexEnvi argp)
 }
 
 // -- glTexEnvfv
-void gltexenvfv_uh(argp_glTexEnvfv argp)
+void gltexenvfv_uh(args_glTexEnvfv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexEnvfv)
+    int arg_size = sizeof(args_glTexEnvfv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -13031,10 +13031,10 @@ void gltexenvfv_uh(argp_glTexEnvfv argp)
 }
 
 // -- glTexEnviv
-void gltexenviv_uh(argp_glTexEnviv argp)
+void gltexenviv_uh(args_glTexEnviv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexEnviv)
+    int arg_size = sizeof(args_glTexEnviv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -13078,10 +13078,10 @@ void gltexenviv_uh(argp_glTexEnviv argp)
 }
 
 // -- glGetTexEnvfv
-void glgettexenvfv_uh(argp_glGetTexEnvfv argp)
+void glgettexenvfv_uh(args_glGetTexEnvfv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetTexEnvfv)
+    int arg_size = sizeof(args_glGetTexEnvfv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -13125,10 +13125,10 @@ void glgettexenvfv_uh(argp_glGetTexEnvfv argp)
 }
 
 // -- glGetTexEnviv
-void glgettexenviv_uh(argp_glGetTexEnviv argp)
+void glgettexenviv_uh(args_glGetTexEnviv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetTexEnviv)
+    int arg_size = sizeof(args_glGetTexEnviv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -13172,10 +13172,10 @@ void glgettexenviv_uh(argp_glGetTexEnviv argp)
 }
 
 // -- glTexParameterf
-void gltexparameterf_uh(argp_glTexParameterf argp)
+void gltexparameterf_uh(args_glTexParameterf argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexParameterf)
+    int arg_size = sizeof(args_glTexParameterf)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -13219,10 +13219,10 @@ void gltexparameterf_uh(argp_glTexParameterf argp)
 }
 
 // -- glTexParameteri
-void gltexparameteri_uh(argp_glTexParameteri argp)
+void gltexparameteri_uh(args_glTexParameteri argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexParameteri)
+    int arg_size = sizeof(args_glTexParameteri)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -13266,10 +13266,10 @@ void gltexparameteri_uh(argp_glTexParameteri argp)
 }
 
 // -- glTexParameterfv
-void gltexparameterfv_uh(argp_glTexParameterfv argp)
+void gltexparameterfv_uh(args_glTexParameterfv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexParameterfv)
+    int arg_size = sizeof(args_glTexParameterfv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -13313,10 +13313,10 @@ void gltexparameterfv_uh(argp_glTexParameterfv argp)
 }
 
 // -- glTexParameteriv
-void gltexparameteriv_uh(argp_glTexParameteriv argp)
+void gltexparameteriv_uh(args_glTexParameteriv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexParameteriv)
+    int arg_size = sizeof(args_glTexParameteriv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -13360,10 +13360,10 @@ void gltexparameteriv_uh(argp_glTexParameteriv argp)
 }
 
 // -- glGetTexParameterfv
-void glgettexparameterfv_uh(argp_glGetTexParameterfv argp)
+void glgettexparameterfv_uh(args_glGetTexParameterfv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetTexParameterfv)
+    int arg_size = sizeof(args_glGetTexParameterfv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -13407,10 +13407,10 @@ void glgettexparameterfv_uh(argp_glGetTexParameterfv argp)
 }
 
 // -- glGetTexParameteriv
-void glgettexparameteriv_uh(argp_glGetTexParameteriv argp)
+void glgettexparameteriv_uh(args_glGetTexParameteriv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetTexParameteriv)
+    int arg_size = sizeof(args_glGetTexParameteriv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -13454,10 +13454,10 @@ void glgettexparameteriv_uh(argp_glGetTexParameteriv argp)
 }
 
 // -- glGetTexLevelParameterfv
-void glgettexlevelparameterfv_uh(argp_glGetTexLevelParameterfv argp)
+void glgettexlevelparameterfv_uh(args_glGetTexLevelParameterfv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetTexLevelParameterfv)
+    int arg_size = sizeof(args_glGetTexLevelParameterfv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -13501,10 +13501,10 @@ void glgettexlevelparameterfv_uh(argp_glGetTexLevelParameterfv argp)
 }
 
 // -- glGetTexLevelParameteriv
-void glgettexlevelparameteriv_uh(argp_glGetTexLevelParameteriv argp)
+void glgettexlevelparameteriv_uh(args_glGetTexLevelParameteriv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetTexLevelParameteriv)
+    int arg_size = sizeof(args_glGetTexLevelParameteriv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -13548,10 +13548,10 @@ void glgettexlevelparameteriv_uh(argp_glGetTexLevelParameteriv argp)
 }
 
 // -- glTexImage1D
-void glteximage1d_uh(argp_glTexImage1D argp)
+void glteximage1d_uh(args_glTexImage1D argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexImage1D)
+    int arg_size = sizeof(args_glTexImage1D)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -13595,10 +13595,10 @@ void glteximage1d_uh(argp_glTexImage1D argp)
 }
 
 // -- glTexImage2D
-void glteximage2d_uh(argp_glTexImage2D argp)
+void glteximage2d_uh(args_glTexImage2D argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexImage2D)
+    int arg_size = sizeof(args_glTexImage2D)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -13642,10 +13642,10 @@ void glteximage2d_uh(argp_glTexImage2D argp)
 }
 
 // -- glGetTexImage
-void glgetteximage_uh(argp_glGetTexImage argp)
+void glgetteximage_uh(args_glGetTexImage argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetTexImage)
+    int arg_size = sizeof(args_glGetTexImage)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -13689,10 +13689,10 @@ void glgetteximage_uh(argp_glGetTexImage argp)
 }
 
 // -- glGenTextures
-void glgentextures_uh(argp_glGenTextures argp)
+void glgentextures_uh(args_glGenTextures argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGenTextures)
+    int arg_size = sizeof(args_glGenTextures)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -13736,10 +13736,10 @@ void glgentextures_uh(argp_glGenTextures argp)
 }
 
 // -- glDeleteTextures
-void gldeletetextures_uh(argp_glDeleteTextures argp)
+void gldeletetextures_uh(args_glDeleteTextures argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glDeleteTextures)
+    int arg_size = sizeof(args_glDeleteTextures)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -13783,10 +13783,10 @@ void gldeletetextures_uh(argp_glDeleteTextures argp)
 }
 
 // -- glBindTexture
-void glbindtexture_uh(argp_glBindTexture argp)
+void glbindtexture_uh(args_glBindTexture argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glBindTexture)
+    int arg_size = sizeof(args_glBindTexture)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -13830,10 +13830,10 @@ void glbindtexture_uh(argp_glBindTexture argp)
 }
 
 // -- glPrioritizeTextures
-void glprioritizetextures_uh(argp_glPrioritizeTextures argp)
+void glprioritizetextures_uh(args_glPrioritizeTextures argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glPrioritizeTextures)
+    int arg_size = sizeof(args_glPrioritizeTextures)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -13877,10 +13877,10 @@ void glprioritizetextures_uh(argp_glPrioritizeTextures argp)
 }
 
 // -- glAreTexturesResident
-GLboolean glaretexturesresident_uh(argp_glAreTexturesResident argp)
+GLboolean glaretexturesresident_uh(args_glAreTexturesResident argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glAreTexturesResident)
+    int arg_size = sizeof(args_glAreTexturesResident)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -13927,10 +13927,10 @@ GLboolean glaretexturesresident_uh(argp_glAreTexturesResident argp)
 }
 
 // -- glIsTexture
-GLboolean glistexture_uh(argp_glIsTexture argp)
+GLboolean glistexture_uh(args_glIsTexture argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glIsTexture)
+    int arg_size = sizeof(args_glIsTexture)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -13977,10 +13977,10 @@ GLboolean glistexture_uh(argp_glIsTexture argp)
 }
 
 // -- glTexSubImage1D
-void gltexsubimage1d_uh(argp_glTexSubImage1D argp)
+void gltexsubimage1d_uh(args_glTexSubImage1D argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexSubImage1D)
+    int arg_size = sizeof(args_glTexSubImage1D)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -14024,10 +14024,10 @@ void gltexsubimage1d_uh(argp_glTexSubImage1D argp)
 }
 
 // -- glTexSubImage2D
-void gltexsubimage2d_uh(argp_glTexSubImage2D argp)
+void gltexsubimage2d_uh(args_glTexSubImage2D argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexSubImage2D)
+    int arg_size = sizeof(args_glTexSubImage2D)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -14071,10 +14071,10 @@ void gltexsubimage2d_uh(argp_glTexSubImage2D argp)
 }
 
 // -- glCopyTexImage1D
-void glcopyteximage1d_uh(argp_glCopyTexImage1D argp)
+void glcopyteximage1d_uh(args_glCopyTexImage1D argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glCopyTexImage1D)
+    int arg_size = sizeof(args_glCopyTexImage1D)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -14118,10 +14118,10 @@ void glcopyteximage1d_uh(argp_glCopyTexImage1D argp)
 }
 
 // -- glCopyTexImage2D
-void glcopyteximage2d_uh(argp_glCopyTexImage2D argp)
+void glcopyteximage2d_uh(args_glCopyTexImage2D argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glCopyTexImage2D)
+    int arg_size = sizeof(args_glCopyTexImage2D)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -14165,10 +14165,10 @@ void glcopyteximage2d_uh(argp_glCopyTexImage2D argp)
 }
 
 // -- glCopyTexSubImage1D
-void glcopytexsubimage1d_uh(argp_glCopyTexSubImage1D argp)
+void glcopytexsubimage1d_uh(args_glCopyTexSubImage1D argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glCopyTexSubImage1D)
+    int arg_size = sizeof(args_glCopyTexSubImage1D)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -14212,10 +14212,10 @@ void glcopytexsubimage1d_uh(argp_glCopyTexSubImage1D argp)
 }
 
 // -- glCopyTexSubImage2D
-void glcopytexsubimage2d_uh(argp_glCopyTexSubImage2D argp)
+void glcopytexsubimage2d_uh(args_glCopyTexSubImage2D argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glCopyTexSubImage2D)
+    int arg_size = sizeof(args_glCopyTexSubImage2D)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -14259,10 +14259,10 @@ void glcopytexsubimage2d_uh(argp_glCopyTexSubImage2D argp)
 }
 
 // -- glMap1d
-void glmap1d_uh(argp_glMap1d argp)
+void glmap1d_uh(args_glMap1d argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMap1d)
+    int arg_size = sizeof(args_glMap1d)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -14306,10 +14306,10 @@ void glmap1d_uh(argp_glMap1d argp)
 }
 
 // -- glMap1f
-void glmap1f_uh(argp_glMap1f argp)
+void glmap1f_uh(args_glMap1f argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMap1f)
+    int arg_size = sizeof(args_glMap1f)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -14353,10 +14353,10 @@ void glmap1f_uh(argp_glMap1f argp)
 }
 
 // -- glMap2d
-void glmap2d_uh(argp_glMap2d argp)
+void glmap2d_uh(args_glMap2d argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMap2d)
+    int arg_size = sizeof(args_glMap2d)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -14400,10 +14400,10 @@ void glmap2d_uh(argp_glMap2d argp)
 }
 
 // -- glMap2f
-void glmap2f_uh(argp_glMap2f argp)
+void glmap2f_uh(args_glMap2f argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMap2f)
+    int arg_size = sizeof(args_glMap2f)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -14447,10 +14447,10 @@ void glmap2f_uh(argp_glMap2f argp)
 }
 
 // -- glGetMapdv
-void glgetmapdv_uh(argp_glGetMapdv argp)
+void glgetmapdv_uh(args_glGetMapdv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetMapdv)
+    int arg_size = sizeof(args_glGetMapdv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -14494,10 +14494,10 @@ void glgetmapdv_uh(argp_glGetMapdv argp)
 }
 
 // -- glGetMapfv
-void glgetmapfv_uh(argp_glGetMapfv argp)
+void glgetmapfv_uh(args_glGetMapfv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetMapfv)
+    int arg_size = sizeof(args_glGetMapfv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -14541,10 +14541,10 @@ void glgetmapfv_uh(argp_glGetMapfv argp)
 }
 
 // -- glGetMapiv
-void glgetmapiv_uh(argp_glGetMapiv argp)
+void glgetmapiv_uh(args_glGetMapiv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetMapiv)
+    int arg_size = sizeof(args_glGetMapiv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -14588,10 +14588,10 @@ void glgetmapiv_uh(argp_glGetMapiv argp)
 }
 
 // -- glEvalCoord1d
-void glevalcoord1d_uh(argp_glEvalCoord1d argp)
+void glevalcoord1d_uh(args_glEvalCoord1d argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glEvalCoord1d)
+    int arg_size = sizeof(args_glEvalCoord1d)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -14635,10 +14635,10 @@ void glevalcoord1d_uh(argp_glEvalCoord1d argp)
 }
 
 // -- glEvalCoord1f
-void glevalcoord1f_uh(argp_glEvalCoord1f argp)
+void glevalcoord1f_uh(args_glEvalCoord1f argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glEvalCoord1f)
+    int arg_size = sizeof(args_glEvalCoord1f)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -14682,10 +14682,10 @@ void glevalcoord1f_uh(argp_glEvalCoord1f argp)
 }
 
 // -- glEvalCoord1dv
-void glevalcoord1dv_uh(argp_glEvalCoord1dv argp)
+void glevalcoord1dv_uh(args_glEvalCoord1dv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glEvalCoord1dv)
+    int arg_size = sizeof(args_glEvalCoord1dv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -14729,10 +14729,10 @@ void glevalcoord1dv_uh(argp_glEvalCoord1dv argp)
 }
 
 // -- glEvalCoord1fv
-void glevalcoord1fv_uh(argp_glEvalCoord1fv argp)
+void glevalcoord1fv_uh(args_glEvalCoord1fv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glEvalCoord1fv)
+    int arg_size = sizeof(args_glEvalCoord1fv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -14776,10 +14776,10 @@ void glevalcoord1fv_uh(argp_glEvalCoord1fv argp)
 }
 
 // -- glEvalCoord2d
-void glevalcoord2d_uh(argp_glEvalCoord2d argp)
+void glevalcoord2d_uh(args_glEvalCoord2d argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glEvalCoord2d)
+    int arg_size = sizeof(args_glEvalCoord2d)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -14823,10 +14823,10 @@ void glevalcoord2d_uh(argp_glEvalCoord2d argp)
 }
 
 // -- glEvalCoord2f
-void glevalcoord2f_uh(argp_glEvalCoord2f argp)
+void glevalcoord2f_uh(args_glEvalCoord2f argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glEvalCoord2f)
+    int arg_size = sizeof(args_glEvalCoord2f)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -14870,10 +14870,10 @@ void glevalcoord2f_uh(argp_glEvalCoord2f argp)
 }
 
 // -- glEvalCoord2dv
-void glevalcoord2dv_uh(argp_glEvalCoord2dv argp)
+void glevalcoord2dv_uh(args_glEvalCoord2dv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glEvalCoord2dv)
+    int arg_size = sizeof(args_glEvalCoord2dv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -14917,10 +14917,10 @@ void glevalcoord2dv_uh(argp_glEvalCoord2dv argp)
 }
 
 // -- glEvalCoord2fv
-void glevalcoord2fv_uh(argp_glEvalCoord2fv argp)
+void glevalcoord2fv_uh(args_glEvalCoord2fv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glEvalCoord2fv)
+    int arg_size = sizeof(args_glEvalCoord2fv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -14964,10 +14964,10 @@ void glevalcoord2fv_uh(argp_glEvalCoord2fv argp)
 }
 
 // -- glMapGrid1d
-void glmapgrid1d_uh(argp_glMapGrid1d argp)
+void glmapgrid1d_uh(args_glMapGrid1d argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMapGrid1d)
+    int arg_size = sizeof(args_glMapGrid1d)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -15011,10 +15011,10 @@ void glmapgrid1d_uh(argp_glMapGrid1d argp)
 }
 
 // -- glMapGrid1f
-void glmapgrid1f_uh(argp_glMapGrid1f argp)
+void glmapgrid1f_uh(args_glMapGrid1f argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMapGrid1f)
+    int arg_size = sizeof(args_glMapGrid1f)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -15058,10 +15058,10 @@ void glmapgrid1f_uh(argp_glMapGrid1f argp)
 }
 
 // -- glMapGrid2d
-void glmapgrid2d_uh(argp_glMapGrid2d argp)
+void glmapgrid2d_uh(args_glMapGrid2d argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMapGrid2d)
+    int arg_size = sizeof(args_glMapGrid2d)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -15105,10 +15105,10 @@ void glmapgrid2d_uh(argp_glMapGrid2d argp)
 }
 
 // -- glMapGrid2f
-void glmapgrid2f_uh(argp_glMapGrid2f argp)
+void glmapgrid2f_uh(args_glMapGrid2f argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMapGrid2f)
+    int arg_size = sizeof(args_glMapGrid2f)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -15152,10 +15152,10 @@ void glmapgrid2f_uh(argp_glMapGrid2f argp)
 }
 
 // -- glEvalPoint1
-void glevalpoint1_uh(argp_glEvalPoint1 argp)
+void glevalpoint1_uh(args_glEvalPoint1 argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glEvalPoint1)
+    int arg_size = sizeof(args_glEvalPoint1)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -15199,10 +15199,10 @@ void glevalpoint1_uh(argp_glEvalPoint1 argp)
 }
 
 // -- glEvalPoint2
-void glevalpoint2_uh(argp_glEvalPoint2 argp)
+void glevalpoint2_uh(args_glEvalPoint2 argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glEvalPoint2)
+    int arg_size = sizeof(args_glEvalPoint2)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -15246,10 +15246,10 @@ void glevalpoint2_uh(argp_glEvalPoint2 argp)
 }
 
 // -- glEvalMesh1
-void glevalmesh1_uh(argp_glEvalMesh1 argp)
+void glevalmesh1_uh(args_glEvalMesh1 argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glEvalMesh1)
+    int arg_size = sizeof(args_glEvalMesh1)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -15293,10 +15293,10 @@ void glevalmesh1_uh(argp_glEvalMesh1 argp)
 }
 
 // -- glEvalMesh2
-void glevalmesh2_uh(argp_glEvalMesh2 argp)
+void glevalmesh2_uh(args_glEvalMesh2 argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glEvalMesh2)
+    int arg_size = sizeof(args_glEvalMesh2)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -15340,10 +15340,10 @@ void glevalmesh2_uh(argp_glEvalMesh2 argp)
 }
 
 // -- glFogf
-void glfogf_uh(argp_glFogf argp)
+void glfogf_uh(args_glFogf argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glFogf)
+    int arg_size = sizeof(args_glFogf)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -15387,10 +15387,10 @@ void glfogf_uh(argp_glFogf argp)
 }
 
 // -- glFogi
-void glfogi_uh(argp_glFogi argp)
+void glfogi_uh(args_glFogi argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glFogi)
+    int arg_size = sizeof(args_glFogi)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -15434,10 +15434,10 @@ void glfogi_uh(argp_glFogi argp)
 }
 
 // -- glFogfv
-void glfogfv_uh(argp_glFogfv argp)
+void glfogfv_uh(args_glFogfv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glFogfv)
+    int arg_size = sizeof(args_glFogfv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -15481,10 +15481,10 @@ void glfogfv_uh(argp_glFogfv argp)
 }
 
 // -- glFogiv
-void glfogiv_uh(argp_glFogiv argp)
+void glfogiv_uh(args_glFogiv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glFogiv)
+    int arg_size = sizeof(args_glFogiv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -15528,10 +15528,10 @@ void glfogiv_uh(argp_glFogiv argp)
 }
 
 // -- glFeedbackBuffer
-void glfeedbackbuffer_uh(argp_glFeedbackBuffer argp)
+void glfeedbackbuffer_uh(args_glFeedbackBuffer argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glFeedbackBuffer)
+    int arg_size = sizeof(args_glFeedbackBuffer)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -15575,10 +15575,10 @@ void glfeedbackbuffer_uh(argp_glFeedbackBuffer argp)
 }
 
 // -- glPassThrough
-void glpassthrough_uh(argp_glPassThrough argp)
+void glpassthrough_uh(args_glPassThrough argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glPassThrough)
+    int arg_size = sizeof(args_glPassThrough)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -15622,10 +15622,10 @@ void glpassthrough_uh(argp_glPassThrough argp)
 }
 
 // -- glSelectBuffer
-void glselectbuffer_uh(argp_glSelectBuffer argp)
+void glselectbuffer_uh(args_glSelectBuffer argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glSelectBuffer)
+    int arg_size = sizeof(args_glSelectBuffer)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -15714,10 +15714,10 @@ void glinitnames_uh()
 }
 
 // -- glLoadName
-void glloadname_uh(argp_glLoadName argp)
+void glloadname_uh(args_glLoadName argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glLoadName)
+    int arg_size = sizeof(args_glLoadName)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -15761,10 +15761,10 @@ void glloadname_uh(argp_glLoadName argp)
 }
 
 // -- glPushName
-void glpushname_uh(argp_glPushName argp)
+void glpushname_uh(args_glPushName argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glPushName)
+    int arg_size = sizeof(args_glPushName)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -15853,10 +15853,10 @@ void glpopname_uh()
 }
 
 // -- glDrawRangeElements
-void gldrawrangeelements_uh(argp_glDrawRangeElements argp)
+void gldrawrangeelements_uh(args_glDrawRangeElements argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glDrawRangeElements)
+    int arg_size = sizeof(args_glDrawRangeElements)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -15900,10 +15900,10 @@ void gldrawrangeelements_uh(argp_glDrawRangeElements argp)
 }
 
 // -- glTexImage3D
-void glteximage3d_uh(argp_glTexImage3D argp)
+void glteximage3d_uh(args_glTexImage3D argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexImage3D)
+    int arg_size = sizeof(args_glTexImage3D)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -15947,10 +15947,10 @@ void glteximage3d_uh(argp_glTexImage3D argp)
 }
 
 // -- glTexSubImage3D
-void gltexsubimage3d_uh(argp_glTexSubImage3D argp)
+void gltexsubimage3d_uh(args_glTexSubImage3D argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glTexSubImage3D)
+    int arg_size = sizeof(args_glTexSubImage3D)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -15994,10 +15994,10 @@ void gltexsubimage3d_uh(argp_glTexSubImage3D argp)
 }
 
 // -- glCopyTexSubImage3D
-void glcopytexsubimage3d_uh(argp_glCopyTexSubImage3D argp)
+void glcopytexsubimage3d_uh(args_glCopyTexSubImage3D argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glCopyTexSubImage3D)
+    int arg_size = sizeof(args_glCopyTexSubImage3D)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -16041,10 +16041,10 @@ void glcopytexsubimage3d_uh(argp_glCopyTexSubImage3D argp)
 }
 
 // -- glColorTable
-void glcolortable_uh(argp_glColorTable argp)
+void glcolortable_uh(args_glColorTable argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColorTable)
+    int arg_size = sizeof(args_glColorTable)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -16088,10 +16088,10 @@ void glcolortable_uh(argp_glColorTable argp)
 }
 
 // -- glColorSubTable
-void glcolorsubtable_uh(argp_glColorSubTable argp)
+void glcolorsubtable_uh(args_glColorSubTable argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColorSubTable)
+    int arg_size = sizeof(args_glColorSubTable)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -16135,10 +16135,10 @@ void glcolorsubtable_uh(argp_glColorSubTable argp)
 }
 
 // -- glColorTableParameteriv
-void glcolortableparameteriv_uh(argp_glColorTableParameteriv argp)
+void glcolortableparameteriv_uh(args_glColorTableParameteriv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColorTableParameteriv)
+    int arg_size = sizeof(args_glColorTableParameteriv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -16182,10 +16182,10 @@ void glcolortableparameteriv_uh(argp_glColorTableParameteriv argp)
 }
 
 // -- glColorTableParameterfv
-void glcolortableparameterfv_uh(argp_glColorTableParameterfv argp)
+void glcolortableparameterfv_uh(args_glColorTableParameterfv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glColorTableParameterfv)
+    int arg_size = sizeof(args_glColorTableParameterfv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -16229,10 +16229,10 @@ void glcolortableparameterfv_uh(argp_glColorTableParameterfv argp)
 }
 
 // -- glCopyColorSubTable
-void glcopycolorsubtable_uh(argp_glCopyColorSubTable argp)
+void glcopycolorsubtable_uh(args_glCopyColorSubTable argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glCopyColorSubTable)
+    int arg_size = sizeof(args_glCopyColorSubTable)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -16276,10 +16276,10 @@ void glcopycolorsubtable_uh(argp_glCopyColorSubTable argp)
 }
 
 // -- glCopyColorTable
-void glcopycolortable_uh(argp_glCopyColorTable argp)
+void glcopycolortable_uh(args_glCopyColorTable argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glCopyColorTable)
+    int arg_size = sizeof(args_glCopyColorTable)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -16323,10 +16323,10 @@ void glcopycolortable_uh(argp_glCopyColorTable argp)
 }
 
 // -- glGetColorTable
-void glgetcolortable_uh(argp_glGetColorTable argp)
+void glgetcolortable_uh(args_glGetColorTable argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetColorTable)
+    int arg_size = sizeof(args_glGetColorTable)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -16370,10 +16370,10 @@ void glgetcolortable_uh(argp_glGetColorTable argp)
 }
 
 // -- glGetColorTableParameterfv
-void glgetcolortableparameterfv_uh(argp_glGetColorTableParameterfv argp)
+void glgetcolortableparameterfv_uh(args_glGetColorTableParameterfv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetColorTableParameterfv)
+    int arg_size = sizeof(args_glGetColorTableParameterfv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -16417,10 +16417,10 @@ void glgetcolortableparameterfv_uh(argp_glGetColorTableParameterfv argp)
 }
 
 // -- glGetColorTableParameteriv
-void glgetcolortableparameteriv_uh(argp_glGetColorTableParameteriv argp)
+void glgetcolortableparameteriv_uh(args_glGetColorTableParameteriv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetColorTableParameteriv)
+    int arg_size = sizeof(args_glGetColorTableParameteriv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -16464,10 +16464,10 @@ void glgetcolortableparameteriv_uh(argp_glGetColorTableParameteriv argp)
 }
 
 // -- glBlendEquation
-void glblendequation_uh(argp_glBlendEquation argp)
+void glblendequation_uh(args_glBlendEquation argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glBlendEquation)
+    int arg_size = sizeof(args_glBlendEquation)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -16511,10 +16511,10 @@ void glblendequation_uh(argp_glBlendEquation argp)
 }
 
 // -- glBlendColor
-void glblendcolor_uh(argp_glBlendColor argp)
+void glblendcolor_uh(args_glBlendColor argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glBlendColor)
+    int arg_size = sizeof(args_glBlendColor)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -16558,10 +16558,10 @@ void glblendcolor_uh(argp_glBlendColor argp)
 }
 
 // -- glHistogram
-void glhistogram_uh(argp_glHistogram argp)
+void glhistogram_uh(args_glHistogram argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glHistogram)
+    int arg_size = sizeof(args_glHistogram)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -16605,10 +16605,10 @@ void glhistogram_uh(argp_glHistogram argp)
 }
 
 // -- glResetHistogram
-void glresethistogram_uh(argp_glResetHistogram argp)
+void glresethistogram_uh(args_glResetHistogram argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glResetHistogram)
+    int arg_size = sizeof(args_glResetHistogram)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -16652,10 +16652,10 @@ void glresethistogram_uh(argp_glResetHistogram argp)
 }
 
 // -- glGetHistogram
-void glgethistogram_uh(argp_glGetHistogram argp)
+void glgethistogram_uh(args_glGetHistogram argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetHistogram)
+    int arg_size = sizeof(args_glGetHistogram)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -16699,10 +16699,10 @@ void glgethistogram_uh(argp_glGetHistogram argp)
 }
 
 // -- glGetHistogramParameterfv
-void glgethistogramparameterfv_uh(argp_glGetHistogramParameterfv argp)
+void glgethistogramparameterfv_uh(args_glGetHistogramParameterfv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetHistogramParameterfv)
+    int arg_size = sizeof(args_glGetHistogramParameterfv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -16746,10 +16746,10 @@ void glgethistogramparameterfv_uh(argp_glGetHistogramParameterfv argp)
 }
 
 // -- glGetHistogramParameteriv
-void glgethistogramparameteriv_uh(argp_glGetHistogramParameteriv argp)
+void glgethistogramparameteriv_uh(args_glGetHistogramParameteriv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetHistogramParameteriv)
+    int arg_size = sizeof(args_glGetHistogramParameteriv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -16793,10 +16793,10 @@ void glgethistogramparameteriv_uh(argp_glGetHistogramParameteriv argp)
 }
 
 // -- glMinmax
-void glminmax_uh(argp_glMinmax argp)
+void glminmax_uh(args_glMinmax argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMinmax)
+    int arg_size = sizeof(args_glMinmax)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -16840,10 +16840,10 @@ void glminmax_uh(argp_glMinmax argp)
 }
 
 // -- glResetMinmax
-void glresetminmax_uh(argp_glResetMinmax argp)
+void glresetminmax_uh(args_glResetMinmax argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glResetMinmax)
+    int arg_size = sizeof(args_glResetMinmax)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -16887,10 +16887,10 @@ void glresetminmax_uh(argp_glResetMinmax argp)
 }
 
 // -- glGetMinmax
-void glgetminmax_uh(argp_glGetMinmax argp)
+void glgetminmax_uh(args_glGetMinmax argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetMinmax)
+    int arg_size = sizeof(args_glGetMinmax)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -16934,10 +16934,10 @@ void glgetminmax_uh(argp_glGetMinmax argp)
 }
 
 // -- glGetMinmaxParameterfv
-void glgetminmaxparameterfv_uh(argp_glGetMinmaxParameterfv argp)
+void glgetminmaxparameterfv_uh(args_glGetMinmaxParameterfv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetMinmaxParameterfv)
+    int arg_size = sizeof(args_glGetMinmaxParameterfv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -16981,10 +16981,10 @@ void glgetminmaxparameterfv_uh(argp_glGetMinmaxParameterfv argp)
 }
 
 // -- glGetMinmaxParameteriv
-void glgetminmaxparameteriv_uh(argp_glGetMinmaxParameteriv argp)
+void glgetminmaxparameteriv_uh(args_glGetMinmaxParameteriv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetMinmaxParameteriv)
+    int arg_size = sizeof(args_glGetMinmaxParameteriv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -17028,10 +17028,10 @@ void glgetminmaxparameteriv_uh(argp_glGetMinmaxParameteriv argp)
 }
 
 // -- glConvolutionFilter1D
-void glconvolutionfilter1d_uh(argp_glConvolutionFilter1D argp)
+void glconvolutionfilter1d_uh(args_glConvolutionFilter1D argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glConvolutionFilter1D)
+    int arg_size = sizeof(args_glConvolutionFilter1D)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -17075,10 +17075,10 @@ void glconvolutionfilter1d_uh(argp_glConvolutionFilter1D argp)
 }
 
 // -- glConvolutionFilter2D
-void glconvolutionfilter2d_uh(argp_glConvolutionFilter2D argp)
+void glconvolutionfilter2d_uh(args_glConvolutionFilter2D argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glConvolutionFilter2D)
+    int arg_size = sizeof(args_glConvolutionFilter2D)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -17122,10 +17122,10 @@ void glconvolutionfilter2d_uh(argp_glConvolutionFilter2D argp)
 }
 
 // -- glConvolutionParameterf
-void glconvolutionparameterf_uh(argp_glConvolutionParameterf argp)
+void glconvolutionparameterf_uh(args_glConvolutionParameterf argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glConvolutionParameterf)
+    int arg_size = sizeof(args_glConvolutionParameterf)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -17169,10 +17169,10 @@ void glconvolutionparameterf_uh(argp_glConvolutionParameterf argp)
 }
 
 // -- glConvolutionParameterfv
-void glconvolutionparameterfv_uh(argp_glConvolutionParameterfv argp)
+void glconvolutionparameterfv_uh(args_glConvolutionParameterfv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glConvolutionParameterfv)
+    int arg_size = sizeof(args_glConvolutionParameterfv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -17216,10 +17216,10 @@ void glconvolutionparameterfv_uh(argp_glConvolutionParameterfv argp)
 }
 
 // -- glConvolutionParameteri
-void glconvolutionparameteri_uh(argp_glConvolutionParameteri argp)
+void glconvolutionparameteri_uh(args_glConvolutionParameteri argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glConvolutionParameteri)
+    int arg_size = sizeof(args_glConvolutionParameteri)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -17263,10 +17263,10 @@ void glconvolutionparameteri_uh(argp_glConvolutionParameteri argp)
 }
 
 // -- glConvolutionParameteriv
-void glconvolutionparameteriv_uh(argp_glConvolutionParameteriv argp)
+void glconvolutionparameteriv_uh(args_glConvolutionParameteriv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glConvolutionParameteriv)
+    int arg_size = sizeof(args_glConvolutionParameteriv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -17310,10 +17310,10 @@ void glconvolutionparameteriv_uh(argp_glConvolutionParameteriv argp)
 }
 
 // -- glCopyConvolutionFilter1D
-void glcopyconvolutionfilter1d_uh(argp_glCopyConvolutionFilter1D argp)
+void glcopyconvolutionfilter1d_uh(args_glCopyConvolutionFilter1D argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glCopyConvolutionFilter1D)
+    int arg_size = sizeof(args_glCopyConvolutionFilter1D)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -17357,10 +17357,10 @@ void glcopyconvolutionfilter1d_uh(argp_glCopyConvolutionFilter1D argp)
 }
 
 // -- glCopyConvolutionFilter2D
-void glcopyconvolutionfilter2d_uh(argp_glCopyConvolutionFilter2D argp)
+void glcopyconvolutionfilter2d_uh(args_glCopyConvolutionFilter2D argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glCopyConvolutionFilter2D)
+    int arg_size = sizeof(args_glCopyConvolutionFilter2D)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -17404,10 +17404,10 @@ void glcopyconvolutionfilter2d_uh(argp_glCopyConvolutionFilter2D argp)
 }
 
 // -- glGetConvolutionFilter
-void glgetconvolutionfilter_uh(argp_glGetConvolutionFilter argp)
+void glgetconvolutionfilter_uh(args_glGetConvolutionFilter argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetConvolutionFilter)
+    int arg_size = sizeof(args_glGetConvolutionFilter)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -17451,10 +17451,10 @@ void glgetconvolutionfilter_uh(argp_glGetConvolutionFilter argp)
 }
 
 // -- glGetConvolutionParameterfv
-void glgetconvolutionparameterfv_uh(argp_glGetConvolutionParameterfv argp)
+void glgetconvolutionparameterfv_uh(args_glGetConvolutionParameterfv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetConvolutionParameterfv)
+    int arg_size = sizeof(args_glGetConvolutionParameterfv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -17498,10 +17498,10 @@ void glgetconvolutionparameterfv_uh(argp_glGetConvolutionParameterfv argp)
 }
 
 // -- glGetConvolutionParameteriv
-void glgetconvolutionparameteriv_uh(argp_glGetConvolutionParameteriv argp)
+void glgetconvolutionparameteriv_uh(args_glGetConvolutionParameteriv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetConvolutionParameteriv)
+    int arg_size = sizeof(args_glGetConvolutionParameteriv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -17545,10 +17545,10 @@ void glgetconvolutionparameteriv_uh(argp_glGetConvolutionParameteriv argp)
 }
 
 // -- glSeparableFilter2D
-void glseparablefilter2d_uh(argp_glSeparableFilter2D argp)
+void glseparablefilter2d_uh(args_glSeparableFilter2D argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glSeparableFilter2D)
+    int arg_size = sizeof(args_glSeparableFilter2D)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -17592,10 +17592,10 @@ void glseparablefilter2d_uh(argp_glSeparableFilter2D argp)
 }
 
 // -- glGetSeparableFilter
-void glgetseparablefilter_uh(argp_glGetSeparableFilter argp)
+void glgetseparablefilter_uh(args_glGetSeparableFilter argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetSeparableFilter)
+    int arg_size = sizeof(args_glGetSeparableFilter)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -17639,10 +17639,10 @@ void glgetseparablefilter_uh(argp_glGetSeparableFilter argp)
 }
 
 // -- glActiveTexture
-void glactivetexture_uh(argp_glActiveTexture argp)
+void glactivetexture_uh(args_glActiveTexture argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glActiveTexture)
+    int arg_size = sizeof(args_glActiveTexture)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -17686,10 +17686,10 @@ void glactivetexture_uh(argp_glActiveTexture argp)
 }
 
 // -- glClientActiveTexture
-void glclientactivetexture_uh(argp_glClientActiveTexture argp)
+void glclientactivetexture_uh(args_glClientActiveTexture argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glClientActiveTexture)
+    int arg_size = sizeof(args_glClientActiveTexture)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -17733,10 +17733,10 @@ void glclientactivetexture_uh(argp_glClientActiveTexture argp)
 }
 
 // -- glCompressedTexImage1D
-void glcompressedteximage1d_uh(argp_glCompressedTexImage1D argp)
+void glcompressedteximage1d_uh(args_glCompressedTexImage1D argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glCompressedTexImage1D)
+    int arg_size = sizeof(args_glCompressedTexImage1D)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -17780,10 +17780,10 @@ void glcompressedteximage1d_uh(argp_glCompressedTexImage1D argp)
 }
 
 // -- glCompressedTexImage2D
-void glcompressedteximage2d_uh(argp_glCompressedTexImage2D argp)
+void glcompressedteximage2d_uh(args_glCompressedTexImage2D argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glCompressedTexImage2D)
+    int arg_size = sizeof(args_glCompressedTexImage2D)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -17827,10 +17827,10 @@ void glcompressedteximage2d_uh(argp_glCompressedTexImage2D argp)
 }
 
 // -- glCompressedTexImage3D
-void glcompressedteximage3d_uh(argp_glCompressedTexImage3D argp)
+void glcompressedteximage3d_uh(args_glCompressedTexImage3D argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glCompressedTexImage3D)
+    int arg_size = sizeof(args_glCompressedTexImage3D)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -17874,10 +17874,10 @@ void glcompressedteximage3d_uh(argp_glCompressedTexImage3D argp)
 }
 
 // -- glCompressedTexSubImage1D
-void glcompressedtexsubimage1d_uh(argp_glCompressedTexSubImage1D argp)
+void glcompressedtexsubimage1d_uh(args_glCompressedTexSubImage1D argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glCompressedTexSubImage1D)
+    int arg_size = sizeof(args_glCompressedTexSubImage1D)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -17921,10 +17921,10 @@ void glcompressedtexsubimage1d_uh(argp_glCompressedTexSubImage1D argp)
 }
 
 // -- glCompressedTexSubImage2D
-void glcompressedtexsubimage2d_uh(argp_glCompressedTexSubImage2D argp)
+void glcompressedtexsubimage2d_uh(args_glCompressedTexSubImage2D argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glCompressedTexSubImage2D)
+    int arg_size = sizeof(args_glCompressedTexSubImage2D)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -17968,10 +17968,10 @@ void glcompressedtexsubimage2d_uh(argp_glCompressedTexSubImage2D argp)
 }
 
 // -- glCompressedTexSubImage3D
-void glcompressedtexsubimage3d_uh(argp_glCompressedTexSubImage3D argp)
+void glcompressedtexsubimage3d_uh(args_glCompressedTexSubImage3D argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glCompressedTexSubImage3D)
+    int arg_size = sizeof(args_glCompressedTexSubImage3D)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -18015,10 +18015,10 @@ void glcompressedtexsubimage3d_uh(argp_glCompressedTexSubImage3D argp)
 }
 
 // -- glGetCompressedTexImage
-void glgetcompressedteximage_uh(argp_glGetCompressedTexImage argp)
+void glgetcompressedteximage_uh(args_glGetCompressedTexImage argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glGetCompressedTexImage)
+    int arg_size = sizeof(args_glGetCompressedTexImage)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -18062,10 +18062,10 @@ void glgetcompressedteximage_uh(argp_glGetCompressedTexImage argp)
 }
 
 // -- glMultiTexCoord1d
-void glmultitexcoord1d_uh(argp_glMultiTexCoord1d argp)
+void glmultitexcoord1d_uh(args_glMultiTexCoord1d argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord1d)
+    int arg_size = sizeof(args_glMultiTexCoord1d)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -18109,10 +18109,10 @@ void glmultitexcoord1d_uh(argp_glMultiTexCoord1d argp)
 }
 
 // -- glMultiTexCoord1dv
-void glmultitexcoord1dv_uh(argp_glMultiTexCoord1dv argp)
+void glmultitexcoord1dv_uh(args_glMultiTexCoord1dv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord1dv)
+    int arg_size = sizeof(args_glMultiTexCoord1dv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -18156,10 +18156,10 @@ void glmultitexcoord1dv_uh(argp_glMultiTexCoord1dv argp)
 }
 
 // -- glMultiTexCoord1f
-void glmultitexcoord1f_uh(argp_glMultiTexCoord1f argp)
+void glmultitexcoord1f_uh(args_glMultiTexCoord1f argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord1f)
+    int arg_size = sizeof(args_glMultiTexCoord1f)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -18203,10 +18203,10 @@ void glmultitexcoord1f_uh(argp_glMultiTexCoord1f argp)
 }
 
 // -- glMultiTexCoord1fv
-void glmultitexcoord1fv_uh(argp_glMultiTexCoord1fv argp)
+void glmultitexcoord1fv_uh(args_glMultiTexCoord1fv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord1fv)
+    int arg_size = sizeof(args_glMultiTexCoord1fv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -18250,10 +18250,10 @@ void glmultitexcoord1fv_uh(argp_glMultiTexCoord1fv argp)
 }
 
 // -- glMultiTexCoord1i
-void glmultitexcoord1i_uh(argp_glMultiTexCoord1i argp)
+void glmultitexcoord1i_uh(args_glMultiTexCoord1i argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord1i)
+    int arg_size = sizeof(args_glMultiTexCoord1i)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -18297,10 +18297,10 @@ void glmultitexcoord1i_uh(argp_glMultiTexCoord1i argp)
 }
 
 // -- glMultiTexCoord1iv
-void glmultitexcoord1iv_uh(argp_glMultiTexCoord1iv argp)
+void glmultitexcoord1iv_uh(args_glMultiTexCoord1iv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord1iv)
+    int arg_size = sizeof(args_glMultiTexCoord1iv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -18344,10 +18344,10 @@ void glmultitexcoord1iv_uh(argp_glMultiTexCoord1iv argp)
 }
 
 // -- glMultiTexCoord1s
-void glmultitexcoord1s_uh(argp_glMultiTexCoord1s argp)
+void glmultitexcoord1s_uh(args_glMultiTexCoord1s argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord1s)
+    int arg_size = sizeof(args_glMultiTexCoord1s)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -18391,10 +18391,10 @@ void glmultitexcoord1s_uh(argp_glMultiTexCoord1s argp)
 }
 
 // -- glMultiTexCoord1sv
-void glmultitexcoord1sv_uh(argp_glMultiTexCoord1sv argp)
+void glmultitexcoord1sv_uh(args_glMultiTexCoord1sv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord1sv)
+    int arg_size = sizeof(args_glMultiTexCoord1sv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -18438,10 +18438,10 @@ void glmultitexcoord1sv_uh(argp_glMultiTexCoord1sv argp)
 }
 
 // -- glMultiTexCoord2d
-void glmultitexcoord2d_uh(argp_glMultiTexCoord2d argp)
+void glmultitexcoord2d_uh(args_glMultiTexCoord2d argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord2d)
+    int arg_size = sizeof(args_glMultiTexCoord2d)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -18485,10 +18485,10 @@ void glmultitexcoord2d_uh(argp_glMultiTexCoord2d argp)
 }
 
 // -- glMultiTexCoord2dv
-void glmultitexcoord2dv_uh(argp_glMultiTexCoord2dv argp)
+void glmultitexcoord2dv_uh(args_glMultiTexCoord2dv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord2dv)
+    int arg_size = sizeof(args_glMultiTexCoord2dv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -18532,10 +18532,10 @@ void glmultitexcoord2dv_uh(argp_glMultiTexCoord2dv argp)
 }
 
 // -- glMultiTexCoord2f
-void glmultitexcoord2f_uh(argp_glMultiTexCoord2f argp)
+void glmultitexcoord2f_uh(args_glMultiTexCoord2f argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord2f)
+    int arg_size = sizeof(args_glMultiTexCoord2f)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -18579,10 +18579,10 @@ void glmultitexcoord2f_uh(argp_glMultiTexCoord2f argp)
 }
 
 // -- glMultiTexCoord2fv
-void glmultitexcoord2fv_uh(argp_glMultiTexCoord2fv argp)
+void glmultitexcoord2fv_uh(args_glMultiTexCoord2fv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord2fv)
+    int arg_size = sizeof(args_glMultiTexCoord2fv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -18626,10 +18626,10 @@ void glmultitexcoord2fv_uh(argp_glMultiTexCoord2fv argp)
 }
 
 // -- glMultiTexCoord2i
-void glmultitexcoord2i_uh(argp_glMultiTexCoord2i argp)
+void glmultitexcoord2i_uh(args_glMultiTexCoord2i argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord2i)
+    int arg_size = sizeof(args_glMultiTexCoord2i)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -18673,10 +18673,10 @@ void glmultitexcoord2i_uh(argp_glMultiTexCoord2i argp)
 }
 
 // -- glMultiTexCoord2iv
-void glmultitexcoord2iv_uh(argp_glMultiTexCoord2iv argp)
+void glmultitexcoord2iv_uh(args_glMultiTexCoord2iv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord2iv)
+    int arg_size = sizeof(args_glMultiTexCoord2iv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -18720,10 +18720,10 @@ void glmultitexcoord2iv_uh(argp_glMultiTexCoord2iv argp)
 }
 
 // -- glMultiTexCoord2s
-void glmultitexcoord2s_uh(argp_glMultiTexCoord2s argp)
+void glmultitexcoord2s_uh(args_glMultiTexCoord2s argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord2s)
+    int arg_size = sizeof(args_glMultiTexCoord2s)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -18767,10 +18767,10 @@ void glmultitexcoord2s_uh(argp_glMultiTexCoord2s argp)
 }
 
 // -- glMultiTexCoord2sv
-void glmultitexcoord2sv_uh(argp_glMultiTexCoord2sv argp)
+void glmultitexcoord2sv_uh(args_glMultiTexCoord2sv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord2sv)
+    int arg_size = sizeof(args_glMultiTexCoord2sv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -18814,10 +18814,10 @@ void glmultitexcoord2sv_uh(argp_glMultiTexCoord2sv argp)
 }
 
 // -- glMultiTexCoord3d
-void glmultitexcoord3d_uh(argp_glMultiTexCoord3d argp)
+void glmultitexcoord3d_uh(args_glMultiTexCoord3d argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord3d)
+    int arg_size = sizeof(args_glMultiTexCoord3d)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -18861,10 +18861,10 @@ void glmultitexcoord3d_uh(argp_glMultiTexCoord3d argp)
 }
 
 // -- glMultiTexCoord3dv
-void glmultitexcoord3dv_uh(argp_glMultiTexCoord3dv argp)
+void glmultitexcoord3dv_uh(args_glMultiTexCoord3dv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord3dv)
+    int arg_size = sizeof(args_glMultiTexCoord3dv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -18908,10 +18908,10 @@ void glmultitexcoord3dv_uh(argp_glMultiTexCoord3dv argp)
 }
 
 // -- glMultiTexCoord3f
-void glmultitexcoord3f_uh(argp_glMultiTexCoord3f argp)
+void glmultitexcoord3f_uh(args_glMultiTexCoord3f argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord3f)
+    int arg_size = sizeof(args_glMultiTexCoord3f)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -18955,10 +18955,10 @@ void glmultitexcoord3f_uh(argp_glMultiTexCoord3f argp)
 }
 
 // -- glMultiTexCoord3fv
-void glmultitexcoord3fv_uh(argp_glMultiTexCoord3fv argp)
+void glmultitexcoord3fv_uh(args_glMultiTexCoord3fv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord3fv)
+    int arg_size = sizeof(args_glMultiTexCoord3fv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -19002,10 +19002,10 @@ void glmultitexcoord3fv_uh(argp_glMultiTexCoord3fv argp)
 }
 
 // -- glMultiTexCoord3i
-void glmultitexcoord3i_uh(argp_glMultiTexCoord3i argp)
+void glmultitexcoord3i_uh(args_glMultiTexCoord3i argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord3i)
+    int arg_size = sizeof(args_glMultiTexCoord3i)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -19049,10 +19049,10 @@ void glmultitexcoord3i_uh(argp_glMultiTexCoord3i argp)
 }
 
 // -- glMultiTexCoord3iv
-void glmultitexcoord3iv_uh(argp_glMultiTexCoord3iv argp)
+void glmultitexcoord3iv_uh(args_glMultiTexCoord3iv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord3iv)
+    int arg_size = sizeof(args_glMultiTexCoord3iv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -19096,10 +19096,10 @@ void glmultitexcoord3iv_uh(argp_glMultiTexCoord3iv argp)
 }
 
 // -- glMultiTexCoord3s
-void glmultitexcoord3s_uh(argp_glMultiTexCoord3s argp)
+void glmultitexcoord3s_uh(args_glMultiTexCoord3s argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord3s)
+    int arg_size = sizeof(args_glMultiTexCoord3s)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -19143,10 +19143,10 @@ void glmultitexcoord3s_uh(argp_glMultiTexCoord3s argp)
 }
 
 // -- glMultiTexCoord3sv
-void glmultitexcoord3sv_uh(argp_glMultiTexCoord3sv argp)
+void glmultitexcoord3sv_uh(args_glMultiTexCoord3sv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord3sv)
+    int arg_size = sizeof(args_glMultiTexCoord3sv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -19190,10 +19190,10 @@ void glmultitexcoord3sv_uh(argp_glMultiTexCoord3sv argp)
 }
 
 // -- glMultiTexCoord4d
-void glmultitexcoord4d_uh(argp_glMultiTexCoord4d argp)
+void glmultitexcoord4d_uh(args_glMultiTexCoord4d argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord4d)
+    int arg_size = sizeof(args_glMultiTexCoord4d)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -19237,10 +19237,10 @@ void glmultitexcoord4d_uh(argp_glMultiTexCoord4d argp)
 }
 
 // -- glMultiTexCoord4dv
-void glmultitexcoord4dv_uh(argp_glMultiTexCoord4dv argp)
+void glmultitexcoord4dv_uh(args_glMultiTexCoord4dv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord4dv)
+    int arg_size = sizeof(args_glMultiTexCoord4dv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -19284,10 +19284,10 @@ void glmultitexcoord4dv_uh(argp_glMultiTexCoord4dv argp)
 }
 
 // -- glMultiTexCoord4f
-void glmultitexcoord4f_uh(argp_glMultiTexCoord4f argp)
+void glmultitexcoord4f_uh(args_glMultiTexCoord4f argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord4f)
+    int arg_size = sizeof(args_glMultiTexCoord4f)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -19331,10 +19331,10 @@ void glmultitexcoord4f_uh(argp_glMultiTexCoord4f argp)
 }
 
 // -- glMultiTexCoord4fv
-void glmultitexcoord4fv_uh(argp_glMultiTexCoord4fv argp)
+void glmultitexcoord4fv_uh(args_glMultiTexCoord4fv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord4fv)
+    int arg_size = sizeof(args_glMultiTexCoord4fv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -19378,10 +19378,10 @@ void glmultitexcoord4fv_uh(argp_glMultiTexCoord4fv argp)
 }
 
 // -- glMultiTexCoord4i
-void glmultitexcoord4i_uh(argp_glMultiTexCoord4i argp)
+void glmultitexcoord4i_uh(args_glMultiTexCoord4i argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord4i)
+    int arg_size = sizeof(args_glMultiTexCoord4i)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -19425,10 +19425,10 @@ void glmultitexcoord4i_uh(argp_glMultiTexCoord4i argp)
 }
 
 // -- glMultiTexCoord4iv
-void glmultitexcoord4iv_uh(argp_glMultiTexCoord4iv argp)
+void glmultitexcoord4iv_uh(args_glMultiTexCoord4iv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord4iv)
+    int arg_size = sizeof(args_glMultiTexCoord4iv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -19472,10 +19472,10 @@ void glmultitexcoord4iv_uh(argp_glMultiTexCoord4iv argp)
 }
 
 // -- glMultiTexCoord4s
-void glmultitexcoord4s_uh(argp_glMultiTexCoord4s argp)
+void glmultitexcoord4s_uh(args_glMultiTexCoord4s argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord4s)
+    int arg_size = sizeof(args_glMultiTexCoord4s)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -19519,10 +19519,10 @@ void glmultitexcoord4s_uh(argp_glMultiTexCoord4s argp)
 }
 
 // -- glMultiTexCoord4sv
-void glmultitexcoord4sv_uh(argp_glMultiTexCoord4sv argp)
+void glmultitexcoord4sv_uh(args_glMultiTexCoord4sv argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord4sv)
+    int arg_size = sizeof(args_glMultiTexCoord4sv)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -19566,10 +19566,10 @@ void glmultitexcoord4sv_uh(argp_glMultiTexCoord4sv argp)
 }
 
 // -- glLoadTransposeMatrixd
-void glloadtransposematrixd_uh(argp_glLoadTransposeMatrixd argp)
+void glloadtransposematrixd_uh(args_glLoadTransposeMatrixd argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glLoadTransposeMatrixd)
+    int arg_size = sizeof(args_glLoadTransposeMatrixd)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -19613,10 +19613,10 @@ void glloadtransposematrixd_uh(argp_glLoadTransposeMatrixd argp)
 }
 
 // -- glLoadTransposeMatrixf
-void glloadtransposematrixf_uh(argp_glLoadTransposeMatrixf argp)
+void glloadtransposematrixf_uh(args_glLoadTransposeMatrixf argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glLoadTransposeMatrixf)
+    int arg_size = sizeof(args_glLoadTransposeMatrixf)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -19660,10 +19660,10 @@ void glloadtransposematrixf_uh(argp_glLoadTransposeMatrixf argp)
 }
 
 // -- glMultTransposeMatrixd
-void glmulttransposematrixd_uh(argp_glMultTransposeMatrixd argp)
+void glmulttransposematrixd_uh(args_glMultTransposeMatrixd argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultTransposeMatrixd)
+    int arg_size = sizeof(args_glMultTransposeMatrixd)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -19707,10 +19707,10 @@ void glmulttransposematrixd_uh(argp_glMultTransposeMatrixd argp)
 }
 
 // -- glMultTransposeMatrixf
-void glmulttransposematrixf_uh(argp_glMultTransposeMatrixf argp)
+void glmulttransposematrixf_uh(args_glMultTransposeMatrixf argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultTransposeMatrixf)
+    int arg_size = sizeof(args_glMultTransposeMatrixf)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -19754,10 +19754,10 @@ void glmulttransposematrixf_uh(argp_glMultTransposeMatrixf argp)
 }
 
 // -- glSampleCoverage
-void glsamplecoverage_uh(argp_glSampleCoverage argp)
+void glsamplecoverage_uh(args_glSampleCoverage argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glSampleCoverage)
+    int arg_size = sizeof(args_glSampleCoverage)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -19801,10 +19801,10 @@ void glsamplecoverage_uh(argp_glSampleCoverage argp)
 }
 
 // -- glActiveTextureARB
-void glactivetexturearb_uh(argp_glActiveTextureARB argp)
+void glactivetexturearb_uh(args_glActiveTextureARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glActiveTextureARB)
+    int arg_size = sizeof(args_glActiveTextureARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -19848,10 +19848,10 @@ void glactivetexturearb_uh(argp_glActiveTextureARB argp)
 }
 
 // -- glClientActiveTextureARB
-void glclientactivetexturearb_uh(argp_glClientActiveTextureARB argp)
+void glclientactivetexturearb_uh(args_glClientActiveTextureARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glClientActiveTextureARB)
+    int arg_size = sizeof(args_glClientActiveTextureARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -19895,10 +19895,10 @@ void glclientactivetexturearb_uh(argp_glClientActiveTextureARB argp)
 }
 
 // -- glMultiTexCoord1dARB
-void glmultitexcoord1darb_uh(argp_glMultiTexCoord1dARB argp)
+void glmultitexcoord1darb_uh(args_glMultiTexCoord1dARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord1dARB)
+    int arg_size = sizeof(args_glMultiTexCoord1dARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -19942,10 +19942,10 @@ void glmultitexcoord1darb_uh(argp_glMultiTexCoord1dARB argp)
 }
 
 // -- glMultiTexCoord1dvARB
-void glmultitexcoord1dvarb_uh(argp_glMultiTexCoord1dvARB argp)
+void glmultitexcoord1dvarb_uh(args_glMultiTexCoord1dvARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord1dvARB)
+    int arg_size = sizeof(args_glMultiTexCoord1dvARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -19989,10 +19989,10 @@ void glmultitexcoord1dvarb_uh(argp_glMultiTexCoord1dvARB argp)
 }
 
 // -- glMultiTexCoord1fARB
-void glmultitexcoord1farb_uh(argp_glMultiTexCoord1fARB argp)
+void glmultitexcoord1farb_uh(args_glMultiTexCoord1fARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord1fARB)
+    int arg_size = sizeof(args_glMultiTexCoord1fARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -20036,10 +20036,10 @@ void glmultitexcoord1farb_uh(argp_glMultiTexCoord1fARB argp)
 }
 
 // -- glMultiTexCoord1fvARB
-void glmultitexcoord1fvarb_uh(argp_glMultiTexCoord1fvARB argp)
+void glmultitexcoord1fvarb_uh(args_glMultiTexCoord1fvARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord1fvARB)
+    int arg_size = sizeof(args_glMultiTexCoord1fvARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -20083,10 +20083,10 @@ void glmultitexcoord1fvarb_uh(argp_glMultiTexCoord1fvARB argp)
 }
 
 // -- glMultiTexCoord1iARB
-void glmultitexcoord1iarb_uh(argp_glMultiTexCoord1iARB argp)
+void glmultitexcoord1iarb_uh(args_glMultiTexCoord1iARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord1iARB)
+    int arg_size = sizeof(args_glMultiTexCoord1iARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -20130,10 +20130,10 @@ void glmultitexcoord1iarb_uh(argp_glMultiTexCoord1iARB argp)
 }
 
 // -- glMultiTexCoord1ivARB
-void glmultitexcoord1ivarb_uh(argp_glMultiTexCoord1ivARB argp)
+void glmultitexcoord1ivarb_uh(args_glMultiTexCoord1ivARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord1ivARB)
+    int arg_size = sizeof(args_glMultiTexCoord1ivARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -20177,10 +20177,10 @@ void glmultitexcoord1ivarb_uh(argp_glMultiTexCoord1ivARB argp)
 }
 
 // -- glMultiTexCoord1sARB
-void glmultitexcoord1sarb_uh(argp_glMultiTexCoord1sARB argp)
+void glmultitexcoord1sarb_uh(args_glMultiTexCoord1sARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord1sARB)
+    int arg_size = sizeof(args_glMultiTexCoord1sARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -20224,10 +20224,10 @@ void glmultitexcoord1sarb_uh(argp_glMultiTexCoord1sARB argp)
 }
 
 // -- glMultiTexCoord1svARB
-void glmultitexcoord1svarb_uh(argp_glMultiTexCoord1svARB argp)
+void glmultitexcoord1svarb_uh(args_glMultiTexCoord1svARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord1svARB)
+    int arg_size = sizeof(args_glMultiTexCoord1svARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -20271,10 +20271,10 @@ void glmultitexcoord1svarb_uh(argp_glMultiTexCoord1svARB argp)
 }
 
 // -- glMultiTexCoord2dARB
-void glmultitexcoord2darb_uh(argp_glMultiTexCoord2dARB argp)
+void glmultitexcoord2darb_uh(args_glMultiTexCoord2dARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord2dARB)
+    int arg_size = sizeof(args_glMultiTexCoord2dARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -20318,10 +20318,10 @@ void glmultitexcoord2darb_uh(argp_glMultiTexCoord2dARB argp)
 }
 
 // -- glMultiTexCoord2dvARB
-void glmultitexcoord2dvarb_uh(argp_glMultiTexCoord2dvARB argp)
+void glmultitexcoord2dvarb_uh(args_glMultiTexCoord2dvARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord2dvARB)
+    int arg_size = sizeof(args_glMultiTexCoord2dvARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -20365,10 +20365,10 @@ void glmultitexcoord2dvarb_uh(argp_glMultiTexCoord2dvARB argp)
 }
 
 // -- glMultiTexCoord2fARB
-void glmultitexcoord2farb_uh(argp_glMultiTexCoord2fARB argp)
+void glmultitexcoord2farb_uh(args_glMultiTexCoord2fARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord2fARB)
+    int arg_size = sizeof(args_glMultiTexCoord2fARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -20412,10 +20412,10 @@ void glmultitexcoord2farb_uh(argp_glMultiTexCoord2fARB argp)
 }
 
 // -- glMultiTexCoord2fvARB
-void glmultitexcoord2fvarb_uh(argp_glMultiTexCoord2fvARB argp)
+void glmultitexcoord2fvarb_uh(args_glMultiTexCoord2fvARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord2fvARB)
+    int arg_size = sizeof(args_glMultiTexCoord2fvARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -20459,10 +20459,10 @@ void glmultitexcoord2fvarb_uh(argp_glMultiTexCoord2fvARB argp)
 }
 
 // -- glMultiTexCoord2iARB
-void glmultitexcoord2iarb_uh(argp_glMultiTexCoord2iARB argp)
+void glmultitexcoord2iarb_uh(args_glMultiTexCoord2iARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord2iARB)
+    int arg_size = sizeof(args_glMultiTexCoord2iARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -20506,10 +20506,10 @@ void glmultitexcoord2iarb_uh(argp_glMultiTexCoord2iARB argp)
 }
 
 // -- glMultiTexCoord2ivARB
-void glmultitexcoord2ivarb_uh(argp_glMultiTexCoord2ivARB argp)
+void glmultitexcoord2ivarb_uh(args_glMultiTexCoord2ivARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord2ivARB)
+    int arg_size = sizeof(args_glMultiTexCoord2ivARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -20553,10 +20553,10 @@ void glmultitexcoord2ivarb_uh(argp_glMultiTexCoord2ivARB argp)
 }
 
 // -- glMultiTexCoord2sARB
-void glmultitexcoord2sarb_uh(argp_glMultiTexCoord2sARB argp)
+void glmultitexcoord2sarb_uh(args_glMultiTexCoord2sARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord2sARB)
+    int arg_size = sizeof(args_glMultiTexCoord2sARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -20600,10 +20600,10 @@ void glmultitexcoord2sarb_uh(argp_glMultiTexCoord2sARB argp)
 }
 
 // -- glMultiTexCoord2svARB
-void glmultitexcoord2svarb_uh(argp_glMultiTexCoord2svARB argp)
+void glmultitexcoord2svarb_uh(args_glMultiTexCoord2svARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord2svARB)
+    int arg_size = sizeof(args_glMultiTexCoord2svARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -20647,10 +20647,10 @@ void glmultitexcoord2svarb_uh(argp_glMultiTexCoord2svARB argp)
 }
 
 // -- glMultiTexCoord3dARB
-void glmultitexcoord3darb_uh(argp_glMultiTexCoord3dARB argp)
+void glmultitexcoord3darb_uh(args_glMultiTexCoord3dARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord3dARB)
+    int arg_size = sizeof(args_glMultiTexCoord3dARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -20694,10 +20694,10 @@ void glmultitexcoord3darb_uh(argp_glMultiTexCoord3dARB argp)
 }
 
 // -- glMultiTexCoord3dvARB
-void glmultitexcoord3dvarb_uh(argp_glMultiTexCoord3dvARB argp)
+void glmultitexcoord3dvarb_uh(args_glMultiTexCoord3dvARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord3dvARB)
+    int arg_size = sizeof(args_glMultiTexCoord3dvARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -20741,10 +20741,10 @@ void glmultitexcoord3dvarb_uh(argp_glMultiTexCoord3dvARB argp)
 }
 
 // -- glMultiTexCoord3fARB
-void glmultitexcoord3farb_uh(argp_glMultiTexCoord3fARB argp)
+void glmultitexcoord3farb_uh(args_glMultiTexCoord3fARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord3fARB)
+    int arg_size = sizeof(args_glMultiTexCoord3fARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -20788,10 +20788,10 @@ void glmultitexcoord3farb_uh(argp_glMultiTexCoord3fARB argp)
 }
 
 // -- glMultiTexCoord3fvARB
-void glmultitexcoord3fvarb_uh(argp_glMultiTexCoord3fvARB argp)
+void glmultitexcoord3fvarb_uh(args_glMultiTexCoord3fvARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord3fvARB)
+    int arg_size = sizeof(args_glMultiTexCoord3fvARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -20835,10 +20835,10 @@ void glmultitexcoord3fvarb_uh(argp_glMultiTexCoord3fvARB argp)
 }
 
 // -- glMultiTexCoord3iARB
-void glmultitexcoord3iarb_uh(argp_glMultiTexCoord3iARB argp)
+void glmultitexcoord3iarb_uh(args_glMultiTexCoord3iARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord3iARB)
+    int arg_size = sizeof(args_glMultiTexCoord3iARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -20882,10 +20882,10 @@ void glmultitexcoord3iarb_uh(argp_glMultiTexCoord3iARB argp)
 }
 
 // -- glMultiTexCoord3ivARB
-void glmultitexcoord3ivarb_uh(argp_glMultiTexCoord3ivARB argp)
+void glmultitexcoord3ivarb_uh(args_glMultiTexCoord3ivARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord3ivARB)
+    int arg_size = sizeof(args_glMultiTexCoord3ivARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -20929,10 +20929,10 @@ void glmultitexcoord3ivarb_uh(argp_glMultiTexCoord3ivARB argp)
 }
 
 // -- glMultiTexCoord3sARB
-void glmultitexcoord3sarb_uh(argp_glMultiTexCoord3sARB argp)
+void glmultitexcoord3sarb_uh(args_glMultiTexCoord3sARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord3sARB)
+    int arg_size = sizeof(args_glMultiTexCoord3sARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -20976,10 +20976,10 @@ void glmultitexcoord3sarb_uh(argp_glMultiTexCoord3sARB argp)
 }
 
 // -- glMultiTexCoord3svARB
-void glmultitexcoord3svarb_uh(argp_glMultiTexCoord3svARB argp)
+void glmultitexcoord3svarb_uh(args_glMultiTexCoord3svARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord3svARB)
+    int arg_size = sizeof(args_glMultiTexCoord3svARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -21023,10 +21023,10 @@ void glmultitexcoord3svarb_uh(argp_glMultiTexCoord3svARB argp)
 }
 
 // -- glMultiTexCoord4dARB
-void glmultitexcoord4darb_uh(argp_glMultiTexCoord4dARB argp)
+void glmultitexcoord4darb_uh(args_glMultiTexCoord4dARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord4dARB)
+    int arg_size = sizeof(args_glMultiTexCoord4dARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -21070,10 +21070,10 @@ void glmultitexcoord4darb_uh(argp_glMultiTexCoord4dARB argp)
 }
 
 // -- glMultiTexCoord4dvARB
-void glmultitexcoord4dvarb_uh(argp_glMultiTexCoord4dvARB argp)
+void glmultitexcoord4dvarb_uh(args_glMultiTexCoord4dvARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord4dvARB)
+    int arg_size = sizeof(args_glMultiTexCoord4dvARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -21117,10 +21117,10 @@ void glmultitexcoord4dvarb_uh(argp_glMultiTexCoord4dvARB argp)
 }
 
 // -- glMultiTexCoord4fARB
-void glmultitexcoord4farb_uh(argp_glMultiTexCoord4fARB argp)
+void glmultitexcoord4farb_uh(args_glMultiTexCoord4fARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord4fARB)
+    int arg_size = sizeof(args_glMultiTexCoord4fARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -21164,10 +21164,10 @@ void glmultitexcoord4farb_uh(argp_glMultiTexCoord4fARB argp)
 }
 
 // -- glMultiTexCoord4fvARB
-void glmultitexcoord4fvarb_uh(argp_glMultiTexCoord4fvARB argp)
+void glmultitexcoord4fvarb_uh(args_glMultiTexCoord4fvARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord4fvARB)
+    int arg_size = sizeof(args_glMultiTexCoord4fvARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -21211,10 +21211,10 @@ void glmultitexcoord4fvarb_uh(argp_glMultiTexCoord4fvARB argp)
 }
 
 // -- glMultiTexCoord4iARB
-void glmultitexcoord4iarb_uh(argp_glMultiTexCoord4iARB argp)
+void glmultitexcoord4iarb_uh(args_glMultiTexCoord4iARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord4iARB)
+    int arg_size = sizeof(args_glMultiTexCoord4iARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -21258,10 +21258,10 @@ void glmultitexcoord4iarb_uh(argp_glMultiTexCoord4iARB argp)
 }
 
 // -- glMultiTexCoord4ivARB
-void glmultitexcoord4ivarb_uh(argp_glMultiTexCoord4ivARB argp)
+void glmultitexcoord4ivarb_uh(args_glMultiTexCoord4ivARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord4ivARB)
+    int arg_size = sizeof(args_glMultiTexCoord4ivARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -21305,10 +21305,10 @@ void glmultitexcoord4ivarb_uh(argp_glMultiTexCoord4ivARB argp)
 }
 
 // -- glMultiTexCoord4sARB
-void glmultitexcoord4sarb_uh(argp_glMultiTexCoord4sARB argp)
+void glmultitexcoord4sarb_uh(args_glMultiTexCoord4sARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord4sARB)
+    int arg_size = sizeof(args_glMultiTexCoord4sARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -21352,10 +21352,10 @@ void glmultitexcoord4sarb_uh(argp_glMultiTexCoord4sARB argp)
 }
 
 // -- glMultiTexCoord4svARB
-void glmultitexcoord4svarb_uh(argp_glMultiTexCoord4svARB argp)
+void glmultitexcoord4svarb_uh(args_glMultiTexCoord4svARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glMultiTexCoord4svARB)
+    int arg_size = sizeof(args_glMultiTexCoord4svARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -21399,10 +21399,10 @@ void glmultitexcoord4svarb_uh(argp_glMultiTexCoord4svARB argp)
 }
 
 // -- glBlendEquationSeparateATI
-void glblendequationseparateati_uh(argp_glBlendEquationSeparateATI argp)
+void glblendequationseparateati_uh(args_glBlendEquationSeparateATI argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glBlendEquationSeparateATI)
+    int arg_size = sizeof(args_glBlendEquationSeparateATI)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -21446,10 +21446,10 @@ void glblendequationseparateati_uh(argp_glBlendEquationSeparateATI argp)
 }
 
 // -- glXDestroyContext
-void glxdestroycontext_uh(argp_glXDestroyContext argp)
+void glxdestroycontext_uh(args_glXDestroyContext argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glXDestroyContext)
+    int arg_size = sizeof(args_glXDestroyContext)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -21493,10 +21493,10 @@ void glxdestroycontext_uh(argp_glXDestroyContext argp)
 }
 
 // -- glXSwapBuffers
-void glxswapbuffers_uh(argp_glXSwapBuffers argp)
+void glxswapbuffers_uh(args_glXSwapBuffers argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glXSwapBuffers)
+    int arg_size = sizeof(args_glXSwapBuffers)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -21540,10 +21540,10 @@ void glxswapbuffers_uh(argp_glXSwapBuffers argp)
 }
 
 // -- glXDestroyGLXPixmap
-void glxdestroyglxpixmap_uh(argp_glXDestroyGLXPixmap argp)
+void glxdestroyglxpixmap_uh(args_glXDestroyGLXPixmap argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glXDestroyGLXPixmap)
+    int arg_size = sizeof(args_glXDestroyGLXPixmap)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -21587,10 +21587,10 @@ void glxdestroyglxpixmap_uh(argp_glXDestroyGLXPixmap argp)
 }
 
 // -- glXQueryExtension
-Bool glxqueryextension_uh(argp_glXQueryExtension argp)
+Bool glxqueryextension_uh(args_glXQueryExtension argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glXQueryExtension)
+    int arg_size = sizeof(args_glXQueryExtension)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -21637,10 +21637,10 @@ Bool glxqueryextension_uh(argp_glXQueryExtension argp)
 }
 
 // -- glXQueryVersion
-Bool glxqueryversion_uh(argp_glXQueryVersion argp)
+Bool glxqueryversion_uh(args_glXQueryVersion argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glXQueryVersion)
+    int arg_size = sizeof(args_glXQueryVersion)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -21687,10 +21687,10 @@ Bool glxqueryversion_uh(argp_glXQueryVersion argp)
 }
 
 // -- glXIsDirect
-Bool glxisdirect_uh(argp_glXIsDirect argp)
+Bool glxisdirect_uh(args_glXIsDirect argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glXIsDirect)
+    int arg_size = sizeof(args_glXIsDirect)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -21923,10 +21923,10 @@ void glxwaitx_uh()
 }
 
 // -- glXUseXFont
-void glxusexfont_uh(argp_glXUseXFont argp)
+void glxusexfont_uh(args_glXUseXFont argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glXUseXFont)
+    int arg_size = sizeof(args_glXUseXFont)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -21970,10 +21970,10 @@ void glxusexfont_uh(argp_glXUseXFont argp)
 }
 
 // -- glXQueryExtensionsString
-char* glxqueryextensionsstring_uh(argp_glXQueryExtensionsString argp)
+char* glxqueryextensionsstring_uh(args_glXQueryExtensionsString argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glXQueryExtensionsString)
+    int arg_size = sizeof(args_glXQueryExtensionsString)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -22020,10 +22020,10 @@ char* glxqueryextensionsstring_uh(argp_glXQueryExtensionsString argp)
 }
 
 // -- glXQueryServerString
-char* glxqueryserverstring_uh(argp_glXQueryServerString argp)
+char* glxqueryserverstring_uh(args_glXQueryServerString argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glXQueryServerString)
+    int arg_size = sizeof(args_glXQueryServerString)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -22070,10 +22070,10 @@ char* glxqueryserverstring_uh(argp_glXQueryServerString argp)
 }
 
 // -- glXGetClientString
-char* glxgetclientstring_uh(argp_glXGetClientString argp)
+char* glxgetclientstring_uh(args_glXGetClientString argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glXGetClientString)
+    int arg_size = sizeof(args_glXGetClientString)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -22168,10 +22168,10 @@ Display* glxgetcurrentdisplay_uh()
 }
 
 // -- glXDestroyWindow
-void glxdestroywindow_uh(argp_glXDestroyWindow argp)
+void glxdestroywindow_uh(args_glXDestroyWindow argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glXDestroyWindow)
+    int arg_size = sizeof(args_glXDestroyWindow)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -22215,10 +22215,10 @@ void glxdestroywindow_uh(argp_glXDestroyWindow argp)
 }
 
 // -- glXDestroyPixmap
-void glxdestroypixmap_uh(argp_glXDestroyPixmap argp)
+void glxdestroypixmap_uh(args_glXDestroyPixmap argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glXDestroyPixmap)
+    int arg_size = sizeof(args_glXDestroyPixmap)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -22262,10 +22262,10 @@ void glxdestroypixmap_uh(argp_glXDestroyPixmap argp)
 }
 
 // -- glXDestroyPbuffer
-void glxdestroypbuffer_uh(argp_glXDestroyPbuffer argp)
+void glxdestroypbuffer_uh(args_glXDestroyPbuffer argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glXDestroyPbuffer)
+    int arg_size = sizeof(args_glXDestroyPbuffer)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -22357,10 +22357,10 @@ GLXDrawable glxgetcurrentreaddrawable_uh()
 }
 
 // -- glXGetProcAddressARB
-__GLXextFuncPtr glxgetprocaddressarb_uh(argp_glXGetProcAddressARB argp)
+__GLXextFuncPtr glxgetprocaddressarb_uh(args_glXGetProcAddressARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glXGetProcAddressARB)
+    int arg_size = sizeof(args_glXGetProcAddressARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -22407,10 +22407,10 @@ __GLXextFuncPtr glxgetprocaddressarb_uh(argp_glXGetProcAddressARB argp)
 }
 
 // -- glXGetProcAddress
-void* glxgetprocaddress_uh(argp_glXGetProcAddress argp)
+void* glxgetprocaddress_uh(args_glXGetProcAddress argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glXGetProcAddress)
+    int arg_size = sizeof(args_glXGetProcAddress)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -22457,10 +22457,10 @@ void* glxgetprocaddress_uh(argp_glXGetProcAddress argp)
 }
 
 // -- glXAllocateMemoryNV
-void* glxallocatememorynv_uh(argp_glXAllocateMemoryNV argp)
+void* glxallocatememorynv_uh(args_glXAllocateMemoryNV argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glXAllocateMemoryNV)
+    int arg_size = sizeof(args_glXAllocateMemoryNV)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -22507,10 +22507,10 @@ void* glxallocatememorynv_uh(argp_glXAllocateMemoryNV argp)
 }
 
 // -- glXFreeMemoryNV
-void glxfreememorynv_uh(argp_glXFreeMemoryNV argp)
+void glxfreememorynv_uh(args_glXFreeMemoryNV argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glXFreeMemoryNV)
+    int arg_size = sizeof(args_glXFreeMemoryNV)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -22554,10 +22554,10 @@ void glxfreememorynv_uh(argp_glXFreeMemoryNV argp)
 }
 
 // -- glXBindTexImageARB
-Bool glxbindteximagearb_uh(argp_glXBindTexImageARB argp)
+Bool glxbindteximagearb_uh(args_glXBindTexImageARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glXBindTexImageARB)
+    int arg_size = sizeof(args_glXBindTexImageARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -22604,10 +22604,10 @@ Bool glxbindteximagearb_uh(argp_glXBindTexImageARB argp)
 }
 
 // -- glXReleaseTexImageARB
-Bool glxreleaseteximagearb_uh(argp_glXReleaseTexImageARB argp)
+Bool glxreleaseteximagearb_uh(args_glXReleaseTexImageARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glXReleaseTexImageARB)
+    int arg_size = sizeof(args_glXReleaseTexImageARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -22654,10 +22654,10 @@ Bool glxreleaseteximagearb_uh(argp_glXReleaseTexImageARB argp)
 }
 
 // -- glXDrawableAttribARB
-Bool glxdrawableattribarb_uh(argp_glXDrawableAttribARB argp)
+Bool glxdrawableattribarb_uh(args_glXDrawableAttribARB argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glXDrawableAttribARB)
+    int arg_size = sizeof(args_glXDrawableAttribARB)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -22704,10 +22704,10 @@ Bool glxdrawableattribarb_uh(argp_glXDrawableAttribARB argp)
 }
 
 // -- glXGetFrameUsageMESA
-int glxgetframeusagemesa_uh(argp_glXGetFrameUsageMESA argp)
+int glxgetframeusagemesa_uh(args_glXGetFrameUsageMESA argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glXGetFrameUsageMESA)
+    int arg_size = sizeof(args_glXGetFrameUsageMESA)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -22754,10 +22754,10 @@ int glxgetframeusagemesa_uh(argp_glXGetFrameUsageMESA argp)
 }
 
 // -- glXBeginFrameTrackingMESA
-int glxbeginframetrackingmesa_uh(argp_glXBeginFrameTrackingMESA argp)
+int glxbeginframetrackingmesa_uh(args_glXBeginFrameTrackingMESA argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glXBeginFrameTrackingMESA)
+    int arg_size = sizeof(args_glXBeginFrameTrackingMESA)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -22804,10 +22804,10 @@ int glxbeginframetrackingmesa_uh(argp_glXBeginFrameTrackingMESA argp)
 }
 
 // -- glXEndFrameTrackingMESA
-int glxendframetrackingmesa_uh(argp_glXEndFrameTrackingMESA argp)
+int glxendframetrackingmesa_uh(args_glXEndFrameTrackingMESA argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glXEndFrameTrackingMESA)
+    int arg_size = sizeof(args_glXEndFrameTrackingMESA)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -22854,10 +22854,10 @@ int glxendframetrackingmesa_uh(argp_glXEndFrameTrackingMESA argp)
 }
 
 // -- glXQueryFrameTrackingMESA
-int glxqueryframetrackingmesa_uh(argp_glXQueryFrameTrackingMESA argp)
+int glxqueryframetrackingmesa_uh(args_glXQueryFrameTrackingMESA argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glXQueryFrameTrackingMESA)
+    int arg_size = sizeof(args_glXQueryFrameTrackingMESA)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -22904,10 +22904,10 @@ int glxqueryframetrackingmesa_uh(argp_glXQueryFrameTrackingMESA argp)
 }
 
 // -- glXSwapIntervalMESA
-int glxswapintervalmesa_uh(argp_glXSwapIntervalMESA argp)
+int glxswapintervalmesa_uh(args_glXSwapIntervalMESA argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_glXSwapIntervalMESA)
+    int arg_size = sizeof(args_glXSwapIntervalMESA)
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers

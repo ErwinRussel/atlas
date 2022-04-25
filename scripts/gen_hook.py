@@ -3,7 +3,7 @@ h1 = '''#include "atl_header.h"
 hook_func = '''
 // -- {name}
 {hook}{{
-    argp_{name} argp;
+    args_{name} argp;
     
     // Set function specific args
     {argp_set}
@@ -20,7 +20,7 @@ hook_func_ni = '''
 hook_func_void = '''
 // -- {name}
 {hook}{{
-    argp_{name} argp;
+    args_{name} argp;
 
     // Set function specific args
     {argp_set}

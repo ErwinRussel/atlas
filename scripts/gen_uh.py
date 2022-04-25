@@ -60,10 +60,10 @@ void init(){{
 '''
 func_uh = '''
 // -- {name}
-{ret_type} {name_lower}_uh(argp_{name} argp)
+{ret_type} {name_lower}_uh(args_{name} argp)
 {{
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_{name})
+    int arg_size = sizeof(args_{name})
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
@@ -160,10 +160,10 @@ func_uh_ni = '''
 '''
 func_uh_void = '''
 // -- {name}
-void {name_lower}_uh(argp_{name} argp)
+void {name_lower}_uh(args_{name} argp)
 {{
     // Memcopy in Buffer
-    int arg_size = sizeof(argp_{name})
+    int arg_size = sizeof(args_{name})
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers

@@ -3,7 +3,7 @@
 // -- XOpenDisplay
 extern Display *XOpenDisplay(_Xconst char *display_name)
 {
-    argp_XOpenDisplay argp;
+    args_XOpenDisplay argp;
     
     // Set function specific args
     argp.display_name = display_name
@@ -14,7 +14,7 @@ extern Display *XOpenDisplay(_Xconst char *display_name)
 // -- XMapWindow
 int XMapWindow(Display *display, Window w)
 {
-    argp_XMapWindow argp;
+    args_XMapWindow argp;
     
     // Set function specific args
     argp.display = display;
@@ -26,7 +26,7 @@ int XMapWindow(Display *display, Window w)
 // -- glClearIndex
 void glClearIndex( GLfloat c )
 {
-    argp_glClearIndex argp;
+    args_glClearIndex argp;
 
     // Set function specific args
     argp.c = c
@@ -37,7 +37,7 @@ void glClearIndex( GLfloat c )
 // -- glClearColor
 void glClearColor( GLclampf red, GLclampf green, GLclampf blue, GLclampf alpha )
 {
-    argp_glClearColor argp;
+    args_glClearColor argp;
 
     // Set function specific args
     argp.red = red;
@@ -51,7 +51,7 @@ void glClearColor( GLclampf red, GLclampf green, GLclampf blue, GLclampf alpha )
 // -- glClear
 void glClear( GLbitfield mask )
 {
-    argp_glClear argp;
+    args_glClear argp;
 
     // Set function specific args
     argp.mask = mask
@@ -62,7 +62,7 @@ void glClear( GLbitfield mask )
 // -- glIndexMask
 void glIndexMask( GLuint mask )
 {
-    argp_glIndexMask argp;
+    args_glIndexMask argp;
 
     // Set function specific args
     argp.mask = mask
@@ -73,7 +73,7 @@ void glIndexMask( GLuint mask )
 // -- glColorMask
 void glColorMask( GLboolean red, GLboolean green, GLboolean blue, GLboolean alpha )
 {
-    argp_glColorMask argp;
+    args_glColorMask argp;
 
     // Set function specific args
     argp.red = red;
@@ -87,7 +87,7 @@ void glColorMask( GLboolean red, GLboolean green, GLboolean blue, GLboolean alph
 // -- glAlphaFunc
 void glAlphaFunc( GLenum func, GLclampf ref )
 {
-    argp_glAlphaFunc argp;
+    args_glAlphaFunc argp;
 
     // Set function specific args
     argp.func = func;
@@ -99,7 +99,7 @@ void glAlphaFunc( GLenum func, GLclampf ref )
 // -- glBlendFunc
 void glBlendFunc( GLenum sfactor, GLenum dfactor )
 {
-    argp_glBlendFunc argp;
+    args_glBlendFunc argp;
 
     // Set function specific args
     argp.sfactor = sfactor;
@@ -111,7 +111,7 @@ void glBlendFunc( GLenum sfactor, GLenum dfactor )
 // -- glLogicOp
 void glLogicOp( GLenum opcode )
 {
-    argp_glLogicOp argp;
+    args_glLogicOp argp;
 
     // Set function specific args
     argp.opcode = opcode
@@ -122,7 +122,7 @@ void glLogicOp( GLenum opcode )
 // -- glCullFace
 void glCullFace( GLenum mode )
 {
-    argp_glCullFace argp;
+    args_glCullFace argp;
 
     // Set function specific args
     argp.mode = mode
@@ -133,7 +133,7 @@ void glCullFace( GLenum mode )
 // -- glFrontFace
 void glFrontFace( GLenum mode )
 {
-    argp_glFrontFace argp;
+    args_glFrontFace argp;
 
     // Set function specific args
     argp.mode = mode
@@ -144,7 +144,7 @@ void glFrontFace( GLenum mode )
 // -- glPointSize
 void glPointSize( GLfloat size )
 {
-    argp_glPointSize argp;
+    args_glPointSize argp;
 
     // Set function specific args
     argp.size = size
@@ -155,7 +155,7 @@ void glPointSize( GLfloat size )
 // -- glLineWidth
 void glLineWidth( GLfloat width )
 {
-    argp_glLineWidth argp;
+    args_glLineWidth argp;
 
     // Set function specific args
     argp.width = width
@@ -166,7 +166,7 @@ void glLineWidth( GLfloat width )
 // -- glLineStipple
 void glLineStipple( GLint factor, GLushort pattern )
 {
-    argp_glLineStipple argp;
+    args_glLineStipple argp;
 
     // Set function specific args
     argp.factor = factor;
@@ -178,7 +178,7 @@ void glLineStipple( GLint factor, GLushort pattern )
 // -- glPolygonMode
 void glPolygonMode( GLenum face, GLenum mode )
 {
-    argp_glPolygonMode argp;
+    args_glPolygonMode argp;
 
     // Set function specific args
     argp.face = face;
@@ -190,7 +190,7 @@ void glPolygonMode( GLenum face, GLenum mode )
 // -- glPolygonOffset
 void glPolygonOffset( GLfloat factor, GLfloat units )
 {
-    argp_glPolygonOffset argp;
+    args_glPolygonOffset argp;
 
     // Set function specific args
     argp.factor = factor;
@@ -202,7 +202,7 @@ void glPolygonOffset( GLfloat factor, GLfloat units )
 // -- glPolygonStipple
 void glPolygonStipple( const GLubyte *mask )
 {
-    argp_glPolygonStipple argp;
+    args_glPolygonStipple argp;
 
     // Set function specific args
     argp.mask = mask
@@ -213,7 +213,7 @@ void glPolygonStipple( const GLubyte *mask )
 // -- glGetPolygonStipple
 void glGetPolygonStipple( GLubyte *mask )
 {
-    argp_glGetPolygonStipple argp;
+    args_glGetPolygonStipple argp;
 
     // Set function specific args
     argp.mask = mask
@@ -224,7 +224,7 @@ void glGetPolygonStipple( GLubyte *mask )
 // -- glEdgeFlag
 void glEdgeFlag( GLboolean flag )
 {
-    argp_glEdgeFlag argp;
+    args_glEdgeFlag argp;
 
     // Set function specific args
     argp.flag = flag
@@ -235,7 +235,7 @@ void glEdgeFlag( GLboolean flag )
 // -- glEdgeFlagv
 void glEdgeFlagv( const GLboolean *flag )
 {
-    argp_glEdgeFlagv argp;
+    args_glEdgeFlagv argp;
 
     // Set function specific args
     argp.flag = flag
@@ -246,7 +246,7 @@ void glEdgeFlagv( const GLboolean *flag )
 // -- glScissor
 void glScissor( GLint x, GLint y, GLsizei width, GLsizei height)
 {
-    argp_glScissor argp;
+    args_glScissor argp;
 
     // Set function specific args
     argp.x = x;
@@ -260,7 +260,7 @@ void glScissor( GLint x, GLint y, GLsizei width, GLsizei height)
 // -- glClipPlane
 void glClipPlane( GLenum plane, const GLdouble *equation )
 {
-    argp_glClipPlane argp;
+    args_glClipPlane argp;
 
     // Set function specific args
     argp.plane = plane;
@@ -272,7 +272,7 @@ void glClipPlane( GLenum plane, const GLdouble *equation )
 // -- glGetClipPlane
 void glGetClipPlane( GLenum plane, GLdouble *equation )
 {
-    argp_glGetClipPlane argp;
+    args_glGetClipPlane argp;
 
     // Set function specific args
     argp.plane = plane;
@@ -284,7 +284,7 @@ void glGetClipPlane( GLenum plane, GLdouble *equation )
 // -- glDrawBuffer
 void glDrawBuffer( GLenum mode )
 {
-    argp_glDrawBuffer argp;
+    args_glDrawBuffer argp;
 
     // Set function specific args
     argp.mode = mode
@@ -295,7 +295,7 @@ void glDrawBuffer( GLenum mode )
 // -- glReadBuffer
 void glReadBuffer( GLenum mode )
 {
-    argp_glReadBuffer argp;
+    args_glReadBuffer argp;
 
     // Set function specific args
     argp.mode = mode
@@ -306,7 +306,7 @@ void glReadBuffer( GLenum mode )
 // -- glEnable
 void glEnable( GLenum cap )
 {
-    argp_glEnable argp;
+    args_glEnable argp;
 
     // Set function specific args
     argp.cap = cap
@@ -317,7 +317,7 @@ void glEnable( GLenum cap )
 // -- glDisable
 void glDisable( GLenum cap )
 {
-    argp_glDisable argp;
+    args_glDisable argp;
 
     // Set function specific args
     argp.cap = cap
@@ -328,7 +328,7 @@ void glDisable( GLenum cap )
 // -- glIsEnabled
 GLboolean glIsEnabled( GLenum cap )
 {
-    argp_glIsEnabled argp;
+    args_glIsEnabled argp;
     
     // Set function specific args
     argp.cap = cap
@@ -339,7 +339,7 @@ GLboolean glIsEnabled( GLenum cap )
 // -- glEnableClientState
 void glEnableClientState( GLenum cap )
 {
-    argp_glEnableClientState argp;
+    args_glEnableClientState argp;
 
     // Set function specific args
     argp.cap = cap
@@ -350,7 +350,7 @@ void glEnableClientState( GLenum cap )
 // -- glDisableClientState
 void glDisableClientState( GLenum cap )
 {
-    argp_glDisableClientState argp;
+    args_glDisableClientState argp;
 
     // Set function specific args
     argp.cap = cap
@@ -361,7 +361,7 @@ void glDisableClientState( GLenum cap )
 // -- glGetBooleanv
 void glGetBooleanv( GLenum pname, GLboolean *params )
 {
-    argp_glGetBooleanv argp;
+    args_glGetBooleanv argp;
 
     // Set function specific args
     argp.pname = pname;
@@ -373,7 +373,7 @@ void glGetBooleanv( GLenum pname, GLboolean *params )
 // -- glGetDoublev
 void glGetDoublev( GLenum pname, GLdouble *params )
 {
-    argp_glGetDoublev argp;
+    args_glGetDoublev argp;
 
     // Set function specific args
     argp.pname = pname;
@@ -385,7 +385,7 @@ void glGetDoublev( GLenum pname, GLdouble *params )
 // -- glGetFloatv
 void glGetFloatv( GLenum pname, GLfloat *params )
 {
-    argp_glGetFloatv argp;
+    args_glGetFloatv argp;
 
     // Set function specific args
     argp.pname = pname;
@@ -397,7 +397,7 @@ void glGetFloatv( GLenum pname, GLfloat *params )
 // -- glGetIntegerv
 void glGetIntegerv( GLenum pname, GLint *params )
 {
-    argp_glGetIntegerv argp;
+    args_glGetIntegerv argp;
 
     // Set function specific args
     argp.pname = pname;
@@ -409,7 +409,7 @@ void glGetIntegerv( GLenum pname, GLint *params )
 // -- glPushAttrib
 void glPushAttrib( GLbitfield mask )
 {
-    argp_glPushAttrib argp;
+    args_glPushAttrib argp;
 
     // Set function specific args
     argp.mask = mask
@@ -426,7 +426,7 @@ void glPopAttrib()
 // -- glPushClientAttrib
 void glPushClientAttrib( GLbitfield mask )
 {
-    argp_glPushClientAttrib argp;
+    args_glPushClientAttrib argp;
 
     // Set function specific args
     argp.mask = mask
@@ -443,7 +443,7 @@ void glPopClientAttrib()
 // -- glRenderMode
 GLint glRenderMode( GLenum mode )
 {
-    argp_glRenderMode argp;
+    args_glRenderMode argp;
     
     // Set function specific args
     argp.mode = mode
@@ -466,7 +466,7 @@ void glFlush()
 // -- glHint
 void glHint( GLenum target, GLenum mode )
 {
-    argp_glHint argp;
+    args_glHint argp;
 
     // Set function specific args
     argp.target = target;
@@ -478,7 +478,7 @@ void glHint( GLenum target, GLenum mode )
 // -- glClearDepth
 void glClearDepth( GLclampd depth )
 {
-    argp_glClearDepth argp;
+    args_glClearDepth argp;
 
     // Set function specific args
     argp.depth = depth
@@ -489,7 +489,7 @@ void glClearDepth( GLclampd depth )
 // -- glDepthFunc
 void glDepthFunc( GLenum func )
 {
-    argp_glDepthFunc argp;
+    args_glDepthFunc argp;
 
     // Set function specific args
     argp.func = func
@@ -500,7 +500,7 @@ void glDepthFunc( GLenum func )
 // -- glDepthMask
 void glDepthMask( GLboolean flag )
 {
-    argp_glDepthMask argp;
+    args_glDepthMask argp;
 
     // Set function specific args
     argp.flag = flag
@@ -511,7 +511,7 @@ void glDepthMask( GLboolean flag )
 // -- glDepthRange
 void glDepthRange( GLclampd near_val, GLclampd far_val )
 {
-    argp_glDepthRange argp;
+    args_glDepthRange argp;
 
     // Set function specific args
     argp.near_val = near_val;
@@ -523,7 +523,7 @@ void glDepthRange( GLclampd near_val, GLclampd far_val )
 // -- glClearAccum
 void glClearAccum( GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha )
 {
-    argp_glClearAccum argp;
+    args_glClearAccum argp;
 
     // Set function specific args
     argp.red = red;
@@ -537,7 +537,7 @@ void glClearAccum( GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha )
 // -- glAccum
 void glAccum( GLenum op, GLfloat value )
 {
-    argp_glAccum argp;
+    args_glAccum argp;
 
     // Set function specific args
     argp.op = op;
@@ -549,7 +549,7 @@ void glAccum( GLenum op, GLfloat value )
 // -- glMatrixMode
 void glMatrixMode( GLenum mode )
 {
-    argp_glMatrixMode argp;
+    args_glMatrixMode argp;
 
     // Set function specific args
     argp.mode = mode
@@ -560,7 +560,7 @@ void glMatrixMode( GLenum mode )
 // -- glOrtho
 void glOrtho( GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GLdouble near_val, GLdouble far_val )
 {
-    argp_glOrtho argp;
+    args_glOrtho argp;
 
     // Set function specific args
     argp.left = left;
@@ -576,7 +576,7 @@ void glOrtho( GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GLdo
 // -- glFrustum
 void glFrustum( GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GLdouble near_val, GLdouble far_val )
 {
-    argp_glFrustum argp;
+    args_glFrustum argp;
 
     // Set function specific args
     argp.left = left;
@@ -592,7 +592,7 @@ void glFrustum( GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GL
 // -- glViewport
 void glViewport( GLint x, GLint y, GLsizei width, GLsizei height )
 {
-    argp_glViewport argp;
+    args_glViewport argp;
 
     // Set function specific args
     argp.x = x;
@@ -624,7 +624,7 @@ void glLoadIdentity()
 // -- glLoadMatrixd
 void glLoadMatrixd( const GLdouble *m )
 {
-    argp_glLoadMatrixd argp;
+    args_glLoadMatrixd argp;
 
     // Set function specific args
     argp.m = m
@@ -635,7 +635,7 @@ void glLoadMatrixd( const GLdouble *m )
 // -- glLoadMatrixf
 void glLoadMatrixf( const GLfloat *m )
 {
-    argp_glLoadMatrixf argp;
+    args_glLoadMatrixf argp;
 
     // Set function specific args
     argp.m = m
@@ -646,7 +646,7 @@ void glLoadMatrixf( const GLfloat *m )
 // -- glMultMatrixd
 void glMultMatrixd( const GLdouble *m )
 {
-    argp_glMultMatrixd argp;
+    args_glMultMatrixd argp;
 
     // Set function specific args
     argp.m = m
@@ -657,7 +657,7 @@ void glMultMatrixd( const GLdouble *m )
 // -- glMultMatrixf
 void glMultMatrixf( const GLfloat *m )
 {
-    argp_glMultMatrixf argp;
+    args_glMultMatrixf argp;
 
     // Set function specific args
     argp.m = m
@@ -668,7 +668,7 @@ void glMultMatrixf( const GLfloat *m )
 // -- glRotated
 void glRotated( GLdouble angle, GLdouble x, GLdouble y, GLdouble z )
 {
-    argp_glRotated argp;
+    args_glRotated argp;
 
     // Set function specific args
     argp.angle = angle;
@@ -682,7 +682,7 @@ void glRotated( GLdouble angle, GLdouble x, GLdouble y, GLdouble z )
 // -- glRotatef
 void glRotatef( GLfloat angle, GLfloat x, GLfloat y, GLfloat z )
 {
-    argp_glRotatef argp;
+    args_glRotatef argp;
 
     // Set function specific args
     argp.angle = angle;
@@ -696,7 +696,7 @@ void glRotatef( GLfloat angle, GLfloat x, GLfloat y, GLfloat z )
 // -- glScaled
 void glScaled( GLdouble x, GLdouble y, GLdouble z )
 {
-    argp_glScaled argp;
+    args_glScaled argp;
 
     // Set function specific args
     argp.x = x;
@@ -709,7 +709,7 @@ void glScaled( GLdouble x, GLdouble y, GLdouble z )
 // -- glScalef
 void glScalef( GLfloat x, GLfloat y, GLfloat z )
 {
-    argp_glScalef argp;
+    args_glScalef argp;
 
     // Set function specific args
     argp.x = x;
@@ -722,7 +722,7 @@ void glScalef( GLfloat x, GLfloat y, GLfloat z )
 // -- glTranslated
 void glTranslated( GLdouble x, GLdouble y, GLdouble z )
 {
-    argp_glTranslated argp;
+    args_glTranslated argp;
 
     // Set function specific args
     argp.x = x;
@@ -735,7 +735,7 @@ void glTranslated( GLdouble x, GLdouble y, GLdouble z )
 // -- glTranslatef
 void glTranslatef( GLfloat x, GLfloat y, GLfloat z )
 {
-    argp_glTranslatef argp;
+    args_glTranslatef argp;
 
     // Set function specific args
     argp.x = x;
@@ -748,7 +748,7 @@ void glTranslatef( GLfloat x, GLfloat y, GLfloat z )
 // -- glIsList
 GLboolean glIsList( GLuint list )
 {
-    argp_glIsList argp;
+    args_glIsList argp;
     
     // Set function specific args
     argp.list = list
@@ -759,7 +759,7 @@ GLboolean glIsList( GLuint list )
 // -- glDeleteLists
 void glDeleteLists( GLuint list, GLsizei range )
 {
-    argp_glDeleteLists argp;
+    args_glDeleteLists argp;
 
     // Set function specific args
     argp.list = list;
@@ -771,7 +771,7 @@ void glDeleteLists( GLuint list, GLsizei range )
 // -- glGenLists
 GLuint glGenLists( GLsizei range )
 {
-    argp_glGenLists argp;
+    args_glGenLists argp;
     
     // Set function specific args
     argp.range = range
@@ -782,7 +782,7 @@ GLuint glGenLists( GLsizei range )
 // -- glNewList
 void glNewList( GLuint list, GLenum mode )
 {
-    argp_glNewList argp;
+    args_glNewList argp;
 
     // Set function specific args
     argp.list = list;
@@ -800,7 +800,7 @@ void glEndList()
 // -- glCallList
 void glCallList( GLuint list )
 {
-    argp_glCallList argp;
+    args_glCallList argp;
 
     // Set function specific args
     argp.list = list
@@ -811,7 +811,7 @@ void glCallList( GLuint list )
 // -- glCallLists
 void glCallLists( GLsizei n, GLenum type, const GLvoid *lists )
 {
-    argp_glCallLists argp;
+    args_glCallLists argp;
 
     // Set function specific args
     argp.n = n;
@@ -824,7 +824,7 @@ void glCallLists( GLsizei n, GLenum type, const GLvoid *lists )
 // -- glListBase
 void glListBase( GLuint base )
 {
-    argp_glListBase argp;
+    args_glListBase argp;
 
     // Set function specific args
     argp.base = base
@@ -835,7 +835,7 @@ void glListBase( GLuint base )
 // -- glBegin
 void glBegin( GLenum mode )
 {
-    argp_glBegin argp;
+    args_glBegin argp;
 
     // Set function specific args
     argp.mode = mode
@@ -852,7 +852,7 @@ void glEnd()
 // -- glVertex2d
 void glVertex2d( GLdouble x, GLdouble y )
 {
-    argp_glVertex2d argp;
+    args_glVertex2d argp;
 
     // Set function specific args
     argp.x = x;
@@ -864,7 +864,7 @@ void glVertex2d( GLdouble x, GLdouble y )
 // -- glVertex2f
 void glVertex2f( GLfloat x, GLfloat y )
 {
-    argp_glVertex2f argp;
+    args_glVertex2f argp;
 
     // Set function specific args
     argp.x = x;
@@ -876,7 +876,7 @@ void glVertex2f( GLfloat x, GLfloat y )
 // -- glVertex2i
 void glVertex2i( GLint x, GLint y )
 {
-    argp_glVertex2i argp;
+    args_glVertex2i argp;
 
     // Set function specific args
     argp.x = x;
@@ -888,7 +888,7 @@ void glVertex2i( GLint x, GLint y )
 // -- glVertex2s
 void glVertex2s( GLshort x, GLshort y )
 {
-    argp_glVertex2s argp;
+    args_glVertex2s argp;
 
     // Set function specific args
     argp.x = x;
@@ -900,7 +900,7 @@ void glVertex2s( GLshort x, GLshort y )
 // -- glVertex3d
 void glVertex3d( GLdouble x, GLdouble y, GLdouble z )
 {
-    argp_glVertex3d argp;
+    args_glVertex3d argp;
 
     // Set function specific args
     argp.x = x;
@@ -913,7 +913,7 @@ void glVertex3d( GLdouble x, GLdouble y, GLdouble z )
 // -- glVertex3f
 void glVertex3f( GLfloat x, GLfloat y, GLfloat z )
 {
-    argp_glVertex3f argp;
+    args_glVertex3f argp;
 
     // Set function specific args
     argp.x = x;
@@ -926,7 +926,7 @@ void glVertex3f( GLfloat x, GLfloat y, GLfloat z )
 // -- glVertex3i
 void glVertex3i( GLint x, GLint y, GLint z )
 {
-    argp_glVertex3i argp;
+    args_glVertex3i argp;
 
     // Set function specific args
     argp.x = x;
@@ -939,7 +939,7 @@ void glVertex3i( GLint x, GLint y, GLint z )
 // -- glVertex3s
 void glVertex3s( GLshort x, GLshort y, GLshort z )
 {
-    argp_glVertex3s argp;
+    args_glVertex3s argp;
 
     // Set function specific args
     argp.x = x;
@@ -952,7 +952,7 @@ void glVertex3s( GLshort x, GLshort y, GLshort z )
 // -- glVertex4d
 void glVertex4d( GLdouble x, GLdouble y, GLdouble z, GLdouble w )
 {
-    argp_glVertex4d argp;
+    args_glVertex4d argp;
 
     // Set function specific args
     argp.x = x;
@@ -966,7 +966,7 @@ void glVertex4d( GLdouble x, GLdouble y, GLdouble z, GLdouble w )
 // -- glVertex4f
 void glVertex4f( GLfloat x, GLfloat y, GLfloat z, GLfloat w )
 {
-    argp_glVertex4f argp;
+    args_glVertex4f argp;
 
     // Set function specific args
     argp.x = x;
@@ -980,7 +980,7 @@ void glVertex4f( GLfloat x, GLfloat y, GLfloat z, GLfloat w )
 // -- glVertex4i
 void glVertex4i( GLint x, GLint y, GLint z, GLint w )
 {
-    argp_glVertex4i argp;
+    args_glVertex4i argp;
 
     // Set function specific args
     argp.x = x;
@@ -994,7 +994,7 @@ void glVertex4i( GLint x, GLint y, GLint z, GLint w )
 // -- glVertex4s
 void glVertex4s( GLshort x, GLshort y, GLshort z, GLshort w )
 {
-    argp_glVertex4s argp;
+    args_glVertex4s argp;
 
     // Set function specific args
     argp.x = x;
@@ -1008,7 +1008,7 @@ void glVertex4s( GLshort x, GLshort y, GLshort z, GLshort w )
 // -- glVertex2dv
 void glVertex2dv( const GLdouble *v )
 {
-    argp_glVertex2dv argp;
+    args_glVertex2dv argp;
 
     // Set function specific args
     argp.v = v
@@ -1019,7 +1019,7 @@ void glVertex2dv( const GLdouble *v )
 // -- glVertex2fv
 void glVertex2fv( const GLfloat *v )
 {
-    argp_glVertex2fv argp;
+    args_glVertex2fv argp;
 
     // Set function specific args
     argp.v = v
@@ -1030,7 +1030,7 @@ void glVertex2fv( const GLfloat *v )
 // -- glVertex2iv
 void glVertex2iv( const GLint *v )
 {
-    argp_glVertex2iv argp;
+    args_glVertex2iv argp;
 
     // Set function specific args
     argp.v = v
@@ -1041,7 +1041,7 @@ void glVertex2iv( const GLint *v )
 // -- glVertex2sv
 void glVertex2sv( const GLshort *v )
 {
-    argp_glVertex2sv argp;
+    args_glVertex2sv argp;
 
     // Set function specific args
     argp.v = v
@@ -1052,7 +1052,7 @@ void glVertex2sv( const GLshort *v )
 // -- glVertex3dv
 void glVertex3dv( const GLdouble *v )
 {
-    argp_glVertex3dv argp;
+    args_glVertex3dv argp;
 
     // Set function specific args
     argp.v = v
@@ -1063,7 +1063,7 @@ void glVertex3dv( const GLdouble *v )
 // -- glVertex3fv
 void glVertex3fv( const GLfloat *v )
 {
-    argp_glVertex3fv argp;
+    args_glVertex3fv argp;
 
     // Set function specific args
     argp.v = v
@@ -1074,7 +1074,7 @@ void glVertex3fv( const GLfloat *v )
 // -- glVertex3iv
 void glVertex3iv( const GLint *v )
 {
-    argp_glVertex3iv argp;
+    args_glVertex3iv argp;
 
     // Set function specific args
     argp.v = v
@@ -1085,7 +1085,7 @@ void glVertex3iv( const GLint *v )
 // -- glVertex3sv
 void glVertex3sv( const GLshort *v )
 {
-    argp_glVertex3sv argp;
+    args_glVertex3sv argp;
 
     // Set function specific args
     argp.v = v
@@ -1096,7 +1096,7 @@ void glVertex3sv( const GLshort *v )
 // -- glVertex4dv
 void glVertex4dv( const GLdouble *v )
 {
-    argp_glVertex4dv argp;
+    args_glVertex4dv argp;
 
     // Set function specific args
     argp.v = v
@@ -1107,7 +1107,7 @@ void glVertex4dv( const GLdouble *v )
 // -- glVertex4fv
 void glVertex4fv( const GLfloat *v )
 {
-    argp_glVertex4fv argp;
+    args_glVertex4fv argp;
 
     // Set function specific args
     argp.v = v
@@ -1118,7 +1118,7 @@ void glVertex4fv( const GLfloat *v )
 // -- glVertex4iv
 void glVertex4iv( const GLint *v )
 {
-    argp_glVertex4iv argp;
+    args_glVertex4iv argp;
 
     // Set function specific args
     argp.v = v
@@ -1129,7 +1129,7 @@ void glVertex4iv( const GLint *v )
 // -- glVertex4sv
 void glVertex4sv( const GLshort *v )
 {
-    argp_glVertex4sv argp;
+    args_glVertex4sv argp;
 
     // Set function specific args
     argp.v = v
@@ -1140,7 +1140,7 @@ void glVertex4sv( const GLshort *v )
 // -- glNormal3b
 void glNormal3b( GLbyte nx, GLbyte ny, GLbyte nz )
 {
-    argp_glNormal3b argp;
+    args_glNormal3b argp;
 
     // Set function specific args
     argp.nx = nx;
@@ -1153,7 +1153,7 @@ void glNormal3b( GLbyte nx, GLbyte ny, GLbyte nz )
 // -- glNormal3d
 void glNormal3d( GLdouble nx, GLdouble ny, GLdouble nz )
 {
-    argp_glNormal3d argp;
+    args_glNormal3d argp;
 
     // Set function specific args
     argp.nx = nx;
@@ -1166,7 +1166,7 @@ void glNormal3d( GLdouble nx, GLdouble ny, GLdouble nz )
 // -- glNormal3f
 void glNormal3f( GLfloat nx, GLfloat ny, GLfloat nz )
 {
-    argp_glNormal3f argp;
+    args_glNormal3f argp;
 
     // Set function specific args
     argp.nx = nx;
@@ -1179,7 +1179,7 @@ void glNormal3f( GLfloat nx, GLfloat ny, GLfloat nz )
 // -- glNormal3i
 void glNormal3i( GLint nx, GLint ny, GLint nz )
 {
-    argp_glNormal3i argp;
+    args_glNormal3i argp;
 
     // Set function specific args
     argp.nx = nx;
@@ -1192,7 +1192,7 @@ void glNormal3i( GLint nx, GLint ny, GLint nz )
 // -- glNormal3s
 void glNormal3s( GLshort nx, GLshort ny, GLshort nz )
 {
-    argp_glNormal3s argp;
+    args_glNormal3s argp;
 
     // Set function specific args
     argp.nx = nx;
@@ -1205,7 +1205,7 @@ void glNormal3s( GLshort nx, GLshort ny, GLshort nz )
 // -- glNormal3bv
 void glNormal3bv( const GLbyte *v )
 {
-    argp_glNormal3bv argp;
+    args_glNormal3bv argp;
 
     // Set function specific args
     argp.v = v
@@ -1216,7 +1216,7 @@ void glNormal3bv( const GLbyte *v )
 // -- glNormal3dv
 void glNormal3dv( const GLdouble *v )
 {
-    argp_glNormal3dv argp;
+    args_glNormal3dv argp;
 
     // Set function specific args
     argp.v = v
@@ -1227,7 +1227,7 @@ void glNormal3dv( const GLdouble *v )
 // -- glNormal3fv
 void glNormal3fv( const GLfloat *v )
 {
-    argp_glNormal3fv argp;
+    args_glNormal3fv argp;
 
     // Set function specific args
     argp.v = v
@@ -1238,7 +1238,7 @@ void glNormal3fv( const GLfloat *v )
 // -- glNormal3iv
 void glNormal3iv( const GLint *v )
 {
-    argp_glNormal3iv argp;
+    args_glNormal3iv argp;
 
     // Set function specific args
     argp.v = v
@@ -1249,7 +1249,7 @@ void glNormal3iv( const GLint *v )
 // -- glNormal3sv
 void glNormal3sv( const GLshort *v )
 {
-    argp_glNormal3sv argp;
+    args_glNormal3sv argp;
 
     // Set function specific args
     argp.v = v
@@ -1260,7 +1260,7 @@ void glNormal3sv( const GLshort *v )
 // -- glIndexd
 void glIndexd( GLdouble c )
 {
-    argp_glIndexd argp;
+    args_glIndexd argp;
 
     // Set function specific args
     argp.c = c
@@ -1271,7 +1271,7 @@ void glIndexd( GLdouble c )
 // -- glIndexf
 void glIndexf( GLfloat c )
 {
-    argp_glIndexf argp;
+    args_glIndexf argp;
 
     // Set function specific args
     argp.c = c
@@ -1282,7 +1282,7 @@ void glIndexf( GLfloat c )
 // -- glIndexi
 void glIndexi( GLint c )
 {
-    argp_glIndexi argp;
+    args_glIndexi argp;
 
     // Set function specific args
     argp.c = c
@@ -1293,7 +1293,7 @@ void glIndexi( GLint c )
 // -- glIndexs
 void glIndexs( GLshort c )
 {
-    argp_glIndexs argp;
+    args_glIndexs argp;
 
     // Set function specific args
     argp.c = c
@@ -1304,7 +1304,7 @@ void glIndexs( GLshort c )
 // -- glIndexub
 void glIndexub( GLubyte c )
 {
-    argp_glIndexub argp;
+    args_glIndexub argp;
 
     // Set function specific args
     argp.c = c
@@ -1315,7 +1315,7 @@ void glIndexub( GLubyte c )
 // -- glIndexdv
 void glIndexdv( const GLdouble *c )
 {
-    argp_glIndexdv argp;
+    args_glIndexdv argp;
 
     // Set function specific args
     argp.c = c
@@ -1326,7 +1326,7 @@ void glIndexdv( const GLdouble *c )
 // -- glIndexfv
 void glIndexfv( const GLfloat *c )
 {
-    argp_glIndexfv argp;
+    args_glIndexfv argp;
 
     // Set function specific args
     argp.c = c
@@ -1337,7 +1337,7 @@ void glIndexfv( const GLfloat *c )
 // -- glIndexiv
 void glIndexiv( const GLint *c )
 {
-    argp_glIndexiv argp;
+    args_glIndexiv argp;
 
     // Set function specific args
     argp.c = c
@@ -1348,7 +1348,7 @@ void glIndexiv( const GLint *c )
 // -- glIndexsv
 void glIndexsv( const GLshort *c )
 {
-    argp_glIndexsv argp;
+    args_glIndexsv argp;
 
     // Set function specific args
     argp.c = c
@@ -1359,7 +1359,7 @@ void glIndexsv( const GLshort *c )
 // -- glIndexubv
 void glIndexubv( const GLubyte *c )
 {
-    argp_glIndexubv argp;
+    args_glIndexubv argp;
 
     // Set function specific args
     argp.c = c
@@ -1370,7 +1370,7 @@ void glIndexubv( const GLubyte *c )
 // -- glColor3b
 void glColor3b( GLbyte red, GLbyte green, GLbyte blue )
 {
-    argp_glColor3b argp;
+    args_glColor3b argp;
 
     // Set function specific args
     argp.red = red;
@@ -1383,7 +1383,7 @@ void glColor3b( GLbyte red, GLbyte green, GLbyte blue )
 // -- glColor3d
 void glColor3d( GLdouble red, GLdouble green, GLdouble blue )
 {
-    argp_glColor3d argp;
+    args_glColor3d argp;
 
     // Set function specific args
     argp.red = red;
@@ -1396,7 +1396,7 @@ void glColor3d( GLdouble red, GLdouble green, GLdouble blue )
 // -- glColor3f
 void glColor3f( GLfloat red, GLfloat green, GLfloat blue )
 {
-    argp_glColor3f argp;
+    args_glColor3f argp;
 
     // Set function specific args
     argp.red = red;
@@ -1409,7 +1409,7 @@ void glColor3f( GLfloat red, GLfloat green, GLfloat blue )
 // -- glColor3i
 void glColor3i( GLint red, GLint green, GLint blue )
 {
-    argp_glColor3i argp;
+    args_glColor3i argp;
 
     // Set function specific args
     argp.red = red;
@@ -1422,7 +1422,7 @@ void glColor3i( GLint red, GLint green, GLint blue )
 // -- glColor3s
 void glColor3s( GLshort red, GLshort green, GLshort blue )
 {
-    argp_glColor3s argp;
+    args_glColor3s argp;
 
     // Set function specific args
     argp.red = red;
@@ -1435,7 +1435,7 @@ void glColor3s( GLshort red, GLshort green, GLshort blue )
 // -- glColor3ub
 void glColor3ub( GLubyte red, GLubyte green, GLubyte blue )
 {
-    argp_glColor3ub argp;
+    args_glColor3ub argp;
 
     // Set function specific args
     argp.red = red;
@@ -1448,7 +1448,7 @@ void glColor3ub( GLubyte red, GLubyte green, GLubyte blue )
 // -- glColor3ui
 void glColor3ui( GLuint red, GLuint green, GLuint blue )
 {
-    argp_glColor3ui argp;
+    args_glColor3ui argp;
 
     // Set function specific args
     argp.red = red;
@@ -1461,7 +1461,7 @@ void glColor3ui( GLuint red, GLuint green, GLuint blue )
 // -- glColor3us
 void glColor3us( GLushort red, GLushort green, GLushort blue )
 {
-    argp_glColor3us argp;
+    args_glColor3us argp;
 
     // Set function specific args
     argp.red = red;
@@ -1474,7 +1474,7 @@ void glColor3us( GLushort red, GLushort green, GLushort blue )
 // -- glColor4b
 void glColor4b( GLbyte red, GLbyte green, GLbyte blue, GLbyte alpha )
 {
-    argp_glColor4b argp;
+    args_glColor4b argp;
 
     // Set function specific args
     argp.red = red;
@@ -1488,7 +1488,7 @@ void glColor4b( GLbyte red, GLbyte green, GLbyte blue, GLbyte alpha )
 // -- glColor4d
 void glColor4d( GLdouble red, GLdouble green, GLdouble blue, GLdouble alpha )
 {
-    argp_glColor4d argp;
+    args_glColor4d argp;
 
     // Set function specific args
     argp.red = red;
@@ -1502,7 +1502,7 @@ void glColor4d( GLdouble red, GLdouble green, GLdouble blue, GLdouble alpha )
 // -- glColor4f
 void glColor4f( GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha )
 {
-    argp_glColor4f argp;
+    args_glColor4f argp;
 
     // Set function specific args
     argp.red = red;
@@ -1516,7 +1516,7 @@ void glColor4f( GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha )
 // -- glColor4i
 void glColor4i( GLint red, GLint green, GLint blue, GLint alpha )
 {
-    argp_glColor4i argp;
+    args_glColor4i argp;
 
     // Set function specific args
     argp.red = red;
@@ -1530,7 +1530,7 @@ void glColor4i( GLint red, GLint green, GLint blue, GLint alpha )
 // -- glColor4s
 void glColor4s( GLshort red, GLshort green, GLshort blue, GLshort alpha )
 {
-    argp_glColor4s argp;
+    args_glColor4s argp;
 
     // Set function specific args
     argp.red = red;
@@ -1544,7 +1544,7 @@ void glColor4s( GLshort red, GLshort green, GLshort blue, GLshort alpha )
 // -- glColor4ub
 void glColor4ub( GLubyte red, GLubyte green, GLubyte blue, GLubyte alpha )
 {
-    argp_glColor4ub argp;
+    args_glColor4ub argp;
 
     // Set function specific args
     argp.red = red;
@@ -1558,7 +1558,7 @@ void glColor4ub( GLubyte red, GLubyte green, GLubyte blue, GLubyte alpha )
 // -- glColor4ui
 void glColor4ui( GLuint red, GLuint green, GLuint blue, GLuint alpha )
 {
-    argp_glColor4ui argp;
+    args_glColor4ui argp;
 
     // Set function specific args
     argp.red = red;
@@ -1572,7 +1572,7 @@ void glColor4ui( GLuint red, GLuint green, GLuint blue, GLuint alpha )
 // -- glColor4us
 void glColor4us( GLushort red, GLushort green, GLushort blue, GLushort alpha )
 {
-    argp_glColor4us argp;
+    args_glColor4us argp;
 
     // Set function specific args
     argp.red = red;
@@ -1586,7 +1586,7 @@ void glColor4us( GLushort red, GLushort green, GLushort blue, GLushort alpha )
 // -- glColor3bv
 void glColor3bv( const GLbyte *v )
 {
-    argp_glColor3bv argp;
+    args_glColor3bv argp;
 
     // Set function specific args
     argp.v = v
@@ -1597,7 +1597,7 @@ void glColor3bv( const GLbyte *v )
 // -- glColor3dv
 void glColor3dv( const GLdouble *v )
 {
-    argp_glColor3dv argp;
+    args_glColor3dv argp;
 
     // Set function specific args
     argp.v = v
@@ -1608,7 +1608,7 @@ void glColor3dv( const GLdouble *v )
 // -- glColor3fv
 void glColor3fv( const GLfloat *v )
 {
-    argp_glColor3fv argp;
+    args_glColor3fv argp;
 
     // Set function specific args
     argp.v = v
@@ -1619,7 +1619,7 @@ void glColor3fv( const GLfloat *v )
 // -- glColor3iv
 void glColor3iv( const GLint *v )
 {
-    argp_glColor3iv argp;
+    args_glColor3iv argp;
 
     // Set function specific args
     argp.v = v
@@ -1630,7 +1630,7 @@ void glColor3iv( const GLint *v )
 // -- glColor3sv
 void glColor3sv( const GLshort *v )
 {
-    argp_glColor3sv argp;
+    args_glColor3sv argp;
 
     // Set function specific args
     argp.v = v
@@ -1641,7 +1641,7 @@ void glColor3sv( const GLshort *v )
 // -- glColor3ubv
 void glColor3ubv( const GLubyte *v )
 {
-    argp_glColor3ubv argp;
+    args_glColor3ubv argp;
 
     // Set function specific args
     argp.v = v
@@ -1652,7 +1652,7 @@ void glColor3ubv( const GLubyte *v )
 // -- glColor3uiv
 void glColor3uiv( const GLuint *v )
 {
-    argp_glColor3uiv argp;
+    args_glColor3uiv argp;
 
     // Set function specific args
     argp.v = v
@@ -1663,7 +1663,7 @@ void glColor3uiv( const GLuint *v )
 // -- glColor3usv
 void glColor3usv( const GLushort *v )
 {
-    argp_glColor3usv argp;
+    args_glColor3usv argp;
 
     // Set function specific args
     argp.v = v
@@ -1674,7 +1674,7 @@ void glColor3usv( const GLushort *v )
 // -- glColor4bv
 void glColor4bv( const GLbyte *v )
 {
-    argp_glColor4bv argp;
+    args_glColor4bv argp;
 
     // Set function specific args
     argp.v = v
@@ -1685,7 +1685,7 @@ void glColor4bv( const GLbyte *v )
 // -- glColor4dv
 void glColor4dv( const GLdouble *v )
 {
-    argp_glColor4dv argp;
+    args_glColor4dv argp;
 
     // Set function specific args
     argp.v = v
@@ -1696,7 +1696,7 @@ void glColor4dv( const GLdouble *v )
 // -- glColor4fv
 void glColor4fv( const GLfloat *v )
 {
-    argp_glColor4fv argp;
+    args_glColor4fv argp;
 
     // Set function specific args
     argp.v = v
@@ -1707,7 +1707,7 @@ void glColor4fv( const GLfloat *v )
 // -- glColor4iv
 void glColor4iv( const GLint *v )
 {
-    argp_glColor4iv argp;
+    args_glColor4iv argp;
 
     // Set function specific args
     argp.v = v
@@ -1718,7 +1718,7 @@ void glColor4iv( const GLint *v )
 // -- glColor4sv
 void glColor4sv( const GLshort *v )
 {
-    argp_glColor4sv argp;
+    args_glColor4sv argp;
 
     // Set function specific args
     argp.v = v
@@ -1729,7 +1729,7 @@ void glColor4sv( const GLshort *v )
 // -- glColor4ubv
 void glColor4ubv( const GLubyte *v )
 {
-    argp_glColor4ubv argp;
+    args_glColor4ubv argp;
 
     // Set function specific args
     argp.v = v
@@ -1740,7 +1740,7 @@ void glColor4ubv( const GLubyte *v )
 // -- glColor4uiv
 void glColor4uiv( const GLuint *v )
 {
-    argp_glColor4uiv argp;
+    args_glColor4uiv argp;
 
     // Set function specific args
     argp.v = v
@@ -1751,7 +1751,7 @@ void glColor4uiv( const GLuint *v )
 // -- glColor4usv
 void glColor4usv( const GLushort *v )
 {
-    argp_glColor4usv argp;
+    args_glColor4usv argp;
 
     // Set function specific args
     argp.v = v
@@ -1762,7 +1762,7 @@ void glColor4usv( const GLushort *v )
 // -- glTexCoord1d
 void glTexCoord1d( GLdouble s )
 {
-    argp_glTexCoord1d argp;
+    args_glTexCoord1d argp;
 
     // Set function specific args
     argp.s = s
@@ -1773,7 +1773,7 @@ void glTexCoord1d( GLdouble s )
 // -- glTexCoord1f
 void glTexCoord1f( GLfloat s )
 {
-    argp_glTexCoord1f argp;
+    args_glTexCoord1f argp;
 
     // Set function specific args
     argp.s = s
@@ -1784,7 +1784,7 @@ void glTexCoord1f( GLfloat s )
 // -- glTexCoord1i
 void glTexCoord1i( GLint s )
 {
-    argp_glTexCoord1i argp;
+    args_glTexCoord1i argp;
 
     // Set function specific args
     argp.s = s
@@ -1795,7 +1795,7 @@ void glTexCoord1i( GLint s )
 // -- glTexCoord1s
 void glTexCoord1s( GLshort s )
 {
-    argp_glTexCoord1s argp;
+    args_glTexCoord1s argp;
 
     // Set function specific args
     argp.s = s
@@ -1806,7 +1806,7 @@ void glTexCoord1s( GLshort s )
 // -- glTexCoord2d
 void glTexCoord2d( GLdouble s, GLdouble t )
 {
-    argp_glTexCoord2d argp;
+    args_glTexCoord2d argp;
 
     // Set function specific args
     argp.s = s;
@@ -1818,7 +1818,7 @@ void glTexCoord2d( GLdouble s, GLdouble t )
 // -- glTexCoord2f
 void glTexCoord2f( GLfloat s, GLfloat t )
 {
-    argp_glTexCoord2f argp;
+    args_glTexCoord2f argp;
 
     // Set function specific args
     argp.s = s;
@@ -1830,7 +1830,7 @@ void glTexCoord2f( GLfloat s, GLfloat t )
 // -- glTexCoord2i
 void glTexCoord2i( GLint s, GLint t )
 {
-    argp_glTexCoord2i argp;
+    args_glTexCoord2i argp;
 
     // Set function specific args
     argp.s = s;
@@ -1842,7 +1842,7 @@ void glTexCoord2i( GLint s, GLint t )
 // -- glTexCoord2s
 void glTexCoord2s( GLshort s, GLshort t )
 {
-    argp_glTexCoord2s argp;
+    args_glTexCoord2s argp;
 
     // Set function specific args
     argp.s = s;
@@ -1854,7 +1854,7 @@ void glTexCoord2s( GLshort s, GLshort t )
 // -- glTexCoord3d
 void glTexCoord3d( GLdouble s, GLdouble t, GLdouble r )
 {
-    argp_glTexCoord3d argp;
+    args_glTexCoord3d argp;
 
     // Set function specific args
     argp.s = s;
@@ -1867,7 +1867,7 @@ void glTexCoord3d( GLdouble s, GLdouble t, GLdouble r )
 // -- glTexCoord3f
 void glTexCoord3f( GLfloat s, GLfloat t, GLfloat r )
 {
-    argp_glTexCoord3f argp;
+    args_glTexCoord3f argp;
 
     // Set function specific args
     argp.s = s;
@@ -1880,7 +1880,7 @@ void glTexCoord3f( GLfloat s, GLfloat t, GLfloat r )
 // -- glTexCoord3i
 void glTexCoord3i( GLint s, GLint t, GLint r )
 {
-    argp_glTexCoord3i argp;
+    args_glTexCoord3i argp;
 
     // Set function specific args
     argp.s = s;
@@ -1893,7 +1893,7 @@ void glTexCoord3i( GLint s, GLint t, GLint r )
 // -- glTexCoord3s
 void glTexCoord3s( GLshort s, GLshort t, GLshort r )
 {
-    argp_glTexCoord3s argp;
+    args_glTexCoord3s argp;
 
     // Set function specific args
     argp.s = s;
@@ -1906,7 +1906,7 @@ void glTexCoord3s( GLshort s, GLshort t, GLshort r )
 // -- glTexCoord4d
 void glTexCoord4d( GLdouble s, GLdouble t, GLdouble r, GLdouble q )
 {
-    argp_glTexCoord4d argp;
+    args_glTexCoord4d argp;
 
     // Set function specific args
     argp.s = s;
@@ -1920,7 +1920,7 @@ void glTexCoord4d( GLdouble s, GLdouble t, GLdouble r, GLdouble q )
 // -- glTexCoord4f
 void glTexCoord4f( GLfloat s, GLfloat t, GLfloat r, GLfloat q )
 {
-    argp_glTexCoord4f argp;
+    args_glTexCoord4f argp;
 
     // Set function specific args
     argp.s = s;
@@ -1934,7 +1934,7 @@ void glTexCoord4f( GLfloat s, GLfloat t, GLfloat r, GLfloat q )
 // -- glTexCoord4i
 void glTexCoord4i( GLint s, GLint t, GLint r, GLint q )
 {
-    argp_glTexCoord4i argp;
+    args_glTexCoord4i argp;
 
     // Set function specific args
     argp.s = s;
@@ -1948,7 +1948,7 @@ void glTexCoord4i( GLint s, GLint t, GLint r, GLint q )
 // -- glTexCoord4s
 void glTexCoord4s( GLshort s, GLshort t, GLshort r, GLshort q )
 {
-    argp_glTexCoord4s argp;
+    args_glTexCoord4s argp;
 
     // Set function specific args
     argp.s = s;
@@ -1962,7 +1962,7 @@ void glTexCoord4s( GLshort s, GLshort t, GLshort r, GLshort q )
 // -- glTexCoord1dv
 void glTexCoord1dv( const GLdouble *v )
 {
-    argp_glTexCoord1dv argp;
+    args_glTexCoord1dv argp;
 
     // Set function specific args
     argp.v = v
@@ -1973,7 +1973,7 @@ void glTexCoord1dv( const GLdouble *v )
 // -- glTexCoord1fv
 void glTexCoord1fv( const GLfloat *v )
 {
-    argp_glTexCoord1fv argp;
+    args_glTexCoord1fv argp;
 
     // Set function specific args
     argp.v = v
@@ -1984,7 +1984,7 @@ void glTexCoord1fv( const GLfloat *v )
 // -- glTexCoord1iv
 void glTexCoord1iv( const GLint *v )
 {
-    argp_glTexCoord1iv argp;
+    args_glTexCoord1iv argp;
 
     // Set function specific args
     argp.v = v
@@ -1995,7 +1995,7 @@ void glTexCoord1iv( const GLint *v )
 // -- glTexCoord1sv
 void glTexCoord1sv( const GLshort *v )
 {
-    argp_glTexCoord1sv argp;
+    args_glTexCoord1sv argp;
 
     // Set function specific args
     argp.v = v
@@ -2006,7 +2006,7 @@ void glTexCoord1sv( const GLshort *v )
 // -- glTexCoord2dv
 void glTexCoord2dv( const GLdouble *v )
 {
-    argp_glTexCoord2dv argp;
+    args_glTexCoord2dv argp;
 
     // Set function specific args
     argp.v = v
@@ -2017,7 +2017,7 @@ void glTexCoord2dv( const GLdouble *v )
 // -- glTexCoord2fv
 void glTexCoord2fv( const GLfloat *v )
 {
-    argp_glTexCoord2fv argp;
+    args_glTexCoord2fv argp;
 
     // Set function specific args
     argp.v = v
@@ -2028,7 +2028,7 @@ void glTexCoord2fv( const GLfloat *v )
 // -- glTexCoord2iv
 void glTexCoord2iv( const GLint *v )
 {
-    argp_glTexCoord2iv argp;
+    args_glTexCoord2iv argp;
 
     // Set function specific args
     argp.v = v
@@ -2039,7 +2039,7 @@ void glTexCoord2iv( const GLint *v )
 // -- glTexCoord2sv
 void glTexCoord2sv( const GLshort *v )
 {
-    argp_glTexCoord2sv argp;
+    args_glTexCoord2sv argp;
 
     // Set function specific args
     argp.v = v
@@ -2050,7 +2050,7 @@ void glTexCoord2sv( const GLshort *v )
 // -- glTexCoord3dv
 void glTexCoord3dv( const GLdouble *v )
 {
-    argp_glTexCoord3dv argp;
+    args_glTexCoord3dv argp;
 
     // Set function specific args
     argp.v = v
@@ -2061,7 +2061,7 @@ void glTexCoord3dv( const GLdouble *v )
 // -- glTexCoord3fv
 void glTexCoord3fv( const GLfloat *v )
 {
-    argp_glTexCoord3fv argp;
+    args_glTexCoord3fv argp;
 
     // Set function specific args
     argp.v = v
@@ -2072,7 +2072,7 @@ void glTexCoord3fv( const GLfloat *v )
 // -- glTexCoord3iv
 void glTexCoord3iv( const GLint *v )
 {
-    argp_glTexCoord3iv argp;
+    args_glTexCoord3iv argp;
 
     // Set function specific args
     argp.v = v
@@ -2083,7 +2083,7 @@ void glTexCoord3iv( const GLint *v )
 // -- glTexCoord3sv
 void glTexCoord3sv( const GLshort *v )
 {
-    argp_glTexCoord3sv argp;
+    args_glTexCoord3sv argp;
 
     // Set function specific args
     argp.v = v
@@ -2094,7 +2094,7 @@ void glTexCoord3sv( const GLshort *v )
 // -- glTexCoord4dv
 void glTexCoord4dv( const GLdouble *v )
 {
-    argp_glTexCoord4dv argp;
+    args_glTexCoord4dv argp;
 
     // Set function specific args
     argp.v = v
@@ -2105,7 +2105,7 @@ void glTexCoord4dv( const GLdouble *v )
 // -- glTexCoord4fv
 void glTexCoord4fv( const GLfloat *v )
 {
-    argp_glTexCoord4fv argp;
+    args_glTexCoord4fv argp;
 
     // Set function specific args
     argp.v = v
@@ -2116,7 +2116,7 @@ void glTexCoord4fv( const GLfloat *v )
 // -- glTexCoord4iv
 void glTexCoord4iv( const GLint *v )
 {
-    argp_glTexCoord4iv argp;
+    args_glTexCoord4iv argp;
 
     // Set function specific args
     argp.v = v
@@ -2127,7 +2127,7 @@ void glTexCoord4iv( const GLint *v )
 // -- glTexCoord4sv
 void glTexCoord4sv( const GLshort *v )
 {
-    argp_glTexCoord4sv argp;
+    args_glTexCoord4sv argp;
 
     // Set function specific args
     argp.v = v
@@ -2138,7 +2138,7 @@ void glTexCoord4sv( const GLshort *v )
 // -- glRasterPos2d
 void glRasterPos2d( GLdouble x, GLdouble y )
 {
-    argp_glRasterPos2d argp;
+    args_glRasterPos2d argp;
 
     // Set function specific args
     argp.x = x;
@@ -2150,7 +2150,7 @@ void glRasterPos2d( GLdouble x, GLdouble y )
 // -- glRasterPos2f
 void glRasterPos2f( GLfloat x, GLfloat y )
 {
-    argp_glRasterPos2f argp;
+    args_glRasterPos2f argp;
 
     // Set function specific args
     argp.x = x;
@@ -2162,7 +2162,7 @@ void glRasterPos2f( GLfloat x, GLfloat y )
 // -- glRasterPos2i
 void glRasterPos2i( GLint x, GLint y )
 {
-    argp_glRasterPos2i argp;
+    args_glRasterPos2i argp;
 
     // Set function specific args
     argp.x = x;
@@ -2174,7 +2174,7 @@ void glRasterPos2i( GLint x, GLint y )
 // -- glRasterPos2s
 void glRasterPos2s( GLshort x, GLshort y )
 {
-    argp_glRasterPos2s argp;
+    args_glRasterPos2s argp;
 
     // Set function specific args
     argp.x = x;
@@ -2186,7 +2186,7 @@ void glRasterPos2s( GLshort x, GLshort y )
 // -- glRasterPos3d
 void glRasterPos3d( GLdouble x, GLdouble y, GLdouble z )
 {
-    argp_glRasterPos3d argp;
+    args_glRasterPos3d argp;
 
     // Set function specific args
     argp.x = x;
@@ -2199,7 +2199,7 @@ void glRasterPos3d( GLdouble x, GLdouble y, GLdouble z )
 // -- glRasterPos3f
 void glRasterPos3f( GLfloat x, GLfloat y, GLfloat z )
 {
-    argp_glRasterPos3f argp;
+    args_glRasterPos3f argp;
 
     // Set function specific args
     argp.x = x;
@@ -2212,7 +2212,7 @@ void glRasterPos3f( GLfloat x, GLfloat y, GLfloat z )
 // -- glRasterPos3i
 void glRasterPos3i( GLint x, GLint y, GLint z )
 {
-    argp_glRasterPos3i argp;
+    args_glRasterPos3i argp;
 
     // Set function specific args
     argp.x = x;
@@ -2225,7 +2225,7 @@ void glRasterPos3i( GLint x, GLint y, GLint z )
 // -- glRasterPos3s
 void glRasterPos3s( GLshort x, GLshort y, GLshort z )
 {
-    argp_glRasterPos3s argp;
+    args_glRasterPos3s argp;
 
     // Set function specific args
     argp.x = x;
@@ -2238,7 +2238,7 @@ void glRasterPos3s( GLshort x, GLshort y, GLshort z )
 // -- glRasterPos4d
 void glRasterPos4d( GLdouble x, GLdouble y, GLdouble z, GLdouble w )
 {
-    argp_glRasterPos4d argp;
+    args_glRasterPos4d argp;
 
     // Set function specific args
     argp.x = x;
@@ -2252,7 +2252,7 @@ void glRasterPos4d( GLdouble x, GLdouble y, GLdouble z, GLdouble w )
 // -- glRasterPos4f
 void glRasterPos4f( GLfloat x, GLfloat y, GLfloat z, GLfloat w )
 {
-    argp_glRasterPos4f argp;
+    args_glRasterPos4f argp;
 
     // Set function specific args
     argp.x = x;
@@ -2266,7 +2266,7 @@ void glRasterPos4f( GLfloat x, GLfloat y, GLfloat z, GLfloat w )
 // -- glRasterPos4i
 void glRasterPos4i( GLint x, GLint y, GLint z, GLint w )
 {
-    argp_glRasterPos4i argp;
+    args_glRasterPos4i argp;
 
     // Set function specific args
     argp.x = x;
@@ -2280,7 +2280,7 @@ void glRasterPos4i( GLint x, GLint y, GLint z, GLint w )
 // -- glRasterPos4s
 void glRasterPos4s( GLshort x, GLshort y, GLshort z, GLshort w )
 {
-    argp_glRasterPos4s argp;
+    args_glRasterPos4s argp;
 
     // Set function specific args
     argp.x = x;
@@ -2294,7 +2294,7 @@ void glRasterPos4s( GLshort x, GLshort y, GLshort z, GLshort w )
 // -- glRasterPos2dv
 void glRasterPos2dv( const GLdouble *v )
 {
-    argp_glRasterPos2dv argp;
+    args_glRasterPos2dv argp;
 
     // Set function specific args
     argp.v = v
@@ -2305,7 +2305,7 @@ void glRasterPos2dv( const GLdouble *v )
 // -- glRasterPos2fv
 void glRasterPos2fv( const GLfloat *v )
 {
-    argp_glRasterPos2fv argp;
+    args_glRasterPos2fv argp;
 
     // Set function specific args
     argp.v = v
@@ -2316,7 +2316,7 @@ void glRasterPos2fv( const GLfloat *v )
 // -- glRasterPos2iv
 void glRasterPos2iv( const GLint *v )
 {
-    argp_glRasterPos2iv argp;
+    args_glRasterPos2iv argp;
 
     // Set function specific args
     argp.v = v
@@ -2327,7 +2327,7 @@ void glRasterPos2iv( const GLint *v )
 // -- glRasterPos2sv
 void glRasterPos2sv( const GLshort *v )
 {
-    argp_glRasterPos2sv argp;
+    args_glRasterPos2sv argp;
 
     // Set function specific args
     argp.v = v
@@ -2338,7 +2338,7 @@ void glRasterPos2sv( const GLshort *v )
 // -- glRasterPos3dv
 void glRasterPos3dv( const GLdouble *v )
 {
-    argp_glRasterPos3dv argp;
+    args_glRasterPos3dv argp;
 
     // Set function specific args
     argp.v = v
@@ -2349,7 +2349,7 @@ void glRasterPos3dv( const GLdouble *v )
 // -- glRasterPos3fv
 void glRasterPos3fv( const GLfloat *v )
 {
-    argp_glRasterPos3fv argp;
+    args_glRasterPos3fv argp;
 
     // Set function specific args
     argp.v = v
@@ -2360,7 +2360,7 @@ void glRasterPos3fv( const GLfloat *v )
 // -- glRasterPos3iv
 void glRasterPos3iv( const GLint *v )
 {
-    argp_glRasterPos3iv argp;
+    args_glRasterPos3iv argp;
 
     // Set function specific args
     argp.v = v
@@ -2371,7 +2371,7 @@ void glRasterPos3iv( const GLint *v )
 // -- glRasterPos3sv
 void glRasterPos3sv( const GLshort *v )
 {
-    argp_glRasterPos3sv argp;
+    args_glRasterPos3sv argp;
 
     // Set function specific args
     argp.v = v
@@ -2382,7 +2382,7 @@ void glRasterPos3sv( const GLshort *v )
 // -- glRasterPos4dv
 void glRasterPos4dv( const GLdouble *v )
 {
-    argp_glRasterPos4dv argp;
+    args_glRasterPos4dv argp;
 
     // Set function specific args
     argp.v = v
@@ -2393,7 +2393,7 @@ void glRasterPos4dv( const GLdouble *v )
 // -- glRasterPos4fv
 void glRasterPos4fv( const GLfloat *v )
 {
-    argp_glRasterPos4fv argp;
+    args_glRasterPos4fv argp;
 
     // Set function specific args
     argp.v = v
@@ -2404,7 +2404,7 @@ void glRasterPos4fv( const GLfloat *v )
 // -- glRasterPos4iv
 void glRasterPos4iv( const GLint *v )
 {
-    argp_glRasterPos4iv argp;
+    args_glRasterPos4iv argp;
 
     // Set function specific args
     argp.v = v
@@ -2415,7 +2415,7 @@ void glRasterPos4iv( const GLint *v )
 // -- glRasterPos4sv
 void glRasterPos4sv( const GLshort *v )
 {
-    argp_glRasterPos4sv argp;
+    args_glRasterPos4sv argp;
 
     // Set function specific args
     argp.v = v
@@ -2426,7 +2426,7 @@ void glRasterPos4sv( const GLshort *v )
 // -- glRectd
 void glRectd( GLdouble x1, GLdouble y1, GLdouble x2, GLdouble y2 )
 {
-    argp_glRectd argp;
+    args_glRectd argp;
 
     // Set function specific args
     argp.x1 = x1;
@@ -2440,7 +2440,7 @@ void glRectd( GLdouble x1, GLdouble y1, GLdouble x2, GLdouble y2 )
 // -- glRectf
 void glRectf( GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2 )
 {
-    argp_glRectf argp;
+    args_glRectf argp;
 
     // Set function specific args
     argp.x1 = x1;
@@ -2454,7 +2454,7 @@ void glRectf( GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2 )
 // -- glRecti
 void glRecti( GLint x1, GLint y1, GLint x2, GLint y2 )
 {
-    argp_glRecti argp;
+    args_glRecti argp;
 
     // Set function specific args
     argp.x1 = x1;
@@ -2468,7 +2468,7 @@ void glRecti( GLint x1, GLint y1, GLint x2, GLint y2 )
 // -- glRects
 void glRects( GLshort x1, GLshort y1, GLshort x2, GLshort y2 )
 {
-    argp_glRects argp;
+    args_glRects argp;
 
     // Set function specific args
     argp.x1 = x1;
@@ -2482,7 +2482,7 @@ void glRects( GLshort x1, GLshort y1, GLshort x2, GLshort y2 )
 // -- glRectdv
 void glRectdv( const GLdouble *v1, const GLdouble *v2 )
 {
-    argp_glRectdv argp;
+    args_glRectdv argp;
 
     // Set function specific args
     argp.v1 = v1;
@@ -2494,7 +2494,7 @@ void glRectdv( const GLdouble *v1, const GLdouble *v2 )
 // -- glRectfv
 void glRectfv( const GLfloat *v1, const GLfloat *v2 )
 {
-    argp_glRectfv argp;
+    args_glRectfv argp;
 
     // Set function specific args
     argp.v1 = v1;
@@ -2506,7 +2506,7 @@ void glRectfv( const GLfloat *v1, const GLfloat *v2 )
 // -- glRectiv
 void glRectiv( const GLint *v1, const GLint *v2 )
 {
-    argp_glRectiv argp;
+    args_glRectiv argp;
 
     // Set function specific args
     argp.v1 = v1;
@@ -2518,7 +2518,7 @@ void glRectiv( const GLint *v1, const GLint *v2 )
 // -- glRectsv
 void glRectsv( const GLshort *v1, const GLshort *v2 )
 {
-    argp_glRectsv argp;
+    args_glRectsv argp;
 
     // Set function specific args
     argp.v1 = v1;
@@ -2530,7 +2530,7 @@ void glRectsv( const GLshort *v1, const GLshort *v2 )
 // -- glVertexPointer
 void glVertexPointer( GLint size, GLenum type, GLsizei stride, const GLvoid *ptr )
 {
-    argp_glVertexPointer argp;
+    args_glVertexPointer argp;
 
     // Set function specific args
     argp.size = size;
@@ -2544,7 +2544,7 @@ void glVertexPointer( GLint size, GLenum type, GLsizei stride, const GLvoid *ptr
 // -- glNormalPointer
 void glNormalPointer( GLenum type, GLsizei stride, const GLvoid *ptr )
 {
-    argp_glNormalPointer argp;
+    args_glNormalPointer argp;
 
     // Set function specific args
     argp.type = type;
@@ -2557,7 +2557,7 @@ void glNormalPointer( GLenum type, GLsizei stride, const GLvoid *ptr )
 // -- glColorPointer
 void glColorPointer( GLint size, GLenum type, GLsizei stride, const GLvoid *ptr )
 {
-    argp_glColorPointer argp;
+    args_glColorPointer argp;
 
     // Set function specific args
     argp.size = size;
@@ -2571,7 +2571,7 @@ void glColorPointer( GLint size, GLenum type, GLsizei stride, const GLvoid *ptr 
 // -- glIndexPointer
 void glIndexPointer( GLenum type, GLsizei stride, const GLvoid *ptr )
 {
-    argp_glIndexPointer argp;
+    args_glIndexPointer argp;
 
     // Set function specific args
     argp.type = type;
@@ -2584,7 +2584,7 @@ void glIndexPointer( GLenum type, GLsizei stride, const GLvoid *ptr )
 // -- glTexCoordPointer
 void glTexCoordPointer( GLint size, GLenum type, GLsizei stride, const GLvoid *ptr )
 {
-    argp_glTexCoordPointer argp;
+    args_glTexCoordPointer argp;
 
     // Set function specific args
     argp.size = size;
@@ -2598,7 +2598,7 @@ void glTexCoordPointer( GLint size, GLenum type, GLsizei stride, const GLvoid *p
 // -- glEdgeFlagPointer
 void glEdgeFlagPointer( GLsizei stride, const GLvoid *ptr )
 {
-    argp_glEdgeFlagPointer argp;
+    args_glEdgeFlagPointer argp;
 
     // Set function specific args
     argp.stride = stride;
@@ -2610,7 +2610,7 @@ void glEdgeFlagPointer( GLsizei stride, const GLvoid *ptr )
 // -- glGetPointerv
 void glGetPointerv( GLenum pname, GLvoid **params )
 {
-    argp_glGetPointerv argp;
+    args_glGetPointerv argp;
 
     // Set function specific args
     argp.pname = pname;
@@ -2622,7 +2622,7 @@ void glGetPointerv( GLenum pname, GLvoid **params )
 // -- glArrayElement
 void glArrayElement( GLint i )
 {
-    argp_glArrayElement argp;
+    args_glArrayElement argp;
 
     // Set function specific args
     argp.i = i
@@ -2633,7 +2633,7 @@ void glArrayElement( GLint i )
 // -- glDrawArrays
 void glDrawArrays( GLenum mode, GLint first, GLsizei count )
 {
-    argp_glDrawArrays argp;
+    args_glDrawArrays argp;
 
     // Set function specific args
     argp.mode = mode;
@@ -2646,7 +2646,7 @@ void glDrawArrays( GLenum mode, GLint first, GLsizei count )
 // -- glDrawElements
 void glDrawElements( GLenum mode, GLsizei count, GLenum type, const GLvoid *indices )
 {
-    argp_glDrawElements argp;
+    args_glDrawElements argp;
 
     // Set function specific args
     argp.mode = mode;
@@ -2660,7 +2660,7 @@ void glDrawElements( GLenum mode, GLsizei count, GLenum type, const GLvoid *indi
 // -- glInterleavedArrays
 void glInterleavedArrays( GLenum format, GLsizei stride, const GLvoid *pointer )
 {
-    argp_glInterleavedArrays argp;
+    args_glInterleavedArrays argp;
 
     // Set function specific args
     argp.format = format;
@@ -2673,7 +2673,7 @@ void glInterleavedArrays( GLenum format, GLsizei stride, const GLvoid *pointer )
 // -- glShadeModel
 void glShadeModel( GLenum mode )
 {
-    argp_glShadeModel argp;
+    args_glShadeModel argp;
 
     // Set function specific args
     argp.mode = mode
@@ -2684,7 +2684,7 @@ void glShadeModel( GLenum mode )
 // -- glLightf
 void glLightf( GLenum light, GLenum pname, GLfloat param )
 {
-    argp_glLightf argp;
+    args_glLightf argp;
 
     // Set function specific args
     argp.light = light;
@@ -2697,7 +2697,7 @@ void glLightf( GLenum light, GLenum pname, GLfloat param )
 // -- glLighti
 void glLighti( GLenum light, GLenum pname, GLint param )
 {
-    argp_glLighti argp;
+    args_glLighti argp;
 
     // Set function specific args
     argp.light = light;
@@ -2710,7 +2710,7 @@ void glLighti( GLenum light, GLenum pname, GLint param )
 // -- glLightfv
 void glLightfv( GLenum light, GLenum pname, const GLfloat *params )
 {
-    argp_glLightfv argp;
+    args_glLightfv argp;
 
     // Set function specific args
     argp.light = light;
@@ -2723,7 +2723,7 @@ void glLightfv( GLenum light, GLenum pname, const GLfloat *params )
 // -- glLightiv
 void glLightiv( GLenum light, GLenum pname, const GLint *params )
 {
-    argp_glLightiv argp;
+    args_glLightiv argp;
 
     // Set function specific args
     argp.light = light;
@@ -2736,7 +2736,7 @@ void glLightiv( GLenum light, GLenum pname, const GLint *params )
 // -- glGetLightfv
 void glGetLightfv( GLenum light, GLenum pname, GLfloat *params )
 {
-    argp_glGetLightfv argp;
+    args_glGetLightfv argp;
 
     // Set function specific args
     argp.light = light;
@@ -2749,7 +2749,7 @@ void glGetLightfv( GLenum light, GLenum pname, GLfloat *params )
 // -- glGetLightiv
 void glGetLightiv( GLenum light, GLenum pname, GLint *params )
 {
-    argp_glGetLightiv argp;
+    args_glGetLightiv argp;
 
     // Set function specific args
     argp.light = light;
@@ -2762,7 +2762,7 @@ void glGetLightiv( GLenum light, GLenum pname, GLint *params )
 // -- glLightModelf
 void glLightModelf( GLenum pname, GLfloat param )
 {
-    argp_glLightModelf argp;
+    args_glLightModelf argp;
 
     // Set function specific args
     argp.pname = pname;
@@ -2774,7 +2774,7 @@ void glLightModelf( GLenum pname, GLfloat param )
 // -- glLightModeli
 void glLightModeli( GLenum pname, GLint param )
 {
-    argp_glLightModeli argp;
+    args_glLightModeli argp;
 
     // Set function specific args
     argp.pname = pname;
@@ -2786,7 +2786,7 @@ void glLightModeli( GLenum pname, GLint param )
 // -- glLightModelfv
 void glLightModelfv( GLenum pname, const GLfloat *params )
 {
-    argp_glLightModelfv argp;
+    args_glLightModelfv argp;
 
     // Set function specific args
     argp.pname = pname;
@@ -2798,7 +2798,7 @@ void glLightModelfv( GLenum pname, const GLfloat *params )
 // -- glLightModeliv
 void glLightModeliv( GLenum pname, const GLint *params )
 {
-    argp_glLightModeliv argp;
+    args_glLightModeliv argp;
 
     // Set function specific args
     argp.pname = pname;
@@ -2810,7 +2810,7 @@ void glLightModeliv( GLenum pname, const GLint *params )
 // -- glMaterialf
 void glMaterialf( GLenum face, GLenum pname, GLfloat param )
 {
-    argp_glMaterialf argp;
+    args_glMaterialf argp;
 
     // Set function specific args
     argp.face = face;
@@ -2823,7 +2823,7 @@ void glMaterialf( GLenum face, GLenum pname, GLfloat param )
 // -- glMateriali
 void glMateriali( GLenum face, GLenum pname, GLint param )
 {
-    argp_glMateriali argp;
+    args_glMateriali argp;
 
     // Set function specific args
     argp.face = face;
@@ -2836,7 +2836,7 @@ void glMateriali( GLenum face, GLenum pname, GLint param )
 // -- glMaterialfv
 void glMaterialfv( GLenum face, GLenum pname, const GLfloat *params )
 {
-    argp_glMaterialfv argp;
+    args_glMaterialfv argp;
 
     // Set function specific args
     argp.face = face;
@@ -2849,7 +2849,7 @@ void glMaterialfv( GLenum face, GLenum pname, const GLfloat *params )
 // -- glMaterialiv
 void glMaterialiv( GLenum face, GLenum pname, const GLint *params )
 {
-    argp_glMaterialiv argp;
+    args_glMaterialiv argp;
 
     // Set function specific args
     argp.face = face;
@@ -2862,7 +2862,7 @@ void glMaterialiv( GLenum face, GLenum pname, const GLint *params )
 // -- glGetMaterialfv
 void glGetMaterialfv( GLenum face, GLenum pname, GLfloat *params )
 {
-    argp_glGetMaterialfv argp;
+    args_glGetMaterialfv argp;
 
     // Set function specific args
     argp.face = face;
@@ -2875,7 +2875,7 @@ void glGetMaterialfv( GLenum face, GLenum pname, GLfloat *params )
 // -- glGetMaterialiv
 void glGetMaterialiv( GLenum face, GLenum pname, GLint *params )
 {
-    argp_glGetMaterialiv argp;
+    args_glGetMaterialiv argp;
 
     // Set function specific args
     argp.face = face;
@@ -2888,7 +2888,7 @@ void glGetMaterialiv( GLenum face, GLenum pname, GLint *params )
 // -- glColorMaterial
 void glColorMaterial( GLenum face, GLenum mode )
 {
-    argp_glColorMaterial argp;
+    args_glColorMaterial argp;
 
     // Set function specific args
     argp.face = face;
@@ -2900,7 +2900,7 @@ void glColorMaterial( GLenum face, GLenum mode )
 // -- glPixelZoom
 void glPixelZoom( GLfloat xfactor, GLfloat yfactor )
 {
-    argp_glPixelZoom argp;
+    args_glPixelZoom argp;
 
     // Set function specific args
     argp.xfactor = xfactor;
@@ -2912,7 +2912,7 @@ void glPixelZoom( GLfloat xfactor, GLfloat yfactor )
 // -- glPixelStoref
 void glPixelStoref( GLenum pname, GLfloat param )
 {
-    argp_glPixelStoref argp;
+    args_glPixelStoref argp;
 
     // Set function specific args
     argp.pname = pname;
@@ -2924,7 +2924,7 @@ void glPixelStoref( GLenum pname, GLfloat param )
 // -- glPixelStorei
 void glPixelStorei( GLenum pname, GLint param )
 {
-    argp_glPixelStorei argp;
+    args_glPixelStorei argp;
 
     // Set function specific args
     argp.pname = pname;
@@ -2936,7 +2936,7 @@ void glPixelStorei( GLenum pname, GLint param )
 // -- glPixelTransferf
 void glPixelTransferf( GLenum pname, GLfloat param )
 {
-    argp_glPixelTransferf argp;
+    args_glPixelTransferf argp;
 
     // Set function specific args
     argp.pname = pname;
@@ -2948,7 +2948,7 @@ void glPixelTransferf( GLenum pname, GLfloat param )
 // -- glPixelTransferi
 void glPixelTransferi( GLenum pname, GLint param )
 {
-    argp_glPixelTransferi argp;
+    args_glPixelTransferi argp;
 
     // Set function specific args
     argp.pname = pname;
@@ -2960,7 +2960,7 @@ void glPixelTransferi( GLenum pname, GLint param )
 // -- glPixelMapfv
 void glPixelMapfv( GLenum map, GLsizei mapsize, const GLfloat *values )
 {
-    argp_glPixelMapfv argp;
+    args_glPixelMapfv argp;
 
     // Set function specific args
     argp.map = map;
@@ -2973,7 +2973,7 @@ void glPixelMapfv( GLenum map, GLsizei mapsize, const GLfloat *values )
 // -- glPixelMapuiv
 void glPixelMapuiv( GLenum map, GLsizei mapsize, const GLuint *values )
 {
-    argp_glPixelMapuiv argp;
+    args_glPixelMapuiv argp;
 
     // Set function specific args
     argp.map = map;
@@ -2986,7 +2986,7 @@ void glPixelMapuiv( GLenum map, GLsizei mapsize, const GLuint *values )
 // -- glPixelMapusv
 void glPixelMapusv( GLenum map, GLsizei mapsize, const GLushort *values )
 {
-    argp_glPixelMapusv argp;
+    args_glPixelMapusv argp;
 
     // Set function specific args
     argp.map = map;
@@ -2999,7 +2999,7 @@ void glPixelMapusv( GLenum map, GLsizei mapsize, const GLushort *values )
 // -- glGetPixelMapfv
 void glGetPixelMapfv( GLenum map, GLfloat *values )
 {
-    argp_glGetPixelMapfv argp;
+    args_glGetPixelMapfv argp;
 
     // Set function specific args
     argp.map = map;
@@ -3011,7 +3011,7 @@ void glGetPixelMapfv( GLenum map, GLfloat *values )
 // -- glGetPixelMapuiv
 void glGetPixelMapuiv( GLenum map, GLuint *values )
 {
-    argp_glGetPixelMapuiv argp;
+    args_glGetPixelMapuiv argp;
 
     // Set function specific args
     argp.map = map;
@@ -3023,7 +3023,7 @@ void glGetPixelMapuiv( GLenum map, GLuint *values )
 // -- glGetPixelMapusv
 void glGetPixelMapusv( GLenum map, GLushort *values )
 {
-    argp_glGetPixelMapusv argp;
+    args_glGetPixelMapusv argp;
 
     // Set function specific args
     argp.map = map;
@@ -3035,7 +3035,7 @@ void glGetPixelMapusv( GLenum map, GLushort *values )
 // -- glBitmap
 void glBitmap( GLsizei width, GLsizei height, GLfloat xorig, GLfloat yorig, GLfloat xmove, GLfloat ymove, const GLubyte *bitmap )
 {
-    argp_glBitmap argp;
+    args_glBitmap argp;
 
     // Set function specific args
     argp.width = width;
@@ -3052,7 +3052,7 @@ void glBitmap( GLsizei width, GLsizei height, GLfloat xorig, GLfloat yorig, GLfl
 // -- glReadPixels
 void glReadPixels( GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, GLvoid *pixels )
 {
-    argp_glReadPixels argp;
+    args_glReadPixels argp;
 
     // Set function specific args
     argp.x = x;
@@ -3069,7 +3069,7 @@ void glReadPixels( GLint x, GLint y, GLsizei width, GLsizei height, GLenum forma
 // -- glDrawPixels
 void glDrawPixels( GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid *pixels )
 {
-    argp_glDrawPixels argp;
+    args_glDrawPixels argp;
 
     // Set function specific args
     argp.width = width;
@@ -3084,7 +3084,7 @@ void glDrawPixels( GLsizei width, GLsizei height, GLenum format, GLenum type, co
 // -- glCopyPixels
 void glCopyPixels( GLint x, GLint y, GLsizei width, GLsizei height, GLenum type )
 {
-    argp_glCopyPixels argp;
+    args_glCopyPixels argp;
 
     // Set function specific args
     argp.x = x;
@@ -3099,7 +3099,7 @@ void glCopyPixels( GLint x, GLint y, GLsizei width, GLsizei height, GLenum type 
 // -- glStencilFunc
 void glStencilFunc( GLenum func, GLint ref, GLuint mask )
 {
-    argp_glStencilFunc argp;
+    args_glStencilFunc argp;
 
     // Set function specific args
     argp.func = func;
@@ -3112,7 +3112,7 @@ void glStencilFunc( GLenum func, GLint ref, GLuint mask )
 // -- glStencilMask
 void glStencilMask( GLuint mask )
 {
-    argp_glStencilMask argp;
+    args_glStencilMask argp;
 
     // Set function specific args
     argp.mask = mask
@@ -3123,7 +3123,7 @@ void glStencilMask( GLuint mask )
 // -- glStencilOp
 void glStencilOp( GLenum fail, GLenum zfail, GLenum zpass )
 {
-    argp_glStencilOp argp;
+    args_glStencilOp argp;
 
     // Set function specific args
     argp.fail = fail;
@@ -3136,7 +3136,7 @@ void glStencilOp( GLenum fail, GLenum zfail, GLenum zpass )
 // -- glClearStencil
 void glClearStencil( GLint s )
 {
-    argp_glClearStencil argp;
+    args_glClearStencil argp;
 
     // Set function specific args
     argp.s = s
@@ -3147,7 +3147,7 @@ void glClearStencil( GLint s )
 // -- glTexGend
 void glTexGend( GLenum coord, GLenum pname, GLdouble param )
 {
-    argp_glTexGend argp;
+    args_glTexGend argp;
 
     // Set function specific args
     argp.coord = coord;
@@ -3160,7 +3160,7 @@ void glTexGend( GLenum coord, GLenum pname, GLdouble param )
 // -- glTexGenf
 void glTexGenf( GLenum coord, GLenum pname, GLfloat param )
 {
-    argp_glTexGenf argp;
+    args_glTexGenf argp;
 
     // Set function specific args
     argp.coord = coord;
@@ -3173,7 +3173,7 @@ void glTexGenf( GLenum coord, GLenum pname, GLfloat param )
 // -- glTexGeni
 void glTexGeni( GLenum coord, GLenum pname, GLint param )
 {
-    argp_glTexGeni argp;
+    args_glTexGeni argp;
 
     // Set function specific args
     argp.coord = coord;
@@ -3186,7 +3186,7 @@ void glTexGeni( GLenum coord, GLenum pname, GLint param )
 // -- glTexGendv
 void glTexGendv( GLenum coord, GLenum pname, const GLdouble *params )
 {
-    argp_glTexGendv argp;
+    args_glTexGendv argp;
 
     // Set function specific args
     argp.coord = coord;
@@ -3199,7 +3199,7 @@ void glTexGendv( GLenum coord, GLenum pname, const GLdouble *params )
 // -- glTexGenfv
 void glTexGenfv( GLenum coord, GLenum pname, const GLfloat *params )
 {
-    argp_glTexGenfv argp;
+    args_glTexGenfv argp;
 
     // Set function specific args
     argp.coord = coord;
@@ -3212,7 +3212,7 @@ void glTexGenfv( GLenum coord, GLenum pname, const GLfloat *params )
 // -- glTexGeniv
 void glTexGeniv( GLenum coord, GLenum pname, const GLint *params )
 {
-    argp_glTexGeniv argp;
+    args_glTexGeniv argp;
 
     // Set function specific args
     argp.coord = coord;
@@ -3225,7 +3225,7 @@ void glTexGeniv( GLenum coord, GLenum pname, const GLint *params )
 // -- glGetTexGendv
 void glGetTexGendv( GLenum coord, GLenum pname, GLdouble *params )
 {
-    argp_glGetTexGendv argp;
+    args_glGetTexGendv argp;
 
     // Set function specific args
     argp.coord = coord;
@@ -3238,7 +3238,7 @@ void glGetTexGendv( GLenum coord, GLenum pname, GLdouble *params )
 // -- glGetTexGenfv
 void glGetTexGenfv( GLenum coord, GLenum pname, GLfloat *params )
 {
-    argp_glGetTexGenfv argp;
+    args_glGetTexGenfv argp;
 
     // Set function specific args
     argp.coord = coord;
@@ -3251,7 +3251,7 @@ void glGetTexGenfv( GLenum coord, GLenum pname, GLfloat *params )
 // -- glGetTexGeniv
 void glGetTexGeniv( GLenum coord, GLenum pname, GLint *params )
 {
-    argp_glGetTexGeniv argp;
+    args_glGetTexGeniv argp;
 
     // Set function specific args
     argp.coord = coord;
@@ -3264,7 +3264,7 @@ void glGetTexGeniv( GLenum coord, GLenum pname, GLint *params )
 // -- glTexEnvf
 void glTexEnvf( GLenum target, GLenum pname, GLfloat param )
 {
-    argp_glTexEnvf argp;
+    args_glTexEnvf argp;
 
     // Set function specific args
     argp.target = target;
@@ -3277,7 +3277,7 @@ void glTexEnvf( GLenum target, GLenum pname, GLfloat param )
 // -- glTexEnvi
 void glTexEnvi( GLenum target, GLenum pname, GLint param )
 {
-    argp_glTexEnvi argp;
+    args_glTexEnvi argp;
 
     // Set function specific args
     argp.target = target;
@@ -3290,7 +3290,7 @@ void glTexEnvi( GLenum target, GLenum pname, GLint param )
 // -- glTexEnvfv
 void glTexEnvfv( GLenum target, GLenum pname, const GLfloat *params )
 {
-    argp_glTexEnvfv argp;
+    args_glTexEnvfv argp;
 
     // Set function specific args
     argp.target = target;
@@ -3303,7 +3303,7 @@ void glTexEnvfv( GLenum target, GLenum pname, const GLfloat *params )
 // -- glTexEnviv
 void glTexEnviv( GLenum target, GLenum pname, const GLint *params )
 {
-    argp_glTexEnviv argp;
+    args_glTexEnviv argp;
 
     // Set function specific args
     argp.target = target;
@@ -3316,7 +3316,7 @@ void glTexEnviv( GLenum target, GLenum pname, const GLint *params )
 // -- glGetTexEnvfv
 void glGetTexEnvfv( GLenum target, GLenum pname, GLfloat *params )
 {
-    argp_glGetTexEnvfv argp;
+    args_glGetTexEnvfv argp;
 
     // Set function specific args
     argp.target = target;
@@ -3329,7 +3329,7 @@ void glGetTexEnvfv( GLenum target, GLenum pname, GLfloat *params )
 // -- glGetTexEnviv
 void glGetTexEnviv( GLenum target, GLenum pname, GLint *params )
 {
-    argp_glGetTexEnviv argp;
+    args_glGetTexEnviv argp;
 
     // Set function specific args
     argp.target = target;
@@ -3342,7 +3342,7 @@ void glGetTexEnviv( GLenum target, GLenum pname, GLint *params )
 // -- glTexParameterf
 void glTexParameterf( GLenum target, GLenum pname, GLfloat param )
 {
-    argp_glTexParameterf argp;
+    args_glTexParameterf argp;
 
     // Set function specific args
     argp.target = target;
@@ -3355,7 +3355,7 @@ void glTexParameterf( GLenum target, GLenum pname, GLfloat param )
 // -- glTexParameteri
 void glTexParameteri( GLenum target, GLenum pname, GLint param )
 {
-    argp_glTexParameteri argp;
+    args_glTexParameteri argp;
 
     // Set function specific args
     argp.target = target;
@@ -3368,7 +3368,7 @@ void glTexParameteri( GLenum target, GLenum pname, GLint param )
 // -- glTexParameterfv
 void glTexParameterfv( GLenum target, GLenum pname, const GLfloat *params )
 {
-    argp_glTexParameterfv argp;
+    args_glTexParameterfv argp;
 
     // Set function specific args
     argp.target = target;
@@ -3381,7 +3381,7 @@ void glTexParameterfv( GLenum target, GLenum pname, const GLfloat *params )
 // -- glTexParameteriv
 void glTexParameteriv( GLenum target, GLenum pname, const GLint *params )
 {
-    argp_glTexParameteriv argp;
+    args_glTexParameteriv argp;
 
     // Set function specific args
     argp.target = target;
@@ -3394,7 +3394,7 @@ void glTexParameteriv( GLenum target, GLenum pname, const GLint *params )
 // -- glGetTexParameterfv
 void glGetTexParameterfv( GLenum target, GLenum pname, GLfloat *params)
 {
-    argp_glGetTexParameterfv argp;
+    args_glGetTexParameterfv argp;
 
     // Set function specific args
     argp.target = target;
@@ -3407,7 +3407,7 @@ void glGetTexParameterfv( GLenum target, GLenum pname, GLfloat *params)
 // -- glGetTexParameteriv
 void glGetTexParameteriv( GLenum target, GLenum pname, GLint *params )
 {
-    argp_glGetTexParameteriv argp;
+    args_glGetTexParameteriv argp;
 
     // Set function specific args
     argp.target = target;
@@ -3420,7 +3420,7 @@ void glGetTexParameteriv( GLenum target, GLenum pname, GLint *params )
 // -- glGetTexLevelParameterfv
 void glGetTexLevelParameterfv( GLenum target, GLint level, GLenum pname, GLfloat *params )
 {
-    argp_glGetTexLevelParameterfv argp;
+    args_glGetTexLevelParameterfv argp;
 
     // Set function specific args
     argp.target = target;
@@ -3434,7 +3434,7 @@ void glGetTexLevelParameterfv( GLenum target, GLint level, GLenum pname, GLfloat
 // -- glGetTexLevelParameteriv
 void glGetTexLevelParameteriv( GLenum target, GLint level, GLenum pname, GLint *params )
 {
-    argp_glGetTexLevelParameteriv argp;
+    args_glGetTexLevelParameteriv argp;
 
     // Set function specific args
     argp.target = target;
@@ -3448,7 +3448,7 @@ void glGetTexLevelParameteriv( GLenum target, GLint level, GLenum pname, GLint *
 // -- glTexImage1D
 void glTexImage1D( GLenum target, GLint level, GLint internalFormat, GLsizei width, GLint border, GLenum format, GLenum type, const GLvoid *pixels )
 {
-    argp_glTexImage1D argp;
+    args_glTexImage1D argp;
 
     // Set function specific args
     argp.target = target;
@@ -3466,7 +3466,7 @@ void glTexImage1D( GLenum target, GLint level, GLint internalFormat, GLsizei wid
 // -- glTexImage2D
 void glTexImage2D( GLenum target, GLint level, GLint internalFormat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const GLvoid *pixels )
 {
-    argp_glTexImage2D argp;
+    args_glTexImage2D argp;
 
     // Set function specific args
     argp.target = target;
@@ -3485,7 +3485,7 @@ void glTexImage2D( GLenum target, GLint level, GLint internalFormat, GLsizei wid
 // -- glGetTexImage
 void glGetTexImage( GLenum target, GLint level,  GLenum format, GLenum type,  GLvoid *pixels )
 {
-    argp_glGetTexImage argp;
+    args_glGetTexImage argp;
 
     // Set function specific args
     argp.target = target;
@@ -3500,7 +3500,7 @@ void glGetTexImage( GLenum target, GLint level,  GLenum format, GLenum type,  GL
 // -- glGenTextures
 void glGenTextures( GLsizei n, GLuint *textures )
 {
-    argp_glGenTextures argp;
+    args_glGenTextures argp;
 
     // Set function specific args
     argp.n = n;
@@ -3512,7 +3512,7 @@ void glGenTextures( GLsizei n, GLuint *textures )
 // -- glDeleteTextures
 void glDeleteTextures( GLsizei n, const GLuint *textures)
 {
-    argp_glDeleteTextures argp;
+    args_glDeleteTextures argp;
 
     // Set function specific args
     argp.n = n;
@@ -3524,7 +3524,7 @@ void glDeleteTextures( GLsizei n, const GLuint *textures)
 // -- glBindTexture
 void glBindTexture( GLenum target, GLuint texture )
 {
-    argp_glBindTexture argp;
+    args_glBindTexture argp;
 
     // Set function specific args
     argp.target = target;
@@ -3536,7 +3536,7 @@ void glBindTexture( GLenum target, GLuint texture )
 // -- glPrioritizeTextures
 void glPrioritizeTextures( GLsizei n, const GLuint *textures, const GLclampf *priorities )
 {
-    argp_glPrioritizeTextures argp;
+    args_glPrioritizeTextures argp;
 
     // Set function specific args
     argp.n = n;
@@ -3549,7 +3549,7 @@ void glPrioritizeTextures( GLsizei n, const GLuint *textures, const GLclampf *pr
 // -- glAreTexturesResident
 GLboolean glAreTexturesResident( GLsizei n, const GLuint *textures, GLboolean *residences )
 {
-    argp_glAreTexturesResident argp;
+    args_glAreTexturesResident argp;
     
     // Set function specific args
     argp.n = n;
@@ -3562,7 +3562,7 @@ GLboolean glAreTexturesResident( GLsizei n, const GLuint *textures, GLboolean *r
 // -- glIsTexture
 GLboolean glIsTexture( GLuint texture )
 {
-    argp_glIsTexture argp;
+    args_glIsTexture argp;
     
     // Set function specific args
     argp.texture = texture
@@ -3573,7 +3573,7 @@ GLboolean glIsTexture( GLuint texture )
 // -- glTexSubImage1D
 void glTexSubImage1D( GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type, const GLvoid *pixels )
 {
-    argp_glTexSubImage1D argp;
+    args_glTexSubImage1D argp;
 
     // Set function specific args
     argp.target = target;
@@ -3590,7 +3590,7 @@ void glTexSubImage1D( GLenum target, GLint level, GLint xoffset, GLsizei width, 
 // -- glTexSubImage2D
 void glTexSubImage2D( GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid *pixels )
 {
-    argp_glTexSubImage2D argp;
+    args_glTexSubImage2D argp;
 
     // Set function specific args
     argp.target = target;
@@ -3609,7 +3609,7 @@ void glTexSubImage2D( GLenum target, GLint level, GLint xoffset, GLint yoffset, 
 // -- glCopyTexImage1D
 void glCopyTexImage1D( GLenum target, GLint level, GLenum internalformat, GLint x, GLint y, GLsizei width, GLint border )
 {
-    argp_glCopyTexImage1D argp;
+    args_glCopyTexImage1D argp;
 
     // Set function specific args
     argp.target = target;
@@ -3626,7 +3626,7 @@ void glCopyTexImage1D( GLenum target, GLint level, GLenum internalformat, GLint 
 // -- glCopyTexImage2D
 void glCopyTexImage2D( GLenum target, GLint level, GLenum internalformat, GLint x, GLint y, GLsizei width, GLsizei height, GLint border )
 {
-    argp_glCopyTexImage2D argp;
+    args_glCopyTexImage2D argp;
 
     // Set function specific args
     argp.target = target;
@@ -3644,7 +3644,7 @@ void glCopyTexImage2D( GLenum target, GLint level, GLenum internalformat, GLint 
 // -- glCopyTexSubImage1D
 void glCopyTexSubImage1D( GLenum target, GLint level,GLint xoffset, GLint x, GLint y,GLsizei width )
 {
-    argp_glCopyTexSubImage1D argp;
+    args_glCopyTexSubImage1D argp;
 
     // Set function specific args
     argp.target = target;
@@ -3660,7 +3660,7 @@ void glCopyTexSubImage1D( GLenum target, GLint level,GLint xoffset, GLint x, GLi
 // -- glCopyTexSubImage2D
 void glCopyTexSubImage2D( GLenum target, GLint level,GLint xoffset, GLint yoffset,GLint x, GLint y, GLsizei width, GLsizei height )
 {
-    argp_glCopyTexSubImage2D argp;
+    args_glCopyTexSubImage2D argp;
 
     // Set function specific args
     argp.target = target;
@@ -3678,7 +3678,7 @@ void glCopyTexSubImage2D( GLenum target, GLint level,GLint xoffset, GLint yoffse
 // -- glMap1d
 void glMap1d( GLenum target, GLdouble u1, GLdouble u2, GLint stride, GLint order, const GLdouble *points )
 {
-    argp_glMap1d argp;
+    args_glMap1d argp;
 
     // Set function specific args
     argp.target = target;
@@ -3694,7 +3694,7 @@ void glMap1d( GLenum target, GLdouble u1, GLdouble u2, GLint stride, GLint order
 // -- glMap1f
 void glMap1f( GLenum target, GLfloat u1, GLfloat u2, GLint stride, GLint order, const GLfloat *points )
 {
-    argp_glMap1f argp;
+    args_glMap1f argp;
 
     // Set function specific args
     argp.target = target;
@@ -3710,7 +3710,7 @@ void glMap1f( GLenum target, GLfloat u1, GLfloat u2, GLint stride, GLint order, 
 // -- glMap2d
 void glMap2d( GLenum target, GLdouble u1, GLdouble u2, GLint ustride, GLint uorder, GLdouble v1, GLdouble v2, GLint vstride, GLint vorder, const GLdouble *points )
 {
-    argp_glMap2d argp;
+    args_glMap2d argp;
 
     // Set function specific args
     argp.target = target;
@@ -3730,7 +3730,7 @@ void glMap2d( GLenum target, GLdouble u1, GLdouble u2, GLint ustride, GLint uord
 // -- glMap2f
 void glMap2f( GLenum target, GLfloat u1, GLfloat u2, GLint ustride, GLint uorder, GLfloat v1, GLfloat v2, GLint vstride, GLint vorder, const GLfloat *points )
 {
-    argp_glMap2f argp;
+    args_glMap2f argp;
 
     // Set function specific args
     argp.target = target;
@@ -3750,7 +3750,7 @@ void glMap2f( GLenum target, GLfloat u1, GLfloat u2, GLint ustride, GLint uorder
 // -- glGetMapdv
 void glGetMapdv( GLenum target, GLenum query, GLdouble *v )
 {
-    argp_glGetMapdv argp;
+    args_glGetMapdv argp;
 
     // Set function specific args
     argp.target = target;
@@ -3763,7 +3763,7 @@ void glGetMapdv( GLenum target, GLenum query, GLdouble *v )
 // -- glGetMapfv
 void glGetMapfv( GLenum target, GLenum query, GLfloat *v )
 {
-    argp_glGetMapfv argp;
+    args_glGetMapfv argp;
 
     // Set function specific args
     argp.target = target;
@@ -3776,7 +3776,7 @@ void glGetMapfv( GLenum target, GLenum query, GLfloat *v )
 // -- glGetMapiv
 void glGetMapiv( GLenum target, GLenum query, GLint *v )
 {
-    argp_glGetMapiv argp;
+    args_glGetMapiv argp;
 
     // Set function specific args
     argp.target = target;
@@ -3789,7 +3789,7 @@ void glGetMapiv( GLenum target, GLenum query, GLint *v )
 // -- glEvalCoord1d
 void glEvalCoord1d( GLdouble u )
 {
-    argp_glEvalCoord1d argp;
+    args_glEvalCoord1d argp;
 
     // Set function specific args
     argp.u = u
@@ -3800,7 +3800,7 @@ void glEvalCoord1d( GLdouble u )
 // -- glEvalCoord1f
 void glEvalCoord1f( GLfloat u )
 {
-    argp_glEvalCoord1f argp;
+    args_glEvalCoord1f argp;
 
     // Set function specific args
     argp.u = u
@@ -3811,7 +3811,7 @@ void glEvalCoord1f( GLfloat u )
 // -- glEvalCoord1dv
 void glEvalCoord1dv( const GLdouble *u )
 {
-    argp_glEvalCoord1dv argp;
+    args_glEvalCoord1dv argp;
 
     // Set function specific args
     argp.u = u
@@ -3822,7 +3822,7 @@ void glEvalCoord1dv( const GLdouble *u )
 // -- glEvalCoord1fv
 void glEvalCoord1fv( const GLfloat *u )
 {
-    argp_glEvalCoord1fv argp;
+    args_glEvalCoord1fv argp;
 
     // Set function specific args
     argp.u = u
@@ -3833,7 +3833,7 @@ void glEvalCoord1fv( const GLfloat *u )
 // -- glEvalCoord2d
 void glEvalCoord2d( GLdouble u, GLdouble v )
 {
-    argp_glEvalCoord2d argp;
+    args_glEvalCoord2d argp;
 
     // Set function specific args
     argp.u = u;
@@ -3845,7 +3845,7 @@ void glEvalCoord2d( GLdouble u, GLdouble v )
 // -- glEvalCoord2f
 void glEvalCoord2f( GLfloat u, GLfloat v )
 {
-    argp_glEvalCoord2f argp;
+    args_glEvalCoord2f argp;
 
     // Set function specific args
     argp.u = u;
@@ -3857,7 +3857,7 @@ void glEvalCoord2f( GLfloat u, GLfloat v )
 // -- glEvalCoord2dv
 void glEvalCoord2dv( const GLdouble *u )
 {
-    argp_glEvalCoord2dv argp;
+    args_glEvalCoord2dv argp;
 
     // Set function specific args
     argp.u = u
@@ -3868,7 +3868,7 @@ void glEvalCoord2dv( const GLdouble *u )
 // -- glEvalCoord2fv
 void glEvalCoord2fv( const GLfloat *u )
 {
-    argp_glEvalCoord2fv argp;
+    args_glEvalCoord2fv argp;
 
     // Set function specific args
     argp.u = u
@@ -3879,7 +3879,7 @@ void glEvalCoord2fv( const GLfloat *u )
 // -- glMapGrid1d
 void glMapGrid1d( GLint un, GLdouble u1, GLdouble u2 )
 {
-    argp_glMapGrid1d argp;
+    args_glMapGrid1d argp;
 
     // Set function specific args
     argp.un = un;
@@ -3892,7 +3892,7 @@ void glMapGrid1d( GLint un, GLdouble u1, GLdouble u2 )
 // -- glMapGrid1f
 void glMapGrid1f( GLint un, GLfloat u1, GLfloat u2 )
 {
-    argp_glMapGrid1f argp;
+    args_glMapGrid1f argp;
 
     // Set function specific args
     argp.un = un;
@@ -3905,7 +3905,7 @@ void glMapGrid1f( GLint un, GLfloat u1, GLfloat u2 )
 // -- glMapGrid2d
 void glMapGrid2d( GLint un, GLdouble u1, GLdouble u2, GLint vn, GLdouble v1, GLdouble v2 )
 {
-    argp_glMapGrid2d argp;
+    args_glMapGrid2d argp;
 
     // Set function specific args
     argp.un = un;
@@ -3921,7 +3921,7 @@ void glMapGrid2d( GLint un, GLdouble u1, GLdouble u2, GLint vn, GLdouble v1, GLd
 // -- glMapGrid2f
 void glMapGrid2f( GLint un, GLfloat u1, GLfloat u2, GLint vn, GLfloat v1, GLfloat v2 )
 {
-    argp_glMapGrid2f argp;
+    args_glMapGrid2f argp;
 
     // Set function specific args
     argp.un = un;
@@ -3937,7 +3937,7 @@ void glMapGrid2f( GLint un, GLfloat u1, GLfloat u2, GLint vn, GLfloat v1, GLfloa
 // -- glEvalPoint1
 void glEvalPoint1( GLint i )
 {
-    argp_glEvalPoint1 argp;
+    args_glEvalPoint1 argp;
 
     // Set function specific args
     argp.i = i
@@ -3948,7 +3948,7 @@ void glEvalPoint1( GLint i )
 // -- glEvalPoint2
 void glEvalPoint2( GLint i, GLint j )
 {
-    argp_glEvalPoint2 argp;
+    args_glEvalPoint2 argp;
 
     // Set function specific args
     argp.i = i;
@@ -3960,7 +3960,7 @@ void glEvalPoint2( GLint i, GLint j )
 // -- glEvalMesh1
 void glEvalMesh1( GLenum mode, GLint i1, GLint i2 )
 {
-    argp_glEvalMesh1 argp;
+    args_glEvalMesh1 argp;
 
     // Set function specific args
     argp.mode = mode;
@@ -3973,7 +3973,7 @@ void glEvalMesh1( GLenum mode, GLint i1, GLint i2 )
 // -- glEvalMesh2
 void glEvalMesh2( GLenum mode, GLint i1, GLint i2, GLint j1, GLint j2 )
 {
-    argp_glEvalMesh2 argp;
+    args_glEvalMesh2 argp;
 
     // Set function specific args
     argp.mode = mode;
@@ -3988,7 +3988,7 @@ void glEvalMesh2( GLenum mode, GLint i1, GLint i2, GLint j1, GLint j2 )
 // -- glFogf
 void glFogf( GLenum pname, GLfloat param )
 {
-    argp_glFogf argp;
+    args_glFogf argp;
 
     // Set function specific args
     argp.pname = pname;
@@ -4000,7 +4000,7 @@ void glFogf( GLenum pname, GLfloat param )
 // -- glFogi
 void glFogi( GLenum pname, GLint param )
 {
-    argp_glFogi argp;
+    args_glFogi argp;
 
     // Set function specific args
     argp.pname = pname;
@@ -4012,7 +4012,7 @@ void glFogi( GLenum pname, GLint param )
 // -- glFogfv
 void glFogfv( GLenum pname, const GLfloat *params )
 {
-    argp_glFogfv argp;
+    args_glFogfv argp;
 
     // Set function specific args
     argp.pname = pname;
@@ -4024,7 +4024,7 @@ void glFogfv( GLenum pname, const GLfloat *params )
 // -- glFogiv
 void glFogiv( GLenum pname, const GLint *params )
 {
-    argp_glFogiv argp;
+    args_glFogiv argp;
 
     // Set function specific args
     argp.pname = pname;
@@ -4036,7 +4036,7 @@ void glFogiv( GLenum pname, const GLint *params )
 // -- glFeedbackBuffer
 void glFeedbackBuffer( GLsizei size, GLenum type, GLfloat *buffer )
 {
-    argp_glFeedbackBuffer argp;
+    args_glFeedbackBuffer argp;
 
     // Set function specific args
     argp.size = size;
@@ -4049,7 +4049,7 @@ void glFeedbackBuffer( GLsizei size, GLenum type, GLfloat *buffer )
 // -- glPassThrough
 void glPassThrough( GLfloat token )
 {
-    argp_glPassThrough argp;
+    args_glPassThrough argp;
 
     // Set function specific args
     argp.token = token
@@ -4060,7 +4060,7 @@ void glPassThrough( GLfloat token )
 // -- glSelectBuffer
 void glSelectBuffer( GLsizei size, GLuint *buffer )
 {
-    argp_glSelectBuffer argp;
+    args_glSelectBuffer argp;
 
     // Set function specific args
     argp.size = size;
@@ -4078,7 +4078,7 @@ void glInitNames()
 // -- glLoadName
 void glLoadName( GLuint name )
 {
-    argp_glLoadName argp;
+    args_glLoadName argp;
 
     // Set function specific args
     argp.name = name
@@ -4089,7 +4089,7 @@ void glLoadName( GLuint name )
 // -- glPushName
 void glPushName( GLuint name )
 {
-    argp_glPushName argp;
+    args_glPushName argp;
 
     // Set function specific args
     argp.name = name
@@ -4106,7 +4106,7 @@ void glPopName()
 // -- glDrawRangeElements
 void glDrawRangeElements( GLenum mode, GLuint start, GLuint end, GLsizei count, GLenum type, const GLvoid *indices )
 {
-    argp_glDrawRangeElements argp;
+    args_glDrawRangeElements argp;
 
     // Set function specific args
     argp.mode = mode;
@@ -4122,7 +4122,7 @@ void glDrawRangeElements( GLenum mode, GLuint start, GLuint end, GLsizei count, 
 // -- glTexImage3D
 void glTexImage3D( GLenum target, GLint level, GLint internalFormat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, const GLvoid *pixels )
 {
-    argp_glTexImage3D argp;
+    args_glTexImage3D argp;
 
     // Set function specific args
     argp.target = target;
@@ -4142,7 +4142,7 @@ void glTexImage3D( GLenum target, GLint level, GLint internalFormat, GLsizei wid
 // -- glTexSubImage3D
 void glTexSubImage3D( GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, const GLvoid *pixels)
 {
-    argp_glTexSubImage3D argp;
+    args_glTexSubImage3D argp;
 
     // Set function specific args
     argp.target = target;
@@ -4163,7 +4163,7 @@ void glTexSubImage3D( GLenum target, GLint level, GLint xoffset, GLint yoffset, 
 // -- glCopyTexSubImage3D
 void glCopyTexSubImage3D( GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLint x, GLint y, GLsizei width, GLsizei height )
 {
-    argp_glCopyTexSubImage3D argp;
+    args_glCopyTexSubImage3D argp;
 
     // Set function specific args
     argp.target = target;
@@ -4182,7 +4182,7 @@ void glCopyTexSubImage3D( GLenum target, GLint level, GLint xoffset, GLint yoffs
 // -- glColorTable
 void glColorTable( GLenum target, GLenum internalformat, GLsizei width, GLenum format, GLenum type, const GLvoid *table )
 {
-    argp_glColorTable argp;
+    args_glColorTable argp;
 
     // Set function specific args
     argp.target = target;
@@ -4198,7 +4198,7 @@ void glColorTable( GLenum target, GLenum internalformat, GLsizei width, GLenum f
 // -- glColorSubTable
 void glColorSubTable( GLenum target, GLsizei start, GLsizei count, GLenum format, GLenum type, const GLvoid *data )
 {
-    argp_glColorSubTable argp;
+    args_glColorSubTable argp;
 
     // Set function specific args
     argp.target = target;
@@ -4214,7 +4214,7 @@ void glColorSubTable( GLenum target, GLsizei start, GLsizei count, GLenum format
 // -- glColorTableParameteriv
 void glColorTableParameteriv(GLenum target, GLenum pname, const GLint *params)
 {
-    argp_glColorTableParameteriv argp;
+    args_glColorTableParameteriv argp;
 
     // Set function specific args
     argp.target = target;
@@ -4227,7 +4227,7 @@ void glColorTableParameteriv(GLenum target, GLenum pname, const GLint *params)
 // -- glColorTableParameterfv
 void glColorTableParameterfv(GLenum target, GLenum pname, const GLfloat *params)
 {
-    argp_glColorTableParameterfv argp;
+    args_glColorTableParameterfv argp;
 
     // Set function specific args
     argp.target = target;
@@ -4240,7 +4240,7 @@ void glColorTableParameterfv(GLenum target, GLenum pname, const GLfloat *params)
 // -- glCopyColorSubTable
 void glCopyColorSubTable( GLenum target, GLsizei start,GLint x, GLint y, GLsizei width )
 {
-    argp_glCopyColorSubTable argp;
+    args_glCopyColorSubTable argp;
 
     // Set function specific args
     argp.target = target;
@@ -4255,7 +4255,7 @@ void glCopyColorSubTable( GLenum target, GLsizei start,GLint x, GLint y, GLsizei
 // -- glCopyColorTable
 void glCopyColorTable( GLenum target, GLenum internalformat, GLint x, GLint y, GLsizei width )
 {
-    argp_glCopyColorTable argp;
+    args_glCopyColorTable argp;
 
     // Set function specific args
     argp.target = target;
@@ -4270,7 +4270,7 @@ void glCopyColorTable( GLenum target, GLenum internalformat, GLint x, GLint y, G
 // -- glGetColorTable
 void glGetColorTable( GLenum target, GLenum format, GLenum type, GLvoid *table )
 {
-    argp_glGetColorTable argp;
+    args_glGetColorTable argp;
 
     // Set function specific args
     argp.target = target;
@@ -4284,7 +4284,7 @@ void glGetColorTable( GLenum target, GLenum format, GLenum type, GLvoid *table )
 // -- glGetColorTableParameterfv
 void glGetColorTableParameterfv( GLenum target, GLenum pname, GLfloat *params )
 {
-    argp_glGetColorTableParameterfv argp;
+    args_glGetColorTableParameterfv argp;
 
     // Set function specific args
     argp.target = target;
@@ -4297,7 +4297,7 @@ void glGetColorTableParameterfv( GLenum target, GLenum pname, GLfloat *params )
 // -- glGetColorTableParameteriv
 void glGetColorTableParameteriv( GLenum target, GLenum pname, GLint *params )
 {
-    argp_glGetColorTableParameteriv argp;
+    args_glGetColorTableParameteriv argp;
 
     // Set function specific args
     argp.target = target;
@@ -4310,7 +4310,7 @@ void glGetColorTableParameteriv( GLenum target, GLenum pname, GLint *params )
 // -- glBlendEquation
 void glBlendEquation( GLenum mode )
 {
-    argp_glBlendEquation argp;
+    args_glBlendEquation argp;
 
     // Set function specific args
     argp.mode = mode
@@ -4321,7 +4321,7 @@ void glBlendEquation( GLenum mode )
 // -- glBlendColor
 void glBlendColor( GLclampf red, GLclampf green, GLclampf blue, GLclampf alpha )
 {
-    argp_glBlendColor argp;
+    args_glBlendColor argp;
 
     // Set function specific args
     argp.red = red;
@@ -4335,7 +4335,7 @@ void glBlendColor( GLclampf red, GLclampf green, GLclampf blue, GLclampf alpha )
 // -- glHistogram
 void glHistogram( GLenum target, GLsizei width, GLenum internalformat, GLboolean sink )
 {
-    argp_glHistogram argp;
+    args_glHistogram argp;
 
     // Set function specific args
     argp.target = target;
@@ -4349,7 +4349,7 @@ void glHistogram( GLenum target, GLsizei width, GLenum internalformat, GLboolean
 // -- glResetHistogram
 void glResetHistogram( GLenum target )
 {
-    argp_glResetHistogram argp;
+    args_glResetHistogram argp;
 
     // Set function specific args
     argp.target = target
@@ -4360,7 +4360,7 @@ void glResetHistogram( GLenum target )
 // -- glGetHistogram
 void glGetHistogram( GLenum target, GLboolean reset, GLenum format, GLenum type, GLvoid *values )
 {
-    argp_glGetHistogram argp;
+    args_glGetHistogram argp;
 
     // Set function specific args
     argp.target = target;
@@ -4375,7 +4375,7 @@ void glGetHistogram( GLenum target, GLboolean reset, GLenum format, GLenum type,
 // -- glGetHistogramParameterfv
 void glGetHistogramParameterfv( GLenum target, GLenum pname, GLfloat *params )
 {
-    argp_glGetHistogramParameterfv argp;
+    args_glGetHistogramParameterfv argp;
 
     // Set function specific args
     argp.target = target;
@@ -4388,7 +4388,7 @@ void glGetHistogramParameterfv( GLenum target, GLenum pname, GLfloat *params )
 // -- glGetHistogramParameteriv
 void glGetHistogramParameteriv( GLenum target, GLenum pname, GLint *params )
 {
-    argp_glGetHistogramParameteriv argp;
+    args_glGetHistogramParameteriv argp;
 
     // Set function specific args
     argp.target = target;
@@ -4401,7 +4401,7 @@ void glGetHistogramParameteriv( GLenum target, GLenum pname, GLint *params )
 // -- glMinmax
 void glMinmax( GLenum target, GLenum internalformat, GLboolean sink )
 {
-    argp_glMinmax argp;
+    args_glMinmax argp;
 
     // Set function specific args
     argp.target = target;
@@ -4414,7 +4414,7 @@ void glMinmax( GLenum target, GLenum internalformat, GLboolean sink )
 // -- glResetMinmax
 void glResetMinmax( GLenum target )
 {
-    argp_glResetMinmax argp;
+    args_glResetMinmax argp;
 
     // Set function specific args
     argp.target = target
@@ -4425,7 +4425,7 @@ void glResetMinmax( GLenum target )
 // -- glGetMinmax
 void glGetMinmax( GLenum target, GLboolean reset, GLenum format, GLenum types, GLvoid *values )
 {
-    argp_glGetMinmax argp;
+    args_glGetMinmax argp;
 
     // Set function specific args
     argp.target = target;
@@ -4440,7 +4440,7 @@ void glGetMinmax( GLenum target, GLboolean reset, GLenum format, GLenum types, G
 // -- glGetMinmaxParameterfv
 void glGetMinmaxParameterfv( GLenum target, GLenum pname, GLfloat *params )
 {
-    argp_glGetMinmaxParameterfv argp;
+    args_glGetMinmaxParameterfv argp;
 
     // Set function specific args
     argp.target = target;
@@ -4453,7 +4453,7 @@ void glGetMinmaxParameterfv( GLenum target, GLenum pname, GLfloat *params )
 // -- glGetMinmaxParameteriv
 void glGetMinmaxParameteriv( GLenum target, GLenum pname, GLint *params )
 {
-    argp_glGetMinmaxParameteriv argp;
+    args_glGetMinmaxParameteriv argp;
 
     // Set function specific args
     argp.target = target;
@@ -4466,7 +4466,7 @@ void glGetMinmaxParameteriv( GLenum target, GLenum pname, GLint *params )
 // -- glConvolutionFilter1D
 void glConvolutionFilter1D( GLenum target, GLenum internalformat, GLsizei width, GLenum format, GLenum type, const GLvoid *image )
 {
-    argp_glConvolutionFilter1D argp;
+    args_glConvolutionFilter1D argp;
 
     // Set function specific args
     argp.target = target;
@@ -4482,7 +4482,7 @@ void glConvolutionFilter1D( GLenum target, GLenum internalformat, GLsizei width,
 // -- glConvolutionFilter2D
 void glConvolutionFilter2D( GLenum target, GLenum internalformat, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid *image )
 {
-    argp_glConvolutionFilter2D argp;
+    args_glConvolutionFilter2D argp;
 
     // Set function specific args
     argp.target = target;
@@ -4499,7 +4499,7 @@ void glConvolutionFilter2D( GLenum target, GLenum internalformat, GLsizei width,
 // -- glConvolutionParameterf
 void glConvolutionParameterf( GLenum target, GLenum pname, GLfloat params )
 {
-    argp_glConvolutionParameterf argp;
+    args_glConvolutionParameterf argp;
 
     // Set function specific args
     argp.target = target;
@@ -4512,7 +4512,7 @@ void glConvolutionParameterf( GLenum target, GLenum pname, GLfloat params )
 // -- glConvolutionParameterfv
 void glConvolutionParameterfv( GLenum target, GLenum pname, const GLfloat *params )
 {
-    argp_glConvolutionParameterfv argp;
+    args_glConvolutionParameterfv argp;
 
     // Set function specific args
     argp.target = target;
@@ -4525,7 +4525,7 @@ void glConvolutionParameterfv( GLenum target, GLenum pname, const GLfloat *param
 // -- glConvolutionParameteri
 void glConvolutionParameteri( GLenum target, GLenum pname, GLint params )
 {
-    argp_glConvolutionParameteri argp;
+    args_glConvolutionParameteri argp;
 
     // Set function specific args
     argp.target = target;
@@ -4538,7 +4538,7 @@ void glConvolutionParameteri( GLenum target, GLenum pname, GLint params )
 // -- glConvolutionParameteriv
 void glConvolutionParameteriv( GLenum target, GLenum pname, const GLint *params )
 {
-    argp_glConvolutionParameteriv argp;
+    args_glConvolutionParameteriv argp;
 
     // Set function specific args
     argp.target = target;
@@ -4551,7 +4551,7 @@ void glConvolutionParameteriv( GLenum target, GLenum pname, const GLint *params 
 // -- glCopyConvolutionFilter1D
 void glCopyConvolutionFilter1D( GLenum target, GLenum internalformat, GLint x, GLint y, GLsizei width )
 {
-    argp_glCopyConvolutionFilter1D argp;
+    args_glCopyConvolutionFilter1D argp;
 
     // Set function specific args
     argp.target = target;
@@ -4566,7 +4566,7 @@ void glCopyConvolutionFilter1D( GLenum target, GLenum internalformat, GLint x, G
 // -- glCopyConvolutionFilter2D
 void glCopyConvolutionFilter2D( GLenum target, GLenum internalformat, GLint x, GLint y, GLsizei width, GLsizei height)
 {
-    argp_glCopyConvolutionFilter2D argp;
+    args_glCopyConvolutionFilter2D argp;
 
     // Set function specific args
     argp.target = target;
@@ -4582,7 +4582,7 @@ void glCopyConvolutionFilter2D( GLenum target, GLenum internalformat, GLint x, G
 // -- glGetConvolutionFilter
 void glGetConvolutionFilter( GLenum target, GLenum format, GLenum type, GLvoid *image )
 {
-    argp_glGetConvolutionFilter argp;
+    args_glGetConvolutionFilter argp;
 
     // Set function specific args
     argp.target = target;
@@ -4596,7 +4596,7 @@ void glGetConvolutionFilter( GLenum target, GLenum format, GLenum type, GLvoid *
 // -- glGetConvolutionParameterfv
 void glGetConvolutionParameterfv( GLenum target, GLenum pname, GLfloat *params )
 {
-    argp_glGetConvolutionParameterfv argp;
+    args_glGetConvolutionParameterfv argp;
 
     // Set function specific args
     argp.target = target;
@@ -4609,7 +4609,7 @@ void glGetConvolutionParameterfv( GLenum target, GLenum pname, GLfloat *params )
 // -- glGetConvolutionParameteriv
 void glGetConvolutionParameteriv( GLenum target, GLenum pname, GLint *params )
 {
-    argp_glGetConvolutionParameteriv argp;
+    args_glGetConvolutionParameteriv argp;
 
     // Set function specific args
     argp.target = target;
@@ -4622,7 +4622,7 @@ void glGetConvolutionParameteriv( GLenum target, GLenum pname, GLint *params )
 // -- glSeparableFilter2D
 void glSeparableFilter2D( GLenum target, GLenum internalformat, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid *row, const GLvoid *column )
 {
-    argp_glSeparableFilter2D argp;
+    args_glSeparableFilter2D argp;
 
     // Set function specific args
     argp.target = target;
@@ -4640,7 +4640,7 @@ void glSeparableFilter2D( GLenum target, GLenum internalformat, GLsizei width, G
 // -- glGetSeparableFilter
 void glGetSeparableFilter( GLenum target, GLenum format, GLenum type, GLvoid *row, GLvoid *column, GLvoid *span )
 {
-    argp_glGetSeparableFilter argp;
+    args_glGetSeparableFilter argp;
 
     // Set function specific args
     argp.target = target;
@@ -4656,7 +4656,7 @@ void glGetSeparableFilter( GLenum target, GLenum format, GLenum type, GLvoid *ro
 // -- glActiveTexture
 void glActiveTexture( GLenum texture )
 {
-    argp_glActiveTexture argp;
+    args_glActiveTexture argp;
 
     // Set function specific args
     argp.texture = texture
@@ -4667,7 +4667,7 @@ void glActiveTexture( GLenum texture )
 // -- glClientActiveTexture
 void glClientActiveTexture( GLenum texture )
 {
-    argp_glClientActiveTexture argp;
+    args_glClientActiveTexture argp;
 
     // Set function specific args
     argp.texture = texture
@@ -4678,7 +4678,7 @@ void glClientActiveTexture( GLenum texture )
 // -- glCompressedTexImage1D
 void glCompressedTexImage1D( GLenum target, GLint level, GLenum internalformat, GLsizei width, GLint border, GLsizei imageSize, const GLvoid *data )
 {
-    argp_glCompressedTexImage1D argp;
+    args_glCompressedTexImage1D argp;
 
     // Set function specific args
     argp.target = target;
@@ -4695,7 +4695,7 @@ void glCompressedTexImage1D( GLenum target, GLint level, GLenum internalformat, 
 // -- glCompressedTexImage2D
 void glCompressedTexImage2D( GLenum target, GLint level, GLenum internalformat, GLsizei width, GLsizei height, GLint border, GLsizei imageSize, const GLvoid *data )
 {
-    argp_glCompressedTexImage2D argp;
+    args_glCompressedTexImage2D argp;
 
     // Set function specific args
     argp.target = target;
@@ -4713,7 +4713,7 @@ void glCompressedTexImage2D( GLenum target, GLint level, GLenum internalformat, 
 // -- glCompressedTexImage3D
 void glCompressedTexImage3D( GLenum target, GLint level, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLsizei imageSize, const GLvoid *data )
 {
-    argp_glCompressedTexImage3D argp;
+    args_glCompressedTexImage3D argp;
 
     // Set function specific args
     argp.target = target;
@@ -4732,7 +4732,7 @@ void glCompressedTexImage3D( GLenum target, GLint level, GLenum internalformat, 
 // -- glCompressedTexSubImage1D
 void glCompressedTexSubImage1D( GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLsizei imageSize, const GLvoid *data )
 {
-    argp_glCompressedTexSubImage1D argp;
+    args_glCompressedTexSubImage1D argp;
 
     // Set function specific args
     argp.target = target;
@@ -4749,7 +4749,7 @@ void glCompressedTexSubImage1D( GLenum target, GLint level, GLint xoffset, GLsiz
 // -- glCompressedTexSubImage2D
 void glCompressedTexSubImage2D( GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLsizei imageSize, const GLvoid *data )
 {
-    argp_glCompressedTexSubImage2D argp;
+    args_glCompressedTexSubImage2D argp;
 
     // Set function specific args
     argp.target = target;
@@ -4768,7 +4768,7 @@ void glCompressedTexSubImage2D( GLenum target, GLint level, GLint xoffset, GLint
 // -- glCompressedTexSubImage3D
 void glCompressedTexSubImage3D( GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLsizei imageSize, const GLvoid *data )
 {
-    argp_glCompressedTexSubImage3D argp;
+    args_glCompressedTexSubImage3D argp;
 
     // Set function specific args
     argp.target = target;
@@ -4789,7 +4789,7 @@ void glCompressedTexSubImage3D( GLenum target, GLint level, GLint xoffset, GLint
 // -- glGetCompressedTexImage
 void glGetCompressedTexImage( GLenum target, GLint lod, GLvoid *img )
 {
-    argp_glGetCompressedTexImage argp;
+    args_glGetCompressedTexImage argp;
 
     // Set function specific args
     argp.target = target;
@@ -4802,7 +4802,7 @@ void glGetCompressedTexImage( GLenum target, GLint lod, GLvoid *img )
 // -- glMultiTexCoord1d
 void glMultiTexCoord1d( GLenum target, GLdouble s )
 {
-    argp_glMultiTexCoord1d argp;
+    args_glMultiTexCoord1d argp;
 
     // Set function specific args
     argp.target = target;
@@ -4814,7 +4814,7 @@ void glMultiTexCoord1d( GLenum target, GLdouble s )
 // -- glMultiTexCoord1dv
 void glMultiTexCoord1dv( GLenum target, const GLdouble *v )
 {
-    argp_glMultiTexCoord1dv argp;
+    args_glMultiTexCoord1dv argp;
 
     // Set function specific args
     argp.target = target;
@@ -4826,7 +4826,7 @@ void glMultiTexCoord1dv( GLenum target, const GLdouble *v )
 // -- glMultiTexCoord1f
 void glMultiTexCoord1f( GLenum target, GLfloat s )
 {
-    argp_glMultiTexCoord1f argp;
+    args_glMultiTexCoord1f argp;
 
     // Set function specific args
     argp.target = target;
@@ -4838,7 +4838,7 @@ void glMultiTexCoord1f( GLenum target, GLfloat s )
 // -- glMultiTexCoord1fv
 void glMultiTexCoord1fv( GLenum target, const GLfloat *v )
 {
-    argp_glMultiTexCoord1fv argp;
+    args_glMultiTexCoord1fv argp;
 
     // Set function specific args
     argp.target = target;
@@ -4850,7 +4850,7 @@ void glMultiTexCoord1fv( GLenum target, const GLfloat *v )
 // -- glMultiTexCoord1i
 void glMultiTexCoord1i( GLenum target, GLint s )
 {
-    argp_glMultiTexCoord1i argp;
+    args_glMultiTexCoord1i argp;
 
     // Set function specific args
     argp.target = target;
@@ -4862,7 +4862,7 @@ void glMultiTexCoord1i( GLenum target, GLint s )
 // -- glMultiTexCoord1iv
 void glMultiTexCoord1iv( GLenum target, const GLint *v )
 {
-    argp_glMultiTexCoord1iv argp;
+    args_glMultiTexCoord1iv argp;
 
     // Set function specific args
     argp.target = target;
@@ -4874,7 +4874,7 @@ void glMultiTexCoord1iv( GLenum target, const GLint *v )
 // -- glMultiTexCoord1s
 void glMultiTexCoord1s( GLenum target, GLshort s )
 {
-    argp_glMultiTexCoord1s argp;
+    args_glMultiTexCoord1s argp;
 
     // Set function specific args
     argp.target = target;
@@ -4886,7 +4886,7 @@ void glMultiTexCoord1s( GLenum target, GLshort s )
 // -- glMultiTexCoord1sv
 void glMultiTexCoord1sv( GLenum target, const GLshort *v )
 {
-    argp_glMultiTexCoord1sv argp;
+    args_glMultiTexCoord1sv argp;
 
     // Set function specific args
     argp.target = target;
@@ -4898,7 +4898,7 @@ void glMultiTexCoord1sv( GLenum target, const GLshort *v )
 // -- glMultiTexCoord2d
 void glMultiTexCoord2d( GLenum target, GLdouble s, GLdouble t )
 {
-    argp_glMultiTexCoord2d argp;
+    args_glMultiTexCoord2d argp;
 
     // Set function specific args
     argp.target = target;
@@ -4911,7 +4911,7 @@ void glMultiTexCoord2d( GLenum target, GLdouble s, GLdouble t )
 // -- glMultiTexCoord2dv
 void glMultiTexCoord2dv( GLenum target, const GLdouble *v )
 {
-    argp_glMultiTexCoord2dv argp;
+    args_glMultiTexCoord2dv argp;
 
     // Set function specific args
     argp.target = target;
@@ -4923,7 +4923,7 @@ void glMultiTexCoord2dv( GLenum target, const GLdouble *v )
 // -- glMultiTexCoord2f
 void glMultiTexCoord2f( GLenum target, GLfloat s, GLfloat t )
 {
-    argp_glMultiTexCoord2f argp;
+    args_glMultiTexCoord2f argp;
 
     // Set function specific args
     argp.target = target;
@@ -4936,7 +4936,7 @@ void glMultiTexCoord2f( GLenum target, GLfloat s, GLfloat t )
 // -- glMultiTexCoord2fv
 void glMultiTexCoord2fv( GLenum target, const GLfloat *v )
 {
-    argp_glMultiTexCoord2fv argp;
+    args_glMultiTexCoord2fv argp;
 
     // Set function specific args
     argp.target = target;
@@ -4948,7 +4948,7 @@ void glMultiTexCoord2fv( GLenum target, const GLfloat *v )
 // -- glMultiTexCoord2i
 void glMultiTexCoord2i( GLenum target, GLint s, GLint t )
 {
-    argp_glMultiTexCoord2i argp;
+    args_glMultiTexCoord2i argp;
 
     // Set function specific args
     argp.target = target;
@@ -4961,7 +4961,7 @@ void glMultiTexCoord2i( GLenum target, GLint s, GLint t )
 // -- glMultiTexCoord2iv
 void glMultiTexCoord2iv( GLenum target, const GLint *v )
 {
-    argp_glMultiTexCoord2iv argp;
+    args_glMultiTexCoord2iv argp;
 
     // Set function specific args
     argp.target = target;
@@ -4973,7 +4973,7 @@ void glMultiTexCoord2iv( GLenum target, const GLint *v )
 // -- glMultiTexCoord2s
 void glMultiTexCoord2s( GLenum target, GLshort s, GLshort t )
 {
-    argp_glMultiTexCoord2s argp;
+    args_glMultiTexCoord2s argp;
 
     // Set function specific args
     argp.target = target;
@@ -4986,7 +4986,7 @@ void glMultiTexCoord2s( GLenum target, GLshort s, GLshort t )
 // -- glMultiTexCoord2sv
 void glMultiTexCoord2sv( GLenum target, const GLshort *v )
 {
-    argp_glMultiTexCoord2sv argp;
+    args_glMultiTexCoord2sv argp;
 
     // Set function specific args
     argp.target = target;
@@ -4998,7 +4998,7 @@ void glMultiTexCoord2sv( GLenum target, const GLshort *v )
 // -- glMultiTexCoord3d
 void glMultiTexCoord3d( GLenum target, GLdouble s, GLdouble t, GLdouble r )
 {
-    argp_glMultiTexCoord3d argp;
+    args_glMultiTexCoord3d argp;
 
     // Set function specific args
     argp.target = target;
@@ -5012,7 +5012,7 @@ void glMultiTexCoord3d( GLenum target, GLdouble s, GLdouble t, GLdouble r )
 // -- glMultiTexCoord3dv
 void glMultiTexCoord3dv( GLenum target, const GLdouble *v )
 {
-    argp_glMultiTexCoord3dv argp;
+    args_glMultiTexCoord3dv argp;
 
     // Set function specific args
     argp.target = target;
@@ -5024,7 +5024,7 @@ void glMultiTexCoord3dv( GLenum target, const GLdouble *v )
 // -- glMultiTexCoord3f
 void glMultiTexCoord3f( GLenum target, GLfloat s, GLfloat t, GLfloat r )
 {
-    argp_glMultiTexCoord3f argp;
+    args_glMultiTexCoord3f argp;
 
     // Set function specific args
     argp.target = target;
@@ -5038,7 +5038,7 @@ void glMultiTexCoord3f( GLenum target, GLfloat s, GLfloat t, GLfloat r )
 // -- glMultiTexCoord3fv
 void glMultiTexCoord3fv( GLenum target, const GLfloat *v )
 {
-    argp_glMultiTexCoord3fv argp;
+    args_glMultiTexCoord3fv argp;
 
     // Set function specific args
     argp.target = target;
@@ -5050,7 +5050,7 @@ void glMultiTexCoord3fv( GLenum target, const GLfloat *v )
 // -- glMultiTexCoord3i
 void glMultiTexCoord3i( GLenum target, GLint s, GLint t, GLint r )
 {
-    argp_glMultiTexCoord3i argp;
+    args_glMultiTexCoord3i argp;
 
     // Set function specific args
     argp.target = target;
@@ -5064,7 +5064,7 @@ void glMultiTexCoord3i( GLenum target, GLint s, GLint t, GLint r )
 // -- glMultiTexCoord3iv
 void glMultiTexCoord3iv( GLenum target, const GLint *v )
 {
-    argp_glMultiTexCoord3iv argp;
+    args_glMultiTexCoord3iv argp;
 
     // Set function specific args
     argp.target = target;
@@ -5076,7 +5076,7 @@ void glMultiTexCoord3iv( GLenum target, const GLint *v )
 // -- glMultiTexCoord3s
 void glMultiTexCoord3s( GLenum target, GLshort s, GLshort t, GLshort r )
 {
-    argp_glMultiTexCoord3s argp;
+    args_glMultiTexCoord3s argp;
 
     // Set function specific args
     argp.target = target;
@@ -5090,7 +5090,7 @@ void glMultiTexCoord3s( GLenum target, GLshort s, GLshort t, GLshort r )
 // -- glMultiTexCoord3sv
 void glMultiTexCoord3sv( GLenum target, const GLshort *v )
 {
-    argp_glMultiTexCoord3sv argp;
+    args_glMultiTexCoord3sv argp;
 
     // Set function specific args
     argp.target = target;
@@ -5102,7 +5102,7 @@ void glMultiTexCoord3sv( GLenum target, const GLshort *v )
 // -- glMultiTexCoord4d
 void glMultiTexCoord4d( GLenum target, GLdouble s, GLdouble t, GLdouble r, GLdouble q )
 {
-    argp_glMultiTexCoord4d argp;
+    args_glMultiTexCoord4d argp;
 
     // Set function specific args
     argp.target = target;
@@ -5117,7 +5117,7 @@ void glMultiTexCoord4d( GLenum target, GLdouble s, GLdouble t, GLdouble r, GLdou
 // -- glMultiTexCoord4dv
 void glMultiTexCoord4dv( GLenum target, const GLdouble *v )
 {
-    argp_glMultiTexCoord4dv argp;
+    args_glMultiTexCoord4dv argp;
 
     // Set function specific args
     argp.target = target;
@@ -5129,7 +5129,7 @@ void glMultiTexCoord4dv( GLenum target, const GLdouble *v )
 // -- glMultiTexCoord4f
 void glMultiTexCoord4f( GLenum target, GLfloat s, GLfloat t, GLfloat r, GLfloat q )
 {
-    argp_glMultiTexCoord4f argp;
+    args_glMultiTexCoord4f argp;
 
     // Set function specific args
     argp.target = target;
@@ -5144,7 +5144,7 @@ void glMultiTexCoord4f( GLenum target, GLfloat s, GLfloat t, GLfloat r, GLfloat 
 // -- glMultiTexCoord4fv
 void glMultiTexCoord4fv( GLenum target, const GLfloat *v )
 {
-    argp_glMultiTexCoord4fv argp;
+    args_glMultiTexCoord4fv argp;
 
     // Set function specific args
     argp.target = target;
@@ -5156,7 +5156,7 @@ void glMultiTexCoord4fv( GLenum target, const GLfloat *v )
 // -- glMultiTexCoord4i
 void glMultiTexCoord4i( GLenum target, GLint s, GLint t, GLint r, GLint q )
 {
-    argp_glMultiTexCoord4i argp;
+    args_glMultiTexCoord4i argp;
 
     // Set function specific args
     argp.target = target;
@@ -5171,7 +5171,7 @@ void glMultiTexCoord4i( GLenum target, GLint s, GLint t, GLint r, GLint q )
 // -- glMultiTexCoord4iv
 void glMultiTexCoord4iv( GLenum target, const GLint *v )
 {
-    argp_glMultiTexCoord4iv argp;
+    args_glMultiTexCoord4iv argp;
 
     // Set function specific args
     argp.target = target;
@@ -5183,7 +5183,7 @@ void glMultiTexCoord4iv( GLenum target, const GLint *v )
 // -- glMultiTexCoord4s
 void glMultiTexCoord4s( GLenum target, GLshort s, GLshort t, GLshort r, GLshort q )
 {
-    argp_glMultiTexCoord4s argp;
+    args_glMultiTexCoord4s argp;
 
     // Set function specific args
     argp.target = target;
@@ -5198,7 +5198,7 @@ void glMultiTexCoord4s( GLenum target, GLshort s, GLshort t, GLshort r, GLshort 
 // -- glMultiTexCoord4sv
 void glMultiTexCoord4sv( GLenum target, const GLshort *v )
 {
-    argp_glMultiTexCoord4sv argp;
+    args_glMultiTexCoord4sv argp;
 
     // Set function specific args
     argp.target = target;
@@ -5210,7 +5210,7 @@ void glMultiTexCoord4sv( GLenum target, const GLshort *v )
 // -- glLoadTransposeMatrixd
 void glLoadTransposeMatrixd( const GLdouble m[16] )
 {
-    argp_glLoadTransposeMatrixd argp;
+    args_glLoadTransposeMatrixd argp;
 
     // Set function specific args
     argp.m[16] = m[16]
@@ -5221,7 +5221,7 @@ void glLoadTransposeMatrixd( const GLdouble m[16] )
 // -- glLoadTransposeMatrixf
 void glLoadTransposeMatrixf( const GLfloat m[16] )
 {
-    argp_glLoadTransposeMatrixf argp;
+    args_glLoadTransposeMatrixf argp;
 
     // Set function specific args
     argp.m[16] = m[16]
@@ -5232,7 +5232,7 @@ void glLoadTransposeMatrixf( const GLfloat m[16] )
 // -- glMultTransposeMatrixd
 void glMultTransposeMatrixd( const GLdouble m[16] )
 {
-    argp_glMultTransposeMatrixd argp;
+    args_glMultTransposeMatrixd argp;
 
     // Set function specific args
     argp.m[16] = m[16]
@@ -5243,7 +5243,7 @@ void glMultTransposeMatrixd( const GLdouble m[16] )
 // -- glMultTransposeMatrixf
 void glMultTransposeMatrixf( const GLfloat m[16] )
 {
-    argp_glMultTransposeMatrixf argp;
+    args_glMultTransposeMatrixf argp;
 
     // Set function specific args
     argp.m[16] = m[16]
@@ -5254,7 +5254,7 @@ void glMultTransposeMatrixf( const GLfloat m[16] )
 // -- glSampleCoverage
 void glSampleCoverage( GLclampf value, GLboolean invert )
 {
-    argp_glSampleCoverage argp;
+    args_glSampleCoverage argp;
 
     // Set function specific args
     argp.value = value;
@@ -5266,7 +5266,7 @@ void glSampleCoverage( GLclampf value, GLboolean invert )
 // -- glActiveTextureARB
 void glActiveTextureARB(GLenum texture)
 {
-    argp_glActiveTextureARB argp;
+    args_glActiveTextureARB argp;
 
     // Set function specific args
     argp.texture = texture
@@ -5277,7 +5277,7 @@ void glActiveTextureARB(GLenum texture)
 // -- glClientActiveTextureARB
 void glClientActiveTextureARB(GLenum texture)
 {
-    argp_glClientActiveTextureARB argp;
+    args_glClientActiveTextureARB argp;
 
     // Set function specific args
     argp.texture = texture
@@ -5288,7 +5288,7 @@ void glClientActiveTextureARB(GLenum texture)
 // -- glMultiTexCoord1dARB
 void glMultiTexCoord1dARB(GLenum target, GLdouble s)
 {
-    argp_glMultiTexCoord1dARB argp;
+    args_glMultiTexCoord1dARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5300,7 +5300,7 @@ void glMultiTexCoord1dARB(GLenum target, GLdouble s)
 // -- glMultiTexCoord1dvARB
 void glMultiTexCoord1dvARB(GLenum target, const GLdouble *v)
 {
-    argp_glMultiTexCoord1dvARB argp;
+    args_glMultiTexCoord1dvARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5312,7 +5312,7 @@ void glMultiTexCoord1dvARB(GLenum target, const GLdouble *v)
 // -- glMultiTexCoord1fARB
 void glMultiTexCoord1fARB(GLenum target, GLfloat s)
 {
-    argp_glMultiTexCoord1fARB argp;
+    args_glMultiTexCoord1fARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5324,7 +5324,7 @@ void glMultiTexCoord1fARB(GLenum target, GLfloat s)
 // -- glMultiTexCoord1fvARB
 void glMultiTexCoord1fvARB(GLenum target, const GLfloat *v)
 {
-    argp_glMultiTexCoord1fvARB argp;
+    args_glMultiTexCoord1fvARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5336,7 +5336,7 @@ void glMultiTexCoord1fvARB(GLenum target, const GLfloat *v)
 // -- glMultiTexCoord1iARB
 void glMultiTexCoord1iARB(GLenum target, GLint s)
 {
-    argp_glMultiTexCoord1iARB argp;
+    args_glMultiTexCoord1iARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5348,7 +5348,7 @@ void glMultiTexCoord1iARB(GLenum target, GLint s)
 // -- glMultiTexCoord1ivARB
 void glMultiTexCoord1ivARB(GLenum target, const GLint *v)
 {
-    argp_glMultiTexCoord1ivARB argp;
+    args_glMultiTexCoord1ivARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5360,7 +5360,7 @@ void glMultiTexCoord1ivARB(GLenum target, const GLint *v)
 // -- glMultiTexCoord1sARB
 void glMultiTexCoord1sARB(GLenum target, GLshort s)
 {
-    argp_glMultiTexCoord1sARB argp;
+    args_glMultiTexCoord1sARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5372,7 +5372,7 @@ void glMultiTexCoord1sARB(GLenum target, GLshort s)
 // -- glMultiTexCoord1svARB
 void glMultiTexCoord1svARB(GLenum target, const GLshort *v)
 {
-    argp_glMultiTexCoord1svARB argp;
+    args_glMultiTexCoord1svARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5384,7 +5384,7 @@ void glMultiTexCoord1svARB(GLenum target, const GLshort *v)
 // -- glMultiTexCoord2dARB
 void glMultiTexCoord2dARB(GLenum target, GLdouble s, GLdouble t)
 {
-    argp_glMultiTexCoord2dARB argp;
+    args_glMultiTexCoord2dARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5397,7 +5397,7 @@ void glMultiTexCoord2dARB(GLenum target, GLdouble s, GLdouble t)
 // -- glMultiTexCoord2dvARB
 void glMultiTexCoord2dvARB(GLenum target, const GLdouble *v)
 {
-    argp_glMultiTexCoord2dvARB argp;
+    args_glMultiTexCoord2dvARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5409,7 +5409,7 @@ void glMultiTexCoord2dvARB(GLenum target, const GLdouble *v)
 // -- glMultiTexCoord2fARB
 void glMultiTexCoord2fARB(GLenum target, GLfloat s, GLfloat t)
 {
-    argp_glMultiTexCoord2fARB argp;
+    args_glMultiTexCoord2fARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5422,7 +5422,7 @@ void glMultiTexCoord2fARB(GLenum target, GLfloat s, GLfloat t)
 // -- glMultiTexCoord2fvARB
 void glMultiTexCoord2fvARB(GLenum target, const GLfloat *v)
 {
-    argp_glMultiTexCoord2fvARB argp;
+    args_glMultiTexCoord2fvARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5434,7 +5434,7 @@ void glMultiTexCoord2fvARB(GLenum target, const GLfloat *v)
 // -- glMultiTexCoord2iARB
 void glMultiTexCoord2iARB(GLenum target, GLint s, GLint t)
 {
-    argp_glMultiTexCoord2iARB argp;
+    args_glMultiTexCoord2iARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5447,7 +5447,7 @@ void glMultiTexCoord2iARB(GLenum target, GLint s, GLint t)
 // -- glMultiTexCoord2ivARB
 void glMultiTexCoord2ivARB(GLenum target, const GLint *v)
 {
-    argp_glMultiTexCoord2ivARB argp;
+    args_glMultiTexCoord2ivARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5459,7 +5459,7 @@ void glMultiTexCoord2ivARB(GLenum target, const GLint *v)
 // -- glMultiTexCoord2sARB
 void glMultiTexCoord2sARB(GLenum target, GLshort s, GLshort t)
 {
-    argp_glMultiTexCoord2sARB argp;
+    args_glMultiTexCoord2sARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5472,7 +5472,7 @@ void glMultiTexCoord2sARB(GLenum target, GLshort s, GLshort t)
 // -- glMultiTexCoord2svARB
 void glMultiTexCoord2svARB(GLenum target, const GLshort *v)
 {
-    argp_glMultiTexCoord2svARB argp;
+    args_glMultiTexCoord2svARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5484,7 +5484,7 @@ void glMultiTexCoord2svARB(GLenum target, const GLshort *v)
 // -- glMultiTexCoord3dARB
 void glMultiTexCoord3dARB(GLenum target, GLdouble s, GLdouble t, GLdouble r)
 {
-    argp_glMultiTexCoord3dARB argp;
+    args_glMultiTexCoord3dARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5498,7 +5498,7 @@ void glMultiTexCoord3dARB(GLenum target, GLdouble s, GLdouble t, GLdouble r)
 // -- glMultiTexCoord3dvARB
 void glMultiTexCoord3dvARB(GLenum target, const GLdouble *v)
 {
-    argp_glMultiTexCoord3dvARB argp;
+    args_glMultiTexCoord3dvARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5510,7 +5510,7 @@ void glMultiTexCoord3dvARB(GLenum target, const GLdouble *v)
 // -- glMultiTexCoord3fARB
 void glMultiTexCoord3fARB(GLenum target, GLfloat s, GLfloat t, GLfloat r)
 {
-    argp_glMultiTexCoord3fARB argp;
+    args_glMultiTexCoord3fARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5524,7 +5524,7 @@ void glMultiTexCoord3fARB(GLenum target, GLfloat s, GLfloat t, GLfloat r)
 // -- glMultiTexCoord3fvARB
 void glMultiTexCoord3fvARB(GLenum target, const GLfloat *v)
 {
-    argp_glMultiTexCoord3fvARB argp;
+    args_glMultiTexCoord3fvARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5536,7 +5536,7 @@ void glMultiTexCoord3fvARB(GLenum target, const GLfloat *v)
 // -- glMultiTexCoord3iARB
 void glMultiTexCoord3iARB(GLenum target, GLint s, GLint t, GLint r)
 {
-    argp_glMultiTexCoord3iARB argp;
+    args_glMultiTexCoord3iARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5550,7 +5550,7 @@ void glMultiTexCoord3iARB(GLenum target, GLint s, GLint t, GLint r)
 // -- glMultiTexCoord3ivARB
 void glMultiTexCoord3ivARB(GLenum target, const GLint *v)
 {
-    argp_glMultiTexCoord3ivARB argp;
+    args_glMultiTexCoord3ivARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5562,7 +5562,7 @@ void glMultiTexCoord3ivARB(GLenum target, const GLint *v)
 // -- glMultiTexCoord3sARB
 void glMultiTexCoord3sARB(GLenum target, GLshort s, GLshort t, GLshort r)
 {
-    argp_glMultiTexCoord3sARB argp;
+    args_glMultiTexCoord3sARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5576,7 +5576,7 @@ void glMultiTexCoord3sARB(GLenum target, GLshort s, GLshort t, GLshort r)
 // -- glMultiTexCoord3svARB
 void glMultiTexCoord3svARB(GLenum target, const GLshort *v)
 {
-    argp_glMultiTexCoord3svARB argp;
+    args_glMultiTexCoord3svARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5588,7 +5588,7 @@ void glMultiTexCoord3svARB(GLenum target, const GLshort *v)
 // -- glMultiTexCoord4dARB
 void glMultiTexCoord4dARB(GLenum target, GLdouble s, GLdouble t, GLdouble r, GLdouble q)
 {
-    argp_glMultiTexCoord4dARB argp;
+    args_glMultiTexCoord4dARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5603,7 +5603,7 @@ void glMultiTexCoord4dARB(GLenum target, GLdouble s, GLdouble t, GLdouble r, GLd
 // -- glMultiTexCoord4dvARB
 void glMultiTexCoord4dvARB(GLenum target, const GLdouble *v)
 {
-    argp_glMultiTexCoord4dvARB argp;
+    args_glMultiTexCoord4dvARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5615,7 +5615,7 @@ void glMultiTexCoord4dvARB(GLenum target, const GLdouble *v)
 // -- glMultiTexCoord4fARB
 void glMultiTexCoord4fARB(GLenum target, GLfloat s, GLfloat t, GLfloat r, GLfloat q)
 {
-    argp_glMultiTexCoord4fARB argp;
+    args_glMultiTexCoord4fARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5630,7 +5630,7 @@ void glMultiTexCoord4fARB(GLenum target, GLfloat s, GLfloat t, GLfloat r, GLfloa
 // -- glMultiTexCoord4fvARB
 void glMultiTexCoord4fvARB(GLenum target, const GLfloat *v)
 {
-    argp_glMultiTexCoord4fvARB argp;
+    args_glMultiTexCoord4fvARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5642,7 +5642,7 @@ void glMultiTexCoord4fvARB(GLenum target, const GLfloat *v)
 // -- glMultiTexCoord4iARB
 void glMultiTexCoord4iARB(GLenum target, GLint s, GLint t, GLint r, GLint q)
 {
-    argp_glMultiTexCoord4iARB argp;
+    args_glMultiTexCoord4iARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5657,7 +5657,7 @@ void glMultiTexCoord4iARB(GLenum target, GLint s, GLint t, GLint r, GLint q)
 // -- glMultiTexCoord4ivARB
 void glMultiTexCoord4ivARB(GLenum target, const GLint *v)
 {
-    argp_glMultiTexCoord4ivARB argp;
+    args_glMultiTexCoord4ivARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5669,7 +5669,7 @@ void glMultiTexCoord4ivARB(GLenum target, const GLint *v)
 // -- glMultiTexCoord4sARB
 void glMultiTexCoord4sARB(GLenum target, GLshort s, GLshort t, GLshort r, GLshort q)
 {
-    argp_glMultiTexCoord4sARB argp;
+    args_glMultiTexCoord4sARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5684,7 +5684,7 @@ void glMultiTexCoord4sARB(GLenum target, GLshort s, GLshort t, GLshort r, GLshor
 // -- glMultiTexCoord4svARB
 void glMultiTexCoord4svARB(GLenum target, const GLshort *v)
 {
-    argp_glMultiTexCoord4svARB argp;
+    args_glMultiTexCoord4svARB argp;
 
     // Set function specific args
     argp.target = target;
@@ -5696,7 +5696,7 @@ void glMultiTexCoord4svARB(GLenum target, const GLshort *v)
 // -- glBlendEquationSeparateATI
 void glBlendEquationSeparateATI( GLenum modeRGB, GLenum modeA )
 {
-    argp_glBlendEquationSeparateATI argp;
+    args_glBlendEquationSeparateATI argp;
 
     // Set function specific args
     argp.modeRGB = modeRGB;
@@ -5708,7 +5708,7 @@ void glBlendEquationSeparateATI( GLenum modeRGB, GLenum modeA )
 // -- glXDestroyContext
 void glXDestroyContext( Display *dpy, GLXContext ctx )
 {
-    argp_glXDestroyContext argp;
+    args_glXDestroyContext argp;
 
     // Set function specific args
     argp.dpy = dpy;
@@ -5720,7 +5720,7 @@ void glXDestroyContext( Display *dpy, GLXContext ctx )
 // -- glXSwapBuffers
 void glXSwapBuffers( Display *dpy, GLXDrawable drawable )
 {
-    argp_glXSwapBuffers argp;
+    args_glXSwapBuffers argp;
 
     // Set function specific args
     argp.dpy = dpy;
@@ -5732,7 +5732,7 @@ void glXSwapBuffers( Display *dpy, GLXDrawable drawable )
 // -- glXDestroyGLXPixmap
 void glXDestroyGLXPixmap( Display *dpy, GLXPixmap pixmap )
 {
-    argp_glXDestroyGLXPixmap argp;
+    args_glXDestroyGLXPixmap argp;
 
     // Set function specific args
     argp.dpy = dpy;
@@ -5744,7 +5744,7 @@ void glXDestroyGLXPixmap( Display *dpy, GLXPixmap pixmap )
 // -- glXQueryExtension
 Bool glXQueryExtension( Display *dpy, int *errorb, int *event )
 {
-    argp_glXQueryExtension argp;
+    args_glXQueryExtension argp;
     
     // Set function specific args
     argp.dpy = dpy;
@@ -5757,7 +5757,7 @@ Bool glXQueryExtension( Display *dpy, int *errorb, int *event )
 // -- glXQueryVersion
 Bool glXQueryVersion( Display *dpy, int *maj, int *min )
 {
-    argp_glXQueryVersion argp;
+    args_glXQueryVersion argp;
     
     // Set function specific args
     argp.dpy = dpy;
@@ -5770,7 +5770,7 @@ Bool glXQueryVersion( Display *dpy, int *maj, int *min )
 // -- glXIsDirect
 Bool glXIsDirect( Display *dpy, GLXContext ctx )
 {
-    argp_glXIsDirect argp;
+    args_glXIsDirect argp;
     
     // Set function specific args
     argp.dpy = dpy;
@@ -5806,7 +5806,7 @@ void glXWaitX()
 // -- glXUseXFont
 void glXUseXFont( Font font, int first, int count, int list )
 {
-    argp_glXUseXFont argp;
+    args_glXUseXFont argp;
 
     // Set function specific args
     argp.font = font;
@@ -5820,7 +5820,7 @@ void glXUseXFont( Font font, int first, int count, int list )
 // -- glXQueryExtensionsString
 const char *glXQueryExtensionsString( Display *dpy, int screen )
 {
-    argp_glXQueryExtensionsString argp;
+    args_glXQueryExtensionsString argp;
     
     // Set function specific args
     argp.dpy = dpy;
@@ -5832,7 +5832,7 @@ const char *glXQueryExtensionsString( Display *dpy, int screen )
 // -- glXQueryServerString
 const char *glXQueryServerString( Display *dpy, int screen, int name )
 {
-    argp_glXQueryServerString argp;
+    args_glXQueryServerString argp;
     
     // Set function specific args
     argp.dpy = dpy;
@@ -5845,7 +5845,7 @@ const char *glXQueryServerString( Display *dpy, int screen, int name )
 // -- glXGetClientString
 const char *glXGetClientString( Display *dpy, int name )
 {
-    argp_glXGetClientString argp;
+    args_glXGetClientString argp;
     
     // Set function specific args
     argp.dpy = dpy;
@@ -5863,7 +5863,7 @@ Display *glXGetCurrentDisplay()
 // -- glXDestroyWindow
 void glXDestroyWindow( Display *dpy, GLXWindow window )
 {
-    argp_glXDestroyWindow argp;
+    args_glXDestroyWindow argp;
 
     // Set function specific args
     argp.dpy = dpy;
@@ -5875,7 +5875,7 @@ void glXDestroyWindow( Display *dpy, GLXWindow window )
 // -- glXDestroyPixmap
 void glXDestroyPixmap( Display *dpy, GLXPixmap pixmap )
 {
-    argp_glXDestroyPixmap argp;
+    args_glXDestroyPixmap argp;
 
     // Set function specific args
     argp.dpy = dpy;
@@ -5887,7 +5887,7 @@ void glXDestroyPixmap( Display *dpy, GLXPixmap pixmap )
 // -- glXDestroyPbuffer
 void glXDestroyPbuffer( Display *dpy, GLXPbuffer pbuf )
 {
-    argp_glXDestroyPbuffer argp;
+    args_glXDestroyPbuffer argp;
 
     // Set function specific args
     argp.dpy = dpy;
@@ -5905,7 +5905,7 @@ GLXDrawable glXGetCurrentReadDrawable()
 // -- glXGetProcAddressARB
 extern __GLXextFuncPtr glXGetProcAddressARB (const GLubyte *procname)
 {
-    argp_glXGetProcAddressARB argp;
+    args_glXGetProcAddressARB argp;
     
     // Set function specific args
     argp.procname = procname
@@ -5914,9 +5914,9 @@ extern __GLXextFuncPtr glXGetProcAddressARB (const GLubyte *procname)
 }
 
 // -- glXGetProcAddress
-extern void (*glXGetProcAddress(const GLubyte *procname))( void )
+extern void *glXGetProcAddress(const GLubyte *procname)
 {
-    argp_glXGetProcAddress argp;
+    args_glXGetProcAddress argp;
     
     // Set function specific args
     argp.procname = procname
@@ -5927,7 +5927,7 @@ extern void (*glXGetProcAddress(const GLubyte *procname))( void )
 // -- glXAllocateMemoryNV
 void *glXAllocateMemoryNV(GLsizei size, GLfloat readfreq, GLfloat writefreq, GLfloat priority)
 {
-    argp_glXAllocateMemoryNV argp;
+    args_glXAllocateMemoryNV argp;
     
     // Set function specific args
     argp.size = size;
@@ -5941,7 +5941,7 @@ void *glXAllocateMemoryNV(GLsizei size, GLfloat readfreq, GLfloat writefreq, GLf
 // -- glXFreeMemoryNV
 void glXFreeMemoryNV(GLvoid *pointer)
 {
-    argp_glXFreeMemoryNV argp;
+    args_glXFreeMemoryNV argp;
 
     // Set function specific args
     argp.pointer = pointer
@@ -5952,7 +5952,7 @@ void glXFreeMemoryNV(GLvoid *pointer)
 // -- glXBindTexImageARB
 Bool glXBindTexImageARB(Display *dpy, GLXPbuffer pbuffer, int buffer)
 {
-    argp_glXBindTexImageARB argp;
+    args_glXBindTexImageARB argp;
     
     // Set function specific args
     argp.dpy = dpy;
@@ -5965,7 +5965,7 @@ Bool glXBindTexImageARB(Display *dpy, GLXPbuffer pbuffer, int buffer)
 // -- glXReleaseTexImageARB
 Bool glXReleaseTexImageARB(Display *dpy, GLXPbuffer pbuffer, int buffer)
 {
-    argp_glXReleaseTexImageARB argp;
+    args_glXReleaseTexImageARB argp;
     
     // Set function specific args
     argp.dpy = dpy;
@@ -5978,7 +5978,7 @@ Bool glXReleaseTexImageARB(Display *dpy, GLXPbuffer pbuffer, int buffer)
 // -- glXDrawableAttribARB
 Bool glXDrawableAttribARB(Display *dpy, GLXDrawable draw, const int *attribList)
 {
-    argp_glXDrawableAttribARB argp;
+    args_glXDrawableAttribARB argp;
     
     // Set function specific args
     argp.dpy = dpy;
@@ -5991,7 +5991,7 @@ Bool glXDrawableAttribARB(Display *dpy, GLXDrawable draw, const int *attribList)
 // -- glXGetFrameUsageMESA
 int glXGetFrameUsageMESA(Display *dpy, GLXDrawable drawable, float *usage)
 {
-    argp_glXGetFrameUsageMESA argp;
+    args_glXGetFrameUsageMESA argp;
     
     // Set function specific args
     argp.dpy = dpy;
@@ -6004,7 +6004,7 @@ int glXGetFrameUsageMESA(Display *dpy, GLXDrawable drawable, float *usage)
 // -- glXBeginFrameTrackingMESA
 int glXBeginFrameTrackingMESA(Display *dpy, GLXDrawable drawable)
 {
-    argp_glXBeginFrameTrackingMESA argp;
+    args_glXBeginFrameTrackingMESA argp;
     
     // Set function specific args
     argp.dpy = dpy;
@@ -6016,7 +6016,7 @@ int glXBeginFrameTrackingMESA(Display *dpy, GLXDrawable drawable)
 // -- glXEndFrameTrackingMESA
 int glXEndFrameTrackingMESA(Display *dpy, GLXDrawable drawable)
 {
-    argp_glXEndFrameTrackingMESA argp;
+    args_glXEndFrameTrackingMESA argp;
     
     // Set function specific args
     argp.dpy = dpy;
@@ -6028,7 +6028,7 @@ int glXEndFrameTrackingMESA(Display *dpy, GLXDrawable drawable)
 // -- glXQueryFrameTrackingMESA
 int glXQueryFrameTrackingMESA(Display *dpy, GLXDrawable drawable, int64_t *swapCount, int64_t *missedFrames, float *lastMissedUsage)
 {
-    argp_glXQueryFrameTrackingMESA argp;
+    args_glXQueryFrameTrackingMESA argp;
     
     // Set function specific args
     argp.dpy = dpy;
@@ -6043,7 +6043,7 @@ int glXQueryFrameTrackingMESA(Display *dpy, GLXDrawable drawable, int64_t *swapC
 // -- glXSwapIntervalMESA
 int glXSwapIntervalMESA(unsigned int interval)
 {
-    argp_glXSwapIntervalMESA argp;
+    args_glXSwapIntervalMESA argp;
     
     // Set function specific args
     argp.interval = interval
