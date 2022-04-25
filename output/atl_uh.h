@@ -5,6 +5,11 @@
 #endif //ATLAS_ATL_UH_H
 Display* xopendisplay_uh(args_XOpenDisplay argp);
 int xmapwindow_uh(args_XMapWindow argp);
+Colormap xcreatecolormap_uh(args_XCreateColormap argp);
+Window xcreatewindow_uh(args_XCreateWindow argp);
+int xfree_uh(args_XFree argp);
+ xsetnormalhints_uh(args_XSetNormalHints argp);
+ xsetstandardproperties_uh(args_XSetStandardProperties argp);
 void glclearindex_uh(args_glClearIndex argp);
 void glclearcolor_uh(args_glClearColor argp);
 void glclear_uh(args_glClear argp);

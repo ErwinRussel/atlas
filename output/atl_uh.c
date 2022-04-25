@@ -158,6 +158,256 @@ int xmapwindow_uh(args_XMapWindow argp)
     return result;
 }
 
+// -- XCreateColormap
+Colormap xcreatecolormap_uh(args_XCreateColormap argp)
+{
+    // Memcopy in Buffer
+    int arg_size = sizeof(args_XCreateColormap);
+    memcpy(ShmPTR->buffer, &argp, arg_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_CALL;
+    ShmPTR->data_type = XCREATECOLORMAP;
+    ShmPTR->payload_size = arg_size;
+
+    // Set status to REQUEST
+    ShmPTR->status = REQUEST;
+
+    // ------ Waiting for Server -----
+
+    // Wait for response
+    while (ShmPTR->status != RESPONSE)
+        ;
+
+    // assert if the message is a function return
+    if(ShmPTR->message_type != FUNC_RETURN){
+        printf("Message type is not a function return\n");
+    }
+
+    // assert if the datatype is correct
+    if(ShmPTR->data_type != COLORMAP){
+        printf("Payload data type incorrect\n");
+    }
+    
+    // assert if correct payload size
+    int ret_size = sizeof(Colormap);
+
+    // assert if correct payload size
+    if(ShmPTR->payload_size != ret_size){
+        printf("Incorrect payload size\n");
+    }
+
+    // memcopy into result
+    Colormap result;
+    memcpy(&result, ShmPTR->buffer, ret_size);
+
+    // Set status to LISTEN
+    ShmPTR->status = LISTEN;
+
+    // return
+    return result;
+}
+
+// -- XCreateWindow
+Window xcreatewindow_uh(args_XCreateWindow argp)
+{
+    // Memcopy in Buffer
+    int arg_size = sizeof(args_XCreateWindow);
+    memcpy(ShmPTR->buffer, &argp, arg_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_CALL;
+    ShmPTR->data_type = XCREATEWINDOW;
+    ShmPTR->payload_size = arg_size;
+
+    // Set status to REQUEST
+    ShmPTR->status = REQUEST;
+
+    // ------ Waiting for Server -----
+
+    // Wait for response
+    while (ShmPTR->status != RESPONSE)
+        ;
+
+    // assert if the message is a function return
+    if(ShmPTR->message_type != FUNC_RETURN){
+        printf("Message type is not a function return\n");
+    }
+
+    // assert if the datatype is correct
+    if(ShmPTR->data_type != WINDOW){
+        printf("Payload data type incorrect\n");
+    }
+    
+    // assert if correct payload size
+    int ret_size = sizeof(Window);
+
+    // assert if correct payload size
+    if(ShmPTR->payload_size != ret_size){
+        printf("Incorrect payload size\n");
+    }
+
+    // memcopy into result
+    Window result;
+    memcpy(&result, ShmPTR->buffer, ret_size);
+
+    // Set status to LISTEN
+    ShmPTR->status = LISTEN;
+
+    // return
+    return result;
+}
+
+// -- XFree
+int xfree_uh(args_XFree argp)
+{
+    // Memcopy in Buffer
+    int arg_size = sizeof(args_XFree);
+    memcpy(ShmPTR->buffer, &argp, arg_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_CALL;
+    ShmPTR->data_type = XFREE;
+    ShmPTR->payload_size = arg_size;
+
+    // Set status to REQUEST
+    ShmPTR->status = REQUEST;
+
+    // ------ Waiting for Server -----
+
+    // Wait for response
+    while (ShmPTR->status != RESPONSE)
+        ;
+
+    // assert if the message is a function return
+    if(ShmPTR->message_type != FUNC_RETURN){
+        printf("Message type is not a function return\n");
+    }
+
+    // assert if the datatype is correct
+    if(ShmPTR->data_type != INT){
+        printf("Payload data type incorrect\n");
+    }
+    
+    // assert if correct payload size
+    int ret_size = sizeof(int);
+
+    // assert if correct payload size
+    if(ShmPTR->payload_size != ret_size){
+        printf("Incorrect payload size\n");
+    }
+
+    // memcopy into result
+    int result;
+    memcpy(&result, ShmPTR->buffer, ret_size);
+
+    // Set status to LISTEN
+    ShmPTR->status = LISTEN;
+
+    // return
+    return result;
+}
+
+// -- XSetNormalHints
+ xsetnormalhints_uh(args_XSetNormalHints argp)
+{
+    // Memcopy in Buffer
+    int arg_size = sizeof(args_XSetNormalHints);
+    memcpy(ShmPTR->buffer, &argp, arg_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_CALL;
+    ShmPTR->data_type = XSETNORMALHINTS;
+    ShmPTR->payload_size = arg_size;
+
+    // Set status to REQUEST
+    ShmPTR->status = REQUEST;
+
+    // ------ Waiting for Server -----
+
+    // Wait for response
+    while (ShmPTR->status != RESPONSE)
+        ;
+
+    // assert if the message is a function return
+    if(ShmPTR->message_type != FUNC_RETURN){
+        printf("Message type is not a function return\n");
+    }
+
+    // assert if the datatype is correct
+    if(ShmPTR->data_type != ){
+        printf("Payload data type incorrect\n");
+    }
+    
+    // assert if correct payload size
+    int ret_size = sizeof();
+
+    // assert if correct payload size
+    if(ShmPTR->payload_size != ret_size){
+        printf("Incorrect payload size\n");
+    }
+
+    // memcopy into result
+     result;
+    memcpy(&result, ShmPTR->buffer, ret_size);
+
+    // Set status to LISTEN
+    ShmPTR->status = LISTEN;
+
+    // return
+    return result;
+}
+
+// -- XSetStandardProperties
+ xsetstandardproperties_uh(args_XSetStandardProperties argp)
+{
+    // Memcopy in Buffer
+    int arg_size = sizeof(args_XSetStandardProperties);
+    memcpy(ShmPTR->buffer, &argp, arg_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_CALL;
+    ShmPTR->data_type = XSETSTANDARDPROPERTIES;
+    ShmPTR->payload_size = arg_size;
+
+    // Set status to REQUEST
+    ShmPTR->status = REQUEST;
+
+    // ------ Waiting for Server -----
+
+    // Wait for response
+    while (ShmPTR->status != RESPONSE)
+        ;
+
+    // assert if the message is a function return
+    if(ShmPTR->message_type != FUNC_RETURN){
+        printf("Message type is not a function return\n");
+    }
+
+    // assert if the datatype is correct
+    if(ShmPTR->data_type != ){
+        printf("Payload data type incorrect\n");
+    }
+    
+    // assert if correct payload size
+    int ret_size = sizeof();
+
+    // assert if correct payload size
+    if(ShmPTR->payload_size != ret_size){
+        printf("Incorrect payload size\n");
+    }
+
+    // memcopy into result
+     result;
+    memcpy(&result, ShmPTR->buffer, ret_size);
+
+    // Set status to LISTEN
+    ShmPTR->status = LISTEN;
+
+    // return
+    return result;
+}
+
 // -- glClearIndex
 void glclearindex_uh(args_glClearIndex argp)
 {

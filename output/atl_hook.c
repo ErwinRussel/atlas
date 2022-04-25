@@ -24,6 +24,84 @@ int XMapWindow(Display *display, Window w)
     return xmapwindow_uh(argp);
 }
 
+// -- XCreateColormap
+extern Colormap XCreateColormap(Display* display, Window w, Visual*	visual, int	alloc );
+{
+    args_XCreateColormap argp;
+    
+    // Set function specific args
+    argp.display = display;
+	argp.w = w;
+	argp.visual = visual;
+	argp.alloc = alloc;
+    
+    return xcreatecolormap_uh(argp);
+}
+
+// -- XCreateWindow
+extern Window XCreateWindow(Display* display, Window parent, int x, int y, unsigned int width, unsigned int height, unsigned int border_width, int	depth, unsigned int class, Visual* visual, unsigned long valuemask, XSetWindowAttributes* attributes)
+{
+    args_XCreateWindow argp;
+    
+    // Set function specific args
+    argp.display = display;
+	argp.parent = parent;
+	argp.x = x;
+	argp.y = y;
+	argp.width = width;
+	argp.height = height;
+	argp.border_width = border_width;
+	argp.depth = depth;
+	argp.class = class;
+	argp.visual = visual;
+	argp.valuemask = valuemask;
+	argp.attributes = attributes;
+    
+    return xcreatewindow_uh(argp);
+}
+
+// -- XFree
+extern int XFree(void* data)
+{
+    args_XFree argp;
+    
+    // Set function specific args
+    argp.data = data;
+    
+    return xfree_uh(argp);
+}
+
+// -- XSetNormalHints
+XSetNormalHints(Display *display, Window w, XSizeHints *hints)
+{
+    args_XSetNormalHints argp;
+    
+    // Set function specific args
+    argp.display = display;
+	argp.w = w;
+	argp.hints = hints;
+    
+    return xsetnormalhints_uh(argp);
+}
+
+// -- XSetStandardProperties
+XSetStandardProperties(Display *display, Window w, char *window_name, char *icon_name, Pixmap icon_pixmap, char **argv, int argc, XSizeHints *hints)
+{
+    args_XSetStandardProperties argp;
+    
+    // Set function specific args
+    argp.display = display;
+	argp.w = w;
+	argp.window_name = window_name;
+	argp.icon_name = icon_name;
+	argp.icon_pixmap = icon_pixmap;
+	argp.*argv = *argv;
+	argp.argc = argc;
+	argp.hints = hints;
+    
+    return xsetstandardproperties_uh(argp);
+}
+
 // -- glClearIndex
 void glClearIndex( GLfloat c )
 {

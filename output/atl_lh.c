@@ -77,6 +77,144 @@ int *xmapwindow_lh(args_XMapWindow *argp)
 }
 
 
+// -- XCreateColormap
+Colormap *xcreatecolormap_lh(args_XCreateColormap *argp)
+{
+    // Get function specific args
+    Display* display = argp->display;;
+	 Window w = argp->w;;
+	 Visual*	visual = argp->visual;;
+	 int	alloc  = argp->alloc;;
+
+    // Call actual function
+    Colormap result = XCreateColormap(display, w, visual, alloc);
+
+    // Memcopy in Buffer
+    int ret_size = sizeof(Colormap);
+    memcpy(ShmPTR->buffer, &result, ret_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_RETURN;
+    ShmPTR->data_type = COLORMAP;
+    ShmPTR->payload_size = ret_size;
+
+    // Set status
+    ShmPTR->status = RESPONSE;
+}
+
+
+// -- XCreateWindow
+Window *xcreatewindow_lh(args_XCreateWindow *argp)
+{
+    // Get function specific args
+    Display* display = argp->display;;
+	 Window parent = argp->parent;;
+	 int x = argp->x;;
+	 int y = argp->y;;
+	 unsigned int width = argp->width;;
+	 unsigned int height = argp->height;;
+	 unsigned int border_width = argp->border_width;;
+	 int	depth = argp->depth;;
+	 unsigned int class = argp->class;;
+	 Visual* visual = argp->visual;;
+	 unsigned long valuemask = argp->valuemask;;
+	 XSetWindowAttributes* attributes = argp->attributes;;
+
+    // Call actual function
+    Window result = XCreateWindow(display, parent, x, y, width, height, border_width, depth, class, visual, valuemask, attributes);
+
+    // Memcopy in Buffer
+    int ret_size = sizeof(Window);
+    memcpy(ShmPTR->buffer, &result, ret_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_RETURN;
+    ShmPTR->data_type = WINDOW;
+    ShmPTR->payload_size = ret_size;
+
+    // Set status
+    ShmPTR->status = RESPONSE;
+}
+
+
+// -- XFree
+int *xfree_lh(args_XFree *argp)
+{
+    // Get function specific args
+    void* data = argp->data;;
+
+    // Call actual function
+    int result = XFree(data);
+
+    // Memcopy in Buffer
+    int ret_size = sizeof(int);
+    memcpy(ShmPTR->buffer, &result, ret_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_RETURN;
+    ShmPTR->data_type = INT;
+    ShmPTR->payload_size = ret_size;
+
+    // Set status
+    ShmPTR->status = RESPONSE;
+}
+
+
+// -- XSetNormalHints
+ *xsetnormalhints_lh(args_XSetNormalHints *argp)
+{
+    // Get function specific args
+    Display *display = argp->display;;
+	 Window w = argp->w;;
+	 XSizeHints *hints = argp->hints;;
+
+    // Call actual function
+     result = XSetNormalHints(display, w, hints);
+
+    // Memcopy in Buffer
+    int ret_size = sizeof();
+    memcpy(ShmPTR->buffer, &result, ret_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_RETURN;
+    ShmPTR->data_type = ;
+    ShmPTR->payload_size = ret_size;
+
+    // Set status
+    ShmPTR->status = RESPONSE;
+}
+
+
+// -- XSetStandardProperties
+ *xsetstandardproperties_lh(args_XSetStandardProperties *argp)
+{
+    // Get function specific args
+    Display *display = argp->display;;
+	 Window w = argp->w;;
+	 char *window_name = argp->window_name;;
+	 char *icon_name = argp->icon_name;;
+	 Pixmap icon_pixmap = argp->icon_pixmap;;
+	 char **argv = argp->*argv;;
+	 int argc = argp->argc;;
+	 XSizeHints *hints = argp->hints;;
+
+    // Call actual function
+     result = XSetStandardProperties(display, w, window_name, icon_name, icon_pixmap, *argv, argc, hints);
+
+    // Memcopy in Buffer
+    int ret_size = sizeof();
+    memcpy(ShmPTR->buffer, &result, ret_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_RETURN;
+    ShmPTR->data_type = ;
+    ShmPTR->payload_size = ret_size;
+
+    // Set status
+    ShmPTR->status = RESPONSE;
+}
+
+
 // -- glClearIndex
 void *glclearindex_lh(args_glClearIndex *argp)
 {
@@ -11063,6 +11201,106 @@ void service_listener() {
 
                 // Execute function call
                 xmapwindow_lh(&argp_xmapwindow);
+
+                // Print
+                printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
+                break;
+
+            case XCREATECOLORMAP: ;
+                args_XCreateColormap argp_xcreatecolormap;
+
+                // assert payload size
+                if(ShmPTR->payload_size != sizeof(args_XCreateColormap)){
+                    printf("Wrong payload size\n\n");
+                    ShmPTR->status = LISTEN;
+                    break;
+                }
+
+                // Memcopy from Buffer
+                memcpy(&argp_xcreatecolormap, ShmPTR->buffer, sizeof(args_XCreateColormap));
+
+                // Execute function call
+                xcreatecolormap_lh(&argp_xcreatecolormap);
+
+                // Print
+                printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
+                break;
+
+            case XCREATEWINDOW: ;
+                args_XCreateWindow argp_xcreatewindow;
+
+                // assert payload size
+                if(ShmPTR->payload_size != sizeof(args_XCreateWindow)){
+                    printf("Wrong payload size\n\n");
+                    ShmPTR->status = LISTEN;
+                    break;
+                }
+
+                // Memcopy from Buffer
+                memcpy(&argp_xcreatewindow, ShmPTR->buffer, sizeof(args_XCreateWindow));
+
+                // Execute function call
+                xcreatewindow_lh(&argp_xcreatewindow);
+
+                // Print
+                printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
+                break;
+
+            case XFREE: ;
+                args_XFree argp_xfree;
+
+                // assert payload size
+                if(ShmPTR->payload_size != sizeof(args_XFree)){
+                    printf("Wrong payload size\n\n");
+                    ShmPTR->status = LISTEN;
+                    break;
+                }
+
+                // Memcopy from Buffer
+                memcpy(&argp_xfree, ShmPTR->buffer, sizeof(args_XFree));
+
+                // Execute function call
+                xfree_lh(&argp_xfree);
+
+                // Print
+                printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
+                break;
+
+            case XSETNORMALHINTS: ;
+                args_XSetNormalHints argp_xsetnormalhints;
+
+                // assert payload size
+                if(ShmPTR->payload_size != sizeof(args_XSetNormalHints)){
+                    printf("Wrong payload size\n\n");
+                    ShmPTR->status = LISTEN;
+                    break;
+                }
+
+                // Memcopy from Buffer
+                memcpy(&argp_xsetnormalhints, ShmPTR->buffer, sizeof(args_XSetNormalHints));
+
+                // Execute function call
+                xsetnormalhints_lh(&argp_xsetnormalhints);
+
+                // Print
+                printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
+                break;
+
+            case XSETSTANDARDPROPERTIES: ;
+                args_XSetStandardProperties argp_xsetstandardproperties;
+
+                // assert payload size
+                if(ShmPTR->payload_size != sizeof(args_XSetStandardProperties)){
+                    printf("Wrong payload size\n\n");
+                    ShmPTR->status = LISTEN;
+                    break;
+                }
+
+                // Memcopy from Buffer
+                memcpy(&argp_xsetstandardproperties, ShmPTR->buffer, sizeof(args_XSetStandardProperties));
+
+                // Execute function call
+                xsetstandardproperties_lh(&argp_xsetstandardproperties);
 
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);

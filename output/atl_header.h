@@ -25,6 +25,13 @@ typedef enum {
 	DISPLAYP,
 	XMAPWINDOW,
 	INT,
+	XCREATECOLORMAP,
+	COLORMAP,
+	XCREATEWINDOW,
+	WINDOW,
+	XFREE,
+	XSETNORMALHINTS,
+	XSETSTANDARDPROPERTIES,
 	GLCLEARINDEX,
 	VOID,
 	GLCLEARCOLOR,
@@ -545,6 +552,69 @@ struct args_XMapWindow{
 };
 
 typedef struct args_XMapWindow args_XMapWindow;
+
+
+// -- XCreateColormap
+struct args_XCreateColormap{
+    Display* display;
+	 Window w;
+	 Visual*	visual;
+	 int	alloc ;
+};
+
+typedef struct args_XCreateColormap args_XCreateColormap;
+
+
+// -- XCreateWindow
+struct args_XCreateWindow{
+    Display* display;
+	 Window parent;
+	 int x;
+	 int y;
+	 unsigned int width;
+	 unsigned int height;
+	 unsigned int border_width;
+	 int	depth;
+	 unsigned int class;
+	 Visual* visual;
+	 unsigned long valuemask;
+	 XSetWindowAttributes* attributes;
+};
+
+typedef struct args_XCreateWindow args_XCreateWindow;
+
+
+// -- XFree
+struct args_XFree{
+    void* data;
+};
+
+typedef struct args_XFree args_XFree;
+
+
+// -- XSetNormalHints
+struct args_XSetNormalHints{
+    Display *display;
+	 Window w;
+	 XSizeHints *hints;
+};
+
+typedef struct args_XSetNormalHints args_XSetNormalHints;
+
+
+// -- XSetStandardProperties
+struct args_XSetStandardProperties{
+    Display *display;
+	 Window w;
+	 char *window_name;
+	 char *icon_name;
+	 Pixmap icon_pixmap;
+	 char **argv;
+	 int argc;
+	 XSizeHints *hints;
+};
+
+typedef struct args_XSetStandardProperties args_XSetStandardProperties;
 
 
 // -- glClearIndex
