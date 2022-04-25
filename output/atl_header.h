@@ -484,7 +484,6 @@ typedef enum {
 	GLMULTITEXCOORD4IVARB,
 	GLMULTITEXCOORD4SARB,
 	GLMULTITEXCOORD4SVARB,
-	GLBLENDEQUATIONSEPARATEATI,
 	GLXDESTROYCONTEXT,
 	GLXSWAPBUFFERS,
 	GLXDESTROYGLXPIXMAP,
@@ -509,14 +508,7 @@ typedef enum {
 	GLXGETPROCADDRESS,
 	VOIDP,
 	GLXALLOCATEMEMORYNV,
-	GLXFREEMEMORYNV,
-	GLXBINDTEXIMAGEARB,
-	GLXRELEASETEXIMAGEARB,
-	GLXDRAWABLEATTRIBARB,
-	GLXGETFRAMEUSAGEMESA,
-	GLXBEGINFRAMETRACKINGMESA,
-	GLXENDFRAMETRACKINGMESA,
-	GLXQUERYFRAMETRACKINGMESA
+	GLXFREEMEMORYNV
 } data_types;
 
 // Create messageblock after declaration of data_types
@@ -4860,15 +4852,6 @@ struct args_glMultiTexCoord4svARB{
 typedef struct args_glMultiTexCoord4svARB args_glMultiTexCoord4svARB;
 
 
-// -- glBlendEquationSeparateATI
-struct args_glBlendEquationSeparateATI{
-     GLenum modeRGB;
-	 GLenum modeA ;
-};
-
-typedef struct args_glBlendEquationSeparateATI args_glBlendEquationSeparateATI;
-
-
 // -- glXDestroyContext
 struct args_glXDestroyContext{
      Display *dpy;
@@ -4996,74 +4979,4 @@ struct args_glXFreeMemoryNV{
 };
 
 typedef struct args_glXFreeMemoryNV args_glXFreeMemoryNV;
-
-
-// -- glXBindTexImageARB
-struct args_glXBindTexImageARB{
-    Display *dpy;
-	 GLXPbuffer pbuffer;
-	 int buffer;
-};
-
-typedef struct args_glXBindTexImageARB args_glXBindTexImageARB;
-
-
-// -- glXReleaseTexImageARB
-struct args_glXReleaseTexImageARB{
-    Display *dpy;
-	 GLXPbuffer pbuffer;
-	 int buffer;
-};
-
-typedef struct args_glXReleaseTexImageARB args_glXReleaseTexImageARB;
-
-
-// -- glXDrawableAttribARB
-struct args_glXDrawableAttribARB{
-    Display *dpy;
-	 GLXDrawable draw;
-	 const int *attribList;
-};
-
-typedef struct args_glXDrawableAttribARB args_glXDrawableAttribARB;
-
-
-// -- glXGetFrameUsageMESA
-struct args_glXGetFrameUsageMESA{
-    Display *dpy;
-	 GLXDrawable drawable;
-	 float *usage;
-};
-
-typedef struct args_glXGetFrameUsageMESA args_glXGetFrameUsageMESA;
-
-
-// -- glXBeginFrameTrackingMESA
-struct args_glXBeginFrameTrackingMESA{
-    Display *dpy;
-	 GLXDrawable drawable;
-};
-
-typedef struct args_glXBeginFrameTrackingMESA args_glXBeginFrameTrackingMESA;
-
-
-// -- glXEndFrameTrackingMESA
-struct args_glXEndFrameTrackingMESA{
-    Display *dpy;
-	 GLXDrawable drawable;
-};
-
-typedef struct args_glXEndFrameTrackingMESA args_glXEndFrameTrackingMESA;
-
-
-// -- glXQueryFrameTrackingMESA
-struct args_glXQueryFrameTrackingMESA{
-    Display *dpy;
-	 GLXDrawable drawable;
-	 int64_t *swapCount;
-	 int64_t *missedFrames;
-	 float *lastMissedUsage;
-};
-
-typedef struct args_glXQueryFrameTrackingMESA args_glXQueryFrameTrackingMESA;
 

@@ -5728,18 +5728,6 @@ void glMultiTexCoord4svARB(GLenum target, const GLshort *v)
     glmultitexcoord4svarb_uh(argp);
 }
 
-// -- glBlendEquationSeparateATI
-void glBlendEquationSeparateATI( GLenum modeRGB, GLenum modeA )
-{
-    args_glBlendEquationSeparateATI argp;
-
-    // Set function specific args
-    argp.modeRGB = modeRGB;
-	argp.modeA = modeA;
-
-    glblendequationseparateati_uh(argp);
-}
-
 // -- glXDestroyContext
 void glXDestroyContext( Display *dpy, GLXContext ctx )
 {
@@ -5945,95 +5933,4 @@ void glXFreeMemoryNV(GLvoid *pointer)
     argp.pointer = pointer;
 
     glxfreememorynv_uh(argp);
-}
-
-// -- glXBindTexImageARB
-Bool glXBindTexImageARB(Display *dpy, GLXPbuffer pbuffer, int buffer)
-{
-    args_glXBindTexImageARB argp;
-    
-    // Set function specific args
-    argp.dpy = dpy;
-	argp.pbuffer = pbuffer;
-	argp.buffer = buffer;
-    
-    return glxbindteximagearb_uh(argp);
-}
-
-// -- glXReleaseTexImageARB
-Bool glXReleaseTexImageARB(Display *dpy, GLXPbuffer pbuffer, int buffer)
-{
-    args_glXReleaseTexImageARB argp;
-    
-    // Set function specific args
-    argp.dpy = dpy;
-	argp.pbuffer = pbuffer;
-	argp.buffer = buffer;
-    
-    return glxreleaseteximagearb_uh(argp);
-}
-
-// -- glXDrawableAttribARB
-Bool glXDrawableAttribARB(Display *dpy, GLXDrawable draw, const int *attribList)
-{
-    args_glXDrawableAttribARB argp;
-    
-    // Set function specific args
-    argp.dpy = dpy;
-	argp.draw = draw;
-	argp.attribList = attribList;
-    
-    return glxdrawableattribarb_uh(argp);
-}
-
-// -- glXGetFrameUsageMESA
-int glXGetFrameUsageMESA(Display *dpy, GLXDrawable drawable, float *usage)
-{
-    args_glXGetFrameUsageMESA argp;
-    
-    // Set function specific args
-    argp.dpy = dpy;
-	argp.drawable = drawable;
-	argp.usage = usage;
-    
-    return glxgetframeusagemesa_uh(argp);
-}
-
-// -- glXBeginFrameTrackingMESA
-int glXBeginFrameTrackingMESA(Display *dpy, GLXDrawable drawable)
-{
-    args_glXBeginFrameTrackingMESA argp;
-    
-    // Set function specific args
-    argp.dpy = dpy;
-	argp.drawable = drawable;
-    
-    return glxbeginframetrackingmesa_uh(argp);
-}
-
-// -- glXEndFrameTrackingMESA
-int glXEndFrameTrackingMESA(Display *dpy, GLXDrawable drawable)
-{
-    args_glXEndFrameTrackingMESA argp;
-    
-    // Set function specific args
-    argp.dpy = dpy;
-	argp.drawable = drawable;
-    
-    return glxendframetrackingmesa_uh(argp);
-}
-
-// -- glXQueryFrameTrackingMESA
-int glXQueryFrameTrackingMESA(Display *dpy, GLXDrawable drawable, int64_t *swapCount, int64_t *missedFrames, float *lastMissedUsage)
-{
-    args_glXQueryFrameTrackingMESA argp;
-    
-    // Set function specific args
-    argp.dpy = dpy;
-	argp.drawable = drawable;
-	argp.swapCount = swapCount;
-	argp.missedFrames = missedFrames;
-	argp.lastMissedUsage = lastMissedUsage;
-    
-    return glxqueryframetrackingmesa_uh(argp);
 }
