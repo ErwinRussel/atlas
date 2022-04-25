@@ -5753,17 +5753,17 @@ XVisualInfo* glXChooseVisual(Display *dpy, int screen, int *attribList)
 }
 
 // -- glXQueryDrawable
-int glXQueryDrawable(Display *dpy, GLXDrawable draw, int attribute, unsigned int *value)
+extern void glXQueryDrawable(Display *dpy, GLXDrawable draw, int attribute, unsigned int *value)
 {
     args_glXQueryDrawable argp;
-    
+
     // Set function specific args
     argp.dpy = dpy;
 	argp.draw = draw;
 	argp.attribute = attribute;
 	argp.value = value;
-    
-    return glxquerydrawable_uh(argp);
+
+    glxquerydrawable_uh(argp);
 }
 
 // -- glXCreateContext

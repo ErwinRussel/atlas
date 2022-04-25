@@ -10426,7 +10426,7 @@ XVisualInfo* *glxchoosevisual_lh(args_glXChooseVisual *argp)
 
 
 // -- glXQueryDrawable
-int *glxquerydrawable_lh(args_glXQueryDrawable *argp)
+void *glxquerydrawable_lh(args_glXQueryDrawable *argp)
 {
     // Get function specific args
     Display *dpy = argp->dpy;;
@@ -10435,16 +10435,14 @@ int *glxquerydrawable_lh(args_glXQueryDrawable *argp)
 	 unsigned int *value = argp->value;;
 
     // Call actual function
-    int result = glXQueryDrawable(dpy, draw, attribute, value);
+    glXQueryDrawable(dpy, draw, attribute, value);
 
-    // Memcopy in Buffer
-    int ret_size = sizeof(int);
-    memcpy(ShmPTR->buffer, &result, ret_size);
+    // Nothing to memcopy in Buffer
 
     // Set function specific headers
     ShmPTR->message_type = FUNC_RETURN;
-    ShmPTR->data_type = INT;
-    ShmPTR->payload_size = ret_size;
+    ShmPTR->data_type = VOID;
+    ShmPTR->payload_size = 0;
 
     // Set status
     ShmPTR->status = RESPONSE;

@@ -468,7 +468,7 @@ void glMultiTexCoord4svARB(GLenum target, const GLshort *v)
 // Glx functions
 #HEADER <GL/glx.h>
 XVisualInfo* glXChooseVisual(Display *dpy, int screen, int *attribList)
-int glXQueryDrawable(Display *dpy, GLXDrawable draw, int attribute, unsigned int *value)
+extern void glXQueryDrawable(Display *dpy, GLXDrawable draw, int attribute, unsigned int *value)
 GLXContext glXCreateContext(Display *dpy, XVisualInfo *vis, GLXContext shareList, Bool direct)
 void glXDestroyContext( Display *dpy, GLXContext ctx )
 void glXSwapBuffers( Display *dpy, GLXDrawable drawable )

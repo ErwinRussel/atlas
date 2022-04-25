@@ -21561,7 +21561,7 @@ XVisualInfo* glxchoosevisual_uh(args_glXChooseVisual argp)
 }
 
 // -- glXQueryDrawable
-int glxquerydrawable_uh(args_glXQueryDrawable argp)
+void glxquerydrawable_uh(args_glXQueryDrawable argp)
 {
     // Memcopy in Buffer
     int arg_size = sizeof(args_glXQueryDrawable);
@@ -21587,27 +21587,24 @@ int glxquerydrawable_uh(args_glXQueryDrawable argp)
     }
 
     // assert if the datatype is correct
-    if(ShmPTR->data_type != INT){
+    if(ShmPTR->data_type != VOID){
         printf("Payload data type incorrect\n");
     }
     
     // assert if correct payload size
-    int ret_size = sizeof(int);
+    int ret_size = 0;
 
     // assert if correct payload size
     if(ShmPTR->payload_size != ret_size){
         printf("Incorrect payload size\n");
     }
 
-    // memcopy into result
-    int result;
-    memcpy(&result, ShmPTR->buffer, ret_size);
+    // Nothing to memcopy for void
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
 
-    // return
-    return result;
+    // Nothing to return
 }
 
 // -- glXCreateContext

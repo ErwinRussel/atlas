@@ -460,7 +460,7 @@ void glmultitexcoord4ivarb_uh(args_glMultiTexCoord4ivARB argp);
 void glmultitexcoord4sarb_uh(args_glMultiTexCoord4sARB argp);
 void glmultitexcoord4svarb_uh(args_glMultiTexCoord4svARB argp);
 XVisualInfo* glxchoosevisual_uh(args_glXChooseVisual argp);
-int glxquerydrawable_uh(args_glXQueryDrawable argp);
+void glxquerydrawable_uh(args_glXQueryDrawable argp);
 GLXContext glxcreatecontext_uh(args_glXCreateContext argp);
 void glxdestroycontext_uh(args_glXDestroyContext argp);
 void glxswapbuffers_uh(args_glXSwapBuffers argp);
