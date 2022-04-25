@@ -10456,32 +10456,6 @@ GLXContext *glxcreatecontext_lh(args_glXCreateContext *argp)
 {
     // Get function specific args
     Display *dpy = argp->dpy;;
-	 XVisualInfo * vis = argp->vis;;
-	 GLXContext shareList = argp->shareList;;
-	 Bool direct = argp->direct;;
-
-    // Call actual function
-    GLXContext result = glXCreateContext(dpy, vis, shareList, direct);
-
-    // Memcopy in Buffer
-    int ret_size = sizeof(GLXContext);
-    memcpy(ShmPTR->buffer, &result, ret_size);
-
-    // Set function specific headers
-    ShmPTR->message_type = FUNC_RETURN;
-    ShmPTR->data_type = GLXCONTEXT;
-    ShmPTR->payload_size = ret_size;
-
-    // Set status
-    ShmPTR->status = RESPONSE;
-}
-
-
-// -- glXCreateContext
-GLXContext *glxcreatecontext_lh(args_glXCreateContext *argp)
-{
-    // Get function specific args
-    Display *dpy = argp->dpy;;
 	 XVisualInfo *vis = argp->vis;;
 	 GLXContext shareList = argp->shareList;;
 	 Bool direct = argp->direct;;
@@ -20123,26 +20097,6 @@ void service_listener() {
 
                 // Execute function call
                 glxquerydrawable_lh(&argp_glxquerydrawable);
-
-                // Print
-                printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
-                break;
-
-            case GLXCREATECONTEXT: ;
-                args_glXCreateContext argp_glxcreatecontext;
-
-                // assert payload size
-                if(ShmPTR->payload_size != sizeof(args_glXCreateContext)){
-                    printf("Wrong payload size\n\n");
-                    ShmPTR->status = LISTEN;
-                    break;
-                }
-
-                // Memcopy from Buffer
-                memcpy(&argp_glxcreatecontext, ShmPTR->buffer, sizeof(args_glXCreateContext));
-
-                // Execute function call
-                glxcreatecontext_lh(&argp_glxcreatecontext);
 
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);

@@ -490,7 +490,6 @@ typedef enum {
 	GLXQUERYDRAWABLE,
 	GLXCREATECONTEXT,
 	GLXCONTEXT,
-	GLXCREATECONTEXT,
 	GLXDESTROYCONTEXT,
 	GLXSWAPBUFFERS,
 	GLXDESTROYGLXPIXMAP,
@@ -4887,17 +4886,6 @@ struct args_glXQueryDrawable{
 };
 
 typedef struct args_glXQueryDrawable args_glXQueryDrawable;
-
-
-// -- glXCreateContext
-struct args_glXCreateContext{
-    Display *dpy;
-	 XVisualInfo * vis;
-	 GLXContext shareList;
-	 Bool direct;
-};
-
-typedef struct args_glXCreateContext args_glXCreateContext;
 
 
 // -- glXCreateContext

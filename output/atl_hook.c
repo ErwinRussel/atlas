@@ -5767,20 +5767,6 @@ int glXQueryDrawable(Display *dpy, GLXDrawable draw, int attribute, unsigned int
 }
 
 // -- glXCreateContext
-GLXContext glXCreateContext(Display *dpy, XVisualInfo * vis, GLXContext shareList, Bool direct)
-{
-    args_glXCreateContext argp;
-    
-    // Set function specific args
-    argp.dpy = dpy;
-	argp.vis = vis;
-	argp.shareList = shareList;
-	argp.direct = direct;
-    
-    return glxcreatecontext_uh(argp);
-}
-
-// -- glXCreateContext
 GLXContext glXCreateContext(Display *dpy, XVisualInfo *vis, GLXContext shareList, Bool direct)
 {
     args_glXCreateContext argp;
