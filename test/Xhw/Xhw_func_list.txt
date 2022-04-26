@@ -5,5 +5,5 @@ Window XCreateSimpleWindow(Display *display, Window parent, int x, int y, unsign
 int XMapWindow(Display *display, Window w)
 int XSelectInput(Display *display, Window w, long event_mask)
 // TODO: How to tag this as having a different return function while still hooking the original function.
-int XNextEvent(Display *display, XEvent *event_return) || XEvent
+XEvent XNextEvent(Display *display, XEvent *event_return)
 Window XDefaultRootWindow(Display *display)

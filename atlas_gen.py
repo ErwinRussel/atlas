@@ -65,7 +65,7 @@ class AtlasGenerator:
 if __name__ == '__main__':
     # Parse all of the functions.
     ag = AtlasGenerator()
-    ag.read_functions("test/glxgears_func_list.txt")
+    ag.read_functions("test/Xhw/Xhw_func_list.txt")
     # Create header file from parsed functions.
     ag.gen_lower_half()
     # Create lower half/server side

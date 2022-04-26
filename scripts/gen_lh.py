@@ -224,7 +224,7 @@ def get_arg_vars(function_args):
 
 
 def gen_lower_half(functions):
-    with open("output/atl_lh.c", 'w') as f:
+    with open("test/Xhw/output/atl_lh.c", 'w') as f:
         # add h1
         f.write(h1)
 

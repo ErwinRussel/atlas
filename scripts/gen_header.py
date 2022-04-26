@@ -53,7 +53,7 @@ typedef struct args_{name} args_{name};
 # -- MARK: Header file
 # todo: add the includes header files
 def gen_shared_header(functions):
-    with open("output/atl_header.h", "w") as f:
+    with open("test/Xhw/output/atl_header.h", "w") as f:
         # add h1
         f.write(h1)
 

@@ -260,10 +260,10 @@ h_h1 = '''
 '''
 
 def gen_upper_half(functions):
-    with open('output/atl_uh.h', 'w') as fh:
+    with open('test/Xhw/output/atl_uh.h', 'w') as fh:
         fh.write(h_h1)
 
-        with open('output/atl_uh.c', 'w') as f:
+        with open('test/Xhw/output/atl_uh.c', 'w') as f:
             # write header
             f.write(h1)
 
