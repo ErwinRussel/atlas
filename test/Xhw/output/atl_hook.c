@@ -57,15 +57,19 @@ int XSelectInput(Display *display, Window w, long event_mask)
 }
 
 // -- XNextEvent
-XEvent XNextEvent(Display *display, XEvent *event_return)
+int XNextEvent(Display *display, XEvent *event_return)
 {
     args_XNextEvent argp;
-    
+
     // Set function specific args
     argp.display = display;
 	argp.event_return = event_return;
-    
-    return xnextevent_uh(argp);
+
+    XEvent event = xnextevent_uh(argp);
+
+    *event_return = event;
+
+    return 0;
 }
 
 // -- XDefaultRootWindow

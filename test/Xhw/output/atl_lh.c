@@ -138,14 +138,14 @@ XEvent *xnextevent_lh(args_XNextEvent *argp)
 {
     // Get function specific args
     Display *display = argp->display;;
-	 XEvent *event_return = argp->event_return;;
+    XEvent *event_return;
 
     // Call actual function
-    XEvent result = XNextEvent(display, event_return);
+    XNextEvent(display, event_return);
 
     // Memcopy in Buffer
     int ret_size = sizeof(XEvent);
-    memcpy(ShmPTR->buffer, &result, ret_size);
+    memcpy(ShmPTR->buffer, event_return, ret_size);
 
     // Set function specific headers
     ShmPTR->message_type = FUNC_RETURN;
