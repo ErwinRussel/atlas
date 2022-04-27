@@ -1,5 +1,5 @@
 # atlas libraries
-all: atl_uh atl_lh
+all: atl_uh atl_hook
 
 atl_lib: atl_uh.c atl_hook.c
 	gcc -shared -o atl_lib.so atl_uh.c atl_hook.c -lX11 -lcriu -lGL -fPIC

@@ -21,7 +21,6 @@ int main()
     while (True) {
         XNextEvent(display, &event);
         printf("%d\n", event.type);
-        sleep(1);
     }
 
     return 0;
