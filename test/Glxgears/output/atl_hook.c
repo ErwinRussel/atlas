@@ -1,14 +1,16 @@
 #include "atl_header.h"
 #include "atl_uh.h"
+#include <stdio.h>
 
 // -- DefaultScreen
 int DefaultScreen(Display *display)
 {
+    printf("Defaultscreen function called\n");
     args_DefaultScreen argp;
-    
+
     // Set function specific args
     argp.display = display;
-    
+
     return defaultscreen_uh(argp);
 }
 
@@ -16,11 +18,11 @@ int DefaultScreen(Display *display)
 int DisplayWidth(Display *display, int screen_number)
 {
     args_DisplayWidth argp;
-    
+
     // Set function specific args
     argp.display = display;
 	argp.screen_number = screen_number;
-    
+
     return displaywidth_uh(argp);
 }
 
@@ -28,11 +30,11 @@ int DisplayWidth(Display *display, int screen_number)
 int DisplayHeight(Display *display, int screen_number)
 {
     args_DisplayHeight argp;
-    
+
     // Set function specific args
     argp.display = display;
 	argp.screen_number = screen_number;
-    
+
     return displayheight_uh(argp);
 }
 
@@ -40,11 +42,11 @@ int DisplayHeight(Display *display, int screen_number)
 Window RootWindow(Display *display, int screen_number)
 {
     args_RootWindow argp;
-    
+
     // Set function specific args
     argp.display = display;
 	argp.screen_number = screen_number;
-    
+
     return rootwindow_uh(argp);
 }
 
@@ -96,7 +98,7 @@ extern Window XCreateWindow(Display* display, Window parent, int x, int y, unsig
 }
 
 // -- XInternAtom
-extern Atom XInternAtom(Display *display, char *atom_name, Bool only_if_exists)
+extern Atom XInternAtom(Display *display, _Xconst char *atom_name, Bool only_if_exists)
 {
     args_XInternAtom argp;
     
@@ -109,7 +111,7 @@ extern Atom XInternAtom(Display *display, char *atom_name, Bool only_if_exists)
 }
 
 // -- XChangeProperty
-extern int XChangeProperty(Display *display, Window w, Atom property, Atom type, int format, int mode, unsigned char *data, int nelements)
+extern int XChangeProperty(Display *display, Window w, Atom property, Atom type, int format, int mode, _Xconst unsigned char *data, int nelements)
 {
     args_XChangeProperty argp;
     
@@ -150,7 +152,7 @@ extern int XSetStandardProperties(Display *display, Window w, _Xconst char *wind
 	argp.window_name = window_name;
 	argp.icon_name = icon_name;
 	argp.icon_pixmap = icon_pixmap;
-	argp.*argv = *argv;
+	argp.argv = argv;
 	argp.argc = argc;
 	argp.hints = hints;
     
@@ -195,15 +197,15 @@ extern int XPending(Display *display)
 int XNextEvent(Display *display, XEvent *event_return)
 {
     args_XNextEvent argp;
-
+    
     // Set function specific args
     argp.display = display;
-    argp.event_return = event_return;
+	argp.event_return = event_return;
 
     XEvent event = xnextevent_uh(argp);
 
     *event_return = event;
-
+    
     return 0;
 }
 
@@ -236,18 +238,6 @@ extern int XLookupString(XKeyEvent *event_struct, char *buffer_return, int bytes
 
 // -- XDestroyWindow
 extern int XDestroyWindow(Display *display, Window w)
-{
-    args_XDestroyWindow argp;
-    
-    // Set function specific args
-    argp.display = display;
-	argp.w = w;
-    
-    return xdestroywindow_uh(argp);
-}
-
-// -- XDestroyWindow
-extern XDestroyWindow(Display* display, Window w)
 {
     args_XDestroyWindow argp;
     

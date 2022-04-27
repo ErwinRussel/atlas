@@ -958,56 +958,6 @@ int xdestroywindow_uh(args_XDestroyWindow argp)
     return result;
 }
 
-// -- XDestroyWindow
- xdestroywindow_uh(args_XDestroyWindow argp)
-{
-    // Memcopy in Buffer
-    int arg_size = sizeof(args_XDestroyWindow);
-    memcpy(ShmPTR->buffer, &argp, arg_size);
-
-    // Set function specific headers
-    ShmPTR->message_type = FUNC_CALL;
-    ShmPTR->data_type = XDESTROYWINDOW;
-    ShmPTR->payload_size = arg_size;
-
-    // Set status to REQUEST
-    ShmPTR->status = REQUEST;
-
-    // ------ Waiting for Server -----
-
-    // Wait for response
-    while (ShmPTR->status != RESPONSE)
-        ;
-
-    // assert if the message is a function return
-    if(ShmPTR->message_type != FUNC_RETURN){
-        printf("Message type is not a function return\n");
-    }
-
-    // assert if the datatype is correct
-    if(ShmPTR->data_type != ){
-        printf("Payload data type incorrect\n");
-    }
-    
-    // assert if correct payload size
-    int ret_size = sizeof();
-
-    // assert if correct payload size
-    if(ShmPTR->payload_size != ret_size){
-        printf("Incorrect payload size\n");
-    }
-
-    // memcopy into result
-     result;
-    memcpy(&result, ShmPTR->buffer, ret_size);
-
-    // Set status to LISTEN
-    ShmPTR->status = LISTEN;
-
-    // return
-    return result;
-}
-
 // -- glGetString
 GLubyte* glgetstring_uh(args_glGetString argp)
 {

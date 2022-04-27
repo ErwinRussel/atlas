@@ -514,8 +514,11 @@ make_window( Display *dpy, const char *name,
 
    attribs[i++] = None;
 
+   printf("Asking for defaultscreen..\n");
    scrnum = DefaultScreen( dpy );
+   printf("Screen num set %d\n", scrnum);
    root = RootWindow( dpy, scrnum );
+   printf("Root window set %ld\n", root);
 
    visinfo = glXChooseVisual(dpy, scrnum, attribs);
    if (!visinfo) {

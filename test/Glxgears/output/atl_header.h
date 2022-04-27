@@ -46,7 +46,6 @@ typedef enum {
 	KEYSYM,
 	XLOOKUPSTRING,
 	XDESTROYWINDOW,
-	XDESTROYWINDOW,
 	GLGETSTRING,
 	GLUBYTEP,
 	GLLIGHTFV,
@@ -178,7 +177,7 @@ typedef struct args_XCreateWindow args_XCreateWindow;
 // -- XInternAtom
 struct args_XInternAtom{
     Display *display;
-	 char *atom_name;
+    _Xconst char *atom_name;
 	 Bool only_if_exists;
 };
 
@@ -193,7 +192,7 @@ struct args_XChangeProperty{
 	 Atom type;
 	 int format;
 	 int mode;
-	 unsigned char *data;
+     _Xconst unsigned char *data;
 	 int nelements;
 };
 
@@ -283,15 +282,6 @@ typedef struct args_XLookupString args_XLookupString;
 // -- XDestroyWindow
 struct args_XDestroyWindow{
     Display *display;
-	 Window w;
-};
-
-typedef struct args_XDestroyWindow args_XDestroyWindow;
-
-
-// -- XDestroyWindow
-struct args_XDestroyWindow{
-    Display* display;
 	 Window w;
 };
 

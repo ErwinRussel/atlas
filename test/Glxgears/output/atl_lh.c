@@ -297,12 +297,12 @@ int *xsetstandardproperties_lh(args_XSetStandardProperties *argp)
 	 _Xconst char *window_name = argp->window_name;;
 	 _Xconst char *icon_name = argp->icon_name;;
 	 Pixmap icon_pixmap = argp->icon_pixmap;;
-	 char **argv = argp->*argv;;
+	 char **argv = argp->argv;;
 	 int argc = argp->argc;;
 	 XSizeHints *hints = argp->hints;;
 
     // Call actual function
-    int result = XSetStandardProperties(display, w, window_name, icon_name, icon_pixmap, *argv, argc, hints);
+    int result = XSetStandardProperties(display, w, window_name, icon_name, icon_pixmap, argv, argc, hints);
 
     // Memcopy in Buffer
     int ret_size = sizeof(int);
@@ -487,30 +487,6 @@ int *xdestroywindow_lh(args_XDestroyWindow *argp)
 }
 
 
-// -- XDestroyWindow
- *xdestroywindow_lh(args_XDestroyWindow *argp)
-{
-    // Get function specific args
-    Display* display = argp->display;;
-	 Window w = argp->w;;
-
-    // Call actual function
-     result = XDestroyWindow(display, w);
-
-    // Memcopy in Buffer
-    int ret_size = sizeof();
-    memcpy(ShmPTR->buffer, &result, ret_size);
-
-    // Set function specific headers
-    ShmPTR->message_type = FUNC_RETURN;
-    ShmPTR->data_type = ;
-    ShmPTR->payload_size = ret_size;
-
-    // Set status
-    ShmPTR->status = RESPONSE;
-}
-
-
 // -- glGetString
 GLubyte* *glgetstring_lh(args_glGetString *argp)
 {
@@ -518,7 +494,7 @@ GLubyte* *glgetstring_lh(args_glGetString *argp)
     	GLenum name = argp->name;;
 
     // Call actual function
-    GLubyte* result = glGetString(name);
+    const GLubyte* result = glGetString(name);
 
     // Memcopy in Buffer
     int ret_size = sizeof(GLubyte*);
@@ -1166,7 +1142,7 @@ char* *glxqueryextensionsstring_lh(args_glXQueryExtensionsString *argp)
 	 int screen  = argp->screen;;
 
     // Call actual function
-    char* result = glXQueryExtensionsString(dpy, screen);
+    const char* result = glXQueryExtensionsString(dpy, screen);
 
     // Memcopy in Buffer
     int ret_size = sizeof(char*);
@@ -1609,26 +1585,6 @@ void service_listener() {
 
                 // Execute function call
                 xlookupstring_lh(&argp_xlookupstring);
-
-                // Print
-                printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
-                break;
-
-            case XDESTROYWINDOW: ;
-                args_XDestroyWindow argp_xdestroywindow;
-
-                // assert payload size
-                if(ShmPTR->payload_size != sizeof(args_XDestroyWindow)){
-                    printf("Wrong payload size\n\n");
-                    ShmPTR->status = LISTEN;
-                    break;
-                }
-
-                // Memcopy from Buffer
-                memcpy(&argp_xdestroywindow, ShmPTR->buffer, sizeof(args_XDestroyWindow));
-
-                // Execute function call
-                xdestroywindow_lh(&argp_xdestroywindow);
 
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);

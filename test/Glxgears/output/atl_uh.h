@@ -3,6 +3,16 @@
 #define ATLAS_ATL_UH_H
 
 #endif //ATLAS_ATL_UH_H
+
+#undef DefaultScreen
+#define DefaultScreen(dpy) 	m_DefaultScreen(dpy)
+#undef DisplayWidth
+//#define DisplayWidth(dpy, scr) 	(m_DisplayWidth(dpy, scr))
+#undef DisplayHeight
+//#define DisplayHeight(dpy, scr) (m_DisplayHeight(dpy, scr))
+#undef RootWindow
+//#define RootWindow(dpy, scr) 	(m_RootWindow(dpy, scr))
+
 int defaultscreen_uh(args_DefaultScreen argp);
 int displaywidth_uh(args_DisplayWidth argp);
 int displayheight_uh(args_DisplayHeight argp);
@@ -21,7 +31,6 @@ XEvent xnextevent_uh(args_XNextEvent argp);
 KeySym xlookupkeysym_uh(args_XLookupKeysym argp);
 int xlookupstring_uh(args_XLookupString argp);
 int xdestroywindow_uh(args_XDestroyWindow argp);
- xdestroywindow_uh(args_XDestroyWindow argp);
 GLubyte* glgetstring_uh(args_glGetString argp);
 void gllightfv_uh(args_glLightfv argp);
 void glenable_uh(args_glEnable argp);
