@@ -161,3 +161,4 @@ cython_debug/
 .idea/workspace.xml
 test/Xhw/output/atl_lh
 test/Xhw/output/Xhw
+test/Glxgears/output/glxgears

@@ -12,6 +12,10 @@ atl_lh: atl_lh.c
 atl_hook: atl_hook.c
 	gcc -o atl_hook atl_hook.c
 
+#glxgears
+glxgears: glxgears.c
+	gcc -o glxgears glxgears.c -lX11 -lGL -lm
+
 clean:
 	rm atl_uh
 	rm atl_lh
