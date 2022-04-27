@@ -223,8 +223,8 @@ def get_arg_vars(function_args):
     return ", ".join(arg_vars)
 
 
-def gen_lower_half(functions):
-    with open("test/Xhw/output/atl_lh.c", 'w') as f:
+def gen_lower_half(functions, output_folder):
+    with open(output_folder + "atl_lh.c", 'w') as f:
         # add h1
         f.write(h1)
 

@@ -259,11 +259,11 @@ h_h1 = '''
 #endif //ATLAS_ATL_UH_H
 '''
 
-def gen_upper_half(functions):
-    with open('test/Xhw/output/atl_uh.h', 'w') as fh:
+def gen_upper_half(functions, output_folder):
+    with open(output_folder + "atl_uh.h", 'w') as fh:
         fh.write(h_h1)
 
-        with open('test/Xhw/output/atl_uh.c', 'w') as f:
+        with open(output_folder + "atl_uh.c", 'w') as f:
             # write header
             f.write(h1)
 

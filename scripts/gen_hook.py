@@ -49,8 +49,8 @@ def get_argp_set(function_args):
 
     return ";\n\t".join(argp_set)
 
-def gen_hook_lib(functions):
-    with open("test/Xhw/output/atl_hook.c", 'w') as f:
+def gen_hook_lib(functions, output_folder):
+    with open(output_folder + "atl_hook.c", 'w') as f:
         # h1
         f.write(h1)
 

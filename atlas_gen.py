@@ -8,6 +8,7 @@ class AtlasGenerator:
         super().__init__()
 
         self.functions = []
+        self.output_folder = ""
 
     # todo; what should we do with "extern"???
     def parse_function(self, line):
@@ -51,21 +52,22 @@ class AtlasGenerator:
                     self.parse_function(line)
 
     def gen_shared_header(self):
-        gen_shared_header(self.functions)
+        gen_shared_header(self.functions, self.output_folder)
 
     def gen_lower_half(self):
-        gen_lower_half(self.functions)
+        gen_lower_half(self.functions, self.output_folder)
 
     def gen_upper_half(self):
-        gen_upper_half(self.functions)
+        gen_upper_half(self.functions, self.output_folder)
 
     def gen_hook_lib(self):
-        gen_hook_lib(self.functions)
+        gen_hook_lib(self.functions, self.output_folder)
 
 if __name__ == '__main__':
     # Parse all of the functions.
     ag = AtlasGenerator()
-    ag.read_functions("test/Xhw/Xhw_func_list.txt")
+    ag.output_folder = "test/Glxgears/output/"
+    ag.read_functions("test/Glxgears/glxgears_func_list.txt")
     # Create header file from parsed functions.
     ag.gen_lower_half()
     # Create lower half/server side
