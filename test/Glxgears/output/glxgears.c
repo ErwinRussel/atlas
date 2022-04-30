@@ -108,7 +108,6 @@ static GLfloat eyesep = 5.0;		/* Eye separation. */
 static GLfloat fix_point = 40.0;	/* Fixation point distance.  */
 static GLfloat left, right, asp;	/* Stereo frustum params.  */
 
-
 /*
  *
  *  Draw a gear wheel.  You'll probably want to call this function when
@@ -513,12 +512,8 @@ make_window( Display *dpy, const char *name,
    }
 
    attribs[i++] = None;
-
-   printf("Asking for defaultscreen..\n");
-   scrnum = DefaultScreen( dpy );
-   printf("Screen num set %d\n", scrnum);
-   root = RootWindow( dpy, scrnum );
-   printf("Root window set %ld\n", root);
+   scrnum = XDefaultScreen( dpy );
+   root = XRootWindow( dpy, scrnum );
 
    visinfo = glXChooseVisual(dpy, scrnum, attribs);
    if (!visinfo) {
@@ -534,15 +529,18 @@ make_window( Display *dpy, const char *name,
    /* window attributes */
    attr.background_pixel = 0;
    attr.border_pixel = 0;
+   printf("Trying to create colormap\n");
    attr.colormap = XCreateColormap( dpy, root, visinfo->visual, AllocNone);
    attr.event_mask = StructureNotifyMask | ExposureMask | KeyPressMask;
    /* XXX this is a bad way to get a borderless window! */
    mask = CWBackPixel | CWBorderPixel | CWColormap | CWEventMask;
 
+   printf("Trying to create window\n");
    win = XCreateWindow( dpy, root, x, y, width, height,
 		        0, visinfo->depth, InputOutput,
 		        visinfo->visual, mask, &attr );
 
+   printf("Create window succeeded");
    if (fullscreen)
       no_border(dpy, win);
 
@@ -578,7 +576,7 @@ make_window( Display *dpy, const char *name,
 static int
 is_glx_extension_supported(Display *dpy, const char *query)
 {
-   const int scrnum = DefaultScreen(dpy);
+   const int scrnum = XDefaultScreen(dpy);
    const char *glx_extensions = NULL;
    const size_t len = strlen(query);
    const char *ptr;
@@ -768,11 +766,11 @@ main(int argc, char *argv[])
    }
 
    if (fullscreen) {
-      int scrnum = DefaultScreen(dpy);
+      int scrnum = XDefaultScreen(dpy);
 
       x = 0; y = 0;
-      winWidth = DisplayWidth(dpy, scrnum);
-      winHeight = DisplayHeight(dpy, scrnum);
+      winWidth = XDisplayWidth(dpy, scrnum);
+      winHeight = XDisplayHeight(dpy, scrnum);
    }
 
    make_window(dpy, "glxgears", x, y, winWidth, winHeight, &win, &ctx);

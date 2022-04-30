@@ -30,14 +30,14 @@ void init(){
     ShmPTR->status = LISTEN;
 }
 
-// -- DefaultScreen
-int *defaultscreen_lh(args_DefaultScreen *argp)
+// -- XDefaultScreen
+int *xdefaultscreen_lh(args_XDefaultScreen *argp)
 {
     // Get function specific args
-    Display *display = argp->display;;
+    Display* display = argp->display;;
 
     // Call actual function
-    int result = DefaultScreen(display);
+    int result = XDefaultScreen(display);
 
     // Memcopy in Buffer
     int ret_size = sizeof(int);
@@ -53,15 +53,15 @@ int *defaultscreen_lh(args_DefaultScreen *argp)
 }
 
 
-// -- DisplayWidth
-int *displaywidth_lh(args_DisplayWidth *argp)
+// -- XDisplayWidth
+int *xdisplaywidth_lh(args_XDisplayWidth *argp)
 {
     // Get function specific args
     Display *display = argp->display;;
 	 int screen_number = argp->screen_number;;
 
     // Call actual function
-    int result = DisplayWidth(display, screen_number);
+    int result = XDisplayWidth(display, screen_number);
 
     // Memcopy in Buffer
     int ret_size = sizeof(int);
@@ -77,15 +77,15 @@ int *displaywidth_lh(args_DisplayWidth *argp)
 }
 
 
-// -- DisplayHeight
-int *displayheight_lh(args_DisplayHeight *argp)
+// -- XDisplayHeight
+int *xdisplayheight_lh(args_XDisplayHeight *argp)
 {
     // Get function specific args
     Display *display = argp->display;;
 	 int screen_number = argp->screen_number;;
 
     // Call actual function
-    int result = DisplayHeight(display, screen_number);
+    int result = XDisplayHeight(display, screen_number);
 
     // Memcopy in Buffer
     int ret_size = sizeof(int);
@@ -101,15 +101,15 @@ int *displayheight_lh(args_DisplayHeight *argp)
 }
 
 
-// -- RootWindow
-Window *rootwindow_lh(args_RootWindow *argp)
+// -- XRootWindow
+Window *xrootwindow_lh(args_XRootWindow *argp)
 {
     // Get function specific args
     Display *display = argp->display;;
 	 int screen_number = argp->screen_number;;
 
     // Call actual function
-    Window result = RootWindow(display, screen_number);
+    Window result = XRootWindow(display, screen_number);
 
     // Memcopy in Buffer
     int ret_size = sizeof(Window);
@@ -213,7 +213,7 @@ Atom *xinternatom_lh(args_XInternAtom *argp)
 {
     // Get function specific args
     Display *display = argp->display;;
-	 char *atom_name = argp->atom_name;;
+	 _Xconst char *atom_name = argp->atom_name;;
 	 Bool only_if_exists = argp->only_if_exists;;
 
     // Call actual function
@@ -243,7 +243,7 @@ int *xchangeproperty_lh(args_XChangeProperty *argp)
 	 Atom type = argp->type;;
 	 int format = argp->format;;
 	 int mode = argp->mode;;
-	 unsigned char *data = argp->data;;
+	 _Xconst unsigned char *data = argp->data;;
 	 int nelements = argp->nelements;;
 
     // Call actual function
@@ -393,7 +393,7 @@ XEvent *xnextevent_lh(args_XNextEvent *argp)
 {
     // Get function specific args
     Display *display = argp->display;;
-	 XEvent *event_return = argp->event_return;;
+    XEvent *event_return;
 
     // Call actual function
     XNextEvent(display, event_return);
@@ -1250,81 +1250,81 @@ void service_listener() {
         switch (func_type)
         {
             
-            case DEFAULTSCREEN: ;
-                args_DefaultScreen argp_defaultscreen;
+            case XDEFAULTSCREEN: ;
+                args_XDefaultScreen argp_xdefaultscreen;
 
                 // assert payload size
-                if(ShmPTR->payload_size != sizeof(args_DefaultScreen)){
+                if(ShmPTR->payload_size != sizeof(args_XDefaultScreen)){
                     printf("Wrong payload size\n\n");
                     ShmPTR->status = LISTEN;
                     break;
                 }
 
                 // Memcopy from Buffer
-                memcpy(&argp_defaultscreen, ShmPTR->buffer, sizeof(args_DefaultScreen));
+                memcpy(&argp_xdefaultscreen, ShmPTR->buffer, sizeof(args_XDefaultScreen));
 
                 // Execute function call
-                defaultscreen_lh(&argp_defaultscreen);
+                xdefaultscreen_lh(&argp_xdefaultscreen);
 
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
                 break;
 
-            case DISPLAYWIDTH: ;
-                args_DisplayWidth argp_displaywidth;
+            case XDISPLAYWIDTH: ;
+                args_XDisplayWidth argp_xdisplaywidth;
 
                 // assert payload size
-                if(ShmPTR->payload_size != sizeof(args_DisplayWidth)){
+                if(ShmPTR->payload_size != sizeof(args_XDisplayWidth)){
                     printf("Wrong payload size\n\n");
                     ShmPTR->status = LISTEN;
                     break;
                 }
 
                 // Memcopy from Buffer
-                memcpy(&argp_displaywidth, ShmPTR->buffer, sizeof(args_DisplayWidth));
+                memcpy(&argp_xdisplaywidth, ShmPTR->buffer, sizeof(args_XDisplayWidth));
 
                 // Execute function call
-                displaywidth_lh(&argp_displaywidth);
+                xdisplaywidth_lh(&argp_xdisplaywidth);
 
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
                 break;
 
-            case DISPLAYHEIGHT: ;
-                args_DisplayHeight argp_displayheight;
+            case XDISPLAYHEIGHT: ;
+                args_XDisplayHeight argp_xdisplayheight;
 
                 // assert payload size
-                if(ShmPTR->payload_size != sizeof(args_DisplayHeight)){
+                if(ShmPTR->payload_size != sizeof(args_XDisplayHeight)){
                     printf("Wrong payload size\n\n");
                     ShmPTR->status = LISTEN;
                     break;
                 }
 
                 // Memcopy from Buffer
-                memcpy(&argp_displayheight, ShmPTR->buffer, sizeof(args_DisplayHeight));
+                memcpy(&argp_xdisplayheight, ShmPTR->buffer, sizeof(args_XDisplayHeight));
 
                 // Execute function call
-                displayheight_lh(&argp_displayheight);
+                xdisplayheight_lh(&argp_xdisplayheight);
 
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
                 break;
 
-            case ROOTWINDOW: ;
-                args_RootWindow argp_rootwindow;
+            case XROOTWINDOW: ;
+                args_XRootWindow argp_xrootwindow;
 
                 // assert payload size
-                if(ShmPTR->payload_size != sizeof(args_RootWindow)){
+                if(ShmPTR->payload_size != sizeof(args_XRootWindow)){
                     printf("Wrong payload size\n\n");
                     ShmPTR->status = LISTEN;
                     break;
                 }
 
                 // Memcopy from Buffer
-                memcpy(&argp_rootwindow, ShmPTR->buffer, sizeof(args_RootWindow));
+                memcpy(&argp_xrootwindow, ShmPTR->buffer, sizeof(args_XRootWindow));
 
                 // Execute function call
-                rootwindow_lh(&argp_rootwindow);
+                xrootwindow_lh(&argp_xrootwindow);
 
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);

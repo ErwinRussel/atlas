@@ -1,8 +1,12 @@
-// Linux functions
-int DefaultScreen(Display *display)
-int DisplayWidth(Display *display, int screen_number)
-int DisplayHeight(Display *display, int screen_number)
-Window RootWindow(Display *display, int screen_number)
+// Glxgears override macros
+// int DefaultScreen(Display *display)
+extern int XDefaultScreen(Display* display)
+// int DisplayWidth(Display *display, int screen_number)
+extern int XDisplayWidth(Display *display, int screen_number)
+// int DisplayHeight(Display *display, int screen_number)
+extern int XDisplayHeight(Display *display, int screen_number)
+// Window RootWindow(Display *display, int screen_number)
+extern Window XRootWindow(Display *display, int screen_number)
 
 // Xlib functions
 #HEADER <X11/Xlib.h>
@@ -21,6 +25,7 @@ XEvent XNextEvent(Display *display, XEvent *event_return)
 extern KeySym XLookupKeysym(XKeyEvent *key_event, int index)
 extern int XLookupString(XKeyEvent *event_struct, char *buffer_return, int bytes_buffer, KeySym *keysym_return, XComposeStatus *status_in_out)
 extern int XDestroyWindow(Display *display, Window w)
+// XParseGeometry
 
 // OpenGL functions
 #HEADER <GL/gl.h>

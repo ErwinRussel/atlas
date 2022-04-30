@@ -1,53 +1,52 @@
 #include "atl_header.h"
 #include "atl_uh.h"
-#include <stdio.h>
+#include <string.h>
 
-// -- DefaultScreen
-int DefaultScreen(Display *display)
+// -- XDefaultScreen
+extern int XDefaultScreen(Display* display)
 {
-    printf("Defaultscreen function called\n");
-    args_DefaultScreen argp;
-
+    args_XDefaultScreen argp;
+    
     // Set function specific args
     argp.display = display;
-
-    return defaultscreen_uh(argp);
+    
+    return xdefaultscreen_uh(argp);
 }
 
-// -- DisplayWidth
-int DisplayWidth(Display *display, int screen_number)
+// -- XDisplayWidth
+extern int XDisplayWidth(Display *display, int screen_number)
 {
-    args_DisplayWidth argp;
-
+    args_XDisplayWidth argp;
+    
     // Set function specific args
     argp.display = display;
 	argp.screen_number = screen_number;
-
-    return displaywidth_uh(argp);
+    
+    return xdisplaywidth_uh(argp);
 }
 
-// -- DisplayHeight
-int DisplayHeight(Display *display, int screen_number)
+// -- XDisplayHeight
+extern int XDisplayHeight(Display *display, int screen_number)
 {
-    args_DisplayHeight argp;
-
+    args_XDisplayHeight argp;
+    
     // Set function specific args
     argp.display = display;
 	argp.screen_number = screen_number;
-
-    return displayheight_uh(argp);
+    
+    return xdisplayheight_uh(argp);
 }
 
-// -- RootWindow
-Window RootWindow(Display *display, int screen_number)
+// -- XRootWindow
+extern Window XRootWindow(Display *display, int screen_number)
 {
-    args_RootWindow argp;
-
+    args_XRootWindow argp;
+    
     // Set function specific args
     argp.display = display;
 	argp.screen_number = screen_number;
-
-    return rootwindow_uh(argp);
+    
+    return xrootwindow_uh(argp);
 }
 
 // -- XOpenDisplay
@@ -114,7 +113,7 @@ extern Atom XInternAtom(Display *display, _Xconst char *atom_name, Bool only_if_
 extern int XChangeProperty(Display *display, Window w, Atom property, Atom type, int format, int mode, _Xconst unsigned char *data, int nelements)
 {
     args_XChangeProperty argp;
-    
+
     // Set function specific args
     argp.display = display;
 	argp.w = w;
@@ -124,7 +123,7 @@ extern int XChangeProperty(Display *display, Window w, Atom property, Atom type,
 	argp.mode = mode;
 	argp.data = data;
 	argp.nelements = nelements;
-    
+
     return xchangeproperty_uh(argp);
 }
 
@@ -197,15 +196,15 @@ extern int XPending(Display *display)
 int XNextEvent(Display *display, XEvent *event_return)
 {
     args_XNextEvent argp;
-    
+
     // Set function specific args
     argp.display = display;
-	argp.event_return = event_return;
+    argp.event_return = event_return;
 
     XEvent event = xnextevent_uh(argp);
 
     *event_return = event;
-    
+
     return 0;
 }
 
@@ -543,9 +542,12 @@ XVisualInfo* glXChooseVisual(Display *dpy, int screen, int *attribList)
     // Set function specific args
     argp.dpy = dpy;
 	argp.screen = screen;
-	argp.attribList = attribList;
-    
-    return glxchoosevisual_uh(argp);
+    // Memcpy because of array
+    memcpy(argp.attribList, attribList, sizeof(attribList));
+
+    XVisualInfo visualinfo = glxchoosevisual_uh(argp);
+
+    return &visualinfo;
 }
 
 // -- glXCreateContext

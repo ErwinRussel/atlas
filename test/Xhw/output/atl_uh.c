@@ -5,7 +5,7 @@
 #include  <stdio.h>
 #include  <stdlib.h>
 #include  <signal.h>
-#include  <criu/criu.h>
+//#include  <criu/criu.h>
 #include  <string.h>
 #include  <fcntl.h>
 
@@ -37,12 +37,12 @@ void init(){{
 
     // Setup criu stuff
     int fd = open("/home/erwinrussel/CLionProjects/atlas/checkpoints", O_DIRECTORY);
-    criu_init_opts();
-    criu_set_images_dir_fd(fd); /* must be set for dump/restore */
-    criu_set_shell_job(True);
-    criu_set_leave_running(False);
-    criu_set_log_level(4);
-    criu_set_log_file("criu.log");
+//    criu_init_opts();
+//    criu_set_images_dir_fd(fd); /* must be set for dump/restore */
+//    criu_set_shell_job(True);
+//    criu_set_leave_running(False);
+//    criu_set_log_level(4);
+//    criu_set_log_file("criu.log");
 
     // Bind to the shared memory file
     ShmKEY = ftok(".", 'x');

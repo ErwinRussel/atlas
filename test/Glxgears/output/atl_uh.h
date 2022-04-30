@@ -3,20 +3,10 @@
 #define ATLAS_ATL_UH_H
 
 #endif //ATLAS_ATL_UH_H
-
-#undef DefaultScreen
-#define DefaultScreen(dpy) 	m_DefaultScreen(dpy)
-#undef DisplayWidth
-//#define DisplayWidth(dpy, scr) 	(m_DisplayWidth(dpy, scr))
-#undef DisplayHeight
-//#define DisplayHeight(dpy, scr) (m_DisplayHeight(dpy, scr))
-#undef RootWindow
-//#define RootWindow(dpy, scr) 	(m_RootWindow(dpy, scr))
-
-int defaultscreen_uh(args_DefaultScreen argp);
-int displaywidth_uh(args_DisplayWidth argp);
-int displayheight_uh(args_DisplayHeight argp);
-Window rootwindow_uh(args_RootWindow argp);
+int xdefaultscreen_uh(args_XDefaultScreen argp);
+int xdisplaywidth_uh(args_XDisplayWidth argp);
+int xdisplayheight_uh(args_XDisplayHeight argp);
+Window xrootwindow_uh(args_XRootWindow argp);
 Display* xopendisplay_uh(args_XOpenDisplay argp);
 Colormap xcreatecolormap_uh(args_XCreateColormap argp);
 Window xcreatewindow_uh(args_XCreateWindow argp);

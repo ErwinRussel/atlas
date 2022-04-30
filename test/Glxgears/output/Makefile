@@ -1,7 +1,7 @@
 all: atl_uh atl_lib
 
 atl_lib: atl_uh.c atl_hook.c
-	gcc -shared -o atl_lib.so atl_uh.c atl_hook.c -lX11 -lcriu -lGL -fPIC
+	gcc -shared -o atl_lib.so atl_uh.c atl_hook.c -lX11 -lGL -fPIC # add -lcriu
 
 atl_uh: atl_uh.c
 	gcc -o atl_uh atl_uh.c -lX11 -lcriu -lGL
@@ -16,6 +16,9 @@ atl_hook: atl_hook.c
 glxgears: glxgears.c
 	gcc -o glxgears glxgears.c -lX11 -lGL -lm
 
+clean-glxgears:
+	rm glxgears
+
 clean:
-	rm atl_uh
 	rm atl_lh
+	rm atl_lib.so

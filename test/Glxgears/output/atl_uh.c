@@ -5,7 +5,7 @@
 #include  <stdio.h>
 #include  <stdlib.h>
 #include  <signal.h>
-#include  <criu/criu.h>
+//#include  <criu/criu.h>
 #include  <string.h>
 #include  <fcntl.h>
 
@@ -23,7 +23,7 @@ void criu_signal_handler(){{
     shmdt((void *) ShmPTR);
 
     // call criu dump for checkpoint
-    criu_dump();
+//    criu_dump();
 
     // We restore after the previous call - reattaching memories
     printf("Reattaching memory\n");
@@ -37,12 +37,12 @@ void init(){{
 
     // Setup criu stuff
     int fd = open("/home/erwinrussel/CLionProjects/atlas/checkpoints", O_DIRECTORY);
-    criu_init_opts();
-    criu_set_images_dir_fd(fd); /* must be set for dump/restore */
-    criu_set_shell_job(True);
-    criu_set_leave_running(False);
-    criu_set_log_level(4);
-    criu_set_log_file("criu.log");
+//    criu_init_opts();
+//    criu_set_images_dir_fd(fd); /* must be set for dump/restore */
+//    criu_set_shell_job(True);
+//    criu_set_leave_running(False);
+//    criu_set_log_level(4);
+//    criu_set_log_file("criu.log");
 
     // Bind to the shared memory file
     ShmKEY = ftok(".", 'x');
@@ -58,16 +58,16 @@ void init(){{
     ShmPTR = (struct MsgBlock *) shmat(ShmID, NULL, 0);
 }}
 
-// -- DefaultScreen
-int defaultscreen_uh(args_DefaultScreen argp)
+// -- XDefaultScreen
+int xdefaultscreen_uh(args_XDefaultScreen argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(args_DefaultScreen);
+    int arg_size = sizeof(args_XDefaultScreen);
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
     ShmPTR->message_type = FUNC_CALL;
-    ShmPTR->data_type = DEFAULTSCREEN;
+    ShmPTR->data_type = XDEFAULTSCREEN;
     ShmPTR->payload_size = arg_size;
 
     // Set status to REQUEST
@@ -108,16 +108,16 @@ int defaultscreen_uh(args_DefaultScreen argp)
     return result;
 }
 
-// -- DisplayWidth
-int displaywidth_uh(args_DisplayWidth argp)
+// -- XDisplayWidth
+int xdisplaywidth_uh(args_XDisplayWidth argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(args_DisplayWidth);
+    int arg_size = sizeof(args_XDisplayWidth);
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
     ShmPTR->message_type = FUNC_CALL;
-    ShmPTR->data_type = DISPLAYWIDTH;
+    ShmPTR->data_type = XDISPLAYWIDTH;
     ShmPTR->payload_size = arg_size;
 
     // Set status to REQUEST
@@ -158,16 +158,16 @@ int displaywidth_uh(args_DisplayWidth argp)
     return result;
 }
 
-// -- DisplayHeight
-int displayheight_uh(args_DisplayHeight argp)
+// -- XDisplayHeight
+int xdisplayheight_uh(args_XDisplayHeight argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(args_DisplayHeight);
+    int arg_size = sizeof(args_XDisplayHeight);
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
     ShmPTR->message_type = FUNC_CALL;
-    ShmPTR->data_type = DISPLAYHEIGHT;
+    ShmPTR->data_type = XDISPLAYHEIGHT;
     ShmPTR->payload_size = arg_size;
 
     // Set status to REQUEST
@@ -208,16 +208,16 @@ int displayheight_uh(args_DisplayHeight argp)
     return result;
 }
 
-// -- RootWindow
-Window rootwindow_uh(args_RootWindow argp)
+// -- XRootWindow
+Window xrootwindow_uh(args_XRootWindow argp)
 {
     // Memcopy in Buffer
-    int arg_size = sizeof(args_RootWindow);
+    int arg_size = sizeof(args_XRootWindow);
     memcpy(ShmPTR->buffer, &argp, arg_size);
 
     // Set function specific headers
     ShmPTR->message_type = FUNC_CALL;
-    ShmPTR->data_type = ROOTWINDOW;
+    ShmPTR->data_type = XROOTWINDOW;
     ShmPTR->payload_size = arg_size;
 
     // Set status to REQUEST

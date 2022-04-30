@@ -21,11 +21,11 @@ typedef enum {
 } message_types;
 
 typedef enum {
-    DEFAULTSCREEN,
+    XDEFAULTSCREEN,
 	INT,
-	DISPLAYWIDTH,
-	DISPLAYHEIGHT,
-	ROOTWINDOW,
+	XDISPLAYWIDTH,
+	XDISPLAYHEIGHT,
+	XROOTWINDOW,
 	WINDOW,
 	XOPENDISPLAY,
 	DISPLAYP,
@@ -101,39 +101,39 @@ struct MsgBlock {
 // Function arg structs
 
 
-// -- DefaultScreen
-struct args_DefaultScreen{
-    Display *display;
+// -- XDefaultScreen
+struct args_XDefaultScreen{
+    Display* display;
 };
 
-typedef struct args_DefaultScreen args_DefaultScreen;
+typedef struct args_XDefaultScreen args_XDefaultScreen;
 
 
-// -- DisplayWidth
-struct args_DisplayWidth{
-    Display *display;
-	 int screen_number;
-};
-
-typedef struct args_DisplayWidth args_DisplayWidth;
-
-
-// -- DisplayHeight
-struct args_DisplayHeight{
+// -- XDisplayWidth
+struct args_XDisplayWidth{
     Display *display;
 	 int screen_number;
 };
 
-typedef struct args_DisplayHeight args_DisplayHeight;
+typedef struct args_XDisplayWidth args_XDisplayWidth;
 
 
-// -- RootWindow
-struct args_RootWindow{
+// -- XDisplayHeight
+struct args_XDisplayHeight{
     Display *display;
 	 int screen_number;
 };
 
-typedef struct args_RootWindow args_RootWindow;
+typedef struct args_XDisplayHeight args_XDisplayHeight;
+
+
+// -- XRootWindow
+struct args_XRootWindow{
+    Display *display;
+	 int screen_number;
+};
+
+typedef struct args_XRootWindow args_XRootWindow;
 
 
 // -- XOpenDisplay
@@ -177,7 +177,7 @@ typedef struct args_XCreateWindow args_XCreateWindow;
 // -- XInternAtom
 struct args_XInternAtom{
     Display *display;
-    _Xconst char *atom_name;
+	 _Xconst char *atom_name;
 	 Bool only_if_exists;
 };
 
@@ -187,13 +187,13 @@ typedef struct args_XInternAtom args_XInternAtom;
 // -- XChangeProperty
 struct args_XChangeProperty{
     Display *display;
-	 Window w;
-	 Atom property;
-	 Atom type;
-	 int format;
-	 int mode;
-     _Xconst unsigned char *data;
-	 int nelements;
+    Window w;
+    Atom property;
+    Atom type;
+    int format;
+    int mode;
+    _Xconst unsigned char *data;
+    int nelements;
 };
 
 typedef struct args_XChangeProperty args_XChangeProperty;
@@ -483,10 +483,16 @@ typedef struct args_glXDestroyContext args_glXDestroyContext;
 
 
 // -- glXChooseVisual
+//struct args_glXChooseVisual{
+//    Display *dpy;
+//	 int screen;
+//	 int *attribList;
+//};
+
 struct args_glXChooseVisual{
     Display *dpy;
-	 int screen;
-	 int *attribList;
+    int screen;
+    int attribList[64];
 };
 
 typedef struct args_glXChooseVisual args_glXChooseVisual;
