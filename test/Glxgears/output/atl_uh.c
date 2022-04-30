@@ -2177,7 +2177,7 @@ void glxdestroycontext_uh(args_glXDestroyContext argp)
 }
 
 // -- glXChooseVisual
-XVisualInfo* glxchoosevisual_uh(args_glXChooseVisual argp)
+XVisualInfo glxchoosevisual_uh(args_glXChooseVisual argp)
 {
     // Memcopy in Buffer
     int arg_size = sizeof(args_glXChooseVisual);
@@ -2203,12 +2203,12 @@ XVisualInfo* glxchoosevisual_uh(args_glXChooseVisual argp)
     }
 
     // assert if the datatype is correct
-    if(ShmPTR->data_type != XVISUALINFOP){
+    if(ShmPTR->data_type != XVISUALINFO){
         printf("Payload data type incorrect\n");
     }
     
     // assert if correct payload size
-    int ret_size = sizeof(XVisualInfo*);
+    int ret_size = sizeof(XVisualInfo);
 
     // assert if correct payload size
     if(ShmPTR->payload_size != ret_size){
@@ -2216,7 +2216,7 @@ XVisualInfo* glxchoosevisual_uh(args_glXChooseVisual argp)
     }
 
     // memcopy into result
-    XVisualInfo* result;
+    XVisualInfo result;
     memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
