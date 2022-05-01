@@ -2327,6 +2327,7 @@ Bool glxmakecurrent_uh(args_glXMakeCurrent argp)
 }
 
 // -- glXQueryExtensionsString
+char result_glxExtensionsString[128];
 char* glxqueryextensionsstring_uh(args_glXQueryExtensionsString argp)
 {
     // Memcopy in Buffer
@@ -2353,12 +2354,12 @@ char* glxqueryextensionsstring_uh(args_glXQueryExtensionsString argp)
     }
 
     // assert if the datatype is correct
-    if(ShmPTR->data_type != CHARP){
+    if(ShmPTR->data_type != CHARARR){
         printf("Payload data type incorrect\n");
     }
     
     // assert if correct payload size
-    int ret_size = sizeof(char*);
+    int ret_size = sizeof(char[256]);
 
     // assert if correct payload size
     if(ShmPTR->payload_size != ret_size){
@@ -2366,14 +2367,14 @@ char* glxqueryextensionsstring_uh(args_glXQueryExtensionsString argp)
     }
 
     // memcopy into result
-    char* result;
-    memcpy(&result, ShmPTR->buffer, ret_size);
+//    char result[128];
+    memcpy(&result_glxExtensionsString, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
     ShmPTR->status = LISTEN;
 
     // return
-    return result;
+    return result_glxExtensionsString;
 }
 
 // -- glXQueryDrawable

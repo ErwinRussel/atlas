@@ -47,7 +47,7 @@ void glrotatef_uh(args_glRotatef argp);
 void glcalllist_uh(args_glCallList argp);
 void gldeletelists_uh(args_glDeleteLists argp);
 void glxdestroycontext_uh(args_glXDestroyContext argp);
-XVisualInfo* glxchoosevisual_uh(args_glXChooseVisual argp);
+XVisualInfo glxchoosevisual_uh(args_glXChooseVisual argp);
 GLXContext glxcreatecontext_uh(args_glXCreateContext argp);
 Bool glxmakecurrent_uh(args_glXMakeCurrent argp);
 char* glxqueryextensionsstring_uh(args_glXQueryExtensionsString argp);

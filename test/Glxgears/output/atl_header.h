@@ -83,6 +83,7 @@ typedef enum {
 	BOOL,
 	GLXQUERYEXTENSIONSSTRING,
 	CHARP,
+    CHARARR,
 	GLXQUERYDRAWABLE,
 	GLXGETPROCADDRESSARB,
 	__GLXEXTFUNCPTR,
@@ -168,7 +169,7 @@ struct args_XCreateWindow{
 	 unsigned int class;
 	 Visual* visual;
 	 unsigned long valuemask;
-	 XSetWindowAttributes* attributes;
+	 XSetWindowAttributes attributes;
 };
 
 typedef struct args_XCreateWindow args_XCreateWindow;
@@ -200,25 +201,42 @@ typedef struct args_XChangeProperty args_XChangeProperty;
 
 
 // -- XSetNormalHints
+//struct args_XSetNormalHints{
+//    Display *display;
+//    Window w;
+//    XSizeHints *hints;
+//};
+
 struct args_XSetNormalHints{
     Display *display;
 	 Window w;
-	 XSizeHints *hints;
+	 XSizeHints hints;
 };
 
 typedef struct args_XSetNormalHints args_XSetNormalHints;
 
 
 // -- XSetStandardProperties
+//struct args_XSetStandardProperties{
+//    Display *display;
+//	 Window w;
+//	 _Xconst char *window_name;
+//	 _Xconst char *icon_name;
+//	 Pixmap icon_pixmap;
+//	 char **argv;
+//	 int argc;
+//	 XSizeHints *hints;
+//};
+
 struct args_XSetStandardProperties{
     Display *display;
-	 Window w;
-	 _Xconst char *window_name;
-	 _Xconst char *icon_name;
-	 Pixmap icon_pixmap;
-	 char **argv;
-	 int argc;
-	 XSizeHints *hints;
+    Window w;
+    char window_name;
+    char icon_name;
+    Pixmap icon_pixmap;
+    char **argv;
+    int argc;
+    XSizeHints hints;
 };
 
 typedef struct args_XSetStandardProperties args_XSetStandardProperties;
@@ -226,7 +244,7 @@ typedef struct args_XSetStandardProperties args_XSetStandardProperties;
 
 // -- XFree
 struct args_XFree{
-    void* data;
+    XVisualInfo visinfo;
 };
 
 typedef struct args_XFree args_XFree;
@@ -499,11 +517,18 @@ typedef struct args_glXChooseVisual args_glXChooseVisual;
 
 
 // -- glXCreateContext
+//struct args_glXCreateContext{
+//    Display *dpy;
+//	 XVisualInfo *vis;
+//	 GLXContext shareList;
+//	 Bool direct;
+//};
+
 struct args_glXCreateContext{
     Display *dpy;
-	 XVisualInfo *vis;
-	 GLXContext shareList;
-	 Bool direct;
+    XVisualInfo vis;
+    GLXContext shareList;
+    Bool direct;
 };
 
 typedef struct args_glXCreateContext args_glXCreateContext;
@@ -529,11 +554,18 @@ typedef struct args_glXQueryExtensionsString args_glXQueryExtensionsString;
 
 
 // -- glXQueryDrawable
+//struct args_glXQueryDrawable{
+//    Display *dpy;
+//	 GLXDrawable draw;
+//	 int attribute;
+//	 unsigned int *value;
+//};
+
 struct args_glXQueryDrawable{
     Display *dpy;
-	 GLXDrawable draw;
-	 int attribute;
-	 unsigned int *value;
+    GLXDrawable draw;
+    int attribute;
+    unsigned int value;
 };
 
 typedef struct args_glXQueryDrawable args_glXQueryDrawable;

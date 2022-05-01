@@ -529,18 +529,15 @@ make_window( Display *dpy, const char *name,
    /* window attributes */
    attr.background_pixel = 0;
    attr.border_pixel = 0;
-   printf("Trying to create colormap\n");
    attr.colormap = XCreateColormap( dpy, root, visinfo->visual, AllocNone);
    attr.event_mask = StructureNotifyMask | ExposureMask | KeyPressMask;
    /* XXX this is a bad way to get a borderless window! */
    mask = CWBackPixel | CWBorderPixel | CWColormap | CWEventMask;
 
-   printf("Trying to create window\n");
    win = XCreateWindow( dpy, root, x, y, width, height,
 		        0, visinfo->depth, InputOutput,
 		        visinfo->visual, mask, &attr );
 
-   printf("Create window succeeded");
    if (fullscreen)
       no_border(dpy, win);
 
@@ -582,9 +579,12 @@ is_glx_extension_supported(Display *dpy, const char *query)
    const char *ptr;
 
    if (glx_extensions == NULL) {
+       printf("Glx extensions are 0, we are getting them now\n");
       glx_extensions = glXQueryExtensionsString(dpy, scrnum);
    }
 
+   printf("Glx extensionsstring retrieved\n");
+   printf("glx extensions: %s\n", glx_extensions);
    ptr = strstr(glx_extensions, query);
    return ((ptr != NULL) && ((ptr[len] == ' ') || (ptr[len] == '\0')));
 }
@@ -599,13 +599,17 @@ query_vsync(Display *dpy, GLXDrawable drawable)
    int interval = 0;
 
 #if defined(GLX_EXT_swap_control)
+   printf("GLX_EXT_swap control, defined\n");
    if (is_glx_extension_supported(dpy, "GLX_EXT_swap_control")) {
        unsigned int tmp = -1;
+       printf("Calling glxquerydrawable\n");
        glXQueryDrawable(dpy, drawable, GLX_SWAP_INTERVAL_EXT, &tmp);
+       printf("glxquerydrawable success!\n");
        interval = tmp;
    } else
 #endif
    if (is_glx_extension_supported(dpy, "GLX_MESA_swap_control")) {
+       printf("glx_extension supported\n");
       PFNGLXGETSWAPINTERVALMESAPROC pglXGetSwapIntervalMESA =
           (PFNGLXGETSWAPINTERVALMESAPROC)
           glXGetProcAddressARB((const GLubyte *) "glXGetSwapIntervalMESA");
@@ -776,7 +780,9 @@ main(int argc, char *argv[])
    make_window(dpy, "glxgears", x, y, winWidth, winHeight, &win, &ctx);
    XMapWindow(dpy, win);
    glXMakeCurrent(dpy, win, ctx);
+   printf("glxMaCurrent finished\n");
    query_vsync(dpy, win);
+   printf("Query vsync finished\n");
 
    if (printInfo) {
       printf("GL_RENDERER   = %s\n", (char *) glGetString(GL_RENDERER));
@@ -786,6 +792,7 @@ main(int argc, char *argv[])
    }
 
    init();
+   printf("Init finished back to main\n");
 
    /* Set initial projection/viewing transformation.
     * We can't be sure we'll get a ConfigureNotify event when the window

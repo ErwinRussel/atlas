@@ -91,7 +91,8 @@ extern Window XCreateWindow(Display* display, Window parent, int x, int y, unsig
 	argp.class = class;
 	argp.visual = visual;
 	argp.valuemask = valuemask;
-	argp.attributes = attributes;
+    // Memcpy because of array
+	argp.attributes = *attributes;
     
     return xcreatewindow_uh(argp);
 }
@@ -135,7 +136,7 @@ extern int XSetNormalHints(Display *display, Window w, XSizeHints *hints)
     // Set function specific args
     argp.display = display;
 	argp.w = w;
-	argp.hints = hints;
+	argp.hints = *hints;
     
     return xsetnormalhints_uh(argp);
 }
@@ -148,12 +149,12 @@ extern int XSetStandardProperties(Display *display, Window w, _Xconst char *wind
     // Set function specific args
     argp.display = display;
 	argp.w = w;
-	argp.window_name = window_name;
-	argp.icon_name = icon_name;
+	argp.window_name = *window_name;
+	argp.icon_name = *icon_name;
 	argp.icon_pixmap = icon_pixmap;
 	argp.argv = argv;
 	argp.argc = argc;
-	argp.hints = hints;
+	argp.hints = *hints;
     
     return xsetstandardproperties_uh(argp);
 }
@@ -161,12 +162,12 @@ extern int XSetStandardProperties(Display *display, Window w, _Xconst char *wind
 // -- XFree
 extern int XFree(void* data)
 {
-    args_XFree argp;
-    
-    // Set function specific args
-    argp.data = data;
-    
-    return xfree_uh(argp);
+//    args_XFree argp;
+//
+//    // Set function specific args
+//    argp.visinfo = *data;
+//
+//    return xfree_uh(argp);
 }
 
 // -- XMapWindow
@@ -535,6 +536,7 @@ void glXDestroyContext( Display *dpy, GLXContext ctx )
 }
 
 // -- glXChooseVisual
+XVisualInfo visualinfo;
 XVisualInfo* glXChooseVisual(Display *dpy, int screen, int *attribList)
 {
     args_glXChooseVisual argp;
@@ -545,7 +547,7 @@ XVisualInfo* glXChooseVisual(Display *dpy, int screen, int *attribList)
     // Memcpy because of array
     memcpy(argp.attribList, attribList, sizeof(attribList));
 
-    XVisualInfo visualinfo = glxchoosevisual_uh(argp);
+    visualinfo = glxchoosevisual_uh(argp);
 
     return &visualinfo;
 }
@@ -557,7 +559,7 @@ GLXContext glXCreateContext(Display *dpy, XVisualInfo *vis, GLXContext shareList
     
     // Set function specific args
     argp.dpy = dpy;
-	argp.vis = vis;
+	argp.vis = *vis;
 	argp.shareList = shareList;
 	argp.direct = direct;
     
@@ -578,6 +580,7 @@ Bool glXMakeCurrent(Display * dpy, GLXDrawable drawable, GLXContext ctx)
 }
 
 // -- glXQueryExtensionsString
+const char* glxExtensionsString;
 const char *glXQueryExtensionsString( Display *dpy, int screen )
 {
     args_glXQueryExtensionsString argp;
@@ -585,8 +588,10 @@ const char *glXQueryExtensionsString( Display *dpy, int screen )
     // Set function specific args
     argp.dpy = dpy;
 	argp.screen = screen;
+
+    const char* glxExtensionsString = glxqueryextensionsstring_uh(argp);
     
-    return glxqueryextensionsstring_uh(argp);
+    return glxExtensionsString;
 }
 
 // -- glXQueryDrawable
@@ -598,7 +603,7 @@ extern void glXQueryDrawable(Display *dpy, GLXDrawable draw, int attribute, unsi
     argp.dpy = dpy;
 	argp.draw = draw;
 	argp.attribute = attribute;
-	argp.value = value;
+	argp.value = *value;
 
     glxquerydrawable_uh(argp);
 }

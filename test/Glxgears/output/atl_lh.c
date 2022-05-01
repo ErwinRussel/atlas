@@ -189,7 +189,7 @@ Window *xcreatewindow_lh(args_XCreateWindow *argp)
 	 unsigned int class = argp->class;;
 	 Visual* visual = argp->visual;;
 	 unsigned long valuemask = argp->valuemask;;
-	 XSetWindowAttributes* attributes = argp->attributes;;
+	 XSetWindowAttributes* attributes = &argp->attributes;;
 
     // Call actual function
     Window result = XCreateWindow(display, parent, x, y, width, height, border_width, depth, class, visual, valuemask, attributes);
@@ -269,10 +269,10 @@ int *xsetnormalhints_lh(args_XSetNormalHints *argp)
     // Get function specific args
     Display *display = argp->display;;
 	 Window w = argp->w;;
-	 XSizeHints *hints = argp->hints;;
+	 XSizeHints hints = argp->hints;;
 
     // Call actual function
-    int result = XSetNormalHints(display, w, hints);
+    int result = XSetNormalHints(display, w, &hints);
 
     // Memcopy in Buffer
     int ret_size = sizeof(int);
@@ -294,15 +294,14 @@ int *xsetstandardproperties_lh(args_XSetStandardProperties *argp)
     // Get function specific args
     Display *display = argp->display;;
 	 Window w = argp->w;;
-	 _Xconst char *window_name = argp->window_name;;
-	 _Xconst char *icon_name = argp->icon_name;;
+	 _Xconst char window_name = argp->window_name;;
+	 _Xconst char icon_name = argp->icon_name;;
 	 Pixmap icon_pixmap = argp->icon_pixmap;;
-	 char **argv = argp->argv;;
+	 char** argv = argp->argv;;
 	 int argc = argp->argc;;
-	 XSizeHints *hints = argp->hints;;
-
+	 XSizeHints hints = argp->hints;;
     // Call actual function
-    int result = XSetStandardProperties(display, w, window_name, icon_name, icon_pixmap, argv, argc, hints);
+    int result = XSetStandardProperties(display, w, &window_name, &icon_name, icon_pixmap, (char **)NULL, argc, &hints);
 
     // Memcopy in Buffer
     int ret_size = sizeof(int);
@@ -321,23 +320,23 @@ int *xsetstandardproperties_lh(args_XSetStandardProperties *argp)
 // -- XFree
 int *xfree_lh(args_XFree *argp)
 {
-    // Get function specific args
-    void* data = argp->data;;
-
-    // Call actual function
-    int result = XFree(data);
-
-    // Memcopy in Buffer
-    int ret_size = sizeof(int);
-    memcpy(ShmPTR->buffer, &result, ret_size);
-
-    // Set function specific headers
-    ShmPTR->message_type = FUNC_RETURN;
-    ShmPTR->data_type = INT;
-    ShmPTR->payload_size = ret_size;
-
-    // Set status
-    ShmPTR->status = RESPONSE;
+//    // Get function specific args
+//    void* data = argp->data;;
+//
+//    // Call actual function
+//    int result = XFree(data);
+//
+//    // Memcopy in Buffer
+//    int ret_size = sizeof(int);
+//    memcpy(ShmPTR->buffer, &result, ret_size);
+//
+//    // Set function specific headers
+//    ShmPTR->message_type = FUNC_RETURN;
+//    ShmPTR->data_type = INT;
+//    ShmPTR->payload_size = ret_size;
+//
+//    // Set status
+//    ShmPTR->status = RESPONSE;
 }
 
 
@@ -1067,15 +1066,15 @@ XVisualInfo* *glxchoosevisual_lh(args_glXChooseVisual *argp)
 	 int *attribList = argp->attribList;;
 
     // Call actual function
-    XVisualInfo* result = glXChooseVisual(dpy, screen, attribList);
+    XVisualInfo result = *glXChooseVisual(dpy, screen, attribList);
 
     // Memcopy in Buffer
-    int ret_size = sizeof(XVisualInfo*);
+    int ret_size = sizeof(XVisualInfo);
     memcpy(ShmPTR->buffer, &result, ret_size);
 
     // Set function specific headers
     ShmPTR->message_type = FUNC_RETURN;
-    ShmPTR->data_type = XVISUALINFOP;
+    ShmPTR->data_type = XVISUALINFO;
     ShmPTR->payload_size = ret_size;
 
     // Set status
@@ -1088,12 +1087,12 @@ GLXContext *glxcreatecontext_lh(args_glXCreateContext *argp)
 {
     // Get function specific args
     Display *dpy = argp->dpy;;
-	 XVisualInfo *vis = argp->vis;;
+	 XVisualInfo vis = argp->vis;;
 	 GLXContext shareList = argp->shareList;;
 	 Bool direct = argp->direct;;
 
     // Call actual function
-    GLXContext result = glXCreateContext(dpy, vis, shareList, direct);
+    GLXContext result = glXCreateContext(dpy, &vis, shareList, direct);
 
     // Memcopy in Buffer
     int ret_size = sizeof(GLXContext);
@@ -1141,16 +1140,18 @@ char* *glxqueryextensionsstring_lh(args_glXQueryExtensionsString *argp)
      Display *dpy = argp->dpy;;
 	 int screen  = argp->screen;;
 
-    // Call actual function
+    // Call actual function - strcpy because string return
+    char dest[128];
     const char* result = glXQueryExtensionsString(dpy, screen);
+    strcpy(dest, result);
 
     // Memcopy in Buffer
-    int ret_size = sizeof(char*);
-    memcpy(ShmPTR->buffer, &result, ret_size);
+    int ret_size = sizeof(char[256]);
+    memcpy(ShmPTR->buffer, &dest, ret_size);
 
     // Set function specific headers
     ShmPTR->message_type = FUNC_RETURN;
-    ShmPTR->data_type = CHARP;
+    ShmPTR->data_type = CHARARR;
     ShmPTR->payload_size = ret_size;
 
     // Set status
@@ -1165,10 +1166,10 @@ void *glxquerydrawable_lh(args_glXQueryDrawable *argp)
     Display *dpy = argp->dpy;;
 	 GLXDrawable draw = argp->draw;;
 	 int attribute = argp->attribute;;
-	 unsigned int *value = argp->value;;
+	 unsigned int value = argp->value;;
 
     // Call actual function
-    glXQueryDrawable(dpy, draw, attribute, value);
+    glXQueryDrawable(dpy, draw, attribute, &value);
 
     // Nothing to memcopy in Buffer
 
