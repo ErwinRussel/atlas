@@ -2359,7 +2359,7 @@ char* glxqueryextensionsstring_uh(args_glXQueryExtensionsString argp)
     }
     
     // assert if correct payload size
-    int ret_size = sizeof(char[256]);
+    int ret_size = sizeof(char[1024]);
 
     // assert if correct payload size
     if(ShmPTR->payload_size != ret_size){

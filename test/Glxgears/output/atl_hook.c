@@ -267,7 +267,8 @@ void glLightfv( GLenum light, GLenum pname, const GLfloat *params )
     // Set function specific args
     argp.light = light;
 	argp.pname = pname;
-	argp.params = params;
+    // Memcpy because of arr
+    memcpy(argp.params, params, sizeof(params));
 
     gllightfv_uh(argp);
 }
@@ -314,7 +315,8 @@ void glMaterialfv( GLenum face, GLenum pname, const GLfloat *params )
     // Set function specific args
     argp.face = face;
 	argp.pname = pname;
-	argp.params = params;
+    // Memcpy because of arr
+    memcpy(argp.params, params, sizeof(params));
 
     glmaterialfv_uh(argp);
 }

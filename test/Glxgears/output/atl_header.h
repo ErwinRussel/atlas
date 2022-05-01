@@ -8,7 +8,7 @@
 #include <GL/glx.h>
 
 // Dynamic mem buffer, buffer size in ints
-#define SHMEM_BUFF 1024
+#define SHMEM_BUFF 2048
 
 // Status flags -> should be enum?
 #define  REQUEST       1
@@ -318,7 +318,7 @@ typedef struct args_glGetString args_glGetString;
 struct args_glLightfv{
      GLenum light;
 	 GLenum pname;
-	 const GLfloat *params ;
+	 GLfloat params[4];
 };
 
 typedef struct args_glLightfv args_glLightfv;
@@ -350,10 +350,16 @@ typedef struct args_glNewList args_glNewList;
 
 
 // -- glMaterialfv
+//struct args_glMaterialfv{
+//     GLenum face;
+//	 GLenum pname;
+//	 const GLfloat *params ;
+//};
+
 struct args_glMaterialfv{
-     GLenum face;
-	 GLenum pname;
-	 const GLfloat *params ;
+    GLenum face;
+    GLenum pname;
+    GLfloat params[4];
 };
 
 typedef struct args_glMaterialfv args_glMaterialfv;

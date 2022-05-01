@@ -1141,12 +1141,12 @@ char* *glxqueryextensionsstring_lh(args_glXQueryExtensionsString *argp)
 	 int screen  = argp->screen;;
 
     // Call actual function - strcpy because string return
-    char dest[128];
+    char dest[1024];
     const char* result = glXQueryExtensionsString(dpy, screen);
     strcpy(dest, result);
 
     // Memcopy in Buffer
-    int ret_size = sizeof(char[256]);
+    int ret_size = sizeof(char[1024]);
     memcpy(ShmPTR->buffer, &dest, ret_size);
 
     // Set function specific headers

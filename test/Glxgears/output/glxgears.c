@@ -312,6 +312,7 @@ draw_gears(void)
       glPopMatrix();
    }
    else {
+       printf("Calling draw function\n");
       draw();
    }
 }
@@ -336,9 +337,11 @@ draw_frame(Display *dpy, Window win)
       if (angle > 3600.0)
          angle -= 3600.0;
    }
-
+    printf("Get ready to draw gears!\n");
    draw_gears();
+    printf("Gears drawn, Get ready to draw gears!\n");
    glXSwapBuffers(dpy, win);
+    printf("Buffers swapped!\n");
 
    frames++;
 
@@ -361,7 +364,6 @@ static void
 reshape(int width, int height)
 {
    glViewport(0, 0, (GLint) width, (GLint) height);
-
    if (stereo) {
       GLfloat w;
 
@@ -399,6 +401,7 @@ init(void)
    glEnable(GL_LIGHTING);
    glEnable(GL_LIGHT0);
    glEnable(GL_DEPTH_TEST);
+
 
    /* make the gears */
    gear1 = glGenLists(1);
@@ -579,12 +582,9 @@ is_glx_extension_supported(Display *dpy, const char *query)
    const char *ptr;
 
    if (glx_extensions == NULL) {
-       printf("Glx extensions are 0, we are getting them now\n");
       glx_extensions = glXQueryExtensionsString(dpy, scrnum);
    }
 
-   printf("Glx extensionsstring retrieved\n");
-   printf("glx extensions: %s\n", glx_extensions);
    ptr = strstr(glx_extensions, query);
    return ((ptr != NULL) && ((ptr[len] == ' ') || (ptr[len] == '\0')));
 }
@@ -599,17 +599,13 @@ query_vsync(Display *dpy, GLXDrawable drawable)
    int interval = 0;
 
 #if defined(GLX_EXT_swap_control)
-   printf("GLX_EXT_swap control, defined\n");
    if (is_glx_extension_supported(dpy, "GLX_EXT_swap_control")) {
        unsigned int tmp = -1;
-       printf("Calling glxquerydrawable\n");
        glXQueryDrawable(dpy, drawable, GLX_SWAP_INTERVAL_EXT, &tmp);
-       printf("glxquerydrawable success!\n");
        interval = tmp;
    } else
 #endif
    if (is_glx_extension_supported(dpy, "GLX_MESA_swap_control")) {
-       printf("glx_extension supported\n");
       PFNGLXGETSWAPINTERVALMESAPROC pglXGetSwapIntervalMESA =
           (PFNGLXGETSWAPINTERVALMESAPROC)
           glXGetProcAddressARB((const GLubyte *) "glXGetSwapIntervalMESA");
@@ -697,6 +693,7 @@ event_loop(Display *dpy, Window win)
       while (!animate || XPending(dpy) > 0) {
          XEvent event;
          XNextEvent(dpy, &event);
+          printf("%d\n", event.type);
          op = handle_event(dpy, win, &event);
          if (op == EXIT)
             return;
@@ -780,9 +777,7 @@ main(int argc, char *argv[])
    make_window(dpy, "glxgears", x, y, winWidth, winHeight, &win, &ctx);
    XMapWindow(dpy, win);
    glXMakeCurrent(dpy, win, ctx);
-   printf("glxMaCurrent finished\n");
    query_vsync(dpy, win);
-   printf("Query vsync finished\n");
 
    if (printInfo) {
       printf("GL_RENDERER   = %s\n", (char *) glGetString(GL_RENDERER));
@@ -792,13 +787,13 @@ main(int argc, char *argv[])
    }
 
    init();
-   printf("Init finished back to main\n");
 
    /* Set initial projection/viewing transformation.
     * We can't be sure we'll get a ConfigureNotify event when the window
     * first appears.
     */
    reshape(winWidth, winHeight);
+   printf("reshape finished! executing event loop\n");
 
    event_loop(dpy, win);
 

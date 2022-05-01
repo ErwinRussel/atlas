@@ -1,4 +1,4 @@
-all: atl_uh atl_lib
+all: atl_lh atl_lib
 
 atl_lib: atl_uh.c atl_hook.c
 	gcc -shared -o atl_lib.so atl_uh.c atl_hook.c -lX11 -lGL -fPIC # add -lcriu
