@@ -1,6 +1,7 @@
 #include "atl_header.h"
 #include "atl_uh.h"
 #include <string.h>
+#include <stdio.h>
 
 // -- XDefaultScreen
 extern int XDefaultScreen(Display* display)
@@ -484,6 +485,7 @@ void glClear( GLbitfield mask )
 
     // Set function specific args
     argp.mask = mask;
+    printf("%u\n", mask);
 
     glclear_uh(argp);
 }

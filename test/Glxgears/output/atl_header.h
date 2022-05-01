@@ -463,7 +463,7 @@ typedef struct args_glTranslated args_glTranslated;
 
 // -- glClear
 struct args_glClear{
-     GLbitfield mask ;
+     GLbitfield mask;
 };
 
 typedef struct args_glClear args_glClear;
@@ -482,7 +482,7 @@ typedef struct args_glRotatef args_glRotatef;
 
 // -- glCallList
 struct args_glCallList{
-     GLuint list ;
+     GLuint list;
 };
 
 typedef struct args_glCallList args_glCallList;

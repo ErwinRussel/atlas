@@ -951,11 +951,10 @@ void *gltranslated_lh(args_glTranslated *argp)
 void *glclear_lh(args_glClear *argp)
 {
     // Get function specific args
-     GLbitfield mask  = argp->mask;;
-
+     GLbitfield mask  = argp->mask;
+     printf("%u\n", mask);
     // Call actual function
-    glClear(mask);
-
+    // glClear(mask);
     // Nothing to memcopy in Buffer
 
     // Set function specific headers
