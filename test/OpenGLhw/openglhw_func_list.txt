@@ -1,0 +1,21 @@
+// X functions
+#HEADER <X11/Xlib.h>
+extern Display *XOpenDisplay(_Xconst char *display_name)
+extern Window XCreateWindow(Display *display, Window parent, int x, int y, unsigned int width, unsigned int height, unsigned int border_width, int	depth, unsigned int class, Visual *visual, unsigned long valuemask, XSetWindowAttributes *attributes)
+extern int XMapWindow(Display *display, Window w)
+extern int XIfEvent( Display *display, XEvent *event_return, Bool *predicate, XPointer arg )
+
+// OpenGlFunctions
+#HEADER <GL/gl.h>
+void glClearColor( GLclampf red, GLclampf green, GLclampf blue, GLclampf alpha )
+void glClear( GLbitfield mask )
+void glFlush()
+
+// glXfunctions
+#HEADER <GL/glx.h>
+GLXFBConfig *glXChooseFBConfig(	Display *dpy, int screen, const int *attrib_list, int *nelements)
+XVisualInfo *glXGetVisualFromFBConfig(	Display *dpy, GLXFBConfig config)
+GLXContext glXCreateNewContext(	Display *dpy, GLXFBConfig config, int render_type, GLXContext share_list, Bool direct)
+GLXWindow glXCreateWindow(	Display *dpy, GLXFBConfig config, Window win, const int *attrib_list)
+Bool glXMakeContextCurrent(	Display *display, GLXDrawable draw, GLXDrawable read, GLXContext ctx)
+void glXSwapBuffers( Display *dpy, GLXDrawable drawable )
