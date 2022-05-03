@@ -30,6 +30,11 @@ void init(){
     ShmPTR->status = LISTEN;
 }
 
+// -- GLOBALS
+Display* curdisplay;
+GLXDrawable curdrawable;
+GLXContext curctx;
+
 // -- XDefaultScreen
 int *xdefaultscreen_lh(args_XDefaultScreen *argp)
 {
@@ -952,9 +957,9 @@ void *glclear_lh(args_glClear *argp)
 {
     // Get function specific args
      GLbitfield mask  = argp->mask;
-     printf("%u\n", mask);
+
     // Call actual function
-    // glClear(mask);
+     glClear(mask);
     // Nothing to memcopy in Buffer
 
     // Set function specific headers
@@ -1111,9 +1116,14 @@ GLXContext *glxcreatecontext_lh(args_glXCreateContext *argp)
 Bool *glxmakecurrent_lh(args_glXMakeCurrent *argp)
 {
     // Get function specific args
-    Display * dpy = argp->dpy;;
+    Display* dpy = argp->dpy;;
 	 GLXDrawable drawable = argp->drawable;;
 	 GLXContext ctx = argp->ctx;;
+
+     // todo: make this global for calls like glclear()
+     curdisplay = dpy;
+     curdrawable = drawable;
+     curctx = ctx;
 
     // Call actual function
     Bool result = glXMakeCurrent(dpy, drawable, ctx);

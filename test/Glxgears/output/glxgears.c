@@ -334,9 +334,8 @@ draw_frame(Display *dpy, Window win)
       if (angle > 3600.0)
          angle -= 3600.0;
    }
-    printf("Get ready to draw gears!\n");
    draw_gears();
-    printf("Gears drawn, Get ready to draw gears!\n");
+    printf("Get ready to swap buffers!\n");
    glXSwapBuffers(dpy, win);
     printf("Buffers swapped!\n");
 
