@@ -86,29 +86,19 @@ int main( int argc, char *argv[] )
 
     /* Map the window to the screen, and wait for it to appear */
     XMapWindow( dpy, xWin );
-    printf("Running XIfEvent!\n");
     XIfEvent( dpy, &event, WaitForNotify, (XPointer) xWin );
-    printf("Survived XIfEvent!\n");
 
     /* Bind the GLX context to the Window */
-    printf("Running glxMakeContextCurrent!\n");
     glXMakeContextCurrent( dpy, glxWin, glxWin, context );
-    printf("Survived glxMakeContextCurrent XIfEvent!\n");
 
     /* OpenGL rendering ... */
-    printf("Running glClearColor!\n");
     glClearColor( 1.0, 1.0, 0.0, 1.0 );
-    printf("Survived glClearColor!\n");
-    printf("Running glClear!\n");
     glClear( GL_COLOR_BUFFER_BIT );
-    printf("Survived glClear!\n");
 
     glFlush();
 
     if ( swapFlag )
-        printf("Running glXSwapBuffers!\n");
         glXSwapBuffers( dpy, glxWin );
-        printf("Survived glXSwapBuffers!\n");
 
 
     while(1){

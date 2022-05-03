@@ -103,7 +103,7 @@ static GLfloat angle = 0.0;
 static GLboolean fullscreen = GL_FALSE;	/* Create a single fullscreen window */
 static GLboolean stereo = GL_FALSE;	/* Enable stereo.  */
 static GLint samples = 0;               /* Choose visual with at least N samples. */
-static GLboolean animate = GL_TRUE;	/* Animation */
+static GLboolean animate = GL_FALSE;	/* Animation */
 static GLfloat eyesep = 5.0;		/* Eye separation. */
 static GLfloat fix_point = 40.0;	/* Fixation point distance.  */
 static GLfloat left, right, asp;	/* Stereo frustum params.  */
@@ -250,7 +250,7 @@ gear(GLfloat inner_radius, GLfloat outer_radius, GLfloat width,
 static void
 draw(void)
 {
-   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
    glPushMatrix();
    glRotatef(view_rotx, 1.0, 0.0, 0.0);
    glRotatef(view_roty, 0.0, 1.0, 0.0);
@@ -309,7 +309,6 @@ draw_gears(void)
       glPopMatrix();
    }
    else {
-       printf("Calling draw function\n");
       draw();
    }
 }
@@ -335,9 +334,7 @@ draw_frame(Display *dpy, Window win)
          angle -= 3600.0;
    }
    draw_gears();
-    printf("Get ready to swap buffers!\n");
    glXSwapBuffers(dpy, win);
-    printf("Buffers swapped!\n");
 
    frames++;
 
@@ -689,7 +686,6 @@ event_loop(Display *dpy, Window win)
       while (!animate || XPending(dpy) > 0) {
          XEvent event;
          XNextEvent(dpy, &event);
-          printf("%d\n", event.type);
          op = handle_event(dpy, win, &event);
          if (op == EXIT)
             return;
@@ -789,7 +785,6 @@ main(int argc, char *argv[])
     * first appears.
     */
    reshape(winWidth, winHeight);
-   printf("reshape finished! executing event loop\n");
 
    event_loop(dpy, win);
 

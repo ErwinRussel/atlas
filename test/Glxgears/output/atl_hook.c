@@ -1,7 +1,6 @@
 #include "atl_header.h"
 #include "atl_uh.h"
 #include <string.h>
-#include <stdio.h>
 
 // -- XDefaultScreen
 extern int XDefaultScreen(Display* display)
@@ -268,7 +267,7 @@ void glLightfv( GLenum light, GLenum pname, const GLfloat *params )
     argp.light = light;
 	argp.pname = pname;
     // Memcpy because of arr
-    memcpy(argp.params, params, sizeof(params));
+    memcpy(&argp.params, params, sizeof(argp.params));
 
     gllightfv_uh(argp);
 }
@@ -316,7 +315,7 @@ void glMaterialfv( GLenum face, GLenum pname, const GLfloat *params )
     argp.face = face;
 	argp.pname = pname;
     // Memcpy because of arr
-    memcpy(argp.params, params, sizeof(params));
+    memcpy(&argp.params, params, sizeof(argp.params));
 
     glmaterialfv_uh(argp);
 }
@@ -484,7 +483,6 @@ void glClear( GLbitfield mask )
 
     // Set function specific args
     argp.mask = mask;
-    printf("%u\n", mask);
 
     glclear_uh(argp);
 }
