@@ -5,7 +5,7 @@
 #include  <stdio.h>
 #include  <stdlib.h>
 #include  <signal.h>
-//#include  <criu/criu.h>
+// #include  <criu/criu.h>
 #include  <string.h>
 #include  <fcntl.h>
 
@@ -23,7 +23,7 @@ void criu_signal_handler(){{
     shmdt((void *) ShmPTR);
 
     // call criu dump for checkpoint
-//    criu_dump();
+    // criu_dump();
 
     // We restore after the previous call - reattaching memories
     printf("Reattaching memory\n");
@@ -37,12 +37,12 @@ void init(){{
 
     // Setup criu stuff
     int fd = open("/home/erwinrussel/CLionProjects/atlas/checkpoints", O_DIRECTORY);
-//    criu_init_opts();
-//    criu_set_images_dir_fd(fd); /* must be set for dump/restore */
-//    criu_set_shell_job(True);
-//    criu_set_leave_running(False);
-//    criu_set_log_level(4);
-//    criu_set_log_file("criu.log");
+    // criu_init_opts();
+    // criu_set_images_dir_fd(fd); /* must be set for dump/restore */
+    // criu_set_shell_job(True);
+    // criu_set_leave_running(False);
+    // criu_set_log_level(4);
+    // criu_set_log_file("criu.log");
 
     // Bind to the shared memory file
     ShmKEY = ftok(".", 'x');
@@ -158,6 +158,56 @@ Window xcreatewindow_uh(args_XCreateWindow argp)
     return result;
 }
 
+// -- XRootWindow
+Window xrootwindow_uh(args_XRootWindow argp)
+{
+    // Memcopy in Buffer
+    int arg_size = sizeof(args_XRootWindow);
+    memcpy(ShmPTR->buffer, &argp, arg_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_CALL;
+    ShmPTR->data_type = XROOTWINDOW;
+    ShmPTR->payload_size = arg_size;
+
+    // Set status to REQUEST
+    ShmPTR->status = REQUEST;
+
+    // ------ Waiting for Server -----
+
+    // Wait for response
+    while (ShmPTR->status != RESPONSE)
+        ;
+
+    // assert if the message is a function return
+    if(ShmPTR->message_type != FUNC_RETURN){
+        printf("Message type is not a function return\n");
+    }
+
+    // assert if the datatype is correct
+    if(ShmPTR->data_type != WINDOW){
+        printf("Payload data type incorrect\n");
+    }
+
+    // assert if correct payload size
+    int ret_size = sizeof(Window);
+
+    // assert if correct payload size
+    if(ShmPTR->payload_size != ret_size){
+        printf("Incorrect payload size\n");
+    }
+
+    // memcopy into result
+    Window result;
+    memcpy(&result, ShmPTR->buffer, ret_size);
+
+    // Set status to LISTEN
+    ShmPTR->status = LISTEN;
+
+    // return
+    return result;
+}
+
 // -- XMapWindow
 int xmapwindow_uh(args_XMapWindow argp)
 {
@@ -218,6 +268,56 @@ int xifevent_uh(args_XIfEvent argp)
     // Set function specific headers
     ShmPTR->message_type = FUNC_CALL;
     ShmPTR->data_type = XIFEVENT;
+    ShmPTR->payload_size = arg_size;
+
+    // Set status to REQUEST
+    ShmPTR->status = REQUEST;
+
+    // ------ Waiting for Server -----
+
+    // Wait for response
+    while (ShmPTR->status != RESPONSE)
+        ;
+
+    // assert if the message is a function return
+    if(ShmPTR->message_type != FUNC_RETURN){
+        printf("Message type is not a function return\n");
+    }
+
+    // assert if the datatype is correct
+    if(ShmPTR->data_type != INT){
+        printf("Payload data type incorrect\n");
+    }
+    
+    // assert if correct payload size
+    int ret_size = sizeof(int);
+
+    // assert if correct payload size
+    if(ShmPTR->payload_size != ret_size){
+        printf("Incorrect payload size\n");
+    }
+
+    // memcopy into result
+    int result;
+    memcpy(&result, ShmPTR->buffer, ret_size);
+
+    // Set status to LISTEN
+    ShmPTR->status = LISTEN;
+
+    // return
+    return result;
+}
+
+// -- XDefaultScreen
+int xdefaultscreen_uh(args_XDefaultScreen argp)
+{
+    // Memcopy in Buffer
+    int arg_size = sizeof(args_XDefaultScreen);
+    memcpy(ShmPTR->buffer, &argp, arg_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_CALL;
+    ShmPTR->data_type = XDEFAULTSCREEN;
     ShmPTR->payload_size = arg_size;
 
     // Set status to REQUEST
@@ -398,7 +498,7 @@ void glflush_uh()
 }
 
 // -- glXChooseFBConfig
-GLXFBConfig* glxchoosefbconfig_uh(args_glXChooseFBConfig argp)
+GLXFBConfig glxchoosefbconfig_uh(args_glXChooseFBConfig argp)
 {
     // Memcopy in Buffer
     int arg_size = sizeof(args_glXChooseFBConfig);
@@ -424,12 +524,12 @@ GLXFBConfig* glxchoosefbconfig_uh(args_glXChooseFBConfig argp)
     }
 
     // assert if the datatype is correct
-    if(ShmPTR->data_type != GLXFBCONFIGP){
+    if(ShmPTR->data_type != GLXFBCONFIG){
         printf("Payload data type incorrect\n");
     }
     
     // assert if correct payload size
-    int ret_size = sizeof(GLXFBConfig*);
+    int ret_size = sizeof(GLXFBConfig);
 
     // assert if correct payload size
     if(ShmPTR->payload_size != ret_size){
@@ -437,7 +537,7 @@ GLXFBConfig* glxchoosefbconfig_uh(args_glXChooseFBConfig argp)
     }
 
     // memcopy into result
-    GLXFBConfig* result;
+    GLXFBConfig result;
     memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
@@ -448,7 +548,7 @@ GLXFBConfig* glxchoosefbconfig_uh(args_glXChooseFBConfig argp)
 }
 
 // -- glXGetVisualFromFBConfig
-XVisualInfo* glxgetvisualfromfbconfig_uh(args_glXGetVisualFromFBConfig argp)
+XVisualInfo glxgetvisualfromfbconfig_uh(args_glXGetVisualFromFBConfig argp)
 {
     // Memcopy in Buffer
     int arg_size = sizeof(args_glXGetVisualFromFBConfig);
@@ -474,12 +574,12 @@ XVisualInfo* glxgetvisualfromfbconfig_uh(args_glXGetVisualFromFBConfig argp)
     }
 
     // assert if the datatype is correct
-    if(ShmPTR->data_type != XVISUALINFOP){
+    if(ShmPTR->data_type != XVISUALINFO){
         printf("Payload data type incorrect\n");
     }
     
     // assert if correct payload size
-    int ret_size = sizeof(XVisualInfo*);
+    int ret_size = sizeof(XVisualInfo);
 
     // assert if correct payload size
     if(ShmPTR->payload_size != ret_size){
@@ -487,7 +587,7 @@ XVisualInfo* glxgetvisualfromfbconfig_uh(args_glXGetVisualFromFBConfig argp)
     }
 
     // memcopy into result
-    XVisualInfo* result;
+    XVisualInfo result;
     memcpy(&result, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN
@@ -692,4 +792,54 @@ void glxswapbuffers_uh(args_glXSwapBuffers argp)
     ShmPTR->status = LISTEN;
 
     // Nothing to return
+}
+
+// -- XCreateColormap
+Colormap xcreatecolormap_uh(args_XCreateColormap argp)
+{
+    // Memcopy in Buffer
+    int arg_size = sizeof(args_XCreateColormap);
+    memcpy(ShmPTR->buffer, &argp, arg_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_CALL;
+    ShmPTR->data_type = XCREATECOLORMAP;
+    ShmPTR->payload_size = arg_size;
+
+    // Set status to REQUEST
+    ShmPTR->status = REQUEST;
+
+    // ------ Waiting for Server -----
+
+    // Wait for response
+    while (ShmPTR->status != RESPONSE)
+        ;
+
+    // assert if the message is a function return
+    if(ShmPTR->message_type != FUNC_RETURN){
+        printf("Message type is not a function return\n");
+    }
+
+    // assert if the datatype is correct
+    if(ShmPTR->data_type != COLORMAP){
+        printf("Payload data type incorrect\n");
+    }
+
+    // assert if correct payload size
+    int ret_size = sizeof(Colormap);
+
+    // assert if correct payload size
+    if(ShmPTR->payload_size != ret_size){
+        printf("Incorrect payload size\n");
+    }
+
+    // memcopy into result
+    Colormap result;
+    memcpy(&result, ShmPTR->buffer, ret_size);
+
+    // Set status to LISTEN
+    ShmPTR->status = LISTEN;
+
+    // return
+    return result;
 }

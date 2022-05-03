@@ -4,6 +4,9 @@ extern Display *XOpenDisplay(_Xconst char *display_name)
 extern Window XCreateWindow(Display *display, Window parent, int x, int y, unsigned int width, unsigned int height, unsigned int border_width, int	depth, unsigned int class, Visual *visual, unsigned long valuemask, XSetWindowAttributes *attributes)
 extern int XMapWindow(Display *display, Window w)
 extern int XIfEvent( Display *display, XEvent *event_return, Bool *predicate, XPointer arg )
+extern int XDefaultScreen(Display* display)
+extern Window XRootWindow(Display *display, int screen_number)
+Colormap XCreateColormap(Display *display, Window w, Visual *visual, int alloc)
 
 // OpenGlFunctions
 #HEADER <GL/gl.h>

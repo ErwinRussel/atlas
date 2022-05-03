@@ -92,7 +92,6 @@ extern Window XCreateWindow(Display* display, Window parent, int x, int y, unsig
 	argp.class = class;
 	argp.visual = visual;
 	argp.valuemask = valuemask;
-    // Memcpy because of array
 	argp.attributes = *attributes;
     
     return xcreatewindow_uh(argp);

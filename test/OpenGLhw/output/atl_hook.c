@@ -1,5 +1,7 @@
 #include "atl_header.h"
 #include "atl_uh.h"
+#include <string.h>
+#include <stdio.h>
 
 // -- XOpenDisplay
 extern Display *XOpenDisplay(_Xconst char *display_name)
@@ -10,6 +12,18 @@ extern Display *XOpenDisplay(_Xconst char *display_name)
     argp.display_name = display_name;
     
     return xopendisplay_uh(argp);
+}
+
+// -- XRootWindow
+extern Window XRootWindow(Display *display, int screen_number)
+{
+    args_XRootWindow argp;
+
+    // Set function specific args
+    argp.display = display;
+    argp.screen_number = screen_number;
+
+    return xrootwindow_uh(argp);
 }
 
 // -- XCreateWindow
@@ -29,7 +43,7 @@ extern Window XCreateWindow(Display *display, Window parent, int x, int y, unsig
 	argp.class = class;
 	argp.visual = visual;
 	argp.valuemask = valuemask;
-	argp.attributes = attributes;
+	argp.attributes = *attributes;
     
     return xcreatewindow_uh(argp);
 }
@@ -46,7 +60,7 @@ extern int XMapWindow(Display *display, Window w)
     return xmapwindow_uh(argp);
 }
 
-// -- XIfEvent
+// -- XIfEvent -- We do nothing with this event
 extern int XIfEvent( Display *display, XEvent *event_return, Bool (*predicate)(), XPointer arg )
 {
     args_XIfEvent argp;
@@ -55,9 +69,22 @@ extern int XIfEvent( Display *display, XEvent *event_return, Bool (*predicate)()
     argp.display = display;
 	argp.event_return = event_return;
 	argp.predicate = predicate;
+    printf("So far so good..\n");
 	argp.arg = arg;
+    printf("That shouldve worked\n");
     
     return xifevent_uh(argp);
+}
+
+// -- XDefaultScreen
+extern int XDefaultScreen(Display* display)
+{
+    args_XDefaultScreen argp;
+    
+    // Set function specific args
+    argp.display = display;
+    
+    return xdefaultscreen_uh(argp);
 }
 
 // -- glClearColor
@@ -92,6 +119,7 @@ void glFlush()
 }
 
 // -- glXChooseFBConfig
+GLXFBConfig config;
 GLXFBConfig *glXChooseFBConfig(	Display *dpy, int screen, const int *attrib_list, int *nelements)
 {
     args_glXChooseFBConfig argp;
@@ -99,22 +127,30 @@ GLXFBConfig *glXChooseFBConfig(	Display *dpy, int screen, const int *attrib_list
     // Set function specific args
     argp.dpy = dpy;
 	argp.screen = screen;
-	argp.attrib_list = attrib_list;
-	argp.nelements = nelements;
+//	argp.attrib_list = attrib_list;
+    // memcpy because of array
+    memcpy(argp.attrib_list, attrib_list, sizeof(attrib_list));
+	argp.nelements = *nelements;
+
+    // Return pointer from set
+    config = glxchoosefbconfig_uh(argp);
     
-    return glxchoosefbconfig_uh(argp);
+    return &config;
 }
 
 // -- glXGetVisualFromFBConfig
-XVisualInfo *glXGetVisualFromFBConfig(	Display *dpy, GLXFBConfig config)
+XVisualInfo visualinfo;
+XVisualInfo* glXGetVisualFromFBConfig(Display *dpy, GLXFBConfig config)
 {
     args_glXGetVisualFromFBConfig argp;
-    
+
     // Set function specific args
     argp.dpy = dpy;
 	argp.config = config;
-    
-    return glxgetvisualfromfbconfig_uh(argp);
+
+    visualinfo = glxgetvisualfromfbconfig_uh(argp);
+
+    return &visualinfo;
 }
 
 // -- glXCreateNewContext
@@ -170,4 +206,17 @@ void glXSwapBuffers( Display *dpy, GLXDrawable drawable )
 	argp.drawable = drawable;
 
     glxswapbuffers_uh(argp);
+}
+
+// -- XCreateColormap
+Colormap XCreateColormap(Display *display, Window w, Visual *visual, int alloc){
+    args_XCreateColormap argp;
+
+    // Set function specific args
+    argp.display = display;
+    argp.w = w;
+    argp.visual = visual;
+    argp.alloc = alloc;
+
+    return xcreatecolormap_uh(argp);
 }

@@ -68,10 +68,33 @@ Window *xcreatewindow_lh(args_XCreateWindow *argp)
 	 unsigned int class = argp->class;;
 	 Visual *visual = argp->visual;;
 	 unsigned long valuemask = argp->valuemask;;
-	 XSetWindowAttributes *attributes = argp->attributes;;
+	 XSetWindowAttributes *attributes = &argp->attributes;;
 
     // Call actual function
     Window result = XCreateWindow(display, parent, x, y, width, height, border_width, depth, class, visual, valuemask, attributes);
+
+    // Memcopy in Buffer
+    int ret_size = sizeof(Window);
+    memcpy(ShmPTR->buffer, &result, ret_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_RETURN;
+    ShmPTR->data_type = WINDOW;
+    ShmPTR->payload_size = ret_size;
+
+    // Set status
+    ShmPTR->status = RESPONSE;
+}
+
+// -- XRootWindow
+Window *xrootwindow_lh(args_XRootWindow *argp)
+{
+    // Get function specific args
+    Display *display = argp->display;;
+    int screen_number = argp->screen_number;;
+
+    // Call actual function
+    Window result = XRootWindow(display, screen_number);
 
     // Memcopy in Buffer
     int ret_size = sizeof(Window);
@@ -110,6 +133,10 @@ int *xmapwindow_lh(args_XMapWindow *argp)
     ShmPTR->status = RESPONSE;
 }
 
+// -- Waitfornotify is the predicate
+static Bool WaitForNotify( Display *dpy, XEvent *event, XPointer arg ) {
+    return (event->type == MapNotify) && (event->xmap.window == (Window) arg);
+}
 
 // -- XIfEvent
 int *xifevent_lh(args_XIfEvent *argp)
@@ -117,11 +144,36 @@ int *xifevent_lh(args_XIfEvent *argp)
     // Get function specific args
      Display *display = argp->display;;
 	 XEvent *event_return = argp->event_return;;
-	 Bool *predicate = argp->predicate;;
+//    Bool (*predicate)() = argp->predicate;;
 	 XPointer arg  = argp->arg;;
 
+     XEvent event;
+
     // Call actual function
-    int result = XIfEvent(display, event_return, predicate, arg);
+    int result = XIfEvent(display, &event, WaitForNotify, arg);
+
+    // Memcopy in Buffer
+    int ret_size = sizeof(int);
+    memcpy(ShmPTR->buffer, &result, ret_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_RETURN;
+    ShmPTR->data_type = INT;
+    ShmPTR->payload_size = ret_size;
+
+    // Set status
+    ShmPTR->status = RESPONSE;
+}
+
+
+// -- XDefaultScreen
+int *xdefaultscreen_lh(args_XDefaultScreen *argp)
+{
+    // Get function specific args
+    Display* display = argp->display;;
+
+    // Call actual function
+    int result = XDefaultScreen(display);
 
     // Memcopy in Buffer
     int ret_size = sizeof(int);
@@ -209,18 +261,18 @@ GLXFBConfig* *glxchoosefbconfig_lh(args_glXChooseFBConfig *argp)
     	Display *dpy = argp->dpy;;
 	 int screen = argp->screen;;
 	 const int *attrib_list = argp->attrib_list;;
-	 int *nelements = argp->nelements;;
+	 int nelements = argp->nelements;;
 
     // Call actual function
-    GLXFBConfig* result = glXChooseFBConfig(dpy, screen, attrib_list, nelements);
+    GLXFBConfig* result = glXChooseFBConfig(dpy, screen, attrib_list, &nelements);
 
     // Memcopy in Buffer
-    int ret_size = sizeof(GLXFBConfig*);
-    memcpy(ShmPTR->buffer, &result, ret_size);
+    int ret_size = sizeof(GLXFBConfig);
+    memcpy(ShmPTR->buffer, result, ret_size);
 
     // Set function specific headers
     ShmPTR->message_type = FUNC_RETURN;
-    ShmPTR->data_type = GLXFBCONFIGP;
+    ShmPTR->data_type = GLXFBCONFIG;
     ShmPTR->payload_size = ret_size;
 
     // Set status
@@ -236,15 +288,15 @@ XVisualInfo* *glxgetvisualfromfbconfig_lh(args_glXGetVisualFromFBConfig *argp)
 	 GLXFBConfig config = argp->config;;
 
     // Call actual function
-    XVisualInfo* result = glXGetVisualFromFBConfig(dpy, config);
+    XVisualInfo result = *glXGetVisualFromFBConfig(dpy, config);
 
     // Memcopy in Buffer
-    int ret_size = sizeof(XVisualInfo*);
+    int ret_size = sizeof(XVisualInfo);
     memcpy(ShmPTR->buffer, &result, ret_size);
 
     // Set function specific headers
     ShmPTR->message_type = FUNC_RETURN;
-    ShmPTR->data_type = XVISUALINFOP;
+    ShmPTR->data_type = XVISUALINFO;
     ShmPTR->payload_size = ret_size;
 
     // Set status
@@ -347,6 +399,31 @@ void *glxswapbuffers_lh(args_glXSwapBuffers *argp)
     ShmPTR->message_type = FUNC_RETURN;
     ShmPTR->data_type = VOID;
     ShmPTR->payload_size = 0;
+
+    // Set status
+    ShmPTR->status = RESPONSE;
+}
+
+// -- XCreateColormap
+Colormap *xcreatecolormap_lh(args_XCreateColormap *argp)
+{
+    // Get function specific args
+    Display *display = argp->display;;
+    Window w = argp->w;;
+    Visual *visual = argp->visual;;
+    int alloc = argp->alloc;;
+
+    // Call actual function
+    Colormap result = XCreateColormap(display, w, visual, alloc);
+
+    // Memcopy in Buffer
+    int ret_size = sizeof(Colormap);
+    memcpy(ShmPTR->buffer, &result, ret_size);
+
+    // Set function specific headers
+    ShmPTR->message_type = FUNC_RETURN;
+    ShmPTR->data_type = COLORMAP;
+    ShmPTR->payload_size = ret_size;
 
     // Set status
     ShmPTR->status = RESPONSE;
@@ -455,6 +532,46 @@ void service_listener() {
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
                 break;
+
+            case XDEFAULTSCREEN: ;
+                args_XDefaultScreen argp_xdefaultscreen;
+
+                // assert payload size
+                if(ShmPTR->payload_size != sizeof(args_XDefaultScreen)){
+                    printf("Wrong payload size\n\n");
+                    ShmPTR->status = LISTEN;
+                    break;
+                }
+
+                // Memcopy from Buffer
+                memcpy(&argp_xdefaultscreen, ShmPTR->buffer, sizeof(args_XDefaultScreen));
+
+                // Execute function call
+                xdefaultscreen_lh(&argp_xdefaultscreen);
+
+                // Print
+                printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
+                break;
+
+        case XROOTWINDOW: ;
+            args_XRootWindow argp_xrootwindow;
+
+            // assert payload size
+            if(ShmPTR->payload_size != sizeof(args_XRootWindow)){
+                printf("Wrong payload size\n\n");
+                ShmPTR->status = LISTEN;
+                break;
+            }
+
+            // Memcopy from Buffer
+            memcpy(&argp_xrootwindow, ShmPTR->buffer, sizeof(args_XRootWindow));
+
+            // Execute function call
+            xrootwindow_lh(&argp_xrootwindow);
+
+            // Print
+            printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
+            break;
 
             case GLCLEARCOLOR: ;
                 args_glClearColor argp_glclearcolor;
@@ -628,6 +745,26 @@ void service_listener() {
 
                 // Execute function call
                 glxswapbuffers_lh(&argp_glxswapbuffers);
+
+                // Print
+                printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
+                break;
+
+            case XCREATECOLORMAP: ;
+                args_XCreateColormap argp_xcreatecolormap;
+
+                // assert payload size
+                if(ShmPTR->payload_size != sizeof(args_XCreateColormap)){
+                    printf("Wrong payload size\n\n");
+                    ShmPTR->status = LISTEN;
+                    break;
+                }
+
+                // Memcopy from Buffer
+                memcpy(&argp_xcreatecolormap, ShmPTR->buffer, sizeof(args_XCreateColormap));
+
+                // Execute function call
+                xcreatecolormap_lh(&argp_xcreatecolormap);
 
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);

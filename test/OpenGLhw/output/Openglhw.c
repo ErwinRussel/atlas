@@ -51,28 +51,28 @@ int main( int argc, char *argv[] )
 
     /* Request a suitable framebuffer configuration - try for a double
     ** buffered configuration first */
-    fbConfigs = glXChooseFBConfig( dpy, DefaultScreen(dpy),
+    fbConfigs = glXChooseFBConfig( dpy, XDefaultScreen(dpy),
                                    doubleBufferAttributes, &numReturned );
-
     if ( fbConfigs == NULL ) {  /* no double buffered configs available */
         printf("Fbconfigs is NULL\n");
-        fbConfigs = glXChooseFBConfig( dpy, DefaultScreen(dpy),
+        fbConfigs = glXChooseFBConfig( dpy, XDefaultScreen(dpy),
                                        singleBufferAttributess, &numReturned );
         swapFlag = False;
     }
 
     /* Create an X colormap and window with a visual matching the first
     ** returned framebuffer config */
+
     vInfo = glXGetVisualFromFBConfig( dpy, fbConfigs[0] );
 
     swa.border_pixel = 0;
     swa.event_mask = StructureNotifyMask;
-    swa.colormap = XCreateColormap( dpy, RootWindow(dpy, vInfo->screen),
+    swa.colormap = XCreateColormap( dpy, XRootWindow(dpy, vInfo->screen),
                                     vInfo->visual, AllocNone );
 
     swaMask = CWBorderPixel | CWColormap | CWEventMask;
 
-    xWin = XCreateWindow( dpy, RootWindow(dpy, vInfo->screen), 0, 0, 256, 256,
+    xWin = XCreateWindow( dpy, XRootWindow(dpy, vInfo->screen), 0, 0, 256, 256,
                           0, vInfo->depth, InputOutput, vInfo->visual,
                           swaMask, &swa );
 
@@ -86,19 +86,29 @@ int main( int argc, char *argv[] )
 
     /* Map the window to the screen, and wait for it to appear */
     XMapWindow( dpy, xWin );
+    printf("Running XIfEvent!\n");
     XIfEvent( dpy, &event, WaitForNotify, (XPointer) xWin );
+    printf("Survived XIfEvent!\n");
 
     /* Bind the GLX context to the Window */
+    printf("Running glxMakeContextCurrent!\n");
     glXMakeContextCurrent( dpy, glxWin, glxWin, context );
+    printf("Survived glxMakeContextCurrent XIfEvent!\n");
 
     /* OpenGL rendering ... */
+    printf("Running glClearColor!\n");
     glClearColor( 1.0, 1.0, 0.0, 1.0 );
+    printf("Survived glClearColor!\n");
+    printf("Running glClear!\n");
     glClear( GL_COLOR_BUFFER_BIT );
+    printf("Survived glClear!\n");
 
     glFlush();
 
     if ( swapFlag )
+        printf("Running glXSwapBuffers!\n");
         glXSwapBuffers( dpy, glxWin );
+        printf("Survived glXSwapBuffers!\n");
 
 
     while(1){

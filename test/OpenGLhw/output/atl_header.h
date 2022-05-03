@@ -24,25 +24,29 @@ typedef enum {
     XOPENDISPLAY,
 	DISPLAYP,
 	XCREATEWINDOW,
+    XROOTWINDOW,
 	WINDOW,
 	XMAPWINDOW,
 	INT,
 	XIFEVENT,
+	XDEFAULTSCREEN,
 	GLCLEARCOLOR,
 	VOID,
 	GLCLEAR,
 	GLFLUSH,
 	GLXCHOOSEFBCONFIG,
-	GLXFBCONFIGP,
+	GLXFBCONFIG,
 	GLXGETVISUALFROMFBCONFIG,
-	XVISUALINFOP,
+	XVISUALINFO,
 	GLXCREATENEWCONTEXT,
 	GLXCONTEXT,
 	GLXCREATEWINDOW,
 	GLXWINDOW,
 	GLXMAKECONTEXTCURRENT,
 	BOOL,
-	GLXSWAPBUFFERS
+	GLXSWAPBUFFERS,
+    XCREATECOLORMAP,
+    COLORMAP
 } data_types;
 
 // Create messageblock after declaration of data_types
@@ -64,10 +68,17 @@ struct args_XOpenDisplay{
 
 typedef struct args_XOpenDisplay args_XOpenDisplay;
 
+// -- XRootWindow
+struct args_XRootWindow{
+    Display *display;
+    int screen_number;
+};
+
+typedef struct args_XRootWindow args_XRootWindow;
 
 // -- XCreateWindow
 struct args_XCreateWindow{
-    Display *display;
+    Display* display;
 	 Window parent;
 	 int x;
 	 int y;
@@ -76,9 +87,9 @@ struct args_XCreateWindow{
 	 unsigned int border_width;
 	 int	depth;
 	 unsigned int class;
-	 Visual *visual;
+	 Visual* visual;
 	 unsigned long valuemask;
-	 XSetWindowAttributes *attributes;
+	 XSetWindowAttributes attributes;
 };
 
 typedef struct args_XCreateWindow args_XCreateWindow;
@@ -104,6 +115,14 @@ struct args_XIfEvent{
 typedef struct args_XIfEvent args_XIfEvent;
 
 
+// -- XDefaultScreen
+struct args_XDefaultScreen{
+    Display* display;
+};
+
+typedef struct args_XDefaultScreen args_XDefaultScreen;
+
+
 // -- glClearColor
 struct args_glClearColor{
      GLclampf red;
@@ -125,10 +144,10 @@ typedef struct args_glClear args_glClear;
 
 // -- glXChooseFBConfig
 struct args_glXChooseFBConfig{
-    	Display *dpy;
+     Display *dpy;
 	 int screen;
-	 const int *attrib_list;
-	 int *nelements;
+	 int attrib_list[13];
+	 int nelements;
 };
 
 typedef struct args_glXChooseFBConfig args_glXChooseFBConfig;
@@ -184,4 +203,14 @@ struct args_glXSwapBuffers{
 };
 
 typedef struct args_glXSwapBuffers args_glXSwapBuffers;
+
+// -- XCreateColormap
+struct args_XCreateColormap{
+    Display *display;
+    Window w;
+    Visual *visual;
+    int alloc;
+};
+
+typedef struct args_XCreateColormap args_XCreateColormap;
 
