@@ -2327,7 +2327,7 @@ Bool glxmakecurrent_uh(args_glXMakeCurrent argp)
 }
 
 // -- glXQueryExtensionsString
-char result_glxExtensionsString[128];
+char result_glxExtensionsString[1024];
 char* glxqueryextensionsstring_uh(args_glXQueryExtensionsString argp)
 {
     // Memcopy in Buffer
@@ -2367,7 +2367,6 @@ char* glxqueryextensionsstring_uh(args_glXQueryExtensionsString argp)
     }
 
     // memcopy into result
-//    char result[128];
     memcpy(&result_glxExtensionsString, ShmPTR->buffer, ret_size);
 
     // Set status to LISTEN

@@ -546,7 +546,7 @@ XVisualInfo* glXChooseVisual(Display *dpy, int screen, int *attribList)
     argp.dpy = dpy;
 	argp.screen = screen;
     // Memcpy because of array
-    memcpy(argp.attribList, attribList, sizeof(attribList));
+    memcpy(&argp.attribList, attribList, sizeof(argp.attribList));
 
     visualinfo = glxchoosevisual_uh(argp);
 

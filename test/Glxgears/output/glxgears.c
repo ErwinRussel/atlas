@@ -64,6 +64,7 @@ current_time(void)
    (void) gettimeofday(&tv, &tz);
 #endif
    return (double) tv.tv_sec + tv.tv_usec / 1000000.0;
+return 0.0;
 }
 
 #else /*BENCHMARK*/
@@ -103,7 +104,7 @@ static GLfloat angle = 0.0;
 static GLboolean fullscreen = GL_FALSE;	/* Create a single fullscreen window */
 static GLboolean stereo = GL_FALSE;	/* Enable stereo.  */
 static GLint samples = 0;               /* Choose visual with at least N samples. */
-static GLboolean animate = GL_FALSE;	/* Animation */
+static GLboolean animate = GL_TRUE;	/* Animation */
 static GLfloat eyesep = 5.0;		/* Eye separation. */
 static GLfloat fix_point = 40.0;	/* Fixation point distance.  */
 static GLfloat left, right, asp;	/* Stereo frustum params.  */
@@ -614,7 +615,6 @@ query_vsync(Display *dpy, GLXDrawable drawable)
        */
       interval = 1;
    }
-
 
    if (interval > 0) {
       printf("Running synchronized to the vertical refresh.  The framerate should be\n");

@@ -1,0 +1,39 @@
+ftok(0x407008, 120, 0x7ffc031774d8, 0x406610)                                                                                             = 0x7805394c
+shmget(0x7805394c, 2064, 950, 0)                                                                                                          = 57
+shmat(57, 0, 0, 0x7f839c11d22e)                                                                                                           = 0x7f839c3f3000
+puts("Listening...")                                                                                                                      = 13
+printf("REQUEST: Function type: %d\n", 6)                                                                                                 = 26
+XOpenDisplay(nil)                                                                                                                         = 0xabe190
+memcpy(0x7f839c3f3010, "\220\341\253\0\0\0\0\0", 8)                                                                                       = 0x7f839c3f3010
+XDefaultScreen(0xabe190, 0xabdd80, 0x4070b0, 0)                                                                                           = 0
+XRootWindow(0xabe190, 0, 0, 0)                                                                                                            = 1337
+glXChooseVisual(0xabe190, 0, 0x7ffc0317728c, 0)                                                                                           = 0xad0fc0
+XCreateColormap(0xabe190, 1337, 0xaccb70, 0)                                                                                              = 0x2400001
+XCreateWindow(0xabe190, 1337, 0, 0)                                                                                                       = 0x2400002
+XSetNormalHints(0xabe190, 0x2400002, 0x7ffc03177140, 0x2400002)                                                                           = 1
+XSetStandardProperties(0xabe190, 0x2400002, 0x7ffc03177112, 0x7ffc03177113)                                                               = 1
+glXCreateContext(0xabe190, 0x7ffc03177150, 0, 1)                                                                                          = 0xb6c9b0
+XMapWindow(0xabe190, 0x2400002)                                                                                                           = 1
+glXMakeCurrent(0xabe190, 0x2400002, 0xb6c9b0, 0x2400002)                                                                                  = 1
+glXQueryExtensionsString(0xabe190, 0, 0, 0)                                                                                               = 0xb6c720
+strcpy(0x7ffc03176da0, "GLX_ARB_context_flush_control GL"...)                                                                             = 0x7ffc03176da0
+glLightfv(0x4000, 4611, 0x7ffc03177288, 4611)                                                                                             = 0
+glEnable(2884, 0, 0x4070b0, 0)                                                                                                            = 0x7f839a07ca90
+glGenLists(1, 0, 0x4070b0, 0)                                                                                                             = 1
+glNewList(1, 4864, 4864, 0)                                                                                                               = 0xdd00b0
+glMaterialfv(1028, 5634, 0x7ffc03177288, 5634)                                                                                            = 0xde6810
+glShadeModel(7424, 0, 0x4070b0, 0)                                                                                                        = 0xde682c
+glNormal3f(0x7ffc031771d0, 0, 0, 0)                                                                                                       = 0xde6834
+glBegin(8, 0, 0x4070b0, 0)                                                                                                                = 612
+glVertex3f(0x7ffc031771d0, 0, 0x3f800000, 0)                                                                                              = 1
+glEnd(0x7ffc03176c60, 0, 0x4070b0, 0)                                                                                                     = 612
+glEndList(0x7ffc03176c60, 0, 0x4070b0, 0)                                                                                                 = 0xdbdaa0
+glViewport(0, 0, 300, 300)                                                                                                                = 0
+glMatrixMode(5889, 0, 0x4070b0, 0)                                                                                                        = 0x7f839178bc48
+glLoadIdentity(0x7ffc03176c60, 0, 0x4070b0, 0)                                                                                            = 2
+glFrustum(0x7ffc031771d0, 0, 0x404e000000000000, 0xbff0000000000000)                                                                      = 2
+glTranslatef(0x7ffc031771d0, 0, 0, 0)                                                                                                     = 1
+XNextEvent(0xabe190, 0x7ffc031774c0, 0x7ffc031774c0, 0)                                                                                   = 0
+glClear(0x4100, 0, 0x4070b0, 0 <no return ...>
+--- SIGSEGV (Segmentation fault) ---
++++ killed by SIGSEGV +++

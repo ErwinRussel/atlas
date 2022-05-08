@@ -5,6 +5,7 @@
 #include  <stdio.h>
 #include  <stdlib.h>
 #include  <string.h>
+#include  <unistd.h>
 
 // Global pointers to use from init
 key_t           ShmKEY;
@@ -36,7 +37,7 @@ GLXDrawable curdrawable;
 GLXContext curctx;
 
 // -- XDefaultScreen
-int *xdefaultscreen_lh(args_XDefaultScreen *argp)
+int xdefaultscreen_lh(args_XDefaultScreen *argp)
 {
     // Get function specific args
     Display* display = argp->display;;
@@ -55,11 +56,14 @@ int *xdefaultscreen_lh(args_XDefaultScreen *argp)
 
     // Set status
     ShmPTR->status = RESPONSE;
+
+    // Return
+    return result;
 }
 
 
 // -- XDisplayWidth
-int *xdisplaywidth_lh(args_XDisplayWidth *argp)
+int xdisplaywidth_lh(args_XDisplayWidth *argp)
 {
     // Get function specific args
     Display *display = argp->display;;
@@ -79,11 +83,14 @@ int *xdisplaywidth_lh(args_XDisplayWidth *argp)
 
     // Set status
     ShmPTR->status = RESPONSE;
+
+    // Return
+    return result;
 }
 
 
 // -- XDisplayHeight
-int *xdisplayheight_lh(args_XDisplayHeight *argp)
+int xdisplayheight_lh(args_XDisplayHeight *argp)
 {
     // Get function specific args
     Display *display = argp->display;;
@@ -103,11 +110,14 @@ int *xdisplayheight_lh(args_XDisplayHeight *argp)
 
     // Set status
     ShmPTR->status = RESPONSE;
+
+    // Return
+    return result;
 }
 
 
 // -- XRootWindow
-Window *xrootwindow_lh(args_XRootWindow *argp)
+Window xrootwindow_lh(args_XRootWindow *argp)
 {
     // Get function specific args
     Display *display = argp->display;;
@@ -127,11 +137,14 @@ Window *xrootwindow_lh(args_XRootWindow *argp)
 
     // Set status
     ShmPTR->status = RESPONSE;
+
+    // Return
+    return result;
 }
 
 
 // -- XOpenDisplay
-Display* *xopendisplay_lh(args_XOpenDisplay *argp)
+Display* xopendisplay_lh(args_XOpenDisplay *argp)
 {
     // Get function specific args
     _Xconst char *display_name = argp->display_name;;
@@ -150,11 +163,14 @@ Display* *xopendisplay_lh(args_XOpenDisplay *argp)
 
     // Set status
     ShmPTR->status = RESPONSE;
+
+    // Return
+    return result;
 }
 
 
 // -- XCreateColormap
-Colormap *xcreatecolormap_lh(args_XCreateColormap *argp)
+Colormap xcreatecolormap_lh(args_XCreateColormap *argp)
 {
     // Get function specific args
     Display* display = argp->display;;
@@ -176,11 +192,14 @@ Colormap *xcreatecolormap_lh(args_XCreateColormap *argp)
 
     // Set status
     ShmPTR->status = RESPONSE;
+
+    // Return
+    return result;
 }
 
 
 // -- XCreateWindow
-Window *xcreatewindow_lh(args_XCreateWindow *argp)
+Window xcreatewindow_lh(args_XCreateWindow *argp)
 {
     // Get function specific args
     Display* display = argp->display;;
@@ -210,11 +229,14 @@ Window *xcreatewindow_lh(args_XCreateWindow *argp)
 
     // Set status
     ShmPTR->status = RESPONSE;
+
+    // Return
+    return result;
 }
 
 
 // -- XInternAtom
-Atom *xinternatom_lh(args_XInternAtom *argp)
+Atom xinternatom_lh(args_XInternAtom *argp)
 {
     // Get function specific args
     Display *display = argp->display;;
@@ -235,11 +257,14 @@ Atom *xinternatom_lh(args_XInternAtom *argp)
 
     // Set status
     ShmPTR->status = RESPONSE;
+
+    // Return
+    return result;
 }
 
 
 // -- XChangeProperty
-int *xchangeproperty_lh(args_XChangeProperty *argp)
+int xchangeproperty_lh(args_XChangeProperty *argp)
 {
     // Get function specific args
     Display *display = argp->display;;
@@ -265,11 +290,14 @@ int *xchangeproperty_lh(args_XChangeProperty *argp)
 
     // Set status
     ShmPTR->status = RESPONSE;
+
+    // Return
+    return result;
 }
 
 
 // -- XSetNormalHints
-int *xsetnormalhints_lh(args_XSetNormalHints *argp)
+int xsetnormalhints_lh(args_XSetNormalHints *argp)
 {
     // Get function specific args
     Display *display = argp->display;;
@@ -290,11 +318,14 @@ int *xsetnormalhints_lh(args_XSetNormalHints *argp)
 
     // Set status
     ShmPTR->status = RESPONSE;
+
+    // Return
+    return result;
 }
 
 
 // -- XSetStandardProperties
-int *xsetstandardproperties_lh(args_XSetStandardProperties *argp)
+int xsetstandardproperties_lh(args_XSetStandardProperties *argp)
 {
     // Get function specific args
     Display *display = argp->display;;
@@ -302,7 +333,7 @@ int *xsetstandardproperties_lh(args_XSetStandardProperties *argp)
 	 _Xconst char window_name = argp->window_name;;
 	 _Xconst char icon_name = argp->icon_name;;
 	 Pixmap icon_pixmap = argp->icon_pixmap;;
-	 char** argv = argp->argv;;
+//	 char** argv = argp->argv;;
 	 int argc = argp->argc;;
 	 XSizeHints hints = argp->hints;;
     // Call actual function
@@ -319,11 +350,14 @@ int *xsetstandardproperties_lh(args_XSetStandardProperties *argp)
 
     // Set status
     ShmPTR->status = RESPONSE;
+
+    // Return
+    return result;
 }
 
 
 // -- XFree
-int *xfree_lh(args_XFree *argp)
+int xfree_lh(args_XFree *argp)
 {
 //    // Get function specific args
 //    void* data = argp->data;;
@@ -342,11 +376,14 @@ int *xfree_lh(args_XFree *argp)
 //
 //    // Set status
 //    ShmPTR->status = RESPONSE;
+
+    // Return
+    return 0;
 }
 
 
 // -- XMapWindow
-int *xmapwindow_lh(args_XMapWindow *argp)
+int xmapwindow_lh(args_XMapWindow *argp)
 {
     // Get function specific args
     Display *display = argp->display;;
@@ -366,11 +403,14 @@ int *xmapwindow_lh(args_XMapWindow *argp)
 
     // Set status
     ShmPTR->status = RESPONSE;
+
+    // Return
+    return result;
 }
 
 
 // -- XPending
-int *xpending_lh(args_XPending *argp)
+int xpending_lh(args_XPending *argp)
 {
     // Get function specific args
     Display *display = argp->display;;
@@ -389,6 +429,9 @@ int *xpending_lh(args_XPending *argp)
 
     // Set status
     ShmPTR->status = RESPONSE;
+
+    // Return
+    return result;
 }
 
 
@@ -397,7 +440,7 @@ XEvent *xnextevent_lh(args_XNextEvent *argp)
 {
     // Get function specific args
     Display *display = argp->display;;
-    XEvent *event_return;
+    XEvent *event_return = malloc(sizeof(XEvent));
 
     // Call actual function
     XNextEvent(display, event_return);
@@ -413,11 +456,14 @@ XEvent *xnextevent_lh(args_XNextEvent *argp)
 
     // Set status
     ShmPTR->status = RESPONSE;
+
+    // Return
+    return event_return;
 }
 
 
 // -- XLookupKeysym
-KeySym *xlookupkeysym_lh(args_XLookupKeysym *argp)
+KeySym xlookupkeysym_lh(args_XLookupKeysym *argp)
 {
     // Get function specific args
     XKeyEvent *key_event = argp->key_event;;
@@ -437,11 +483,14 @@ KeySym *xlookupkeysym_lh(args_XLookupKeysym *argp)
 
     // Set status
     ShmPTR->status = RESPONSE;
+
+    // Return
+    return result;
 }
 
 
 // -- XLookupString
-int *xlookupstring_lh(args_XLookupString *argp)
+int xlookupstring_lh(args_XLookupString *argp)
 {
     // Get function specific args
     XKeyEvent *event_struct = argp->event_struct;;
@@ -464,11 +513,14 @@ int *xlookupstring_lh(args_XLookupString *argp)
 
     // Set status
     ShmPTR->status = RESPONSE;
+
+    // Return
+    return result;
 }
 
 
 // -- XDestroyWindow
-int *xdestroywindow_lh(args_XDestroyWindow *argp)
+int xdestroywindow_lh(args_XDestroyWindow *argp)
 {
     // Get function specific args
     Display *display = argp->display;;
@@ -488,14 +540,17 @@ int *xdestroywindow_lh(args_XDestroyWindow *argp)
 
     // Set status
     ShmPTR->status = RESPONSE;
+
+    // Return
+    return result;
 }
 
 
 // -- glGetString
-GLubyte* *glgetstring_lh(args_glGetString *argp)
+GLubyte* glgetstring_lh(args_glGetString *argp)
 {
     // Get function specific args
-    	GLenum name = argp->name;;
+    GLenum name = argp->name;;
 
     // Call actual function
     const GLubyte* result = glGetString(name);
@@ -511,11 +566,14 @@ GLubyte* *glgetstring_lh(args_glGetString *argp)
 
     // Set status
     ShmPTR->status = RESPONSE;
+
+    // Return
+    return (GLubyte*) result;
 }
 
 
 // -- glLightfv
-void *gllightfv_lh(args_glLightfv *argp)
+void gllightfv_lh(args_glLightfv *argp)
 {
     // Get function specific args
      GLenum light = argp->light;;
@@ -538,7 +596,7 @@ void *gllightfv_lh(args_glLightfv *argp)
 
 
 // -- glEnable
-void *glenable_lh(args_glEnable *argp)
+void glenable_lh(args_glEnable *argp)
 {
     // Get function specific args
      GLenum cap  = argp->cap;;
@@ -559,7 +617,7 @@ void *glenable_lh(args_glEnable *argp)
 
 
 // -- glGenLists
-GLuint *glgenlists_lh(args_glGenLists *argp)
+GLuint glgenlists_lh(args_glGenLists *argp)
 {
     // Get function specific args
      GLsizei range  = argp->range;;
@@ -578,11 +636,14 @@ GLuint *glgenlists_lh(args_glGenLists *argp)
 
     // Set status
     ShmPTR->status = RESPONSE;
+
+    // Return
+    return result;
 }
 
 
 // -- glNewList
-void *glnewlist_lh(args_glNewList *argp)
+void glnewlist_lh(args_glNewList *argp)
 {
     // Get function specific args
      GLuint list = argp->list;;
@@ -604,7 +665,7 @@ void *glnewlist_lh(args_glNewList *argp)
 
 
 // -- glMaterialfv
-void *glmaterialfv_lh(args_glMaterialfv *argp)
+void glmaterialfv_lh(args_glMaterialfv *argp)
 {
     // Get function specific args
      GLenum face = argp->face;;
@@ -627,7 +688,7 @@ void *glmaterialfv_lh(args_glMaterialfv *argp)
 
 
 // -- glEndList
-void *glendlist_lh()
+void glendlist_lh()
 {
     // No function specific args
 
@@ -647,7 +708,7 @@ void *glendlist_lh()
 
 
 // -- glShadeModel
-void *glshademodel_lh(args_glShadeModel *argp)
+void glshademodel_lh(args_glShadeModel *argp)
 {
     // Get function specific args
      GLenum mode  = argp->mode;;
@@ -668,7 +729,7 @@ void *glshademodel_lh(args_glShadeModel *argp)
 
 
 // -- glNormal3f
-void *glnormal3f_lh(args_glNormal3f *argp)
+void glnormal3f_lh(args_glNormal3f *argp)
 {
     // Get function specific args
      GLfloat nx = argp->nx;;
@@ -691,7 +752,7 @@ void *glnormal3f_lh(args_glNormal3f *argp)
 
 
 // -- glBegin
-void *glbegin_lh(args_glBegin *argp)
+void glbegin_lh(args_glBegin *argp)
 {
     // Get function specific args
      GLenum mode  = argp->mode;;
@@ -712,7 +773,7 @@ void *glbegin_lh(args_glBegin *argp)
 
 
 // -- glVertex3f
-void *glvertex3f_lh(args_glVertex3f *argp)
+void glvertex3f_lh(args_glVertex3f *argp)
 {
     // Get function specific args
      GLfloat x = argp->x;;
@@ -735,7 +796,7 @@ void *glvertex3f_lh(args_glVertex3f *argp)
 
 
 // -- glEnd
-void *glend_lh()
+void glend_lh()
 {
     // No function specific args
 
@@ -755,7 +816,7 @@ void *glend_lh()
 
 
 // -- glViewport
-void *glviewport_lh(args_glViewport *argp)
+void glviewport_lh(args_glViewport *argp)
 {
     // Get function specific args
      GLint x = argp->x;;
@@ -779,7 +840,7 @@ void *glviewport_lh(args_glViewport *argp)
 
 
 // -- glMatrixMode
-void *glmatrixmode_lh(args_glMatrixMode *argp)
+void glmatrixmode_lh(args_glMatrixMode *argp)
 {
     // Get function specific args
      GLenum mode  = argp->mode;;
@@ -800,7 +861,7 @@ void *glmatrixmode_lh(args_glMatrixMode *argp)
 
 
 // -- glLoadIdentity
-void *glloadidentity_lh()
+void glloadidentity_lh()
 {
     // No function specific args
 
@@ -820,7 +881,7 @@ void *glloadidentity_lh()
 
 
 // -- glFrustum
-void *glfrustum_lh(args_glFrustum *argp)
+void glfrustum_lh(args_glFrustum *argp)
 {
     // Get function specific args
      GLdouble left = argp->left;;
@@ -846,7 +907,7 @@ void *glfrustum_lh(args_glFrustum *argp)
 
 
 // -- glTranslatef
-void *gltranslatef_lh(args_glTranslatef *argp)
+void gltranslatef_lh(args_glTranslatef *argp)
 {
     // Get function specific args
      GLfloat x = argp->x;;
@@ -869,7 +930,7 @@ void *gltranslatef_lh(args_glTranslatef *argp)
 
 
 // -- glDrawBuffer
-void *gldrawbuffer_lh(args_glDrawBuffer *argp)
+void gldrawbuffer_lh(args_glDrawBuffer *argp)
 {
     // Get function specific args
      GLenum mode  = argp->mode;;
@@ -890,7 +951,7 @@ void *gldrawbuffer_lh(args_glDrawBuffer *argp)
 
 
 // -- glPushMatrix
-void *glpushmatrix_lh()
+void glpushmatrix_lh()
 {
     // No function specific args
 
@@ -910,7 +971,7 @@ void *glpushmatrix_lh()
 
 
 // -- glPopMatrix
-void *glpopmatrix_lh()
+void glpopmatrix_lh()
 {
     // No function specific args
 
@@ -930,7 +991,7 @@ void *glpopmatrix_lh()
 
 
 // -- glTranslated
-void *gltranslated_lh(args_glTranslated *argp)
+void gltranslated_lh(args_glTranslated *argp)
 {
     // Get function specific args
      GLdouble x = argp->x;;
@@ -953,7 +1014,7 @@ void *gltranslated_lh(args_glTranslated *argp)
 
 
 // -- glClear
-void *glclear_lh(args_glClear *argp)
+void glclear_lh(args_glClear *argp)
 {
     // Get function specific args
      GLbitfield mask  = argp->mask;
@@ -973,7 +1034,7 @@ void *glclear_lh(args_glClear *argp)
 
 
 // -- glRotatef
-void *glrotatef_lh(args_glRotatef *argp)
+void glrotatef_lh(args_glRotatef *argp)
 {
     // Get function specific args
      GLfloat angle = argp->angle;;
@@ -997,7 +1058,7 @@ void *glrotatef_lh(args_glRotatef *argp)
 
 
 // -- glCallList
-void *glcalllist_lh(args_glCallList *argp)
+void glcalllist_lh(args_glCallList *argp)
 {
     // Get function specific args
      GLuint list  = argp->list;;
@@ -1018,7 +1079,7 @@ void *glcalllist_lh(args_glCallList *argp)
 
 
 // -- glDeleteLists
-void *gldeletelists_lh(args_glDeleteLists *argp)
+void gldeletelists_lh(args_glDeleteLists *argp)
 {
     // Get function specific args
      GLuint list = argp->list;;
@@ -1040,7 +1101,7 @@ void *gldeletelists_lh(args_glDeleteLists *argp)
 
 
 // -- glXDestroyContext
-void *glxdestroycontext_lh(args_glXDestroyContext *argp)
+void glxdestroycontext_lh(args_glXDestroyContext *argp)
 {
     // Get function specific args
      Display *dpy = argp->dpy;;
@@ -1062,7 +1123,7 @@ void *glxdestroycontext_lh(args_glXDestroyContext *argp)
 
 
 // -- glXChooseVisual
-XVisualInfo* *glxchoosevisual_lh(args_glXChooseVisual *argp)
+XVisualInfo glxchoosevisual_lh(args_glXChooseVisual *argp)
 {
     // Get function specific args
     Display *dpy = argp->dpy;;
@@ -1083,11 +1144,14 @@ XVisualInfo* *glxchoosevisual_lh(args_glXChooseVisual *argp)
 
     // Set status
     ShmPTR->status = RESPONSE;
+
+    // Return
+    return result;
 }
 
 
 // -- glXCreateContext
-GLXContext *glxcreatecontext_lh(args_glXCreateContext *argp)
+GLXContext glxcreatecontext_lh(args_glXCreateContext *argp)
 {
     // Get function specific args
     Display *dpy = argp->dpy;;
@@ -1109,11 +1173,14 @@ GLXContext *glxcreatecontext_lh(args_glXCreateContext *argp)
 
     // Set status
     ShmPTR->status = RESPONSE;
+
+    // Return
+    return result;
 }
 
 
 // -- glXMakeCurrent
-Bool *glxmakecurrent_lh(args_glXMakeCurrent *argp)
+Bool glxmakecurrent_lh(args_glXMakeCurrent *argp)
 {
     // Get function specific args
     Display* dpy = argp->dpy;;
@@ -1139,11 +1206,14 @@ Bool *glxmakecurrent_lh(args_glXMakeCurrent *argp)
 
     // Set status
     ShmPTR->status = RESPONSE;
+
+    // Return
+    return result;
 }
 
 
 // -- glXQueryExtensionsString
-char* *glxqueryextensionsstring_lh(args_glXQueryExtensionsString *argp)
+char* glxqueryextensionsstring_lh(args_glXQueryExtensionsString *argp)
 {
     // Get function specific args
      Display *dpy = argp->dpy;;
@@ -1165,11 +1235,14 @@ char* *glxqueryextensionsstring_lh(args_glXQueryExtensionsString *argp)
 
     // Set status
     ShmPTR->status = RESPONSE;
+
+    // Return
+    return (char*) result;
 }
 
 
 // -- glXQueryDrawable
-void *glxquerydrawable_lh(args_glXQueryDrawable *argp)
+void glxquerydrawable_lh(args_glXQueryDrawable *argp)
 {
     // Get function specific args
     Display *dpy = argp->dpy;;
@@ -1193,7 +1266,7 @@ void *glxquerydrawable_lh(args_glXQueryDrawable *argp)
 
 
 // -- glXGetProcAddressARB
-__GLXextFuncPtr *glxgetprocaddressarb_lh(args_glXGetProcAddressARB *argp)
+__GLXextFuncPtr glxgetprocaddressarb_lh(args_glXGetProcAddressARB *argp)
 {
     // Get function specific args
     const GLubyte *procname = argp->procname;;
@@ -1212,11 +1285,14 @@ __GLXextFuncPtr *glxgetprocaddressarb_lh(args_glXGetProcAddressARB *argp)
 
     // Set status
     ShmPTR->status = RESPONSE;
+
+    // Return
+    return result;
 }
 
 
 // -- glXSwapBuffers
-void *glxswapbuffers_lh(args_glXSwapBuffers *argp)
+void glxswapbuffers_lh(args_glXSwapBuffers *argp)
 {
     // Get function specific args
      Display *dpy = argp->dpy;;
