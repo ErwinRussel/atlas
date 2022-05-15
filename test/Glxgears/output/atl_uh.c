@@ -5,7 +5,7 @@
 #include  <stdio.h>
 #include  <stdlib.h>
 #include  <signal.h>
-//#include  <criu/criu.h>
+#include  <criu/criu.h>
 #include  <string.h>
 #include  <fcntl.h>
 
@@ -23,7 +23,7 @@ void criu_signal_handler(){{
     shmdt((void *) ShmPTR);
 
     // call criu dump for checkpoint
-//    criu_dump();
+    criu_dump();
 
     // We restore after the previous call - reattaching memories
     printf("Reattaching memory\n");
@@ -36,19 +36,19 @@ void init(){{
     signal(SIGUSR1, criu_signal_handler);
 
     // Setup criu stuff
-    int fd = open("/home/erwinrussel/CLionProjects/atlas/checkpoints", O_DIRECTORY);
-//    criu_init_opts();
-//    criu_set_images_dir_fd(fd); /* must be set for dump/restore */
-//    criu_set_shell_job(True);
-//    criu_set_leave_running(False);
-//    criu_set_log_level(4);
-//    criu_set_log_file("criu.log");
+    int fd = open("/home/erwinrussel/Documents/atlas/test/Glxgears/output/checkpoints", O_DIRECTORY);
+    criu_init_opts();
+    criu_set_images_dir_fd(fd); /* must be set for dump/restore */
+    criu_set_shell_job(True);
+    criu_set_leave_running(False);
+    criu_set_log_level(4);
+    criu_set_log_file("criu.log");
 
     // Bind to the shared memory file
     ShmKEY = ftok(".", 'x');
 
     // Get SysV ID for block to use with shmat etc.
-    ShmID = shmget(ShmKEY, sizeof(struct MsgBlock),0666);
+    ShmID = shmget(ShmKEY, sizeof(struct MsgBlock),IPC_CREAT | 0666);
     if (ShmID < 0) {{
         printf("*** shmget error (server) ***\n");
         exit(1);

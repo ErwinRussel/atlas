@@ -1,18 +1,27 @@
-
 #include  "atl_header.h"
 #include  <sys/ipc.h>
 #include  <sys/shm.h>
 #include  <stdio.h>
 #include  <stdlib.h>
 #include  <string.h>
+#include  "replay.h"
 
 // Global pointers to use from init
 key_t           ShmKEY;
 int             ShmID;
 struct MsgBlock *ShmPTR;
+FILE *file;
+
+// Set replay
+int replay = 0; // todo: make this boolean
+int restored = 0;
+char* filename;
+
+// Destructor
+__attribute__((destructor)) void loginevent (void);
 
 // Constructor
-void init(){
+void init_shmem(){
     // Bind to the shared memory file
     ShmKEY = ftok(".", 'x');
 
@@ -25,20 +34,60 @@ void init(){
 
     // Attach to pointer
     ShmPTR = (struct MsgBlock *) shmat(ShmID, NULL, 0);
+}
+
+void setstatus(){
+    // Open file for logging todo: if replay we append to the file
+    if(restored){
+        file = fopen(filename, "ab");
+        if(file == NULL){
+            printf("Could not open file: %s", filename);
+            exit(1);
+        }
+    } else {
+        file = fopen("calllog.bin", "wb");
+    }
+
+    if(file == NULL) printf("Could not open file for logging\n");
 
     // Set status to LISTEN
-    ShmPTR->status = LISTEN;
+    if(ShmPTR->status != RESPONSE)
+        ShmPTR->status = LISTEN;
 }
 
 // Logging
-int logfunction(){
-    
+int logblock(){
+    struct StrgBlock strgblock;
+    strgblock.message_type = ShmPTR->message_type;
+    strgblock.data_type = ShmPTR->data_type;
+    strgblock.payload_size = ShmPTR->payload_size;
+    // memcpy because of array
+    memcpy(&strgblock.buffer, ShmPTR->buffer, strgblock.payload_size);
+    if(fwrite(&strgblock, sizeof(struct StrgBlock), 1, file) != 1){
+        printf("Logging function failed, closing log\n");
+        fclose(file);
+    }
 }
 
-
-
-
+// Specialized function to log the last Xevent if it is called.
+void loginevent(){
+    if(ShmPTR->message_type == FUNC_CALL && ShmPTR->data_type == XNEXTEVENT)
+        logblock();
+}
 // Sets of functions
+
+// -- General Response
+int send_response(int data_type, int ret_size, int log){
+    ShmPTR->message_type = FUNC_RETURN;
+    ShmPTR->data_type = data_type;
+    ShmPTR->payload_size = ret_size;
+
+    // Log response
+    if(log) logblock();
+
+    // Set status
+    ShmPTR->status = RESPONSE;
+}
 
 // -- XOpenDisplay
 Display* xopendisplay_lh(args_XOpenDisplay *argp)
@@ -49,17 +98,16 @@ Display* xopendisplay_lh(args_XOpenDisplay *argp)
     // Call actual function
     Display* result = XOpenDisplay(display_name);
 
-    // Memcopy in Buffer
-    int ret_size = sizeof(Display*);
-    memcpy(ShmPTR->buffer, &result, ret_size);
+    if(!replay){
+        // Memcopy in Buffer
+        int ret_size = sizeof(Display*);
+        memcpy(ShmPTR->buffer, &result, ret_size);
 
-    // Set function specific headers
-    ShmPTR->message_type = FUNC_RETURN;
-    ShmPTR->data_type = DISPLAYP;
-    ShmPTR->payload_size = ret_size;
+        // Send response
+        send_response(DISPLAYP, ret_size, 1);
+    }
 
-    // Set status
-    ShmPTR->status = RESPONSE;
+    return result;
 }
 
 
@@ -68,29 +116,28 @@ Window xcreatesimplewindow_lh(args_XCreateSimpleWindow *argp)
 {
     // Get function specific args
     Display *display = argp->display;;
-	 Window parent = argp->parent;;
-	 int x = argp->x;;
-	 int y = argp->y;;
-	 unsigned int width = argp->width;;
-	 unsigned int height = argp->height;;
-	 unsigned int border_width = argp->border_width;;
-	 unsigned long border = argp->border;;
-	 unsigned long background = argp->background;;
+    Window parent = argp->parent;;
+    int x = argp->x;;
+    int y = argp->y;;
+    unsigned int width = argp->width;;
+    unsigned int height = argp->height;;
+    unsigned int border_width = argp->border_width;;
+    unsigned long border = argp->border;;
+    unsigned long background = argp->background;;
 
     // Call actual function
     Window result = XCreateSimpleWindow(display, parent, x, y, width, height, border_width, border, background);
 
-    // Memcopy in Buffer
-    int ret_size = sizeof(Window);
-    memcpy(ShmPTR->buffer, &result, ret_size);
+    if(!replay){
+        // Memcopy in Buffer
+        int ret_size = sizeof(Window);
+        memcpy(ShmPTR->buffer, &result, ret_size);
 
-    // Set function specific headers
-    ShmPTR->message_type = FUNC_RETURN;
-    ShmPTR->data_type = WINDOW;
-    ShmPTR->payload_size = ret_size;
+        // Send response
+        send_response(WINDOW, ret_size, 1);
+    }
 
-    // Set status
-    ShmPTR->status = RESPONSE;
+    return result;
 }
 
 
@@ -99,22 +146,21 @@ int xmapwindow_lh(args_XMapWindow *argp)
 {
     // Get function specific args
     Display *display = argp->display;;
-	 Window w = argp->w;;
+    Window w = argp->w;;
 
     // Call actual function
     int result = XMapWindow(display, w);
 
-    // Memcopy in Buffer
-    int ret_size = sizeof(int);
-    memcpy(ShmPTR->buffer, &result, ret_size);
+    if(!replay){
+        // Memcopy in Buffer
+        int ret_size = sizeof(int);
+        memcpy(ShmPTR->buffer, &result, ret_size);
 
-    // Set function specific headers
-    ShmPTR->message_type = FUNC_RETURN;
-    ShmPTR->data_type = INT;
-    ShmPTR->payload_size = ret_size;
+        // Send response
+        send_response(INT, ret_size, 1);
+    }
 
-    // Set status
-    ShmPTR->status = RESPONSE;
+    return result;
 }
 
 
@@ -123,23 +169,22 @@ int xselectinput_lh(args_XSelectInput *argp)
 {
     // Get function specific args
     Display *display = argp->display;;
-	 Window w = argp->w;;
-	 long event_mask = argp->event_mask;;
+    Window w = argp->w;;
+    long event_mask = argp->event_mask;;
 
     // Call actual function
     int result = XSelectInput(display, w, event_mask);
 
-    // Memcopy in Buffer
-    int ret_size = sizeof(int);
-    memcpy(ShmPTR->buffer, &result, ret_size);
+    if(!replay){
+        // Memcopy in Buffer
+        int ret_size = sizeof(int);
+        memcpy(ShmPTR->buffer, &result, ret_size);
 
-    // Set function specific headers
-    ShmPTR->message_type = FUNC_RETURN;
-    ShmPTR->data_type = INT;
-    ShmPTR->payload_size = ret_size;
+        // Send response
+        send_response(INT, ret_size, 1);
+    }
 
-    // Set status
-    ShmPTR->status = RESPONSE;
+    return result;
 }
 
 
@@ -147,23 +192,20 @@ int xselectinput_lh(args_XSelectInput *argp)
 XEvent xnextevent_lh(args_XNextEvent *argp)
 {
     // Get function specific args
-    Display *display = argp->display;;
-    XEvent *event_return;
+    Display *display = argp->display;
+    XEvent *result = malloc(sizeof(XEvent));
 
     // Call actual function
-    XNextEvent(display, event_return);
+    XNextEvent(display, result);
 
-    // Memcopy in Buffer
+    // We always do nextevent, because last in line
     int ret_size = sizeof(XEvent);
-    memcpy(ShmPTR->buffer, event_return, ret_size);
+    memcpy(ShmPTR->buffer, result, ret_size);
 
-    // Set function specific headers
-    ShmPTR->message_type = FUNC_RETURN;
-    ShmPTR->data_type = XEVENT;
-    ShmPTR->payload_size = ret_size;
+    // Send response
+    send_response(XEVENT, ret_size, 0);
 
-    // Set status
-    ShmPTR->status = RESPONSE;
+    return *result;
 }
 
 
@@ -176,17 +218,16 @@ Window xdefaultrootwindow_lh(args_XDefaultRootWindow *argp)
     // Call actual function
     Window result = XDefaultRootWindow(display);
 
-    // Memcopy in Buffer
-    int ret_size = sizeof(Window);
-    memcpy(ShmPTR->buffer, &result, ret_size);
+    if(!replay){
+        // Memcopy in Buffer
+        int ret_size = sizeof(Window);
+        memcpy(ShmPTR->buffer, &result, ret_size);
 
-    // Set function specific headers
-    ShmPTR->message_type = FUNC_RETURN;
-    ShmPTR->data_type = WINDOW;
-    ShmPTR->payload_size = ret_size;
+        // Send response
+        send_response(WINDOW, ret_size, 1);
+    }
 
-    // Set status
-    ShmPTR->status = RESPONSE;
+    return result;
 }
 
 
@@ -212,7 +253,7 @@ void service_listener() {
         // Call function from desired function type
         switch (func_type)
         {
-            
+
             case XOPENDISPLAY: ;
                 args_XOpenDisplay argp_xopendisplay;
 
@@ -227,7 +268,9 @@ void service_listener() {
                 memcpy(&argp_xopendisplay, ShmPTR->buffer, sizeof(args_XOpenDisplay));
 
                 // Execute function call
-                xopendisplay_lh(&argp_xopendisplay);
+                logblock();
+
+                cur_display = xopendisplay_lh(&argp_xopendisplay);
 
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
@@ -247,7 +290,13 @@ void service_listener() {
                 memcpy(&argp_xcreatesimplewindow, ShmPTR->buffer, sizeof(args_XCreateSimpleWindow));
 
                 // Execute function call
-                xcreatesimplewindow_lh(&argp_xcreatesimplewindow);
+                if(restored){
+                    argp_xcreatesimplewindow.display = cur_display;
+                }
+
+                logblock();
+
+                cur_window = xcreatesimplewindow_lh(&argp_xcreatesimplewindow);
 
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
@@ -267,6 +316,13 @@ void service_listener() {
                 memcpy(&argp_xmapwindow, ShmPTR->buffer, sizeof(args_XMapWindow));
 
                 // Execute function call
+                if(restored){
+                    argp_xmapwindow.display = cur_display;
+                    argp_xmapwindow.w = cur_window;
+                }
+
+                logblock();
+
                 xmapwindow_lh(&argp_xmapwindow);
 
                 // Print
@@ -287,13 +343,19 @@ void service_listener() {
                 memcpy(&argp_xselectinput, ShmPTR->buffer, sizeof(args_XSelectInput));
 
                 // Execute function call
+                if(restored){
+                    argp_xmapwindow.display = cur_display;
+                    argp_xmapwindow.w = cur_window;
+                }
+
+                logblock();
+
                 xselectinput_lh(&argp_xselectinput);
 
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
                 break;
 
-            // todo: we do not log this
             case XNEXTEVENT: ;
                 args_XNextEvent argp_xnextevent;
 
@@ -308,6 +370,10 @@ void service_listener() {
                 memcpy(&argp_xnextevent, ShmPTR->buffer, sizeof(args_XNextEvent));
 
                 // Execute function call
+                if(restored){
+                    argp_xnextevent.display = cur_display;
+                }
+
                 xnextevent_lh(&argp_xnextevent);
 
                 // Print
@@ -328,7 +394,13 @@ void service_listener() {
                 memcpy(&argp_xdefaultrootwindow, ShmPTR->buffer, sizeof(args_XDefaultRootWindow));
 
                 // Execute function call
-                xdefaultrootwindow_lh(&argp_xdefaultrootwindow);
+                if(restored){
+                    argp_xdefaultrootwindow.display = cur_display;
+                }
+
+                logblock();
+
+                cur_root_window = xdefaultrootwindow_lh(&argp_xdefaultrootwindow);
 
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
@@ -345,7 +417,36 @@ void service_listener() {
 }
 
 int main(int  argc, char *argv[]){
-    init();
+    init_shmem();
+    if( argc == 3 ) {
+      if(!strcmp(argv[1],"replay")){
+          filename = argv[2];
+          replay = 1;
+      } else {
+          printf("Unknown command %s\n", argv[1]);
+          exit(1);
+      }
+    } else if( argc == 2) {
+        if(!strcmp(argv[1],"replay")){
+            printf("usage: atl_lh replay <filepath>\n");
+            exit(1);
+        } else {
+            printf("Unknown command %s\n", argv[1]);
+            exit(1);
+        }
+    }
+
+    if(replay){
+        restored = 1;
+        printf("RESTORE: Replaying log\n");
+        replay_log(argv[2]);
+        printf("RESTORE: Done\n");
+        replay = 0;
+    }
+
+    // Init if the ptr does not exits, small thing because of sync
+    setstatus();
     service_listener();
+    fclose(file);
     return 0;
 }

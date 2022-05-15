@@ -162,3 +162,5 @@ cython_debug/
 test/Xhw/output/atl_lh
 test/Xhw/output/Xhw
 test/Glxgears/output/glxgears
+/test/Glxgears/output/checkpoints/
+/test/Xhw/dev/checkpoints/
