@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include "atl_lh.h"
 
+// Translation global vars
 Display* cur_display;
 Window cur_window;
 Window cur_root_window;
@@ -195,14 +196,4 @@ int replay_log(char *filename) {
     }
 }
 
-//int main(){
-//    if(open_file()) return 1;
-//    replay_log();
-//    XEvent event;
-//    while (True) {
-//        XNextEvent(cur_display, &event);
-//        printf("%d\n", event.type);
-//    }
-//    return 0;
-//}
 
