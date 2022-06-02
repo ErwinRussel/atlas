@@ -164,3 +164,6 @@ test/Xhw/output/Xhw
 test/Glxgears/output/glxgears
 /test/Glxgears/output/checkpoints/
 /test/Xhw/dev/checkpoints/
+nohup.out
+calllog.bin
+strangle.prom

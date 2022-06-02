@@ -420,6 +420,7 @@ int xmapwindow_lh(args_XMapWindow *argp)
 	 Window w = argp->w;;
 
     // Call actual function
+    printf("Next call should fail\n");
     int result = XMapWindow(display, w);
 
      if(!replay){
@@ -992,7 +993,6 @@ XVisualInfo glxchoosevisual_lh(args_glXChooseVisual *argp)
     Display *dpy = argp->dpy;;
 	 int screen = argp->screen;;
 	 int *attribList = argp->attribList;;
-
     // Call actual function
     XVisualInfo result = *glXChooseVisual(dpy, screen, attribList);
 
@@ -2097,7 +2097,7 @@ void service_listener() {
                 // Execute function call
                 logblock();
                 glxchoosevisual_lh(&argp_glxchoosevisual);
-
+                sleep(10);
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
                 break;

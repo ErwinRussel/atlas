@@ -15,6 +15,7 @@ XVisualInfo* cur_vis_info_p;
 int cur_default_screen;
 Colormap cur_colormap;
 GLXContext cur_context;
+XSizeHints cur_hints;
 
 // Expose replay function
 int replay_log();

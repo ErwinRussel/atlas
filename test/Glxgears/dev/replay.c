@@ -180,9 +180,9 @@ int replay_log(char *filename) {
 
                 // Execute function call
                 argp_xcreatecolormap.display = cur_display_p;
-                argp_xcreatecolormap.w = cur_window;
+                argp_xcreatecolormap.w = cur_root_window;
                 argp_xcreatecolormap.visual = cur_vis_info_p->visual;
-                xcreatecolormap_lh(&argp_xcreatecolormap);
+                cur_colormap = xcreatecolormap_lh(&argp_xcreatecolormap);
 
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", resp.data_type);
@@ -204,6 +204,7 @@ int replay_log(char *filename) {
                 argp_xcreatewindow.display = cur_display_p;
                 argp_xcreatewindow.visual = cur_vis_info_p->visual;
                 argp_xcreatewindow.attributes.colormap = cur_colormap;
+                argp_xcreatewindow.parent = cur_root_window;
                 cur_window = xcreatewindow_lh(&argp_xcreatewindow);
 
                 // Print
@@ -261,15 +262,16 @@ int replay_log(char *filename) {
                 memcpy(&argp_xsetnormalhints, call.buffer, sizeof(args_XSetNormalHints));
 
                 // Execute function call
+                argp_xsetnormalhints.display = cur_display_p;
+                argp_xsetnormalhints.w = cur_window;
                 xsetnormalhints_lh(&argp_xsetnormalhints);
+                cur_hints = argp_xsetnormalhints.hints;
 
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", resp.data_type);
                 break;
 
             case XSETSTANDARDPROPERTIES: ;
-                argp_xsetnormalhints.display = cur_display_p;
-                argp_xsetnormalhints.w = cur_window;
                 args_XSetStandardProperties argp_xsetstandardproperties;
 
                 // assert payload size
@@ -282,6 +284,9 @@ int replay_log(char *filename) {
                 memcpy(&argp_xsetstandardproperties, call.buffer, sizeof(args_XSetStandardProperties));
 
                 // Execute function call
+                argp_xsetstandardproperties.display = cur_display_p;
+                argp_xsetstandardproperties.w = cur_window;
+                argp_xsetstandardproperties.hints = cur_hints;
                 xsetstandardproperties_lh(&argp_xsetstandardproperties);
 
                 // Print
@@ -920,6 +925,8 @@ int replay_log(char *filename) {
                 // Execute function call
                 argp_glxchoosevisual.dpy = cur_display_p;
                 argp_glxchoosevisual.screen = cur_default_screen;
+                // MALLOC
+                cur_vis_info_p = malloc(sizeof(XVisualInfo*));
                 *cur_vis_info_p = glxchoosevisual_lh(&argp_glxchoosevisual);
 
                 // Print

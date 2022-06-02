@@ -36,7 +36,7 @@ void init(){{
     signal(SIGUSR1, criu_signal_handler);
 
     // Setup criu stuff
-    int fd = open("/home/erwinrussel/Documents/atlas/test/Glxgears/output/checkpoints", O_DIRECTORY);
+    int fd = open("/home/erwinrussel/Documents/atlas/test/Glxgears/dev/checkpoints", O_DIRECTORY);
     criu_init_opts();
     criu_set_images_dir_fd(fd); /* must be set for dump/restore */
     criu_set_shell_job(True);
