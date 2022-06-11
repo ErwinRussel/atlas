@@ -16,9 +16,7 @@ atl_hook: atl_hook.c
 glxgears: glxgears.c
 	gcc -o glxgears glxgears.c -lX11 -lGL -lm
 
-clean-glxgears:
-	rm glxgears
-
 clean:
-	rm atl_lh
-	rm atl_lib.so
+	-rm atl_lh
+	-rm atl_lib.so
+	-rm glxgears
