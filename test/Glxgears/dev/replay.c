@@ -4,22 +4,22 @@
 #include <stdlib.h>
 #include "atl_lh.h"
 
-Display* cur_display_p;
-Window cur_window;
-Window cur_root_window;
-XVisualInfo* cur_vis_info_p;
-int cur_default_screen;
-Colormap cur_colormap;
-GLXContext cur_context;
-XSizeHints cur_hints;
-
-// StrgBlock
-struct StrgBlock {
-    message_types message_type;
-    data_types data_type;
-    int payload_size;
-    char buffer[SHMEM_BUFF];
-};
+//Display* cur_display_p;
+//Window cur_window;
+//Window cur_root_window;
+//XVisualInfo* cur_vis_info_p;
+//int cur_default_screen;
+//Colormap cur_colormap;
+//GLXContext cur_context;
+//XSizeHints cur_hints;
+//
+//// StrgBlock
+//struct StrgBlock {
+//    message_types message_type;
+//    data_types data_type;
+//    int payload_size;
+//    char buffer[SHMEM_BUFF];
+//};
 
 FILE *file2;
 
