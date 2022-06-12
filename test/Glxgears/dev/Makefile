@@ -7,7 +7,7 @@ atl_uh: atl_uh.c
 	gcc -o atl_uh atl_uh.c -lX11 -lcriu -lGL
 
 atl_lh: atl_lh.c replay.c
-	gcc -Wall -Werror -g -std=c99  -o atl_lh atl_lh.c replay.c -lX11 -lGL -no-pie
+	gcc -Wall -g -std=c99 -o atl_lh atl_lh.c replay.c -lX11 -lGL -no-pie
 
 atl_hook: atl_hook.c
 	gcc -o atl_hook atl_hook.c

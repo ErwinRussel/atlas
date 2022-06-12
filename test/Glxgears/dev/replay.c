@@ -5,8 +5,6 @@
 #include "atl_lh.h"
 #include "replay.h"
 
-
-
 FILE *file;
 
 int open_file(char *filename){
