@@ -171,3 +171,4 @@ test/Glxgears/dev/atl_lh
 test/Glxgears/dev/glxgears
 *.img
 *.img
+/checkpoints/*
