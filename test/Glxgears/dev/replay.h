@@ -7,14 +7,14 @@
 #endif //ATLAS_REPLAY_H
 
 // Translation vars
-Display* cur_display_p;
-Window cur_window;
-Window cur_root_window;
-XVisualInfo* cur_vis_info_p;
-int cur_default_screen;
-Colormap cur_colormap;
-GLXContext cur_context;
-XSizeHints cur_hints;
+extern Display* cur_display_p;
+extern Window cur_window;
+extern Window cur_root_window;
+extern XVisualInfo* cur_vis_info_p;
+extern int cur_default_screen;
+extern Colormap cur_colormap;
+extern GLXContext cur_context;
+extern XSizeHints cur_hints;
 
 // Expose replay function
 int replay_log();
