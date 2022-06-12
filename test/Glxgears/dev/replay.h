@@ -4,6 +4,8 @@
 #ifndef ATLAS_REPLAY_H
 #define ATLAS_REPLAY_H
 
+#endif //ATLAS_REPLAY_H
+
 // Translation vars
 Display* cur_display_p;
 Window cur_window;
@@ -16,8 +18,6 @@ XSizeHints cur_hints;
 
 // Expose replay function
 int replay_log();
-
-#endif //ATLAS_REPLAY_H
 
 // StrgBlock
 struct StrgBlock {
