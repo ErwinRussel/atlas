@@ -20,9 +20,9 @@ extern XSizeHints cur_hints;
 int replay_log();
 
 // StrgBlock
-struct StrgBlock {
-    message_types message_type;
-    data_types data_type;
-    int payload_size;
-    char buffer[SHMEM_BUFF];
-};
+//struct StrgBlock {
+//    message_types message_type;
+//    data_types data_type;
+//    int payload_size;
+//    char buffer[SHMEM_BUFF];
+//};
