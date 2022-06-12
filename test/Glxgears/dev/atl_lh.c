@@ -2097,7 +2097,6 @@ void service_listener() {
                 // Execute function call
                 logblock();
                 glxchoosevisual_lh(&argp_glxchoosevisual);
-                sleep(10);
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
                 break;

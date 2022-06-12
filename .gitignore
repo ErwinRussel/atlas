@@ -167,3 +167,5 @@ test/Glxgears/output/glxgears
 nohup.out
 calllog.bin
 strangle.prom
+test/Glxgears/dev/atl_lh
+test/Glxgears/dev/glxgears

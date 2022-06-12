@@ -14,7 +14,7 @@ then
 # NOT RESTORE
 else
   echo "Running atlas"
-  nohup test/Glxgears/dev/atl_lh &
+  nohup strangle 30 test/Glxgears/dev/atl_lh &
   sleep 1
   LD_PRELOAD=$(pwd)/test/Glxgears/dev/atl_lib.so test/Glxgears/dev/glxgears
 fi
