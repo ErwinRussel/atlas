@@ -3,7 +3,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include "atl_lh.h"
-//#include "replay.h"
 
 Display* cur_display_p;
 Window cur_window;
@@ -22,12 +21,12 @@ struct StrgBlock {
     char buffer[SHMEM_BUFF];
 };
 
-FILE *file;
+FILE *file2;
 
 int open_file(char *filename){
-    file = fopen("calllog.bin", "rb");
+    file2 = fopen("calllog.bin", "rb");
 
-    if(file == NULL){
+    if(file2 == NULL){
         printf("Cannot read file\n");
         return 1;
     }
@@ -44,8 +43,8 @@ int replay_log(char *filename) {
         struct StrgBlock resp;
 
         // CALL
-        if(fread(&call, sizeof(struct StrgBlock), 1, file) != 1) {
-            fclose(file);
+        if(fread(&call, sizeof(struct StrgBlock), 1, file2) != 1) {
+            fclose(file2);
             return 1;
         }
 
@@ -56,12 +55,12 @@ int replay_log(char *filename) {
         }
 
         // RESPONSE
-        if(fread(&resp, sizeof(struct StrgBlock), 1, file) != 1) {
+        if(fread(&resp, sizeof(struct StrgBlock), 1, file2) != 1) {
             printf("No function response, checking if waiting for Event..\n");
             if(call.data_type == XNEXTEVENT){
                 printf("Waiting for event..\n");
             } else {
-                fclose(file);
+                fclose(file2);
                 return 1;
             }
         }
