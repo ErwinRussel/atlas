@@ -37,6 +37,13 @@
 #include <GL/glx.h>
 #include <GL/glxext.h>
 
+
+#include <stdio.h>
+#include <time.h>
+#include <stdint.h>
+#include <inttypes.h>
+#define BILLION  1000000000L
+
 #ifndef GLX_MESA_swap_control
 #define GLX_MESA_swap_control 1
 typedef int (*PFNGLXGETSWAPINTERVALMESAPROC)(void);
@@ -786,8 +793,20 @@ main(int argc, char *argv[])
     */
    reshape(winWidth, winHeight);
 
-   event_loop(dpy, win);
+    long int ns;
+    uint64_t all;
+    time_t sec;
+    struct timespec spec;
 
+    clock_gettime(CLOCK_REALTIME, &spec);
+    sec = spec.tv_sec;
+    ns = spec.tv_nsec;
+
+    all = (uint64_t) sec * BILLION + (uint64_t) ns;
+
+    printf("%" PRIu64  " nanoseconds since the Epoch\n", all);
+
+   event_loop(dpy, win);
    glDeleteLists(gear1, 1);
    glDeleteLists(gear2, 1);
    glDeleteLists(gear3, 1);

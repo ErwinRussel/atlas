@@ -12,6 +12,7 @@ key_t           ShmKEY;
 int             ShmID;
 struct MsgBlock *ShmPTR;
 FILE *file;
+int swapbufferpos;
 
 // Set replay
 int replay = 0; // todo: make this boolean
@@ -19,7 +20,7 @@ int restored = 0;
 char* filename;
 
 // Constructor
-void init(){
+void initmem(){
     // Bind to the shared memory file
     ShmKEY = ftok(".", 'x');
 
@@ -33,9 +34,14 @@ void init(){
     // Attach to pointer
     ShmPTR = (struct MsgBlock *) shmat(ShmID, NULL, 0);
 
+    ShmPTR->status = LISTEN;
+}
+
+void initlog(){
     // Open file for logging
     if(restored){
-        file = fopen(filename, "ab");
+        file = fopen(filename, "r+b");
+        fseek(file, 0, SEEK_END);
         if(file == NULL){
             printf("Could not open file: %s", filename);
             exit(1);
@@ -45,9 +51,6 @@ void init(){
     }
 
     if(file == NULL) printf("Could not open file for logging\n");
-
-    // Set status to LISTEN
-    ShmPTR->status = LISTEN;
 }
 
 // Logging
@@ -55,6 +58,14 @@ int logblock(){
     struct StrgBlock strgblock;
     strgblock.message_type = ShmPTR->message_type;
     strgblock.data_type = ShmPTR->data_type;
+    if(strgblock.data_type == GLXSWAPBUFFERS){
+        if(swapbufferpos == NULL){
+            swapbufferpos = ftell(file);
+        } else {
+            fseek(file, swapbufferpos, SEEK_SET);
+        }
+    }
+
     strgblock.payload_size = ShmPTR->payload_size;
     // memcpy because of array
     memcpy(&strgblock.buffer, ShmPTR->buffer, strgblock.payload_size);
@@ -108,14 +119,14 @@ int xdefaultscreen_lh(args_XDefaultScreen *argp)
     // Call actual function
     int result = XDefaultScreen(display);
 
-    if(!replay){
-        // Memcopy in Buffer
-        int ret_size = sizeof(int);
-        memcpy(ShmPTR->buffer, &result, ret_size);
+//    if(!replay){
+    // Memcopy in Buffer
+    int ret_size = sizeof(int);
+    memcpy(ShmPTR->buffer, &result, ret_size);
 
-        // Send response
-        send_response(INT, ret_size, 1);
-    }
+    // Send response
+    send_response(INT, ret_size, !replay);
+//    }
 
     // Return
     return result;
@@ -132,14 +143,14 @@ int xdisplaywidth_lh(args_XDisplayWidth *argp)
     // Call actual function
     int result = XDisplayWidth(display, screen_number);
 
-    if(!replay){
-        // Memcopy in Buffer
-        int ret_size = sizeof(int);
-        memcpy(ShmPTR->buffer, &result, ret_size);
+//    if(!replay){
+	// Memcopy in Buffer
+	int ret_size = sizeof(int);
+	memcpy(ShmPTR->buffer, &result, ret_size);
 
-        // Send response
-        send_response(INT, ret_size, 1);
-    }
+	// Send response
+	send_response(INT, ret_size, !replay);
+//    }
 
     // Return
     return result;
@@ -156,14 +167,14 @@ int xdisplayheight_lh(args_XDisplayHeight *argp)
     // Call actual function
     int result = XDisplayHeight(display, screen_number);
 
-    if(!replay){
+//    if(!replay){
         // Memcopy in Buffer
         int ret_size = sizeof(int);
         memcpy(ShmPTR->buffer, &result, ret_size);
 
         // Send response
-        send_response(INT, ret_size, 1);
-    }
+        send_response(INT, ret_size, !replay);
+//    }
 
     // Return
     return result;
@@ -180,14 +191,14 @@ Window xrootwindow_lh(args_XRootWindow *argp)
     // Call actual function
     Window result = XRootWindow(display, screen_number);
 
-       if(!replay){
+    // if(!replay){
         // Memcopy in Buffer
         int ret_size = sizeof(Window);
         memcpy(ShmPTR->buffer, &result, ret_size);
 
         // Send response
-        send_response(WINDOW, ret_size, 1);
-    }
+        send_response(WINDOW, ret_size, !replay);
+    // }
 
     // Return
     return result;
@@ -203,14 +214,14 @@ Display* xopendisplay_lh(args_XOpenDisplay *argp)
     // Call actual function
     Display* result = XOpenDisplay(display_name);
 
-    if(!replay){
+    // if(!replay){
         // Memcopy in Buffer
         int ret_size = sizeof(Display*);
         memcpy(ShmPTR->buffer, &result, ret_size);
 
         // Send response
-        send_response(DISPLAYP, ret_size, 1);
-    }
+        send_response(DISPLAYP, ret_size, !replay);
+    // }
 
     // Return
     return result;
@@ -229,14 +240,14 @@ Colormap xcreatecolormap_lh(args_XCreateColormap *argp)
     // Call actual function
     Colormap result = XCreateColormap(display, w, visual, alloc);
 
-    if(!replay){
+    // if(!replay){
         // Memcopy in Buffer
         int ret_size = sizeof(Colormap);
         memcpy(ShmPTR->buffer, &result, ret_size);
 
         // Send response
-        send_response(COLORMAP, ret_size, 1);
-    }
+        send_response(COLORMAP, ret_size, !replay);
+    // }
 
     // Return
     return result;
@@ -263,14 +274,14 @@ Window xcreatewindow_lh(args_XCreateWindow *argp)
     // Call actual function
     Window result = XCreateWindow(display, parent, x, y, width, height, border_width, depth, class, visual, valuemask, attributes);
 
-    if(!replay){
-	// Memcopy in Buffer
-	int ret_size = sizeof(Window);
-	memcpy(ShmPTR->buffer, &result, ret_size);
+    // if(!replay){
+        // Memcopy in Buffer
+        int ret_size = sizeof(Window);
+        memcpy(ShmPTR->buffer, &result, ret_size);
 
-	// Send response
-	send_response(WINDOW, ret_size, 1);
-    }
+        // Send response
+        send_response(WINDOW, ret_size, !replay);
+    // }
 
     // Return
     return result;
@@ -288,14 +299,14 @@ Atom xinternatom_lh(args_XInternAtom *argp)
     // Call actual function
     Atom result = XInternAtom(display, atom_name, only_if_exists);
 
-    if(!replay){
+    // if(!replay){
         // Memcopy in Buffer
         int ret_size = sizeof(Atom);
         memcpy(ShmPTR->buffer, &result, ret_size);
 
         // Send response
-        send_response(ATOM, ret_size, 1);
-    }
+        send_response(ATOM, ret_size, !replay);
+    // }
 
     // Return
     return result;
@@ -318,14 +329,14 @@ int xchangeproperty_lh(args_XChangeProperty *argp)
     // Call actual function
     int result = XChangeProperty(display, w, property, type, format, mode, data, nelements);
 
-    if(!replay){
+    // if(!replay){
         // Memcopy in Buffer
         int ret_size = sizeof(int);
         memcpy(ShmPTR->buffer, &result, ret_size);
 
         // Send response
-        send_response(INT, ret_size, 1);
-    }
+        send_response(INT, ret_size, !replay);
+    // }
 
     // Return
     return result;
@@ -343,14 +354,14 @@ int xsetnormalhints_lh(args_XSetNormalHints *argp)
     // Call actual function
     int result = XSetNormalHints(display, w, &hints);
 
-     if(!replay){
+    //  if(!replay){
         // Memcopy in Buffer
         int ret_size = sizeof(int);
         memcpy(ShmPTR->buffer, &result, ret_size);
 
         // Send response
-        send_response(INT, ret_size, 1);
-    }
+        send_response(INT, ret_size, !replay);
+    // }
 
     // Return
     return result;
@@ -372,14 +383,14 @@ int xsetstandardproperties_lh(args_XSetStandardProperties *argp)
     // Call actual function
     int result = XSetStandardProperties(display, w, &window_name, &icon_name, icon_pixmap, (char **)NULL, argc, &hints);
 
-     if(!replay){
+    //  if(!replay){
         // Memcopy in Buffer
         int ret_size = sizeof(int);
         memcpy(ShmPTR->buffer, &result, ret_size);
 
         // Send response
-        send_response(INT, ret_size, 1);
-    }
+        send_response(INT, ret_size, !replay);
+    // }
 
     // Return
     return result;
@@ -423,14 +434,14 @@ int xmapwindow_lh(args_XMapWindow *argp)
     printf("Next call should fail\n");
     int result = XMapWindow(display, w);
 
-     if(!replay){
+    //  if(!replay){
         // Memcopy in Buffer
         int ret_size = sizeof(int);
         memcpy(ShmPTR->buffer, &result, ret_size);
 
         // Send response
-        send_response(INT, ret_size, 1);
-    }
+        send_response(INT, ret_size, !replay);
+    // }
 
     // Return
     return result;
@@ -445,16 +456,16 @@ int xpending_lh(args_XPending *argp)
 
     // Call actual function
     int result = XPending(display);
-
-     if(!replay){
+    printf("Back from XPending\n");
+    //  if(!replay){
         // Memcopy in Buffer
         int ret_size = sizeof(int);
         memcpy(ShmPTR->buffer, &result, ret_size);
 
         // Send response
         send_response(INT, ret_size, 0);
-    }
-
+    // }
+    printf("Sent Response\n");
     // Return
     return result;
 }
@@ -470,14 +481,14 @@ XEvent *xnextevent_lh(args_XNextEvent *argp)
     // Call actual function
     XNextEvent(display, result);
 
-     if(!replay){
+    //  if(!replay){
         // Memcopy in Buffer
         int ret_size = sizeof(XEvent);
         memcpy(ShmPTR->buffer, result, ret_size);
 
         // Send response
         send_response(XEVENT, ret_size, 0);
-    }
+    // }
 
     // Return
     return result;
@@ -494,14 +505,14 @@ KeySym xlookupkeysym_lh(args_XLookupKeysym *argp)
     // Call actual function
     KeySym result = XLookupKeysym(key_event, index);
 
-     if(!replay){
+    //  if(!replay){
         // Memcopy in Buffer
         int ret_size = sizeof(KeySym);
         memcpy(ShmPTR->buffer, &result, ret_size);
 
         // Send response
-        send_response(KEYSYM, ret_size, 1);
-    }
+        send_response(KEYSYM, ret_size, !replay);
+    // }
 
     // Return
     return result;
@@ -521,14 +532,14 @@ int xlookupstring_lh(args_XLookupString *argp)
     // Call actual function
     int result = XLookupString(event_struct, buffer_return, bytes_buffer, keysym_return, status_in_out);
 
-     if(!replay){
+    //  if(!replay){
         // Memcopy in Buffer
         int ret_size = sizeof(int);
         memcpy(ShmPTR->buffer, &result, ret_size);
 
         // Send response
-        send_response(INT, ret_size, 1);
-    }
+        send_response(INT, ret_size, !replay);
+    // }
 
     // Return
     return result;
@@ -545,14 +556,14 @@ int xdestroywindow_lh(args_XDestroyWindow *argp)
     // Call actual function
     int result = XDestroyWindow(display, w);
 
-     if(!replay){
+    //  if(!replay){
         // Memcopy in Buffer
         int ret_size = sizeof(int);
         memcpy(ShmPTR->buffer, &result, ret_size);
 
         // Send response
-        send_response(INT, ret_size, 1);
-    }
+        send_response(INT, ret_size, !replay);
+    // }
 
     // Return
     return result;
@@ -568,14 +579,14 @@ GLubyte* glgetstring_lh(args_glGetString *argp)
     // Call actual function
     const GLubyte* result = glGetString(name);
 
-     if(!replay){
+    //  if(!replay){
         // Memcopy in Buffer
         int ret_size = sizeof(GLubyte*);
         memcpy(ShmPTR->buffer, &result, ret_size);
 
         // Send response
-        send_response(GLUBYTEP, ret_size, 1);
-    }
+        send_response(GLUBYTEP, ret_size, !replay);
+    // }
 
     // Return
     return (GLubyte*) result;
@@ -592,10 +603,10 @@ void gllightfv_lh(args_glLightfv *argp)
 
     // Call actual function
     glLightfv(light, pname, params);
-    
-    if(!replay){
-        send_void(1);
-    }
+
+//    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -608,9 +619,9 @@ void glenable_lh(args_glEnable *argp)
     // Call actual function
     glEnable(cap);
 
-    if(!replay){
-        send_void(1);
-    }
+//    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -623,14 +634,14 @@ GLuint glgenlists_lh(args_glGenLists *argp)
     // Call actual function
     GLuint result = glGenLists(range);
 
-     if(!replay){
+    //  if(!replay){
         // Memcopy in Buffer
         int ret_size = sizeof(GLuint);
         memcpy(ShmPTR->buffer, &result, ret_size);
 
         // Send response
-        send_response(GLUINT, ret_size, 1);
-    }
+        send_response(GLUINT, ret_size, !replay);
+    // }
 
     // Return
     return result;
@@ -647,9 +658,9 @@ void glnewlist_lh(args_glNewList *argp)
     // Call actual function
     glNewList(list, mode);
 
-    if(!replay){
-        send_void(1);
-    }
+//    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -664,9 +675,9 @@ void glmaterialfv_lh(args_glMaterialfv *argp)
     // Call actual function
     glMaterialfv(face, pname, params);
 
-    if(!replay){
-        send_void(1);
-    }
+//    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -678,9 +689,9 @@ void glendlist_lh()
     // Call actual function
     glEndList();
 
-    if(!replay){
-        send_void(1);
-    }
+//    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -693,9 +704,9 @@ void glshademodel_lh(args_glShadeModel *argp)
     // Call actual function
     glShadeModel(mode);
 
-    if(!replay){
-        send_void(1);
-    }
+//    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -710,9 +721,9 @@ void glnormal3f_lh(args_glNormal3f *argp)
     // Call actual function
     glNormal3f(nx, ny, nz);
 
-    if(!replay){
-        send_void(1);
-    }
+//    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -725,9 +736,9 @@ void glbegin_lh(args_glBegin *argp)
     // Call actual function
     glBegin(mode);
 
-    if(!replay){
-        send_void(1);
-    }
+    //    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -742,9 +753,9 @@ void glvertex3f_lh(args_glVertex3f *argp)
     // Call actual function
     glVertex3f(x, y, z);
 
-    if(!replay){
-        send_void(1);
-    }
+//    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -756,9 +767,9 @@ void glend_lh()
     // Call actual function
     glEnd();
 
-    if(!replay){
-        send_void(1);
-    }
+//    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -774,9 +785,9 @@ void glviewport_lh(args_glViewport *argp)
     // Call actual function
     glViewport(x, y, width, height);
 
-    if(!replay){
-        send_void(1);
-    }
+//    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -789,9 +800,9 @@ void glmatrixmode_lh(args_glMatrixMode *argp)
     // Call actual function
     glMatrixMode(mode);
 
-    if(!replay){
-        send_void(1);
-    }
+//    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -803,9 +814,9 @@ void glloadidentity_lh()
     // Call actual function
     glLoadIdentity();
 
-    if(!replay){
-        send_void(1);
-    }
+//    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -823,9 +834,9 @@ void glfrustum_lh(args_glFrustum *argp)
     // Call actual function
     glFrustum(left, right, bottom, top, near_val, far_val);
 
-    if(!replay){
-        send_void(1);
-    }
+//    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -840,9 +851,9 @@ void gltranslatef_lh(args_glTranslatef *argp)
     // Call actual function
     glTranslatef(x, y, z);
 
-    if(!replay){
-        send_void(1);
-    }
+//    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -855,9 +866,9 @@ void gldrawbuffer_lh(args_glDrawBuffer *argp)
     // Call actual function
     glDrawBuffer(mode);
 
-    if(!replay){
-        send_void(1);
-    }
+//    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -869,9 +880,9 @@ void glpushmatrix_lh()
     // Call actual function
     glPushMatrix();
 
-    if(!replay){
-        send_void(1);
-    }
+//    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -883,9 +894,9 @@ void glpopmatrix_lh()
     // Call actual function
     glPopMatrix();
 
-    if(!replay){
-        send_void(1);
-    }
+//    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -900,9 +911,9 @@ void gltranslated_lh(args_glTranslated *argp)
     // Call actual function
     glTranslated(x, y, z);
 
-    if(!replay){
-        send_void(1);
-    }
+//    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -915,9 +926,9 @@ void glclear_lh(args_glClear *argp)
     // Call actual function
      glClear(mask);
 
-    if(!replay){
-        send_void(1);
-    }
+//    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -933,9 +944,9 @@ void glrotatef_lh(args_glRotatef *argp)
     // Call actual function
     glRotatef(angle, x, y, z);
 
-    if(!replay){
-        send_void(1);
-    }
+//    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -948,9 +959,9 @@ void glcalllist_lh(args_glCallList *argp)
     // Call actual function
     glCallList(list);
 
-    if(!replay){
-        send_void(1);
-    }
+//    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -964,9 +975,9 @@ void gldeletelists_lh(args_glDeleteLists *argp)
     // Call actual function
     glDeleteLists(list, range);
 
-    if(!replay){
-        send_void(1);
-    }
+//    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -980,9 +991,9 @@ void glxdestroycontext_lh(args_glXDestroyContext *argp)
     // Call actual function
     glXDestroyContext(dpy, ctx);
 
-    if(!replay){
-        send_void(1);
-    }
+//    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -996,14 +1007,14 @@ XVisualInfo glxchoosevisual_lh(args_glXChooseVisual *argp)
     // Call actual function
     XVisualInfo result = *glXChooseVisual(dpy, screen, attribList);
 
-     if(!replay){
+    //  if(!replay){
         // Memcopy in Buffer
         int ret_size = sizeof(XVisualInfo);
         memcpy(ShmPTR->buffer, &result, ret_size);
 
         // Send response
-        send_response(XVISUALINFO, ret_size, 1);
-    }
+        send_response(XVISUALINFO, ret_size, !replay);
+    // }
 
     // Return
     return result;
@@ -1022,14 +1033,14 @@ GLXContext glxcreatecontext_lh(args_glXCreateContext *argp)
     // Call actual function
     GLXContext result = glXCreateContext(dpy, &vis, shareList, direct);
 
-     if(!replay){
+    //  if(!replay){
         // Memcopy in Buffer
         int ret_size = sizeof(GLXContext);
         memcpy(ShmPTR->buffer, &result, ret_size);
 
         // Send response
-        send_response(GLXCONTEXT, ret_size, 1);
-    }
+        send_response(GLXCONTEXT, ret_size, !replay);
+    // }
 
     // Return
     return result;
@@ -1052,14 +1063,14 @@ Bool glxmakecurrent_lh(args_glXMakeCurrent *argp)
     // Call actual function
     Bool result = glXMakeCurrent(dpy, drawable, ctx);
 
-     if(!replay){
+    //  if(!replay){
         // Memcopy in Buffer
         int ret_size = sizeof(Bool);
         memcpy(ShmPTR->buffer, &result, ret_size);
 
         // Send response
-        send_response(BOOL, ret_size, 1);
-    }
+        send_response(BOOL, ret_size, !replay);
+    // }
 
     // Return
     return result;
@@ -1078,14 +1089,14 @@ char* glxqueryextensionsstring_lh(args_glXQueryExtensionsString *argp)
     const char* result = glXQueryExtensionsString(dpy, screen);
     strcpy(dest, result);
 
-    if(!replay){
+    // if(!replay){
         // Memcopy in Buffer
         int ret_size = sizeof(char[1024]);
         memcpy(ShmPTR->buffer, &result, ret_size);
 
         // Send response
-        send_response(CHARARR, ret_size, 1);
-    }
+        send_response(CHARARR, ret_size, !replay);
+    // }
 
     // Return
     return (char*) result;
@@ -1104,9 +1115,9 @@ void glxquerydrawable_lh(args_glXQueryDrawable *argp)
     // Call actual function
     glXQueryDrawable(dpy, draw, attribute, &value);
 
-     if(!replay){
-        send_void(1);
-    }
+//    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -1119,14 +1130,14 @@ __GLXextFuncPtr glxgetprocaddressarb_lh(args_glXGetProcAddressARB *argp)
     // Call actual function
     __GLXextFuncPtr result = glXGetProcAddressARB(procname);
 
-    if(!replay){
+    // if(!replay){
         // Memcopy in Buffer
         int ret_size = sizeof(__GLXextFuncPtr);
         memcpy(ShmPTR->buffer, &result, ret_size);
 
         // Send response
-        send_response(__GLXEXTFUNCPTR, ret_size, 1);
-    }
+        send_response(__GLXEXTFUNCPTR, ret_size, !replay);
+    // }
 
     // Return
     return result;
@@ -1143,9 +1154,9 @@ void glxswapbuffers_lh(args_glXSwapBuffers *argp)
     // Call actual function
     glXSwapBuffers(dpy, drawable);
 
-    if(!replay){
-        send_void(1);
-    }
+//    if(!replay){
+    send_void(!replay);
+//    }
 }
 
 
@@ -1187,6 +1198,9 @@ void service_listener() {
 
                 // Execute function call
                 logblock();
+                if(restored){
+                    argp_xdefaultscreen.display = cur_display_p;
+                }
                 xdefaultscreen_lh(&argp_xdefaultscreen);
 
                 // Print
@@ -1208,6 +1222,10 @@ void service_listener() {
 
                 // Execute function call
                 logblock();
+                if(restored){
+                    argp_xdisplaywidth.display = cur_display_p;
+                    argp_xdisplaywidth.screen_number = cur_default_screen;
+                }
                 xdisplaywidth_lh(&argp_xdisplaywidth);
 
                 // Print
@@ -1229,6 +1247,10 @@ void service_listener() {
 
                 // Execute function call
                 logblock();
+                if(restored){
+                    argp_xdisplayheight.display = cur_display_p;
+                    argp_xdisplayheight.screen_number = cur_default_screen;
+                }
                 xdisplayheight_lh(&argp_xdisplayheight);
 
                 // Print
@@ -1250,6 +1272,10 @@ void service_listener() {
 
                 // Execute function call
                 logblock();
+                if(restored){
+                    argp_xrootwindow.display = cur_display_p;
+                    argp_xrootwindow.screen_number = cur_default_screen;
+                }
                 xrootwindow_lh(&argp_xrootwindow);
 
                 // Print
@@ -1292,6 +1318,11 @@ void service_listener() {
 
                 // Execute function call
                 logblock();
+                if(restored){
+                    argp_xcreatecolormap.display = cur_display_p;
+                    argp_xcreatecolormap.w = cur_root_window;
+                    argp_xcreatecolormap.visual = cur_vis_info_p->visual;
+                }
                 xcreatecolormap_lh(&argp_xcreatecolormap);
 
                 // Print
@@ -1313,6 +1344,12 @@ void service_listener() {
 
                 // Execute function call
                 logblock();
+                if(restored){
+                    argp_xcreatewindow.display = cur_display_p;
+                    argp_xcreatewindow.visual = cur_vis_info_p->visual;
+                    argp_xcreatewindow.attributes.colormap = cur_colormap;
+                    argp_xcreatewindow.parent = cur_root_window;
+                }
                 xcreatewindow_lh(&argp_xcreatewindow);
 
                 // Print
@@ -1376,6 +1413,10 @@ void service_listener() {
 
                 // Execute function call
                 logblock();
+                if(restored){
+                    argp_xsetnormalhints.display = cur_display_p;
+                    argp_xsetnormalhints.w = cur_window;
+                }
                 xsetnormalhints_lh(&argp_xsetnormalhints);
 
                 // Print
@@ -1397,6 +1438,11 @@ void service_listener() {
 
                 // Execute function call
                 logblock();
+                if(restored){
+                    argp_xsetstandardproperties.display = cur_display_p;
+                    argp_xsetstandardproperties.w = cur_window;
+                    argp_xsetstandardproperties.hints = cur_hints;
+                }
                 xsetstandardproperties_lh(&argp_xsetstandardproperties);
 
                 // Print
@@ -1418,6 +1464,9 @@ void service_listener() {
 
                 // Execute function call
                 logblock();
+                if(restored){
+                    argp_xfree.visinfo = *cur_vis_info_p;
+                }
                 xfree_lh(&argp_xfree);
 
                 // Print
@@ -1439,6 +1488,10 @@ void service_listener() {
 
                 // Execute function call
                 logblock();
+                if(restored){
+                    argp_xmapwindow.display = cur_display_p;
+                    argp_xmapwindow.w = cur_window;
+                }
                 xmapwindow_lh(&argp_xmapwindow);
 
                 // Print
@@ -1460,6 +1513,9 @@ void service_listener() {
 
                 // Execute function call
                 // logblock();
+                if(restored){
+                    argp_xpending.display = cur_display_p;
+                }
                 xpending_lh(&argp_xpending);
 
                 // Print
@@ -1481,6 +1537,9 @@ void service_listener() {
 
                 // Execute function call
                 // logblock();
+                if(restored){
+                    argp_xnextevent.display = cur_display_p;
+                }
                 xnextevent_lh(&argp_xnextevent);
 
                 // Print
@@ -1544,6 +1603,10 @@ void service_listener() {
 
                 // Execute function call
                 logblock();
+                if(restored){
+                    argp_xdestroywindow.display = cur_display_p;
+                    argp_xdestroywindow.w = cur_window;
+                }
                 xdestroywindow_lh(&argp_xdestroywindow);
 
                 // Print
@@ -2075,6 +2138,10 @@ void service_listener() {
 
                 // Execute function call
                 logblock();
+                if(restored){
+                    argp_glxdestroycontext.dpy = cur_display_p;
+                    argp_glxdestroycontext.ctx = cur_context;
+                }
                 glxdestroycontext_lh(&argp_glxdestroycontext);
 
                 // Print
@@ -2096,6 +2163,10 @@ void service_listener() {
 
                 // Execute function call
                 logblock();
+                if(restored){
+                    argp_glxchoosevisual.dpy = cur_display_p;
+                    argp_glxchoosevisual.screen = cur_default_screen;
+                }
                 glxchoosevisual_lh(&argp_glxchoosevisual);
                 // Print
                 printf("RESPONSE: Data type: %d\n\n", ShmPTR->data_type);
@@ -2116,6 +2187,10 @@ void service_listener() {
 
                 // Execute function call
                 logblock();
+                if(restored){
+                    argp_glxcreatecontext.dpy = cur_display_p;
+                    argp_glxcreatecontext.vis = *cur_vis_info_p;
+                }
                 glxcreatecontext_lh(&argp_glxcreatecontext);
 
                 // Print
@@ -2137,6 +2212,11 @@ void service_listener() {
 
                 // Execute function call
                 logblock();
+                if(restored){
+                    argp_glxmakecurrent.dpy = cur_display_p;
+                    argp_glxmakecurrent.drawable = cur_window;
+                    argp_glxmakecurrent.ctx = cur_context;
+                }
                 glxmakecurrent_lh(&argp_glxmakecurrent);
 
                 // Print
@@ -2158,6 +2238,10 @@ void service_listener() {
 
                 // Execute function call
                 logblock();
+                if(restored){
+                    argp_glxqueryextensionsstring.dpy = cur_display_p;
+                    argp_glxqueryextensionsstring.screen = cur_default_screen;
+                }
                 glxqueryextensionsstring_lh(&argp_glxqueryextensionsstring);
 
                 // Print
@@ -2179,6 +2263,10 @@ void service_listener() {
 
                 // Execute function call
                 logblock();
+                if(restored){
+                    argp_glxquerydrawable.dpy = cur_display_p;
+                    argp_glxquerydrawable.draw = cur_window;
+                }
                 glxquerydrawable_lh(&argp_glxquerydrawable);
 
                 // Print
@@ -2221,6 +2309,10 @@ void service_listener() {
 
                 // Execute function call
                 logblock();
+                if(restored){
+                    argp_glxswapbuffers.dpy = cur_display_p;
+                    argp_glxswapbuffers.drawable = cur_window;
+                }
                 glxswapbuffers_lh(&argp_glxswapbuffers);
 
                 // Print
@@ -2256,16 +2348,23 @@ int main(int  argc, char *argv[]){
         }
     }
 
+    initmem();
+
     if(replay){
         restored = 1;
         printf("RESTORE: Replaying log\n");
         replay_log(argv[2]);
+        printf("Flushing all X events\n");
+        XEvent event;
+        for(int i = 0; i < XEventsQueued(cur_display_p, QueuedAlready); i++){
+            XNextEvent(cur_display_p, &event);
+            printf("%d\n", event.type);
+        }
         printf("RESTORE: Done\n");
         replay = 0;
     }
 
-    init();
-    
+    initlog();
     service_listener();
     fclose(file);
     return 0;

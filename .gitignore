@@ -172,3 +172,11 @@ test/Glxgears/dev/glxgears
 *.img
 *.img
 /checkpoints/*
+*.img
+test/Glxgears/dev/checkpoints/tty-info.img
+test/Glxgears/dev/checkpoints/timens-0.img
+test/Glxgears/dev/checkpoints/stats-dump
+test/Glxgears/dev/checkpoints/pstree.img
+test/Glxgears/dev/checkpoints/pages-1.img
+test/Glxgears/dev/checkpoints/files.img
+test/Glxgears/dev/checkpoints/fdinfo-2.img

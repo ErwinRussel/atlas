@@ -9,6 +9,11 @@
 #include  <string.h>
 #include  <fcntl.h>
 
+#include <time.h>
+#include <stdint.h>
+#include <inttypes.h>
+#define BILLION  1000000000L
+
 // Global
 key_t          ShmKEY;
 int            ShmID;
@@ -27,7 +32,21 @@ void criu_signal_handler(){{
 
     // We restore after the previous call - reattaching memories
     printf("Reattaching memory\n");
+
     ShmPTR = (struct MsgBlock *) shmat(ShmID, NULL, 0);
+
+    long int ns;
+    uint64_t all;
+    time_t sec;
+    struct timespec spec;
+
+    clock_gettime(CLOCK_REALTIME, &spec);
+    sec = spec.tv_sec;
+    ns = spec.tv_nsec;
+
+    all = (uint64_t) sec * BILLION + (uint64_t) ns;
+
+    printf("%" PRIu64  " nanoseconds since the Epoch\n", all);
 }}
 
 // constructor
@@ -36,7 +55,7 @@ void init(){{
     signal(SIGUSR1, criu_signal_handler);
 
     // Setup criu stuff
-    int fd = open("/home/erwinrussel/Documents/atlas/test/Glxgears/dev/checkpoints", O_DIRECTORY);
+    int fd = open("./checkpoints", O_DIRECTORY);
     criu_init_opts();
     criu_set_images_dir_fd(fd); /* must be set for dump/restore */
     criu_set_shell_job(True);
