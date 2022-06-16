@@ -19,4 +19,6 @@ else
   LD_PRELOAD=$(pwd)/test/Glxgears/dev/atl_lib.so test/Glxgears/dev/glxgears &
   echo "$!" > uh_pid
 fi
-
+while :; do
+    sleep 5
+done
