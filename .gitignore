@@ -171,7 +171,6 @@ test/Glxgears/dev/atl_lh
 test/Glxgears/dev/glxgears
 *.img
 *.img
-/checkpoints/*
 *.img
 test/Glxgears/dev/checkpoints/tty-info.img
 test/Glxgears/dev/checkpoints/timens-0.img
