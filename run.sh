@@ -1,5 +1,5 @@
 # RESTORE
-nohup python3 /opt/strangle/promclient/promclient.py & 
+#nohup python3 /opt/strangle/promclient/promclient.py &
 if [ -n "$ATL_RESTORE" ] && [ "$ATL_RESTORE" -eq 1 ]
 then
   echo "Restoring atlas"
