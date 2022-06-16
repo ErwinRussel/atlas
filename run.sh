@@ -2,10 +2,10 @@
 if [ -n "$ATL_RESTORE" ] && [ "$ATL_RESTORE" -eq 1 ]
 then
   echo "Restoring atlas"
-  nohup strangle 30 test/Glxgears/dev/atl_lh replay calllog.bin >/dev/null 2>&1 &
+  nohup strangle 30 test/Glxgears/dev/atl_lh replay checkpoints/calllog.bin >/dev/null 2>&1 &
 #  test/Glxgears/dev/atl_lh replay calllog.bin &
   echo "$!" > lh_pid
-  sleep 0.05
+  sleep 0.3
   criu restore --images-dir ./checkpoints --shell-job -d
 # PID should restore the same
 #  echo "$!" > uh_pid

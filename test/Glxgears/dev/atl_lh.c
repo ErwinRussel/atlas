@@ -47,7 +47,7 @@ void initlog(){
             exit(1);
         }
     } else {
-        file = fopen("calllog.bin", "wb");
+        file = fopen("checkpoints/calllog.bin", "wb");
     }
 
     if(file == NULL) printf("Could not open file for logging\n");

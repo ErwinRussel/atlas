@@ -24,7 +24,7 @@ struct StrgBlock {
 FILE *file2;
 
 int open_file(char *filename){
-    file2 = fopen("calllog.bin", "rb");
+    file2 = fopen("checkpoints/calllog.bin", "rb");
 
     if(file2 == NULL){
         printf("Cannot read file\n");
