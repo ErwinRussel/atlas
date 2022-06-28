@@ -3,7 +3,7 @@
 if [ -n "$ATL_RESTORE" ] && [ "$ATL_RESTORE" -eq 1 ]
 then
   echo "Restoring atlas"
-  nohup strangle 4000 test/Glxgears/dev/atl_lh replay checkpoints/calllog.bin >/dev/null 2>&1 &
+  nohup strangle 2000 test/Glxgears/dev/atl_lh replay checkpoints/calllog.bin >/dev/null 2>&1 &
 #  test/Glxgears/dev/atl_lh replay calllog.bin &
   echo "$!" > lh_pid
   sleep 1
@@ -14,7 +14,7 @@ then
 ## NOT RESTORE
 else
   echo "Running atlas"
-  nohup strangle 4000 test/Glxgears/dev/atl_lh >/dev/null 2>&1 &
+  nohup strangle 2000 test/Glxgears/dev/atl_lh >/dev/null 2>&1 &
 #  strangle 30 test/Glxgears/dev/atl_lh &
   echo "$!" > lh_pid
   sleep 1
