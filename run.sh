@@ -7,6 +7,7 @@ then
 #  test/Glxgears/dev/atl_lh replay calllog.bin &
   echo "$!" > lh_pid
   sleep 0.3
+  ps aux
   criu restore --images-dir ./checkpoints --shell-job -d
 # PID should restore the same
 #  echo "$!" > uh_pid
@@ -19,6 +20,7 @@ else
   sleep 0.3
   LD_PRELOAD=$(pwd)/test/Glxgears/dev/atl_lib.so test/Glxgears/dev/glxgears &
   echo "$!" > uh_pid
+  ps aux
 fi
 while :; do
     sleep 5
