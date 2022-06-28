@@ -179,3 +179,5 @@ test/Glxgears/dev/checkpoints/pstree.img
 test/Glxgears/dev/checkpoints/pages-1.img
 test/Glxgears/dev/checkpoints/files.img
 test/Glxgears/dev/checkpoints/fdinfo-2.img
+checkpoints/test.txt
+*.img
