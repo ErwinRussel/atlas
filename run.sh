@@ -10,8 +10,7 @@ then
   ps aux
   criu restore --images-dir ./checkpoints --shell-job -d
 # PID should restore the same
-  ps aux
-  echo "$!" > uh_pid
+  echo "17" > uh_pid
 ## NOT RESTORE
 else
   echo "Running atlas"
